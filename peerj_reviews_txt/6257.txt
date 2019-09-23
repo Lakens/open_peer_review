@@ -1,0 +1,64 @@
+Review History for A scalable discrete-time survival model for neural networks [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History A scalable discrete-time survival model for neural networks To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on May 14th, 2018 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on June 28th, 2018. The first revision was submitted on November 29th, 2018 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on December 10th, 2018.
+label_version_1
+Version 0.2 (accepted)
+Jun Pang
+·
+Dec 10, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+Although neither prior reviewer was able to review this submission, I confirm that the revisions are acceptable. The manuscript is ready for publication.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Nov 29, 2018
+label_version_2
+Version 0.1 (original submission)
+Jun Pang
+·
+Jun 28, 2018
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+The two reviewers pointed out that both the structure of the manuscript and the experimental evaluation can be improved. One reviewer asked to make the dataset available. Please carefully address these major comments when preparing a revision.
+label_author_1
+Reviewer 1 ·
+Jun 4, 2018
+Basic reporting
+label_br_1
+The paper is written in professional English. The literature references are properly summarized. The paper follows a professional article structure.
+Experimental design
+label_ed_1
+The problem studied is within the aims and scope of PeerJ. Researcher questions are meaningful and well-defined. The experiments are not well designed. The description of section results-simulated data is very unclear. The authors should describe how data is simulated, and what the corresponding results are. Instead, the authors describe a mixture of ML models together with unclear results. I have checked the part for a couple of times, and I still don't understand it very well. Moreover, for the MNIST part of the simulated data, would the authors be more clear about this statement: "The ten digits were condensed into five classes, with shorter survival for higher numbers"?
+Validity of the findings
+label_votf_1
+no comment
+Comments for the author
+label_cfta_1
+Besides the unclear experimental design, I have two other major comments. 1) In the second paragraph of the Introduction, the authors motivate their work based on three points. To me, the first two motivations are not valid at all, i.e., - Few of the authors have published source code - only some of the models are implemented in modern frameworks such as TensorFlow and Keras I believe that these problems can be easily solved by some not-very-complicated engineering work. 2) In the description of the experimental results, the authors mention that "which was slightly inferior to the neural network survival model", this means the proposed neural network survival model is not really advancing the state-of-the-art. In this way, I don't see how this paper can meet the standard of a PeerJ publication. Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #1 of "A scalable discrete-time survival model for neural networks (v0.1)" . PeerJ https://doi.org/10.7287/peerj.6257v0.1/reviews/1
+label_author_2
+Reviewer 2 ·
+Jun 27, 2018
+Basic reporting
+label_br_2
+This manuscript needs significant re-organization. A lot of wording should occur in the Methods section appears in the Results section. And some sections of Results read like manual/protocol, rather than research results (eg. line 230-246) The Stanford Medical System metastatic cancer data do not appear to be public/shared.
+Experimental design
+label_ed_2
+As mentioned above, some data are not public to be replicable. More comparisons with other neural network based methods, including deepSurv and cox-nnet, need to be demonstrated (for both accuracy and running time efficiency).
+Validity of the findings
+label_votf_2
+At various places, the statements need to be backed up by result demonstration. For example, the authors stated that one must use fix time intervals (yet have similar numbers of events) vs. alternative approach where the number of events is fixed but the time interval length varies (line 186-189).
+Comments for the author
+label_cfta_2
+The reviewer appreciate the idea behind this manuscript. It is certainly appealing to supplement a NN based model when the data violates the proportional hazards assumption in the cox-PH model. It is also neat to have trained minibatch in each discrete time to enable fast training of the models. The authors did a good job at motivating this approach. However, there are various technical and organizational issues of this manuscript. 1. The data sets used in this manuscript are yet to demonstrate that the Cox-PH model's assumptions fail on them, suggest to provide the evidence in supplementary figures. 2. There is no comparison with other neural network/ deep learning based Cox-PH extension methods, including DeepSurv and Cox-nnet. The authors need to compare their method with these two methods, in terms of accuracy and speed. 3. The authors described 4 simulated data sets, however only show results on 1 data set, they need to show all 4 data (otherwise why mentioning them?) 4. Various places, the authors made claims without showing the evidence, please include evidence as supplementary figures. For example, what supports the statement on line 186-189? 5. How many time intervals exactly to have in order to have the best performing method? Rather than a range of 30-50? Any ways to optimize it for the reader, rather than being a user supplied number? 6. This manuscript needs significant re-organization. A lot of wording should occur in the Methods section appears in the Results section. And some sections of Results read like manual/protocol, rather than research results (eg. line 230-246). 7. The Stanford Medical System metastatic cancer data do not appear to be public/shared. This violates peerJ policy. Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #2 of "A scalable discrete-time survival model for neural networks (v0.1)" . PeerJ https://doi.org/10.7287/peerj.6257v0.1/reviews/2 Download Original Submission (PDF)
+- submitted May 14, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+NA

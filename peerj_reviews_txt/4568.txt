@@ -1,0 +1,119 @@
+Review History for Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on January 8th, 2018 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 28th, 2018. The first revision was submitted on February 10th, 2018 and was reviewed by 2 reviewers and the Academic Editor. A further revision was submitted on March 6th, 2018 and was reviewed by 1 reviewer and the Academic Editor. The article was Accepted by the Academic Editor on March 13th, 2018.
+label_version_1
+Version 0.3 (accepted)
+Henkjan Huisman
+·
+Mar 13, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+All comments were addressed appropriately.
+label_author_1
+Reviewer 2 ·
+Mar 12, 2018
+Basic reporting
+label_br_1
+No Comment
+Experimental design
+label_ed_1
+No Comment
+Validity of the findings
+label_votf_1
+No Comment
+Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #2 of "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images (v0.3)" . PeerJ https://doi.org/10.7287/peerj.4568v0.3/reviews/2 Download Version 0.3 (PDF)
+Download author's rebuttal letter
+- submitted Mar 6, 2018
+label_version_2
+Version 0.2
+Henkjan Huisman
+·
+Feb 25, 2018
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+The rebuttal addressed many of the comments of the reviewers, with a few valid remarks left to answer. Please consider these. Regarding the performance on a case basis, I think it will suffice to state what the performance of human readers is on classifying cells. As stated in the introduction, your method should be better. The conclusion section needs adaptation. The paper states that it revalidates previously published methods using cross-validated, patient-based analysis, which is commendable. The valid hypothesis being that this might show that predicted performance decrease. In your study, you show a decrease in performance, but you did not compare to train/test set based analysis like in the previous literature. Comparing to previous studies and attributing the performance decrease is weak, as dataset and methods are always somewhat different. I am interested to see how you are going to solve this issue. The last section in the results section (336-343) should move to the discussion section. It is a bit weird to discuss your results in before drawing any conclusions. I like the fact that your method is intended to run on a smartphone. This probably will lead to using smaller models that have worse results. It wasn't clear when reading the text if this is the case in your study when comparing to other studies. This could also be part of the discussion section.
+label_author_2
+Gopakumar Gopalakrishna Pillai ·
+Feb 22, 2018
+Basic reporting
+label_br_2
+The manuscript is improved considerably.
+Experimental design
+label_ed_2
+Experimental design looks fine now, except for the validation of the segmentation/cell detection accuracy.
+Validity of the findings
+label_votf_2
+The findings are valid but need to be more specific in reporting especially for the qn 8 in their rebuttal letter.
+Comments for the author
+label_cfta_2
+For qn. 1 in rebuttal letter: Did you consider any other model? Why did you choose the specific architecture?) For qn. 2 : From the points, I believe that you did not evaluate the accuracy of segmentation. May be because you don't have manually annotated images for segmentation. I wonder how you measured the precision and recall for cell detection just by identifying the centroids. How did you compare the true centroids with the detected one? i.e., did you compare the exact pixel location or you had a tolerance? Make these things explicit. For qn. 3: Since there are many experiments done in the paper, when you report sensitivity and specificity, you are bound to specify the number of samples in the test set and for what cross validation/experiment the reported result is. For qn 8: I am not completely satisfied with the response for Qn 8 in the rebuttal. Suppose you are analyzing 1000 cells from 1% parasitaemic individual. Out of these cells, it is reasonable to believe that 990 cells are healthy and 10 cells are infected. Your best system with 0.947 sensitivity and 0.972 specificity will then behave something like this : It will detect 1 out of 10 infected cells as healthy and detect 27 healthy cells as infected. This means that for all samples, the system will identify infected cells. This is true even for the samples from a perfectly healthy individual. So the question is, how will it be useful? Or how many cells has to be analysed to ensure that 99.99% chance is there that we have identified really an infected cell among the so many identified infected cells. Every run in cross validation experiment (provided in Table 1) ideally should take same number of samples? Why there is a difference in number of samples used across the runs? How did you select the samples for each run? Any reported result in this paper to substantiate the claim made in line 291? How does the diagnostic odds ratio (line 298) differ from sensitivity? Minor comments: Fig. 1 : 2nd row Images placed one over the other and need to be corrected. Fig.2 looks a little odd. It could have drawn more professionally. Please proof read the document carefully. There are missing spaces (such as line 41), repeated words (such as improving improved in line 184) Cite this review as
+Gopalakrishna Pillai G ( 2018 ) Peer Review #1 of "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images (v0.2)" . PeerJ https://doi.org/10.7287/peerj.4568v0.2/reviews/1
+label_author_3
+Reviewer 2 ·
+Feb 14, 2018
+Basic reporting
+label_br_3
+No Comment
+Experimental design
+label_ed_3
+No Comment
+Validity of the findings
+label_votf_3
+No Comment
+Comments for the author
+label_cfta_3
+I think the paper has now been substantially improved and deserves publication. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #2 of "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images (v0.2)" . PeerJ https://doi.org/10.7287/peerj.4568v0.2/reviews/2 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Feb 10, 2018
+label_version_3
+Version 0.1 (original submission)
+Henkjan Huisman
+·
+Jan 28, 2018
+label_recommendation_3
+·
+Academic Editor
+Major Revisions
+The reviewers and I find the manuscript interesting, but in need of major revisions before it can be accepted. In addition to the in-depth constructive feedback by the reviewers, I would like to add the following. The strength of the paper is not in the novelty of the methods, but the validation on a larger clinical dataset. Remove any novelty claims and focus on the clinical validation aspect. The validation, as one of the reviewers mentioned, is not clear and could be biased. I want to see a very clear description of the train and test data and how exactly the performance was derived. I want to see cross-validation on a patient basis. The paper is about classification with various methods. Yet I see only one ROC curve. I expect to see more, one curve per method. Furthermore, I expect to see a proper statistical analysis of ROC outcome. Not Kruskal Wallis, but proper ROC analysis tools, consult a statistician. The order of the manuscript is not OK. The statistical analysis section comes after the results section which is very unusual. The results describe statistical tests. Please read the ICMJE recommendations about how to write a medical image analysis paper.
+label_author_4
+Gopakumar Gopalakrishna Pillai ·
+Jan 25, 2018
+Basic reporting
+label_br_4
+I am very happy to see that the work done by the authors are tested with sufficient dataset collected from real patients unlike many manuscripts (which often report results on cultured cell dataset / an insufficient dataset). The manuscript is written in good English.
+Experimental design
+label_ed_4
+Yes. The the work done by authors meet the aim and scope of the journal. Though the novelty is minimal (other than they have worked on real patient dataset), I think the manuscript can be substantially improved by addressing the comments that I have raised in 'validity of the findings' section reported below.
+Validity of the findings
+label_votf_4
+1. As you have pointed out (Lines 104 - 106), Liang et al. has reported that they have found (at least for the dataset that they were using), the custom designed CNN worked much better than the pretrained model (here, your choice). It would be interesting to see the behavior for your dataset. i.e., you design a CNN that works on the same set of images used to test the pretrained model and report the accuracy (sensitivity, specificity). 2. As you have pointed out in 141-142, RBC segmentation is an important and challenging task. You are claiming that the segmentation algorithm is novel. But this reviewer could not assess the novelty (from your part). For me, it appears that you have just combined two popular models. This thought, may be due to little details that you have provided on cell segmentation. Please elaborate. For example, in Fig.1 you can see neutrophils. How good your algorithm is in segmenting WBCs? What strategy you have used to distinguish a WBC (say a lymphocyte) from a heavily infected RBC? You must give details on cell segmentation and on the technique that you have used to assess the accuracy of segmentation? For example, manual annotation with the Dice coefficient as performance measure will do an independent evaluation. 3. Have you come across the following recent papers.? "Image analysis and machine learning for detecting malaria, 2017 Elsevier Translational Research" "Convolutional neural network-based malaria diagnosis from focus stack of blood smear images acquired using custom-built slide scanner. 2017 Wiley journal of Biophotonics" 4. Line 160 - 163, the authors are claiming that they have ensured sufficient data for training (generalized training) and sufficient data for testing? How did you conclude that the particular split is sufficient? 5. As you have pointed out in Line 107, you are also doing spatial scaling. Did you study its effect? It would be interesting to see the result of this study. 6. Can you justify/at least speculate on the behavior that you have reported in Lines 213 & 214? 7. When it comes to practical testing scenario, the number of infected cells is going to be very less compared to the uninfected cells (say in 1% parasitemia). Since the number of RBCs is very high in 1 microlitre of blood (~5 million), we need a system offering ~1 specificity and a very high sensitivity (say 0.995). In such case (especially for a medical system) rather than simply reporting sensitivity and specificity it is preferred to report a combined measure such as MCC as well. 8.In the practical scenario (in Point # 7), it would be interesting and beneficial if you add the following analysis Given a system (with p sensitivity, r specificity), how many RBCs need to be analyzed to confidently decide that a person is infected by malaria (given he has q% parasitemia). With the above reasoning/study, report how many RBCs you need to analyze to confidently decide (statistically significant) a person (with q% parasitemea) is infected or not by the best system that you have developed (say with DenseNet 121). Also report by the same system, what is the lower level of parasitemea you can diagnose.
+Comments for the author
+label_cfta_4
+I appreciate your work. As I have pointed out in above sections, the novelty is limited. However if you address all of my comments listed above, it is going to be a good paper and I believe that you can contribute great to the field (in building a usable device for malaria screening). Cite this review as
+Gopalakrishna Pillai G ( 2018 ) Peer Review #1 of "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images (v0.1)" . PeerJ https://doi.org/10.7287/peerj.4568v0.1/reviews/1
+label_author_5
+Reviewer 2 ·
+Jan 25, 2018
+Basic reporting
+label_br_5
+This article evaluated the performance of five well known pre-trained CNN models as feature extractors for automated malaria screening. This paper is well written and the performance of the proposed method seems to be good.
+Experimental design
+label_ed_5
+In general, the experimental design was good and clearly written. However, this article needs some major revisions.
+Validity of the findings
+No Comment
+Comments for the author
+Major points: 1) In the article, you have mentioned that: "In this study, we instantiated the convolutional part of the pre-trained CNNs, everything up to the fully-connected layers and trained a fully-connected model on top of the stored features." (lines 180-182) However, after reviewing your code (pre_trained_CNN_feature_extraction.py), I don't see the parts by which you store features, or freezing (fixing) the pre-trained layers in order to train just your defined fully-connected model. What I see in your code is that you have retrained (not fine-tune) the pre-trained model alongside your randomly initialized fully-connected model. When you adding a randomly initialized fully-connected model on top of a pre-trained model and training them all together (without freezing pre-trained layers), the large gradient updates triggered by the randomly initialized weights would wreck the learned weights in the pre-trained model. And as a result, you cannot claim that you have used a pre-trained model. 2) It worries me that you might have used your test data as your validation data too. In line 161, you have mentioned that: "In total, we had 24,760 cell images for training and 2730 for testing." and in your code (load_data.py - lines 9, 10 and 11) the numbers are: nb_train_samples = 24760 # training samples nb_valid_samples = 2730 # validation samples nb_test_samples = 2730 # test samples and there is no validation folder in your shared dataset file. Could you explain how you chose validation images? Minor points: 3) Can you provide examples of images on which the algorithm has failed? 4) In the first row of Figure 1, the input image (A) does not match with other images (B, C and D) Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #2 of "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images (v0.1)" . PeerJ https://doi.org/10.7287/peerj.4568v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Jan 8, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+NA

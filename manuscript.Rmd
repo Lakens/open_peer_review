@@ -1,0 +1,33 @@
+---
+title: "Open Peer Review"
+author: "Daniel Lakens"
+date: "22-9-2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Accessing Open Peer Reviews
+
+PeerJ assigns all articles a number from 1, increasing consequtively with each published manuscript. Reviews are always accessible in html (i.e., at https://peerj.com/articles/1/reviews for the first article). Using text-mining tools in R (cite R, RCurl, XML, stringer) we downloaded all reviews and stored them as individual text files. 
+
+
+
+The database created from PeerJ uses reviews published from 21 February 2012 till
+18 March 2019. These reviews come from 11 different scientific sections and contain a total
+of 6800 articles. The reviews of PeerJ are structured differently from The Royal Society and
+do not contain individual recommendations of the reviewers. Instead the recommendation of
+the academic editor is displayed on the different versions of the manuscript. PeerJ does
+publicize all the different versions of the submitted manuscripts opposed to The Royal
+Society which only publishes the final accepted manuscript. The reviews of PeerJ do not
+contain a set of standard questions, but use 4 different topic on which the reviewers are asked
+to comment. These topics are; basic reporting, experimental design, validity of the findings
+and comments for the author. The guidelines on which topic has to contain which information
+seems not to be strictly defined and it is mainly up to the decision of the reviewer what
+information to put in which section. Basic reporting and comments for the author sections
+commonly contain the majority of the peer review. In some cases the reviewers refer to
+attached documents that assumably were included in the correspondence, but these
+documents are not publicized along the reviews. In these cases the data will be regarded
+missing in the database.

@@ -1,0 +1,78 @@
+Review History for A direct approach to estimating false discovery rates conditional on covariates [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History A direct approach to estimating false discovery rates conditional on covariates To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on June 26th, 2018 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on July 23rd, 2018. The first revision was submitted on October 24th, 2018 and was reviewed by 1 reviewer and the Academic Editor. The article was Accepted by the Academic Editor on October 30th, 2018.
+label_version_1
+Version 0.2 (accepted)
+Jun Chen
+·
+Oct 30, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+The reviewer is satisfied with the current revision. One minor comment: I noticed that you wrote that "The [22] methods use z-values, as opposed to the other methods, which use p-values; as a result, in this case we input the t-statistics into the Scott T approach, leading to a more pronounced anti-conservative behavior in some cases. " It seems more reasonable to transform the p-value into z-value (i.e., phi^{-1}(1 - pvalue)) before applying FDRreg. # PeerJ Staff Note - this decision was reviewed and approved by Elena Papaleo, a PeerJ Section Editor covering this Section #
+label_author_1
+Reviewer 1 ·
+Oct 27, 2018
+Basic reporting
+label_br_1
+No comment.
+Experimental design
+label_ed_1
+No comment.
+Validity of the findings
+label_votf_1
+No comment.
+Comments for the author
+label_cfta_1
+I am satisfied with the revision and would recommend it for publication. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "A direct approach to estimating false discovery rates conditional on covariates (v0.2)" . PeerJ https://doi.org/10.7287/peerj.6035v0.2/reviews/1 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Oct 24, 2018
+label_version_2
+Version 0.1 (original submission)
+Jun Chen
+·
+Jul 23, 2018
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+Both reviewers agree that the work is well-motivated, technically sound and practically useful. They also offered many suggestions to improve the method/manuscript including de-emphasizing of the proposed modified BH procedure, comparing to some state-of-the-art of method (IHW), conducting more robustness studies, providing guidance against potential FDR inflation and citing relevant literature. Please address these comments by additional simulations or further explanations. [# PeerJ Staff Note: It is PeerJ policy that additional references suggested during the peer-review process should only be included if the authors are in agreement that they are relevant and useful #]
+label_author_2
+Reviewer 1 ·
+Jul 9, 2018
+Basic reporting
+label_br_2
+Please see the report attached.
+Experimental design
+label_ed_2
+Please see the report attached.
+Validity of the findings
+label_votf_2
+Please see the report attached.
+Comments for the author
+label_cfta_2
+Please see the report attached. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "A direct approach to estimating false discovery rates conditional on covariates (v0.1)" . PeerJ https://doi.org/10.7287/peerj.6035v0.1/reviews/1
+label_author_3
+Wolfgang Huber ·
+Jul 22, 2018
+Basic reporting
+label_br_3
+no comment
+Experimental design
+label_ed_3
+no comment
+Validity of the findings
+label_votf_3
+no comment
+Comments for the author
+The authors present a framework for estimating the false discovery rate conditionally on covariates, when the p-values are independent of these under the null hypothesis. In the analysis of large scale datasets, this is an important, challenging and potentially valuable task. The paper is well-written, well-motivated, and technically sound. The underlying theme of this paper could be split into two parts: First, the authors propose an estimator of the proportion of null hypotheses conditionally on covariates. Second, they use the estimator to modify the standard Benjamini-Hochberg procedure. We remark on both aspects: A. Estimation of $pi_0(X_i)$: --------------------------- The first part, i.e., estimation of $pi_0(X_i)$ is, in our opinion, the selling point of this paper. The authors phrase the task of $pi_0(X_i)$ estimation as a regression task. This key observation opens up many opportunities; in this paper the authors explore the use of linear and logistic regression potentially in conjunction with regression splines. However, their idea also enables the use of machine learning methods (say random forests, boosting, neural networks) to estimate $pi_0(X_i)$, for example, if the covariates are complicated (say sequences or images) and high-dimensional. This is not mentioned explicitly in the paper, and we believe it would be worth mentioning. Furthermore, the authors emphasize the importance of estimating $pi_0(X_i)$ for tasks not directly related to down-stream multiple testing. For example, in the discussion they attribute the conservative behaviour in the right panel of Fig. 1 to publication bias. It would be interesting if this could be discussed in more detail. Some missing references for this section include: the SABHA procedure [1], which also uses the thresholded p-values to estimate $pi_0(X_i)$ but employs a maximum likelihood approach + convex optimization instead; AdaPT [2], which uses EM and logistic regression to estimate $pi_0(X_i)$; and for categorical covariates, as in supplement S2.2., the GBH [3] procedure, which uses a standard $pi_0$ estimator within each level. It could also be interesting to see the following: How does averaging all the $hat{pi}_0(X_i)$ perform compared to $hat{pi_0}$, if we are just interested in estimating the global $pi_0$? B. Downstream multiple testing with FDR control: ---------------------------------------------- Another large part of this paper is concerned with modifying the BH procedure to account for $pi_0(X_i)$ estimation. This is achieved by multiplying the adjusted p-values by the corresponding conditional $pi_0$ estimate. We feel that this part of the paper is not as well motivated and could potentially be drastically deemphasized or even removed, similarly to an older version of this manuscript [4]. The main caveats of this section are as follows: The proposed scheme of modifying BH is essentially the same as that proposed in the SABHA procedure [1]. Second, as mentioned in [2] and [5], this scheme is inadmissible even under oracle knowledge of $pi_0(X_i)$. Instead one should use a weighted BH scheme. One choice would be to use weighted BH with weights equal to $(1-pi_0(X_i))/pi_0(X_i)/(1-pi_{0,ext{global}})$. This is the scheme proposed for categorical covariates in the GBH [3] procedure, and it leads to power increase both by upweighting the right hypotheses and by being adaptive (alpha-exhaustive). It would be important to see how such a scheme performs compared to the method presented here; we think it would further illustrate why task A. is so important. A further option would be to also use weights proportional to $(1-pi_0(X_i))/pi_0(X_i)$, but normalized to average to 1. Then the procedure would no longer be adaptive, but it could also be used with the cross-weighting scheme in [5] and would automatically enjoy finite sample FDR control guarantees. Minor remarks: ---------------- * After Eqn. (1): "Namely the expected fraction": Conditional on at least making one rejections? * $heta_i = 1$ when null is a bit confusing and non-standard notation, maybe change it to $heta_i = 0$. * Page 5 typo "In section S3 we provide theoretical results for this estimator in Section S2 of the suppl. materials" * Why not try the model with the cubic spline for Scenario 1 as well? * It would be nice to see simulations under the global null as well. * In the discussion it is mentioned that the method of Scott (2015) often does not control FDR. This was also mentioned/shown in [6] * Proof of Supplement S3: Some parentheses missing after "then we can combine them as follows" This review was prepared by Nikos Ignatiadis together with Wolfgang Huber. References: ------------ [1] Li, Ang, and Rina Foygel Barber. "Multiple testing with the structure adaptive Benjamini-Hochberg algorithm." arXiv preprint arXiv:1606.07926 (2016). [2] Lei, Lihua, and William Fithian. "AdaPT: an interactive procedure for multiple testing with side information." Journal of the Royal Statistical Society: Series B (Statistical Methodology) (2018). [3] Hu, James X., Hongyu Zhao, and Harrison H. Zhou. "False discovery rate control with groups." Journal of the American Statistical Association 105.491 (2010): 1215-1227. [4] Boca, Simina M., and Jeffrey T. Leek. "A regression framework for the proportion of true null hypotheses." bioRxiv (2015): 035675. [5] Ignatiadis, Nikolaos, and Wolfgang Huber. "Covariate-powered weighted multiple testing." arXiv preprint arXiv:1701.05179 (2018). [6] Ignatiadis, Nikolaos, et al. "Data-driven hypothesis weighting increases detection power in genome-scale multiple testing." Nature Methods 13.7 (2016): 577. Cite this review as
+Huber W ( 2018 ) Peer Review #2 of "A direct approach to estimating false discovery rates conditional on covariates (v0.1)" . PeerJ https://doi.org/10.7287/peerj.6035v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Jun 26, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

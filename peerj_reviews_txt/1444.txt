@@ -1,0 +1,76 @@
+Review History for Ranking, selecting, and prioritising genes with desirability functions [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Ranking, selecting, and prioritising genes with desirability functions To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on September 29th, 2015 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on October 23rd, 2015. The first revision was submitted on October 26th, 2015 and was reviewed by the Academic Editor. A further revision was submitted on October 29th, 2015 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on November 5th, 2015.
+label_version_1
+Version 0.3 (accepted)
+Mikhail Spivakov
+·
+Nov 5, 2015
+label_recommendation_1
+·
+Academic Editor
+Accept
+Thanks for addressing the reviewers' and my comments and apologies for the delay in getting back to you. I also apologise that one highlighted fragment contained no comments - it just meant to indicate that the highlighted statement was somewhat unclear (what exactly could be taken to be an "incorrect bin"?). If you'd like to amend this statement, please feel free to do so in the proof.
+Download Version 0.3 (PDF)
+Download author's rebuttal letter
+- submitted Oct 29, 2015
+label_version_2
+Version 0.2
+Mikhail Spivakov
+·
+Oct 27, 2015
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Dear Dr Lazic, Thank you for resubmitting the revised version promptly. I feel that in general your revised version adequately addresses the reviewers' comments, and therefore does not require a re-review. However, in my opinion, some statements introduced in the revision would benefit from more clarity, as indicated in the attached annotated version.
+Download annotated manuscript Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Oct 26, 2015
+label_version_3
+Version 0.1 (original submission)
+Mikhail Spivakov
+·
+Oct 23, 2015
+label_recommendation_3
+·
+Academic Editor
+Minor Revisions
+As you can see, Reviewer 1 has provided a few suggestions on improving the R implementation, which I hope you will find useful. The comments by Reviewer 2 are mainly regarding the statistical foundations of your method, and s/he has brought up a number of issues that in my view need addressing. I suggest you pay particular attention to the following points: 1) Do desirability functions reduce misclassification error? In light of Reviewer 2's comments, this claim needs to either be supported by additional evidence or softened/removed. 2) More background to other related techniques needs to be provided. Reviewer 2 has also provided suggestions on revising some explanatory statements in the Results and Discussion, which I hope you will find constructive.
+label_author_1
+Bernd Klaus ·
+Oct 9, 2015
+Basic reporting
+label_br_1
+* The author's email adress is not included on the title page
+Experimental design
+label_ed_1
+No Comments
+Validity of the findings
+label_votf_1
+No Comments
+Comments for the author
+label_cfta_1
+Review of "Ranking, selecting, and prioritising genes with desirability functions" by S. E. Lazic -------------------------------------------------------- The author presents a very mature an excellently written manuscript on the selection of candidate genes for follow up experiments. This is an important, but largely neglected topic in the analysis of high-throughput data sets in biology. As the author rightly points out, the criteria commonly used to select candidates are rather ad-hoc and often have undesirable properties, e.g. accumulation of false negatives. The author introduces a very simple and intuitive framework and includes an interesting case study. Furthermore, the analysis is available as an R-script and the methodology hase been implemented in an excellently documented R package. I have just some minor specific comments regarding the manuscript and the attached script that the author might want to take into consideration. Comments on the R-script ------------------------ 1.) Running the R-script in the supplement leads to the error that the function "d.middle" is not found. From the package vignette, it seem that the function "d.ends" is needed here. 2.) The direct use of "@" is not considered as a good coding style in R, rather use the actual getter function, namely use fData(d) and featureData(d)@data 3.) Running rm.ind <- which(as.character(featureData(d)@data[,"Gene ID"]) == "") d <- d[-rm.ind, ] twice will lead to an empty ExpressioSet, since which returns integer(0) the second time the script is run. (since the condition is always FALSE) It is considered a good practice to avoid which in these situations and rather use code like: rm.ind <- as.character(featureData(d)@data[,"Gene ID"]) == "" d <- d[!rm.ind, ] which does not have this problem. Comments on the manuscript ------------ 4.) Please add a direct link to the package vignette. Cite this review as
+Klaus B ( 2015 ) Peer Review #1 of "Ranking, selecting, and prioritising genes with desirability functions (v0.1)" . PeerJ https://doi.org/10.7287/peerj.1444v0.1/reviews/1
+label_author_2
+Reviewer 2 ·
+Oct 23, 2015
+Basic reporting
+label_br_2
+No Comments
+Experimental design
+label_ed_2
+No Comments
+Validity of the findings
+label_votf_2
+No Comments
+Comments for the author
+The manuscript describes an algorithm for rank aggregation using desirability functions in application to prioritization of genes using multiple criteria. I think this approach and the associated software is indeed very useful for any applied researcher seeking to make sense of the often contradicting rankings derived from using alternative ranking criteria (fold changes vs. t-score etc). While I appreciate the approach as in fact highly useful I think the manuscript itself needs more work. For example, the approach is motivated in the abstract and in the introduction by stating that "binning is inefficient and creates misclassification error". Unfortunately, any sort of thresholding will lead to type I/II errors, thus the art of determining an optimal threshold consists precisely to minimize these errors. In fact, the aggregated rank list produced by your algorithm also will need to be thresholded to decide which genes are important enough for follow-up study. Thus, this type of argument applies to any list, aggregated or not. Another more valid argument would be that the aggregated ranks are more stable and more robust, and that they integrate diverse information. Another weakness of the manuscript is the lack of context. There are many methods for aggregating list, both in the general statistical and machine learning literature, as well as in the bioninformatics literature (just search for "rank aggregation" or "aggregation fold-change t-score"). It would be very good if you could place your work in context and at least provide some reference to this earlier work. When you describe the mapping to desirability functions (in the text and in Fig 1) you state that these provide general mappings to 0-1, but if I look at the figure I recognize that except for the categorical case they are already in on the scale 0-1. Thus, you need to explain a bit better what you are doing here - namely not just mapping to 0-1 (which the statistics apparently already are) but you place weights on specific functional values. Finally, your discussion of the mehod places a lot of emphasis on what your method is not. I would prefer you see a description what the approach actually is - a simple algorithm formalizing the aggregation of rank list that allows weighting of both the test statistics as well as the individual values. It is thus a very flexible instrument, that in the right skilled hands can produce briiiant results. Unfortunately, as there are many nobs to turn in your method, you can essentially get any ranking you want by deliberately down/up weighting a method or a specific value. Thus, a word of caution is warranted in your discussion - and the implementation of suitable default settings. In short, this is a useful method that allows to formalize subjective rank aggregation, and I greatly appreciate that the author provides a corresponding R package. Cite this review as
+Anonymous Reviewer ( 2015 ) Peer Review #2 of "Ranking, selecting, and prioritising genes with desirability functions (v0.1)" . PeerJ https://doi.org/10.7287/peerj.1444v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Sep 29, 2015 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

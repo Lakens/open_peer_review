@@ -1,0 +1,62 @@
+Review History for PlasmidSeeker: identification of known plasmids from bacterial whole genome sequencing reads [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History PlasmidSeeker: identification of known plasmids from bacterial whole genome sequencing reads To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on January 26th, 2018 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on March 7th, 2018. The first revision was submitted on March 14th, 2018 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on March 19th, 2018.
+label_version_1
+Version 0.2 (accepted)
+Joseph Gillespie
+·
+Mar 19, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+Dear Dr. Roosaare and colleagues: Thank you for revising your manuscript and resubmitting in a timely fashion. I believe your revision has met the concerns raised by both reviewers, therefore I am accepting your work for publication in PeerJ. Congratulations! I anticipate that PlasmidSeeker will be a valuable resource for the bioinformatics and genomics community. Thanks for publishing with PeerJ, and I look forward to seeing your work in print! Best, -joe
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Mar 14, 2018
+label_version_2
+Version 0.1 (original submission)
+Joseph Gillespie
+·
+Mar 7, 2018
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Dear Dr. Roosaare and colleagues: I have now received two reviews of your work, and I am happy to relay to you that both are fairly positive. Please take a look at the concerns raised by the reviewers and address them accordingly. I believe that your work will be accepted for publication after a minor revision. I am curious of your response about selected read length as it pertains to practical data, such as MiSeq. Are your results robust to a variety of read-lengths? I look forward to your revision…good luck! -joe
+label_author_1
+Reviewer 1 ·
+Feb 9, 2018
+Basic reporting
+label_br_1
+The authors present a novel tool, PlasmidSeeker, which examines the co-occurence of k-mers between a query sequence, bacterial host and a plasmid database. This is done directly from raw reads, thus giving higher sensitivity but also saves the user for the major computational task of doing assembly.
+Experimental design
+label_ed_1
+As described by the authors, a method based solely on k-mers requires a database that is highly similar to the reference sequences. Here the sensitivity and specificity is tested with artificial sequence, mutated with SNP’s in different amounts. Plasmids are however also known to be extremely plastic, meaning that they quite quickly exchange their genomic information by switching out entire gene islands, as described by M. Couturier et al. (Couturier et al. 1988). Which is part of the reason why PlasmidFinder is based on replicons, as these are the constant parts of the plasmid (Carattoli et al. 2014). Another benchmark is thus needed, where entire islands of genes are changed. Besides the mapping of k-mers to a reference database, the authors also examine the copy-number difference between chromosomal k-mers and plasmid k-mers, where these are assumed to be different. The copy number of plasmids may be influenced by the library preparation used, and might therefore have impact on the detection and be worth mentioning (Turner n.d.). Overall, PlasmidSeeker seems to have great potential, and might help in outbreak investigations to gain a deeper insight on plasmid spread. Carattoli, Alessandra et al. 2014. “In Silico Detection and Typing of Plasmids Using PlasmidFinder and Plasmid Multilocus Sequence Typing.” Antimicrobial Agents and Chemotherapy 58(7):3895–3903. Retrieved February 8, 2018 (http://www.ncbi.nlm.nih.gov/pubmed/24777092). Couturier, M., F. Bex, P. L. Bergquist, and W. K. Maas. 1988. “Identification and Classification of Bacterial Plasmids.” Microbiological Reviews 52(3):375–95. Retrieved February 8, 2018 (http://www.ncbi.nlm.nih.gov/pubmed/3054468). Turner, Paul E. n.d. “Phenotypic Plasticity in Bacterial Plasmids.” Retrieved February 8, 2018 (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1470877/pdf/15166133.pdf).
+Validity of the findings
+label_votf_1
+No comment
+Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "PlasmidSeeker: identification of known plasmids from bacterial whole genome sequencing reads (v0.1)" . PeerJ https://doi.org/10.7287/peerj.4588v0.1/reviews/1
+label_author_2
+Adam Witney ·
+Mar 1, 2018
+Basic reporting
+label_br_2
+The text is clearly written and provides sufficient background information and references. A Makefile (or similar process file) could be referenced such that the reader could easily recreate the analysis in the paper,
+Experimental design
+label_ed_2
+The design seems reasonable, and the necessary parameter validation steps appear to have been performed. The purpose of the tool is well defined and targets an important research question i.e. robustly identifying plasmid sequences in WGS data. I would ask why 80bp was used for read simulation? A more realistic length would match that of MiSeq data i.e. 250-300bp. Does read length have any effect on k-mer frequencies and therefore the accuracy of results?
+Validity of the findings
+label_votf_2
+The results are well presented and the discussion and conclusions seem fair.
+Comments for the author
+label_cfta_2
+Line 86: claims that a reference genome from the same genus would be sufficient. This might be quite genus specific, there can be quite a high level of genome diversity in some genera. I don't think any evidence has been presented to support this? Line 133: can the "in house script" be made available? Maybe through github or in supplementary. It would help the reader reproduce the analyses A general comment, always write the species name in full the first time, and then subsequently abbreviate. E.g. Escherichia coli written in full at line 114, 189 and 211. Also check other species names. Cite this review as
+Witney AA ( 2018 ) Peer Review #2 of "PlasmidSeeker: identification of known plasmids from bacterial whole genome sequencing reads (v0.1)" . PeerJ https://doi.org/10.7287/peerj.4588v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Jan 26, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

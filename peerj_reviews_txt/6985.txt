@@ -1,0 +1,133 @@
+Review History for Simphony: simulating large-scale, rhythmic data [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Simphony: simulating large-scale, rhythmic data To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on December 19th, 2018 and was peer-reviewed by 3 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 21st, 2019. The first revision was submitted on March 7th, 2019 and was reviewed by 3 reviewers and the Academic Editor. A further revision was submitted on April 12th, 2019 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on April 19th, 2019.
+label_version_1
+Version 0.3 (accepted)
+Andrew Gray
+·
+Apr 19, 2019
+label_recommendation_1
+·
+Academic Editor
+Accept
+Your revisions have addressed all of the outstanding comments. I look forward to seeing any new features you decide to add to Simphony in the future. # PeerJ Staff Note - this decision was reviewed and approved by Elena Papaleo, a PeerJ Section Editor covering this Section #
+Download Version 0.3 (PDF)
+Download author's rebuttal letter
+- submitted Apr 12, 2019
+label_version_2
+Version 0.2
+Andrew Gray
+·
+Mar 28, 2019
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+The reviewers have made some additional comments about your manuscript but I do not expect that these will be too difficult for you to address and I look forward to seeing your revised manuscript with a point-by-point response to each of their comments. As you can see, Reviewer #3 is happy with the manuscript as it stands. Reviewer #1 raises a query about the wording “lightweight”. I think you are using this term in its software engineering context, but you may well wish to take their advice and choose a term that could not be misunderstood in other contexts, where it might be seen as pejorative. I think their other follow-up question around multiple cycles is important, but I also take what I understand to be your point that under the assumption of stationarity, a single cycle can still be used to estimate the parameters (albeit with lower precision) and detect rhythmicity (albeit with lower power). I think that this highlights the tension between analysing real-world data, where stationarity cannot, as a rule, be assumed, versus analysing simulated data to demonstrate that the simulation process operated as expected. I wonder if this point could be made clearer in the manuscript. Their other comment about the extent of this manuscript is also valid, but I think I can see your argument about other planned work. Given the different audiences, the audience for this manuscript already being well-informed and looking for a tool to achieve a particular goal, I feel that the present manuscript has a distinct purpose that can be achieved despite its unusually short length. Reviewer #2 also raises important points, here including the question of short- and long-scale series. I think that this question overlaps with that from Reviewer #1 above and that similar statements explaining that if Simphony can work for short time series, then, in the absence of dampening or drift (or other non-stationarity), by its nature, it can also work for time series of arbitrary length would be a useful addition, perhaps around Line 89. Alternatively, you could make the point that the precision of parameter recovery and power for rhythmicity detection would improve with greater numbers of cycles and show this point empirically. Their second comment suggests to me that you still need to make it clearer that the scope of this manuscript is in the generation of data, not the detection of rhythmicity. An additional Symphony parameter for missing (presumably completely at random) data would be an option, which could be specified overall or by condition, but this could also be implemented by the user in base R without any difficulty so I will leave that possibility up to you. I agree that the addition of the R code, including showing how to write additional rhyFunc() definitions, would be helpful for the reader to be able to see here in a supplement.
+label_author_1
+Reviewer 1 ·
+Mar 17, 2019
+Basic reporting
+label_br_1
+The text refers to CircaInSilico as “lightweight”, which seems quite dismissive and harsh. Is that intended?
+Experimental design
+label_ed_1
+I appreciate that the figures were altered to show 2 cycles. However, I strongly disagree with the authors’ assertion that rhythmicity and period can be detected from a single cycle. There is no way to tell whether the pattern will repeat the next day without actually collecting the data. This computational tool should reflect that fact by only generating simulations that are at least 2 cycles long, and the text should make clear this important condition of requiring at least 2 cycles. I don’t understand the authors’ statement that simulating one cycle or multiple cycles is the same. The noise can vary substantially from cycle to cycle, and it’s important to see that variation when generating simulations for testing. The presence of noise is what often complicates the detection of rhythms, making each cycle different. Cosinor can’t fit to 1 cycle of data. It may generate some numbers, but they won’t be reliable.
+Validity of the findings
+label_votf_1
+The manuscript still seems really thin. I expect most readers won’t understand the fundamental purpose of this package without a more substantial example demonstrating how to use it in experimental design.
+Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #1 of "Simphony: simulating large-scale, rhythmic data (v0.2)" . PeerJ https://doi.org/10.7287/peerj.6985v0.2/reviews/1
+label_author_2
+Reviewer 2 ·
+Mar 14, 2019
+Basic reporting
+label_br_2
+Manuscript has notably improved after review. However, there are still some flaws on it. First, authors state that Simphony is a tool to simulate large-scale rhythmic data. But the paper focuses on very simple examples for shor time series. I strongly recommend to the authors to extend it (Figures) to large-scale data and compare results with those illustrated in the paper for short time series. Simphony accuracy should be assesed for those examples too. As far as I know, JTK does not detect correctly asymmetric patterns. How does it performs for sawtooth shapes? Does it work for slightly sawtooth shapes? Are you methodology ready for non-equal spaced or misssing data? On the other hand, mathematical functions used in R to simulate the examples illustrated in the paper should be included, at least in the Supplemental material, it may help to non familiar readers. Finally, I am not conviced of the novelty of this work, what are the advantages of this paper with respect to Deckard A, et al. (2013) (https://academic.oup.com/bioinformatics/article/29/24/3174/193410). It should be discussed in the paper.
+Experimental design
+label_ed_2
+See 1
+Validity of the findings
+label_votf_2
+See 1
+Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #2 of "Simphony: simulating large-scale, rhythmic data (v0.2)" . PeerJ https://doi.org/10.7287/peerj.6985v0.2/reviews/2
+label_author_3
+Reviewer 3 ·
+Mar 7, 2019
+Basic reporting
+label_br_3
+The authors did a great job responding/clarifying to all my previous critiques, and I am now comfortable with publication of this manuscript.
+Experimental design
+label_ed_3
+Fine.
+Validity of the findings
+label_votf_3
+Fine.
+Comments for the author
+label_cfta_3
+The authors did a great job responding/clarifying to all my previous critiques, and I am now comfortable with publication of this manuscript. Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #3 of "Simphony: simulating large-scale, rhythmic data (v0.2)" . PeerJ https://doi.org/10.7287/peerj.6985v0.2/reviews/3 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Mar 7, 2019
+label_version_3
+Version 0.1 (original submission)
+Andrew Gray
+·
+Jan 21, 2019
+label_recommendation_3
+·
+Academic Editor
+Major Revisions
+The reviewers have made some positive comments about your manuscript, and there is clearly a need for new packages in this area, but they have also raised a number of issues, some of which I think you could address without too much difficulty and others which might require appreciable work/extensions to the package. If you feel that you can address each of the reviewers’ comments, I would be very happy to see a revised version of the manuscript.
+label_author_4
+Reviewer 1 ·
+Jan 7, 2019
+Basic reporting
+label_br_4
+A freely available R package for generating realistic circadian time series is certainly a welcome addition, to assist in testing new rhythmicity and circadian parameter estimation methods. The manuscript is clearly written.
+Experimental design
+label_ed_4
+There is a serious flaw in the design in that the length of the simulations is only 24h, one cycle, in length. Rhythmicity testing requires 2 cycles at the very least. All the time series depicted in the main manuscript and in the supplement are all only 24 hours in length (the vignettes use only 24h as well). How can rhythmicity be tested with only one cycle? Just because a time series goes up and down over a day doesn’t mean it will do it again the next day. I’ve had experimental results where the first day looked like the first cycle of a rhythm, but then the next day was quite different, showing it was a transitory event and not a true rhythm (with a similar pattern across all samples, so multiple samples per time point doesn’t alleviate the problem). All examples should show at least 2 days. See https://www.ncbi.nlm.nih.gov/pubmed/29098954 for guidelines and best practices, which at least one of the manuscript authors signed onto and is referenced in the text. This article states, "By definition, biological rhythms repeat. We therefore recommend collecting at least 2 complete cycles of data when detecting rhythmicity (i.e., 48 h for collections under constant conditions). The guiding principle behind this recommendation is that when identifying a rhythmic process, one would like to observe both the peak and trough repeat at least once. Simulations show that collecting fewer than 2 cycles in a time series makes the resulting data sensitive to outliers and can dramatically increase the number of false-negatives (see the “Synthetic Data for Benchmarking” section)." For purposes of phase, waveform, and amplitude estimation, it's true that under LD entrained conditions 24h of data can be used. But rhythmicity cannot be correctly tested with only 1 day of data. How is limma detecting rhythmicity with only 1 day of data? Is it really testing for a sinusoidal waveform? In addition, in trying out the package, I couldn’t find a way to simulate time series longer than 24h. *It’s really important that there be an easy option for specifying length of the time series simulations.* Note that CircaInSilico does provide this feature. For use in studies after constant conditions or for LD conditions in which entrainment may not be stable (short or long T-cycles, skeleton PP, jet lag experiments, etc), multiple cycles will be very important.
+Validity of the findings
+label_votf_4
+Due to the serious flaw of only one cycle being simulated, the rhythmicity results shown in Figure 2 are not valid.
+Comments for the author
+label_cfta_4
+For clarity, please state explicitly in lines 94-95 that the count-dispersion relation is being used to generate the function g_ik; this direct link will help the reader make the connection. What choices does the user have: # days, time step, noise type and parameters, signal amplitude, phase, baseline, waveform, others? Perhaps include a table listing the options available, as a convenient summary showing the flexibility of the package. FigS2: just an example to illustrate options? Two simulated series for each condition and gene? Can it accurately detect the amplitudes and phases? The purported goal of the package is to provide large simulated datasets to guide experimental design, so do some examples that mimic large-scale experiments. For instance, demonstrate how to use the simulated data sets to determine how many samples are needed per time point given a certain sampling rate like every 4 hours over 2 days to achieve a desired false discovery rate. The current text seems a bit thin. Demonstrating its use by applying metacycle to a large simulated data set generated by symphony would nice to see, rather than only limma for the single validation example. Using a package like metacycle will provide an alternative rhythmicity test(s) as well as phase and amplitude estimates and could further expand the scenario in Figure S2 into an interesting test case (like determining what sampling rate with 2 days of data would be required for reliable estimation of phase). For installing simphony, note that you can also simply type drat::addRepo('hugheylab') Into the Console window. I couldn’t get the .Rprofile approach to work, but simply pasting that line into the Console worked fine. Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #1 of "Simphony: simulating large-scale, rhythmic data (v0.1)" . PeerJ https://doi.org/10.7287/peerj.6985v0.1/reviews/1
+label_author_5
+Reviewer 2 ·
+Jan 10, 2019
+Basic reporting
+label_br_5
+Authors present an R package, called Simphony, to simulate large-scale circadian transcriptome data regarding different rhythmic features measured at multiple time points in multiple conditions. To do so, a measure of abundance is generated regarding a signal-noise model using two distribution families: the Gaussian (idealized experimental scenario) and Negative Binomial (which approximates read counts from RNA-Seq). A github repository contains all package dependencies and data. This paper uses a suitable language and the structure and goals are clearly exposed. However, some statements require additional references and other times they are too old, see the comments made on lines 24,28 of the .pdf file. Literature review presents several gaps, see comments on the lines 34, 44 of the .pdf file. The scientific question proposed in this paper, i.e. the simulation of circadian rhythmic genes imitating real data bases is relevant for biologists. However, this question has been already dealt in literature (see the comments on line 34 in the .pdf file); the novelty of the simulation model-based is not clear (see comments on line 60 in the .pdf file); and the procedure is only validated for symmetric shapes, despite that circadian data bases also include non-sinusoidal patterns (see line 143 in the .pdf file). Please, see Experimental Design for details.
+Experimental design
+label_ed_5
+As I mentioned above, this paper presents a meaningful research question and methods are described with sufficient details. However, it presents several controversial points: A.- This question has been previously studied in literature, both for microarray (Dembelé (2013) among others) and RNA-seq technologies (Zappia, Phipson and Oshlack (2017) among others). Authors do not refer/compare to this fact in the paper. B.- The model employed to generate synthetic data is very close to Cosinor model, at least for the default case considered in this paper, i.e. when f is assumed to be a sinusoidal function. Authors should discuss the similarities/differences with this model. In addition, only this default (sinusoidal) function is considered to validate the procedure. It is not enough to replicate the wide variety of patterns that appear in practice. C.- As expected, results show a suitable performance of the simulation tool. Note that data were generated from a sinusoidal model and the fittings are made with Cosinor model (based on sinusoidal shape too). However, non-sinusoidal (asymmetric) rhythms are found in circadian data bases (Thaben 2014). Although, authors consider a sawthooth wave, it is again just a symmetric pattern. More arbitrary and extreme patterns are required to validate the procedure. Please, revise the attached .pdf file for specific details, comments and suggestions
+Validity of the findings
+label_votf_5
+The originality of the research question is questionable. Conclusions depends on the periodic simulation function (which is always symmetric) and on the Cosinor regression model which intrinsically assumes sinusoidal shapes. Thus, those conclusion cannot be extended to circadian data bases where there are many arbitrary rhythmic patterns, not only sinusoidal.
+Comments for the author
+label_cfta_5
+Please, find comments, details and suggestions in the attached .pdf file Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #2 of "Simphony: simulating large-scale, rhythmic data (v0.1)" . PeerJ https://doi.org/10.7287/peerj.6985v0.1/reviews/2
+label_author_6
+Reviewer 3 ·
+Jan 17, 2019
+Basic reporting
+label_br_6
+.
+Experimental design
+.
+Validity of the findings
+.
+Comments for the author
+Manuscript Title: Simphony: simulating large-scale, rhythmic data The increasing number of large-scale experimental datasets available for time-course analysis requires computational methods that can distinguish true periodic signal from noise. Simulated data, where truth is known, help to evaluate how well a particular method performs. In response to the lack of freely available (and flexible) tools for simulating periodic data, the authors developed and benchmarked a new framework called Simphony. Simphony represents a nice addition to the toolkit of any chronobiologist who designs or analyzes large-scale time-course experiments. Advantages over other publicly available tools are simulations that can more closely approximate experimental: 1) feature waveforms (not always sinusoid) and 2) distribution of RNAseq data (not always gaussian). As usual, the technical details of the work are superb. However, there are a some improvements that could improve the impact of the work [see below]. Although more flexible than current publicly available tools (i.e. CircaInSilico, JBR 2017), it is considerably less user-friendly. And, in terms of performance, it appears to be less flexible than prior published approaches. Improvements to either of these aspects would considerably increase the impact of Simphony as a resource and the paper as a consequence of that. Major Comments Different methods for rhythm detection usually perform best when validated against their own simulated datasets. There are few published papers that evaluate multiple methods using the same simulated dataset. In that sense, there is a need for a simulation framework that is both easy to use and generalizable, as the authors point out. Our concern, however, is that Simphony in its present form falls a bit short of meeting these needs. <U+25CF>Simphony generates two rhythmic waveforms. Are more necessary? In 2013, Deckard A. et al. reported a simulation generating six different periodic patterns and two non-periodic patterns. <U+25CF>While free to download and use in R stats, Simphony is still not as user-friendly as CircaInSilico (Hughes et al, JBR 2017), which can be run as a web-based App (no coding required). This could ease the learning curve and encourage wider adoption. <U+25CF>The manuscript lacks explicit description of how Simphony could be used to help guide the design of a typical time-course experiment. The ROC curves (Fig 2) demonstrate nicely how cosinor regression better discriminates rhythmic from non-rhythmic features when the sampling interval is smaller (and amplitudes are higher). This, however, is pretty intuitive, and a conclusion reached in prior work (e.g. Deckard et al., Bioinformatics, 2013, Hughes ME et al., PLoS Genet., 2009). A basic and recurring question for the researcher trying to balance dollars vs. detection power, is, what specifically do I gain by increasing temporal resolution and/or replicates? This should be addressed directly in the manuscript text and/or by package vignette. <U+25CF>The authors “plan to extend Simphony to simulate nonstationary trends (e.g., damped rhythms) and to accommodate different periods for different genes within a simulation.” This would make a strong addition to THIS initial publication! Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #3 of "Simphony: simulating large-scale, rhythmic data (v0.1)" . PeerJ https://doi.org/10.7287/peerj.6985v0.1/reviews/3 Download Original Submission (PDF)
+- submitted Dec 19, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

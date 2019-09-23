@@ -1,0 +1,120 @@
+Review History for corseq: fast and efficient identification of favoured codons from next generation sequencing reads [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History corseq: fast and efficient identification of favoured codons from next generation sequencing reads To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on March 6th, 2018 and was peer-reviewed by 3 reviewers and the Academic Editor. The Academic Editor made their initial decision on April 9th, 2018. The first revision was submitted on April 27th, 2018 and was reviewed by 2 reviewers and the Academic Editor. A further revision was submitted on June 3rd, 2018 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on June 6th, 2018.
+label_version_1
+Version 0.3 (accepted)
+Scott Emrich
+·
+Jun 6, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+Thanks for the point-by-point response and tracked changes. I am personally not sold on the Venn diagrams either but you have a sound reason and you understand the data better than we do. Best, - S # PeerJ Staff Note - this decision was reviewed and approved by Elena Papaleo, a PeerJ Section Editor covering this Section #
+Download Version 0.3 (PDF)
+Download author's rebuttal letter
+- submitted Jun 3, 2018
+label_version_2
+Version 0.2
+Scott Emrich
+·
+May 29, 2018
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Please see the reviews attached. Since these are largely minor revisions and both reviewers feel the paper is much approved, I will be able to do the final review myself (i.e., no need for additional reviews). Please see Gilchrist's discussion of "adaptive" vs. optimal as this is a valid point given the diversity of codon literature out there that have different underlying models.
+label_author_1
+Reviewer 1 ·
+May 14, 2018
+Basic reporting
+label_br_1
+My main critique is a few very minor grammatical errors that remain: line 31: "to infer the" to "the inference of" line 193: "design" to "designing" line 202: I think you mean something like "for the determination of" instead of "to investigate" line 222: "In facts" to "In fact"
+Experimental design
+label_ed_1
+No comment
+Validity of the findings
+label_votf_1
+No comment
+Comments for the author
+label_cfta_1
+The paper was much more clear and readable following the revisions. My concerns from the first round of review were addressed. The only revisions I would recommend are the few minor grammar issues noted above. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "corseq: fast and efficient identification of favoured codons from next generation sequencing reads (v0.2)" . PeerJ https://doi.org/10.7287/peerj.5099v0.2/reviews/1
+label_author_2
+Michael Gilchrist ·
+May 22, 2018
+Basic reporting
+label_br_2
+While the authors should be commended for addressing my previous comments and those of the other reviewers, I do have one major concern, which should be easy to address, and a number of more minor corrections that prevent me from being able to recommend this paper from being published in its current form. As a result of the authors responses and my re-reading of the paper, I have a fundamental problem with their use of the term ’optimal’. In the codon usage world, ’optimal’ usually refers to the one codon out of a family of synonyms most favored by natural selection. Here the authors apply the term to any codon whose usage increases between the low and high expression sets. This is inconsistent with previous usage and inaccurate. The authors’ comparisons allow them to identify ’selectively favored’ or ’adaptive’ codons and not necessarily all of them since as we illustrate and discuss in our work the authors now cite (e.g. Shah and Gilchrist 2011 and Gilchrist et al 2015), for amino acids with 3 or more codons, we can see non-linear changes in a codon’s frequency. Specifically, the frequency of a codon can actually increase and then decrease with protein production rate. For example, in Fig 6 from Gilchrist et al (2015, attached), we can see how the frequency of Ile’s ATT initially increases and then decreases with protein production rate, f. This is because ATT is selectively favored over the pessimal codon ATA and mutationally favored over the optimal codon ATC. As a result, ATT frequency can initially increase with f because it is more fit than ATA which is initially used with non-zero frequencies. In turn, both ATT and ATC frequency increases with f at the expense of ATA. However, once gene expression gets moderately high (around ln(f) = 0.75, ATA is so selectively disadvantageous that it is no longer used and only ATT and ATC are competing with one another. As a result, when increasing ln(f) above 0.75, we see ATC frequency increase at the expense of ATT. If selection was efficacious enough and/or protein translation of the genes with the highest rates, we’d only see ATC, but that’s not the case in yeast and not likely the case for codon families with 3 or more members other organisms. Thus, I’m going to insist that the authors use a different term than ’optimal’, such as ’selectively advantageous’ or ’favored’ or ’adaptive’. In a future study, the authors might want to see how well our code works with the k-mer data they are using. I suspect if they can get 50-100 codons for about 1000 genes, they might be able to estimate our model parameters <U+2206>M and <U+2206><U+03B7>, especially if they can use the density of reads per gene per codon as proxies for f. Minor Criticisms 1. The language is overall good, but there are numerous typos and inconsistencies. Here are a few examples from the .docx file with tracked changes (a) line (l) 113: vice versa is two words. (as is de novo l 69) (b) pseudo-Orf (l 222) vs pseudo-ORF (l 158). (c) l 83 lists only two, not three, fungal species. (d) Not sure what the authors mean by ’elaboration time’ on line 183. 2. The significance column Supplemental File 3 is not defined. Are the numbers - log10 (p)? 3. I still think the Venn diagrams are essentially uninformative. Why not just have a graph with how the frequency of concordance changes with sample size?
+Experimental design
+label_ed_2
+No Comment
+Validity of the findings
+label_votf_2
+No Comment
+Comments for the author
+label_cfta_2
+No comment Download annotated manuscript Cite this review as
+Gilchrist M ( 2018 ) Peer Review #3 of "corseq: fast and efficient identification of favoured codons from next generation sequencing reads (v0.2)" . PeerJ https://doi.org/10.7287/peerj.5099v0.2/reviews/3 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Apr 27, 2018
+label_version_3
+Version 0.1 (original submission)
+Scott Emrich
+·
+Apr 9, 2018
+label_recommendation_3
+·
+Academic Editor
+Major Revisions
+Dear authors, Thanks for your submission. As you can see from these three reviews there are opportunities to improve the clarity, English and rationale of the submitted manuscript. For example, at least 2 reviewers wondered why 2% was chosen. All three reviewers wanted details on why certain things were chosen/accomplished and, in particular, why Venn diagrams are used. Also please refer to Mike Gilchrist's public review re: mutation bias and also the original "Codon Adaptation Index" paper(s). In short, only highly expressed genes tend to matter (but I haven't read this myself given I know two reviewers well). The line plots in the 2011 PNAS paper show how things change with expression and how some tools (our own % min/max included) use the average values as a proxy but that might not be ideal. Hopefully these comments help you prepare and improve the readability of this work as all three seem to find the big picture interesting. Best, - S
+label_author_3
+Reviewer 1 ·
+Mar 13, 2018
+Basic reporting
+label_br_3
+1. A more thorough overview of what you are trying to do and how corseq accomplishes that (similar to what is in the discussion) placed before the "software implementation" section would be helpful for the reader 2. You focus on "optimizing" codons. It might be worth noting that there are various other studies claiming that sub-optimal codons at specific positions are important in protein formation to facilitate co-translational folding. 3. Figure 1's layout is a little confusing 4. Some minor grammatical/language issues throughout
+Experimental design
+label_ed_3
+Why do you use only the top and bottom 2% of kmers? Why not 1% or 3%? Add some reasoning here in the "software implementation" section.
+Validity of the findings
+label_votf_3
+No Comment
+Comments for the author
+label_cfta_3
+I think there might be a minor error in "The effect of the provided number of reads" section. Based on your other calculations your reads are 150bp, meaning that the bp coverage from 25,000 reads should be 3,750,000bp and not 3,500,000bp. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "corseq: fast and efficient identification of favoured codons from next generation sequencing reads (v0.1)" . PeerJ https://doi.org/10.7287/peerj.5099v0.1/reviews/1
+label_author_4
+Reviewer 2 ·
+Mar 20, 2018
+Basic reporting
+label_br_4
+The paper presents a method to identify codons that are preferably used in highly expressed genes in a given organism, given as input RNA sequence fragments and amino acid sequences of proteins from this organism. The paper is generally clear, except for its methods section, which needs additional information. It is not clear how the chi square test is performed, on which values, and how the results are interpreted. Equations would help to document the methods used. Currently it is not possible to reproduce the research with the information provided. The "conventional expression method (CEM)" is not described in sufficiently detail, and references to tools are used to substitute to descriptions of the method itself. It is also unclear to me why the Pearson correlation coefficient value is used instead of the corresponding p-value, which would be significantly more informative. English could be improved with some proofreading, to catch small errors like "were" instead of "was" on line 118, the use of the word "elaboration" throughout the manuscript, etc. References and background are sufficient and support the premise of the paper, as well as the objectives. The structure, figures, and tables of the article seem sufficiently professional. I could not find though any raw data, the only supplemental material I could locate was a manual for the corseq software. The article is mostly self contained, except for the methods' descriptions, as mentioned above. The results are relevant to the hypothesis.
+Experimental design
+label_ed_4
+In my opinion the primary research of this article falls within the aims and scope of the journal. The research question is well defined and meaningful, and solving the stated problem would be useful to researchers in the field of heterologous expression. The proposed solution is interesting, but the technical part is dominated by empiricism instead of analytical methods. K-mer size for example is determined by experimenting with seemingly random values of k, settling on the largest one that seems to reduce the number of k-mers shared between over- and under-expressed genes. Why not a higher value then? And why the 2% of the most frequent and least (not "less") frequent sequences are selected from the k-mers? How is this 2% value determined? All this information would help determine better the technical soundness of the methodology used. As presented currently, it is hard if not impossible to replicate the findings.
+Validity of the findings
+label_votf_4
+The findings of this paper are interesting and the conclusion is well stated. It may still be difficult to determine and even further quantify the effect this method's preferential codon selections would have on gene expression vs other methods, but that is probably outside the scope of this research.
+Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #2 of "corseq: fast and efficient identification of favoured codons from next generation sequencing reads (v0.1)" . PeerJ https://doi.org/10.7287/peerj.5099v0.1/reviews/2
+label_author_5
+Michael Gilchrist ·
+Apr 6, 2018
+Basic reporting
+label_br_5
+See attached
+Experimental design
+label_ed_5
+See Attached
+Validity of the findings
+See attached
+Comments for the author
+See attached Download annotated manuscript Cite this review as
+Gilchrist M ( 2018 ) Peer Review #3 of "corseq: fast and efficient identification of favoured codons from next generation sequencing reads (v0.1)" . PeerJ https://doi.org/10.7287/peerj.5099v0.1/reviews/3 Download Original Submission (PDF)
+- submitted Mar 6, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

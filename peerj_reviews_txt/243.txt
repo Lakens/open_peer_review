@@ -1,0 +1,76 @@
+Review History for PhyloSift: phylogenetic analysis of genomes and metagenomes [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History PhyloSift: phylogenetic analysis of genomes and metagenomes To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on March 21st, 2013 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on April 28th, 2013. The first revision was submitted on December 9th, 2013 and was reviewed by 1 reviewer and the Academic Editor. The article was Accepted by the Academic Editor on December 19th, 2013.
+label_version_1
+Version 0.2 (accepted)
+Ahmed Moustafa
+·
+Dec 19, 2013
+label_recommendation_1
+·
+Academic Editor
+Accept
+Thank you for the revised version of the manuscript. The manuscript is suitable for the publication in PeerJ.
+label_author_1
+Nicholas Loman ·
+Dec 17, 2013
+Basic reporting
+label_br_1
+I am grateful for the authors' considered responses to my questions and comments and am happy with the revised manuscript.
+Experimental design
+label_ed_1
+No comments
+Validity of the findings
+label_votf_1
+No comments
+Cite this review as
+Loman NJ ( 2014 ) Peer Review #1 of "PhyloSift: phylogenetic analysis of genomes and metagenomes (v0.2)" . PeerJ https://doi.org/10.7287/peerj.243v0.2/reviews/1 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Dec 9, 2013
+label_version_2
+Version 0.1 (original submission)
+Ahmed Moustafa
+·
+Apr 28, 2013
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+It would be very helpful to include in the introduction an overview on other methods and tools for taxonomic assignment and metagenomic analysis. It would also be very interesting to conduct a benchmarking against other tools in terms of the accuracy of the taxonomic assignment and the time (and maybe space) complexity. Both reviewers commented on the use of conversational and colloquial wording; therefore, it is suggested to revise into a more formal phrasing. Minor issues: [1] 16S (not 16s) and [2] The specification of the CPU referred to in the manuscript might provide some perception of the runtime requirement of PhyloSift.
+label_author_2
+Reviewer 1 ·
+Apr 24, 2013
+Basic reporting
+label_br_2
+Writing is fairly conversational. For example: "every kind of natural and unnatural site" and "the diversity of kinds of microbes". While these examples are from the first paragraph, this is common through-out the paper. I recommend that the authors review the paper closely for style. Lines 29-30: issues of contamination and taxonomic bias are still present in metagenomic surveys. For example, human skin is a common contaminant of microbial samples, and any given DNA extraction procedure will work better for some taxa than others. The real benefits of metagenomics are reduced cost of sequencing in terms of time, labor and money. I recommend revising this section for accuracy. The term "random shotgun metagenomic data" is introduced on line 59, but isn't defined there. It is worth defining this as the approaches described earlier for readers who aren't as familiar with this field. Line 136: "During database construction (described elsewhere)" - mention where this is described. Is this database publicly accessible as well? It would be useful for researchers interested in comparing other methods against PhyloSift if the reference data is available independently of the software. Line 144 is confusing. I suggest rewording. Line 156: discuss the shortcomings. Line 158: I'm confused about how this happens. How do you know which specific aligned reads of elite gene A match up with (i.e., are from the same genome as) which specific reads of elite gene B? The authors should provide the run times of their methods on different sized data sets so readers can get an idea of how long they will take to run, and how they scale.
+Experimental design
+label_ed_2
+No comments.
+Validity of the findings
+label_votf_2
+Figure 2: Is the QIIME analysis based on PCA or PCoA? If PCA, it should be recomputed as PCoA of unifrac distances, but I think it's PCoA based on line 329. The plots look similar, but Procrustes analysis would allow the authors to quantify the similarity (see for example this paper: http://www.sciencemag.org/content/332/6032/970.abstract ). Figure 4: A regression analysis is in order here. Also, while the results are different, it's not clear which is better. The Greengenes database is becoming the most widely used and reliable source for bacterial taxonomy. In addition to the NCBI taxonomy, it would be extremely useful if PhyloSift could provide taxonomic summaries based on the Greengenes taxonomy. When concatenating alignments of elite gene family reads, how is missing data handled (ie., families that aren't read)? If these are added as all gaps, how does that effect the quality of the resulting tree? (I'm not challenging the method here - I'm unsure of how it would work.) Line 358: The authors say that a possible explanation is breast-feeding status, but in the next sentence say that that does not appear to be the case. I'm confused about this. The authors next speculate about delivery mode, and note that there is no metadata available to investigate that. I would recommend getting in touch with the authors of the original paper to see if that data is available.
+Comments for the author
+label_cfta_2
+In general I think this is a useful addition to the field. As a general comment, I think the software is more likely to be well-received if the authors demonstrated novel results that could be identified from existing data using these methods which could not be obtained otherwise. Currently the authors apply their methods to the Yatsuneko Nature paper data. They highlight a different result for alpha diversity with their weighted PD metric, but that metric is not the focus of the paper (it sounds like this is reported somewhere else as the method is cited as in review). For the difference they observe in beta diversity with respect to QIIME, it's not clear whether this difference is something of biological interest, or an artefact of their methods as they're not able to provide any explantation for why it occurs. Cite this review as
+Anonymous Reviewer ( 2014 ) Peer Review #1 of "PhyloSift: phylogenetic analysis of genomes and metagenomes (v0.1)" . PeerJ https://doi.org/10.7287/peerj.243v0.1/reviews/1
+label_author_3
+Nicholas Loman ·
+Apr 18, 2013
+Basic reporting
+label_br_3
+The article appears to adhere to the PeerJ policies. The introduction is currently rather under-referenced, there is only a single reference on the first page! I would appreciate it if the authors would provide the necessary references for key concepts in the introduction; relevant metagenomics review articles, examples of case studies in the various fields mentioned, etc. Given the manuscript describes a pipeline for metagenomic sequence analysis, I would like to see more space devoted in the introduction to outlining the major methods for analysing such data (similarity-based, phylogenetic and composition based methods) and software implementations of these methods. This should perhaps be prioritised over some of the earlier introduction which could be edited for concision. The manuscript sometimes slips into colloquial use of language, e.g. 'more vexing'. Minor items Figure 1 is a little confusing in that it looks like the labels "rRNA" and "protein" relate to the input, whereas my impression is that the input is all metagenomics DNA which is translated. I think it is not strictly true to say "First, metagenomic samples reflect entire communities of organisms, unlike “traditional” genome sequencing which reflects a single individual of a population." as whole-genome shotgun sequencing often sequences a population that may or may not be clonal, depending on the way the sample was prepared (e.g. single cell, single colony, multiple colonies, multiple cells) etc. "Loss of linkage information occur in two ways: during sample extraction and size selection of fragments for sequencing." would be more accurate to say during fragmentation, as size selection is an optional step. In Figure 2 the PCA plots could use a legend delineating the meaning of the colours.
+Experimental design
+label_ed_3
+This is my first review for PeerJ and I am not sure how the guidelines should be interpreted for journal articles describing software. However, given the paper is structured into the standard Introduction/Methods/Results/Discussion format, I think the manuscript would benefit from some restructuring to ensure that methods and results are correctly placed. It may be helpful, as per the editorial guidelines, to explicitly state a question or set of questions which are addressed in the manuscript. For example, one approach might be to compare to existing methods, with the aim of providing a rationale for why Phylosift is superior in some regards to other solutions, either in terms of accuracy of phylogenetic placement, running time, additional functionality, etc. A table with some comparisons to other commonly used software would be really helpful. Personally I am interested in comparisons with approaches such as MEGAN (with LCA), Metaphlan, Phylopithia, ribosomal MLST and simpler approaches such as BLAST-best-hit.
+Validity of the findings
+label_votf_3
+I downloaded the software and successfully ran it both on the Mac and on the PC, with a few minor problems (for example, the shell script to launch Phylosift didn't work on the Mac, and I had to call it from the bin/) directory. I liked the selection of default reports including the taxonomic breakdowns and the Krona images which were intuitive to use. The results on my yet samples were promising, although I found that species and subspecies assignments were not always accurate. I appreciated the statistical information which i could use to interpret the confidence in these results. The software was rather slow to run on 1000 and 10,000 reads. I wonder how well this approach will scale. I appreciate the suggestion of the use of contigs to speed the process up, although I worry about the loss of abundance information, and I also worry about the formation of chimeric, 'consensus' contigs from mixtures that obscure rather than improve phylogenetic signal. I did find a very erroneous assignment of a read from Bacteroides hitting instead Vibrio cholera with strong statistical report which I have reported to the authors who are looking into it. On the basis of my findings I would have really liked to have seen a comparison of taxon assignment accuracy compared to other pipelines, perhaps trilled on mock community data. I was impressed by the level of documentation, the Github repository for the software and evidence of strong support from the developers.
+Comments for the author
+My major recommendation is that manuscript is improved for readability, by restructuring by reference to specific question or questions, and ensuring the correct separation of methods and results. Cite this review as
+Loman NJ ( 2014 ) Peer Review #2 of "PhyloSift: phylogenetic analysis of genomes and metagenomes (v0.1)" . PeerJ https://doi.org/10.7287/peerj.243v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Mar 21, 2013 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

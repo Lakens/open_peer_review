@@ -1,0 +1,64 @@
+Review History for Contribution of temporal data to predictive performance in 30-day readmission of morbidly obese patients [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Contribution of temporal data to predictive performance in 30-day readmission of morbidly obese patients To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on November 21st, 2016 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 24th, 2017. The first revision was submitted on March 24th, 2017 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on March 26th, 2017.
+label_version_1
+Version 0.2 (accepted)
+David Meyre
+·
+Mar 26, 2017
+label_recommendation_1
+·
+Academic Editor
+Accept
+The authors have addressed the questions of the two reviewers, thank you.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Mar 24, 2017
+label_version_2
+Version 0.1 (original submission)
+David Meyre
+·
+Jan 24, 2017
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+Please address carefully the points raised by the two reviewers.
+label_author_1
+Reviewer 1 ·
+Dec 14, 2016
+Basic reporting
+label_br_1
+The manuscript is well-written and there are certainly no problems with the choice of wordings. However, the manuscript is not well structured for the reader. For example, there is no need to specify a 30-day cut-off in the first sentence of the abstract to be mentioned again in the following sentence that describes current research practices. The objective sentence for the purpose of the study does not convey a proper research question. The Methods section does not flow, where the sample sizes of each data are confusing. Please consider structuring the methods section, starting with the data source and the inclusion criteria to make up the five different, yet, overlapping sample populations. It is also not clear why some of the methods were used. (i.e. regularized logistic regression, independent t-tests and ANOVA). Similarly, the result section contains overlapping information, statistics based on methods not discussed in the methods section (i.e. ROC). Please consider providing more numbers in the results section rather than descriptive sentences. Please consider moving the section “Regularized Logistic Regression” into the statistical analyses section. The authors also seem to cite an R package to fit regularized logistic regression models, but do not explicitly state the software they’ve used in their analyses. I can also see that the objective function for regularized logistic regression is a clipped screenshot (https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html). Please consider using Mathtype if you’re using Microsoft Word, or other similar programs to neatly write out the minimization problem. These equations should be centered as well. Overall, I would recommend to 1) improve the organization and flow of information in the manuscript, and 2) avoid or simplify run-on sentences that are not direct to the point. In addition, please consider adjusting the manuscript figures by using different line symbols for each of the five data sets.
+Experimental design
+label_ed_1
+This study uses an admission database. Please check the ICD-9 code for morbid obesity. It’s 278.01, rather than 27.801 as stated in the manuscript (http://icd9.chrisendres.com/index.php?action=search&srchtext=278.01). Please note that ICD-9 codes in admission datasets are prone to false reporting due the influence of health insurance on medical practices. It is also not clear how the most frequent diagnosis were selected, and an arbitrary cut-off of 3% was used, but the authors do not state the pool sample that was used to obtain diagnosis frequencies. It would indicate whether different dichotomized predictors were used in each database. Most importantly, I have major concerns with the applied statistical methodologies in this the study. It is incorrect to compare the performance of fitted regularized logistic regression models across overlapping samples using t-tests and ANOVA. It is also not clear why P-values were not reported (<0.01?). Why are t-test or ANOVA test statistics, which are asymptotic test statistics, are applied when the sampling distributions are already derived using 100 bootstrap samples. The authors also seem to not fully grasp that 10-fold cross validations are used to select the tuning parameter in regularized regression, and it seems that bootstrap replicates involved models with different turning parameters, and hence different number of predictors, that could be available or absent in different databases. It is also interesting that 100 bootstrap replications were used to estimate the variability in their results, but I am not sure if this is correct since they are not based on the same fitted model in each replication. There are also no specification on the type of bootstrap used in this study. The study seems to also include assessments on the number of selected predictors, but do not realize that larger samples (i.e D_1) permit more stable models with more predictors compared to those smaller samples (i.e. D_5).
+Validity of the findings
+label_votf_1
+no comment
+Comments for the author
+label_cfta_1
+This study is valuable and would help improve patient care in practice, but the current applied statistical methodologies are not appropriate in order to draw valid conclusions. I would highly recommend the authors to look into random forests. Random forests do not suffer from overfitting and are robust to the presence of perfect separators to allow for the inclusion of more predictors. Random forests are fitted with X number of fitted classification trees, each having Y number of terminal nodes, and R number of bootstrap samples. Please see examples in the book, The Elements of Statistical Learning - Second Edition, and the randomForest R package as well Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #1 of "Contribution of temporal data to predictive performance in 30-day readmission of morbidly obese patients (v0.1)" . PeerJ https://doi.org/10.7287/peerj.3230v0.1/reviews/1
+label_author_2
+Marie Pigeyre ·
+Jan 19, 2017
+Basic reporting
+label_br_2
+This article is well written; the background is clearly exposed. The structure of the article follows the classical IMRAD structure. The figures are correctly designed and clear.
+Experimental design
+label_ed_2
+Whereas a reduction of readmissions of morbidly obese patients in the 30-days after discharge represents an important challenge for many hospitals, cross-sectional predictive models have been built to predict the occurrence of readmission within 30-days, mainly based on information from the current hospitalization. This research aim to demonstrate the gain of a predictive performance obtained by inclusion of information from historical hospitalization records. This question is clear and well defined. In terms of method, the authors used the California Statewide inpatient database to test their hypothesis (n=18,881), with an extraction from historical patient hospitalization records in a one year timeframe. - The authors have to mention the ethical approval for using these data. - A better description of the database (exhaustiveness of the recording, quality of the disease encoding, criteria to define/encode morbid obesity) could be added in the method (adding references using these database could also support that). Statistical models and analysis have been rigorously conducted.
+Validity of the findings
+label_votf_2
+The authors have demonstrated a gain of predictive performance when including information from up to three historical records, but not with more than three historical records. - A model without inclusion of historical records could be added in the comparisons (as reference), to better estimate the gain of historical record using, compared to a model not using historical records; this would reinforce their hypothesis. The discussion is adapted and linked to the original research question. - The applicability of their predictive model in the healthcare system could be also discussed, as well as its potential consequences (prevention of readmissions, better prediction of healthcare cost). The conclusion is well stated and clear.
+Comments for the author
+label_cfta_2
+no more general comments Cite this review as
+Pigeyre M ( 2017 ) Peer Review #2 of "Contribution of temporal data to predictive performance in 30-day readmission of morbidly obese patients (v0.1)" . PeerJ https://doi.org/10.7287/peerj.3230v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Nov 21, 2016 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+NA

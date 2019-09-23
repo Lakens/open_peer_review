@@ -1,0 +1,60 @@
+Review History for SECAPR—a bioinformatics pipeline for the rapid and user-friendly processing of targeted enriched Illumina sequences, from raw reads to alignments [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History SECAPR—a bioinformatics pipeline for the rapid and user-friendly processing of targeted enriched Illumina sequences, from raw reads to alignments To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on February 16th, 2018 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on April 21st, 2018. The first revision was submitted on June 1st, 2018 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on June 17th, 2018.
+label_version_1
+Version 0.2 (accepted)
+Goo Jun
+·
+Jun 17, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+As an editor, I am satisfied with the revision and I believe all the reviewers' comments are properly reflected in the revision. Please note that PeerJ does not provide proof editing, so make sure that everything on your manuscript looks correct. # PeerJ Staff Note - this decision was reviewed and approved by Elena Papaleo a PeerJ Section Editor covering this Section #
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Jun 1, 2018
+label_version_2
+Version 0.1 (original submission)
+Goo Jun
+·
+Apr 21, 2018
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Please refer to the detailed reviewers comments regarding the manuscript and the pipeline, especially regarding the errors in running the pipeline.
+label_author_1
+Reviewer 1 ·
+Mar 7, 2018
+Basic reporting
+label_br_1
+The authors present a generally well written article that details a bioinformatic tool for the alignment/assembly and consensus calling of targeted sequence data. The article is generally clear, unambiguous and well referenced. I have some minor suggestions for improvement below: Title – suggest adding “targeted enriched” to the title to discriminate this pipeline from those designed to work on whole-genome data. Line 51 –“ which are easiest to recover when specifically enriching these sequences across all samples prior to sequencing” Suggest changing to “simple to recover”. It is easy to extract homologous sequences for phylogenies regardless of pre-sequencing enrichment. Line 51: “archived” should be changed to “achieved” Line 106: Is FASTQC referenced properly here? Line 110 to 115: Is Trinity implemented as well? Would be good to include if so. Line 135: Using SAMTools? Line 148: “Recommendable” should be “recommended” Line 204-205: Wouldn’t this result be due to polyploidy within the Geonoma genus? Could the authors comment on this?
+Experimental design
+label_ed_1
+The software tool was well designed (installation was very simple, thank-you!) and easy to use. Dependencies are handled well, which is important for a tool that relies on so much other software. Although it doesn't affect the outcome of the study it would have been nice if the authors included more in the way of pipeline automation. Working my way through the tutorial was easy and everything was well explained but the major point of a pipeline is to automate the vast majority of steps and only require user input at critical stages. Surely not all stages of the pipeline would be critical for every data-set? Is there an easy way that someone without a good bioinformatic skill-set be able to automate the majority of the pipeline? Some consideration with regard to using this pipeline on high performance computing infrastructure would be useful. For example running this pipeline on 1000 samples would be very difficult without writing additional resource management scripts to help submit jobs to a scheduler. Granted this is probably out of the real of most researchers but these resources are becoming increasingly common and SECAPR is designed to be largely automated and able to process large numbers of samples. Some additional information about downstream approaches to phylogenetic analyses would help improve the paper (and online tutorial). After such a detailed and thorough guide through the workflow a novice user would be left with assembled contigs and alignment files but have difficulties with the next steps.
+Validity of the findings
+label_votf_1
+The data and data analysis are well presented in the article.
+Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "SECAPR—a bioinformatics pipeline for the rapid and user-friendly processing of targeted enriched Illumina sequences, from raw reads to alignments (v0.1)" . PeerJ https://doi.org/10.7287/peerj.5175v0.1/reviews/1
+label_author_2
+Corrinne Grover ·
+Apr 16, 2018
+Basic reporting
+label_br_2
+no comment
+Experimental design
+label_ed_2
+Here the authors developed a pipeline for assembling and using targeted sequence capture in non-model organisms, which has been a clear deficit in the current bioinformatic arena. The pipeline seems more or less sound; however, I wanted to use the pipeline on my own data to gauge success when paralogs are expected; when the distance between reference bait sequences and the recovered sequence varies; and where polyploidy is expected for some samples. I encountered a minimum of two problems, which both delayed this review and caused me to stop testing. The first error was in a section of the code for assemble_reads; i.e., the region in the python script which calls ABySS was commented out. This error actually took a little while to resolve since my first instinct was the the conda package was not playing well with our spack module environment. Assembly was successfully completed after removing these comment marks. The second error may also be due to a conflict in the conda evironment versus our existing spack module enviroment; however, I cannot be certain that there are no other errors preventing the code from running without spending more time on this. I would be happy to provide a bug report on the developer's github; however, it may be just as quick for the authors to bundle this for spack (https://spack.readthedocs.io/en/latest/index.html). I am not sure the relative prevalence of spack versus conda versus other module systems; however, porting this to spack should be relatively easy and make it more broadly accessible as spack gains in popularity.
+Validity of the findings
+label_votf_2
+no comment
+Cite this review as
+Grover C ( 2018 ) Peer Review #2 of "SECAPR—a bioinformatics pipeline for the rapid and user-friendly processing of targeted enriched Illumina sequences, from raw reads to alignments (v0.1)" . PeerJ https://doi.org/10.7287/peerj.5175v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Feb 16, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

@@ -1,0 +1,94 @@
+Review History for Whole genome sequencing of Streptococcus pneumoniae: development, evaluation and verification of targets for serogroup and serotype prediction using an automated pipeline [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Whole genome sequencing of Streptococcus pneumoniae : development, evaluation and verification of targets for serogroup and serotype prediction using an automated pipeline To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on June 14th, 2016 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on July 14th, 2016. The first revision was submitted on July 25th, 2016 and was reviewed by 2 reviewers and the Academic Editor. The article was Accepted by the Academic Editor on August 23rd, 2016.
+label_version_1
+Version 0.2 (accepted)
+Keith Crandall
+·
+Aug 23, 2016
+label_recommendation_1
+·
+Academic Editor
+Accept
+Thank you for your careful revision of your paper. Both the previous reviewers appreciated your responses to their concerns. I am now happy to recommend acceptance of your paper.
+label_author_1
+Ruth Timme ·
+Aug 15, 2016
+Basic reporting
+label_br_1
+All of my reviewer comments were addressed in this revision. Despite having both Bowtie2 and samtools programs included in my PATH variable, I'm able to run the program with the paths given as arguments. Congrats to the authors for a great manuscript.
+Experimental design
+label_ed_1
+none
+Validity of the findings
+label_votf_1
+none
+Comments for the author
+label_cfta_1
+none Cite this review as
+Timme R ( 2016 ) Peer Review #1 of "Whole genome sequencing of Streptococcus pneumoniae: development, evaluation and verification of targets for serogroup and serotype prediction using an automated pipeline (v0.2)" . PeerJ https://doi.org/10.7287/peerj.2477v0.2/reviews/1
+label_author_2
+Reviewer 2 ·
+Aug 5, 2016
+Basic reporting
+label_br_2
+No Comments
+Experimental design
+label_ed_2
+No Comments
+Validity of the findings
+label_votf_2
+All the concerns and comments are addressed by the authors.
+Comments for the author
+label_cfta_2
+I am satisfied with the response given by the authors to my comments. Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #2 of "Whole genome sequencing of Streptococcus pneumoniae: development, evaluation and verification of targets for serogroup and serotype prediction using an automated pipeline (v0.2)" . PeerJ https://doi.org/10.7287/peerj.2477v0.2/reviews/2 Download Version 0.2 (PDF)
+Download author's rebuttal letter Download author's rebuttal letter
+- submitted Jul 25, 2016
+label_version_2
+Version 0.1 (original submission)
+Keith Crandall
+·
+Jul 14, 2016
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+I have received two thorough reviews of your paper and both reviewers found it well-written and interesting. I concur and am happy to move forward with your paper pending some minor revisions. Please note especially Reviewer 1's comments with respect to the functionality of the software. This clearly needs to be addressed for the paper to move forward.
+label_author_3
+Ruth Timme ·
+Jul 8, 2016
+Basic reporting
+label_br_3
+This is a very well written manuscript with a clearly defined objective. The authors are presenting an automated tool that predicts Streptococcus pneunomiae serotypes (and serogroup) with higher accuracy than the current phenotypic immunological testing procedure. They walk through the pipeline design, and then validate the results with several large published datasets of phenotypically determined serotypes. No negative comments.
+Experimental design
+label_ed_3
+No negative comments to report. Experimental design was good.
+Validity of the findings
+label_votf_3
+The authors present results that drastically improve the repeatability, accuracy, and sensitivity of current methods.
+Comments for the author
+label_cfta_3
+Overall this manuscript was a pleasure to read. It is well-written and well organized. Most of my comments below are on trying to run the program itself, not on the manuscript. Major edits 1. Error when running the program on the Example files provided: user:~/analyses/PneumoCaT$ python PneumoCaT.py -i Examples/PHESPV1910 running bowtie index There was an error in the function 'output_all' ____________________________________________________________ Traceback (most recent call last): File "/home/user/analyses/PneumoCaT/modules/utility_functions.py", line 59, in try_and_except return function(*parameters, **named_parameters) File "/home/user/analyses/PneumoCaT/modules/Serotype_determiner_functions.py", line 306, in output_all qual_ascii = pileupread.alignment.qual[pileupread.qpos] AttributeError: 'pysam.calignedsegment.PileupRead' object has no attribute 'qpos' ____________________________________________________________ Traceback (most recent call last): File "PneumoCaT.py", line 140, in <module> main(opts) File "PneumoCaT.py", line 125, in main hits = Serotype_determiner_functions.find_serotype(opts.input_directory, fastq_files, reference_fasta_file, opts.output_dir, opts.bowtie, opts.samtools, opts.cleanup, id, logger, workflow=workflow, version=version) ## addition for step2 File "/home/user/analyses/PneumoCaT/modules/Serotype_determiner_functions.py", line 57, in find_serotype hits = try_and_except(input_directory + "/logs/strep_pneumo_serotyping.stderr", output_all,bam,reference_fasta_file,output_file,id,workflow,version) # added for step 2 File "/home/user/analyses/PneumoCaT/modules/utility_functions.py", line 77, in try_and_except error_file = open(error_filepath, "a") IOError: [Errno 2] No such file or directory: 'Examples/PHESPV1910/logs/strep_pneumo_serotyping.stderr' Minor edits GitHub Documentation: a.Overall the documentation is very thorough. However, I would highly recommend providing a tutorial section with the exact command on running the program on the example files. The “Examples” section of the documentation only provides suggestions on how to set up your input files. I was not able to successfully run the program on the example files given. b.Also, provide brief installation instructions for all the dependencies. Even if it’s just the linux command for installing the library, i.e. “pip install pysam”. c.Dependancies: Include the “2” in Bowtie. Bowtie2. The program doesn’t run with vs. 1. Text Edits: d.Line 182: Suggested RAXML model: For analyzing variant-only data you might consider using Paul Lewis’s model correction for ascertainment bias: raxml-PTHREADS -s snpma.fasta -n OutPutName.tre -m ASC_GTRCAT -v –asc-corr=lewis -p 123 -T 8 •The ASC_GTRCAT is the general model, then the ascertainment correction (–asc-corr) is “Lewis”, from Paul Lewis e.Line 256: double comma typo Cite this review as
+Timme R ( 2016 ) Peer Review #1 of "Whole genome sequencing of Streptococcus pneumoniae: development, evaluation and verification of targets for serogroup and serotype prediction using an automated pipeline (v0.1)" . PeerJ https://doi.org/10.7287/peerj.2477v0.1/reviews/1
+label_author_4
+Reviewer 2 ·
+Jul 14, 2016
+Basic reporting
+label_br_4
+The manuscript titled "Whole genome sequencing of Streptococcus pneumoniae: Development, evaluation and verification of targets for serogroup and serotype prediction using an automated pipeline" by Kapatai et al., is clearly written using professional English. They did a great job in explaning the background and the need for such a typing tool for S. pneumoniae. All the figures are relevant, well described and of high quality, which adheres to PeerJ policy
+Experimental design
+label_ed_4
+The experimental design is good and the research statement is well defined. The methods described ( both using mapping of reads and data from denovo contigs + SNP-based variant detection using mapping) are standard methods, which are appropriate for this type of analysis.
+Validity of the findings
+label_votf_4
+I have no comments. The conclusions are well stated.
+Comments for the author
+It is a useful tool for S. pneumoniae community. A general trend that I observe in such community or bug-specific software tools are the lack of continuing support. Due to WGS being a routine practice and more carriage studies being implemented, chances are high that more capsular locus reference sequences ( more than 94 used in this software) will be discovered in the future. Are the authors planning provide continuous support in updating the reference sequence database. Based on above mentioned concern, I do have 2 suggestions: 1. It would be great if the authors allow the users to specify there own database of reference capsular locus sequences. Please provide instructions on how to generate a custom database and how to specify them in the command line. 2. Many of researchers will have access to denovo assemblies and pacBio data. It would be great to add this component as an input file for the software. I know the read mapping data is more valuable than contigs, but this customization will help more users to use the tool. Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #2 of "Whole genome sequencing of Streptococcus pneumoniae: development, evaluation and verification of targets for serogroup and serotype prediction using an automated pipeline (v0.1)" . PeerJ https://doi.org/10.7287/peerj.2477v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Jun 14, 2016 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

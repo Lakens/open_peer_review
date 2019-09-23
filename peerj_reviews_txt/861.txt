@@ -1,0 +1,90 @@
+Review History for Bayesian inference of protein structure from chemical shift data [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Bayesian inference of protein structure from chemical shift data To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on December 20th, 2014 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 21st, 2015. The first revision was submitted on February 19th, 2015 and was reviewed by 2 reviewers and the Academic Editor. The article was Accepted by the Academic Editor on March 6th, 2015.
+label_version_1
+Version 0.2 (accepted)
+Ugo Bastolla
+·
+Mar 6, 2015
+label_recommendation_1
+·
+Academic Editor
+Accept
+Both reviewers are now satisfied with the present version, and I think that the paper is a relevant contribution to the field.
+label_author_1
+Reviewer 1 ·
+Feb 26, 2015
+Basic reporting
+label_br_1
+No comments
+Experimental design
+label_ed_1
+No comments
+Validity of the findings
+label_votf_1
+No comments
+Comments for the author
+label_cfta_1
+No comments Cite this review as
+Anonymous Reviewer ( 2015 ) Peer Review #1 of "Bayesian inference of protein structure from chemical shift data (v0.2)" . PeerJ https://doi.org/10.7287/peerj.861v0.2/reviews/1
+label_author_2
+Reviewer 2 ·
+Mar 6, 2015
+Basic reporting
+label_br_2
+The manuscript is acceptable in current form.
+Experimental design
+label_ed_2
+No additional comments.
+Validity of the findings
+label_votf_2
+No additional comments.
+Cite this review as
+Anonymous Reviewer ( 2015 ) Peer Review #2 of "Bayesian inference of protein structure from chemical shift data (v0.2)" . PeerJ https://doi.org/10.7287/peerj.861v0.2/reviews/2 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Feb 19, 2015
+label_version_2
+Version 0.1 (original submission)
+Ugo Bastolla
+·
+Jan 21, 2015
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+Please address the concern raised by the second reviewer about the singular behavior of the Jeffrey prior.
+label_author_3
+Reviewer 1 ·
+Jan 2, 2015
+Basic reporting
+label_br_3
+One sections, THEORY, does not conform to standard PeerJ manuscript style. However, it helps the overall presentation of the work and is therefore warranted, in my opinion.
+Experimental design
+label_ed_3
+No comments
+Validity of the findings
+label_votf_3
+No comments
+Comments for the author
+label_cfta_3
+The ms explores various ways of incorporating experimental chemical shift data with physical molecular mechanics modeling, in order to enhance protein structure prediction methods. In particular, a statistical framework is developed for carrying out the incorporation of data into a hybrid potential energy function, which can then be minimized. An interesting result is that there does not seem to be a single optimal procedure but that it depends on the protein. In other words, it may be difficult to a priori select the best procedure in a true blind prediction situation. The data obtained are robust and statistically sound, and the conclusions reached are appropriately stated and well-supported. As such, the work is a nice addition to the field and will no doubt aid future work in the area. Cite this review as
+Anonymous Reviewer ( 2015 ) Peer Review #1 of "Bayesian inference of protein structure from chemical shift data (v0.1)" . PeerJ https://doi.org/10.7287/peerj.861v0.1/reviews/1
+label_author_4
+Reviewer 2 ·
+Jan 21, 2015
+Basic reporting
+label_br_4
+1. The introduction (and partially the abstract) is inaccurate and should be rewritten. So, just as an example, the authors miss that CHESHIRE uses chemical shifts not only to predict torsion angles but also in the refinement phase where the energy function contains a contribution that depends on the correlation between experimental and calculated shifts. 2. The theory section contains errors. So equation (7) and (17) are wrong... because the Jeffrey prior in not normalizable. 3. "use of the Jeffrey’s prior and the Gaussian model with the empirical chemical shift predictor CamShift leads to numerical problems. The problems arises if <U+03C7>2j converges to zero, which leads to s j <U+2192> 0. " And this means that Jeffrys prior should not be used ... because we can not "blame" a predictor if the Chi2 is zero. A perfect predictor has to have Chi2=0 for the right structure or set of structures (if the correspondence is not 1-1). 4.Issues with CamShift...and Isoleucine, but it turns out to be a problem with PHISTOS hydrogen placement....
+Experimental design
+label_ed_4
+The authors should rethink the structure of the paper and state clearly what are the objectives and the logic they follow. An example. They use a Jeffry prior for sigma^2 (and a Gaussian error model) so that the "system" does not have any free parameters. Fine. But this leads to a singular probability distribution (E_hyb = -infty if Chi2=0, regardless of E_phys). So they regularise it with a semi-informative inverse-gamma prior. Fine again. The problem is that this regulariser has 2 free parameters alpha and beta (instead of 1: sigma^2) that they set arbitrarily to 0.001. So what is the point of the exercise? Going from a single parameter that has a "meaning": the variance of the prediction error on a test set, to 2 parameters that are arbitrary set to 0.001? An other example... E_hyb = -infinity if chi^2=0. Every meaningful model should have an energy function E>c over the configuration space otherwise the system will find a way to go there!
+Validity of the findings
+No comments
+Cite this review as
+Anonymous Reviewer ( 2015 ) Peer Review #2 of "Bayesian inference of protein structure from chemical shift data (v0.1)" . PeerJ https://doi.org/10.7287/peerj.861v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Dec 20, 2014 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+bioinformatics genomics

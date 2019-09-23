@@ -1,0 +1,62 @@
+Review History for FragBuilder: an efficient Python library to setup quantum chemistry calculations on peptides models [PeerJ]
+PeerJ Journals Peer-reviewed PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Advanced search of articles & preprints PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ Computer Science PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History FragBuilder: an efficient Python library to setup quantum chemistry calculations on peptides models To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on December 23rd, 2013 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 21st, 2014. The first revision was submitted on January 27th, 2014 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on January 27th, 2014.
+label_version_1
+Version 0.2 (accepted)
+Tomas Perez-Acle
+·
+Jan 27, 2014
+label_recommendation_1
+·
+Academic Editor
+Accept
+After a careful revision of your corrected manuscript, it is a pleasure for me to inform you that we have decided to accept your manuscript for immediate publication.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Jan 27, 2014
+label_version_2
+Version 0.1 (original submission)
+Tomas Perez-Acle
+·
+Jan 21, 2014
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+As you will see below in the reviewers' comments section, there are some minor concerns that should be carefully addressed before sending an improved version of your manuscript. After submission and verification of the requested changes, we will evaluate the final acceptance of your manuscript.
+label_author_1
+Daniel Lambrecht ·
+Jan 17, 2014
+Basic reporting
+label_br_1
+The paper is rather well written. There are a few cases where the language could be more precise. The authors say (p. 2) that "calculations on peptides have been used to parametrize ... molecular mechanics force fields, and NMR properties ...". More precisely, this should say "..., and models for the prediction of NMR properties ...". I am not certain what a "protein-like peptide" is (p. 2). Can the authors clarify what they mean by this expression? A few language suggestions: - p. 2: carry out calculationS - p. 5: FragBuilder offerS
+Experimental design
+label_ed_1
+The authors state that typical problems with structures that exhibit sterical clashes are "very large molecular gradients which cause the program to fail" and that this "prevented us from starting quantum mechanical geometry optimizations on the structures" (p. 5). It should be made clear that this is probably not a general problem of QM calculations, but of the particular QM program settings. While performing a force field pre-optimization is generally advantageous, there is no reason why the QM optimizer should not work when the force field optimizer does, even when the gradient is large. (The only exception is when the SCF fails to converge.) Probably the maximum step size in the optimizer simply needs to be adjusted. Cf. also the statement on p. 6 about a geometry optimization not starting because of a large initial gradient.
+Validity of the findings
+label_votf_1
+No Comments
+Comments for the author
+label_cfta_1
+This is useful work and it is laudable that it is being published under open source. As a suggestion for future work, one could consider adding interfaces to more QM packages, in particular open source ones. Cite this review as
+Lambrecht D ( 2014 ) Peer Review #1 of "FragBuilder: an efficient Python library to setup quantum chemistry calculations on peptides models (v0.1)" . PeerJ https://doi.org/10.7287/peerj.277v0.1/reviews/1
+label_author_2
+Claus Wilke ·
+Jan 2, 2014
+Basic reporting
+label_br_2
+Christensen et al. present a nice python library to generate and manipulate model peptides. The paper is clearly written and it explains the library well. The library itself seems useful; if this library had been available 2 years ago my lab would likely not have written the PeptideBuilder library (Tien et al. 2013, cited in this paper). I have a few minor comments: - I would be good to add a table listing all functions and objects provided by fragbuilder, maybe with a 1-sentence description of what they do. - In Section 3.2.2, the sampling via the BASILISK library could be explained in a little more detail. First, does the code example generate one new configuration, randomly chosen? Would it always be the same if the program is re-run multiple times, or would it differ (i.e., how is the random seed chosen)? Second, could you explain the BasiliskDBN class in a little more detail? - In Section 3.3, please list all keywords that are available for the nterm and cterm arguments, and state explicitly which keyword is chosen as default. (The way I understand the text, it seems to me that there are three options, "charged", "neutral", and one more that is not named. I may be misunderstanding, but either way this can be presented more clearly.) - In the first code example on p. 6, I'm not sure the comment is written as meant: "# The user can manipulate the structure here angles here" The phrase "structure here angles here" seems strange. - In reference Tien et al. 2013, the "B" in "PeptideBuilder" should be capitalized; the word "page" before "1:e80" should be deleted. - I encourage the authors to review capitalization of all article titles in the references. Remember that bibtex converts everything to lower case. There are several cases where I suspect the capitalization is wrong, e.g. Case et al. 2000.
+Experimental design
+label_ed_2
+No Comments.
+Validity of the findings
+label_votf_2
+The library installs easily. All provided example programs that I tried ran without error and seemed to produce reasonable results. The generated PDB files look correct.
+Cite this review as
+Wilke CO ( 2014 ) Peer Review #2 of "FragBuilder: an efficient Python library to setup quantum chemistry calculations on peptides models (v0.1)" . PeerJ https://doi.org/10.7287/peerj.277v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Dec 23, 2013 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ (life - bio - med) | Computer Science | Chemistry | PeerJ Preprints instructions Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Preprint feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ | PeerJ Computer Science | PeerJ Preprints
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+biochemistry biophysics molecular biology
