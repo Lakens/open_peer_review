@@ -1,9 +1,3 @@
-# install.packages("data.table")
-# install.packages("dplyr")
-# install.packages("formattable")
-# install.packages("tidyr")
-# install.packages("ggplot2")
-
 library(data.table)
 library(dplyr)
 library(formattable)
@@ -12,10 +6,14 @@ library(ggplot2)
 
 options(max.print=9999999)
 
-TRS_data <- read.csv(file = "E:\\Deze folder\\BEP Open Peer Review\\TRS_Dataset.csv")
-#print(TRS_data)
+# Read open science and open biology rds datafiles
+TRS_data_os <- readRDS(file = "royal_society_data_os.rds")
+TRS_data_ob <- readRDS(file = "royal_society_data_ob.rds")
 
-PeerJ_data <- read.csv(file = "E:\\Deze folder\\BEP Open Peer Review\\PeerJ_Dataset.csv")
+# Combine both datasets into one.
+TRS_data <- rbind(TRS_data_os, TRS_data_ob)
+
+PeerJ_data <- readRDS(file = "peerj_data.rds")
 #print(PeerJ_data)
 
 ###################Variables table###################
@@ -42,9 +40,9 @@ print(v)
 
 #####How many articles are accepted without the version being reviewed TRS#####
 v <- 0 
-for (i in 1:(length(TRS_data$X)-1)){
-  if ((TRS_data$df_version[i] == 1)&(is.na(TRS_data$df_version[i])==FALSE)){
-    if (TRS_data$df_link[i]!= TRS_data$df_link[i+1]){
+for (i in 1:(length(TRS_data$df_link) - 1)) {
+  if ((TRS_data$df_version[i] == 1) & (is.na(TRS_data$df_version[i]) == FALSE)) {
+    if (TRS_data$df_link[i] != TRS_data$df_link[i + 1]) {
       v = v + 1
     }
   }
@@ -61,8 +59,8 @@ v_mean_v_5 <- vector()
 v_250days <- c(1:250)
 v_250days_5 <- seq(from = 2.5, to = 252.5, by = 5)
 
-for (i in 1:length(PeerJ_data$X)) {
-  if ((PeerJ_data$df_link[i] != PeerJ_data$df_link[i+1])&(is.na(PeerJ_data$df_version[i])==FALSE)&(is.na(PeerJ_data$df_days[i]) == FALSE)){
+for (i in 1:length(PeerJ_data$df_link)-1) {
+  if ((PeerJ_data$df_link[i] != PeerJ_data$df_link[i+1]) & (is.na(PeerJ_data$df_version[i])==FALSE) & (is.na(PeerJ_data$df_days[i]) == FALSE)){
     v_days <- append(v_days, PeerJ_data$df_days[i])
     v_version <- append(v_version, PeerJ_data$df_version[i])
   }

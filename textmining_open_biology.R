@@ -5,21 +5,6 @@ library(tm)
 library(stringr)
 options(max.print=9999999) #allows the console to output more lines
 
-#########################################Getting the lexicons######################################################
-nrc_negative <- vector()
-nrc_positive <- vector()
-
-nrc <- get_sentiments("nrc") 
-
-for (i in 1:length(nrc$sentiment)){
-  if (nrc$sentiment[i] == "negative")
-    nrc_negative <- append(nrc_negative, nrc$word[i])
-}
-for (i in 1:length(nrc$sentiment)){
-  if (nrc$sentiment[i] == "positive")
-    nrc_positive <- append(nrc_positive, nrc$word[i])
-}
-
 #########################################variables used to create the dataframe#################################
 df_link <- c()
 df_section <- c()
@@ -28,15 +13,14 @@ df_version <- c()
 df_recommendation <- c()
 df_word_count <- c()
 df_masked <- c()
-df_positive <- c()
-df_negative <- c()
+df_reviewer_name <- c()
+df_reviewer_number <- c()
 df_id <- c()
 
 #########################################Read txt id##############################################################
 article_id <- vector()
 
-path <- "E:\\Deze folder\\BEP Open Peer Review\\OB_pdf_list.txt"  #the list of non corrupted Open Biology ID's 
-#path <- "E:\\Deze folder\\BEP Open Peer Review\\OS_pdf_list.txt" #the list of non corrupted Open Science ID's 
+path <- "royal_society_pdf_files/OB_pdf_list.txt"  #the list of non corrupted Open Biology ID's 
 
 conn <- file(path,open="r")
 article_id <- readLines(conn)
@@ -48,7 +32,7 @@ for (r in 1:length(article_id)){
   
   review_id <- article_id[r]
 
-  path <- paste("E:\\Deze folder\\\\BEP Open Peer Review\\TXT_Files\\TRS\\Open Biology\\Review", review_id, ".txt", sep="") #used for Open Biology
+  path <- paste("royal_society_txt_files/open_biology/review", review_id, ".txt", sep="") #used for Open Biology
   #path <- paste("E:\\Deze folder\\\\BEP Open Peer Review\\TXT_Files\\TRS\\Open Science\\Review", review_id, ".txt", sep="") #used for Open Science
   
   if (file.exists(path)){
@@ -75,6 +59,8 @@ for (r in 1:length(article_id)){
     positive <- vector()
     negative <- vector()
     switch_link <- 1
+    reviewer_name <- vector() #store reviewer names
+    reviewer_number <- vector() #store reviewer number
     
     word_count <- vector()  #Vector that contains the wordcounts
     review_count <- 1       #Counts which review is being counted
@@ -99,36 +85,36 @@ for (r in 1:length(article_id)){
       if (switch == 1) {
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i]), function(x) sum(x > 0))
         
-        sep_word <- strsplit(lines[i], " ")
-        sep_word <- unlist(sep_word)
-        
-        d <- data.frame(sep_word, stringsAsFactors = FALSE)
-        
-        for (j in 1:length(d$sep_word)){
-          d$sep_word[j] <- gsub(",", "", d$sep_word[j])
-          d$sep_word[j] <- gsub("\\.", "", d$sep_word[j])
-          
-          for (k in 1:length(nrc_negative)){
-            if (d$sep_word[j] == nrc_negative[k]){
-              negative[x] = negative[x] + 1
-            }
-          }
-          
-          for (l in 1:length(nrc_positive)){
-            if (d$sep_word[j] == nrc_positive[l]){
-              positive[x] = positive[x] + 1
-            }
-          }
-        }
+        # sep_word <- strsplit(lines[i], " ")
+        # sep_word <- unlist(sep_word)
+        # 
+        # d <- data.frame(sep_word, stringsAsFactors = FALSE)
+        # 
+        # for (j in 1:length(d$sep_word)){
+        #   d$sep_word[j] <- gsub(",", "", d$sep_word[j])
+        #   d$sep_word[j] <- gsub("\\.", "", d$sep_word[j])
+        #   
+        #   for (k in 1:length(nrc_negative)){
+        #     if (d$sep_word[j] == nrc_negative[k]){
+        #       negative[x] = negative[x] + 1
+        #     }
+        #   }
+        #   
+        #   for (l in 1:length(nrc_positive)){
+        #     if (d$sep_word[j] == nrc_positive[l]){
+        #       positive[x] = positive[x] + 1
+        #     }
+        #   }
+        # }
       }
       if(lines[i] == paste("label_comment_", recommendation_count - 1, sep="")) {
         switch <- 1
         x = x + 1
         review_count = review_count + 1
         word_count[x] <- 0
-        positive[x] <- 0
-        negative[x] <- 0
-        
+        # positive[x] <- 0
+        # negative[x] <- 0
+        # 
       }
       
       if (grepl("http://dx.doi.org", lines[i])&(switch_link == 1)){
@@ -174,6 +160,11 @@ for (r in 1:length(article_id)){
       }
       
       if (lines[i] == paste("label_author_", author_count, sep="")){
+        
+        #reviewer_name <- append(reviewer_name, gsub("Review form: ", "", lines[i+1])) #Save author name (or Reviewer name)
+        reviewer_name <- append(reviewer_name, str_sub(lines[i+1], 26, str_length(lines[i+1])-1))  #Save author name (or Reviewer name)
+        reviewer_number <- append(reviewer_number, str_sub(lines[i+1], 23, 23))  #Save author name (or Reviewer name)
+        
         if (str_sub(lines[i+1], 14, 24) == "Reviewer 1"){
           masked <- append(masked, 1)
         } else if (str_sub(lines[i+1], 14, 24) == "Reviewer 2"){
@@ -221,17 +212,17 @@ for (r in 1:length(article_id)){
         df_recommendation <- append(df_recommendation, recommendation[i])
         df_word_count <- append(df_word_count, word_count[i])
         df_masked <- append(df_masked, masked[i])
-        df_positive <- append(df_positive, positive[i])
-        df_negative <- append(df_negative, negative[i])
+        df_reviewer_name <- append(df_reviewer_name, reviewer_name[i])
+        df_reviewer_number <- append(df_reviewer_number, reviewer_number[i])
       }
     }
   }
 }#end all_loop
 
-df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_masked, df_positive, df_negative)
+df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_masked, df_reviewer_name, df_reviewer_number)
 
 OB_df <- df                                                #used to store Open Biology df 
 #OS_df <- df                                               #used to store Open Science df
 #total_df <- rbind(OS_df, OB_df)                           #used to combine the two df's
-#write.csv(total_df, file = "TRS_Dataset.csv")             #used to create the csv file
+saveRDS(df, file = "royal_society_data_ob.rds")             #used to create the csv file
     

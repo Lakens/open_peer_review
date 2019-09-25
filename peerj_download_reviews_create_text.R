@@ -1,16 +1,12 @@
-#install.packages("RCurl")
-#install.packages("XML")
-#install.packages(rvest)
-
 # load packages
 library(RCurl)
 library(XML)
 library(stringr)
 library(here)
 
-here("peerj_text_files")
+here()
 
-for (r in 1:7223){ #Uses the reviews 1 to 7240 from PeerJ
+for (r in 1:7223){ #Uses the reviews 1 to 7233 from PeerJ
   
   review_id <- r
   

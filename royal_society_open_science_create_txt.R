@@ -9,10 +9,10 @@ library(tm)
 #########################list of article id's#####################################
 article_id <- vector()
 
-#path <- "C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\Article_ID_OB.txt" #used for downloading the pdf's from open biology (list with the open biology ID's)
-#path <- "C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\Article_ID_OB.txt" #used for downloading the pdf's from open science (list with the open biology ID's)
-path <- "C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\OB_pdf_list.txt" #uses list in which the non-corrupted pdf id's of open biology are contained
-#path <- "C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\OS_pdf_list.txt" #uses list in which the non-corrupted pdf id's of open science are contained
+#path <- "royal_society_pdf_files/Article_ID_OB.txt" #used for downloading the pdf's from open biology (list with the open biology ID's)
+#path <- "royal_society_pdf_files/Article_ID_OB.txt" #used for downloading the pdf's from open science (list with the open biology ID's)
+#path <- "royal_society_pdf_files/OB_pdf_list.txt" #uses list in which the non-corrupted pdf id's of open biology are contained
+path <- "royal_society_pdf_files/OS_pdf_list.txt" #uses list in which the non-corrupted pdf id's of open science are contained
 
 conn <- file(path,open="r")
 article_id <- readLines(conn)
@@ -34,8 +34,7 @@ close(conn)
 
 ########################Reading pdf file #########################################
 for (i in 1:length(article_id)) {
-  pdf_file <- paste("C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\PDF_Files\\Open Biology\\review", article_id[i], ".pdf", sep="") #map with open biology pdf's
-  #pdf_file <- paste("C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\PDF_Files\\Open Science\\review", article_id[i], ".pdf", sep="") #map with open science pdf's
+  pdf_file <- paste("royal_society_pdf_files/open_science/review", article_id[i], ".pdf", sep="") #map with open science pdf's
   
   if (file.exists(pdf_file)){
   read <- readPDF(control = list(text = "-layout"))
@@ -58,7 +57,7 @@ for (i in 1:length(article_id)) {
   y <- 1
   
   while (y<x){
-    if (str_sub(trs_doc[y], 1,4) == "RSOB"){
+    if (str_sub(trs_doc[y], 1,4) == "RSOS"){ #Search for RSOS or RSOB
       trs_doc <- append(trs_doc, paste("label_version_", version_count, sep="" ), after = y - 1)
       version_count = version_count + 1
       x = x + 1
@@ -70,7 +69,7 @@ for (i in 1:length(article_id)) {
       x = x + 1
       y = y + 1
     }
-    if (str_sub(trs_doc[y], 1,15) == "Recommendation"){
+    if (str_sub(trs_doc[y], 1,15) == "Recommendation?"){ #There is a small difference between how the recommendation is coded in Open Science and Open Biology - is is "Recommendation?" in open science and "Recommendation" in Open Biology
       trs_doc <- append(trs_doc, paste("label_recommendation_", recommendation_count, sep="" ), after = y)
       recommendation_count = recommendation_count + 1
       x = x + 1
@@ -88,13 +87,11 @@ for (i in 1:length(article_id)) {
     y = y + 1
   }
   
-  trs_doc <- append(trs_doc, "Open Biology") #used for open biology
-  #trs_doc <- append(trs_doc, "Society Open") #used for open science
+  trs_doc <- append(trs_doc, "Society Open") #used for open science
 
 #######################Storing the list into a txt file###########################
 
-  final_txt_file <- paste("C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\TXT_Files\\TRS\\Open Biology\\Review", article_id[i], ".txt", sep="") #location where txt's are stored for Open biology
-  #final_txt_file <- paste("C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\TXT_Files\\TRS\\Open Science\\Review", article_id[i], ".txt", sep="") #location where txt's are stored for Open science
+  final_txt_file <- paste("royal_society_txt_files/open_science/review", article_id[i], ".txt", sep="") #location where txt's are stored for Open science
   
   sink(final_txt_file)
   for (i in 1:length(trs_doc)){

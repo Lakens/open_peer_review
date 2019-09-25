@@ -1,9 +1,3 @@
-###Notes###
-#install.packages("tidytext")
-#install.packages("dplyr")
-#install.packages("stringr")
-#install.packages("textdata") #for sentiment analysis
-
 library(dplyr)
 library(tidytext)
 library(pdftools)
@@ -11,22 +5,7 @@ library(tm)
 library(stringr)
 library(here)
 
-setwd("C:/Users/Daniel/surfdrive/R/open_peer_review/peerj_reviews_txt")
 here()
-#########################################Getting the lexicons######################################################
-nrc_negative <- vector()
-nrc_positive <- vector()
-
-nrc <- get_sentiments("nrc") 
-
-for (i in 1:length(nrc$sentiment)){
-  if (nrc$sentiment[i] == "negative")
-    nrc_negative <- append(nrc_negative, nrc$word[i])
-}
-for (i in 1:length(nrc$sentiment)){
-  if (nrc$sentiment[i] == "positive")
-    nrc_positive <- append(nrc_positive, nrc$word[i])
-}
 
 #########################################variables used to create the dataframe#################################
 df_link <- c()
@@ -36,20 +15,18 @@ df_version <- c()
 df_recommendation <- c()
 df_word_count <- c()
 df_masked <- c()
-df_positive <- c()
-df_negative <- c()
+df_reviewer_name <- c()
 df_id <- c()
 open_reviews <- 0
 closed_reviews <- 0
 total_version <- 0
 
-r <- 1
 #########################################read txt file##########################################################
-for (r in 1:10){ #starting the loop to create the dataframe from the 6800 PeerJ articles
+for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 PeerJ articles
   
   review_id <- r
   
-  path <- paste(review_id,".txt", sep="")
+  path <- paste("peerj_reviews_txt/",review_id,".txt", sep="")
   
   open_file <- file(path, open = "r")
   lines <- readLines(open_file)
@@ -70,8 +47,6 @@ for (r in 1:10){ #starting the loop to create the dataframe from the 6800 PeerJ 
     ###############################Word count, positive and negative###############################################
     
     word_count <- vector()  #Vector that contains the wordcounts
-    positive <- vector()    #Vector that contains the positive word count
-    negative <- vector()    #Vector that contains the negative word count
     review_count <- 1        #Counts which review is being counted
     x <- 0                  #counter for word_count position
     
@@ -84,97 +59,19 @@ for (r in 1:10){ #starting the loop to create the dataframe from the 6800 PeerJ 
       if(lines[i] == paste("label_br_", review_count, sep="")){
         x = x + 1
         word_count[x] <- 0
-        positive[x] <- 0
-        negative[x] <- 0
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        
-        # sep_word <- strsplit(lines[i+1], " ")
-        # sep_word <- unlist(sep_word)
-        # d <- data.frame(sep_word, stringsAsFactors = FALSE)
-        # 
-        # for (j in 1:length(d$sep_word)){
-        #   d$sep_word[j] <- gsub(",", "", d$sep_word[j])
-        #   d$sep_word[j] <- gsub("\\.", "", d$sep_word[j])
-        #   for (k in 1:length(nrc_negative)){
-        #     if (d$sep_word[j] == nrc_negative[k]){
-        #       negative[x] = negative[x] + 1
-        #     }
-        #   }
-        #   for (l in 1:length(nrc_positive)){
-        #     if (d$sep_word[j] == nrc_positive[l]){
-        #       positive[x] = positive[x] + 1
-        #     }
-        #   }
-        # }
       }
       
       if(lines[i] == paste("label_ed_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        
-        # sep_word <- strsplit(lines[i+1], " ")
-        # sep_word <- unlist(sep_word)
-        # d <- data.frame(sep_word, stringsAsFactors = FALSE)
-        # 
-        # for (j in 1:length(d$sep_word)){
-        #   d$sep_word[j] <- gsub(",", "", d$sep_word[j])
-        #   d$sep_word[j] <- gsub("\\.", "", d$sep_word[j])
-        #   for (k in 1:length(nrc_negative)){
-        #     if (d$sep_word[j] == nrc_negative[k]){
-        #       negative[x] = negative[x] + 1
-        #     }
-        #   }
-        #   for (l in 1:length(nrc_positive)){
-        #     if (d$sep_word[j] == nrc_positive[l]){
-        #       positive[x] = positive[x] + 1
-        #     }
-        #   }
-        # }
       }
       
       if(lines[i] == paste("label_votf_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        
-        # sep_word <- strsplit(lines[i+1], " ")
-        # sep_word <- unlist(sep_word)
-        # d <- data.frame(sep_word, stringsAsFactors = FALSE)
-        # 
-        # for (j in 1:length(d$sep_word)){
-        #   d$sep_word[j] <- gsub(",", "", d$sep_word[j])
-        #   d$sep_word[j] <- gsub("\\.", "", d$sep_word[j])
-        #   for (k in 1:length(nrc_negative)){
-        #     if (d$sep_word[j] == nrc_negative[k]){
-        #       negative[x] = negative[x] + 1
-        #     }
-        #   }
-        #   for (l in 1:length(nrc_positive)){
-        #     if (d$sep_word[j] == nrc_positive[l]){
-        #       positive[x] = positive[x] + 1
-        #     }
-        #   }
-        # }
       }
       
       if(lines[i] == paste("label_cfta_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        
-        # sep_word <- strsplit(lines[i+1], " ")
-        # sep_word <- unlist(sep_word)
-        # d <- data.frame(sep_word, stringsAsFactors = FALSE)
-        # 
-        # for (j in 1:length(d$sep_word)){
-        #   d$sep_word[j] <- gsub(",", "", d$sep_word[j])
-        #   d$sep_word[j] <- gsub("\\.", "", d$sep_word[j])
-        #   for (k in 1:length(nrc_negative)){
-        #     if (d$sep_word[j] == nrc_negative[k]){
-        #       negative[x] = negative[x] + 1
-        #     }
-        #   }
-        #   for (l in 1:length(nrc_positive)){
-        #     if (d$sep_word[j] == nrc_positive[l]){
-        #       positive[x] = positive[x] + 1
-        #     }
-        #   }
-        }
         review_count = review_count + 1
       }
     }
@@ -189,24 +86,25 @@ for (r in 1:10){ #starting the loop to create the dataframe from the 6800 PeerJ 
     adj_recommendation <- vector()
     author_count <- 1
     version_count <- 1
+    reviewer_name <- vector() #store reviewer names (or Reviewer X)
     
     
     for (i in 1:length(lines)){
       if(lines[i] == paste("label_recommendation_", recommendation_count, sep="")){
-        if (lines[i+1] == "Accept"){
+        if (lines[i+3] == "Accept"){
           rec <- 1 # 1 = accept
         }
-        if (lines[i+1] == "Minor Revisions"){
+        if (lines[i+3] == "Minor Revisions"){
           rec <- 2 # 2 = minor revisions
         }
-        if (lines[i+1] == "Major Revisions"){
+        if (lines[i+3] == "Major Revisions"){
           rec <- 3 #3 = major revisions
         }
-        if (lines[i+1] == "Reject"){
+        if (lines[i+3] == "Reject"){
           rec <- 4 #reject
         }
         if (recommendation_count == 1){
-          timelapse <- append(timelapse, lines[i-2])
+          timelapse <- append(timelapse, lines[i-1])
         }
         recommendation_count = recommendation_count +1
       }
@@ -217,6 +115,7 @@ for (r in 1:10){ #starting the loop to create the dataframe from the 6800 PeerJ 
         total_version <- total_version +1
       }
       if (lines[i] == paste("label_author_", author_count, sep="")){
+        reviewer_name <- append(reviewer_name, gsub(" ·", "", lines[i+1])) #Save author name (or Reviewer name)
         if (grepl("Reviewer", lines[i+1])){
           masked <- append(masked, 1)
           version <- append(version, version_count - 1)
@@ -290,8 +189,7 @@ for (r in 1:10){ #starting the loop to create the dataframe from the 6800 PeerJ 
         df_recommendation <- append(df_recommendation, recommendation[i])
         df_word_count <- append(df_word_count, word_count[i])
         df_masked <- append(df_masked, masked[i])
-        df_positive <- append(df_positive, positive[i])
-        df_negative <- append(df_negative, negative[i])
+        df_reviewer_name <- append(df_reviewer_name, reviewer_name[i])
       }
     }
     
@@ -301,10 +199,6 @@ for (r in 1:10){ #starting the loop to create the dataframe from the 6800 PeerJ 
 } # end all_loop
 
 #################################Creating dataframe and csv file#################################################
-df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_masked, df_positive, df_negative)
+df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_masked, df_reviewer_name)
 
-options(max.print=100000)
-print(open_reviews)
-print(closed_reviews)
-
-write.csv(df, file = "PeerJ_Dataset_test.csv")
+saveRDS(df, file = "peerj_data.rds")             #used to create the rds file
