@@ -1,0 +1,739 @@
+The shape of the contact–density function matters when
+modelling parasite transmission in fluctuating populations
+Benny Borremans, Jonas Reijniers, Niel Hens and Herwig Leirs
+Article citation details
+R. Soc. open sci. 4: 171308.
+http://dx.doi.org/10.1098/rsos.171308
+Review timeline
+Original submission: 4 September 2017 Note: Reports are unedited and appear as
+Revised submission: 25 October 2017 submitted by the referee. The review history
+Final acceptance: 25 October 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-171308.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Skylar Hopkins)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+For decades, two linear transmission functions have dominated the literature, even though
+intermediate nonlinear transmission functions might be more biologically realistic and tend to
+provide better descriptions of empirical datasets. But does it matter if we use linear vs. nonlinear
+transmission functions? Here, Borremans et al. use stochastic model simulations to show that the
+choice of linear vs. nonlinear transmission function has important implications for pathogen
+invasion and persistence probabilities. Though previous studies have considered how
+transmission functions differentially affect model dynamics and stability, Borremans et al.
+provide what is probably the most comprehensive demonstration to date, and their use of
+empirically-derived contact functions makes their model output particular meaningful. This work
+is important and well-written, and the topic should be of broad interest to researchers working
+with epidemiological models.
+For the most part, I can confirm that this work is technically sound. However, there are a few
+important details that I would like to challenge (i.e., use of the fitting constant and use of constant
+population densities – see below). It might be that these details *are* technically sound, but that
+they need to be better justified/described in the manuscript to improve communication to the
+reader. If so, they’ll be quick fixes. If these details are not technically sound, then the simulations
+need to be re-done without a fitting constant and/or with variable population densities. Those
+revisions are straightforward and do-able, but they would be time-consuming. Therefore, I’m
+recommending that this manuscript be accepted pending major revisions.
+Great work! I’m looking forward to seeing this published so that I can cite it in my future papers.
+– Skylar Hopkins
+The fitting constant, qi
+I’m having a hard time wrapping my head around the fitting constant used in your models. The
+fitting constant is used to “ensure[s] that a certain model result or parameter is equal for each
+function.” But the point of your study is that contact rates and thus transmission rates vary with
+density, and different models incorporate density differently, and thus I do not understand why
+you want the transmission rates (Betas) to be the same across models. It seems to me that since
+you already known the biologically appropriate contact function, you should be able to multiply
+c(N) by p to get the relevant transmission rate. My concern is that your approach might be
+inappropriate, and could be spuriously creating one of your main results: that the prevalence of
+infection does not differ appreciably among three of the transmission functions. There might be a
+good reason to use the fitting constant that I’m missing, but if so, you’ll need to justify in more
+detail why the fitting constant is necessary, so that it is easier for readers to understand.
+Density vs. population size
+Line 136: Do you mean that population size/density is constant (b = mu)? Or that the initial
+population size resets each year and varies through the year? If population size/density is
+actually temporally constant, then it doesn’t make sense to consider contact functions that vary
+with density, unless you’re comparing across population that vary in density across space. But
+given my next comment, it doesn’t seem like you’re varying densities across simulations/space,
+either…
+Lines 217-226: I think that exploring the effects of variable population size and density is
+interesting and potentially informative. However, this paragraph seems to say that you kept
+density constant while manipulating population size? Again, if true, then it doesn’t make sense to
+consider contact functions that vary with density. If you actually varied density, then you just
+3
+need to clarify further how you did so independently from varying population size. If you didn’t
+vary density, then you need to vary it temporally or “spatially” across simulations.
+Other important comments:
+Line 66: I agree that this is one argument for using the FD function with human infectious
+diseases. But I’ve also seen the argument that human contact behavior doesn’t appreciably
+change with density. To keep the epidemiologists happy, you might want to include and cite both
+reasons.
+Lines 76-83: I completely agree with the topic of this paragraph. However, I’d caution against
+singling out particular studies, and especially these two studies. I believe that the Ryder et al.
+lady bird study notes that they didn’t have the power to consider a nonlinear function. This is
+notable because the cost of the extra parameter(s) is the biggest downside to using nonlinear
+functions. And I talked to Angela Luis about transmission functions, and she’s tried nonlinear
+options with Sin Nombre - I think within the paper you cited, though it might be buried in an
+appendix. She told me that DD outperformed NL.
+Line 175: Why did you choose a power of 0.5 for an intermediate saturating shape? Was that the
+best fit from your previous study?
+Line 279-280: I think you can use a stronger opening line/paragraph without overselling your
+results. I’d at least point out that while most models assume constant population densities,
+*densities usually vary in space or time,* and you’ve shown that how we incorporate variable
+densities has important consequences for invasion and persistence.
+Minor comments:
+Line 27: should be “…intermediate nonlinear functions are…”
+Line 30: should be “…field data on Morogoro”
+Line 50-51: This opening sentence should probably be cited, since there isn’t another place where
+you cite or describe all of the existing work on this topic. For instance, the Fenton et al. 2002
+“reconciling theory and reality” paper did a bunch of work here.
+Line 59: should be “When the transmission…”
+Lines 109-110: should be “are an important agricultural pest species and a natural reservoir host”
+Line 156: would be more clear if it were “…number of events of each type (infection or
+recovery)…”
+Line 167: I don’t think you ever mention that the FD function is also recommended/used for
+vector transmitted infections. Is there a reason for leaving them out?
+Line 168-180: This section would read easier if you wrote it in complete sentences. It shouldn’t
+add too many additional words.
+Figures 3-4: Can you change the X axis to scientific notation or something, instead of offsetting
+every other label? It’s a bit cluttered this way.
+4
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Borremans et al apply field data on contact-density interactions in a rodent host with infection
+parameters informed by empirical data to investigate the effect of different transmission
+functions on the probability of viral invasion and persistence within populations of different
+sizes. They find that the choice of function is important within their system, and also highlight a
+broad range of wildlife host systems for which the results are relevant. They highlight the
+diversity of responses that might be expected given understanding about each host species’
+ecology and behaviour. The paper is well written, presents solid methodologies and important
+results. I have no hesitation in supporting its publication.
+Specific comments:
+line 52-53: minor comment, but the use of ‘introduction’ and ’entering’ here seems a bit
+tautological. Suggest changing ‘entering’ to ‘into’
+line 123 - it would be nice to see additional comments in the discussion on the caveats of the
+methods applied here - e.g. any potential implications/expected differences if the
+latent/incubation period was taken into account?
+line 147: should this be Beta = c(N/A)p ? or in line 148, a different constant symbol used, or
+should line 148 say contact density function c = f(N/A)? There is a bit of inconsistency in how
+this is represented in the paper, which is confusing to those for whom mathematical notation is
+not a strong point.
+line 160-164 - These are results. If the authors wish to highlight that this was checked prior to
+moving forward with the rest of the analyses, I suggest rephrasing this section to indicate this.
+line 213-214 - This is an interesting definition of invasion success. Can the authors justify a 1 year
+period to demonstrate invasion success? (this seems long to me). Has this ‘successful start’
+measure been used in other studies? How does this relate to a scenario where there might be a
+short stuttering chain of, say 1-3 infections before stochastic fadeout? Is the introduced infected
+individual assumed to be at the beginning of their infectious period?
+line 274-276: For clarity, suggest rewording line 275 to “where persistence was only possible for
+an infectious period of 30 days in combination with a high transmission rate and large population
+size.”
+line 279: For clarity, suggest rewording to “avoid having to assume the way in which
+transmission scales with density”
+5
+line 282: Suggest “important consequences for estimating invasion and persistence success”
+lines 284 - 295 are largely just restating the results. Either incorporate this summary into the
+results section or incorporate further interpretation of each of the findings here (some of which is
+in the paragraphs below), rather than just restating them.
+Figure S3-1: for clarity, suggest changing the ‘b1’, ‘b2’, ‘b3’ notation within the plots and ‘b’ in the
+y-axis to ‘beta1’, ‘beta2’, ‘beta3’, ‘beta’ (using the beta symbol), for consistency with the figure
+legend
+label_end_comment
+Decision letter (RSOS-171308)
+10-Oct-2017
+Dear Mr Borremans
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171308 entitled
+"The shape of the contact-density function matters when modelling parasite transmission in
+fluctuating populations" has been accepted for publication in Royal Society Open Science subject
+to minor revision in accordance with the referee suggestions. Please find the referees' comments
+at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171308
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+6
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 19-Oct-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+7
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Please address the many minor comments by the reviewers and clarify several aspects around the
+fitting constant employed in your models.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+For decades, two linear transmission functions have dominated the literature, even though
+intermediate nonlinear transmission functions might be more biologically realistic and tend to
+provide better descriptions of empirical datasets. But does it matter if we use linear vs. nonlinear
+transmission functions? Here, Borremans et al. use stochastic model simulations to show that the
+choice of linear vs. nonlinear transmission function has important implications for pathogen
+invasion and persistence probabilities. Though previous studies have considered how
+transmission functions differentially affect model dynamics and stability, Borremans et al.
+provide what is probably the most comprehensive demonstration to date, and their use of
+empirically-derived contact functions makes their model output particular meaningful. This work
+is important and well-written, and the topic should be of broad interest to researchers working
+with epidemiological models.
+For the most part, I can confirm that this work is technically sound. However, there are a few
+important details that I would like to challenge (i.e., use of the fitting constant and use of constant
+population densities – see below). It might be that these details *are* technically sound, but that
+they need to be better justified/described in the manuscript to improve communication to the
+reader. If so, they’ll be quick fixes. If these details are not technically sound, then the simulations
+need to be re-done without a fitting constant and/or with variable population densities. Those
+revisions are straightforward and do-able, but they would be time-consuming. Therefore, I’m
+recommending that this manuscript be accepted pending major revisions.
+Great work! I’m looking forward to seeing this published so that I can cite it in my future papers.
+– Skylar Hopkins
+8
+The fitting constant, qi
+I’m having a hard time wrapping my head around the fitting constant used in your models. The
+fitting constant is used to “ensure[s] that a certain model result or parameter is equal for each
+function.” But the point of your study is that contact rates and thus transmission rates vary with
+density, and different models incorporate density differently, and thus I do not understand why
+you want the transmission rates (Betas) to be the same across models. It seems to me that since
+you already known the biologically appropriate contact function, you should be able to multiply
+c(N) by p to get the relevant transmission rate. My concern is that your approach might be
+inappropriate, and could be spuriously creating one of your main results: that the prevalence of
+infection does not differ appreciably among three of the transmission functions. There might be a
+good reason to use the fitting constant that I’m missing, but if so, you’ll need to justify in more
+detail why the fitting constant is necessary, so that it is easier for readers to understand.
+Density vs. population size
+Line 136: Do you mean that population size/density is constant (b = mu)? Or that the initial
+population size resets each year and varies through the year? If population size/density is
+actually temporally constant, then it doesn’t make sense to consider contact functions that vary
+with density, unless you’re comparing across population that vary in density across space. But
+given my next comment, it doesn’t seem like you’re varying densities across simulations/space,
+either…
+Lines 217-226: I think that exploring the effects of variable population size and density is
+interesting and potentially informative. However, this paragraph seems to say that you kept
+density constant while manipulating population size? Again, if true, then it doesn’t make sense to
+consider contact functions that vary with density. If you actually varied density, then you just
+need to clarify further how you did so independently from varying population size. If you didn’t
+vary density, then you need to vary it temporally or “spatially” across simulations.
+Other important comments:
+Line 66: I agree that this is one argument for using the FD function with human infectious
+diseases. But I’ve also seen the argument that human contact behavior doesn’t appreciably
+change with density. To keep the epidemiologists happy, you might want to include and cite both
+reasons.
+Lines 76-83: I completely agree with the topic of this paragraph. However, I’d caution against
+singling out particular studies, and especially these two studies. I believe that the Ryder et al.
+lady bird study notes that they didn’t have the power to consider a nonlinear function. This is
+notable because the cost of the extra parameter(s) is the biggest downside to using nonlinear
+functions. And I talked to Angela Luis about transmission functions, and she’s tried nonlinear
+options with Sin Nombre - I think within the paper you cited, though it might be buried in an
+appendix. She told me that DD outperformed NL.
+Line 175: Why did you choose a power of 0.5 for an intermediate saturating shape? Was that the
+best fit from your previous study?
+Line 279-280: I think you can use a stronger opening line/paragraph without overselling your
+results. I’d at least point out that while most models assume constant population densities,
+*densities usually vary in space or time,* and you’ve shown that how we incorporate variable
+densities has important consequences for invasion and persistence.
+Minor comments:
+9
+Line 27: should be “…intermediate nonlinear functions are…”
+Line 30: should be “…field data on Morogoro”
+Line 50-51: This opening sentence should probably be cited, since there isn’t another place where
+you cite or describe all of the existing work on this topic. For instance, the Fenton et al. 2002
+“reconciling theory and reality” paper did a bunch of work here.
+Line 59: should be “When the transmission…”
+Lines 109-110: should be “are an important agricultural pest species and a natural reservoir host”
+Line 156: would be more clear if it were “…number of events of each type (infection or
+recovery)…”
+Line 167: I don’t think you ever mention that the FD function is also recommended/used for
+vector transmitted infections. Is there a reason for leaving them out?
+Line 168-180: This section would read easier if you wrote it in complete sentences. It shouldn’t
+add too many additional words.
+Figures 3-4: Can you change the X axis to scientific notation or something, instead of offsetting
+every other label? It’s a bit cluttered this way.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Borremans et al apply field data on contact-density interactions in a rodent host with infection
+parameters informed by empirical data to investigate the effect of different transmission
+functions on the probability of viral invasion and persistence within populations of different
+sizes. They find that the choice of function is important within their system, and also highlight a
+broad range of wildlife host systems for which the results are relevant. They highlight the
+diversity of responses that might be expected given understanding about each host species’
+ecology and behaviour. The paper is well written, presents solid methodologies and important
+results. I have no hesitation in supporting its publication.
+Specific comments:
+line 52-53: minor comment, but the use of ‘introduction’ and ’entering’ here seems a bit
+tautological. Suggest changing ‘entering’ to ‘into’
+line 123 - it would be nice to see additional comments in the discussion on the caveats of the
+methods applied here - e.g. any potential implications/expected differences if the
+latent/incubation period was taken into account?
+line 147: should this be Beta = c(N/A)p ? or in line 148, a different constant symbol used, or
+should line 148 say contact density function c = f(N/A)? There is a bit of inconsistency in how
+this is represented in the paper, which is confusing to those for whom mathematical notation is
+not a strong point.
+line 160-164 - These are results. If the authors wish to highlight that this was checked prior to
+moving forward with the rest of the analyses, I suggest rephrasing this section to indicate this.
+line 213-214 - This is an interesting definition of invasion success. Can the authors justify a 1 year
+period to demonstrate invasion success? (this seems long to me). Has this ‘successful start’
+measure been used in other studies? How does this relate to a scenario where there might be a
+short stuttering chain of, say 1-3 infections before stochastic fadeout? Is the introduced infected
+individual assumed to be at the beginning of their infectious period?
+10
+line 274-276: For clarity, suggest rewording line 275 to “where persistence was only possible for
+an infectious period of 30 days in combination with a high transmission rate and large population
+size.”
+line 279: For clarity, suggest rewording to “avoid having to assume the way in which
+transmission scales with density”
+line 282: Suggest “important consequences for estimating invasion and persistence success”
+lines 284 - 295 are largely just restating the results. Either incorporate this summary into the
+results section or incorporate further interpretation of each of the findings here (some of which is
+in the paragraphs below), rather than just restating them.
+Figure S3-1: for clarity, suggest changing the ‘b1’, ‘b2’, ‘b3’ notation within the plots and ‘b’ in the
+y-axis to ‘beta1’, ‘beta2’, ‘beta3’, ‘beta’ (using the beta symbol), for consistency with the figure
+legend
+Author's Response to Decision Letter for (RSOS-171308)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-171308.R1)
+25-Oct-2017
+Dear Mr Borremans,
+I am pleased to inform you that your manuscript entitled "The shape of the contact-density
+function matters when modelling parasite transmission in fluctuating populations" is now
+accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Appendix A
+label_version_2
+RSOS-171308
+The shape of the contact-density function matters when modelling parasite transmission in
+fluctuating populations.
+Benny Borremans, Jonas Reijniers, Niel Hens, Herwig Leirs
+24 Oct 2017
+Response to reviewers
+We would like to thank the reviewers for taking the time to thoroughly read our manuscript
+and providing thoughtful feedback. All comments were taken to heart, and have definitely
+improved the manuscript.
+Please find our point-by-point answers below.
+We uploaded two versions of the manuscript, with and without tracked changes.
+Sincerely,
+Benny Borremans
+Jonas Reijniers
+Niel Hens
+Herwig Leirs
+Reviewer 1:
+For decades, two linear transmission functions have dominated the literature, even though
+intermediate nonlinear transmission functions might be more biologically realistic and tend
+to provide better descriptions of empirical datasets. But does it matter if we use linear vs.
+nonlinear transmission functions? Here, Borremans et al. use stochastic model simulations to
+show that the choice of linear vs. nonlinear transmission function has important implications
+for pathogen invasion and persistence probabilities. Though previous studies have
+considered how transmission functions differentially affect model dynamics and stability,
+Borremans et al. provide what is probably the most comprehensive demonstration to date,
+and their use of empirically-derived contact functions makes their model output particular
+meaningful. This work is important and well-written, and the topic should be of broad
+interest to researchers working with epidemiological models.
+For the most part, I can confirm that this work is technically sound. However, there are a few
+important details that I would like to challenge (i.e., use of the fitting constant and use of
+constant population densities – see below). It might be that these details *are* technically
+sound, but that they need to be better justified/described in the manuscript to improve
+communication to the reader. If so, they’ll be quick fixes. If these details are not technically
+sound, then the simulations need to be re-done without a fitting constant and/or with
+variable population densities. Those revisions are straightforward and do-able, but they
+would be time-consuming. Therefore, I’m recommending that this manuscript be accepted
+pending major revisions.
+Great work! I’m looking forward to seeing this published so that I can cite it in my future
+papers. – Skylar Hopkins
+Author response:
+Many thanks for the words of encouragement, they are much appreciated!
+========================
+Reviewer 1:
+The fitting constant, qi
+I’m having a hard time wrapping my head around the fitting constant used in your models.
+The fitting constant is used to “ensure[s] that a certain model result or parameter is equal
+for each function.” But the point of your study is that contact rates and thus transmission
+rates vary with density, and different models incorporate density differently, and thus I do
+not understand why you want the transmission rates (Betas) to be the same across models.
+It seems to me that since you already known the biologically appropriate contact function,
+you should be able to multiply c(N) by p to get the relevant transmission rate. My concern is
+that your approach might be inappropriate, and could be spuriously creating one of your
+main results: that the prevalence of infection does not differ appreciably among three of the
+transmission functions. There might be a good reason to use the fitting constant that I’m
+missing, but if so, you’ll need to justify in more detail why the fitting constant is necessary, so
+that it is easier for readers to understand.
+Author response:
+We understand the confusion about the fitting constant. In fact, this section was one of the
+hardest to write, because we are aware that this is difficult to explain, yet did not want to
+make the section too long. It is clear that we need to do a better job at explaining the
+necessity of having a fitting constant, which we hope we now did. Please see the changes at
+Lines 219-226.
+========================
+Reviewer 1:
+Density vs. population size
+Line 136: Do you mean that population size/density is constant (b = mu)? Or that the initial
+population size resets each year and varies through the year? If population size/density is
+actually temporally constant, then it doesn’t make sense to consider contact functions that
+vary with density, unless you’re comparing across population that vary in density across
+space. But given my next comment, it doesn’t seem like you’re varying densities across
+simulations/space, either…
+Lines 217-226: I think that exploring the effects of variable population size and density is
+interesting and potentially informative. However, this paragraph seems to say that you kept
+density constant while manipulating population size? Again, if true, then it doesn’t make
+sense to consider contact functions that vary with density. If you actually varied density,
+then you just need to clarify further how you did so independently from varying population
+size. If you didn’t vary density, then you need to vary it temporally or “spatially” across
+simulations.
+Author response:
+We may not have explained these two points properly, and have tried to improve our
+explanation in the text (please see Lines 147-149 & 262-265).
+Annual birth rate was indeed the same as annual mortality rate, but while all births occurred
+during a brief breeding period within each year, mortality was constant throughout the
+year. Because of this, densities changed within each year, but not between years. The
+reason for this approach is that we are only interested in the effects of seasonal density
+fluctuations. We wanted to avoid also having to take into account changes in population
+density between years, as this would require many more simulations. We did however want
+to investigate the effect of population size while maintaining the same seasonal changes in
+population density, which is the reason for implementing a range of initial population sizes
+N0.
+We hope that this explanation, and the edits in the manuscript, remove the confusion about
+this part of our approach.
+========================
+Reviewer 1:
+Other important comments:
+Line 66: I agree that this is one argument for using the FD function with human infectious
+diseases. But I’ve also seen the argument that human contact behavior doesn’t appreciably
+change with density. To keep the epidemiologists happy, you might want to include and cite
+both reasons.
+Author response:
+Good suggestion, we added this to that paragraph. (Lines 67-68)
+========================
+Reviewer 1:
+Lines 76-83: I completely agree with the topic of this paragraph. However, I’d caution
+against singling out particular studies, and especially these two studies. I believe that the
+Ryder et al. lady bird study notes that they didn’t have the power to consider a nonlinear
+function. This is notable because the cost of the extra parameter(s) is the biggest downside
+to using nonlinear functions. And I talked to Angela Luis about transmission functions, and
+she’s tried nonlinear options with Sin Nombre - I think within the paper you cited, though it
+might be buried in an appendix. She told me that DD outperformed NL.
+Author response:
+Thanks for this remark. We agree with your point that singling out studies like this may not
+come across well, although we do stand behind the topic of the statements. The 2015 paper
+by Angela Luis in particular stood out, because the key goal of the study was to investigate
+persistence and density-dependence. We did follow your advice because we agree, and
+changed the paragraph accordingly by removing these sentences while leaving the citations,
+and merging the first sentence with the following paragraph. (Line 77)
+========================
+Reviewer 1:
+Line 175: Why did you choose a power of 0.5 for an intermediate saturating shape? Was
+that the best fit from your previous study?
+Author response:
+That’s a valid comment. Indeed, the previous version of this manuscript used a power that
+was obtained by fitting to the contact data. This however resulted in a function that was
+extremely similar to the linear function (see the figure below), and was therefore not
+informative. For this reason, we chose a power of 0.5 because this results in a function
+exactly intermediate between a linear and constant function, as you can see in figure 1 of
+the manuscript. (Line 194)
+========================
+Reviewer 1:
+Line 279-280: I think you can use a stronger opening line/paragraph without overselling your
+results. I’d at least point out that while most models assume constant population densities,
+*densities usually vary in space or time,* and you’ve shown that how we incorporate
+variable densities has important consequences for invasion and persistence.
+Author response:
+Thanks for the suggestion. Based on this, we rewrote the opening paragraph in an attempt
+to make it stronger. (Line 320)
+========================
+Reviewer 1:
+Minor comments:
+Line 27: should be “…intermediate nonlinear functions are…”
+Author response:
+Changed. We appreciate you taking the time to list these minor comments and providing
+suggestions.
+========================
+Reviewer 1:
+Line 30: should be “…field data on Morogoro”
+Author response:
+Changed.
+========================
+Reviewer 1:
+Line 50-51: This opening sentence should probably be cited, since there isn’t another place
+where you cite or describe all of the existing work on this topic. For instance, the Fenton et
+al. 2002 “reconciling theory and reality” paper did a bunch of work here.
+Author response:
+Perfect suggestion, we added this reference.
+========================
+Reviewer 1:
+Line 59: should be “When the transmission…”
+Author response:
+This is followed by the symbol beta, so is probably good without adding ‘the’?
+========================
+Reviewer 1:
+Lines 109-110: should be “are an important agricultural pest species and a natural reservoir
+host”
+Author response:
+Changed.
+========================
+Reviewer 1:
+Line 156: would be more clear if it were “…number of events of each type (infection or
+recovery)…”
+Author response:
+Changed.
+========================
+Reviewer 1:
+Line 167: I don’t think you ever mention that the FD function is also recommended/used for
+vector transmitted infections. Is there a reason for leaving them out?
+Author response:
+Good point. We added this to the paragraph. (Line 188)
+========================
+Reviewer 1:
+Line 168-180: This section would read easier if you wrote it in complete sentences. It
+shouldn’t add too many additional words.
+Author response:
+Changed. This indeed improved it a lot. (Line 187)
+========================
+Reviewer 1:
+Figures 3-4: Can you change the X axis to scientific notation or something, instead of
+offsetting every other label? It’s a bit cluttered this way.
+Author response:
+We had previously tried a number of options for these axis labels, and the current version
+was in our opinion the clearest. It would indeed be nicer to have all axis labels on the same
+line, but this means that the font size would have to decrease quite a lot, which in turn
+makes it less clear to read. Even using scientific format would require decreasing the font
+size. So we would prefer to go with the current version of the figures.
+Reviewer 2:
+Borremans et al apply field data on contact-density interactions in a rodent host with
+infection parameters informed by empirical data to investigate the effect of different
+transmission functions on the probability of viral invasion and persistence within populations
+of different sizes. They find that the choice of function is important within their system, and
+also highlight a broad range of wildlife host systems for which the results are relevant. They
+highlight the diversity of responses that might be expected given understanding about each
+host species’ ecology and behaviour. The paper is well written, presents solid methodologies
+and important results. I have no hesitation in supporting its publication.
+Author response:
+Thank you for the feedback and the positive words.
+========================
+Reviewer 2:
+Specific comments:
+line 52-53: minor comment, but the use of ‘introduction’ and ’entering’ here seems a bit
+tautological. Suggest changing ‘entering’ to ‘into’
+Author response:
+Thanks for the suggestion, we changed it accordingly. (Line 54)
+========================
+Reviewer 2:
+line 123 - it would be nice to see additional comments in the discussion on the caveats of the
+methods applied here - e.g. any potential implications/expected differences if the
+latent/incubation period was taken into account?
+Author response:
+We had not included this in the previous version because we doubt that the overall patterns
+would change. But we agree that it is good to specifically acknowledge this, so we added a
+paragraph to the discussion about the caveats of the approach. (Line 395).
+========================
+Reviewer 2:
+line 147: should this be Beta = c(N/A)p ? or in line 148, a different constant symbol used, or
+should line 148 say contact density function c = f(N/A)? There is a bit of inconsistency in how
+this is represented in the paper, which is confusing to those for whom mathematical
+notation is not a strong point.
+Author response:
+This should indeed be c=f(N/A), thanks for noting this. (Line 163)
+========================
+Reviewer 2:
+line 160-164 - These are results. If the authors wish to highlight that this was checked prior
+to moving forward with the rest of the analyses, I suggest rephrasing this section to indicate
+this.
+Author response:
+True. We now added an additional sentence to indicate that these are results. (Line 178)
+========================
+Reviewer 2:
+line 213-214 - This is an interesting definition of invasion success. Can the authors justify a 1
+year period to demonstrate invasion success? (this seems long to me). Has this ‘successful
+start’ measure been used in other studies? How does this relate to a scenario where there
+might be a short stuttering chain of, say 1-3 infections before stochastic fadeout? Is the
+introduced infected individual assumed to be at the beginning of their infectious period?
+Author response:
+It is true that there can be several definitions of invasion success. We chose this one
+because of a number of reasons:
+- A pathogen persisting in a population for one generation has biological relevance.
+- This definition was used previously in a modelling paper on the invasion and persistence of
+Morogoro virus in multimammate mice (Goyens et al. 2013, Journal of Theoretical Biology
+317:55-61).
+- It is a simple definition, easy to remember.
+- It is long enough to avoid a bias from short stuttering chains, as mentioned in the
+comment.
+Although we did not explicitly test different the effect of different definitions of invasion
+success, it is unlikely that they would change the results qualitatively, aside from increasing
+or decreasing the proportion of simulations in which the arbitrary threshold is reached.
+We added an extra sentence in the methods to support this definition. (Line 250)
+As for the last question: an animal is considered to be at the start of the infectious period
+upon introduction in the population. We now added this explicitly in the text. (Line 176)
+========================
+Reviewer 2:
+line 274-276: For clarity, suggest rewording line 275 to “where persistence was only possible
+for an infectious period of 30 days in combination with a high transmission rate and large
+population size.”
+Author response:
+We partly followed this suggestion by removing ‘for an infectious period of 30 days’, as this
+made the sentence both clearer and more concise.
+========================
+Reviewer 2:
+line 279: For clarity, suggest rewording to “avoid having to assume the way in which
+transmission scales with density”
+Author response:
+This sentence could indeed be improved, thanks for your suggestion. Based on this
+comment, and that of Reviewer 1, we rewrote the first paragraph in an attempt to make it
+clearer/stronger. (Line 320)
+========================
+Reviewer 2:
+line 282: Suggest “important consequences for estimating invasion and persistence success”
+Author response:
+Changed.
+========================
+Reviewer 2:
+lines 284 - 295 are largely just restating the results. Either incorporate this summary into the
+results section or incorporate further interpretation of each of the findings here (some of
+which is in the paragraphs below), rather than just restating them.
+Author response:
+It is true that this paragraph repeats some results, but this was done intentionally to provide
+the reader with a summary of the most important patterns that were observed. We prefer
+to do this because the following paragraphs go into these patterns in more depth. So
+although this comment is true, we’d prefer to keep this version.
+========================
+Reviewer 2:
+Figure S3-1: for clarity, suggest changing the ‘b1’, ‘b2’, ‘b3’ notation within the plots and ‘b’
+in the y-axis to ‘beta1’, ‘beta2’, ‘beta3’, ‘beta’ (using the beta symbol), for consistency with
+the figure legend
+Author response:
+Thanks for noting this. Our original figure indeed has the beta symbols, but something must
+have gone wrong when saving the file to pdf format. The new version should be correct.
+===========================================================================
+Society Open

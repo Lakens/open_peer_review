@@ -1,0 +1,770 @@
+Trajectory energy minimization for cell growth tracking and
+genealogy analysis
+Yin Hu, Su Wang, Nan Ma, Suzanne M. Hingley-Wilson, Andrea Rocco, Johnjoe
+McFadden and Hongying Lilian Tang
+Article citation details
+R. Soc. open sci. 4: 170207.
+http://dx.doi.org/10.1098/rsos.170207
+Review timeline
+Original submission: 12 May 2016 Note: Reports are unedited and appear as
+Revised submission: 8 March 2017 submitted by the referee. The review history
+Final acceptance: 24 April 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-160331.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Dirk Padfield)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+It is not clear from reading the paper
+Do you have any ethical concerns with this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This is an interesting approach to the difficult problem of cell segmentation and tracking, which
+is a problem that has been extensively studied over several decades by many researchers. The
+main interesting aspect is the addition of level-set terms to adapt the level-set framework to this
+specific problem. My main concerns with the paper are insufficient novelty. One of the main
+contributions listed is “the segmentation results in one frame are fed to the subsequent
+frame...cell properties are initiated by those from previous frame”. However, this is a standard
+approach to cell segmentation and tracking that has been published many times in the past. The
+paper also does not provide any visual tracking results, tracking genealogy visualizations, or
+biological insights derived from the methods.
+“For the growth period images were taken every ~ 69 seconds”. Imaging cells this often can lead
+to photo bleaching. This should be mentioned.
+Equation 4.1 provides the convergence criterion. But level-set convergence criteria are well
+studied. Why not for instance detect convergence based on the change in the location of the
+evolving contour?
+Starting from Section 4d, there are many references to images, and it would be helpful to the
+reader to show the images upfront at this point. Is there some restriction of the formatting of the
+journal that requires all images to be at the end? If not, I suggest showing the images as they are
+discussed.
+In Section 4d, the segmentation of the septum is discussed. The septum should be defined and
+shown visually before this point.
+“By assigning different positive labels to isolated blocks, these regions can be distinguished and
+any confusion can be avoided.” This assumes the boundaries fully separate the different regions.
+It seems that if the regions cannot be fully isolated for a given cell, this approach will entirely fail.
+This is a major issue and should be discussed.
+“All datasets were manually annotated by human experts as the ground truth.” Who did the
+annotation? Was it done by the authors? This would introduce bias.
+Using F-score of the cell area as a measure of segmentation accuracy is not commonly used
+because it gives more weight to larger cells. For example, by sheer virtue of its size a cell with an
+area of 1000 pixels will get a much higher F-score than a cell with an area of 100 pixels even if
+their contours are off by roughly the same amount. A more common and simpler measure of
+area overlap is DICE coefficient. And for cell segmentation, a more common measure is some
+function of the distance of the detected contour to the true contour.
+“r_s is defined at 28 pixels”, “r_w was fixed at ten pixels”, “w is defined at 4 pixels”. All of these
+depend on the magnification level of the microscope, so they should be defined in terms of
+microns instead of pixels.
+“r_m is defined at 100 intensity value”. This is dependent on the light source, which changes
+from microscope to microscope and even throughout the day on an individual microscope.
+In the caption of Figure 1, there is no need to list the times since they are already listed under
+each image.
+3
+Many of the images such as in Figure 2 are very pixelated and have low dynamic intensity range.
+This makes it difficult to see the detail in the images. The images should be displayed much
+clearer.
+The results section is lacking in a number of ways. There are no visual results from the tracking
+method. There are no cell genealogy graphs. There are no biological insights derived from the
+tracking data.
+“Each video is 110 minutes in length”. This is not long enough for most mitosis studies. How
+often do E. coli cells undergo mitosis? This should be mentioned.
+“We analysed the cell growth over time from the birth to its division, and measured its size at
+birth, size at division, division time, and growth rate including all instantaneous elongation
+rates.” None of this is described in the results, but it should be.
+“we still need to improve this scheme to handle highly crowded data as the cells are
+exponentially growing after a few generations”. There is no discussion of this in the results. This
+is an especially disappointing drawback because it undermines the 2nd contribution from the
+introduction “profile information of cell septum and membrane is used to segment individual cell
+when the cell number exponentially increases and get crowded”.
+Figure 8 shows a good visual comparison with other approaches. But at the same time, it does
+not provide a compelling reason why the other two approaches are not sufficiently good for the
+segmentation problem. In the few cases where some of the cells are separated by the proposed
+approach it could be argued that the cells have not yet fully divided and should still be shown as
+one cell.
+A very relevant missing reference that addresses large scale segmentation and tracking of cells is
+“D. Padfield, J. Rittscher, and B. Roysam. Coupled minimum-cost flow cell tracking for high-
+throughput quantitative analysis. Elsevier Medical Image Analysis, 15(4):650–668, 2011.”
+Spelling:
+“fames” should be “frames” in “sample fames from the”
+“racking should be “tracking” in “object racking accuracy”
+“Euclidian distance” should be “Euclidean distance”
+label_author_2
+Review form: Reviewer 2 (Anthony Santella)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Supplemental data for review contains one example dataset. The manuscript mentions using 10%
+of data for training implying there are a large number of image series. I think if compact, the
+4
+whole novel data set, and if not a significant number of examples should be included. Though
+not necessary I think it would be valuable to release the source, either as supplemental material
+or on a website.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+My statistical concern is informal, in the sense that without any mention of the scale (# movies,
+#cells at least) of the data set (which I do not see) it is difficult to asses the significance of
+reported performance. I don't think rigorous statistical testing is called for, but the case that the
+performance figures are meaningful is not made informally.
+There is a scattering of minor grammatical issues that occasionally confuse.
+I also feel the manuscript would be greatly improved by a more careful effort to situate the
+authors algorithm relative to other tracking methods. A broad review of tracking is given, but
+some additional focus on specific attributes that contrast this approach with other level set
+methods (of which there are many, some mentioned by authors) would be helpful. Is there
+algorithmic novelty? Is the goal an approach that is more general? more carefully tailored to the
+specific images? I guess, but dont know for sure the third. All are worthy goals but somewhat
+distinct and readers without an exhaustive knowledge of the literature would be helped by an
+explicit statement.
+Some algorithmic details are left fuzzy enough that one would need to speculate quite a bit in
+order to re-implement them. For example in the discussion of new cells entering at end of 4d.
+Does this mean segmentation is propagated forward, and then a second pass is done in which
+certain areas are masked as accounted for (how?) and the initialization procedure (4b) is run de
+novo? something else?
+In general the components are clearly described, but how they fit together is not perfectly clear.
+As one who is familiar with the literature but has never implemented a level set approach, one of
+the most basic differences between them (I would think) is whether (a) a single level set is used to
+segment a single set of objects that are then split (say by connected components) (b) one level set
+is evolved independently for each object or (c) a framework for co-evolution of a set of non-
+overlapping level sets is used. It is primarily because of the lack of details necessary for A or C
+that I believe B is the approach here, but I'm not 100% sure after 3 readings (connected
+component splitting may be assumed, so A is possible). Some explicit big picture framing is
+needed I feel.
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+5
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+Summary:
+The paper proposes a system to detect and track bacteria in time-lapse imaging. The paper lists
+three major contributions: (1) use of segmentation from previous frame to initialize segmentation
+for the current frame—this is a very widely used technique particularly for deformable contour
+tracking; (2) use of info about cell septum and membrane to segment individual cells; (3)
+trajectory energy minimization . Bacteria are segmented using edge-based active contours.
+Segmentation from frame (t-1) is projected to frame(t). Cell septum indication function (based on
+intensity profile across the septum of cell) is used to handle dividing cells. Trajectory energy
+minimization is used to resolve track association ambiguities. A global energy function with
+depends on all cells on all frames is formulated. New cells entering the field of view are
+segmented using active contours method.
+The proposed system is evaluated on three datasets against two other methods MicrobeTracker
+and Schnitzcells. Detection and tracking performances are evaluated. In terms of segmentation
+evaluation, the proposed approach outperforms Microbe Tracker and MAMLE on the third
+dataset (authors’ own dataset), but falls behind MAMLE on the first two datasets (example
+datasets from MIcrobeTracker and Schnitzcells). In terms of tracking performance, proposed
+approach outperforms Schnitzcells & MicrobeTracker in terms of multiple object tracking
+accuracy but is closely behind Schnitzcells in terms of multiple object tracking precision.
+Comments:
+- Technically sound approach. Individual modules are not too innovative, but relevant
+system/application paper.
+- Clearly written.
+- Tracking results comparable or better to state-of-the-art.
+- Section 2 is out of order.
+- Definitions of abbreviations are introduced once not repeated again, this makes it hard to
+read figure and table captions. Put more details especially definitions of abbreviations etc. on the
+captions.
+- Put more information on the datasets. Percent evaluations are fine, but do not give
+enough information on the complexity of the datasets. How many cells are in total? How many
+cells per image? When you refer to medium or high density crowd, what is approximate number
+of cells?
+- Nice references for general cell tracking but references related to recent bacteria tracking
+works are lacking and should be included (i.e Shaevitz Lab. (Princeton) and Alber Lab. (Notre
+Dame) have various software/papers that analyze motion of swarming bacteria).
+6
+label_end_comment
+Decision letter (RSOS-160331)
+02-Sep-2016
+Dear Miss Hu:
+Manuscript ID RSOS-160331 entitled "Trajectory Energy Minimisation for Cell Growth Tracking
+and Genealogy Analysis" which you submitted to Royal Society Open Science, has been
+reviewed. The comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 02-Mar-2017. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Alice Power
+Editorial Coordinator, Royal Society Open Science
+on behalf of
+Luca Cardelli, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Associate Editor: 1
+Comments to the Author:
+label_comment_4
+Dear authors
+Your manuscript has been peer-reviewed by three reviewers who agree that a revision of your
+paper is necessary in order to better assess the novelty of your contribution and the performance
+of your method. Your paper is thus not accepted but we encourage you to tqke into account the
+detailed reviews to prepare a revision and resubmit it.
+Best regards
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_5
+This is an interesting approach to the difficult problem of cell segmentation and tracking, which
+is a problem that has been extensively studied over several decades by many researchers. The
+7
+main interesting aspect is the addition of level-set terms to adapt the level-set framework to this
+specific problem. My main concerns with the paper are insufficient novelty. One of the main
+contributions listed is “the segmentation results in one frame are fed to the subsequent
+frame...cell properties are initiated by those from previous frame”. However, this is a standard
+approach to cell segmentation and tracking that has been published many times in the past. The
+paper also does not provide any visual tracking results, tracking genealogy visualizations, or
+biological insights derived from the methods.
+“For the growth period images were taken every ~ 69 seconds”. Imaging cells this often can lead
+to photo bleaching. This should be mentioned.
+Equation 4.1 provides the convergence criterion. But level-set convergence criteria are well
+studied. Why not for instance detect convergence based on the change in the location of the
+evolving contour?
+Starting from Section 4d, there are many references to images, and it would be helpful to the
+reader to show the images upfront at this point. Is there some restriction of the formatting of the
+journal that requires all images to be at the end? If not, I suggest showing the images as they are
+discussed.
+In Section 4d, the segmentation of the septum is discussed. The septum should be defined and
+shown visually before this point.
+“By assigning different positive labels to isolated blocks, these regions can be distinguished and
+any confusion can be avoided.” This assumes the boundaries fully separate the different regions.
+It seems that if the regions cannot be fully isolated for a given cell, this approach will entirely fail.
+This is a major issue and should be discussed.
+“All datasets were manually annotated by human experts as the ground truth.” Who did the
+annotation? Was it done by the authors? This would introduce bias.
+Using F-score of the cell area as a measure of segmentation accuracy is not commonly used
+because it gives more weight to larger cells. For example, by sheer virtue of its size a cell with an
+area of 1000 pixels will get a much higher F-score than a cell with an area of 100 pixels even if
+their contours are off by roughly the same amount. A more common and simpler measure of
+area overlap is DICE coefficient. And for cell segmentation, a more common measure is some
+function of the distance of the detected contour to the true contour.
+“r_s is defined at 28 pixels”, “r_w was fixed at ten pixels”, “w is defined at 4 pixels”. All of these
+depend on the magnification level of the microscope, so they should be defined in terms of
+microns instead of pixels.
+“r_m is defined at 100 intensity value”. This is dependent on the light source, which changes
+from microscope to microscope and even throughout the day on an individual microscope.
+In the caption of Figure 1, there is no need to list the times since they are already listed under
+each image.
+Many of the images such as in Figure 2 are very pixelated and have low dynamic intensity range.
+This makes it difficult to see the detail in the images. The images should be displayed much
+clearer.
+The results section is lacking in a number of ways. There are no visual results from the tracking
+method. There are no cell genealogy graphs. There are no biological insights derived from the
+tracking data.
+8
+“Each video is 110 minutes in length”. This is not long enough for most mitosis studies. How
+often do E. coli cells undergo mitosis? This should be mentioned.
+“We analysed the cell growth over time from the birth to its division, and measured its size at
+birth, size at division, division time, and growth rate including all instantaneous elongation
+rates.” None of this is described in the results, but it should be.
+“we still need to improve this scheme to handle highly crowded data as the cells are
+exponentially growing after a few generations”. There is no discussion of this in the results. This
+is an especially disappointing drawback because it undermines the 2nd contribution from the
+introduction “profile information of cell septum and membrane is used to segment individual cell
+when the cell number exponentially increases and get crowded”.
+Figure 8 shows a good visual comparison with other approaches. But at the same time, it does
+not provide a compelling reason why the other two approaches are not sufficiently good for the
+segmentation problem. In the few cases where some of the cells are separated by the proposed
+approach it could be argued that the cells have not yet fully divided and should still be shown as
+one cell.
+A very relevant missing reference that addresses large scale segmentation and tracking of cells is
+“D. Padfield, J. Rittscher, and B. Roysam. Coupled minimum-cost flow cell tracking for high-
+throughput quantitative analysis. Elsevier Medical Image Analysis, 15(4):650–668, 2011.”
+Spelling:
+“fames” should be “frames” in “sample fames from the”
+“racking should be “tracking” in “object racking accuracy”
+“Euclidian distance” should be “Euclidean distance”
+Reviewer: 2
+Comments to the Author(s)
+label_comment_6
+My statistical concern is informal, in the sense that without any mention of the scale (# movies,
+#cells at least) of the data set (which I do not see) it is difficult to asses the significance of
+reported performance. I don't think rigorous statistical testing is called for, but the case that the
+performance figures are meaningful is not made informally.
+There is a scattering of minor grammatical issues that occasionally confuse.
+I also feel the manuscript would be greatly improved by a more careful effort to situate the
+authors algorithm relative to other tracking methods. A broad review of tracking is given, but
+some additional focus on specific attributes that contrast this approach with other level set
+methods (of which there are many, some mentioned by authors) would be helpful. Is there
+algorithmic novelty? Is the goal an approach that is more general? more carefully tailored to the
+specific images? I guess, but dont know for sure the third. All are worthy goals but somewhat
+distinct and readers without an exhaustive knowledge of the literature would be helped by an
+explicit statement.
+Some algorithmic details are left fuzzy enough that one would need to speculate quite a bit in
+order to re-implement them. For example in the discussion of new cells entering at end of 4d.
+Does this mean segmentation is propagated forward, and then a second pass is done in which
+certain areas are masked as accounted for (how?) and the initialization procedure (4b) is run de
+novo? something else?
+In general the components are clearly described, but how they fit together is not perfectly clear.
+As one who is familiar with the literature but has never implemented a level set approach, one of
+9
+the most basic differences between them (I would think) is whether (a) a single level set is used to
+segment a single set of objects that are then split (say by connected components) (b) one level set
+is evolved independently for each object or (c) a framework for co-evolution of a set of non-
+overlapping level sets is used. It is primarily because of the lack of details necessary for A or C
+that I believe B is the approach here, but I'm not 100% sure after 3 readings (connected
+component splitting may be assumed, so A is possible). Some explicit big picture framing is
+needed I feel.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_7
+Summary:
+The paper proposes a system to detect and track bacteria in time-lapse imaging. The paper lists
+three major contributions: (1) use of segmentation from previous frame to initialize segmentation
+for the current frame—this is a very widely used technique particularly for deformable contour
+tracking; (2) use of info about cell septum and membrane to segment individual cells; (3)
+trajectory energy minimization . Bacteria are segmented using edge-based active contours.
+Segmentation from frame (t-1) is projected to frame(t). Cell septum indication function (based on
+intensity profile across the septum of cell) is used to handle dividing cells. Trajectory energy
+minimization is used to resolve track association ambiguities. A global energy function with
+depends on all cells on all frames is formulated. New cells entering the field of view are
+segmented using active contours method.
+The proposed system is evaluated on three datasets against two other methods MicrobeTracker
+and Schnitzcells. Detection and tracking performances are evaluated. In terms of segmentation
+evaluation, the proposed approach outperforms Microbe Tracker and MAMLE on the third
+dataset (authors’ own dataset), but falls behind MAMLE on the first two datasets (example
+datasets from MIcrobeTracker and Schnitzcells). In terms of tracking performance, proposed
+approach outperforms Schnitzcells & MicrobeTracker in terms of multiple object tracking
+accuracy but is closely behind Schnitzcells in terms of multiple object tracking precision.
+Comments:
+- Technically sound approach. Individual modules are not too innovative, but relevant
+system/application paper.
+- Clearly written.
+- Tracking results comparable or better to state-of-the-art.
+- Section 2 is out of order.
+- Definitions of abbreviations are introduced once not repeated again, this makes it hard to
+read figure and table captions. Put more details especially definitions of abbreviations etc. on the
+captions.
+- Put more information on the datasets. Percent evaluations are fine, but do not give
+enough information on the complexity of the datasets. How many cells are in total? How many
+cells per image? When you refer to medium or high density crowd, what is approximate number
+of cells?
+- Nice references for general cell tracking but references related to recent bacteria tracking
+works are lacking and should be included (i.e Shaevitz Lab. (Princeton) and Alber Lab. (Notre
+Dame) have various software/papers that analyze motion of swarming bacteria).
+Author's Response to Decision Letter for (RSOS-160331)
+See Appendix A.
+10
+label_version_2
+RSOS-170207.R0 (Revision)
+label_author_4
+Review form: Reviewer 1 (Dirk Padfield)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_8
+The authors have adequately addressed all of my concerns.
+label_end_comment
+Decision letter (RSOS-170207)
+24-Apr-2017
+Dear Miss Hu:
+It is a pleasure to accept your manuscript entitled "Trajectory Energy Minimisation for Cell
+Growth Tracking and Genealogy Analysis" in its current form for publication in Royal Society
+Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+You have the opportunity to archive your accepted, unbranded manuscript, but access to the full
+text must be embargoed until publication.
+11
+Articles are normally press released. For this to be effective we set an embargo on news coverage
+corresponding to the publication date of the article. We request that news media and the authors
+do not publish stories ahead of this embargo (when final version of the article is available).
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Sincerely,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+Appendix A
+Trajectory Energy Minimisation for Cell Growth Tracking and Genealogy
+Analysis
+Yin Hu, Su Wang, Nan Ma, Suzanne M.Hingley-Wilson, Andrea Rocco, Johnjoe McFadden,
+Hongying Lilian Tang
+Reviewers Comments
+=======================
+Reviewer 1:
+Comments to the Author(s)
+label_comment_9
+This is an interesting approach to the difficult problem of cell segmentation and tracking, which
+is a problem that has been extensively studied over several decades by many researchers. The
+main interesting aspect is the addition of level-set terms to adapt the level-set framework to this
+specific problem. My main concerns with the paper are insufficient novelty. One of the main
+contributions listed is “the segmentation results in one frame are fed to the subsequent frame...cell
+properties are initiated by those from previous frame”. However, this is a standard approach to
+cell segmentation and tracking that has been published many times in the past. The paper also
+does not provide any visual tracking results, tracking genealogy visualizations, or biological
+insights derived from the methods.
+We agree with the reviewer’s comment; our method is simple, but it indeed works well and its results
+between consecutive frames are very consistent. This is evident when we applied this approach to a
+very large scale time-lapse image datasets, which would have challenged most other systems with the
+data of high complexity. Our system is very sensitive to cell division moment with a reasonable
+accuracy (Fig. 6, Fig. 9 and Fig. 10). In our knowledge, no one has previously focus on segmenting,
+tracking and analysing cells which are from the microfluidics system.
+We have revised the paper to improve its presentation. In the revised paper, we explained that the
+integration of these key steps leads to a more effective automated cell segmentation and tracking scheme:
+1) The segmentation results in previous frame are split to a set of small sub-windows to segment
+and track their corresponding cells. Integrating cell boundary information and a rod-shape and
+size criterion is to eliminate many undesired contours.
+2) The cell septum and membrane information is used to identify the cell division process and
+segment touched cells.
+3) The global trajectory energy minimisation function is developed to efficiently track cells during
+cell elongation and division, even if the appearances (length and areas) of cells are not constant.
+This process can minimise the accumulated errors of tracking.
+We compare our proposed method with that of MicrobeTracker and MAMLE on phase contrast images
+and our own dataset (Fig. 10 and Table. 4). These published datasets were obtained growing as largely
+isolated cells or micro-colonies on agarose pads, which can provide high quality images. On the
+contrary, our dataset gave densely growing cells in the microfluidics system, which provides lower
+quality images but provides more information to understand their growth patterns through their life
+cycles. In this work, we focus on segmenting and tracking cells which are from the microfluidics system.
+We also added Fig. 11, Fig. 12 and Fig. 13 to visualise the tracking results, tracking genealogy tree and
+biological insights in Section 5 (c). Thank you.
+“For the growth period images were taken every ~ 69 seconds”. Imaging cells this often can lead
+to photo bleaching. This should be mentioned.
+Thank you for pointing this out. In the revised paper, we have clarified it in Section 3 (b).
+Cell growth period that was imaged every 69s did not show any observable bleaching or detrimental
+effect (slower growth rate, abnormal cell shape or increased cell death rate, etc.) on cells.
+During our experiments, instead of traditional halogen lamp fluorescent microscopy, laser scanning
+fluorescent microscopy was used for imaging and laser power was kept to minimum that allows decent
+images to be taken. Cells can grow up to 10 generations without showing any bleaching until the
+microfluidic plate was too crowded. In some experiments, cell experienced growth phase (3-6
+generations), antibiotic treatment phase and survivor regrowth phase. The fact that survivors (and later
+generations) can regain same level fluorescence as healthy cells suggest laser has minor effect on
+fluorescent level. We did try fluorescent microscopy using halogen lamp, bleaching was obvious at an
+imaging interval of 69s, therefore the data from which was not used in this paper.
+Equation 4.1 provides the convergence criterion. But level-set convergence criteria are well
+studied. Why not for instance detect convergence based on the change in the location of the
+evolving contour?
+Thank you for this suggestion.
+For level set based segmentation methods, there are many different convergence criteria, such as a fixed
+number of iterations, changes of contour length, size, position or other variables.
+For using length or size criteria, this requires an extra process to determine these variables during the
+iteration process. This is the reason why we do not choose length or size as a convergence criteria.
+For ‘the change in the location of the evolving contour’, we didn’t choose it as our convergence criteria.
+We must be careful so as not to terminate the iteration procedure prematurely. Since the evolution
+process often slows down temporarily even before steady state is reached, the changes in the location
+of the evolving contour might not be obvious at various stages of the iteration process. This can lead to
+terminate the iteration procedure prematurely.
+In Section 4 (e), we just choose the changes of the three variables of Eq. (2.1) as a stopping criterion
+(Eq. 4.5). Based on our observation, when the steady state is obtained, it is obvious that these three
+terms remain almost constant (See Fig. 8).
+Starting from Section 4d, there are many references to images, and it would be helpful to the
+reader to show the images upfront at this point. Is there some restriction of the formatting of the
+journal that requires all images to be at the end? If not, I suggest showing the images as they are
+discussed.
+We have illustrated the images as they are discussed. Thank you.
+In Section 4d, the segmentation of the septum is discussed. The septum should be defined and
+shown visually before this point.
+We have mentioned and visualised the cell septum and membrane in Section 3 (a) and Fig. 2. Thank
+you.
+“By assigning different positive labels to isolated blocks, these regions can be distinguished and
+any confusion can be avoided.” This assumes the boundaries fully separate the different
+regions. It seems that if the regions cannot be fully isolated for a given cell, this approach will
+entirely fail. This is a major issue and should be discussed.
+Thank you for this valuable comment. We have revised this part to clarify the process in Section 4(c)
+object indication function.
+In our current approach, we used a set of small sub-windows to segment and track the corresponding
+cells. For a given cell, some of its sub-windows can be fully isolated by integrating boundary
+information. For those sub-windows which cannot be fully isolated for a given cell, after applying the
+DRLSE framework, a rod-shape and size criterion can be used to eliminate these undesired contours.
+The remaining contours are only merged within same category and same cell. This process has largely
+addressed this limitation.
+“All datasets were manually annotated by human experts as the ground truth.” Who did the
+annotation? Was it done by the authors? This would introduce bias.
+Thank you for your careful review. All datasets were manually annotated by our colleagues (biology
+experts). In our knowledge, the owners of these public datasets didn’t provide the ground truth. In
+addition, many studies created their own ground truth to evaluate their methods.
+We agree with the reviewer’s comment. It might introduce bias. Thus, in the revised paper, we try to
+evaluate them on different ways to minimise bias as much as we can:
+• Using DICE coefficient to measure the overlap area. (Table 2 and Table 5)
+• We carried out an empirical evaluation per cell: i) true positive (TP); ii) over-segmentation; iii)
+under-segmentation; and iv) false negative (FN). Apart from these, some cells were undergoing
+division which is classified as a single cell or as two independent cells, according to the method
+specifications (these classifications are not considered in errors estimation). (Table 4)
+• In addition, we evaluated the consistence of the segmentation results. (Fig. 9)
+Using F-score of the cell area as a measure of segmentation accuracy is not commonly used
+because it gives more weight to larger cells. For example, by sheer virtue of its size a cell with an
+area of 1000 pixels will get a much higher F-score than a cell with an area of 100 pixels even if
+their contours are off by roughly the same amount. A more common and simpler measure of
+area overlap is DICE coefficient. And for cell segmentation, a more common measure is some
+function of the distance of the detected contour to the true contour.
+In the revised paper, we changed F-score into DICE coefficient to measure the overlap area, while TP,
+over-segmentation, under-segmentation and false negative to evaluate the segmented results. In addition,
+an extra figure is to show the consistence of the segmentation results of different methods. (Table 2,
+Table 4, Table 5 and Fig. 9)
+r_s is defined at 28 pixels, r_w was fixed at ten pixels, “w is defined at 4 pixels”. All of these
+depend on the magnification level of the microscope, so they should be defined in terms of microns
+instead of pixels.
+Thank you for this suggestion. We have converted these parameter into micrometres.
+“r_m is defined at 100 intensity value”. This is dependent on the light source, which changes from
+microscope to microscope and even throughout the day on an individual microscope.
+We have redefined this parameter for cell sputum and membrane indication function in Section 4 (c)
+cell septum and membrane indication function.
+As a cell is growing and starting to divide, the formation of the septum becomes increasingly apparent.
+The septum parameter rm is defined by using the information of cell boundaries:
+rm = <U+0001D707>"#$%&' + <U+0001D70F> * <U+0001D70E>"#$%&'
+where <U+0001D707>"#$%&' and <U+0001D70E>"#$%&' are the mean and the standard deviation of the obtained cells' boundary
+regions in the current frame, respectively. In this work, <U+0001D70F> is set to 1.2.
+In the caption of Figure 1, there is no need to list the times since they are already listed under
+each image.
+We have revised the caption of Figure 1. Thank you.
+Many of the images such as in Figure 2 are very pixelated and have low dynamic intensity
+range. This makes it difficult to see the detail in the images. The images should be displayed
+much clearer.
+Thank you for this valuable comment. In the revised paper, we have modified these figures for a clearer
+presentation.
+The results section is lacking in a number of ways. There are no visual results from the tracking
+method. There are no cell genealogy graphs. There are no biological insights derived from the
+tracking data.
+Thank you for pointing this out. We have provided the visual results from the tracking method (Fig. 11)
+and a cell genealogy graph (Fig. 12) in Section 5 (c). In addition, we provided a growth curve of a single
+cell (Fig 13).
+“Each video is 110 minutes in length”. This is not long enough for most mitosis studies. How
+often do E. coli cells undergo mitosis? This should be mentioned.
+Thank you for your careful review. The doubling time of E. coil is often 20 to 60 minutes. In general,
+cells were image for several generations (< 180 mins) under a constant growth condition. Only the
+growth steady state periods were used for cell growth analysis (<110 mins). To avoid confusing, in the
+revised paper, we have clarified the length of video into 180 mins.
+“We analysed the cell growth over time from the birth to its division, and measured its size at
+birth, size at division, division time, and growth rate including all instantaneous elongation
+rates.” None of this is described in the results, but it should be.
+We have provided a growth curve of a single cell (Fig 13) in Section 5(c). It shows cells elongate
+approximately exponentially at the single-cell level.
+“we still need to improve this scheme to handle highly crowded data as the cells are exponentially
+growing after a few generations”. There is no discussion of this in the results. This is an especially
+disappointing drawback because it undermines the 2nd contribution from the introduction
+“profile information of cell septum and membrane is used to segment individual cell when the cell
+number exponentially increases and get crowded”.
+Thank you for your careful review.
+In Table 4 (segmentation evaluation part in Section 5 (c)), we compare the different methods on
+different density levels, our proposed can produce reasonable results on different levels.
+In Section 6, we have clarified it. Since microfluidic devices have no enough space to allow the cells to
+exponentially grow after many generations, the shapes of cells are irregular and not constant between
+consecutive frames under over-crowded density.
+Figure 8 shows a good visual comparison with other approaches. But at the same time, it does
+not provide a compelling reason why the other two approaches are not sufficiently good for the
+segmentation problem. In the few cases where some of the cells are separated by the proposed
+approach it could be argued that the cells have not yet fully divided and should still be shown as
+one cell.
+Thank you for pointing this out.
+This figure shows the difference of segmentation results between two published methods with our
+proposed methods. Some of the cells could be argued that the cells have not yet fully divided and should
+still be shown as one cell. To have a fair comparison of the evaluated methods, these segmentations are
+not considered in wrong ones. For large scale time-lapse cell analysis, maintaining the consistency of
+segmentation and tracking results between the consecutive frames is a more important. Thus, we
+compare these three methods on consistency level between frames. We added an extra figure (Fig. 9)
+to show the consistency level of the number of extracted cells results for different methods. This figure
+is to a compelling reason why the other two approaches are not sufficiently good for our mentioned
+segmentation problem.
+A very relevant missing reference that addresses large scale segmentation and tracking of cells is
+“D. Padfield, J. Rittscher, and B. Roysam. Coupled minimum-cost flow cell tracking for high-
+throughput quantitative analysis. Elsevier Medical Image Analysis, 15(4):650–668, 2011.”
+In the revised paper, we have reviewed more references for general cell segmentation and tracking,
+including this reference. Thank you.
+Spelling:
+“fames” should be “frames” in “sample fames from the”
+“racking should be “tracking” in “object racking accuracy”
+“Euclidian distance” should be “Euclidean distance”
+Thank you. We have carefully proofread the revised paper. Some minor corrections remain in black
+font colour while the major changes are in red.
+Reviewer 2:
+Comments to the Author(s)
+label_comment_10
+My statistical concern is informal, in the sense that without any mention of the scale (# movies,
+#cells at least) of the data set (which I do not see) it is difficult to asses the significance of reported
+performance. I don't think rigorous statistical testing is called for, but the case that the
+performance figures are meaningful is not made informally.
+Thank you for pointing this out. We have provided more details of our dataset in Section 5(a) and Table
+4. Table 4 provides information on the complexity of the datasets, such as the number of cells in total,
+the number of cells per image, and the information of sparse, medium or high density crowd. Thank
+you.
+There is a scattering of minor grammatical issues that occasionally confuse.
+We have carefully proofread the revised paper. Some minor corrections remain in black font colour
+while the major changes are in red. Thank you.
+I also feel the manuscript would be greatly improved by a more careful effort to situate the
+authors algorithm relative to other tracking methods. A broad review of tracking is given, but
+some additional focus on specific attributes that contrast this approach with other level set
+methods (of which there are many, some mentioned by authors) would be helpful. Is there
+algorithmic novelty? Is the goal an approach that is more general? more carefully tailored to the
+specific images? I guess, but dont know for sure the third. All are worthy goals but somewhat
+distinct and readers without an exhaustive knowledge of the literature would be helped by an
+explicit statement.
+Thank you for pointing this out. In the revised paper, we have reviewed more references for general
+cell segmentation and tracking, including this reference.
+We have revised the paper to improve its presentation. Most of published methods work on the phase
+contrast images (such as MicrobeTracker and MAMLE). These phase contrast image datasets were
+obtained growing as largely isolated cells or micro-colonies on agarose pads, which can provide high
+quality images. On the contrary, our dataset gave densely growing cells in the microfluidics system,
+which provides lower quality images but provides more information to understand their growth patterns
+through their life cycles. In this work, we focus on segmenting and tracking cells which are from the
+microfluidics system. In our knowledge, no one has previously focus on segmenting, tracking and
+analysing cells which are from the microfluidics system.
+Our proposed method indeed works well and its results between consecutive frames are very consistent.
+This is evident when we applied this approach to a very large scale time-lapse image datasets, which
+would have challenged most other systems with the data of high complexity. Our system is very
+sensitive to cell division moment with a reasonable accuracy (Fig. 6, Fig. 9 and Fig. 10).
+In the revised paper, we explained that the integration of these key steps leads to a more effective
+automated cell segmentation and tracking scheme:
+1) The segmentation results in previous frame are split to a set of small sub-windows to segment
+and track their corresponding cells. Integrating cell boundary information and a rod-shape and
+size criterion is to eliminate many undesired contours.
+2) The cell septum and membrane information is used to identify the cell division process and
+segment touched cells.
+3) The global trajectory energy minimisation function is developed to efficiently track cells during
+cell elongation and division, even if the appearances (length and areas) of cells are not constant.
+This process can minimise the accumulated errors of tracking.
+We compare our proposed method with that of MicrobeTracker and MAMLE on phase contrast images
+and our own dataset (Fig. 10 and Table. 4). We also added Fig. 11, Fig. 12 and Fig. 13 to visualise the
+tracking results, tracking genealogy tree and biological insights in Section 5 (c).
+In addition, we are currently applying our proposed segmentation and tracking scheme to other bacterial
+cells, such as Mycobacterium smegmatis.
+Some algorithmic details are left fuzzy enough that one would need to speculate quite a bit in
+order to re-implement them. For example in the discussion of new cells entering at end of 4d. Does
+this mean segmentation is propagated forward, and then a second pass is done in which certain
+areas are masked as accounted for (how?) and the initialization procedure (4b) is run de novo?
+something else?
+We revised the section 4 to clarify the whole process.
+For new cells entering, without taking new entering cells into consideration, cells are first segmented
+and tracked in the current frame. After that, the first frame segmentation scheme is used again to capture
+these new entering cells in non-extracted cell areas.
+In general the components are clearly described, but how they fit together is not perfectly clear.
+As one who is familiar with the literature but has never implemented a level set approach, one of
+the most basic differences between them (I would think) is whether (a) a single level set is used to
+segment a single set of objects that are then split (say by connected components) (b) one level set
+is evolved independently for each object or (c) a framework for co-evolution of a set of non-
+overlapping level sets is used. It is primarily because of the lack of details necessary for A or C
+that I believe B is the approach here, but I'm not 100% sure after 3 readings (connected
+component splitting may be assumed, so A is possible). Some explicit big picture framing is needed
+I feel.
+Thank you for suggesting this. We have done a major revision to improve the overall presentation of
+the paper.
+We have provided some more explanation for level set method in Section 4 (b and c). Here is a short
+summary:
+In our work, we focus on address the images in which the boundaries of the cells are ambiguous and
+the cells cluster together. For the above-mentioned first approach (a), it works well in segmenting
+objects which have clear boundary or contrast with background. This method has some limitations on
+images with clustered cells.
+For above mentioned approach (b) and (c), we utilised one level set to evolve independently for each
+cell in the first frame and co-evolution of a set of non-overlapping level sets for the consequent frames.
+Reviewer 3:
+Comments to the Author(s)
+label_comment_11
+The paper proposes a system to detect and track bacteria in time-lapse imaging. The paper lists
+three major contributions: (1) use of segmentation from previous frame to initialize segmentation
+for the current frame—this is a very widely used technique particularly for deformable contour
+tracking; (2) use of info about cell septum and membrane to segment individual cells; (3)
+trajectory energy minimization. Bacteria are segmented using edge-based active contours.
+Segmentation from frame (t-1) is projected to frame(t). Cell septum indication function (based on
+intensity profile across the septum of cell) is used to handle dividing cells. Trajectory energy
+minimization is used to resolve track association ambiguities. A global energy function with
+depends on all cells on all frames is formulated. New cells entering the field of view are segmented
+using active contours method.
+The proposed system is evaluated on three datasets against two other methods MicrobeTracker
+and Schnitzcells. Detection and tracking performances are evaluated. In terms of segmentation
+evaluation, the proposed approach outperforms Microbe Tracker and MAMLE on the third
+dataset (authors’ own dataset), but falls behind MAMLE on the first two datasets (example
+datasets from MIcrobeTracker and Schnitzcells). In terms of tracking performance, proposed
+approach outperforms Schnitzcells & MicrobeTracker in terms of multiple object tracking
+accuracy but is closely behind Schnitzcells in terms of multiple object tracking precision.
+We agree with the reviewer’s comment.
+Our method indeed works well and its results between consecutive frames are very consistent. This is
+evident when we applied this approach to a very large scale time-lapse image datasets, which would
+have challenged most other systems with the data of high complexity (Table 4). Our system is very
+sensitive to cell division moment with a reasonable accuracy (Fig. 6, Fig. 9 and Fig. 10).
+We compare our proposed method with that of MicrobeTracker and MAMLE on phase contrast images
+and our own dataset (Fig. 10 and Table. 4). For large scale time-lapse cell analysis, maintaining the
+consistency of segmentation and tracking results between the consecutive frames is a more important.
+Thus, we compare these three methods on consistency level between frames. We added an extra figure
+(Fig. 9) to show the consistency level of the number of extracted cells results for different methods.
+This figure is to a compelling reason why the other two approaches are not sufficiently good for our
+mentioned segmentation problem. Thank you.
+Comments:
+- Technically sound approach. Individual modules are not too innovative, but relevant system
+/application paper.
+- Clearly written.
+- Tracking results comparable or better to state-of-the-art.
+- Section 2 is out of order.
+We revised the section 2 to clarify the process. Thank you.
+- Definitions of abbreviations are introduced once not repeated again, this makes it hard to read
+figure and table captions. Put more details especially definitions of abbreviations etc. on the
+captions.
+Thank you for pointing this out. We have provided more details on the captions of figures and tables.
+- Put more information on the datasets. Percent evaluations are fine, but do not give enough
+information on the complexity of the datasets. How many cells are in total? How many cells per
+image? When you refer to medium or high density crowd, what is approximate number of cells?
+We have provided more details of our dataset in Section 5(a) and Table 4. Table 4 provides information
+on the complexity of the datasets, such as the number of cells in total, the number of cells per image,
+and the information of sparse, medium or high density crowd. Thank you.
+- Nice references for general cell tracking but references related to recent bacteria tracking works
+are lacking and should be included (i.e Shaevitz Lab. (Princeton) and Alber Lab. (Notre
+Dame) have various software/papers that analyze motion of swarming bacteria).
+In the revised paper, we have reviewed more recent references for general cell segmentation and
+tracking. Thank you.
+Society Open

@@ -1,0 +1,821 @@
+Systematic polypharmacology and drug repurposing via an
+integrated L1000-based Connectivity Map database mining
+Tsang-Pai Liu, Yao-Yu Hsieh, Chia-Jung Chou and Pei-Ming Yang
+Article citation details
+R. Soc. open sci. 5: 181321.
+http://dx.doi.org/10.1098/rsos.181321
+Review timeline
+Original submission: 10 August 2018 Note: Reports are unedited and appear as
+Revised submission: 1 November 2018 submitted by the referee. The review history
+Final acceptance: 2 November 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-181321.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Reports © 2018 The Reviewers; Decision Letters © 2018 The Reviewers and Editors;
+Responses © 2018 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+Liu and colleagues present a computational drug repurposing practice using the data from the
+Connectivity Map (CMap) and the LINCS L1000 dataset with various types of software tools
+developed on top of those datasets. Concretely, they used publicly available drug-induced gene
+expression dataset to identify expected differentially expressed genes (DEGs) as input for those
+drug repurposing tools. Their analyses identified two small molecule compounds from the
+LINCS L1000 dataset with unknown activities as novel HDAC inhibitors and mitomycin C as a
+topoisomerase inhibitor. Importantly, the authors also confirmed those activities by molecular
+docking and cell-based activity assays.
+In my opinion, the design of the study and the methodologies are technically sound. The authors
+also presented convincing evidence for their newly discovered activities for the compounds and
+drugs. I also applaud for the authors for leveraging publicly available datasets and tools for
+knowledge discovery. I have the following comments and suggestions on the details:
+1. It will be interesting to quantify the binding affinities of the novel HDAC inhibitors and
+mitomycin C using dose-response curves.
+2. What method did the authors used to identify the DEGs from the HDAC inhibitor-treated
+cancer cell lines?
+label_author_2
+Review form: Reviewer 2 (Alexander Lachmann)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Review: Systematic Polypharmacology and Drug Repurposing via an Integrated L1000-based
+Connectivity Map Database Mining
+3
+Summary:
+The document describes the process of utilizing publically available gene-expression databases to
+infer drug mode of action for novel chemical compounds. The authors focus on two drug classes.
+HDAC inhibitors and topoisomerase inhibitors. First drug candidates are identified by their gene
+expression profile using the CLUE interface from the L1000 dataset. Then direct target gene
+activity is measured for a select set of candidate compounds.
+General comments:
+The approach to identify MOA for novel compounds using L1000 data is well described in this
+document. This is a very nice example of how drug repurposing can work successfully. It also
+illustrates nicely that not every drug pair with matching gene expression signatures has the same
+MOA. The approach however still seems to have a high success rate. The claim that the MOA of
+the drugs has been completely established is debatable, but the study brings forth a lot of good
+points that suggest that for some of the drugs a MOA could be predicted. There are minor
+inconsistencies in the strategy. Not all genes are tested with the docking method. Why not? Not
+all drugs are screened in an experiment (like in Figure 1G). This might be due to compound
+availability, but it would make a stronger point if the same method would be applied
+consistently.
+Major Comments:
+1) Is 50uM a typical dose for rifabutin? It seems high. If Rifabutin has similar MOA would
+increased viability at a relatively high dose of 5-10uM be expected? What is the viability of cells
+when treated with known HDAC inhibitors such as SAHA? The authors conclude that rifabutin
+is not an HDAC inhibitor. Why is the signature similar to HDAC inhibitors?
+2) same with KM-00927. The idea proposed here is to be able to predict the mode of action of a
+drug. But in both cases, drugs similar to HDAC inhibitors are not HDAC inhibitors. Many drugs
+would kill cells at 50uM.
+3) How can be concluded that the L1000 is better than the CMap build 02 from this result?
+4) The authors do a great job with inferring that BRD-K75081836 is an HDAC inhibitor. However,
+the analysis is a bit inconsistent compared to the two other drug candidates tested. HDAC
+activity was directly measured in Figure 1G which led them to dismiss the two prior candidates
+to be directly binding to HDAC. They have shown that signature similarity can be misleading, so
+it could again be the case here. The docking analysis is nice but is only performed for this drug,
+why not the other two? The message of the paper will be strengthened if BRD-K75081836 is
+included in figure 1G.
+5) How exactly where the top 50 perturbations connected to topoisomerase I/II found? I assume
+the authors selected 4 TOP1-i and 10 TOP2-i drugs in L1000. Why those drugs? Daunorubicin
+shows up as a result labeled as TOP-i but was not part of the selected drugs in the query. How
+are the drugs ranked and what was used to calculate similarity? Is it the CLUE interface?
+6) What was the reasoning of not following up on SIB-1893 as it ranked higher than
+Mycophenolic-acid and Mepacrine?
+7) The authors state in the conclusion that KM-00927 and BRD-K75081836 are HDAC inhibitors.
+While there is some evidence, especially plausible for the later drug due to structural similarity to
+SAHA, in both cases experimental evidence is not given. The claim is based on signature
+similarity, but in the case of KM-00927, a direct HDAC activity measurement in Figure 1G
+contradicts a direct interaction. The evidence for mitomycin C as a TOP2-i is convincing.
+Molecular docking would have been interesting in this case too.
+8) To provide a template for other researchers that want to do drug repurposing and MOA
+detection of novel compounds this paper would profit from a concise description of the strategy
+that could be applied for other drugs as well.
+9) In the description of the method, the authors say the L1000FWD tool refined the strategy in
+selecting drug candidates. Were was the L1000FWD used to prioritize drugs? Or was the tool
+4
+merely used as a visual aid to show the similarity structure of the drugs? Did the identification of
+the three major clusters of topoisomerase have any impact on the analysis? How was the
+knowledge of the three clusters used in the analysis?
+Minor Comments:
+1) Abstract: , which has been believed to reduce time- and cost-consuming, and bypass safety
+concerns. (I would recommend rewriting this sentence)
+2) Large-scale databases have been accumulated...
+3) Introduction first line: indicates the identification of novel indication(s) (sounds weird)
+4) efficacy of an approved dug...
+5) (The) L1000 assay platform is a...
+6) prediction than the CMap
+7) interface-Lincscloud
+8) to discover and prioritize
+9) over-expression and overexpression both used. (over-expression better)
+10) "Because transcriptional reprogramming induced by HDAC inhibitors is believed to
+contribute largely to their therapeutic benefits [19], we proposed that CMap is a suitable tool for
+the discovery of novel HDAC inhibitors based on comparing the similarity of gene-expression
+profiling (gene signatures) between the established HDAC inhibitors and CMap drugs."
+- who is "their"?
+- why would that suggest that CMap is a useful tool?
+11) How is the Average mean score calculated? Isn't average mean redundant?
+12) Figure 2B) the authors claim that the structure of the drug is similar. I agree that they look
+similar, but is there a way to quantify this?
+13) ... by unwinding the DNA double helix
+14) one or two strands
+15) ...from top 50 perturbations that showed...
+label_end_comment
+Decision letter (RSOS-181321.R0)
+24-Oct-2018
+Dear Dr Yang
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-181321 entitled
+"Systematic Polypharmacology and Drug Repurposing via an Integrated L1000-based
+Connectivity Map Database Mining" has been accepted for publication in Royal Society Open
+Science subject to minor revision in accordance with the referee suggestions. Please find the
+referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+5
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-181321
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 02-Nov-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If you do not think you will be able to meet this date
+please let me know immediately.
+6
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees. We strongly recommend uploading two versions of your revised manuscript:
+1) Identifying all the changes that have been made (for instance, in coloured highlight, in bold
+text, or tracked changes);
+2) A 'clean' version of the new manuscript that incorporates the changes made, but does not
+highlight them.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document";
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format);
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account;
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript. Make sure it is clear in your data accessibility statement how the data
+can be accessed;
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://rs.figshare.com/). The heading and legend provided for
+each supplementary file during the submission process will be used to create the figshare page,
+so please ensure these are accurate and informative so that your files can be found in searches.
+Files on figshare will be made available approximately one week before the accompanying article
+so that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication, you will be
+asked to pay the article processing charge, unless you request a waiver and this is approved by
+Royal Society Publishing. You can find out more about the charges at
+7
+http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Diwakar Shukla (Associate Editor) and Professor Catrin Pritchard (Subject
+Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Liu and colleagues present a computational drug repurposing practice using the data from the
+Connectivity Map (CMap) and the LINCS L1000 dataset with various types of software tools
+developed on top of those datasets. Concretely, they used publicly available drug-induced gene
+expression dataset to identify expected differentially expressed genes (DEGs) as input for those
+drug repurposing tools. Their analyses identified two small molecule compounds from the
+LINCS L1000 dataset with unknown activities as novel HDAC inhibitors and mitomycin C as a
+topoisomerase inhibitor. Importantly, the authors also confirmed those activities by molecular
+docking and cell-based activity assays.
+In my opinion, the design of the study and the methodologies are technically sound. The authors
+also presented convincing evidence for their newly discovered activities for the compounds and
+drugs. I also applaud for the authors for leveraging publicly available datasets and tools for
+knowledge discovery. I have the following comments and suggestions on the details:
+1. It will be interesting to quantify the binding affinities of the novel HDAC inhibitors and
+mitomycin C using dose-response curves.
+2. What method did the authors used to identify the DEGs from the HDAC inhibitor-treated
+cancer cell lines?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Review: Systematic Polypharmacology and Drug Repurposing via an Integrated L1000-based
+Connectivity Map Database Mining
+Summary:
+The document describes the process of utilizing publically available gene-expression databases to
+infer drug mode of action for novel chemical compounds. The authors focus on two drug classes.
+HDAC inhibitors and topoisomerase inhibitors. First drug candidates are identified by their gene
+expression profile using the CLUE interface from the L1000 dataset. Then direct target gene
+activity is measured for a select set of candidate compounds.
+8
+General comments:
+The approach to identify MOA for novel compounds using L1000 data is well described in this
+document. This is a very nice example of how drug repurposing can work successfully. It also
+illustrates nicely that not every drug pair with matching gene expression signatures has the same
+MOA. The approach however still seems to have a high success rate. The claim that the MOA of
+the drugs has been completely established is debatable, but the study brings forth a lot of good
+points that suggest that for some of the drugs a MOA could be predicted. There are minor
+inconsistencies in the strategy. Not all genes are tested with the docking method. Why not? Not
+all drugs are screened in an experiment (like in Figure 1G). This might be due to compound
+availability, but it would make a stronger point if the same method would be applied
+consistently.
+Major Comments:
+1) Is 50uM a typical dose for rifabutin? It seems high. If Rifabutin has similar MOA would
+increased viability at a relatively high dose of 5-10uM be expected? What is the viability of cells
+when treated with known HDAC inhibitors such as SAHA? The authors conclude that rifabutin
+is not an HDAC inhibitor. Why is the signature similar to HDAC inhibitors?
+2) same with KM-00927. The idea proposed here is to be able to predict the mode of action of a
+drug. But in both cases, drugs similar to HDAC inhibitors are not HDAC inhibitors. Many drugs
+would kill cells at 50uM.
+3) How can be concluded that the L1000 is better than the CMap build 02 from this result?
+4) The authors do a great job with inferring that BRD-K75081836 is an HDAC inhibitor. However,
+the analysis is a bit inconsistent compared to the two other drug candidates tested. HDAC
+activity was directly measured in Figure 1G which led them to dismiss the two prior candidates
+to be directly binding to HDAC. They have shown that signature similarity can be misleading, so
+it could again be the case here. The docking analysis is nice but is only performed for this drug,
+why not the other two? The message of the paper will be strengthened if BRD-K75081836 is
+included in figure 1G.
+5) How exactly where the top 50 perturbations connected to topoisomerase I/II found? I assume
+the authors selected 4 TOP1-i and 10 TOP2-i drugs in L1000. Why those drugs? Daunorubicin
+shows up as a result labeled as TOP-i but was not part of the selected drugs in the query. How
+are the drugs ranked and what was used to calculate similarity? Is it the CLUE interface?
+6) What was the reasoning of not following up on SIB-1893 as it ranked higher than
+Mycophenolic-acid and Mepacrine?
+7) The authors state in the conclusion that KM-00927 and BRD-K75081836 are HDAC inhibitors.
+While there is some evidence, especially plausible for the later drug due to structural similarity to
+SAHA, in both cases experimental evidence is not given. The claim is based on signature
+similarity, but in the case of KM-00927, a direct HDAC activity measurement in Figure 1G
+contradicts a direct interaction. The evidence for mitomycin C as a TOP2-i is convincing.
+Molecular docking would have been interesting in this case too.
+8) To provide a template for other researchers that want to do drug repurposing and MOA
+detection of novel compounds this paper would profit from a concise description of the strategy
+that could be applied for other drugs as well.
+9) In the description of the method, the authors say the L1000FWD tool refined the strategy in
+selecting drug candidates. Were was the L1000FWD used to prioritize drugs? Or was the tool
+merely used as a visual aid to show the similarity structure of the drugs? Did the identification of
+the three major clusters of topoisomerase have any impact on the analysis? How was the
+knowledge of the three clusters used in the analysis?
+Minor Comments:
+1) Abstract: , which has been believed to reduce time- and cost-consuming, and bypass safety
+concerns. (I would recommend rewriting this sentence)
+9
+2) Large-scale databases have been accumulated...
+3) Introduction first line: indicates the identification of novel indication(s) (sounds weird)
+4) efficacy of an approved dug...
+5) (The) L1000 assay platform is a...
+6) prediction than the CMap
+7) interface-Lincscloud
+8) to discover and prioritize
+9) over-expression and overexpression both used. (over-expression better)
+10) "Because transcriptional reprogramming induced by HDAC inhibitors is believed to
+contribute largely to their therapeutic benefits [19], we proposed that CMap is a suitable tool for
+the discovery of novel HDAC inhibitors based on comparing the similarity of gene-expression
+profiling (gene signatures) between the established HDAC inhibitors and CMap drugs."
+- who is "their"?
+- why would that suggest that CMap is a useful tool?
+11) How is the Average mean score calculated? Isn't average mean redundant?
+12) Figure 2B) the authors claim that the structure of the drug is similar. I agree that they look
+similar, but is there a way to quantify this?
+13) ... by unwinding the DNA double helix
+14) one or two strands
+15) ...from top 50 perturbations that showed...
+Author's Response to Decision Letter for (RSOS-181321.R0)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-181321.R1)
+02-Nov-2018
+Dear Dr Yang,
+I am pleased to inform you that your manuscript entitled "Systematic polypharmacology and
+drug repurposing via an integrated L1000-based Connectivity Map database mining" is now
+accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+10
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Diwakar Shukla (Associate Editor) and Professor Catrin Pritchard (Subject
+Editor)
+openscience@royalsociety.org
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+Appendix A
+Point-by-Point Responses to the Reviewers’ Comments
+Reviewer #1
+1. It will be interesting to quantify the binding affinities of the novel HDAC inhibitors
+and mitomycin C using dose-response curves.
+Our responses:
+We thank the reviewer’s suggestion. Our results found that KM-00927 and BRD-
+K75081836 were novel HDAC inhibitors, and mitomycin C was a novel topoisomerase
+IIB inhibitor. However, we thought that it is not suitable to quantify the binding
+affinities of these compounds to their targets according to the present results. First, we
+demonstrated that KM-00927 inhibited HDAC activity in an indirect manner. Second,
+we cannot perform in vitro HDAC activity assay to prove the interaction between BRD-
+K75081836 and HDACs because of the unavailability of BRD-K75081836 in
+commercial. Third, as a DNA alkylating agent, mitomycin C may alkylate DNA and
+form covalent adducts with DNA, then trapping topoisomerases. In vitro incubation of
+drug and enzyme may be unmeaningful.
+2. What method did the authors used to identify the DEGs from the HDAC inhibitor-
+treated cancer cell lines?
+Our responses:
+We thank the reviewer’s reminding. The method for the preparation of DEGs has been
+added to “Materials and methods” (p.13, lines 5-12) as follows.
+For the CMap build 02 analyses, the DEGs (File S1) from HDAC inhibitor-treated
+cancer cell lines, including SAHA-treated HCT116 (GSE22061 [20]), SAHA-treated
+MDA-MB-231 (GSE60125), and FK228-treated HCT116 cells (GSE22061 [20]), were
+prepared using the GEO online tool GEO2R (https://www.ncbi.nlm.nih.gov/geo/geo2r/)
+[9]. GEO2R performs comparisons on original submitter-supplied processed data tables
+using the GEOquery and limma R packages from the Bioconductor project [9]. The cut-
+off criteria for DEGs were set at adjusted p value < 0.01 and |logFC| > 2.
+References
+9 Barrett, T., Wilhite, S. E., Ledoux, P., Evangelista, C., Kim, I. F., Tomashevsky, M.,
+Marshall, K. A., Phillippy, K. H., Sherman, P. M., Holko, M., et al. 2013 NCBI GEO:
+archive for functional genomics data sets--update. Nucleic Acids Res. 41, D991-995.
+(10.1093/nar/gks1193)
+20 Liu, Y., Salvador, L. A., Byeon, S., Ying, Y., Kwan, J. C., Law, B. K., Hong, J.,
+Luesch, H. 2010 Anticolon cancer activity of largazole, a marine-derived tunable
+histone deacetylase inhibitor. The Journal of pharmacology and experimental
+therapeutics. 335, 351-361. (10.1124/jpet.110.172387)
+Reviewer #2
+Major Comments:
+1) Is 50uM a typical dose for rifabutin? It seems high. If Rifabutin has similar MOA
+would increased viability at a relatively high dose of 5-10uM be expected? What is the
+viability of cells when treated with known HDAC inhibitors such as SAHA? The authors
+conclude that rifabutin is not an HDAC inhibitor. Why is the signature similar to HDAC
+inhibitors?
+2) same with KM-00927. The idea proposed here is to be able to predict the mode of
+action of a drug. But in both cases, drugs similar to HDAC inhibitors are not HDAC
+inhibitors. Many drugs would kill cells at 50uM.
+Our responses to major comments #1 and #2:
+We thank the reviewer’s comments. To address the reviewer’s concern regarding drug
+dosages, we have added the following statements in “Results and discussion” (p.9, the
+second paragraph).
+There are several types of HDAC inhibitors with efficacies in the nanomolar to
+millimolar ranges. The most potent types include cyclic peptides (such as
+depsipeptide/FK228, apicidin, and trapoxin), hydroxomic acids (such as trichostatin A
+and SAHA), and benzamides (such as entinostat/MS-275 and mocetinostat), which
+inhibit HDAC activity in the nanomolar and low micromolar ranges and kill cancer
+cells in the sub-micromolar ranges. The ketones (such as <U+F061>-ketomides and
+trifluoromethyl ketone) and short-chain fatty acids (such as valproic acid,
+phenylbutyrate, and sodium butyrate) exhibit HDAC inhibition and cancer cell killing
+in the micromolar and millimolar ranges, respectively [24-26]. Despite the least potency
+of sort-chain fatty acid to inhibition HDAC, some of them are used in clinic. For
+example, valproic acid is used to treat epilepsy and bipolar disorder [27, 28]. In addition,
+valproic acid is still identified as a potent anticancer agents and encouraging results are
+found in clinical trials [29]. KM-00927 is a synthetic drug with unknown function. Our
+results found that KM-00927 was a potent and indirect HDAC inhibitor, which induced
+histone acetylation and killed cancer cells in micromolar ranges (10 to 50 µM). We
+thought that KM-00927 could be developed as an anticancer drug in the future.
+However, whether inhibition of HDAC activity contributes to its anticancer activity
+warrants further investigations.
+References
+24 Wagner, J. M., Hackanson, B., Lubbert, M., Jung, M. 2010 Histone deacetylase
+(HDAC) inhibitors in recent clinical trials for cancer therapy. Clinical epigenetics. 1,
+117-136. (10.1007/s13148-010-0012-4)
+25 Licciardi, P. V., Ververis, K., Karagiannis, T. C. 2011 Histone deacetylase inhibition
+and dietary short-chain Fatty acids. ISRN Allergy. 2011, 869647.
+(10.5402/2011/869647)
+26 Ververis, K., Karagiannis, T. C. 2011 Potential non-oncological applications of
+histone deacetylase inhibitors. Am J Transl Res. 3, 454-467.
+27 Peselow, E. D., Clevenger, S., IsHak, W. W. 2016 Prophylactic efficacy of lithium,
+valproic acid, and carbamazepine in the maintenance phase of bipolar disorder: a
+naturalistic study. Int Clin Psychopharmacol. 31, 218-223.
+(10.1097/YIC.0000000000000097)
+28 Kurwale, N., Garg, K., Arora, A., Chandra, P. S., Tripathi, M. 2016 Valproic acid
+as an antiepileptic drug: Is there a clinical relevance for the epilepsy surgeon? Epilepsy
+Res. 127, 191-194. (10.1016/j.eplepsyres.2016.09.005)
+29 Duenas-Gonzalez, A., Candelaria, M., Perez-Plascencia, C., Perez-Cardenas, E., de la
+Cruz-Hernandez, E., Herrera, L. A. 2008 Valproic acid as epigenetic cancer drug:
+preclinical, clinical and transcriptional effects on solid tumors. Cancer Treat Rev. 34,
+206-222. (10.1016/j.ctrv.2007.11.003)
+3) How can be concluded that the L1000 is better than the CMap build 02 from this
+result?
+Our responses:
+We thank the reviewer’s comments. We deleted or modified the following sentences to
+avoid overstating the conclusion.
+“Thus, we speculated that the LINCS may provide a more reliable prediction thant the
+CMap.” (deleted in p.4, lines 7-8).
+“These results also support our speculation that L1000-based next-generation CMap
+(LINCS) provides a more accurate prediction than its previous version (CMap build
+02).” (modified in p.7, lines 17-19).
+“Our results indicated that the L1000-based next-generation CMap had a convenient
+and reliable prediction for drug repurposing and polypharmacology.” (deleted in p.5,
+lines 2-4).
+4) The authors do a great job with inferring that BRD-K75081836 is an HDAC inhibitor.
+However, the analysis is a bit inconsistent compared to the two other drug candidates
+tested. HDAC activity was directly measured in Figure 1G which led them to dismiss
+the two prior candidates to be directly binding to HDAC. They have shown that
+signature similarity can be misleading, so it could again be the case here. The docking
+analysis is nice but is only performed for this drug, why not the other two? The message
+of the paper will be strengthened if BRD-K75081836 is included in figure 1G.
+Our responses:
+We thank the reviewer’s comments and suggestions. However, we regret that the in
+vitro HDAC activity cannot be performed to demonstrate the interaction of BRD-
+K75081836 and HDACs because of the unavailability of this drug in commercial. We
+performed the molecular docking of rifabutin and KM-00927 to HDAC2 according to
+the reviewer’s suggestions, and the following statements have been added to “Results
+and discussion” (p.9, the first paragraph).
+Furthermore, we performed molecular docking of rifabutin and KM-00927 to HDAC2
+in parallel. The results found that the total fitness energies of rifabutin and KM-00927
+were lower than those of SAHA and BRD-K75081836 (Table 3), further supporting
+the results that rifabutin and KM-00927 did not interact and inhibit HDAC activity in
+vitro (Figure 1G).
+Table 3 The interaction profile of HDAC2 and drugs by iGEMDOCK analysis
+Drug Total fitness energy VDW Hbond Elect
+SAHA -113.62 -80.11 -33.51 0
+BRD-K75081836 -127.5 -85.63 -40.75 -1.12
+Rifabutin -96.35 -89.88 -6.47 0
+KM-00927 -63.67 -59.38 -4.29 0
+Note: Fitness (kcal/mol) is the total energy of a predicted pose in the binding site and it
+is calculated by the following equation: Fitness = vdW + Hbond + Elect. The terms,
+vdW, Hbond, and Elect, indicate van der Waal energy, hydrogen bonding energy, and
+Elect term is electro statistic energy, respectively
+5) How exactly where the top 50 perturbations connected to topoisomerase I/II found?
+I assume the authors selected 4 TOP1-i and 10 TOP2-i drugs in L1000. Why those
+drugs? Daunorubicin shows up as a result labeled as TOP-i but was not part of the
+selected drugs in the query. How are the drugs ranked and what was used to calculate
+similarity? Is it the CLUE interface?
+Our responses:
+The criteria for selecting the queried 14 topoisomerase inhibitors has been added to
+“Materials and methods” (p.13, lines 20-23) as follows. Although daunorubicin
+belongs to “CMap class”, its description is indicated as “RNA synthesis inhibitor”.
+Therefore, daunorubicin is excluded based on the above criteria.
+For the prediction of novel topoisomerase inhibitors, the “perturbation classes” and
+“perturbation type” were set as “CMap class” and “compound”, respectively. Drugs
+with description “topoisomerase inhibitor” were selected for generation of a heat map
+(Figure 3).
+For the calculation and ranking of drug similarity, we have added the following
+statements in “Materials and methods” (p.13, lines 23-29).
+The drug similarity was ranked according to the CMap connectivity score (ranging from
+-100 to 100) that corresponds to the fraction of reference gene sets with a greater
+similarity to the perturbagen than the current query. For example, a score of 95 indicates
+that only 5% of reference gene sets showed stronger connectivity than the current query
+to the perturbagen. In general, connectivity scores higher than 95 and lower than -95
+were considered as strong scores [7].
+Reference
+7 Subramanian, A., Narayan, R., Corsello, S. M., Peck, D. D., Natoli, T. E., Lu, X.,
+Gould, J., Davis, J. F., Tubelli, A. A., Asiedu, J. K., et al. 2017 A Next Generation
+Connectivity Map: L1000 Platform and the First 1,000,000 Profiles. Cell. 171, 1437-
+1452 e1417. (10.1016/j.cell.2017.10.049)
+6) What was the reasoning of not following up on SIB-1893 as it ranked higher than
+Mycophenolic-acid and Mepacrine?
+Our responses:
+We agree the reviewer’s comment that SIB-1893 is worth for further analysis. However,
+current results aimed to support our drug repurposing strategy and we found that many
+drugs (including SIB-1893) have similar patterns with mycophenolic mofetil (the
+prodrug of mycophenolic acid) and mycophenolic acid. In addition, mycophenolic
+mofetil has the highest rank among the candidate drugs. Therefore, mitomycin C and
+mycophenolic acid (the active metabolite of mycophenolic mofetil) were used as a
+representative. The related descriptions have been included in the original version of
+this manuscript (“Results and discussion”, p.10, the second paragraph).
+7) The authors state in the conclusion that KM-00927 and BRD-K75081836 are HDAC
+inhibitors. While there is some evidence, especially plausible for the later drug due to
+structural similarity to SAHA, in both cases experimental evidence is not given. The
+claim is based on signature similarity, but in the case of KM-00927, a direct HDAC
+activity measurement in Figure 1G contradicts a direct interaction. The evidence for
+mitomycin C as a TOP2-i is convincing. Molecular docking would have been interesting
+in this case too.
+Our responses:
+We thank the reviewer’s comments and suggestions. Molecular docking was performed
+according to the reviewer’s suggestion, and the related statements have been added to
+“Results and discussion” (p.11, the last paragraph to p.12, the first paragraph).
+To investigate the interaction between mitomycin C and topoisomerase IIB, molecular
+docking was performed. As shown in Table S2, the binding affinity of mitomycin C to
+topoisomerase IIB was lower than that of etoposide, suggesting that additional
+mechanism(s) might be involved in the action of mitomycin C. An enzymatic
+bioreduction of mitomycin C is required for its activation and cytotoxic effect. Upon
+reduction, mitomycin C is converted into a highly bis-electrophilic intermediate that
+alkylates and crosslinks DNA [42]. Mitomycin C alkylations are specific for the
+guanine nucleosides in the CpG sequences [43]. It has been shown that psorospermin,
+a plant-derived antitumor agent, alkylates the guanine at the topoisomerase II cleavage
+site to trap the topoisomerase II-DNA cleavage complex [44]. In addition, clerocidin, a
+topoisomerase II poison, alkylates and forms covalent adducts with guanines, then
+trapping topoisomerase II enzymes [45]. These studies support the action of mitomycin
+C to promote the formation of topoisomerase II-DNA cleavage complex (Figure 5B).
+Therefore, our results provide an additional mechanistic insight into the mode of action
+of the anticancer agent mitomycin C, which may extend its clinical application for
+treating cancers or other diseases. However, the exact mechanism warrants further
+investigation.
+References
+42 Bass, P. D., Gubler, D. A., Judd, T. C., Williams, R. M. 2013 Mitomycinoid
+alkaloids: mechanism of action, biosynthesis, total syntheses, and synthetic approaches.
+Chem Rev. 113, 6816-6863. (10.1021/cr3001059)
+43 Tomasz, M. 1995 Mitomycin C: small, fast and deadly (but very selective). Chem
+Biol. 2, 575-579.
+44 Kwok, Y., Zeng, Q., Hurley, L. H. 1998 Topoisomerase II-mediated site-directed
+alkylation of DNA by psorospermin and its use in mapping other topoisomerase II
+poison binding sites. Proc Natl Acad Sci U S A. 95, 13531-13536.
+45 Gatto, B., Richter, S., Moro, S., Capranico, G., Palumbo, M. 2001 The
+topoisomerase II poison clerocidin alkylates non-paired guanines of DNA: implications
+for irreversible stimulation of DNA cleavage. Nucleic Acids Res. 29, 4224-4230.
+46 Hsu, K. C., Chen, Y. F., Lin, S. R., Yang, J. M. 2011 iGEMDOCK: a graphical
+environment of enhancing GEMDOCK using pharmacological interactions and post-
+screening analysis. BMC bioinformatics. 12 Suppl 1, S33. (10.1186/1471-2105-12-
+S1-S33)
+8) To provide a template for other researchers that want to do drug repurposing and
+MOA detection of novel compounds this paper would profit from a concise description
+of the strategy that could be applied for other drugs as well.
+Our responses:
+We thank the reviewer’s suggestion. A workflow has been depicted in Figure 6 to
+illustrate our analytic strategy, and the related statements have been added to
+“Conclusion” (p.12, the last paragraph) as follows.
+According to our analysis, a workflow is therefore proposed (Figure 6). The gene
+signatures of drugs can be either prepared from GEO datasets or directly obtained by
+querying the CLUE database using the “Touchstone” tool. Similar drugs can be further
+compared by the L1000FWD visualization of gene signatures to select candidates
+sharing similar MOAs. Finally, candidate drugs are validated by molecular docking and
+in vitro assays.
+Figure 6
+9) In the description of the method, the authors say the L1000FWD tool refined the
+strategy in selecting drug candidates. Were was the L1000FWD used to prioritize drugs?
+Or was the tool merely used as a visual aid to show the similarity structure of the drugs?
+Did the identification of the three major clusters of topoisomerase have any impact on
+the analysis? How was the knowledge of the three clusters used in the analysis?
+Our responses:
+We thank the reviewer’s comments. We have added the following statements in
+“Materials and methods” (p.13, the last line to p14, lines 1-3).
+For L1000FWD analysis, drug data can be queried and accessed by inputting drug name
+on the website (http://amp.pharm.mssm.edu/L1000FWD/). Drugs sharing similar
+MOAs will be clustered together [11].
+Reference
+11 Wang, Z., Lachmann, A., Keenan, A. B., Ma'ayan, A. 2018 L1000FWD: Fireworks
+visualization of drug-induced transcriptomic signatures. Bioinformatics.
+(10.1093/bioinformatics/bty060)
+Minor Comments:
+1) Abstract: , which has been believed to reduce time- and cost-consuming, and bypass
+safety concerns. (I would recommend rewriting this sentence)
+Our responses:
+We thank the reviewer’s suggestion. This sentence has been rewrited as follows.
+Because drug data already exist, drug repurposing may save time and cost, and bypass
+safety concerns.
+2) Large-scale databases have been accumulated...
+Our responses:
+This sentence has been modified as follows according to the reviewer’s suggestion.
+Large-scale databases have been accumulated in recent years
+3) Introduction first line: indicates the identification of novel indication(s) (sounds
+weird)
+Our responses:
+We thank the reviewer’s reminding. This sentence has been modified as follows.
+Drug repurposing, also known as drug repositioning, aim to identify novel indication(s)
+for an approved or experimental drug.
+4) efficacy of an approved dug...
+Our responses:
+We thank the reviewer’s reminding. This typo error “dug” has been corrected to “drug”.
+5) (The) L1000 assay platform is a...
+Our responses:
+We thank the reviewer’s reminding. “The” has been added to this sentence.
+6) prediction than the CMap
+Our responses:
+This sentence has been deleted in response to other points of the reviewers.
+7) interface-Lincscloud
+Our responses:
+We thank the reviewer’s reminding. This sentence has been modified as follows.
+Previously, LINCS is accessed via a web-based interface, the Lincscloud
+(http://www.lincscloud.org/).
+8) to discover and prioritize
+Our responses:
+We thank the reviewer’s reminding. This typo error “discovery” has been corrected to
+“discover”.
+9) over-expression and overexpression both used. (over-expression better)
+Our responses:
+We thank the reviewer’s suggesting. The term “overexpression” has been changed to
+“over-expression” accordingly.
+10) "Because transcriptional reprogramming induced by HDAC inhibitors is believed
+to contribute largely to their therapeutic benefits [19], we proposed that CMap is a
+suitable tool for the discovery of novel HDAC inhibitors based on comparing the
+similarity of gene-expression profiling (gene signatures) between the established
+HDAC inhibitors and CMap drugs."
+- who is "their"?
+- why would that suggest that CMap is a useful tool?
+Our responses:
+We thank the reviewer’s comments. We have modified the following statements in
+“Results and discussion” (p.5, the last two lines to p.6, lines 1-4).
+Transcriptional reprogramming is believed to contribute largely to the therapeutic
+benefits of HDAC inhibitors. Because CMap is established based on drug transcriptome
+profiles, we proposed that CMap is a suitable tool for the discovery of novel HDAC
+inhibitors by comparing the similarity of gene-expression profiling (gene signatures)
+between the established HDAC inhibitors and CMap drugs.
+11) How is the Average mean score calculated? Isn't average mean redundant?
+Our responses:
+We changed the heading “Average mean score” to “Average score” to avoid
+misleading with “Mean score” in each dataset. In addition, we have modified the note
+in Table 1 to describe the calculation of “Average score” as follows:
+The mean scores of common HDAC and HSP90 inhibitors were listed in this table,
+which was ranked by average score that is calculated by adding up the mean scores and
+dividing the total by the numbers of scores.
+12) Figure 2B) the authors claim that the structure of the drug is similar. I agree that
+they look similar, but is there a way to quantify this?
+Our responses:
+To address the reviewer’s concern, we have performed chemical structure similarity
+analysis, and the following statements have been added to “Results and discussion”
+and “Materials and methods”.
+In “Results and discussion” (p.8, lines 15-22):
+To quantify the structural similarity between BRD-K75081836 and hydroxamic acid-
+based HDAC inhibitors, hierarchical clustering of drugs was performed using the
+ChemBioServer (http://chembioserver.vi-seem.eu/) [23]. Indeed, BRD-K75081836,
+but not other drugs (KM-00927, rifabutin, and geldanamycin), was structurally similar
+to hydroxamic acid-based HDAC inhibitors including SAHA, trichostatin A, scriptaid,
+and panobinostat. Among them, SAHA was the most similar one to BRD-K75081836
+(Figure S1).
+In “Materials and methods” (p.14, lines 5-11):
+Chemical structure similarity analysis by the ChemBioServer
+The ChemBioServer is a web application for filtering, clustering, and visualizing of
+chemical compounds [23]. For the hierarchical clustering of compounds, a SDF files
+containing the simplified molecular-input line-entry system (SMILES) of drugs was
+uploaded to the ChemBioServer. The parameters were set as follows: distance =
+Soergel (Tanimoto coefficient); clustering linkage = Ward; and clustering threshold =
+0.4.
+Reference
+23 Athanasiadis, E., Cournia, Z., Spyrou, G. 2012 ChemBioServer: a web-based
+pipeline for filtering, clustering and visualization of chemical compounds used in drug
+discovery. Bioinformatics. 28, 3002-3003. (10.1093/bioinformatics/bts551)
+Figure S1
+13) ... by unwinding the DNA double helix
+Our responses:
+We thank the reviewer’s comment. This sentence has been modified as follows.
+Topoisomerases are enzymes that catalyzed the winding and unwinding of DNA double
+helix through breaking the backbone of either one or both the DNA strands.
+14) one or two strands
+Our responses:
+We thank the reviewer’s reminding. This typo error “strand” has been corrected to
+“strands”.
+15) ...from top 50 perturbations that showed...
+Our responses:
+We thank the reviewer’s reminding. “that” has been added to this sentence.
+Reviewer #3
+1. One concern about this paper is they used just CMap and just LINCS for
+prediction of HDAC inhibitors. This is a single case and it would have been more
+convincing to show the potential shortcomings of these isolated methods, when
+compared to the pipeline with integration of L1000FWD, if predictions were made
+and experimentally validated for topoisomerase II inhibitors.
+Our responses:
+We thank the reviewer’s comment and suggestion. It is undoubted that CMap has been
+successfully applied for drug repurposing and polypharmcology analysis since it is
+developed in 2006. In addition, the data sets from CMap serve as a basis for the
+development of other analytic tools. The purpose of this study is not to depreciate the
+contribution of CMap in this field. We emphasize that the integration of L1000FWD
+into CMap and LINCS predictions could exclude the drugs with dissimilar gene
+signatures. In this notion, we thought that we may overstate our conclusion in the
+original manuscript. Therefore, the following modifications have been made.
+(1) The following sentences have been deleted or modified to avoid overstating the
+conclusion.
+“Thus, we speculated that the LINCS may provide a more reliable prediction thant
+the CMap.” (deleted in p.4, lines 7-8).
+“These results also support our speculation that L1000-based next-generation
+CMap (LINCS) provides a more accurate prediction than its previous version
+(CMap build 02).” (modified in p.7, lines 17-19).
+“Our results indicated that the L1000-based next-generation CMap had a
+convenient and reliable prediction for drug repurposing and polypharmacology.”
+(deleted in p.5, lines 2-4).
+(2) A workflow (Figure 6) has been depicted to describe our analytic strategy, and the
+following statements have been added to “Conclusion” (p.12, the last paragraph).
+According to our analysis, a workflow is therefore proposed (Figure 6). The gene
+signatures of drugs can be either prepared from GEO datasets or directly obtained by
+querying the CLUE database using the “Touchstone” tool. Similar drugs can be further
+compared by the L1000FWD visualization of gene signatures to select candidates
+sharing similar MOAs. Finally, candidate drugs are validated by molecular docking and
+in vitro assays.
+Figure 6
+2. For the commercially unavailable putative HDAC inhibitor, a molecular docking
+protocol (iGEMDOCK) was leveraged to computationally support the potential of
+this drug to inhibit HDAC2. Binding scores and poses were compared between
+this drug and a known HDAC inhibitor (SAHA) to the HDAC2 target. However, it
+is unclear in the methods how the binding site was determined. Furthermore, it is
+not clear how the drugs 3D structure was minimized, nor what "empirical scoring
+function" was used for the fitness scoring in this molecular docking program.
+Our responses:
+We thank the reviewer’s comments. We have modified the statements in “Materials
+and methods” (p.14, the third paragraph) as follows.
+Docking simulations were performed with iGEMDOCK [39]. A structure of HDAC2
+(4LXZ) were obtained from the Protein Data Bank. The 3D drug structures in MOL2
+format were prepared using the software, Open Babel v2.4.1 [40]. The binding site of
+the target was prepared, and energy-minimized compounds were imported. The
+docking protocol is set to 80 generations per ligand and a population size of 300 random
+individuals. All docking conformations were performed 10 times using a genetic
+evolutionary algorithm, and the fitness of the docked structures was calculated. The
+binding site for docking was defined by the bound ligand included in the downloaded
+HDAC2 protein structure, and the binding site radius was set to 8Å. The binding affinity
+of a drug to HDAC2 was estimated by the fitness value calculated via the following
+formula: Fitness (kcal/mol) = VDW + Hbond + Elect, where the VDW term is van der
+Waal energy, Hbond term is hydrogen bonding energy, and Elect term is electro statistic
+energy.
+References
+39 Hsu, K. C., Chen, Y. F., Lin, S. R., Yang, J. M. 2011 iGEMDOCK: a graphical
+environment of enhancing GEMDOCK using pharmacological interactions and post-
+screening analysis. BMC bioinformatics. 12 Suppl 1, S33. (10.1186/1471-2105-12-
+S1-S33)
+40 O'Boyle, N. M., Banck, M., James, C. A., Morley, C., Vandermeersch, T., Hutchison,
+G. R. 2011 Open Babel: An open chemical toolbox. J Cheminform. 3, 33.
+(10.1186/1758-2946-3-33)
+3. The overall concepts and data are explained fairly well in this article. However,
+the authors need to edit the manuscript for typos and grammar mistakes, which
+occur frequently in this article.
+Our responses:
+We thank the reviewer’s reminding. We have extensively checked the manuscript and
+corrected the typo errors and grammar mistakes.
+Society Open

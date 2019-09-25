@@ -1,0 +1,924 @@
+The time geography of segregation during working hours
+Teodoro Dannemann, Boris Sotomayor-Gómez and Horacio Samaniego
+Article citation details
+R. Soc. open sci. 5: 180749.
+http://dx.doi.org/10.1098/rsos.180749
+Review timeline
+Original submission: 1 February 2018 Note: Reports are unedited and appear as
+1st revised submission: 11 May 2018 submitted by the referee. The review history
+2nd revised submission: 5 September 2018 appears in chronological order.
+Final acceptance: 6 September 2018
+Review History
+label_version_1
+RSOS-180164.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Elsa Arcaute)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Reports © 2018 The Reviewers; Decision Letters © 2018 The Reviewers and Editors; Responses ©
+2018 The Reviewers, Editors and Authors. Published by the Royal Society under the terms of the
+Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/, which permits
+unrestricted use, provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This is awn interesting paper that looks at segregation not at the residential end but at the work
+end. This is a novel approach to the use of mobile phone data using a network approach. I
+recommend publication, and just a few comments that can improve the manuscript.
+1) The English in the abstract needs reviewing.
+2) What do the authors mean in p.4 l.32 by “We also required each user to have, at least, five
+connection to a potential home or work place…”.
+3) Note that in general, people refer to Blondel’s community detection algorithm as the Louvain
+method. It’s nicer since more people get credit ;-)
+4) Note also that in general, one does not refer to classical and non-classical algorithms of
+community detection, but whether they are or not hierarchical, etc. In terms of performance, they
+normally relate to their computational complexity. In this sense the Louvain one is linear, but in
+general the Infomap one by Rosvall & Bergstrom tends to be faster, not necessarily better, but
+uses random walk. This is just a comment, since it seems that you assume that the Louvain is far
+more superior, but you did not show what sort of results you got with other algorithms in order
+to claim this. If you performed the computations, I would suggest to put in the appendix a table
+with the speed and modularity just for comparison. If the computation did not finish you can put
+that it was stopped after x amount of time. This is in a way is important since community
+detection algorithms tend to give different results, and in this way you would justify why this
+method was preferred. You could also do a sensibility test as the one that you did for the days
+with say another algorithm, just to check the how robust the results are. This is not necessary for
+acceptance, just if you have done these already.
+5) Is there a link for the reference 38? Maybe is the same reference missing in Fig 1?
+6) For the distance travelled between communities, it is clear that the mean is not a good measure,
+since the distribution is highly skewed, I gather from the plots that the mode is more
+representative.
+7) With respect to the distribution of the angles, it is difficult to grasp fig.3 and go back to Fig. 1 to
+see whether everybody is mainly commuting or not to the city centre. Maybe this figure could be
+accompanied by a map with arrows so that we can see the direction of the trip with respect to the
+community. In addition, it is clear that the distribution of the angles will be related to the
+geometry of the community detected, so it might be more relevant to look at the proportion of
+trips that point towards the city centre instead, since different angles might still indicate the same
+area target, that is the business centre.
+8) In the discussion section, you state “We show that the modularity optimization and the
+community detection algorithm proposed by Blondel et al [35] is an efficient method to outline
+communities representing groups that segregate through movement”, this is inaccurate, since
+you do not have a proxy to test the method, but the method is the tool to find your results.
+9) In addition you say “We highlight that communities found here are not simply given by the
+geographic context or the urban transport network of our example city…” I would argue that you
+did not make use of transport networks to compare your results. These could be used by
+comparing the probability of flow using a cost function of sorts given by the public transport
+available. This can be done in a second paper, but hence cannot be included in the discussion.
+10) After implementing the mode instead of the average for the distance, and the direction of
+movement in terms of whether people are moving or not towards a business hub, it would be
+3
+interesting to hear something about the similitudes/differences between communities, and with
+respect to the mono-centricity of santiago, if this is the case.
+11) The link for the data is not working.
+The paper is nicely structured and clear, and the authors should take these as recommendations
+only.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Reject
+Comments to the Author(s)
+label_comment_2
+The paper addresses the interesting problem of quantitatively measuring urban social
+segregation in context: people might be integrated in the social fabric of the workplace but be
+isolated when looking at their leisure interactions. To do that, the authors use ~1B data records
+from Telfonica in four working weeks for the city of Santiago, focusing on the urban area only.
+They build a graph of home-work transitions and, after clustering the graph, they study the social
+segregation in each community. The segregation is computed with a formula from previous work
+that captures the probability that workers in a given community interact with people coming
+from their home community while at work. The results unveil a star-shaped community structure
+centered on central Santiago in which peripheral communities are segregated.
+I can see the authors have put quite some effort in working on the experiments. It is also
+commendable that they are sharing the dats in some aggregated form. I have some concerns
+around several aspects of the contribution though.
+- Methodologically, the paper does not introduce much novelty. The clustering idea has been
+explored by Ratti et al. already (yes, on a different type of telco network but the methodology is
+basically the same), the segregation is a concept and a metric borrowed from previou work, the
+relationship between CDR and socio-economic indicators has been studied (maybe not in
+Santiago but still)
+- I have also doubts about the specific implementation of the methodology. The intuition of why a
+4
+community detection is appropriate in this specific case in not clearly justified. Why is that better
+than looking directly at census areas or at the voronoi cells of the towers? Focusing on census
+areas, for example, would allow a much more ganular exploration of segregation, commute
+patterns and socio economic indicators.
+- Speaking of methodology, the authors use an undirected network without giving any reason
+why they do that. I do realize that previous work did the same, but i) one would maybe like to
+improve on existing work and ii) it seems to me that for this specific case (work-home transitions)
+directionality matters quite much. For example, I am not sure one can interpret Figure 3 properly
+without directionality (unless the authors somehow swept in directionality again for that specific
+plot, but it doesn't look like)
+- Since the methodology is not particuarly new, the reader expects more novely in the findings.
+However, the granularity of analysis is very low (very few macro-areas) and confirms what is
+known already: people commute mostly towards the center which, by the definition given, it the
+only non-segregated area. The analysis of socio-economic indicators adds very little to this
+picture. I think that the paper falls flat in convincing the reader that the H-W network is useful to
+extract information that is more valuable (or at least different from) the information given by the
+call network.
+Overall, given that the methodology is not new and the findings are reasonable but limited I
+think that a more specialized venue on geo/urban studies might be more appropriate for this
+contribution.
+Other minor observations:
+- The text explaining P_\mathcal{C} is not clear. For example: "Consequently, ci/C denotes the
+probability that a member of community C will work in unit i and ci/Ti is the fraction of users
+belonging to community C working in unit i" -> aren't those concepts the same? I think that after
+looking at the formula carefully and not paying too much attention to what the text says the
+reader can slowly get it but as of now the text is a bit confusing (to me, at least)
+- I think it would be hard to justify to any community detection expert that Louvain is the best
+algorithm for this case because it performed well in benchmarks on synthetic datasets (I am
+referring to the paper the authors reference). I think that Louvain is a convenient and perfectly
+reasonable choice but I would not overstate it to the point of saying that it is the best possible
+choice.
+- I do realize that the RSOS format induces authors to have part of the methodology described in
+the appendix. That's fine in general but the authors should make sure not to create a dependency
+between the main text and the appendix. If to understand a section fully one needs to go and read
+the appendix then the purpose of slitting the paper in main text + appendix is defeated. The
+authors should revise the text with this consideration in mind. For example, Section 2.d reads as a
+dangling bit and feels incomplete without the appendix.
+- The writing should be polished. E.g., Well fare -> welfare ; five connection -> five connections;
+explicitly specify that H-W means "Home-Work"
+5
+label_end_comment
+Decision letter (RSOS-180164.R0)
+06-Mar-2018
+Dear Dr Samaniego:
+Manuscript ID RSOS-180164 entitled "The time geography of segregation during working hours"
+which you submitted to Royal Society Open Science, has been reviewed. The comments from
+reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 03-Sep-2018. If you are unable to submit by
+this date please contact the Editorial Office.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+We look forward to receiving your resubmission.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Cecilia Mascolo (Associate Editor) and Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Cecilia Mascolo):
+The reviewers are split however there seems to be concerns about novelty of the methods as well
+as of the findings.
+6
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This is awn interesting paper that looks at segregation not at the residential end but at the work
+end. This is a novel approach to the use of mobile phone data using a network approach. I
+recommend publication, and just a few comments that can improve the manuscript.
+1) The English in the abstract needs reviewing.
+2) What do the authors mean in p.4 l.32 by “We also required each user to have, at least, five
+connection to a potential home or work place…”.
+3) Note that in general, people refer to Blondel’s community detection algorithm as the Louvain
+method. It’s nicer since more people get credit ;-)
+4) Note also that in general, one does not refer to classical and non-classical algorithms of
+community detection, but whether they are or not hierarchical, etc. In terms of performance, they
+normally relate to their computational complexity. In this sense the Louvain one is linear, but in
+general the Infomap one by Rosvall & Bergstrom tends to be faster, not necessarily better, but
+uses random walk. This is just a comment, since it seems that you assume that the Louvain is far
+more superior, but you did not show what sort of results you got with other algorithms in order
+to claim this. If you performed the computations, I would suggest to put in the appendix a table
+with the speed and modularity just for comparison. If the computation did not finish you can put
+that it was stopped after x amount of time. This is in a way is important since community
+detection algorithms tend to give different results, and in this way you would justify why this
+method was preferred. You could also do a sensibility test as the one that you did for the days
+with say another algorithm, just to check the how robust the results are. This is not necessary for
+acceptance, just if you have done these already.
+5) Is there a link for the reference 38? Maybe is the same reference missing in Fig 1?
+6) For the distance travelled between communities, it is clear that the mean is not a good measure,
+since the distribution is highly skewed, I gather from the plots that the mode is more
+representative.
+7) With respect to the distribution of the angles, it is difficult to grasp fig.3 and go back to Fig. 1 to
+see whether everybody is mainly commuting or not to the city centre. Maybe this figure could be
+accompanied by a map with arrows so that we can see the direction of the trip with respect to the
+community. In addition, it is clear that the distribution of the angles will be related to the
+geometry of the community detected, so it might be more relevant to look at the proportion of
+trips that point towards the city centre instead, since different angles might still indicate the same
+area target, that is the business centre.
+8) In the discussion section, you state “We show that the modularity optimization and the
+community detection algorithm proposed by Blondel et al [35] is an efficient method to outline
+communities representing groups that segregate through movement”, this is inaccurate, since
+you do not have a proxy to test the method, but the method is the tool to find your results.
+9) In addition you say “We highlight that communities found here are not simply given by the
+geographic context or the urban transport network of our example city…” I would argue that you
+did not make use of transport networks to compare your results. These could be used by
+comparing the probability of flow using a cost function of sorts given by the public transport
+available. This can be done in a second paper, but hence cannot be included in the discussion.
+7
+10) After implementing the mode instead of the average for the distance, and the direction of
+movement in terms of whether people are moving or not towards a business hub, it would be
+interesting to hear something about the similitudes/differences between communities, and with
+respect to the mono-centricity of santiago, if this is the case.
+11) The link for the data is not working.
+The paper is nicely structured and clear, and the authors should take these as recommendations
+only.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The paper addresses the interesting problem of quantitatively measuring urban social
+segregation in context: people might be integrated in the social fabric of the workplace but be
+isolated when looking at their leisure interactions. To do that, the authors use ~1B data records
+from Telfonica in four working weeks for the city of Santiago, focusing on the urban area only.
+They build a graph of home-work transitions and, after clustering the graph, they study the social
+segregation in each community. The segregation is computed with a formula from previous work
+that captures the probability that workers in a given community interact with people coming
+from their home community while at work. The results unveil a star-shaped community structure
+centered on central Santiago in which peripheral communities are segregated.
+I can see the authors have put quite some effort in working on the experiments. It is also
+commendable that they are sharing the dats in some aggregated form. I have some concerns
+around several aspects of the contribution though.
+- Methodologically, the paper does not introduce much novelty. The clustering idea has been
+explored by Ratti et al. already (yes, on a different type of telco network but the methodology is
+basically the same), the segregation is a concept and a metric borrowed from previou work, the
+relationship between CDR and socio-economic indicators has been studied (maybe not in
+Santiago but still)
+- I have also doubts about the specific implementation of the methodology. The intuition of why a
+community detection is appropriate in this specific case in not clearly justified. Why is that better
+than looking directly at census areas or at the voronoi cells of the towers? Focusing on census
+areas, for example, would allow a much more ganular exploration of segregation, commute
+patterns and socio economic indicators.
+- Speaking of methodology, the authors use an undirected network without giving any reason
+why they do that. I do realize that previous work did the same, but i) one would maybe like to
+improve on existing work and ii) it seems to me that for this specific case (work-home transitions)
+directionality matters quite much. For example, I am not sure one can interpret Figure 3 properly
+without directionality (unless the authors somehow swept in directionality again for that specific
+plot, but it doesn't look like)
+- Since the methodology is not particuarly new, the reader expects more novely in the findings.
+However, the granularity of analysis is very low (very few macro-areas) and confirms what is
+known already: people commute mostly towards the center which, by the definition given, it the
+only non-segregated area. The analysis of socio-economic indicators adds very little to this
+picture. I think that the paper falls flat in convincing the reader that the H-W network is useful to
+extract information that is more valuable (or at least different from) the information given by the
+call network.
+Overall, given that the methodology is not new and the findings are reasonable but limited I
+8
+think that a more specialized venue on geo/urban studies might be more appropriate for this
+contribution.
+Other minor observations:
+- The text explaining P_\mathcal{C} is not clear. For example: "Consequently, ci/C denotes the
+probability that a member of community C will work in unit i and ci/Ti is the fraction of users
+belonging to community C working in unit i" -> aren't those concepts the same? I think that after
+looking at the formula carefully and not paying too much attention to what the text says the
+reader can slowly get it but as of now the text is a bit confusing (to me, at least)
+- I think it would be hard to justify to any community detection expert that Louvain is the best
+algorithm for this case because it performed well in benchmarks on synthetic datasets (I am
+referring to the paper the authors reference). I think that Louvain is a convenient and perfectly
+reasonable choice but I would not overstate it to the point of saying that it is the best possible
+choice.
+- I do realize that the RSOS format induces authors to have part of the methodology described in
+the appendix. That's fine in general but the authors should make sure not to create a dependency
+between the main text and the appendix. If to understand a section fully one needs to go and read
+the appendix then the purpose of slitting the paper in main text + appendix is defeated. The
+authors should revise the text with this consideration in mind. For example, Section 2.d reads as a
+dangling bit and feels incomplete without the appendix.
+- The writing should be polished. E.g., Well fare -> welfare ; five connection -> five connections;
+explicitly specify that H-W means "Home-Work"
+Author's Response to Decision Letter for (RSOS-180164.R0)
+See Appendix A.
+label_version_2
+RSOS-180749.R0
+label_author_3
+Review form: Reviewer 1 (Elsa Arcaute)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+9
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+The authors have done a good effort to address the main pointed out in the original manuscript.
+Overall, although many papers have been published using community detection on mobile
+phone data, this paper is different because it looks at segregation at the work place instead of
+residential place. In addition, although I would recommend for future work to use the algorithm
+for community detection that takes into consideration distance in the null model (Expert et al),
+the authors are taking this into account by constructing themselves a null model randomizing
+distances and directions. The paper integrates different methodologies, giving a novel account on
+how to analyse and make use of mobile phone data to better understand interactions in cities, at
+the level of encounters. I strongly support its publication in its current form in terms of contents
+and structure. My only suggestions at this point are typos to be addressed, and to include in the
+literature work done with the data from Orange Labs by Maarten Vanhoof, in particular for
+constructing the heuristics for defining home and work places.
+Typos:
+Abstract, l.36: partitioned partition
+p.2, l.23 : seem seems
+p.5, last paragraph: in text the authors talk about the mean journey but in the table the mode is
+given. I would recommend to explain that the distribution is skewed, etc.
+p.6, l.51: seem seems
+SI needs proof reading. In addition, use census data instead of censal data.
+label_end_comment
+Decision letter (RSOS-180749.R0)
+03-Sep-2018
+Dear Dr Samaniego
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-180749 entitled
+"The time geography of segregation during working hours" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+10
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180749
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 12-Sep-2018. Please note that the revision deadline
+will expire at 00.00am on this date. If you do not think you will be able to meet this date please let
+me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+11
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Cecilia Mascolo (Associate Editor) and Prof. Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+12
+Editor Comments to Author:
+The reviewer recommends minor revision such as fixing typos and including the work done at
+Orange Labs, which need to be addressed before publication.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+The authors have done a good effort to address the main pointed out in the original manuscript.
+Overall, although many papers have been published using community detection on mobile
+phone data, this paper is different because it looks at segregation at the work place instead of
+residential place. In addition, although I would recommend for future work to use the algorithm
+for community detection that takes into consideration distance in the null model (Expert et al),
+the authors are taking this into account by constructing themselves a null model randomizing
+distances and directions. The paper integrates different methodologies, giving a novel account on
+how to analyse and make use of mobile phone data to better understand interactions in cities, at
+the level of encounters. I strongly support its publication in its current form in terms of contents
+and structure. My only suggestions at this point are typos to be addressed, and to include in the
+literature work done with the data from Orange Labs by Maarten Vanhoof, in particular for
+constructing the heuristics for defining home and work places.
+Typos:
+Abstract, l.36: partitioned partition
+p.2, l.23 : seem seems
+p.5, last paragraph: in text the authors talk about the mean journey but in the table the mode is
+given. I would recommend to explain that the distribution is skewed, etc.
+p.6, l.51: seem seems
+SI needs proof reading. In addition, use census data instead of censal data.
+Author's Response to Decision Letter for (RSOS-180749.R0)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-180749.R1)
+06-Sep-2018
+Dear Dr Samaniego,
+I am pleased to inform you that your manuscript entitled "The time geography of segregation
+during working hours" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+13
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Cecilia Mascolo (Associate Editor) and Prof. Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Appendix A
+Valdivia, May 10th, 2018
+Dear Dr. Mascolo
+Please fid eiclosed our revised aaiuscript, iThe tiae geography of segregatioi
+duriig workiig hoursi, authored by Teodoro Daiieaai, Boris Sotoaayor aid Horacio
+Saaaiiego.
+We really appreciate the positive coaaeits aid recogiize the eforts that you
+aid two aioiyaous reviewers put ii reviewiig our docuaeit. We siicerely believe that,
+thaiks to your coaaeits, the quality of the aaiuscript has iow beei iaproved. As per
+your suggestiois, we have aade a special efort ii highlightiig the iovelty aid
+relevaice of our results.
+Ii this iew versioi of the aaiuscript, we have iicorporated additioial writiig to
+address the suggestiois froa both reviewers. As you will see, we iow provide a
+rewrittei abstract aid a deeper explaiatioi of the aethods eaployed. We also have
+slightly exteided the Discussioi to coiveythe iaportaice of our approach to the reader.
+We hope that you will fid that the additioial text iitroduced throughout this
+iew versioi will satisfactorily address the coiceris expressed by reviewers aid that you
+aay fid the article suitable for publicatioi ii SSSS.
+Best regards,
+Horacio A. Saaaiiego, Ph.D.
+Associate Professor
+Iistituto de Coiservaciói, Biodiversidad y
+Territorio
+Uiiversidad Austral de Chile, Valdivia, Chile
+horacio@ecoiiforaatica.cl
+http://www.ecoiiforaatica.cl
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+Sespoises to coaaeits are ii colored foits
+Reviewer 1
+Coaaeits to the Author(s)
+This is awi iiterestiig paper that looks at segregatioi iot at the resideitial eid but at the work
+eid. This is a iovel approach to the use of aobile phoie data usiig a ietwork approach. I
+recoaaeid publicatioi, aid just a few coaaeits that cai iaprove the aaiuscript.
+We very auch appreciate reviewer coaaeits aid recoaaeidatioi, aid we have
+perforaed a deep iispectioi of each poiit the reviewer listed, aid fouid thea very
+useful ii order to iaprove the aaiuscript.
+1) The Eiglish ii the abstract ieeds reviewiig.
+Doie. We have reviewed our Eiglish aid aade sigiifcait chaiges ii the abstract. We
+have iow iaproved iot oily the redactioi, but we have also clarifed the scope aid the
+sigiifcaice of our work.
+2) What do the authors aeai ii p.4 l.32 by “We also required each user to have, at least, fve
+coiiectioi to a poteitial hoae or work place…”.
+Thaiks for poiitiig this out. We ioticed the coifusioi, aid chaiged this ii order to
+clarify the reader.
+3) Note that ii geieral, people refer to Bloidel’s coaauiity detectioi algoritha as the Louvaii
+aethod. It’s iicer siice aore people get credit ;-)
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+Thaiks for poiitiig this out, we iow refer to is as the Louvaii aethod.
+4) Note also that ii geieral, oie does iot refer to classical aid ioi-classical algorithas of
+coaauiity detectioi, but whether they are or iot hierarchical, etc. Ii teras of perforaaice,
+they ioraally relate to their coaputatioial coaplexity. Ii this seise the Louvaii oie is liiear,
+but ii geieral the Iifoaap oie by Sosvall & Bergstroa teids to be faster, iot iecessarily better,
+but uses raidoa walk. This is just a coaaeit, siice it seeas that you assuae that the Louvaii is
+far aore superior, but you did iot show what sort of results you got with other algorithas ii
+order to claia this. If you perforaed the coaputatiois, I would suggest to put ii the appeidix a
+table with the speed aid aodularity just for coaparisoi. If the coaputatioi did iot fiish you
+cai put that it was stopped after x aaouit of tiae. This is ii a way is iaportait siice coaauiity
+detectioi algorithas teid to give difereit results, aid ii this way you would justify why this
+aethod was preferred. You could also do a seisibility test as the oie that you did for the days
+with say aiother algoritha, just to check the how robust the results are. This is iot iecessary for
+acceptaice, just if you have doie these already.
+We thaik aid agree that it would be a useful work to address other algorithas of
+coaauiity detectioi. We deleted the adjective “classical”, accordiigly with the
+reviewer’s suggestioi. Ii our work, however, we relied oi previous results showi by Yaig
+et al (2016), claiaiig a best perforaaice of this aethod. Also, we showed that whei
+takiig iidividual days of data, coaauiities chaige very little, as showi ii fgure 2 of
+Suppleaeitary Material, thus outliiiig the robustiess of the aethod.
+5) Is there a liik for the refereice 38? Maybe is the saae refereice aissiig ii Fig 1?
+Uifortuiately, because it is a aarketiig coapaiy, ADIMASK does iot publish their
+studies ii a iidexed jourial. The oily refereice is the pdf they released about the study,
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+where you cai fid the table that was iicluded ii our suppleaeitary aaterial. We realize
+that this is a drawback for scieitifc research ii this area, however, we have iot seei yet
+iew efort to update such classifcatioi.
+6) For the distaice travelled betweei coaauiities, it is clear that the aeai is iot a good
+aeasure, siice the distributioi is highly skewed, I gather froa the plots that the aode is aore
+represeitative.
+The reviewer is absolutely right, thaiks for poiitiig this out. We iow show the aode.
+7) With respect to the distributioi of the aigles, it is difcult to grasp fg.3 aid go back to Fig. 1
+to see whether everybody is aaiily coaautiig or iot to the city ceitre. Maybe this fgure could
+be accoapaiied by a aap with arrows so that we cai see the directioi of the trip with respect to
+the coaauiity. Ii additioi, it is clear that the distributioi of the aigles will be related to the
+geoaetry of the coaauiity detected, so it aight be aore relevait to look at the proportioi of
+trips that poiit towards the city ceitre iistead, siice difereit aigles aight still iidicate the
+saae area target, that is the busiiess ceitre.
+This is iideed a very good coaaeit. We agree with the referee’s coaaeit, aid have iow
+added ai arrow to every coaauiity ii Figure 1b), where the aode of the aigle of
+directioi is showi. This is coapleaeited with Figure 3 which iidicates the proportioi of
+travels that poiits to the ceiter (or how skewed is the distributioi froa the aode).
+8) Ii the discussioi sectioi, you state “We show that the aodularity optiaizatioi aid the
+coaauiity detectioi algoritha proposed by Bloidel et al [35] is ai efcieit aethod to outliie
+coaauiities represeitiig groups that segregate through aoveaeit”, this is iiaccurate, siice
+you do iot have a proxy to test the aethod, but the aethod is the tool to fid your results.
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+We uiderstaid the faw. We chaiged that seiteice to a aore accurate aid coiservative
+oie: “We use Louvaii's aethod ii order to outliie coaauiities represeitiig groups that
+geierate social isolated ``bubbles'' through aoveaeit”.
+9) Ii additioi you say “We highlight that coaauiities fouid here are iot siaply givei by the
+geographic coitext or the urbai traisport ietwork of our exaaple city…” I would argue that you
+did iot aake use of traisport ietworks to coapare your results. These could be used by
+coapariig the probability of fow usiig a cost fuictioi of sorts givei by the public traisport
+available. This cai be doie ii a secoid paper, but heice caiiot be iicluded ii the discussioi.
+We agree with the observatioi. We io loiger use the “transport network” coicept,
+though we still aeitioi that “Our null model explicitly considers costs associated to the
+commuting of urbanites by drawing random distances from the empirical distribution of each
+community. Moreover, because the directionality of each community is also used, the
+centripetal efect, that is, the observed tendency of people to work in the center of the city,
+is also considered in our null model”.
+10) After iapleaeitiig the aode iistead of the average for the distaice, aid the directioi of
+aoveaeit ii teras of whether people are aoviig or iot towards a busiiess hub, it would be
+iiterestiig to hear soaethiig about the siailitudes/difereices betweei coaauiities, aid with
+respect to the aoio-ceitricity of saitiago, if this is the case.
+We added a paragraph ii the discussioi iidicatiig the iaportaice of the ceitripetal
+efect of dowitowi (coaauiity B) aid we outliied that it receives people froa all
+coaauiities aid socioecoioaic level. Also, we coaaeited the fact that “polycentric or
+subcenter patterns in cities (e.g. the southern zone in the case of Santiago can lead to
+generate centripetal efects not only towards the center of the city, but also to the
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+commercial core of that community. In this sense, a closer look at the spatial distribution of
+productivity at the neighborhood level could certainly shed further insights on causal
+relationships of the segregation patterns described here”.
+11) The liik for the data is iot workiig.
+We appreciate the iotice of this, the data has beei uploaded to Dryad.org aid should be
+available with acceptaice of this article (https://doi.org/10.5061/dryad.h8405). We will also
+upload the datafle to the systea ii case you wait to look at it. We provide 2 sets of data:
+detected coaauiities per day aid H-W trajectories.
+The paper is iicely structured aid clear, aid the authors should take these as recoaaeidatiois
+oily.
+Thaik you very auch. We appreciate this coistructive coaaeit aid are eicouraged by
+your assessaeit.
+Reviewer 2
+Coaaeits to the Author(s)
+The paper addresses the iiterestiig problea of quaititatively aeasuriig urbai social
+segregatioi ii coitext: people aight be iitegrated ii the social fabric of the workplace but be
+isolated whei lookiig at their leisure iiteractiois. To do that, the authors use ~1B data records
+froa Telefoiica ii four workiig weeks for the city of Saitiago, focusiig oi the urbai area oily.
+They build a graph of hoae-work traisitiois aid, after clusteriig the graph, they study the social
+segregatioi ii each coaauiity. The segregatioi is coaputed with a foraula froa previous work
+that captures the probability that workers ii a givei coaauiity iiteract with people coaiig
+froa their hoae coaauiity while at work. The results uiveil a star-shaped coaauiity structure
+ceitered oi ceitral Saitiago ii which peripheral coaauiities are segregated.
+I cai see the authors have put quite soae efort ii workiig oi the experiaeits. It is also
+coaaeidable that they are shariig the data ii soae aggregated fora. I have soae coiceris
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+arouid several aspects of the coitributioi though.
+- Methodologically, the paper does iot iitroduce auch iovelty. The clusteriig idea has beei
+explored by Satti et al. already (yes, oi a difereit type of telco ietwork but the aethodology is
+basically the saae), the segregatioi is a coicept aid a aetric borrowed froa previous work, the
+relatioiship betweei CDS aid socio-ecoioaic iidicators has beei studied (aaybe iot ii
+Saitiago but still).
+We realize that the iovelty of our aethodological approach aay iot be perceived as
+iiteided. We believe to address such poiit with aore clarity ii our iew versioi of the
+aaiuscript. For iistaice, our approach builds oi previous research aid aay iot coae out
+as a iew coitributioi oi frst sight. However, the aethodological iovelty coaes froa the
+fact that our propositioi coabiies coaauiity detectioi approaches with segregatioi
+aialysis to geierate iew iisights oi the structure of social iiteractioi withii the city.
+This iicludes iot oily a qualitative descriptioi of coaauiities, but the applicatioi of a
+specifc isolatioi iidex refectiig a real probability of iiteractioi betweei iidividuals of
+the saae (or difereit) group. While isolatioi iidexes have beei widely used ii the
+literature, our work uses this ii a iovel aaiier: frst, we geierate ai uisupervised
+classifcatioi based oi urbaiite’s travel behaviour usiig a coaauiity detectioi
+algoritha, as opposed to what has beei doie ii the literature, where segregatioi iidices
+stea froa the classifcatioi of iidividuals based oi specifc features (e.g. ethiic group,
+socioecoioaic level, aaoig others); thei, we use ai isolatioi or exposure iidex that
+iicludes a large iuaber of iidividuals duriig a represeitative sectioi of the workiig
+tiaes across the year, that captures a particular aspect of urbai dyiaaics (i.e. segregatioi
+at work), whereas others usually perfora such aialyses based oi origii-destiiatioi
+surveys that oily coisider a saall fractioi of the total populatioi.
+Ii order to aake this poiit evei clearer, we have iow recasted the aaiuscript to get
+these poiits across to the reader. For iistaice, we iow eaphasise how our approach
+coabiies several aethods by exclusively relyiig oi aobility data to label urbaiites iito
+coaauiities, aid also relegated socioecoioaic data just as a validatioi of our results.
+This should provide a clearer view of the iovelty aid siaplify its evaluatioi.
+- I have also doubts about the specifc iapleaeitatioi of the aethodology. The iituitioi of why
+a coaauiity detectioi is appropriate ii this specifc case ii iot clearly justifed. Why is that
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+better thai lookiig directly at ceisus areas or at the Voroioi cells of the towers? Focusiig oi
+ceisus areas, for exaaple, would allow a auch aore graiular exploratioi of segregatioi,
+coaaute patteris aid socio ecoioaic iidicators.
+Iideed, the usage of coaauiity detectioi ii this particular coitext could be better
+justifed. The issue seea to be that (aid we thiik this is the aaii coiceri of the referee)
+the text purports the associatioi of coaauiity detectioi to existeit socioecoioaic
+classifcatioi as a aaii feature of our work. However, the sigiifcaice of our work aostly
+relies oi obtaiiiig segregatioi (isolatioi) iidexes based oi cell phoie data. The
+iaportaice of aakiig such distiictioi is that, to our kiowledge, iiteractioi probabilities
+of this kiid have iever beei obtaiied at this spatioteaporal resolutioi ii the literature.
+Ii fact, calculatiig probabilities based oi the full, aid detailed, trajectory of each urbaiite
+allows to actually obtaii a very close estiaatioi of real iiteractioi probabilities betweei
+two iidividuals labeled ii the saae category. However, the choice of how to defie such
+categories is iot trivial, aid we posit that it is aaiily coistraiied by: i) Categories
+eaployed aust be as objective as possible. This discards usiig socioecoioaic level (SEL)
+as a category siice aethodologies used to obtaii it vary betweei couitries aid evei
+betweei difereit studies. Accordiigly, we oily use socioecoioaic level to validate this
+particular dataset, aid (ii) the graiularity of the “category layer” aust aatch the spatial
+scale of the layer froa which segregatioi iidexes are obtaiied siice we are iiterested ii
+labeliig each persoi that aoves arouid the city. The aisaatch betweei Voroioi cells
+describiig aoveaeit across the city aid ceisal blocks represeitiig SEL (betweei 10 to
+40 blocks per Voroioi cell) will severely afect the graiularity of the aialysis addiig ioise
+froa the fact that difereit labels (i.e. SEL) will aerge iito oie Voroioi cell (tower). The
+by-product of such situatioi is that iistead of obtaiiiig a uiique label for each user, oie
+gets a distributioi of SELs for a givei Voroioi cell. Haviig said that, oie could argue that
+segregatioi values are still possible to be obtaiied froa this distributioi of SELs ii each
+cell. However, the problea arises whei oie waits to coapare the values obtaiied with a
+proper iull aodel. As explaiied ii the aaiuscript, our iull aodel takes iito accouit both,
+the step-leigth distributioi for each category (coaauiity), aid their directioiality
+aigles, capturiig the ceitripetal efect of a ceitralized city. This clear directioiality
+eaerges froa the fact that detected coaauiities are spatially coitiguous (as showi ii
+Figure 3). Iistead, other labelliig patteris, based perhaps oi ceisal data, would coabiie
+people froa difereit parts of the city, iitroduciig ioise to the statistical properties of
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+their aoveaeits. If urbaiites were grouped by SEL (see fgure 1a), givei that group S4 is
+aostly distributed both ii the iortheri aid southeri part of the city, our iull aodel will
+show that such group as haviig a iearly 50-50 chaice to travel iorth or south, failiig to
+capture the statistical patteris of group S4.
+We iow discuss such issue ii the Discussioi sectioi aid have coisiderably aodifed the
+Abstract aid part of the Iitroductioi ii order to further clarify the sigiifcaice of this. We
+particularly stress the fact that coaauiity detectioi is used here as a aethod to label
+urbaiites based oi siailarity of H-W trajectories ii a ioi supervised aaiier
+coaaeisurate to the graiularity of our dataset. It is iaportait to also iotice that
+detected coitiguous geographic zoies (coaauiities) show stroig correlatiois with well-
+kiowi parts of the city, aid that they coiicide very well with zoies fouid ii previous
+work, as explaiied ii the aaiuscript.
+- Speakiig of aethodology, the authors use ai uidirected ietwork without giviig aiy reasoi
+why they do that. I do realize that previous work did the saae, but i) oie would aaybe like to
+iaprove oi existiig work aid ii) it seeas to ae that for this specifc case (work-hoae traisitiois)
+directioiality aatters quite auch. For exaaple, I aa iot sure oie cai iiterpret Figure 3 properly
+without directioiality (uiless the authors soaehow swept ii directioiality agaii for that specifc
+plot, but it doesi't look like)
+We very auch appreciate this feedback. Actually, we do iot explicitly discuss reasois for
+iot usiig uidirected ietworks, aid the referee is right: Figure 3 has to be iiterpreted
+directioially. However, siice we focus oi providiig a descriptioi of how to evaluate the
+structure of the city whei people’s aoveaeit is takei iito accouit, we thiik that the
+blocks ii which the city is divided (our coaauiities) aust fulfll the requireaeit of
+aiiiaiziig trajectories aaoig thea, whei coapared to trajectories iiside thea. Ii this
+seise, we aay statistically iiterpret these coaauiities as “social bubbles” geierated
+froa the superpositioi of huidreds of thousaids trajectories. Withii such scope, we
+iotice that the directioiality of trajectories are iot iaportait for us, aid heice have
+chosei to siaplify the aialysis by usiig uidirected ietworks. Now, if we were iiterested
+ii qualitatively dividiig the city, such as ii resideitial, workiig aid iidustrial zoies for
+exaaple, as has beei doie by Leioraaid et al (2015), directed ietworks would certaiily
+be aore appropriate, ii order to better describe origiis aid destiiatioi aaoig those
+zoie.
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+Still, ii our case, whei iidividual siaulated work locatioi is calculated, directioiality does
+aatter, particularly whei it coaes to develop a proper iull aodel oaiiscieit of the
+statistical teideicy of urbaiites to aove towards the geographic ceiter of the city.
+This iaportait issue has iow beei added to the aaiuscript, at the eid of sectioi 2e), aid
+further eaphasized by addiig aediai directioiality vectors to Figure 1 for each
+coaauiity. This should uiderliie the fact that directioiality of each coaauiity is takei
+iito accouit whei geieratiig raidoa walks for our iull aodel evaluatioi.
+- Siice the aethodology is iot particularly iew, the reader expects aore iovelty ii the fidiigs.
+However, the graiularity of aialysis is very low (very few aacro-areas) aid coifras what is
+kiowi already: people coaaute aostly towards the ceiter which, by the defiitioi givei, it the
+oily ioi-segregated area. The aialysis of socio-ecoioaic iidicators adds very little to this
+picture. I thiik that the paper falls fat ii coiviiciig the reader that the H-W ietwork is useful to
+extract iiforaatioi that is aore valuable (or at least difereit froa) the iiforaatioi givei by the
+call ietwork.
+Although the referee is right ii poiitiig out that fidiig a ioi-segregated ceiter is
+soaewhat expected, such coaaeit aake us realize that we have iot beei clear eiough
+to the reader, as our fidiigs go well beyoid this. We have iow reworded part of the
+aaiuscript to highlight that, ii the particular case of Saitiago, highly segregated zoies
+are fouid ii the upper class coie (iorth orieital zoie), the lower iicoae boroughs
+(occideital part), aid the big aiddle class boroughs (southeri zoie). While these zoies
+were already described as such froa a sociological or historical perspective (i.e.
+qualitatively), our approach allows detect thea usiig ai uisupervised (i.e. uibiased)
+aethod to uiveil segregatioi usiig big data. This is ii turi corroborated by qualitatively
+assessiig the high correspoideice with described socioecoioaic structure (Figure 1).
+Also, we are able to obtaii a probability value for the iiteractioi aaoig iidividuals
+beloigiig to each of these coaauiities with the uiique assuaptioi that people withii a
+Voroioi cell are well aixed. This latter assuaptioi is iot a stroig assuaptioi, givei that
+Voroioi are iot bigger thai 30 blocks, oi average. We have iow added such piece of
+iiforaatioi ii the Discussioi sectioi aid explicitly state that probabilities fouid are a
+bottoa-liait, as oie could argue that there is iot a well aixed regiae withii Voroioi
+cells (i.e., people froa ofce buildiigs iiteracts auch aore with their coworkers thai
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+with the fower seller outside their buildiig), which would suggest that real probabilities
+of iiteractioi are actually higher (close, though) thai the obtaiied oies.
+Sverall, givei that the aethodology is iot iew aid the fidiigs are reasoiable but liaited I
+thiik that a aore specialized veiue oi geo/urbai studies aight be aore appropriate for this
+coitributioi.
+We thaik the suggestioi of the referee. However, we chose SSSS because we coisider
+that this work aay opei a broad raige of iew possibilities ii social segregatioi studies. Ii
+particular, it serves as a bridge betweei raw aid bigdata aid aore qualitative aid
+descriptive discipliies, such as social segregatioi aid social scieices ii geieral aid opei
+the possibility of aialysiig segregatioi usiig siaple aid iicreasiigly available ITC
+datasets such as aobile phoie registres where traditioial socio/ecoioaic data is lackiig.
+We have iow iicluded such discussioi ii the Coiclusiois.
+Sther aiior observatiois:
+- The text explaiiiig P_\aathcal{C} is iot clear. For exaaple: iCoisequeitly, ci/C deiotes the
+probability that a aeaber of coaauiity C will work ii uiit i aid ci/Ti is the fractioi of users
+beloigiig to coaauiity C workiig ii uiit ii -> arei't those coicepts the saae? I thiik that after
+lookiig at the foraula carefully aid iot payiig too auch atteitioi to what the text says the
+reader cai slowly get it but as of iow the text is a bit coifusiig (to ae, at least).
+We coapletely agree with the referee.
+We have iow siaplifed the explaiatioi ii order to aake it aore clear aid readable.
+- I thiik it would be hard to justify to aiy coaauiity detectioi expert that Louvaii is the best
+algoritha for this case because it perforaed well ii beichaarks oi syithetic datasets (I aa
+referriig to the paper the authors refereice). I thiik that Louvaii is a coiveiieit aid perfectly
+reasoiable choice but I would iot overstate it to the poiit of sayiig that it is the best possible
+choice.
+We have deleted the word “efcieit” ii the discussioi, aid iow we poiit out that
+Louvaii’s aethod has beei showi to have a higher perforaaice whei coapared to other
+aethods (Yaig et al, 2016).
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+- I do realize that the SSSS foraat iiduces authors to have part of the aethodology described ii
+the appeidix. That's fie ii geieral but the authors should aake sure iot to create a
+depeideicy betweei the aaii text aid the appeidix. If to uiderstaid a sectioi fully oie ieeds
+to go aid read the appeidix thei the purpose of slittiig the paper ii aaii text + appeidix is
+defeated. The authors should revise the text with this coisideratioi ii aiid. For exaaple,
+Sectioi 2.d reads as a daigliig bit aid feels iicoaplete without the appeidix.
+We coapletely agree with reviewers coaaeit here. While the use of socioecoioaic level
+is just used as auxiliary iiforaatioi, it should aid ii providiig qualitative iisights of the
+particular city structure of Saitiago aid help uiderstaid the stroig coapositioi
+difereices betweei coaauiities.
+We have iow aoved the explaiatioi of SEL to the last part of the aethodology, aid
+relegated it as auxiliary data. This is why the specifc aethodology associated with SEL is
+further explaiied ii suppleaeitary aaterial.
+- The writiig should be polished. E.g., Well fare -> welfare ; fve coiiectioi -> fve coiiectiois;
+explicitly specify that H-W aeais iHoae-Worki
+Doie.
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+endix B
+Valdivia, September 5th, 2018
+Dear Dr. Mascolo and Dr. Kwiatkowska,
+We would like to thank you for the acceptance letter, subjected to minor revisions,
+regarding our manuscript entitled , "The time geography of segregation during working
+hours", authored by Teodoro Danneman, Boris Sotomayor and Horacio Samaniego.
+We really appreciate the positive comments and recognize the efforts made by
+the reviewers into our document. The quality of the manuscript has certainly been
+improved with their input.
+This new version incorporates the recent comments of the reviewer. All typos
+have been taken care of and a specific mention to the work of Prof. Vanhoof has now
+been included. We also took care of improve the English in the supplementary material.
+The differences of this new version is provided using the latexdiff utility for you
+convenience.
+We hope that this new version will be up to the standard of your journal and
+acceptable for publication.
+Best regards,
+Horacio A. Samaniego, Ph.D.
+Associate Professor
+Instituto de Conservación, Biodiversidad y
+Territorio
+Universidad Austral de Chile, Valdivia, Chile
+horacio@ecoinformatica.cl
+http://www.ecoinformatica.
+Instituto de Conservación, Biodiversidad y Territorio (ICBTe) – Facultad de Ciencias Forestales y Recursos Naturales
+Universidad Austral de Chile, Campus Isla Teja, Casilla 567,·Valdivia, Chile
+Fono: +56-63-2221228 · Fax: +56-63-2221230 · email: conservacion@uach.cl
+http://www.forestal.uach.cl/instituto/conservacion-biodiversidad-territorio
+Society Open

@@ -1,0 +1,1886 @@
+Task allocation and site fidelity jointly influence foraging
+regulation in honeybee colonies
+Thiago Mosqueiro, Chelsea Cook, Ramon Huerta, Jürgen Gadau, Brian Smith and Noa
+Pinter-Wollman
+Article citation details
+R. Soc. open sci. 4: 170344.
+http://dx.doi.org/10.1098/rsos.170344
+Review timeline
+Original submission: 9 September 2016 Note: Reports are unedited and appear as
+1st revised submission: 27 February 2017 submitted by the referee. The review history
+2nd revised submission: 12 April 2017 appears in chronological order.
+3rd revised submission: 10 June 2017
+4th revised submission: 15 July 2017
+Final acceptance: 26 July 2017
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-160676.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Claimed that the model was available, but it was not
+Do you have any ethical concerns with this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Reject
+Comments to the Author(s)
+label_comment_1
+This manuscript presents a pair of related models, one deterministic and one agent-based, in an
+attempt to explore the interaction between task persistence and task allocation. Specifically, the
+authors examined whether and how the interaction between the proportion of honeybee “scouts”
+and “recruits” with how often honeybees return to a food source affects food intake. They
+conclude that both factors do indeed interact. Specifically, the more persistent recruits are, the
+fewer scouts a colony should have. However, the more persistent scouts are, the more scouts a
+colony should. I must point out that I am not qualified to review the deterministic model.
+The question posed is a valid one, and one worth exploring. However, I am afraid I found the
+manuscript lacking in several respects.
+Firstly, the manuscript is somewhat poorly written: it is hard to follow and often convoluted,
+with many sentences that must be read multiple times before they can be deciphered. I realise
+that style is not a decision criterion for RSOS, but with a complex topic such as this one (with
+many interactions and complicated models), clarity is key. Otherwise, the manuscript will only be
+understood by other modellers. Indeed, I am afraid the entire manuscript felt like it was written
+by a computer scientist rather than a biologist, which is also reflected in many departures from
+biological realism in the model (see below). I advise the authors to give a version of the
+manuscript to a MSc student studing biology, with little or no background in programming or
+modelling – if they can understand what each sentence means, the manuscript is clear enough.
+Secondly, and critically, there are large departures from biological realism. I realise that models
+must, by definition, be simplifications. However, some decisions could radically alter the results
+found and thus the conclusions drawn. The main culprit is that the “recruits” do not themselves
+recruit. This does not reflect reality. By not having this effect, the positive feedback effect is
+removed – an effect which is key to collective foraging in honeybees. Other examples of odd
+design choices are 1) having a static environment - although this is discussed in the manuscript,
+many other modelling efforts demonstrate that results from stable and static environments can be
+wildly different. By not including environmental variation, the generalisability of this model is
+severely curtailed. Similarly, only having one food quality available also misses out a key aspect
+of environmental variability. Related to this, modelling foraging over only one day misses out
+key aspects of the value of the waggle dance – namely to give foragers memories which they
+exploit in the future (e.g. (Schürch and Grüter 2014) 2) Altering the velocity of foragers (why was
+this done?) 3) the behavioural experiments were somewhat puzzling to me. Distances of 3, 5 or 10
+meters from the nest are near meaningless for looking at foraging variation, as the are all
+essentially right at the nest. Honeybees can forage up to 8 km from their nest. No information
+about the time of year or location is given, but this is also critical for putting the data in context:
+in spring, when nectar flow is high, the bees might have been unimpressed by the 1m feeder, and
+not persisted very much. In late summer or autumn things would look very different. There are
+many, many researchers studying honeybee foraging – surely high quality data could be obtained
+at no effort from one such group. For example, persistence is explicitly studied over larger
+distances by (Al Toufailia, Grüter, and Ratnieks 2013). Thus, I am afraid I have no confidence in
+the parameterisation of the models. Honeybees have been known to make many tens of repeated
+visits to a feeder, so it seems the cap of 22 visits is also not great (and should be at least tested for
+an effect). The lack of biological realism is underlined by some odd results: in larger colonies, the
+proportion of scouts needed should drop, not increase (as show in in S2b). This is due to the lack
+of recruit recruitment. What is the real proportion of scouts in a colony? This should be
+mentioned to put the model results in perspective. The result that the number of scouts drives the
+number of recruits is because the recruitment is limited, since in the model recruits don't recruit.
+We might see very different dynamics if this was corrected.
+3
+Thirdly, the agent based model was somewhat poorly described, and difficult to follow. The
+diagrammatic representation in figure 1c helps a lot, but the text is very hard to follow. The
+reference to the model did not work, and no model could be found on the authors GitHub site. I
+would have preferred a standard ODD protocol (Grimm et al. 2010) instead of, or in addition to,
+the current description. The role of the non-linear paths (fig 1a) are not made clear. For scouts, it
+is clear that this is important during scouting. But when making return visits to the food source,
+do bees switch feeders if they find another one? When bees reach the end of the modelled area,
+do they fly back or are teleported?
+Lastly, some key aspects of relevant literature are not mentioned. Most critically, the trade-off
+between information gathering and exploitation is barely referred to, but this is a vibrant field
+which is directly relevant here. Indeed the finding that a very high proportion of scouts is
+required goes against what is normally found in most simulations and studies (i.e. that for most
+of the time exploitation dominates exploration, apart from in extremely variable environments).
+I am sorry that this review was so negative. I hope the effort I put into this review demonstrates
+that it was performed in a spirit of constructive criticism. The manuscript did have some laudable
+points. For example, it manages what most modelling studies fail, namely to produce testable
+hypotheses (hypothesis generation) in lines 356-360. Indeed, I wish the authors would have
+emphasised this more, instead of ending the manuscript with a plea that someone else should do
+that.
+I strongly encourage the authors to discuss their model carefully with researchers specialising in
+empirical data collection on honey bee foraging – many of the assumptions the models make
+might (or might not) be flawed, and this is something best judged by an experienced researcher. I
+am afraid that this might result in very extensive changes to the model, and thus perhaps to the
+results. As matters stand, I’m afraid the lack of biological realism makes any results drawn from
+these models to be very limited in broader implications.
+There are also several more minor points I would like to raise:
+• “synergy” has a specific meaning – that one gets a stronger response from two effects
+together than one would from adding both separate effects. I don’t think this is what the authors
+show.
+• Lines 23-4 – unclear
+• Lines 37-8 – unclear
+• Line 52 – “behavioral variation in foraging behaviors” – inelegant
+• Line 127 – unclear – do the bees then fly exactly towards the report, or is there variation?
+I suspect the latter, but the word “exactly” confuses matters.
+• Line 151 – “foraging” did you mean scouting?
+• Statistical analysis should not be carried out on model-derived data (White et al. 2014), as
+the results are linked to sample size. Rather, use large numbers of models runs (500-1000) and
+provide descriptive graphics.
+• Lines 222-223 – using 16% probability on a (I assume) Gaussian distribution doesn’t seem
+to describe the data shown in 2c well.
+• Some reported results are so obvious as to not require mentioning, e.g. line 236, the
+amount of food collected increases over time. As food cannot be lost, this is a given, surely? Also
+line 265-6 and 368-9.
+• Lines 389-393 – I find this reasoning unsatisfying – a bug fix would solve this problem;
+and it may not even be a problem (Al Toufailia, Grüter, and Ratnieks 2013). Regardless, this
+belongs in the methods.
+• Line 400-403 – overlong sentence
+REFERENCES CITES
+Al Toufailia, Hasan, Christoph Grüter, and Francis L.W. Ratnieks. 2013. ‘Persistence to
+Unrewarding Feeding Locations by Honeybee Foragers (Apis Mellifera): The Effects of
+Experience, Resource Profitability and Season’. Ethology 119 (12): 1096–1106.
+doi:10.1111/eth.12170.
+4
+Grimm, Volker, Uta Berger, Donald L. DeAngelis, J. Gary Polhill, Jarl Giske, and Steven F.
+Railsback. 2010. ‘The ODD Protocol: A Review and First Update’. Ecological Modelling 221 (23):
+2760–68. doi:10.1016/j.ecolmodel.2010.08.019.
+Schürch, Roger, and Christoph Grüter. 2014. ‘Dancing Bees Improve Colony Foraging Success as
+Long-Term Benefits Outweigh Short-Term Costs’. PLoS ONE 9 (8): e104660.
+doi:10.1371/journal.pone.0104660.
+White, J. Wilson, Andrew Rassweiler, Jameal F. Samhouri, Adrian C. Stier, and Crow White. 2014.
+‘Ecologists Should Not Use Statistical Significance Tests to Interpret Simulation Model Results’.
+Oikos 123 (4): 385–88. doi:10.1111/j.1600-0706.2013.01073.x.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+First up apologies for the delay in my review, I am about to leave for the field and haven’t had
+the opportunity to give this the attention it deserves.
+That said, I can see that it is good work that is well thought out and conducted, and seems to
+have been through review before as there are few errors that I can see. I like the paper, think it
+makes a good contribution to our understanding of collective composition, and I would only
+recommend minor changes before acceptance.
+This is a modeling paper, but from the abstract this is not as clear as it could be. I would ask the
+authors to make it clearer that the model is parameterised by empirical data, and are therefore
+obviously relevant to biological systems, but the results are from the model rather than
+measurements from actual hives.
+Is there a typo in equation 8b? It seems Yr should actually be Ys…?
+5
+label_end_comment
+Decision letter (RSOS-160676)
+18-Oct-2016
+Dear Dr Mosqueiro:
+Manuscript ID RSOS-160676 entitled "Task allocation and site fidelity synergistically influence
+foraging regulation in honey bee colonies" which you submitted to Royal Society Open Science,
+has been reviewed. The comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 17-Apr-2017. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+on behalf of
+Miles Padgett, Royal Society Open Science
+openscience@royalsociety.org
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This manuscript presents a pair of related models, one deterministic and one agent-based, in an
+attempt to explore the interaction between task persistence and task allocation. Specifically, the
+authors examined whether and how the interaction between the proportion of honeybee “scouts”
+and “recruits” with how often honeybees return to a food source affects food intake. They
+conclude that both factors do indeed interact. Specifically, the more persistent recruits are, the
+fewer scouts a colony should have. However, the more persistent scouts are, the more scouts a
+colony should. I must point out that I am not qualified to review the deterministic model.
+The question posed is a valid one, and one worth exploring. However, I am afraid I found the
+manuscript lacking in several respects.
+Firstly, the manuscript is somewhat poorly written: it is hard to follow and often convoluted,
+with many sentences that must be read multiple times before they can be deciphered. I realise
+6
+that style is not a decision criterion for RSOS, but with a complex topic such as this one (with
+many interactions and complicated models), clarity is key. Otherwise, the manuscript will only be
+understood by other modellers. Indeed, I am afraid the entire manuscript felt like it was written
+by a computer scientist rather than a biologist, which is also reflected in many departures from
+biological realism in the model (see below). I advise the authors to give a version of the
+manuscript to a MSc student studing biology, with little or no background in programming or
+modelling – if they can understand what each sentence means, the manuscript is clear enough.
+Secondly, and critically, there are large departures from biological realism. I realise that models
+must, by definition, be simplifications. However, some decisions could radically alter the results
+found and thus the conclusions drawn. The main culprit is that the “recruits” do not themselves
+recruit. This does not reflect reality. By not having this effect, the positive feedback effect is
+removed – an effect which is key to collective foraging in honeybees. Other examples of odd
+design choices are 1) having a static environment - although this is discussed in the manuscript,
+many other modelling efforts demonstrate that results from stable and static environments can be
+wildly different. By not including environmental variation, the generalisability of this model is
+severely curtailed. Similarly, only having one food quality available also misses out a key aspect
+of environmental variability. Related to this, modelling foraging over only one day misses out
+key aspects of the value of the waggle dance – namely to give foragers memories which they
+exploit in the future (e.g. (Schürch and Grüter 2014) 2) Altering the velocity of foragers (why was
+this done?) 3) the behavioural experiments were somewhat puzzling to me. Distances of 3, 5 or 10
+meters from the nest are near meaningless for looking at foraging variation, as the are all
+essentially right at the nest. Honeybees can forage up to 8 km from their nest. No information
+about the time of year or location is given, but this is also critical for putting the data in context:
+in spring, when nectar flow is high, the bees might have been unimpressed by the 1m feeder, and
+not persisted very much. In late summer or autumn things would look very different. There are
+many, many researchers studying honeybee foraging – surely high quality data could be obtained
+at no effort from one such group. For example, persistence is explicitly studied over larger
+distances by (Al Toufailia, Grüter, and Ratnieks 2013). Thus, I am afraid I have no confidence in
+the parameterisation of the models. Honeybees have been known to make many tens of repeated
+visits to a feeder, so it seems the cap of 22 visits is also not great (and should be at least tested for
+an effect). The lack of biological realism is underlined by some odd results: in larger colonies, the
+proportion of scouts needed should drop, not increase (as show in in S2b). This is due to the lack
+of recruit recruitment. What is the real proportion of scouts in a colony? This should be
+mentioned to put the model results in perspective. The result that the number of scouts drives the
+number of recruits is because the recruitment is limited, since in the model recruits don't recruit.
+We might see very different dynamics if this was corrected.
+Thirdly, the agent based model was somewhat poorly described, and difficult to follow. The
+diagrammatic representation in figure 1c helps a lot, but the text is very hard to follow. The
+reference to the model did not work, and no model could be found on the authors GitHub site. I
+would have preferred a standard ODD protocol (Grimm et al. 2010) instead of, or in addition to,
+the current description. The role of the non-linear paths (fig 1a) are not made clear. For scouts, it
+is clear that this is important during scouting. But when making return visits to the food source,
+do bees switch feeders if they find another one? When bees reach the end of the modelled area,
+do they fly back or are teleported?
+Lastly, some key aspects of relevant literature are not mentioned. Most critically, the trade-off
+between information gathering and exploitation is barely referred to, but this is a vibrant field
+which is directly relevant here. Indeed the finding that a very high proportion of scouts is
+required goes against what is normally found in most simulations and studies (i.e. that for most
+of the time exploitation dominates exploration, apart from in extremely variable environments).
+I am sorry that this review was so negative. I hope the effort I put into this review demonstrates
+that it was performed in a spirit of constructive criticism. The manuscript did have some laudable
+points. For example, it manages what most modelling studies fail, namely to produce testable
+hypotheses (hypothesis generation) in lines 356-360. Indeed, I wish the authors would have
+emphasised this more, instead of ending the manuscript with a plea that someone else should do
+that.
+7
+I strongly encourage the authors to discuss their model carefully with researchers specialising in
+empirical data collection on honey bee foraging – many of the assumptions the models make
+might (or might not) be flawed, and this is something best judged by an experienced researcher. I
+am afraid that this might result in very extensive changes to the model, and thus perhaps to the
+results. As matters stand, I’m afraid the lack of biological realism makes any results drawn from
+these models to be very limited in broader implications.
+There are also several more minor points I would like to raise:
+• “synergy” has a specific meaning – that one gets a stronger response from two effects
+together than one would from adding both separate effects. I don’t think this is what the authors
+show.
+• Lines 23-4 – unclear
+• Lines 37-8 – unclear
+• Line 52 – “behavioral variation in foraging behaviors” – inelegant
+• Line 127 – unclear – do the bees then fly exactly towards the report, or is there variation?
+I suspect the latter, but the word “exactly” confuses matters.
+• Line 151 – “foraging” did you mean scouting?
+• Statistical analysis should not be carried out on model-derived data (White et al. 2014), as
+the results are linked to sample size. Rather, use large numbers of models runs (500-1000) and
+provide descriptive graphics.
+• Lines 222-223 – using 16% probability on a (I assume) Gaussian distribution doesn’t seem
+to describe the data shown in 2c well.
+• Some reported results are so obvious as to not require mentioning, e.g. line 236, the
+amount of food collected increases over time. As food cannot be lost, this is a given, surely? Also
+line 265-6 and 368-9.
+• Lines 389-393 – I find this reasoning unsatisfying – a bug fix would solve this problem;
+and it may not even be a problem (Al Toufailia, Grüter, and Ratnieks 2013). Regardless, this
+belongs in the methods.
+• Line 400-403 – overlong sentence
+REFERENCES CITES
+Al Toufailia, Hasan, Christoph Grüter, and Francis L.W. Ratnieks. 2013. ‘Persistence to
+Unrewarding Feeding Locations by Honeybee Foragers (Apis Mellifera): The Effects of
+Experience, Resource Profitability and Season’. Ethology 119 (12): 1096–1106.
+doi:10.1111/eth.12170.
+Grimm, Volker, Uta Berger, Donald L. DeAngelis, J. Gary Polhill, Jarl Giske, and Steven F.
+Railsback. 2010. ‘The ODD Protocol: A Review and First Update’. Ecological Modelling 221 (23):
+2760–68. doi:10.1016/j.ecolmodel.2010.08.019.
+Schürch, Roger, and Christoph Grüter. 2014. ‘Dancing Bees Improve Colony Foraging Success as
+Long-Term Benefits Outweigh Short-Term Costs’. PLoS ONE 9 (8): e104660.
+doi:10.1371/journal.pone.0104660.
+White, J. Wilson, Andrew Rassweiler, Jameal F. Samhouri, Adrian C. Stier, and Crow White. 2014.
+‘Ecologists Should Not Use Statistical Significance Tests to Interpret Simulation Model Results’.
+Oikos 123 (4): 385–88. doi:10.1111/j.1600-0706.2013.01073.x.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+First up apologies for the delay in my review, I am about to leave for the field and haven’t had
+the opportunity to give this the attention it deserves.
+8
+That said, I can see that it is good work that is well thought out and conducted, and seems to
+have been through review before as there are few errors that I can see. I like the paper, think it
+makes a good contribution to our understanding of collective composition, and I would only
+recommend minor changes before acceptance.
+This is a modeling paper, but from the abstract this is not as clear as it could be. I would ask the
+authors to make it clearer that the model is parameterised by empirical data, and are therefore
+obviously relevant to biological systems, but the results are from the model rather than
+measurements from actual hives.
+Is there a typo in equation 8b? It seems Yr should actually be Ys…?
+Author's Response to Decision Letter for (RSOS-160676)
+See Appendix A.
+label_version_2
+RSOS-170178.R0 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Reject
+Comments to the Author(s)
+label_comment_5
+I have been asked to re-review this manuscript. In my previous review, I raised some concerns
+about a variety of aspects of the manuscript, namely clarity (including the lack of an ODD
+protocol), biological realism, a lack of sensitivity analysis, and some gaps in the literature
+mentioned.
+The authors have done a very good job addressing most of my comments. They have taken my
+comments seriously and invested a lot of effort in handling them. I was impressed by the authors
+9
+willingness to perform many of the labour-intensive tasks I asked for, including an addition on a
+recruit-recruitment sensitivity analysis and a complete ODD protocol. The manuscript also reads
+much better, and is easier (though far from easy) to follow. The ODD protocol is particularly clear
+and helpful. The authors also handled my comments about the empirical aspect of the
+experiment well, giving details where needed, and convincing me that the data is appropriate for
+use. All in all, a laudable improvement. By all rights, this revision should have completely
+convinced me that the manuscript should be published.
+However, I am afraid I still have concerns about the biological realism of the model. My concern
+comes from a mismatch between the empirical data the authors collected on persistence (and
+found in other studies), and the predicted optimal performance of the bees in the model. In figure
+2c we see that the majority of bees make between 0 and 5 return visits – i.e. have a persistence of
+between 0 and 5. Average persistence is probably 2.9, with on average 3.2 return trips. However,
+as the authors state “the absolute amount of resources collected per colony continued to grow
+when persistence increased beyond 20 visits per individual”, as can also be seen in figure 3e. If
+the model reflects reality, bees would be under very strong selection to have very high
+persistence. But bees show low persistence. This implies either that the model correctly reflects
+the real world, but that the environment honey bees evolved under is radically different from
+their current environment (which is somewhat unlikely), or that the model does not reflect reality
+very well. In my previous review I suspected that this mismatch between the model results and
+reality was due to a lack of recruitment by recruits in the model, but the authors convincingly
+demonstrated that I was wrong. I now suspect that the lack of depletion in the model, or
+generally the completely stable environment, is causing this mismatch between the model and
+reality, but again I might be wrong. The authors argue that the modelled stable environment
+“have biological significance for foraging in patchy resources that cannot be depleted in a single
+day, such as blooming trees or meadows.” This may or may not be true – such resources may
+change in productivity significantly throughout the day. I simply do not know. Or such resources
+may not represent the most important nectar source for honeybees. Again, I do not know. It could
+even be that it is the fact that all bees show the same persistence level in the model, while in
+reality we have a large inter-individual variation (see also (Pamir et al., 2011)).
+I am very positively inclined towards this work, as the authors have done such a good job
+responding to my previous comments, so have tried hard to reconcile the predicted behaviour of
+the bees from the model with the empirical data presented (and available from other sources).
+Sadly, I have failed, and so cannot convince myself that this model is a good representation of
+reality.
+However, perhaps I am missing something. I don’t have access to Python and never learned to
+use it, so couldn’t explore the model myself. It may have been a great help to have a stand-alone
+applet one could explore. Or perhaps I have misunderstood the role of this model: perhaps the
+model is not meant to represent reality, but explore a what-if scenario of best practice under ideal
+conditions. The discussion raises interesting points, such as
+“the ratio between scouts and recruits, and individual-level traits, such as the persistence of
+foragers, interact to impact collective foraging”,
+And that
+“recruits may be the ones driving the adjustment of the colony’s exploration exploitation strategy
+in response to both external and internal conditions”
+It is just not clear to me that the specific conclusions drawn from the model can reliably represent
+reality.
+Again, I am really very sorry to raise these doubts and be so negative– especially at this late stage
+in the review process. Given the conflict between the great job the authors have done with my
+comments, and my continuing doubts about the validity of the manuscript, I would like to
+abstain from making a recommendation about this manuscript. As I am not given this option, I
+10
+will be ticking the “reject” option, but strongly urge the editor to seek a second (third) opinion on
+the matter.
+Minor comments:
+• The video associated with the model in the ODD protocol seems to show depletion of the
+resources. This confused me a bit, as the resources in this paper are non-depleting (line 178).
+Reference cited:
+Pamir, E., Chakroborty, N. K., Stollhoff, N., Gehring, K. B., Antemann, V., Morgenstern, L., …
+Nawrot, M. P. (2011). Average group behavior does not represent individual behavior in classical
+conditioning of the honeybee. Learning & Memory, 18(11), 733–741.
+https://doi.org/10.1101/lm.2232711
+label_end_comment
+Decision letter (RSOS-170178)
+13-Mar-2017
+Dear Dr Mosqueiro:
+I write you in regards to manuscript # RSOS-170178 entitled "Task allocation and site fidelity
+jointly influence foraging regulation in honey bee colonies" which you submitted to Royal Society
+Open Science.
+In view of the criticisms of the reviewers and editors found at the bottom of this letter, your
+manuscript has been denied publication in Royal Society Open Science.
+Thank you for considering Royal Society Open Science for the publication of your research. I
+hope the outcome of this specific submission will not discourage you from the submission of
+future manuscripts.
+Sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of
+Professor Miles Padgett
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Associate Editor
+Comments to the Author:
+label_comment_6
+The referee continues to have a number of significant concerns about the validity of the model
+and its relevance for actual honey bee behavior. In the light of the report and the amount of
+referee and editorial time the manuscript has received, we can not give this further consideration
+(even though the referee indicated this as an alternative).
+11
+Reviewer(s)' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+I have been asked to re-review this manuscript. In my previous review, I raised some concerns
+about a variety of aspects of the manuscript, namely clarity (including the lack of an ODD
+protocol), biological realism, a lack of sensitivity analysis, and some gaps in the literature
+mentioned.
+The authors have done a very good job addressing most of my comments. They have taken my
+comments seriously and invested a lot of effort in handling them. I was impressed by the authors
+willingness to perform many of the labour-intensive tasks I asked for, including an addition on a
+recruit-recruitment sensitivity analysis and a complete ODD protocol. The manuscript also reads
+much better, and is easier (though far from easy) to follow. The ODD protocol is particularly clear
+and helpful. The authors also handled my comments about the empirical aspect of the
+experiment well, giving details where needed, and convincing me that the data is appropriate for
+use. All in all, a laudable improvement. By all rights, this revision should have completely
+convinced me that the manuscript should be published.
+However, I am afraid I still have concerns about the biological realism of the model. My concern
+comes from a mismatch between the empirical data the authors collected on persistence (and
+found in other studies), and the predicted optimal performance of the bees in the model. In figure
+2c we see that the majority of bees make between 0 and 5 return visits – i.e. have a persistence of
+between 0 and 5. Average persistence is probably 2.9, with on average 3.2 return trips. However,
+as the authors state “the absolute amount of resources collected per colony continued to grow
+when persistence increased beyond 20 visits per individual”, as can also be seen in figure 3e. If
+the model reflects reality, bees would be under very strong selection to have very high
+persistence. But bees show low persistence. This implies either that the model correctly reflects
+the real world, but that the environment honey bees evolved under is radically different from
+their current environment (which is somewhat unlikely), or that the model does not reflect reality
+very well. In my previous review I suspected that this mismatch between the model results and
+reality was due to a lack of recruitment by recruits in the model, but the authors convincingly
+demonstrated that I was wrong. I now suspect that the lack of depletion in the model, or
+generally the completely stable environment, is causing this mismatch between the model and
+reality, but again I might be wrong. The authors argue that the modelled stable environment
+“have biological significance for foraging in patchy resources that cannot be depleted in a single
+day, such as blooming trees or meadows.” This may or may not be true – such resources may
+change in productivity significantly throughout the day. I simply do not know. Or such resources
+may not represent the most important nectar source for honeybees. Again, I do not know. It could
+even be that it is the fact that all bees show the same persistence level in the model, while in
+reality we have a large inter-individual variation (see also (Pamir et al., 2011)).
+I am very positively inclined towards this work, as the authors have done such a good job
+responding to my previous comments, so have tried hard to reconcile the predicted behaviour of
+the bees from the model with the empirical data presented (and available from other sources).
+Sadly, I have failed, and so cannot convince myself that this model is a good representation of
+reality.
+However, perhaps I am missing something. I don’t have access to Python and never learned to
+use it, so couldn’t explore the model myself. It may have been a great help to have a stand-alone
+applet one could explore. Or perhaps I have misunderstood the role of this model: perhaps the
+model is not meant to represent reality, but explore a what-if scenario of best practice under ideal
+conditions. The discussion raises interesting points, such as
+12
+“the ratio between scouts and recruits, and individual-level traits, such as the persistence of
+foragers, interact to impact collective foraging”,
+And that
+“recruits may be the ones driving the adjustment of the colony’s exploration exploitation strategy
+in response to both external and internal conditions”
+It is just not clear to me that the specific conclusions drawn from the model can reliably represent
+reality.
+Again, I am really very sorry to raise these doubts and be so negative– especially at this late stage
+in the review process. Given the conflict between the great job the authors have done with my
+comments, and my continuing doubts about the validity of the manuscript, I would like to
+abstain from making a recommendation about this manuscript. As I am not given this option, I
+will be ticking the “reject” option, but strongly urge the editor to seek a second (third) opinion on
+the matter.
+Minor comments:
+• The video associated with the model in the ODD protocol seems to show depletion of the
+resources. This confused me a bit, as the resources in this paper are non-depleting (line 178).
+Reference cited:
+Pamir, E., Chakroborty, N. K., Stollhoff, N., Gehring, K. B., Antemann, V., Morgenstern, L., …
+Nawrot, M. P. (2011). Average group behavior does not represent individual behavior in classical
+conditioning of the honeybee. Learning & Memory, 18(11), 733–741.
+https://doi.org/10.1101/lm.2232711
+Author's Response to Decision Letter for (RSOS-170178)
+See Appendix B.
+label_version_3
+RSOS-170344.R0 (Revision)
+label_author_4
+Review form: Reviewer 3 (Samuel Beshers)
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+13
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_8
+Please see attached file (Appendix C).
+label_author_5
+Review form: Reviewer 4
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_5
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_9
+The manuscript "Task allocation and site fidelity jointly influence foraging regulation in honey
+bee colonies" explores the trade-offs between scouting and recruiting, exploration and
+exploitation, and variation among individuals in their persistence to continue foraging at a
+specific location. The introduction was complicated, though still contained enough information to
+make clear why the study was being conducted. The model was complex, but all details on the
+implementation and parameters are provided (either in text or in the supplement). One highlight
+of this study was that researchers include behavioral experiments in order to estimate many of
+their parameters for the model.
+My only major comment is regarding the discussion. As mentioned, the methods were very
+detailed and complex, and the results showed clear patterns as parameters varied. I would have
+liked to have seen more of the discussion linked back to how these patterns mimic natural honey
+bee patterns. e.g., 367-9: "the percentage of scouts in honeybee colonies is between 5% and 35%
+[38]. These numbers are slightly lower than the optimal proportions we found here and this
+difference can be explained by the parameter choice for the number of bees that respond to a
+waggle dance (Figure S3)." If the numbers do not match what you observe in natural colonies,
+what are the biological constraints keeping colonies from performing at the calculated optimal
+range? Otherwise, are you saying that the parameter choice for bees responding to the dance are
+biologically unrealistic? Lines 410-5: "It would be interesting to further investigate the effect of
+14
+increasing collection efficiency on collective dynamics in primitively social bees that exhibit
+division of labor but spatial information is not shared during recruitment e. g., bumble bees [43],
+or halictine bees in which there are no known mechanisms of recruitment [67]." This would be
+interesting, however, a number of studies have investigated (empirically and through agent-
+based simulations) how behavior would change if recruitment were removed from honey bees.
+The point that I'm trying to suggest here is not to add in these specific refs, necessarily, but to
+emphasize that there are opportunities throughout the discussion where putting these results in
+context with what is known about the actual biology of these systems would really help clarify
+the main goals with this model. Line 428-30: "Our model can thus be used to generate hypotheses
+for further empirical work on the regulation of collective behavior and its response to various
+environmental conditions." I absolutely agree with this statement, and think that it can be
+strengthened with more evidence of how empirical work has benefited from the development of
+models such as this in the past, and/or specifically what role this model will have on the field
+going forward.
+Minor Comments
+Lines 52-3: "For example, the decision of a honey bee to leave the hive and start foraging is
+influenced by the bee’s genotype." I was under the impression that it was influenced by hormonal
+changes that might be triggered by changes in gene expression. Perhaps you meant 'genome'?
+Lines 53-5: Genetic variation can influence the likelihood that a bee leaves a patch? Genetic
+variation might explain why some individuals choose to stay longer in a patch (thresholds to
+recognize a full crop might vary?), but the genetic variation is not the mechanism that affects the
+bee's decision to leave. I think this just needs to be rephrased.
+Line 122: At T-0, did all scouts leave the nest, or was there some randomness written into the
+program as to when they left?
+Line 125: Did scouts recruit every time they returned with food? Is this realistic?
+Line 133: Was the recruitment behavior the same for all scouts (did it vary with food type or
+distance or randomly?)
+Figures S1-S3 are not mentioned in the text (at least before S4 is mentioned).
+Lines 224-254: Behavioral assays were conducted on bees 3, 5, and 10 m from the hive to collect
+parameter values. However, data are presented together. Why were data collected at three
+different distances if data were to be pooled for analysis?
+Line 280: 'discovering' should be 'discover'
+Line 288: the way the model is designed, if a = 0, then no one ever leaves to initially forages, so no
+food will be collected. But what if scouts do not recruit after every foraging bout?
+Line 282-3: "However" is repeated twice in the same sentence
+15
+label_end_comment
+Decision letter (RSOS-170344)
+19-May-2017
+Dear Dr Mosqueiro,
+The Subject Editor assigned to your paper ("Task allocation and site fidelity jointly influence
+foraging regulation in honey bee colonies") has now received comments from reviewers. We
+would like you to revise your paper in accordance with the referee and Associate Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 11-Jun-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance. We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to each of the comments, and the adjustments you have
+made. In order to expedite the processing of the revised manuscript, please be as specific as
+possible in your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-170344
+16
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 3
+Comments to the Author(s)
+label_comment_10
+Please see attached file
+Reviewer: 4
+Comments to the Author(s)
+label_comment_11
+The manuscript "Task allocation and site fidelity jointly influence foraging regulation in honey
+bee colonies" explores the trade-offs between scouting and recruiting, exploration and
+exploitation, and variation among individuals in their persistence to continue foraging at a
+specific location. The introduction was complicated, though still contained enough information to
+make clear why the study was being conducted. The model was complex, but all details on the
+17
+implementation and parameters are provided (either in text or in the supplement). One highlight
+of this study was that researchers include behavioral experiments in order to estimate many of
+their parameters for the model.
+My only major comment is regarding the discussion. As mentioned, the methods were very
+detailed and complex, and the results showed clear patterns as parameters varied. I would have
+liked to have seen more of the discussion linked back to how these patterns mimic natural honey
+bee patterns. e.g., 367-9: "the percentage of scouts in honeybee colonies is between 5% and 35%
+[38]. These numbers are slightly lower than the optimal proportions we found here and this
+difference can be explained by the parameter choice for the number of bees that respond to a
+waggle dance (Figure S3)." If the numbers do not match what you observe in natural colonies,
+what are the biological constraints keeping colonies from performing at the calculated optimal
+range? Otherwise, are you saying that the parameter choice for bees responding to the dance are
+biologically unrealistic? Lines 410-5: "It would be interesting to further investigate the effect of
+increasing collection efficiency on collective dynamics in primitively social bees that exhibit
+division of labor but spatial information is not shared during recruitment e. g., bumble bees [43],
+or halictine bees in which there are no known mechanisms of recruitment [67]." This would be
+interesting, however, a number of studies have investigated (empirically and through agent-
+based simulations) how behavior would change if recruitment were removed from honey bees.
+The point that I'm trying to suggest here is not to add in these specific refs, necessarily, but to
+emphasize that there are opportunities throughout the discussion where putting these results in
+context with what is known about the actual biology of these systems would really help clarify
+the main goals with this model. Line 428-30: "Our model can thus be used to generate hypotheses
+for further empirical work on the regulation of collective behavior and its response to various
+environmental conditions." I absolutely agree with this statement, and think that it can be
+strengthened with more evidence of how empirical work has benefited from the development of
+models such as this in the past, and/or specifically what role this model will have on the field
+going forward.
+Minor Comments
+Lines 52-3: "For example, the decision of a honey bee to leave the hive and start foraging is
+influenced by the bee’s genotype." I was under the impression that it was influenced by hormonal
+changes that might be triggered by changes in gene expression. Perhaps you meant 'genome'?
+Lines 53-5: Genetic variation can influence the likelihood that a bee leaves a patch? Genetic
+variation might explain why some individuals choose to stay longer in a patch (thresholds to
+recognize a full crop might vary?), but the genetic variation is not the mechanism that affects the
+bee's decision to leave. I think this just needs to be rephrased.
+Line 122: At T-0, did all scouts leave the nest, or was there some randomness written into the
+program as to when they left?
+Line 125: Did scouts recruit every time they returned with food? Is this realistic?
+Line 133: Was the recruitment behavior the same for all scouts (did it vary with food type or
+distance or randomly?)
+Figures S1-S3 are not mentioned in the text (at least before S4 is mentioned).
+Lines 224-254: Behavioral assays were conducted on bees 3, 5, and 10 m from the hive to collect
+parameter values. However, data are presented together. Why were data collected at three
+different distances if data were to be pooled for analysis?
+Line 280: 'discovering' should be 'discover'
+18
+Line 288: the way the model is designed, if a = 0, then no one ever leaves to initially forages, so no
+food will be collected. But what if scouts do not recruit after every foraging bout?
+Line 282-3: "However" is repeated twice in the same sentence
+Author's Response to Decision Letter for (RSOS-170344)
+See Appendix D.
+label_version_4
+RSOS-170344.R1 (Revision)
+label_author_6
+Review form: Reviewer 3 (Samuel Beshers)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_6
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_12
+See attached file (Appendix E).
+label_end_comment
+Decision letter (RSOS-170344.R1)
+03-Jul-2017
+Dear Dr Mosqueiro:
+Manuscript ID RSOS-170344.R1 entitled "Task allocation and site fidelity jointly influence
+foraging regulation in honey bee colonies" which you submitted to Royal Society Open Science,
+has been reviewed. The comments of the reviewer(s) are included at the bottom of this letter.
+19
+Please submit a copy of your revised paper within three weeks (i.e. by the 26-Jul-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance. We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+20
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Sincerely,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Miles Padgett
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewer: 3
+Comments to the Author(s)
+label_comment_13
+See attached file
+Author's Response to Decision Letter for (RSOS-170344.R1)
+See Appendix F.
+label_end_comment
+Decision letter (RSOS-170344.R2)
+26-Jul-2017
+Dear Dr Mosqueiro,
+I am pleased to inform you that your manuscript entitled "Task allocation and site fidelity jointly
+influence foraging regulation in honey bee colonies" is now accepted for publication in Royal
+Society Open Science.
+21
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Appendix A
+UNIVERSITY OF CALIFORNIA, SAN DIEGO UCSD
+BERKELEY • DAVIS • IRVINE • LOS ANGELES • MERCED • RIVERSIDE • SAN DIEGO • SAN FRANCISCO SANTA BARBARA • SANTA CRUZ
+THIAGO MOSQUEIRO
+BIOCIRCUITS INSTITUTE (BCI)
+9600 GILMAN DR.,
+LA JOLLA, CALIFORNIA 92037-0328
+PHONE: (+18583616477)
+E-MAIL: tmosqueiro@ucsd.edu
+February 24th, 2017
+Dear Dr. Andrew Dunn,
+Thank you for the time and effort that you and the reviewers dedicated to our manuscript. We
+appreciate the opportunity to re-submit a revised version of the manuscript. We have made
+substantial revisions in accordance with the reviewers’ recommendations including:
+1. We re-ran all our simulations with the additional condition that recruited bees can recruit
+other foragers, based on the suggestion of reviewer #1. This new condition did not
+qualitatively change our results. We now mention this condition in the text (see details
+below) and add a new section about it in the supplementary material.
+2. Created a new description of the model using the ODD protocol, as reviewer #1
+requested.
+3. Revised the text according to all of the suggestions provided by the reviewers as detailed
+below.
+Please find below a point-by-point response to the reviews indicating the nature and location of
+changes using the line numbers from the revised manuscript. We believe the revised manuscript
+is greatly improved and look forward to your decision.
+Sincerely,
+Thiago Mosqueiro, PhD
+RESPONSE TO REVIEWER #1
+This manuscript presents a pair of related models, one deterministic and one agent-based, in an attempt
+to explore the interaction between task persistence and task allocation. Specifically, the authors examined
+whether and how the interaction between the proportion of honeybee “scouts” and “recruits” with how
+often honeybees return to a food source affects food intake. They conclude that both factors do indeed
+interact. Specifically, the more persistent recruits are, the fewer scouts a colony should have. However,
+the more persistent scouts are, the more scouts a colony should. I must point out that I am not qualified
+to review the deterministic model.
+The question posed is a valid one, and one worth exploring. However, I am afraid I found the manuscript
+lacking in several respects.
+>> We thank the reviewer for the valuable input. We followed carefully the reviewer’s comments and
+provide a point-by-point response below.
+Firstly, the manuscript is somewhat poorly written: it is hard to follow and often convoluted, with many
+sentences that must be read multiple times before they can be deciphered. I realise that style is not a
+decision criterion for RSOS, but with a complex topic such as this one (with many interactions and
+complicated models), clarity is key. Otherwise, the manuscript will only be understood by other modellers.
+Indeed, I am afraid the entire manuscript felt like it was written by a computer scientist rather than a
+biologist, which is also reflected in many departures from biological realism in the model (see below). I
+advise the authors to give a version of the manuscript to a MSc student studing biology, with little or no
+background in programming or modelling – if they can understand what each sentence means, the
+manuscript is clear enough.
+>> We have revised the manuscript and rewrote sentences that were difficult to understand. We also
+asked a biologist (with no computational background) to read our manuscript and used his feedback to
+improve our writing.
+Secondly, and critically, there are large departures from biological realism. I realise that models must, by
+definition, be simplifications. However, some decisions could radically alter the results found and thus the
+conclusions drawn. The main culprit is that the “recruits” do not themselves recruit. This does not reflect
+reality. By not having this effect, the positive feedback effect is removed – an effect which is key to
+collective foraging in honeybees.
+>> We agree with the reviewer that models are simplifications of reality and therefore are limited and
+subject to various assumptions. When we designed this model, we used a simplified recruitment process,
+but following the reviewer’s suggestion we now expanded the model to include the recruitment by
+recruits. This recruitment by recruits did not change the main results or conclusions of our study.
+We provide a detailed explanation of the effect of recruitment by recruits in the supplementary material
+and refer the reader to these results on line 137:
+“For simplicity, only the recruitment by scouts is considered here, and we examine the effect of adding
+recruitment by recruits in the Supplemental Material (Figures S4 and S5).”
+And on line 371:
+“Lastly, the effect of including recruitment by recruits on the optimal proportion of scouts was the same
+as that of increasing the number of recruited foragers by scouts per waggle dance (Figures S4 and S5).”
+Other examples of odd design choices are 1) having a static environment - although this is discussed in
+the manuscript, many other modelling efforts demonstrate that results from stable and static
+environments can be wildly different. By not including environmental variation, the generalisability of this
+model is severely curtailed. Similarly, only having one food quality available also misses out a key aspect
+of environmental variability.
+>> We agree with the reviewer that a static environment is only one option out of an infinite amount of
+possible environments. However, we believe that incorporating further complexity to the resources is
+beyond the scope of this work. We point this out on line 410:
+“The spatial and temporal abundance of resources can substantially impact foraging behavior
+[26,57,66,68]. Indeed, during the development of our model we found that increasing the number of
+resource patches caused the total amount of resources collected by the colony to increase for all
+proportions of scouts, and the optimal proportion of scouts to decrease with the number of patches
+(Figure S6). This finding is consistent with a model of collective foraging in ants [69] which also found that
+the optimal proportion of scouts is inversely related to the amount of resources in the environment. To
+examine the relationship between the proportion of scouts in a colony and behavioral persistence,
+without the confounding effects of resource distribution, we focused only on one spatial setting in our
+final model. The simulations we present have biological significance for foraging in patchy resources that
+cannot be depleted in a single day, such as blooming trees or meadows.”
+Related to this, modelling foraging over only one day misses out key aspects of the value of the waggle
+dance – namely to give foragers memories which they exploit in the future (e.g. (Schürch and Grüter 2014)
+>> As stated above, a model is limited in the number of parameters it can explore before it becomes too
+unwieldly. We chose to examine a short time scale of one day so that we can make clear, simple, and
+testable predictions. We now acknowledge that honeybees use the communicated information on both
+long and short time scales and include a citation to Schürch and Grüter 2014 on line 67:
+“Scouts communicate to recruits the direction, distance, and quality of newly found resources using the
+waggle dance [32], thus reducing waste of energy spent when searching for food over both long and short
+time scales [42,43], and dangers, such as predation [33,44,45]”
+2) Altering the velocity of foragers (why was this done?)
+>> We used two values of velocity for foragers to distinguish between scouts exploring the environment
+and recruits exploiting the resources. Because recruited foragers know where to go, their flight is faster
+and more precise than that of exploring scouts. Previous theoretical work also simulated different
+velocities for scouts and recruits. <U+0001D463>" - the dispersion angle of the flight pattern determines both flight
+precision and velocity. We now clarify these points on line 127:
+“To differentiate between the flight patterns of bees that are exploring the environment and those that
+are exploiting a resource patch, are familiar with its location, and are therefore faster and more precise,
+we assigned <U+0001D463>" = 1 to scouts, and <U+0001D463>" = 1.5 to recruits, following [57].”
+3) the behavioural experiments were somewhat puzzling to me. Distances of 3, 5 or 10 meters from the
+nest are near meaningless for looking at foraging variation, as the are all essentially right at the nest.
+Honeybees can forage up to 8 km from their nest. No information about the time of year or location is
+given, but this is also critical for putting the data in context: in spring, when nectar flow is high, the bees
+might have been unimpressed by the 1m feeder, and not persisted very much. In late summer or autumn
+things would look very different. There are many, many researchers studying honeybee foraging – surely
+high quality data could be obtained at no effort from one such group. For example, persistence is explicitly
+studied over larger distances by (Al Toufailia, Grüter, and Ratnieks 2013). Thus, I am afraid I have no
+confidence in the parameterisation of the models.
+>> Our choice of feeder distance from the hive was based on previous work (Liang et al 2012). Al Toufailia
+et al 2013 used 20m, and found smaller persistence values than us (3.7 compared to our 6.1±0.3), thus
+bees in our experiment persisted even to close feeders, despite the reviewer’s assertion. Furthermore,
+20m is on the same spatial scale as 10m and the results that Al Toufailia et al 2013 presented of bees
+foraging at a distance of 400m (for instance, larger duration of trips and a smaller average persistence
+than that of 20m) do not undermine our conclusions. We now add a reference to Al Toufailia et al 2013:
+“We trained bees to find feeders, positioned at 3, 5 or 10m from the hive, one day before the experiments
+began, following [18] and comparable to other studies that examine 20m [59].”
+Furthermore, our experiments were performed during the winter when feeders that are close to the hive
+are very attractive to foraging bees.
+We now state the season on line 224:
+“…during the winter (between February 3rd and 26th, 2016).”
+We further clarify that during this time there were very few naturally blooming plants on line 228:
+“During the time of our experiments there were few naturally blooming plants and our feeders were very
+attractive to the bees.”
+Honeybees have been known to make many tens of repeated visits to a feeder, so it seems the cap of 22
+visits is also not great (and should be at least tested for an effect). The lack of biological realism is
+underlined by some odd results: in larger colonies, the proportion of scouts needed should drop, not
+increase (as show in in S2b). This is due to the lack of recruit recruitment.
+>> The maximum number of observed trips in our experiments was 22. Our experiment lasted for about
+one hour. In our simulations, we investigated larger values of persistence (most of our plots go up to 30).
+However, both the proportion of scouts and the total amount of resources collected stabilized in a well-
+defined plateau when persistence increased above 20~30 visits in our simulations. Thus, the amount of
+food collected by additional trips, beyond the 20th trip, does not increase linearly.
+We clarified this point in the text on line 244:
+“Because the largest number of observed return visits by a single bee was 22, we restricted our
+persistence parameter <U+0001D70B>" to range between 1 and 30.”
+We further mention that larger values have little impact on our results in the caption of Figure 3:
+“(d) Optimal proportion of scouts plateaus near 50% as <U+0001D70B> increases.”
+What is the real proportion of scouts in a colony? This should be mentioned to put the model results in
+perspective.
+>> According to the literature, the percentage of scouts in a colony is between 5% and 35%. We added
+this information to the text on line 362:
+“Previous studies estimated that the percentage of scouts in honeybee colonies is between 5% and 35%
+[38]. These numbers are slightly lower than the optimal proportions we found here and this difference
+can be explained by the parameter choice for the number of bees that respond to a waggle dance (Figure
+S3). Although colonies with higher recruitment rates required fewer scouts to achieve their optimal
+foraging performance, the relationship between the optimal proportion of scouts and persistence did not
+change (compare Figures 3 and 4 with Figure S3).”
+The result that the number of scouts drives the number of recruits is because the recruitment is limited,
+since in the model recruits don't recruit. We might see very different dynamics if this was corrected.
+>> We now explain in the supplementary material the effect of recruitment by recruits on our results.
+Thirdly, the agent based model was somewhat poorly described, and difficult to follow. The
+diagrammatic representation in figure 1c helps a lot, but the text is very hard to follow. The reference to
+the model did not work, and no model could be found on the authors GitHub site.
+>> The source code is now available on GitHub https://github.com/VandroiyLabs/ABBAS and the
+description of the model in the text was edited.
+I would have preferred a standard ODD protocol (Grimm et al. 2010) instead of, or in addition to, the
+current description.
+>> We now provide a description of our model following the ODD (Overview, Design concepts, and Details)
+protocol in our GitHub repository. The ODD description is now permanently hosted in the following URL:
+https://github.com/VandroiyLabs/ABBAS
+We added this information in the text on lines 105:
+“A description using Overview, Design concepts, and Details (ODD) protocol [51] and the source code of
+our model can be found on Github [52].”
+The role of the non-linear paths (fig 1a) are not made clear. For scouts, it is clear that this is important
+during scouting.
+>> The importance of using non-linear paths is to avoid an unrealistic scenario in which all simulated bees
+fly along the exact same straight line. To make this point more evident, we added the following sentence
+on line 117:
+“The stochastic dynamics in Equation (1) produces slight variation among bees in their flight patterns to
+avoid an unrealistic scenario in which bees take a straight line between two points.”
+But when making return visits to the food source, do bees switch feeders if they find another one?
+>> A bee exploits the first resource patch it finds, as observed in many experiments (included those
+conducted by von Frisch). We now clarify this point on lines 142:
+“Recruited bees exploited the first resource they found during their trips. The dispersion of recruited bees
+(s=2) was fitted using data from experiments with feeders [32]. Because the stochastic element of the
+flight of a recruited bee is very small compared to the size of the resource patches in our simulations, bees
+always exploited the same resource patch that was reported to them.”
+When bees reach the end of the modelled area, do they fly back or are teleported?
+>> When bees reach the limits of the simulated area, they are instantly set back to the hive. This is a
+commonly used boundary condition in agent-based simulations. We clarify this now on lines 130:
+“Foragers that reached the limit of the simulated area were set back to the hive instantly to start foraging
+again.”
+Lastly, some key aspects of relevant literature are not mentioned. Most critically, the trade-off between
+information gathering and exploitation is barely referred to, but this is a vibrant field which is directly
+relevant here. Indeed the finding that a very high proportion of scouts is required goes against what is
+normally found in most simulations and studies (i.e. that for most of the time exploitation dominates
+exploration, apart from in extremely variable environments).
+>> We added the following sentence on lines 79:
+“Honey bees choose between exploring for new resources or exploiting familiar ones based on colony [40]
+and individual information [47,48]. Thus, the tradeoff between exploration and exploitation can be
+adjusted both at the colony level, through allocation of foragers to either scouts or recruits, and at the
+individual level, through variation in the persistence of visits to a known food source.”
+I am sorry that this review was so negative. I hope the effort I put into this review demonstrates that it
+was performed in a spirit of constructive criticism. The manuscript did have some laudable points. For
+example, it manages what most modelling studies fail, namely to produce testable hypotheses (hypothesis
+generation) in lines 356-360. Indeed, I wish the authors would have emphasised this more, instead of
+ending the manuscript with a plea that someone else should do that.
+>> We thank the reviewer for appreciating our model’s ability to produce testable hypotheses and we
+value their input. We now further emphasize our ability to generate hypotheses in the abstract on the last
+sentence (line 28):
+“Our work provides new insights and generates new hypotheses into how variation in behavior at both
+the individual and colony levels jointly impact the trade-off between exploring for new resources and
+exploiting familiar ones.”
+• “synergy” has a specific meaning – that one gets a stronger response from two effects together than
+one would from adding both separate effects. I don’t think this is what the authors show.
+>> We changed “synergistically” to “jointly” wherever it appears, including the title.
+• Lines 23-4 – unclear
+>> We changed the text on lines 23 to:
+“Furthermore, changes to the persistence of scouts induced opposite effects from changes to the
+persistence of recruits on the collective foraging of the colony.”
+• Lines 37-8 – unclear
+>> We now edited this sentence to read (line 38):
+“However, variation among individuals in how persistently they perform a task is striking. This behavioral
+variation can undermine the efficiency that is often associated with task specialization [7,8] because
+individuals that are not persistent either do not perform a large proportion of the task or incur the costs
+of task switching [9,10].”
+• Line 52 – “behavioral variation in foraging behaviors” – inelegant
+>> We changed this sentence to (line 55):
+“Honey bees exhibit variation in foraging behaviors at both the worker and colony levels [28,29].”
+• Line 127 – unclear – do the bees then fly exactly towards the report, or is there variation? I suspect
+the latter, but the word “exactly” confuses matters.
+>> The drifting vector of a recruit points to the exact location reported by the forager who recruited it.
+However, the drifting vector only defines the bias of the random flight pattern. There is still a stochastic
+contribution in the flight dynamics, which comes from the term <U+0001D70E>" <U+0001D451><U+0001D47E>- in equation (1). We clarify this
+point on lines 139:
+“Each of the newly recruited bees left the hive with their drifting vectors pointing exactly towards the
+location reported by the recruiting scout. The direction of this drifting vector is the deterministic portion
+of the flight dynamics (see <U+0001D497>" <U+0001D451><U+0001D461> in equation 1), which is accompanied by a stochastic contribution from
+<U+0001D70E>" <U+0001D451><U+0001D47E>- .”
+• Line 151 – “foraging” did you mean scouting?
+>> Changed.
+• Statistical analysis should not be carried out on model-derived data (White et al. 2014), as the results
+are linked to sample size. Rather, use large numbers of models runs (500-1000) and provide descriptive
+graphics.
+>> We removed the Kruskal-Wallis and Dunn tests and only kept the shaded areas in figures 1a,b which
+represent 1.5s for each curve.
+• Lines 222-223 – using 16% probability on a (I assume) Gaussian distribution doesn’t seem to describe
+the data shown in 2c well.
+>> The probability of stopping to exploit a particular patch refers to the value of the parameter lambda in
+a geometric distribution. We now clarify this point on lines 242:
+“This means that making the decision to stop exploiting a particular patch had a probability of 16% based
+on the value of the lambda parameter of a geometric distribution that was fit to the data.”
+• Some reported results are so obvious as to not require mentioning, e.g. line 236, the amount of food
+collected increases over time. As food cannot be lost, this is a given, surely? Also line 265-6 and 368-9.
+>> While we appreciate the reviewer’s suggestion to shorten the text by removing information about our
+results, we do not want to risk losing readers who might not think these points are trivial. Each of the
+results the reviewer points out is reported because it is required for more complex arguments that follow
+them:
+1. On line 257 we state that the amount of resources goes up over time so that later we can discuss
+the differences among various simulations in the rate at which the amount of resources goes up
+on lines 259-264.
+2. On line 284 we discuss what happens when there are no scouts because we are reporting on the
+limits of our model. This is common practice when analyzing sets of Ordinary Differential
+Equations.
+3. On line 368 we mention that larger groups collect resources faster to place our results in the
+context of previous modeling studies. We now clarify this point by editing the sentence to read:
+“Changing the number of foragers (from 100 to 1500) did not qualitatively change how
+persistence and colony composition interacted to achieve optimal resource collection (Figure
+S2), although, in agreement with previous modeling efforts [57], larger colonies did induce
+faster collection of resources.”
+• Lines 389-393 – I find this reasoning unsatisfying – a bug fix would solve this problem; and it may not
+even be a problem (Al Toufailia, Grüter, and Ratnieks 2013). Regardless, this belongs in the methods.
+>> We removed this sentence.
+• Line 400-403 – overlong sentence
+>> We changed this sentence from passive to a direct form, and indexed each item to improve the
+readability. The new version is on lines 421:
+“Therefore, to fully understand the tradeoff between exploring for new resources and exploiting familiar
+ones, we need to both (i) uncover the mechanisms that underlie behavioral persistence and task
+allocation, and (ii) determine the time scales on which these processes act in different species that live in
+different environments.”
+RESPONSE TO REVIEWER #2
+First up apologies for the delay in my review, I am about to leave for the field and haven’t had the
+opportunity to give this the attention it deserves.
+That said, I can see that it is good work that is well thought out and conducted, and seems to have been
+through review before as there are few errors that I can see. I like the paper, think it makes a good
+contribution to our understanding of collective composition, and I would only recommend minor changes
+before acceptance.
+>> We thank the reviewer for the appreciation of our manuscript.
+This is a modeling paper, but from the abstract this is not as clear as it could be. I would ask the authors
+to make it clearer that the model is parameterised by empirical data, and are therefore obviously relevant
+to biological systems, but the results are from the model rather than measurements from actual hives.
+>> We now emphasize that our findings are based on a computational model early on in the abstract (line
+15):
+“Here we use a detailed computational model to examine the joint impact of colony-level distribution
+among tasks and behavioral persistence of individuals, (…)”
+Is there a typo in equation 8b? It seems Yr should actually be Ys…?
+>> We thank the reviewer for noticing this typo, it is now corrected. All equations derived from equation
+8b were revised to ensure that this error was not propagated forward.
+Appendix B
+UNIVERSITY OF CALIFORNIA, LOS ANGELES
+LIFE SCIENCES
+405 HILGARD AVE.LOS ANGELES, CALIFORNIA 90095
+BERKELEY • DAVIS • IRVINE • LOS ANGELES • RIVERSIDE • SAN DIEGO • SAN FRANCISCO SANTA BARBARA • SANTA CRUZ
+THIAGO MOSQUEIRO, Ph.D.
+E-MAIL: thmosqueiro@ucla.edu
+PHONE: (+18583616477) th
+April 11 , 2017
+Dear Dr. Miles Padgett,
+We appreciate the opportunity to re-submit a revised version of our manuscript, and thank the
+editor for the time and effort dedicated to our manuscript. Please, find below a point-by-point
+response to the second review from reviewer 1. In addition, we are providing an extended list of
+suggested referees.
+We look forward to your decision.
+Sincerely,
+Thiago Mosqueiro, PhD
+Response to 2nd set of comments from Reviewer 1
+The authors have done a very good job addressing most of my comments. They have taken my
+comments seriously and invested a lot of effort in handling them. I was impressed by the authors
+willingness to perform many of the labour-intensive tasks I asked for, including an addition on a
+recruit-recruitment sensitivity analysis and a complete ODD protocol. The manuscript also reads
+much better, and is easier (though far from easy) to follow. The ODD protocol is particularly clear
+and helpful. The authors also handled my comments about the empirical aspect of the
+experiment well, giving details where needed, and convincing me that the data is appropriate for
+use. All in all, a laudable improvement.
+>> We thank the reviewer for appreciating our efforts.
+However, I am afraid I still have concerns about the biological realism of the model. My concern
+comes from a mismatch between the empirical data the authors collected on persistence (and
+found in other studies), and the predicted optimal performance of the bees in the model. In figure
+2c we see that the majority of bees make between 0 and 5 return visits – i.e. have a persistence
+of between 0 and 5. Average persistence is probably 2.9, with on average 3.2 return trips.
+>> The average persistence we observed and reported in the paper is 6.1 ± 0.3 (see line 242),
+based on data from over 300 honey bees, and not 3.2 as the reviewer suggests. The persistence
+observed in our experiments is in complete agreement with the persistence observed in other
+studies, such as those pointed out by the reviewer in their first round of comments, and which
+we now cite, as detailed in our previous response letter.
+To emphasize the observed values, we now include them in the caption of Figure 3 (line 253):
+“The average persistence was 6.1 ± 0.3.”
+However, as the authors state “the absolute amount of resources collected per colony continued
+to grow when persistence increased beyond 20 visits per individual”, as can also be seen in figure
+3e. If the model reflects reality, bees would be under very strong selection to have very high
+persistence. But bees show low persistence. This implies either that the model correctly reflects
+the real world, but that the environment honey bees evolved under is radically different from
+their current environment (which is somewhat unlikely), or that the model does not reflect reality
+very well.
+>> This result of our model indeed led us to our further extensive investigation of the relative
+effect of scout persistence and recruit persistence on the amount of resources collected, these
+two persistence values act in opposite directions on the optimal proportion of scouts, thus
+creating a tradeoff between the proportion of scouts and resources collected that likely explains
+the limit on the empirical persistence we observed. As this point was not clear to the reviewer
+we now add a sentence immediately after the one the reviewer cites stating (lines 271): “This
+result led us to further investigate the relationship between the total amount of resources
+collected and the persistence of recruits and of scouts, as detailed below.”
+In my previous review I suspected that this mismatch between the model results and reality was
+due to a lack of recruitment by recruits in the model, but the authors convincingly demonstrated
+that I was wrong.
+>> Because (i) the reviewer did not point out the specific way in which our model is incompatible
+with reality, and (ii) reviewer 2 did not raise any issues in this respect, it is not clear to us what
+mismatch between model and reality the reviewer is referring to. Our model parameters are
+entirely based on experimental results and the model outcomes produce novel hypotheses that
+have never been tested.
+I now suspect that the lack of depletion in the model, or generally the completely stable
+environment, is causing this mismatch between the model and reality, but again I might be
+wrong. The authors argue that the modelled stable environment “have biological significance for
+foraging in patchy resources that cannot be depleted in a single day, such as blooming trees or
+meadows.” This may or may not be true – such resources may change in productivity significantly
+throughout the day. I simply do not know. Or such resources may not represent the most
+important nectar source for honeybees. Again, I do not know.
+>> The reviewer brings up interesting questions that are beyond the scope of our current work.
+Our goal was to examine how persistence and task allocation jointly impact collective outcomes
+at the colony level in a stable state. The questions the reviewer keeps bringing up about the
+effects of environmental dynamics emphasize the importance of our work to generate new
+hypotheses, some of which we are currently investigating both empirically and theoretically.
+However, this is beyond the scope of the present manuscript. To avoid confusion, we removed
+from line 422 “such as blooming trees or meadows.”
+It could even be that it is the fact that all bees show the same persistence level in the model,
+while in reality we have a large inter-individual variation (see also (Pamir et al., 2011)).
+>> We completely agree that bees exhibit variation in persistence, and we indeed examined the
+effect of introducing such individual variation in behavior to our model in earlier iterations.
+However, because our model output examines the average outcome of the entire colony, the
+end result was only significantly impacted by the average persistence in the colony, regardless of
+how it is distributed within a task group. This is also the reason why our mean field solution was
+able to explain most of the outcomes of our agent-based model. Individual variation in
+persistence might impact the dynamics of the model, which is beyond the scope of this work.
+I am very positively inclined towards this work, as the authors have done such a good job
+responding to my previous comments, so have tried hard to reconcile the predicted behaviour of
+the bees from the model with the empirical data presented (and available from other sources).
+Sadly, I have failed, and so cannot convince myself that this model is a good representation of
+reality.
+>> No model can ever represent reality 100%. The goal of models is to help us think about
+complex systems using the fewest number of parameters possible, generate new hypotheses,
+and guide further empirical work. Despite the inherent downsides of (any and all) theoretical
+work our model results in fact match quite well the empirical work we present, as discussed
+above, and produces interesting and testable hypotheses.
+However, perhaps I am missing something. I don’t have access to Python and never learned to
+use it, so couldn’t explore the model myself.
+>> An evaluation of theoretical work does not require being able to read the code. Perhaps, this
+was one of the reasons the reviewer asked to be excused from making a decision on our
+manuscript (see below, “I would like to abstain from making a recommendation about this
+manuscript”). To make sure that anyone is able to reproduce our results, we provided a detailed
+example for non-experts showing how to test our model and reproduce Figure 3b:
+https://github.com/VandroiyLabs/ABBAS/tree/master/documentation/Submitted%20Paper
+It may have been a great help to have a stand-alone applet one could explore.
+>> This request for a stand-alone applet goes beyond the scope of any modeling work we’ve ever
+encountered. We provide extremely detailed documentation (as acknowledged by the reviewer)
+and the complete code of our simulations which can be further evaluated by any motivated
+researcher. Python is one of the most popular and versatile programing languages currently being
+used. One possibility would be to ask the assistance of an engineering or computer science
+undergraduate student in modifying the source code.
+Or perhaps I have misunderstood the role of this model: perhaps the model is not meant to
+represent reality, but explore a what-if scenario of best practice under ideal conditions.
+>> The goal of models, including the one we present, is to provide insights for future experimental
+work. This particular reviewer explicitly acknowledged our ability to do so in their previous round
+of comments: “The manuscript did have some laudable points. For example, it manages what
+most modelling studies fail, namely to produce testable hypotheses (hypothesis generation) in
+lines 356-360.”
+The discussion raises interesting points, such as “the ratio between scouts and recruits, and
+individual-level traits, such as the persistence of foragers, interact to impact collective foraging”,
+And that “recruits may be the ones driving the adjustment of the colony’s exploration
+exploitation strategy in response to both external and internal conditions” It is just not clear to
+me that the specific conclusions drawn from the model can reliably represent reality.
+>> Indeed, these points remain to be tested empirically. All the statements that the reviewer
+brings here apply to our findings from the model and so they are completely accurate.
+Again, I am really very sorry to raise these doubts and be so negative– especially at this late
+stage in the review process. Given the conflict between the great job the authors have done
+with my comments, and my continuing doubts about the validity of the manuscript, I would like
+to abstain from making a recommendation about this manuscript. As I am not given this option,
+I will be ticking the “reject” option, but strongly urge the editor to seek a second (third) opinion
+on the matter.
+>> Because of the very positive feedback from reviewer 2 and our extensive edits in response to
+all of reviewer 1 current and previous comments, we respectfully ask the editor to consult a third
+reviewer, as suggested here.
+Minor comments:
+• The video associated with the model in the ODD protocol seems to show depletion of the
+resources. This confused me a bit, as the resources in this paper are non-depleting (line 178).
+>> The video is now updated.
+Appendix C
+Review by Samuel Beshers, Dept of Entomology, University of Illinois at Urbana-Champaign.
+This paper describes a model of foraging in honey bees and asks how two features of the system
+(fraction of foragers that act as scouts and persistence of foragers returning to the same resource)
+affect overall colony performance. The authors use both simulation and system dynamics
+(ordinary differential equations) versions of the model.
+Colony organization, task allocation and decision making are important topics of study, with
+potential interest well beyond social insect biology, and simulation and mathematical models
+should be important tools in this area of research.
+Apparently this paper has been re-submitted twice, after two reviews by Reviewer 1. Given that
+history, I am somewhat surprised at the current state of the paper. There are a number of
+significant flaws, each of which makes the paper unacceptable in current form. Some of these
+could possibly be taken care of by editing, but others are firmly embedded in the authors’
+conception of the paper and I am not sure there is any solution for them.
+I have read with interest the comments of Reviewer 1, who expresses confidence in the model
+but great uncertainty about the relationship of the model to reality. I am not concerned with the
+model’s relationship to reality per se; the question is whether the paper tells us anything of
+importance about honey bees or other social insects, and I believe the answer to that is No.
+As I said above, I am not sure there is any solution to these problems but I think it is only fair to
+point them out (for the second time, in at least one case) and give the authors another chance at
+rebuttal.
+1. Foraging in a static environment.
+The past thirty years have taught us a great deal about how honey bees are able to exploit patchy
+and ephemeral resources in a complex environment. Contributing to this are their abilities at
+orientation and navigation, communication of location and distance, and rapid learning and
+forgetting of flower patch locations, mediated in part by memories of visual and odor cues. It
+stands to reason that their foraging system has been “designed” through selection to exploit such
+environments.
+And yet, as Reviewer 1 pointed out, the paper deals with foraging in an environment with
+unlimited resources in three fixed locations. The response to this criticism was that
+environments with limited and shifting resources “are beyond the scope of the present work.” If
+so, then I think that maybe publication is also beyond the scope of the present work.
+I understand, in the abstract, that it could make sense to start with a simple situation and then
+extend a model to more complex situations. But here I do not believe they have established that
+the simple case is of interest or that their results bear in any way on the more complex situation.
+For the paper to be worthwhile, the authors need to make a compelling case that they have found
+generalizable properties that will 1) still be valid in the complex environment and 2) provide
+insights into how the bees exploit a complex environment. They have not attempted to make
+such an argument, and I cannot imagine what that argument would be. They have shown that
+scout allocation and persistence interact to affect colony foraging success, which is not a
+surprise, but there is no conclusion that effectively captures what those interactions are, or how
+they will translate to more complex environments. The final conclusion is that the model “can
+thus be used to generate hypotheses for further empirical work…” but no such hypotheses are
+actually generated, leaving me in doubt. In particular, the authors say nothing about what they
+have found that will transfer to the complex environment problem.
+I have doubts about whether scout allocation and persistence, as defined here, are really of
+relevance for understanding the honey bee foraging system (see 2. Choice of variables,
+below). So even if the authors can say something how their results may transfer to the complex
+environment, I would still be skeptical about their importance.
+I am also skeptical about the results as they stand, and their potential relevance for understanding
+real honey bees. For example, with three fixed unlimited resources, it would seem to me that the
+best strategy for a real honey bee colony is to have a small number of scouts (3?) go directly to
+the resources they visited yesterday, confirm that they are still there, and have all other foragers
+be recruits with infinite persistence (who may also recruit others) so that they go to the same
+resource all day. This is trivial. It is also not what happens in the simulations here. Presumably
+this is because of the lack of memory of the day before, but of course I don’t know. Even in a
+real hive moved overnight to a new location, I think the exploitation of three unlimited resources
+within 15 M would be swift and employ a quite small initial number of scouts. It would have
+been good for the authors to set up some obvious expectations and show that the model conforms
+to them before exploring further.
+My conclusion is that I do not see any evidence of either general systems understanding, or of
+results that would help us understand real bees.
+2. Choice of variables to study
+The authors have chosen to focus on the allocation to scouts, and on persistence (referred to in
+the title as “site fidelity”). I have issues with both of these.
+Allocation to scouts
+The allocation of foragers to the roles of scout and recruit is important, but so is the total number
+of foragers, and also the number active at any particular time. Social insect colonies generally
+appear to have more foragers than are active at any one time, and recruits can be drawn from this
+extra pool. Therefore the proportion of scouts to total foragers is not fixed, and the constraint
+placed on the simulated colonies may limit the relevance of their behavior.
+Persistence
+The persistence of foragers is likely to be the result of a large number of factors; here it is treated
+as a fixed trait of the individual forager. I expect that if the authors studied persistence in
+marked foragers over several days (not easy to do because of losses, or workers that do not
+forage every day) they would find that some are very consistent in their persistence and others
+quite variable. I am not sure that fixed persistence is relevant.
+Again, it is difficult to see how fixed values of allocation and persistence contribute to any
+general systems understanding or help us to understand the real system.
+3. Two agent-based models?
+Starting with line 99, an agent-based model is described, and in lines 175 an apparently
+completely different agent-based model is described, with no reference to the first. At least, the
+parameters are so different that the authors cannot be referring to the same model. The key
+parameter is distance: in the first model the resources are 15M away from the hive (an
+unreasonably short distance) and in the second the foraging area is 1.3 km2, implying that
+resources could be found considerably further from the nest, and providing plenty of room for
+more resources to occur. I could not find any clarification of this, and in the figures there is no
+indication of the conditions in which the simulations were run.
+4. Quantum bees
+The second is that in the simulations, as stated twice in different places, when a forager gets to
+the limit of the available space its position is immediately reset to the hive and it starts foraging
+again. This appears to be arbitrary yet bizarre, and needs to be at least explained or better still
+changed. Why not have the bees just turn around???? I am not sure how this affects the results,
+but it can’t be good.
+To summarize, I see no evidence that this paper provides a step in an incremental effort to
+understand honey bee foraging. It is up to the authors to show how their work on fixed variables
+in static environments gives us insights into how the bees, with likely flexibility in these
+variables (and in other relevant variables that are not considered here) forage in dynamic
+environments, or how their results yield general systems understanding.
+Appendix D
+UNIVERSITY OF CALIFORNIA, LOS ANGELES
+LIFE SCIENCES
+405 HILGARD AVE.LOS ANGELES, CALIFORNIA 90095
+BERKELEY • DAVIS • IRVINE • LOS ANGELES • RIVERSIDE • SAN DIEGO • SAN FRANCISCO SANTA BARBARA • SANTA CRUZ
+THIAGO MOSQUEIRO, Ph.D.
+E-MAIL: thmosqueiro@ucla.edu
+PHONE: (+18583616477) th
+June 09 , 2017
+Dear Dr. Padgett,
+Thank you for the time and effort that you and the reviewers dedicated to our manuscript. We
+feel the manuscript has been greatly improved by the review process and appreciate the
+opportunity to re-submit a revised version. Please find below a point-by-point response to the
+reviews indicating the nature and location of changes using the line numbers from the revised
+manuscript.
+We look forward to your decision.
+Sincerely,
+Thiago Mosqueiro, PhD
+Response to comments from Reviewer 3
+1. Foraging in a static environment.
+The past thirty years have taught us a great deal about how honey bees are able to exploit patchy and
+ephemeral resources in a complex environment. Contributing to this are their abilities at orientation and
+navigation, communication of location and distance, and rapid learning and forgetting of flower patch
+locations, mediated in part by memories of visual and odor cues. It stands to reason that their foraging
+system has been “designed” through selection to exploit such environments.
+And yet, as Reviewer 1 pointed out, the paper deals with foraging in an environment with unlimited
+resources in three fixed locations. The response to this criticism was that environments with limited and
+shifting resources “are beyond the scope of the present work.” If so, then I think that maybe publication
+is also beyond the scope of the present work. I understand, in the abstract, that it could make sense to
+start with a simple situation and then extend a model to more complex situations. But here I do not believe
+they have established that the simple case is of interest or that their results bear in any way on the more
+complex situation.
+>> We pose novel question about how the organization of the colony at multiple levels affects foraging
+behavior. As the reviewer states towards the end of his comment, and as any scientist and modeler would
+agree, when investigating a new question, one should start with the simplest scenario and only then
+expand to more complex ones. As it is, our model is complex and introduces new ideas (as pointed out by
+reviewer 4). Indeed, reviewer 1 agreed that a static environment is a good starting point for our work to
+avoid an excessive number of parameters. In the second round of comments, reviewer 1 stated that a
+dynamic environment would be the next step in our investigations, and they admitted that the evidence
+we provide show that a dynamic environment may not change the main points we make in our paper
+about the role of group composition and behavioral persistence. We provide ample supplementary
+material that shows how our model results and predictions fare in more complex situations, such as
+adding more resources, altering colony size, and adding recruitment rules. We refer to each of these
+added complexities throughout our discussion and now add concluding sentences that state how our
+model can be extrapolated to simulate complex scenarios on line 443:
+“The way these levels of organization interact are not affected by the number of resources or colony size
+(supplementary material). Other complexities, such as the depletion of resources, can be added to adapt
+our model to more specific scenarios.”
+For the paper to be worthwhile, the authors need to make a compelling case that they have found
+generalizable properties that will 1) still be valid in the complex environment and 2) provide insights into
+how the bees exploit a complex environment. They have not attempted to make such an argument, and I
+cannot imagine what that argument would be.
+>> The main purpose of this paper is to isolate the effects of the relationship between behavioral
+persistence and task allocation. To the best of our knowledge, this is the first paper that explores the joint
+effects of persistence and task allocation in connection with the tradeoff between exploration and
+exploitation of resources by honey bee colonies, we state this on lines (bring line numbers of the last
+sentence of the abstract). Our conclusions about these relationships hold up when adding various
+complexities, as detailed in our previous responses and as we detail in the paper (response to point 1) and
+the supplementary material. In our paper, we have dealt with at least some complexities that can occur
+under natural conditions, showing that our model is valid in a complex environment and that it provides
+insights into natural situations. It is therefore difficult to understand the nature of the criticisms from this
+reviewer, unless the point was that we need to address all possible complexities. The problem of course
+with such broad criticism is that there are many ways to model such complexities. These include studying:
+- the impact on collective outcomes of how quickly patches become depleted;
+- how the recovery time of resources affects collective outcomes;
+- what happens when patches become depleted at different rates;
+- what bees do when all patches are depleted;
+- how does the rate of the appearance of new patches affects foraging dynamics?
+This list goes on to become a very long list of possible research topics that flow naturally from the model
+we report in our manuscript. We use this short list to argue that our model helps make such future work
+possible, which is why we consider our model to be a major step forward, not just an incremental advance,
+toward providing a meaningful insight in social foraging.
+They have shown that scout allocation and persistence interact to affect colony foraging success, which is
+not a surprise, but there is no conclusion that effectively captures what those interactions are, or how
+they will translate to more complex environments. The final conclusion is that the model “can thus be
+used to generate hypotheses for further empirical work...” but no such hypotheses are actually generated,
+leaving me in doubt. In particular, the authors say nothing about what they have found that will transfer
+to the complex environment problem.
+>> We added throughout the discussion explicit hypotheses generated by our model and details on how
+they can be experimentally tested:
+On line 406:
+“Recent work suggests that persistence can be genetically determined [23], thus one could create colonies
+with high persistence and examine the proportion of scouting bees emerging in these manipulated
+colonies. Our model predicts that with high enough persistence, the proportion of scouts should drop by
+about 40%. Alternatively, because evidence shows that scouting is genetically determined [18], one could
+also manipulate the proportion of scouts in a colony, and examine if colonies with a greater ratio between
+proportion of scouts and persistence gather fewer resources.”
+On line 428:
+“Our model predicts that the proportion of scouts that optimizes collection of resources drops by half if
+the recruitment is reduced by a factor of 10 (Figure S5). This prediction can be tested by reducing
+communication in the hive, for example by turning the hive on its side or capturing recruited bees.”
+Furthermore, we updated the last paragraph of our paper to clarify the general conclusions of our paper
+and highlight the broad impacts of our work:
+“In conclusion, we showed that both colony-level composition and individual-level traits interact to impact
+collective outcomes. The way these levels of organization interact are not affected by the number of
+resources or colony size (supplementary material). Other complexities, such as the depletion of resources,
+can be further added to adapt our model to more specific scenarios. Further investigation of the
+mechanisms that underlie behavioral persistence and task allocation, and examination of the time scales
+on which these processes act in different species and in different environments will advance our
+understanding of the collective tradeoff between exploration and exploitation.”
+I have doubts about whether scout allocation and persistence, as defined here, are really of relevance for
+understanding the honey bee foraging system (see 2. Choice of variables, below). So even if the authors
+can say something how their results may transfer to the complex environment, I would still be skeptical
+about their importance.
+>> We find this comment puzzling because of the extensive literature on this topic and because of the
+empirical data we present. One point of our work is to establish whether and under what conditions our
+variables, task allocation and persistence, are important. Doubts, such as the ones this reviewer has, are
+fine to have at the outset of any work. But sometimes those doubts disappear in the face of experimental
+tests. It certainly should not be the case that doubts become reality by default in the absence of
+experiments.
+As already detailed in the manuscript, our model is based on empirical observations, either
+collected by our team or previously published. Our definitions of persistence and who is a scout are firmly
+grounded in biological observations and thus our model is explicitly relevant to understanding honey bee
+foraging. Here are some examples from the text where we explicitly show that our model is based on
+biological findings:
+Line 129:
+“The dispersion of recruited bees (<U+0001D70E>" = 2) was fitted using data from experiments with feeders positioned
+at distances varying from meters to kilometers [32].”
+Line 130:
+“To differentiate between the flight patterns of bees that are exploring the environment and those that
+are exploiting a resource patch, are familiar with its location, and are therefore faster and more precise,
+we assigned <U+0001D463>" = 1 to scouts, and <U+0001D463>" = 1.5 to recruits, following [57].”
+Line 244:
+“We estimated the values for the parameters in our model based on the empirical observations.
+Interestingly, all bees exhibited the same rate of visits to the feeders (Figure 2a), which was 0.4 ± 0.2
+visits per minute (Figure 2b). This visitation rate allowed us to set the model parameter <U+0001D463>" for flight velocity
+to a constant value for all foragers after their first visit at a resource. The empirical distribution of intervals
+between consecutive visits to the feeder (Figure 2b) informed the visitation interval of our model. The
+observed average visitation interval < <U+0001D461> > was linearly related to the distance <U+0001D451> between hive and feeder
+(R = 95%, Figure S3): < <U+0001D6E5> > = <U+0001D6FC><U+0001D451> + <U+0001D6FD>, with a = 2.3 ± 0.3 and b = 0.28 ± 0.05.”
+I am also skeptical about the results as they stand, and their potential relevance for understanding real
+honey bees. For example, with three fixed unlimited resources, it would seem to me that the best strategy
+for a real honey bee colony is to have a small number of scouts (3?) go directly to the resources they
+visited yesterday, confirm that they are still there, and have all other foragers be recruits with infinite
+persistence (who may also recruit others) so that they go to the same resource all day. This is trivial. It is
+also not what happens in the simulations here. Presumably this is because of the lack of memory of the
+day before, but of course I don’t know.
+>> In figure 4 we show that the proportion of scouts that optimizes the collection of resources decreases
+when the persistence of recruits increases. Thus, in our model a hive with very persistent recruits does
+have a small number of scouts, but never just one (or three). While the reviewer suggests an elegant
+algorithm for bees to find their resources, assuming scouts know their location a priori, honey bees do
+not follow such a strategy in reality. We have never observed such a strategy in the experiments we
+conducted or read about. Bee colonies are complex – as the reviewer points out – and require robust
+transmission of information among individuals. Relying on information from just a single, or three, scouts
+is not robust by any stretch of the imagination. Having so few scouts – one per resource patch as this
+review describes above - for a colony of tens of thousands of workers could lead to misinformation,
+miscommunication, and loss of bees, to name just a few potential pitfalls. Many complex biological
+systems (including social insects) rely on multiple, independent and parallel signals to increase the
+reliability of the group/collective response.
+Even in a real hive moved overnight to a new location, I think the exploitation of three unlimited resources
+within 15 M would be swift and employ a quite small initial number of scouts. It would have been good
+for the authors to set up some obvious expectations and show that the model conforms to them before
+exploring further. My conclusion is that I do not see any evidence of either general systems understanding,
+or of results that would help us understand real bees.
+>> Our current work (in preparation) and that of Liang et al suggest otherwise. As stated on line 235 we
+set up our model based on this previous work which shows that bees do not deplete close resources very
+rapidly, and not in a single day. We now add this information:
+“We trained bees to find feeders, positioned at 3, 5 or 10m from the hive, one day before the experiments
+began, following [18] and comparable to other studies that examine 20m [60]. These resources were
+never depleted despite their proximity to the hive.”
+As stated above, we now add explicit predictions and conclusions on lines 406, 428 and 442.
+2. Choice of variables to study The authors have chosen to focus on the allocation to scouts, and on
+persistence (referred to in the title as “site fidelity”). I have issues with both of these.
+Allocation to scouts
+The allocation of foragers to the roles of scout and recruit is important, but so is the total number of
+foragers, and also the number active at any particular time.
+>> We agree with the reviewer that task allocation is not the only interesting variable to study, and we
+indeed report on the effect of number of foragers in our results in the supplementary material.
+Furthermore, by exploring the allocation of foragers to scouting or recruiting, we were able to investigate
+the trade-off between exploration and exploitation and its implications on resource acquisition by the
+colony.
+Social insect colonies generally appear to have more foragers than are active at any one time, and recruits
+can be drawn from this extra pool. Therefore the proportion of scouts to total foragers is not fixed, and
+the constraint placed on the simulated colonies may limit the relevance of their behavior.
+>> We agree that the number of inactive foragers is an important variable that is not included in our
+simulation. We clarified this point on lines 182:
+“For simplicity, we neglect the effect of inactive foragers [41] and we fixed the number of scouts and
+recruits during each simulation”
+Please note that our supplementary material about different colony sizes indirectly and partially addresses
+the point the reviewer is making here by effectively increasing the pool of inactive foragers as colony sizes
+increase.
+Persistence
+The persistence of foragers is likely to be the result of a large number of factors; here it is treated as a
+fixed trait of the individual forager.
+I expect that if the authors studied persistence in marked foragers over several days (not easy to do
+because of losses, or workers that do not forage every day) they would find that some are very consistent
+in their persistence and others quite variable. I am not sure that fixed persistence is relevant. Again, it is
+difficult to see how fixed values of allocation and persistence contribute to any general systems
+understanding or help us to understand the real system.
+>> As stated in the manuscript, our simulations span one day of foraging (7h), thus variation across days
+is not be included. The empirical data on which our models are based were also conducted at a time scale
+of one day. We completely agree with the reviewer that there are many factors that can determine this
+behavior. The mix of genetic, epigenetic and environmental mechanisms underlying persistence is
+complicated, and we are in the midst of conducting large experimental study of these effects so that they
+can be added to our model in a realistic way.
+3. Two agent-based models? Starting with line 99, an agent-based model is described, and in lines 175 an
+apparently completely different agent-based model is described, with no reference to the first. At least,
+the parameters are so different that the authors cannot be referring to the same model. The key
+parameter is distance: in the first model the resources are 15M away from the hive (an unreasonably short
+distance) and in the second the foraging area is 1.3 km2, implying that resources could be found
+considerably further from the nest, and providing plenty of room for more resources to occur. I could not
+find any clarification of this, and in the figures there is no indication of the conditions in which the
+simulations were run.
+>> There is only one agent-based model. The distance between the hive and the patches is 15m, but the
+total area simulated is 36m x 36m = 1.3km2. The model is described in three subsections, as follows:
+* “Agent-Based Model” provides an overview of the model progression;
+* “Flight dynamics” focuses on the details that drive the flight of each forager;
+* “Collective outcomes” defines the variables we used to quantify colony success.
+To make this structure evident, we added on line 108:
+“In the following sections, we define the dynamics of each forager (section “Flight dynamics”) and
+describe the variables used to quantify colony success (section “Collective outcomes”) within the Agent-
+Based model.”
+4. Quantum bees The second is that in the simulations, as stated twice in different places, when a forager
+gets to the limit of the available space its position is immediately reset to the hive and it starts foraging
+again. This appears to be arbitrary yet bizarre, and needs to be at least explained or better still changed.
+Why not have the bees just turn around???? I am not sure how this affects the results, but it can’t be
+good.
+>> Making a bee turn around at the limits of the simulated area could be problematic, if not more, than
+our current boundary condition. Such a condition forces all bees that reached our simulation boundaries
+to turn back and continue to forage in an area they have already explored. Under natural conditions, when
+a forager has failed to find food it could be close to an energy break point when it will starve if it does not
+return directly to the colony when foraging. Because bees take only a small amount of honey with them
+when they leave on a trip [c.f. Honey bee Ecology, Seeley], a failed trip a forager needs to fly straight back
+to the hive. This direct return, instead of a meandering flight path taken during foraging, would be
+equivalent to the ‘reset to the hive’ that we built into the model.
+Moreover, observations of bees foraging in an enclosed tent show that foragers that reach the tent
+(similar to our simulation boundaries) will simply keep flying against the tent wall, trying to escape,
+sometimes until they die and so will not continue foraging. Because the observed hives have more bees
+than in our simulations, and new foragers can come out to replace the ones that die because of bumping
+repeatedly into the tent, we made the simulated bees at the boundary return to the hive immediately
+(rather than die) so that we do not loose bees in our simulations.
+Furthermore, we could not find information about how bees that do not find a resource behave on their
+way back to the hive (when not in an enclosed tent), i.e., do they continue to look for food, stop collecting
+food, fly directly to the hive, etc. Finally, as mentioned in our responses to referee 1, preliminary
+simulations that we conducted showed that changing the boundary condition did not affect our results.
+To summarize, I see no evidence that this paper provides a step in an incremental effort to understand
+honey bee foraging. It is up to the authors to show how their work on fixed variables in static environments
+gives us insights into how the bees, with likely flexibility in these variables (and in other relevant variables
+that are not considered here) forage in dynamic environments, or how their results yield general systems
+understanding.
+>> We edited our conclusion paragraph and added explicit predictions throughout the discussion to better
+explain the broad implications of our work on lines 182, 406, 428 and 442, as detailed in our responses
+above.
+Response to comments from Reviewer 4
+The manuscript "Task allocation and site fidelity jointly influence foraging regulation in honey bee
+colonies" explores the trade-offs between scouting and recruiting, exploration and exploitation, and
+variation among individuals in their persistence to continue foraging at a specific location. The
+introduction was complicated, though still contained enough information to make clear why the study
+was being conducted. The model was complex, but all details on the implementation and parameters are
+provided (either in text or in the supplement). One highlight of this study was that researchers include
+behavioral experiments in order to estimate many of their parameters for the model.
+>> We appreciate the time and effort that the reviewer dedicated to our manuscript.
+My only major comment is regarding the discussion. As mentioned, the methods were very detailed and
+complex, and the results showed clear patterns as parameters varied. I would have liked to have seen
+more of the discussion linked back to how these patterns mimic natural honey bee patterns. e.g., 367-9:
+"the percentage of scouts in honeybee colonies is between 5% and 35% [38]. These numbers are slightly
+lower than the optimal proportions we found here and this difference can be explained by the parameter
+choicse for the number of bees that respond to a waggle dance (Figure S3)." If the numbers do not match
+what you observe in natural colonies, what are the biological constraints keeping colonies from
+performing at the calculated optimal range? Otherwise, are you saying that the parameter choice for bees
+responding to the dance are biologically unrealistic?
+>> The percentage of scouts in our model is slightly higher than reported empirically by others, probably
+because the recruitment rate was underestimated in our simulations, as detailed in the supplemental
+material. Recruitment rate was one of the few parameters that we did not fit using experimental data,
+because its measurement is challenging. Furthermore, we did not include recruitment in our initial model
+because consistent information about it is difficult to find in the literature. However, after adding a term
+for recruitment in response to a previous reviewer’s suggestion, we found that the only thing that is
+affected by adding recruitment to our model is the amount of recourses gathered, but not the relationship
+between scouts and recruits or the impact of persistence –which is the main focus of our paper. We detail
+this in the supplementary material. We now further clarify this point in the text on lines 375:
+“These numbers are slightly lower than the optimal proportions we found in our simulations. This
+difference between empirical and simulated results can be eliminated by increasing the number of bees
+that respond to a waggle dance in our simulations (Figure S5) and without changing any other parameter
+in the model, or affecting any of our conclusions regarding persistence and task allocation (compare
+Figures 3 with Figure S5).”
+Lines 410-5: "It would be interesting to further investigate the effect of increasing collection efficiency on
+collective dynamics in primitively social bees that exhibit division of labor but spatial information is not
+shared during recruitment e. g., bumble bees [43], or halictine bees in which there are no known
+mechanisms of recruitment [67]." This would be interesting, however, a number of studies have
+investigated (empirically and through agent-based simulations) how behavior would change if
+recruitment were removed from honey bees. The point that I'm trying to suggest here is not to add in
+these specific refs, necessarily, but to emphasize that there are opportunities throughout the discussion
+where putting these results in context with what is known about the actual biology of these systems would
+really help clarify the main goals with this model.
+>> We thank the reviewer for pointing this out, we added throughout the discussion links to further
+empirical work (see responses to reviewer #3 above) and added the following sentences on lines 426:
+“The effects of communication on these dynamics can also be studied in honeybees, for example by
+hindering communication through tilting their hive [68], which substantially impairs foraging. Our model
+predicts that the proportion of scouts that optimizes collection of resources drops by half if the
+recruitment is reduced by a factor of 10 (Figure S5). This prediction can be tested by reducing
+communication in the hive, for example by turning the hive on its side or capturing recruited bees.”
+Line 428-30: "Our model can thus be used to generate hypotheses for further empirical work on the
+regulation of collective behavior and its response to various environmental conditions." I absolutely agree
+with this statement, and think that it can be strengthened with more evidence of how empirical work has
+benefited from the development of models such as this in the past, and/or specifically what role this
+model will have on the field going forward.
+>> We agree with the reviewer. We now added specific predictions and ways to test them throughout the
+discussion, as detailed in our response to reviewer 3 (lines 406, 428 and 442) and updated the last
+paragraph of the paper (line 448):
+“Our model serves as a springboard for such investigations and can be used to generate hypotheses for
+further empirical work on the regulation of collective behavior and its response to various environmental
+conditions., as many other models have contributed to empirical work [58,71].”
+Minor Comments Lines 52-3: "For example, the decision of a honey bee to leave the hive and start foraging
+is influenced by the bee’s genotype." I was under the impression that it was influenced by hormonal
+changes that might be triggered by changes in gene expression. Perhaps you meant 'genome'?
+>> Yes, we meant genome. We changed it in the manuscript.
+Lines 53-5: Genetic variation can influence the likelihood that a bee leaves a patch? Genetic variation
+might explain why some individuals choose to stay longer in a patch (thresholds to recognize a full crop
+might vary?), but the genetic variation is not the mechanism that affects the bee's decision to leave. I
+think this just needs to be rephrased.
+>> We agree with the referee. We removed “leave” from that sentence.
+Line 122: At T-0, did all scouts leave the nest, or was there some randomness written into the program as
+to when they left?
+At the beginning of the simulation, all scouts left the hive together. We updated the text on lines 124 to
+make this detail evident:
+“At the beginning of each simulation (t=0), all scouts left the hive, with drifting vectors <U+0001D463>" assigned from a
+uniform distribution, and continued flying until they found a resource.”
+Line 125: Did scouts recruit every time they returned with food? Is this realistic?
+>> In our simulations, scouts recruited at a certain probability, as detailed on line 138. Experiments show
+that honey bees may perform the waggle dance in many of their return trips. However, we could not find
+reports of empirical work that quantifies recruitment across return trips. If recruitment happens at every
+return trip, then the results would be similar to those presented in the section “Increasing the rate of
+recruitment,” in the supplemental material. We now further elaborate in that section (on lines 93):
+“Increasing the rate of recruitment decreased the proportion of scouts that was required to collect the
+maximum amount of food (Figure S5a), regardless of whether recruitment happened only after the first
+return trip or after all return trips.”
+Line 133: Was the recruitment behavior the same for all scouts (did it vary with food type or distance or
+randomly?)
+>> Because we did not used different types of food, and all patches had the same distance to the hive, we
+did not include variation in recruitment. However, these effects could be easily included in our model by
+changing the duration of the dance and the recruitment rate.
+We now mention this in the methodology (on lines 142):
+“Distance and quality of food are also communicated in the waggle dance [32,58] and variation in food
+distance and quality could be easily incorporated in further investigation of our model by varying the
+number of recruited foragers that respond to each scout and the time that each scout spends recruiting.”
+Figures S1-S3 are not mentioned in the text (at least before S4 is mentioned).
+>> We changed the order of the figures in the supplemental materials and updated their references in the
+main text.
+Lines 224-254: Behavioral assays were conducted on bees 3, 5, and 10 m from the hive to collect
+parameter values. However, data are presented together. Why were data collected at three different
+distances if data were to be pooled for analysis?
+>> We conducted behavioral assays in different distances to understand how persistence would change
+over distance. For instance, we used this data to predict the interval between consecutive visits to the
+hive used in our model (see line 249). The data in figure 2 is from one experiment at a distance of 5m (see
+line 259). To complement figure 2, and present data from all distances, we now provide in the
+supplemental material data from different distances separately and refer the reader on figure S3.
+Line 280: 'discovering' should be 'discover'
+>> Fixed.
+Line 288: the way the model is designed, if a = 0, then no one ever leaves to initially forages, so no food
+will be collected. But what if scouts do not recruit after every foraging bout?
+>> In the System Dynamics model, all processes are described by their occurrence rates, e.g. g is the
+recruitment rate. In this approach, there is no detailed temporal or spatial descriptions of individual rules.
+Thus, the equivalent of scouts not recruiting after every foraging bout in this model would be smaller
+values of g. According to our analytical solutions, when g decreases, the proportion of scouts that
+optimizes the collection of resources increases, while the total amount of food decreases. This is
+equivalent to what is observed in the agent-based model when the recruitment rate is changed (compare
+figures S1, S5 and 3).
+Line 282-3: "However" is repeated twice in the same sentence
+>> Fixed.
+Appendix E
+This is my second review of this paper. In this resubmission the authors have gone to some
+effort to respond to my concerns and those of the other reviewers, for which I commend them.
+In my previous review I questioned several aspects of the approach, including the choice of
+variables to study and whether any results would generalize to the more complex environments
+in which real honey bees live. This revised version does nothing to change my overall view of
+the paper.
+However, there is no objective right or wrong here, and I think it is appropriate to let the
+community decide the value of this work. Part of the issue is the state of the field, and
+particularly of modeling and theory; we have a long way to go, and there is no general agreement
+on how to proceed, so it is only reasonable to grant the authors their approach and see how it
+plays out.
+There are still a couple of issues that need to be addressed:
+Quantum bees: I complained in the previous version that bees that reached the edge of the
+foraging area had their position immediately reset to the hive, and I got this response:
+Making a bee turn around at the limits of the simulated area could be problematic, if not
+more, than our current boundary condition. Such a condition forces all bees that reached our
+simulation boundaries to turn back and continue to forage in an area they have already
+explored. Under natural conditions, when a forager has failed to find food it could be close
+to an energy break point when it will starve if it does not return directly to the colony when
+foraging. Because bees take only a small amount of honey with them when they leave on a
+trip [c.f. Honey bee Ecology, Seeley], a failed trip a forager needs to fly straight back to
+the hive [my emphasis]. This direct return, instead of a meandering flight path taken during
+foraging, would be equivalent to the ‘reset to the hive’ that we built into the model.
+This is really pretty irritating. The obvious solution is to have the bees fly straight back to the
+hive, as in the above paragraph, and not move there instantly. Why not do that? Nothing says
+the bee has to continue foraging after it turns around.
+Foraging area: I asked for clarification about the size of the foraging area and whether there
+were two agent-based models, since in one place it says that the food sources were 15m from the
+hive and in another that the total area was 1.3km2, meaning that there was a great deal of area
+beyond the food sources.
+I received this response:
+There is only one agent-based model. The distance between the hive and the patches is 15m,
+but the total area simulated is 36m x 36m = 1.3km2.
+This is a problem; there appears to be some confusion about what a square kilometer is. Just to
+be clear, a square kilometer is 1000m on a side, not 31.6m. You could say this is just a trivial
+matter of labeling but it is not; no honey bee biologist would think that foraging up to 30m is the
+same as foraging up to 1000m, and a decision to have the bees forage in such a small area needs
+to be explicitly stated and defended.
+On the title page, I think Pinter-Wollman should be associated with UCLA; otherwise none of
+the authors is.
+Appendix F
+UNIVERSITY OF CALIFORNIA, LOS ANGELES
+LIFE SCIENCES
+405 HILGARD AVE.LOS ANGELES, CALIFORNIA 90095
+BERKELEY • DAVIS • IRVINE • LOS ANGELES • RIVERSIDE • SAN DIEGO • SAN FRANCISCO SANTA BARBARA • SANTA CRUZ
+THIAGO MOSQUEIRO, Ph.D.
+E-MAIL: thmosqueiro@ucla.edu
+PHONE: (+18583616477) th
+July 12 , 2017
+Dear Dr. Padgett,
+Thank you again for the time and effort dedicated to our manuscript. We appreciate the
+opportunity to re-submit a revised version. Please find below a point-by-point response to the
+reviews.
+We look forward to your decision.
+Sincerely,
+Thiago Mosqueiro, PhD
+Response to comments from Reviewer 3
+Quantum bees: I complained in the previous version that bees that reached the edge of the foraging area
+had their position immediately reset to the hive, and I got this response:
+Making a bee turn around at the limits of the simulated area could be problematic, if not more, than our
+current boundary condition. Such a condition forces all bees that reached our simulation boundaries to
+turn back and continue to forage in an area they have already explored. Under natural conditions, when
+a forager has failed to find food it could be close to an energy break point when it will starve if it does not
+return directly to the colony when foraging. Because bees take only a small amount of honey with them
+when they leave on a trip [c.f. Honey bee Ecology, Seeley], a failed trip a forager needs to fly straight back
+to the hive [my emphasis]. This direct return, instead of a meandering flight path taken during foraging,
+would be equivalent to the ‘reset to the hive’ that we built into the model.
+This is really pretty irritating. The obvious solution is to have the bees fly straight back to the hive, as in
+the above paragraph, and not move there instantly. Why not do that? Nothing says the bee has to
+continue foraging after it turns around.
+>> We now ran more simulations in which bees fly back to the hive when they reach the edge of the
+foraging area and provide those results in the supplemental material. Having bees physically return
+through the foraging arena has no impact on our results and conclusions. All this change does is slightly
+delay the dynamics, but there is no impact on the main points of the paper regarding the relationship
+between scouts and recruits and the impact of persistence on collective outcomes. As we mentioned in
+our previous response (which is not fully transcribed above), a more realistic scenario is that bees would
+keep flying past the resource patches for a larger distance than our foraging arena before going back to
+the hive. Thus, we now show in the supplementary material two scenarios in which the bees fly to
+distances of 250m and 500m. We refer to this supplement on lines 162-164:
+“For simplicity, this reassignment was instantaneous, but adding a return trip or changing the distance
+explored by these foragers before they return to the hive did not change our findings (Figure S2).”
+Foraging area: I asked for clarification about the size of the foraging area and whether there were two
+agent-based models, since in one place it says that the food sources were 15m from the hive and in
+another that the total area was 1.3km2, meaning that there was a great deal of area beyond the food
+sources.
+I received this response: There is only one agent-based model. The distance between the hive and the
+patches is 15m, but the total area simulated is 36m x 36m = 1.3km2.
+This is a problem; there appears to be some confusion about what a square kilometer is. Just to be clear,
+a square kilometer is 1000m on a side, not 31.6m. You could say this is just a trivial matter of labeling but
+it is not; no honey bee biologist would think that foraging up to 30m is the same as foraging up to 1000m,
+and a decision to have the bees forage in such a small area needs to be explicitly stated and defended.
+>> We thank the reviewer for pointing this typo. It is indeed an area of 36m by 36m. We fixed this in the
+text (line 184): “Simulated colonies consisted of 300 foragers that were allowed to forage for 7h in an area
+equivalent to 36m x 36m = 1296m2.”
+Society Open

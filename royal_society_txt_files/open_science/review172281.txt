@@ -1,0 +1,842 @@
+Generalized Erdos numbers for network analysis
+Greg Morrison, Levi H. Dudte and L. Mahadevan
+Article citation details
+R. Soc. open sci. 5: 172281.
+http://dx.doi.org/10.1098/rsos.172281
+Review timeline
+Original submission: 8 January 2018 Note: Reports are unedited and appear as
+1st revised submission: 23 May 2018 submitted by the referee. The review history
+2nd revised submission: 7 July 2018 appears in chronological order.
+Final acceptance: 9 July 2018
+Review History
+label_version_1
+RSOS-172281.R1 (Revision)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+None. (See Appendix A)
+label_author_2
+Review form: Reviewer 2 (Ewan Colman)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+Synopsis:
+This article explores a recently introduced network measure named General Erdos Number
+(GEN). A GEN is a measure the closeness of one node in a network with respect to another.
+Although the concept was introduced in another article (already published) the authors fully
+introduce the concept before considering various questions one might want to know regarding
+how well they measure a complex network. Specifically they consider the frequency distribution
+(over all pairs) of GENs for two standard network models (ER and BA networks), they compare
+the GEN to mean first passage time of a random walk and the time to infection of a simple model
+of epidemic spreading, they compare GENs of node pairs within the same network module to
+those between modules, they compare two centrality measures based on GENs to a range of
+established centrality measures, and finally consider the GENs of various node pairs within an
+infinite network embedded in a finite sphere.
+As far I am aware, all of the established measures of this kind that aim to quantify the closeness
+of one node from another in a network fall into one of two categories: those that are walk-based
+(e.g. shortest path) and those that are diffusion-based (e.g. communicability). Walk based
+measures correspond to the example of a book being passed around from individual to another,
+diffusion based measures correspond to the example of an online article being shared via email.
+3
+Both require network contacts but the relative likelihood that the book/article will reach one
+individual having been introduced to the network from another is different in both cases.
+The interesting thing about GENs is that they combine elements from both these types of process
+and could therefore potentially explore the topology of networks in a unique way. In some
+applications, for example product recommendation using co-purchase networks, it is not entirely
+clear whether a walk-based or diffusion based measure of closeness performs better, or even if
+they produce different results at all. This, to me, is a good motivation for applying GENs to a
+range of network topologies and seeing how they relate to various dynamical processes occurring
+on these networks.
+My main reason for not accepting this work is that it does not meet quality of RSOS articles in
+regards to framing the questions that their analysis answers. However, edited in the right way I
+believe that this article could be brought to a suitable standard for publication. The article fails to
+meet the following two criteria listed in the RSOS instructions for reviewers:
+- Writing style and accessibility for a wide audience.
+- Appropriate length – whilst Royal Society Open Science operates without page limits, we
+encourage authors to be concise. Each article should be of the shortest length required to contain
+all useful and relevant information, and no longer.
+Both these criteria could be met if the authors are able to construct a clear narrative for their
+paper, define some specific aims of their analysis in the introduction, remove any sections that do
+not contribute to these aims, then finally write a conclusion that addresses the initial goal of the
+study. In its current form the paper presents a list of unrelated and unimportant facts about a
+measure of closeness on a network. I would like to see the following broad questions addressed
+in some way: What was the motivation for doing this work? Are there any real-world
+applications where this would be particularly useful (i.e. an improvement on measures that are
+already out there)? What have we learned about complex networks that we didn't previously
+already know? etc.
+I will now list specific points about the manuscript section by section.
+Section 2:
+I downloaded the code and attempted to run the example. I am running Ubuntu 16.04 on a
+desktop PC. I received the following output:
+> g++ ./*.cpp -O3 -o network
+In file included from ./main.cpp:4:0:
+./Network.h: In member function ‘void Network::seedRandomWalk()’:
+./Network.h:672:18: error: ‘srand’ was not declared in this scope
+srand(time(NULL));
+^
+./Network.h: In member function ‘int Network::randomInt(int)’:
+./Network.h:680:17: error: ‘RAND_MAX’ was not declared in this scope
+int leftOver = RAND_MAX % OutOf;
+^
+./Network.h:684:19: error: ‘rand’ was not declared in this scope
+do{random = rand();}while(random >= RAND_MAX - leftOver);
+^
+In file included from ./main.cpp:5:0:
+4
+./NetworkIO.h: In function ‘void readEdgesUnweighted(const string&, std::vector<std::pair<int,
+int> >&)’:
+./NetworkIO.h:28:9: error: ‘exit’ was not declared in this scope
+exit(1);
+^
+./NetworkIO.h: In function ‘void readEdgesWeighted(const string&, std::vector<std::pair<int,
+int> >&, std::vector<double>&)’:
+./NetworkIO.h:62:9: error: ‘exit’ was not declared in this scope
+exit(1);
+^
+./NetworkIO.h: In function ‘void readAdjacencyMatrix(const string&, std::vector<std::pair<int,
+int> >&, std::vector<double>&)’:
+./NetworkIO.h:99:9: error: ‘exit’ was not declared in this scope
+exit(1);
+Please can you help me (and others) to implement your code more easily.
+Typo on page 5: "a measure of centrality [that] does not suffer"
+Section 3:
+It is not clear what the purpose of this section is. The end result seems to only be an inaccurate
+estimate of the mean of Ed and Ec. I think the majority of this analysis should be removed or, at
+the very least, moved to an appendix or supplementary section. The mathematics is very hard to
+follow and this will alienate most of the readers. For those who do want to follow the
+mathematics, all of the details of how each equation was derived should be provided.
+I am not comfortable with your use of "~". Usually it describes a scaling relationship but it seems
+like you are treating it like "=" and substituting it into other equations. Please explain these
+substitutions in more detail or remove these sections.
+On page 6 "the average closeness" - replace with "mean" or whatever average was calculated.
+Typo on page 7 "there is a we can"
+Typo on page 7 "nodes is"
+Page 7 "Substitution into eq 3.6" substitution of what?
+Page 7 - what does xi represent (the greek letter)?
+Figure 2 caption - "predicted average" - can you please refer to the formula that makes this
+prediction (I could not find it). Also on page 9 "peaks are well predicted".
+Figure 2 - Why not also show the empirical data used in section 8?
+Page 9 "appear to have a relatively fat tail" - relative to what?
+Page 10 - it is stated that the distributions are different between the two network topologies only
+when you look at connected nodes. Is this possibly due to the abundance of node pairs in the BA
+model that contain a node of degree 1 connected to a node with very high degree? it seems that
+this motif (like figure 1B) would produce GENs that are lower than those found in the ER model.
+Section 4:
+5
+Figure 5 - What are the color bars to the right of each figure?
+Figure 5 - Label of horizontal axis should be a small delta
+Page 11 - How was the empirical scaling formula found?
+Page 11 "alpha~4" doesn't make sense. Do you mean alpha=4?
+Page 11 Why is the relationship between delta tau and delta E affected by the network size?
+Page 11 "It is visually apparent that k sets the scale" I disagree - the figures are plotted on
+different scale axes so it is not clear.
+Section 5:
+page 12 "when individuals interact" please detail when these interactions happen
+Figure 7E - values on the x axis do not agree with what is in the text. Also, why does it say "lower
+is better" on the y axis?
+Figure 7 - Typo in caption line 6 - R should be r
+Figure 7E - The inclusion of resistance distance makes this figure a little confusing (since it is
+barely mentioned in the text)
+Page 13 - "each node having k=4 average degree" is the degree of every node the same?
+Page 13 - "Because GENs do not naturally include the timescales of the system dynamics we
+normalize the harmonic mean by ..." Why is this the motivation? If you use the same rates in all of
+the simulations then the normalization is not needed. What happens if you plot the values of hij
+without the normalization? If you see a trend then I think you should abandon the normalization
+and focus on this instead. If not, then it must be the case that Hi is dominating the trend you see
+in figure 7, then you must change your conclusions.
+I suspect that Hi is dominating the outcomes we see here, or another way to see it, the degree, ki,
+is confounding the relationship between Ei and Hi. For example suppose we have a network
+where i is connected to ki nodes and j is connected to one of those (but not connected to i directly)
+then hij is not affected by ki, Eij increases as you increase ki, and Hi decreases. Although this
+example isn't directly related to the ER topology it does show that it is possible for hij to be
+insignificant while Hi is affecting the relationship.
+Page 14 Ti not defined in main text (only in caption of figure 7)
+Page 14 "does a surprisingly poor job of predicting the infection time" I don't see how you have
+concluded this from Figure 7. Can you quantify it?
+Page 14 - Please define "residual"
+Page 14 " quantified using the standard deviation of the residuals" - what are we supposed to
+conclude from this? I thought that the quality of the fit would be the total of the residuals not
+their variance. All residuals could be high but their standard deviation low.
+6
+Page 14 - "The insets of Fig ... nearby values of tau/T." I do not understand the meaning of this
+sentence.
+Page 14 "parameters in Fig 6" should be Fig 7?
+I think an interesting application of GENs could be in a slightly more realistic disease model. The
+one you used is very much like a diffusion process so the "finite resource" element to GENs does
+not represent anything in this process. In reality, however, time and social effort are finite
+resources so that element ought to exist in more realistic disease models (yet it is still a diffusive
+process). I wonder if real infectious diseases are most accurately described by dynamics
+consistent with GENs.
+Section 6:
+Page 14 " a valid expansion for ki=k ... " this sentence seems to be unnecessary and I couldn't find
+the SI that is referred to.
+Page 14 in the formula on the second-to-last line there is a j which should be an l
+Page 15 - the curly p symbol needs its own introduction - why is it different from Psi?
+Typo on page 15 "Inn"
+Figure 9A - the LFR parameters do not need to be in the legend (in my opinion), include them in
+the main text instead.
+Page 16 "eq 6.1 can be written ..." this formula has mistakes: It is only true in the case where Cj is
+the set of all the nodes (this should be made clear, I don't think it is a problem since it is a
+weighted network and weights can be 0), the second term on the right hand side should be
+wjj*pij, "is readily inverted" this is not obvious unless you say that the second term on the right
+hand side is equal to 0. Please clarify this whole section.
+I recommend removing the parts about linearized importance. It is difficult to see the purpose of
+this section.
+Page 16 "... that do not share a direct connection ..." what about those that do? I think it is an
+interesting question to ask whether neighbors in the same community are more or less important
+than those in other communities.
+Page 16 last sentence of section 6 - What is this telling us beyond what we know from previous
+sections? what are the significance of n and w? The example used is quite complicated and I feel
+that a more basic example could have a stronger message i.e. does increased community structure
+make nodes more topologically close or less topologically close?
+Section 7:
+Page 16 "Each measure ranks high degree nodes above low degree nodes" that is not true -
+betweenness, for example can place very low degree nodes at the top in some networks.
+Table 1 - This table is not useful, the definitions are too brief, contain errors, and are also
+unnecessary since references are provided. Please include these references in the main text.
+Page 17 "is consistent with other measures of centrality" in what way?
+7
+Page 17 "sharp drop initially" I do not see a sharp drop in figure 10C or 10A.
+Page 17 "begins to agree agree better with betweenness centrality" I think this is a false statement,
+please clarify.
+Page 17 "compares best to the list from random walk centrality" Why do you think that is the
+case?
+Section 8:
+Typo on page 17: "importance assigned [to] nodes"
+Figure 10A why no show all the centrality measures i.e. non-backtracking and degree?
+Page 18 "the leading eigenvalue of the matrix" I think you mean to say "the i’th element of the
+eigenvector that corresponds to the leading eigenvalue?"
+Page 18 "a walker at node j moves preferentially" - this is only correct if Eij is smaller for directly
+connected nodes than it is for indirectly connected nodes.
+Figure 11 needs a legend. Also why not combine this with the results from the ER graph and
+Figure 12 to make a 3 panel figure.
+Page 19 - please consistently refer to gi as "importance eigenvector centrality". "eigenvector
+centrality" alone is not specific enough and "eigenvalue centrality" is incorrect.
+Page 19 "we converted the network" why?
+Page 19 why do you report results for g²? the same results should be true for g, no? Unless there
+is a good reason, please use g instead of g²
+Page 19 "and therefore with ..." missing parenthesis. Also, is it well known that PageRank is
+proportional to degree as you state? Please provide a reference of a reason for saying this.
+Page 19 "A walker teleporting between nodes retains information about that nodes importance in
+the network" this seems incorrect although I am not sure I understand what you are trying to say
+here. Please clarify.
+Page 19 "for the standard PageRank" what value of gamma have you used in these calculations
+Page 19 "Surprisingly, this indicates a near perfect fit of the importance eigenvector centrality"
+Another interpretation is that the GEN for connected pairs is so much lower than those for non-
+connected pairs that no "teleports" ever happen and importance eigenvector centrality is
+effectively the same as PageRank with gamma=0.
+Section 9:
+I recommend removing this entire section. It adds a lot of length to the paper without coming to
+any satisfying conclusion. The results are also based on an assumption that is not validated (page
+29 above Eq A3)
+Page 20 - when introducing yi please tell us what it is. A vector? A point in n-dimensional space?
+How should we visualize it?
+8
+Page 20 "we also define a network of 'material nodes' into the network" this does not make
+grammatical sense. You cannot define something into something else.
+Page 20 "reference to Eq.1" What is Eq 1?
+Typo on page 22 "Solution to the equation 9.1 is ..."
+Conclusions:
+Page 24 - The second paragraph of the conclusions section seems to confuse epidemic spreading
+with eigenvector centrality and PageRank. The remainder of the conclusions section talks about
+computational costs and is therefore not a conclusion.
+Section A:
+Typo on page 28 "between material the nodes"
+Page 28 "We have kept the continuum version of ..." Not clear what you are referring to here
+Section B:
+Typo on Page 28, very last line "xvj"
+Page 29 - Second term on LHS of A2 numerator should be u²
+Page 29 - "If we assume that" The condition that you want to assume is determined by other
+factors - either show that it is the case, or define the network in such a way that ensures that it is
+the case.
+General comments:
+I think it is a bad idea to use th word "feel" since in some applications such as human and animal
+social networks the nodes actually do have feelings of closeness that would be unrelated to their
+topological closeness. I recommend that you replace all instances of "feel" with something like
+"are topologically close"
+Many of the paragraphs are too long and should be broken into smaller pieces.
+I hope you agree with my recommendations and wish you a trouble-free time in making the
+appropriate changes!
+label_end_comment
+Decision letter (RSOS-172281.R0)
+29-Mar-2018
+Dear Dr Morrison,
+The editors assigned to your paper ("Generalized Erdös numbers for network analysis") have
+now received comments from reviewers. We would like you to revise your paper in accordance
+with the referee and Associate Editor suggestions which can be found below (not including
+confidential reports to the Editor). Please note this decision does not guarantee eventual
+acceptance.
+9
+Please submit a copy of your revised paper within three weeks (i.e. by the 21-Apr-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-172281
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+10
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Danica Vukadinovic Greetham (Associate Editor) and Miles Padgett (Subject
+Editor)
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+none
+11
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Synopsis:
+This article explores a recently introduced network measure named General Erdos Number
+(GEN). A GEN is a measure the closeness of one node in a network with respect to another.
+Although the concept was introduced in another article (already published) the authors fully
+introduce the concept before considering various questions one might want to know regarding
+how well they measure a complex network. Specifically they consider the frequency distribution
+(over all pairs) of GENs for two standard network models (ER and BA networks), they compare
+the GEN to mean first passage time of a random walk and the time to infection of a simple model
+of epidemic spreading, they compare GENs of node pairs within the same network module to
+those between modules, they compare two centrality measures based on GENs to a range of
+established centrality measures, and finally consider the GENs of various node pairs within an
+infinite network embedded in a finite sphere.
+As far I am aware, all of the established measures of this kind that aim to quantify the closeness
+of one node from another in a network fall into one of two categories: those that are walk-based
+(e.g. shortest path) and those that are diffusion-based (e.g. communicability). Walk based
+measures correspond to the example of a book being passed around from individual to another,
+diffusion based measures correspond to the example of an online article being shared via email.
+Both require network contacts but the relative likelihood that the book/article will reach one
+individual having been introduced to the network from another is different in both cases.
+The interesting thing about GENs is that they combine elements from both these types of process
+and could therefore potentially explore the topology of networks in a unique way. In some
+applications, for example product recommendation using co-purchase networks, it is not entirely
+clear whether a walk-based or diffusion based measure of closeness performs better, or even if
+they produce different results at all. This, to me, is a good motivation for applying GENs to a
+range of network topologies and seeing how they relate to various dynamical processes occurring
+on these networks.
+My main reason for not accepting this work is that it does not meet quality of RSOS articles in
+regards to framing the questions that their analysis answers. However, edited in the right way I
+believe that this article could be brought to a suitable standard for publication. The article fails to
+meet the following two criteria listed in the RSOS instructions for reviewers:
+- Writing style and accessibility for a wide audience.
+- Appropriate length – whilst Royal Society Open Science operates without page limits, we
+encourage authors to be concise. Each article should be of the shortest length required to contain
+all useful and relevant information, and no longer.
+Both these criteria could be met if the authors are able to construct a clear narrative for their
+paper, define some specific aims of their analysis in the introduction, remove any sections that do
+not contribute to these aims, then finally write a conclusion that addresses the initial goal of the
+study. In its current form the paper presents a list of unrelated and unimportant facts about a
+measure of closeness on a network. I would like to see the following broad questions addressed
+in some way: What was the motivation for doing this work? Are there any real-world
+applications where this would be particularly useful (i.e. an improvement on measures that are
+already out there)? What have we learned about complex networks that we didn't previously
+already know? etc.
+12
+I will now list specific points about the manuscript section by section.
+Section 2:
+I downloaded the code and attempted to run the example. I am running Ubuntu 16.04 on a
+desktop PC. I received the following output:
+> g++ ./*.cpp -O3 -o network
+In file included from ./main.cpp:4:0:
+./Network.h: In member function ‘void Network::seedRandomWalk()’:
+./Network.h:672:18: error: ‘srand’ was not declared in this scope
+srand(time(NULL));
+^
+./Network.h: In member function ‘int Network::randomInt(int)’:
+./Network.h:680:17: error: ‘RAND_MAX’ was not declared in this scope
+int leftOver = RAND_MAX % OutOf;
+^
+./Network.h:684:19: error: ‘rand’ was not declared in this scope
+do{random = rand();}while(random >= RAND_MAX - leftOver);
+^
+In file included from ./main.cpp:5:0:
+./NetworkIO.h: In function ‘void readEdgesUnweighted(const string&, std::vector<std::pair<int,
+int> >&)’:
+./NetworkIO.h:28:9: error: ‘exit’ was not declared in this scope
+exit(1);
+^
+./NetworkIO.h: In function ‘void readEdgesWeighted(const string&, std::vector<std::pair<int,
+int> >&, std::vector<double>&)’:
+./NetworkIO.h:62:9: error: ‘exit’ was not declared in this scope
+exit(1);
+^
+./NetworkIO.h: In function ‘void readAdjacencyMatrix(const string&, std::vector<std::pair<int,
+int> >&, std::vector<double>&)’:
+./NetworkIO.h:99:9: error: ‘exit’ was not declared in this scope
+exit(1);
+Please can you help me (and others) to implement your code more easily.
+Typo on page 5: "a measure of centrality [that] does not suffer"
+Section 3:
+It is not clear what the purpose of this section is. The end result seems to only be an inaccurate
+estimate of the mean of Ed and Ec. I think the majority of this analysis should be removed or, at
+the very least, moved to an appendix or supplementary section. The mathematics is very hard to
+follow and this will alienate most of the readers. For those who do want to follow the
+mathematics, all of the details of how each equation was derived should be provided.
+I am not comfortable with your use of "~". Usually it describes a scaling relationship but it seems
+like you are treating it like "=" and substituting it into other equations. Please explain these
+substitutions in more detail or remove these sections.
+On page 6 "the average closeness" - replace with "mean" or whatever average was calculated.
+13
+Typo on page 7 "there is a we can"
+Typo on page 7 "nodes is"
+Page 7 "Substitution into eq 3.6" substitution of what?
+Page 7 - what does xi represent (the greek letter)?
+Figure 2 caption - "predicted average" - can you please refer to the formula that makes this
+prediction (I could not find it). Also on page 9 "peaks are well predicted".
+Figure 2 - Why not also show the empirical data used in section 8?
+Page 9 "appear to have a relatively fat tail" - relative to what?
+Page 10 - it is stated that the distributions are different between the two network topologies only
+when you look at connected nodes. Is this possibly due to the abundance of node pairs in the BA
+model that contain a node of degree 1 connected to a node with very high degree? it seems that
+this motif (like figure 1B) would produce GENs that are lower than those found in the ER model.
+Section 4:
+Figure 5 - What are the color bars to the right of each figure?
+Figure 5 - Label of horizontal axis should be a small delta
+Page 11 - How was the empirical scaling formula found?
+Page 11 "alpha~4" doesn't make sense. Do you mean alpha=4?
+Page 11 Why is the relationship between delta tau and delta E affected by the network size?
+Page 11 "It is visually apparent that k sets the scale" I disagree - the figures are plotted on
+different scale axes so it is not clear.
+Section 5:
+page 12 "when individuals interact" please detail when these interactions happen
+Figure 7E - values on the x axis do not agree with what is in the text. Also, why does it say "lower
+is better" on the y axis?
+Figure 7 - Typo in caption line 6 - R should be r
+Figure 7E - The inclusion of resistance distance makes this figure a little confusing (since it is
+barely mentioned in the text)
+Page 13 - "each node having k=4 average degree" is the degree of every node the same?
+Page 13 - "Because GENs do not naturally include the timescales of the system dynamics we
+normalize the harmonic mean by ..." Why is this the motivation? If you use the same rates in all of
+the simulations then the normalization is not needed. What happens if you plot the values of hij
+without the normalization? If you see a trend then I think you should abandon the normalization
+14
+and focus on this instead. If not, then it must be the case that Hi is dominating the trend you see
+in figure 7, then you must change your conclusions.
+I suspect that Hi is dominating the outcomes we see here, or another way to see it, the degree, ki,
+is confounding the relationship between Ei and Hi. For example suppose we have a network
+where i is connected to ki nodes and j is connected to one of those (but not connected to i directly)
+then hij is not affected by ki, Eij increases as you increase ki, and Hi decreases. Although this
+example isn't directly related to the ER topology it does show that it is possible for hij to be
+insignificant while Hi is affecting the relationship.
+Page 14 Ti not defined in main text (only in caption of figure 7)
+Page 14 "does a surprisingly poor job of predicting the infection time" I don't see how you have
+concluded this from Figure 7. Can you quantify it?
+Page 14 - Please define "residual"
+Page 14 " quantified using the standard deviation of the residuals" - what are we supposed to
+conclude from this? I thought that the quality of the fit would be the total of the residuals not
+their variance. All residuals could be high but their standard deviation low.
+Page 14 - "The insets of Fig ... nearby values of tau/T." I do not understand the meaning of this
+sentence.
+Page 14 "parameters in Fig 6" should be Fig 7?
+I think an interesting application of GENs could be in a slightly more realistic disease model. The
+one you used is very much like a diffusion process so the "finite resource" element to GENs does
+not represent anything in this process. In reality, however, time and social effort are finite
+resources so that element ought to exist in more realistic disease models (yet it is still a diffusive
+process). I wonder if real infectious diseases are most accurately described by dynamics
+consistent with GENs.
+Section 6:
+Page 14 " a valid expansion for ki=k ... " this sentence seems to be unnecessary and I couldn't find
+the SI that is referred to.
+Page 14 in the formula on the second-to-last line there is a j which should be an l
+Page 15 - the curly p symbol needs its own introduction - why is it different from Psi?
+Typo on page 15 "Inn"
+Figure 9A - the LFR parameters do not need to be in the legend (in my opinion), include them in
+the main text instead.
+Page 16 "eq 6.1 can be written ..." this formula has mistakes: It is only true in the case where Cj is
+the set of all the nodes (this should be made clear, I don't think it is a problem since it is a
+weighted network and weights can be 0), the second term on the right hand side should be
+wjj*pij, "is readily inverted" this is not obvious unless you say that the second term on the right
+hand side is equal to 0. Please clarify this whole section.
+15
+I recommend removing the parts about linearized importance. It is difficult to see the purpose of
+this section.
+Page 16 "... that do not share a direct connection ..." what about those that do? I think it is an
+interesting question to ask whether neighbors in the same community are more or less important
+than those in other communities.
+Page 16 last sentence of section 6 - What is this telling us beyond what we know from previous
+sections? what are the significance of n and w? The example used is quite complicated and I feel
+that a more basic example could have a stronger message i.e. does increased community structure
+make nodes more topologically close or less topologically close?
+Section 7:
+Page 16 "Each measure ranks high degree nodes above low degree nodes" that is not true -
+betweenness, for example can place very low degree nodes at the top in some networks.
+Table 1 - This table is not useful, the definitions are too brief, contain errors, and are also
+unnecessary since references are provided. Please include these references in the main text.
+Page 17 "is consistent with other measures of centrality" in what way?
+Page 17 "sharp drop initially" I do not see a sharp drop in figure 10C or 10A.
+Page 17 "begins to agree agree better with betweenness centrality" I think this is a false statement,
+please clarify.
+Page 17 "compares best to the list from random walk centrality" Why do you think that is the
+case?
+Section 8:
+Typo on page 17: "importance assigned [to] nodes"
+Figure 10A why no show all the centrality measures i.e. non-backtracking and degree?
+Page 18 "the leading eigenvalue of the matrix" I think you mean to say "the i’th element of the
+eigenvector that corresponds to the leading eigenvalue?"
+Page 18 "a walker at node j moves preferentially" - this is only correct if Eij is smaller for directly
+connected nodes than it is for indirectly connected nodes.
+Figure 11 needs a legend. Also why not combine this with the results from the ER graph and
+Figure 12 to make a 3 panel figure.
+Page 19 - please consistently refer to gi as "importance eigenvector centrality". "eigenvector
+centrality" alone is not specific enough and "eigenvalue centrality" is incorrect.
+Page 19 "we converted the network" why?
+Page 19 why do you report results for g²? the same results should be true for g, no? Unless there
+is a good reason, please use g instead of g²
+16
+Page 19 "and therefore with ..." missing parenthesis. Also, is it well known that PageRank is
+proportional to degree as you state? Please provide a reference of a reason for saying this.
+Page 19 "A walker teleporting between nodes retains information about that nodes importance in
+the network" this seems incorrect although I am not sure I understand what you are trying to say
+here. Please clarify.
+Page 19 "for the standard PageRank" what value of gamma have you used in these calculations
+Page 19 "Surprisingly, this indicates a near perfect fit of the importance eigenvector centrality"
+Another interpretation is that the GEN for connected pairs is so much lower than those for non-
+connected pairs that no "teleports" ever happen and importance eigenvector centrality is
+effectively the same as PageRank with gamma=0.
+Section 9:
+I recommend removing this entire section. It adds a lot of length to the paper without coming to
+any satisfying conclusion. The results are also based on an assumption that is not validated (page
+29 above Eq A3)
+Page 20 - when introducing yi please tell us what it is. A vector? A point in n-dimensional space?
+How should we visualize it?
+Page 20 "we also define a network of 'material nodes' into the network" this does not make
+grammatical sense. You cannot define something into something else.
+Page 20 "reference to Eq.1" What is Eq 1?
+Typo on page 22 "Solution to the equation 9.1 is ..."
+Conclusions:
+Page 24 - The second paragraph of the conclusions section seems to confuse epidemic spreading
+with eigenvector centrality and PageRank. The remainder of the conclusions section talks about
+computational costs and is therefore not a conclusion.
+Section A:
+Typo on page 28 "between material the nodes"
+Page 28 "We have kept the continuum version of ..." Not clear what you are referring to here
+Section B:
+Typo on Page 28, very last line "xvj"
+Page 29 - Second term on LHS of A2 numerator should be u²
+Page 29 - "If we assume that" The condition that you want to assume is determined by other
+factors - either show that it is the case, or define the network in such a way that ensures that it is
+the case.
+General comments:
+I think it is a bad idea to use th word "feel" since in some applications such as human and animal
+social networks the nodes actually do have feelings of closeness that would be unrelated to their
+17
+topological closeness. I recommend that you replace all instances of "feel" with something like
+"are topologically close"
+Many of the paragraphs are too long and should be broken into smaller pieces.
+I hope you agree with my recommendations and wish you a trouble-free time in making the
+appropriate changes!
+label_version_2
+RSOS-172281.R1 (Revision)
+label_author_3
+Review form: Reviewer 2 (Ewan Colman)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+Thank you for addressing my comments.
+label_end_comment
+Decision letter (RSOS-172281.R1)
+25-Jun-2018
+Dear Dr Morrison:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-172281.R1
+entitled "Generalized Erdös numbers for network analysis" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+18
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-172281.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+19
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 04-Jul-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+20
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+openscience@royalsociety.org
+on behalf of Dr Danica Vukadinovic Greetham (Associate Editor) and Prof. Miles Padgett
+(Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Danica Vukadinovic Greetham):
+Associate Editor: 1
+Comments to the Author:
+label_comment_6
+I think that this is a valuable contribution to the field of network analysis and vertex centrality
+measures, useful for practitioners. Please correct few minor points given below.
+Abstract, Page 2 Line 38, should read '...to new methods to measure centrality." The last sentence
+in abstract does not make sense, maybe "We demonstrate the utility of this measure of
+topological proximity by showing that..."
+Page 3 Line 29 toward the end, it should be 'its degree'.
+Page 6 Eq 2.1 In the current format, the second summand on the right hand side is not defined for
+w_{jl}=0, it contains 1/w_{jl}, therefore you need to specify that the sum is over the connected
+vertices only.
+Reviewer comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+Thank you for addressing my comments.
+label_end_comment
+Decision letter (RSOS-172281.R2)
+09-Jul-2018
+Dear Dr Morrison,
+I am pleased to inform you that your manuscript entitled "Generalized Erdös numbers for
+network analysis" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+21
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Danica Vukadinovic Greetham (Associate Editor) and Miles Padgett (Subject
+Editor)
+openscience@royalsociety.org
+Appendix A
+Comments to the Author:
+label_comment_8
+The manuscript by Morrison et al., entitled ‘Generalised Erdo<U+030B>s numbers for
+network analysis’ investigates the use of the so-called generalised Erdo<U+030B>s numbers
+as a measure of network centrality. More specifically, the paper is interested in
+the problem of ranking nodes in the case were resources are finite, which is a less
+well-studied area of network science, in relation to general centrality measures
+at least. It starts by considering some analytical results that can be derived for
+certain specialised network models, before considering a number of applications,
+including the important topic of epidemic spreading. I thought the work was
+interesting, novel and extremely well written, and I believe it will appeal to a
+wide audience given its mixture of theory and experiment. I am therefore very
+happy to support its publication, subject to the following minor corrections.
+Minor Comments:
+1. The figures are in general a little too small and so quite difficult to make
+out; this is particularly problematic for figure legends, axis labels, etc. as
+the font size is tiny.
+2. The sentence on page 4 starting on line 17 is missing a word: ‘We de-
+termine the distribution of the GENs for homogeneous (Erdo<U+030B>s-Renyi) and
+inhomogeneous (Baraba´si-Albert) networks and show...’
+3. The sentence on page 24 starting at line 36 is incomplete/nonsensical: ‘The
+ability of ... importance or centrality’
+Society Open

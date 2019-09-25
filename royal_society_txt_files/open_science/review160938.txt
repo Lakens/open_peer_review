@@ -1,0 +1,1326 @@
+Evolutionary online behaviour learning and adaptation in
+real robots
+Fernando Silva, Luís Correia and Anders Lyhne Christensen
+Article citation details
+R. Soc. open sci. 4: 160938.
+http://dx.doi.org/10.1098/rsos.160938
+Review timeline
+Original submission: 19 November 2016 Note: Reports are unedited and appear as
+1st revised submission: 13 April 2017 submitted by the referee. The review history
+2nd revised submission: 27 June 2017 appears in chronological order.
+Final acceptance: 28 June 2017
+Review History
+label_version_1
+RSOS-160938.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Nicolas Bredeche)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The main contribution of the paper is to explore the benefits of pre-evolution (in simulation) of
+robot controllers to bootstrap online evolution. Though this is not uncommon (see for example
+[Cully et al. 2015 Nature], who uses a pre-evolved library of behaviour to recover from faults), the
+authors propose to combines noise modelling techniques as popular in the 1990's in the
+evolutionary robotics community with an online state-of-the-art optimization algorithm
+(odNEAT) that can be used for both single and multiple robots. Also, experiments are conducted
+with real robots (from 1 to 3, depending on the task), which is in itself a contribution to a field
+where real robot implementation are too rare.
+My main concern (which I think can easily be addressed) is that the scope of the contribution --
+namely: the benefits of pre-evolution to seed online learning -- is not so clear from the abstract,
+introduction and part of the paper because of a strong claim that I strongly disagree with and that
+overshadow the true contribution:
+- In the abstract, it is stated that this work "demonstrate for the first time the adaptive capabilities
+of online evolution in real robotic hardware". Such demonstration have been done at least since
+Watson et al. (2002) for multi-robot setups, and has been done again by many authors, incl. some
+who are cited later in the paper.
+- In Section Results (iii), it is stated that "this experiment is the first instance of online evolution of
+collective and coordinated behaviours in a timely manner". One could argue that aggregation as a
+result of phototaxis have been shown -- for example, [Bredeche et al. 2012] showed robots
+aggregating around a landmark for the benefits of survival, which can be seen as phototaxis a
+posteriori but which is not phototaxis defined as an objective a priori -- therefore one could argue
+that it is collective decision making to aggregate to maximise survival (and phototaxis is evolved
+as a proxy to do that). Also works from [Prieto et al. 2010 RAS] have shown collective decision
+making with real robots to address a dual foraging tasks with competing resources, which is
+collective decision making. Finally, the duration of experiments shown in earlier work are
+roughly in the same order of magnitude as those shown here and/or imply many more robots, so
+I am not sure with the "timely manner" argument. To sum it up: learning collective decision
+making with real robots is an *important* aspect of the paper, but the fact that it is an *original*
+contribution can be very controversial. Anyway, I think that the real contribution of the paper
+(pre-evolution helps online evolution) is largely relevant enough to make the paper worth
+reading.
+OdNEAT is a very nice algorithm -- benefitting from the many useful features of NEAT is great
+and its use in online evolutionary robotics is sound. In the current text, OdNEAT is, however,
+never described. I would recommend to make the manuscript self-contained and suggest to add a
+subsection to describe the algorithm -- something like half-a-page to a full page, providing the
+basics to understand the algorithm. In particular, it was not very clear to me how OdNEAT
+handles the multi-robots case (frequency of island migration, for example).
+Following are comments and/or discussions (ordered wrt paper flow):
+- odNEAT is always referred to as an online evolutionary algorithm, which is true. When it comes
+to multi-robots, I am somewhat surprised that the authors do not make much reference to
+odNEAT belonging to the class of embodied evolutionary robotics (EE). As you know, EE is but a
+sub-class of online evolutionary robotics dealing with multiple robots. Actually, the multi-robot
+instanciation of odNEAT is very similar to works that are explicitly defined as embodied
+evolution algorithm, such as the work from [Usui and Arita 2003] when an encapsulated
+evolutionary algorithm (not NEAT-related, though) in terms of hybrid/island model that mostly
+rely on an internal evolutionary algorithm.
+3
+- when describing the fitness function for navigation and obstacle avoidance: please cite the
+seminal 1994 paper from Floreano, or at least the 2000's book from Nolfi and Floreano, within this
+section.
+- Fig. 1., top is not very informative. There are keywords but it is difficult to get the idea of what
+is precisely done. "post-evaluation", "online synthesis of control", "autonomous learning and
+adaptation" need to be defined so that this figure is to be understood. Moreover, I wonder if this
+part of the figure is really useful given it is described in the text. I would suggest to remove it as it
+is more confusing that helpful compared to the description in the main text.
+- Modelling sensor noise is a good idea, and there have been a great deal of work in the second
+part of the 1990's. That said: more recent works taking different kind of approach could also be
+discussed, such as transferability [Koos et al. 2013 IEEE TEC] or recent works with map-elite
+(multiple papers from Mouret's group).
+- Fig. 3(b) shows only 2 (not three, as stated in the Section 2.C) areas. Please ensure consistency (a
+top view of the arena?).
+- could you elaborate on the "varying condition" for evaluations?
+- about "the top controller of each generation" when selecting controller for the 100 post-evolution
+evaluations. Do you mean the best from each run at the last generation (meaning 30 individuals),
+or the best for each generation for each run (meaning 100*30 individuals)?
+- Section 3.a.i: "four setups of the navigation/obstacle avoidance...?". I may have missed
+something here. Does this allude to the noise conditions? or typo and meant the four
+setups/tasks? or most probably: preevolve-nonoise, preevolve-noise1, preevolve-noise2, no-
+preevolve. Please clarify in the text
+- on the fault injection tests: (1) only the base is specified, why not preevolved+online? (2) results
+for faulty behaviours are low, and do not seem to be comparable to one another -- can you
+elaborate? (3) adding an additional experience that show the results with robots with a simple
+hand-coded wandering behaviour would be useful to estimate what you can expect from a
+"dumb" baseline.
+- you use the expression "timely manner" a lot, which not very precise... I would recommend to
+give numbers rather than opinion/interpretation (e.g. time in minutes).
+- I would suggest to move the robustness to noise and the ablation studies to a different section
+(suggest new Section "Analysis"). Both provide additional insights into the results. In particular,
+the ablation studies are not mandatory wrt to the original motivation, but provide a nice
+additional contribution. Also, this part (ablation studies) should be elaborated more wrt details
+and exact experimental protocol on how ablation were conducted to better support the claim
+made in the last sentence.
+- Discussion: can you please elaborate? there are several ideas and concepts which are difficult to
+get beyond the keywords (e.g.: I did not get at all what hyper-evolution implies). Also you might
+be interested in the work on novelty search [Stanley and followers] and transfer learning by
+[Doncieux 2013 ICDL, Doncieux 2014 AAAI] where
+concepts very close to artificial curiosity are developed to drive evolution towards interesting
+behaviours.
+4
+Minor comments:
+- during my first read, I missed the number of robots used for the aggregation experiment. The
+fact that three robots are used is indeed mention in the text, but only once. Could you please
+explicitly recall this in the results section? Thanks.
+- the naming "base evolution" (= only on-line evolution) was not so clear to me. Could you come
+up with a more explicit naming? (e.g.: simply "control" or "baseline")
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+This paper describes experiments in which a population of small mobile robots evolve to solve
+different tasks and adapt to changes. Contrary to most published work on this topic, the authors
+use physical robots. More specifically, they ask how they could accelerate evolution on physical
+robots using results obtained in simulation. To do so, they investigate three approaches to evolve
+in simulation (without noise, with noise added to sensors, and with noise that corresponds to the
+noise measured on real robots) and 3 classic tasks (obstacle avoidance, homing, and aggregation).
+These ideas are well known, but they have not been much investigated in a distributed system.
+The controllers are evolved using odNEAT, a variant of NEAT proposed by the authors in a
+previous article. As far as I understand, the main contribution is the extension of the experiments
+with odNEAT from simulation (in the previous paper) to real robots (this paper). The authors
+conclude that odNEAT can find working controllers for these three tasks.
+Overall, I am happy to see experiments about evolution in physical systems; however, I have two
+important concerns with this article: one about the description of the methods, and one about the
+so-called success of their approach.
+First, the conclusion is that 'one the key enabler is odNEAT'... but odNEAT is never really
+described. Actually, the authors do not even say explicitely how distributed their system is. Put
+differently, nobody can understand the article in its current form if she/he does not know the
+5
+previous work of the authors. This would be easy to fix by adding a description of odNEAT in
+the method section.
+Second, the way used by the authors to measure success is hard to understand: this makes me
+question if I understood anything from their results. Given the introduction, the reader expects
+box-plots that show that solutions found by seeding the population perform better (or worse)
+than solutions found with direct evolution on the physical robots. There is nothing like this in the
+paper. Instead, we find _in the supplementary text_ (Text S3) some numbers about 'the mean
+percentage of successful controllers' which, I suppose, is linked to the performance of each
+replicate. However, I expected something like 'the number of runs that succeed in finding
+working solutions for the task' or something like the median fitness after one hour of evolution.
+And I expected this result in the main text. In this supplementary text, we discover that (1)
+seeding makes a difference in the first task, but no difference in the other tasks (homing,
+aggregation, and task adaptation experiment) and (2) in all the tasks except the first (obstacle
+avoidance), the percentage of successful behavior is quite small (e.g. 3-4%).
+Why is this critical information hidden in the supplementaries? This should be the main result of
+the paper (at least according to the introduction). And, if I understood well, this also suggests
+that the approach proposed by the authors is not working as well as what they try to suggest it. I
+think this information should be in the main text and commented; in addition, the authors should
+explain why they compute this 'mean percentage of successful controllers' (and not a more classic
+metric). Instead of having results that are easy to understand, the main text focuses on the
+performance of the (few) 'successful controllers' (Fig.4) but the differences do not appear to be
+very significant and I did not manage to understand why it was more relevant than the success
+rate / fitness at the end of each replicate.
+In summary, I cannot conclude from the current text if the approach proposed by the author
+'works' or 'does not work', and I cannot conclude if their initial proposition of seeding evolution
+with simulation results helps or not.
+A third concern is that the authors do not compare their approach to anything else, therefore I
+cannot understand how they can write (in the conclusion and in the abstract) that 'we showed
+that one key enabler of the robots' ability to effectively learn and adapt is the underlying
+evolutionary algorithm odNEAT'. As far as I understand, they only showed that all the
+components of odNEAT (which are actually the components of NEAT, published in 2002) are
+helping (in the 'ablation' experiment). They did not show that a similar result could not be
+obtained with a different algorithm.
+Minor remarks:
+- In the introduction, the authors claim that almost no experience have been carried out with
+evolving robots that can adapt to changes. References [1] and [2] are missing.
+- the term 'behavior-fitness map' was first employed in [3], but with a slightly different meaning:
+the authors should choose a different term or at least describe the differences;
+- there are statistical tests for the results reported in the supplementaries, but none in the results
+described in the main text (Fig.4 and Fig.5)
+[1] Berend Weel, Mark Hoogendoorn, and A. E. Eiben. 2012. On-line evolution of controllers for
+aggregating swarm robots in changing environments. In Proceedings of the 12th international
+conference on Parallel Problem Solving from Nature - Volume Part II (PPSN'12),
+DOI=http://dx.doi.org/10.1007/978-3-642-32964-7_25
+[2] Cristian M. Dinu, Plamen Dimitrov, Berend Weel, and A. E. Eiben. 2013. Self-adapting fitness
+evaluation times for on-line evolution of simulated robots. In Proceedings of the 15th annual
+6
+conference on Genetic and evolutionary computation (GECCO '13), Christian Blum (Ed.). ACM,
+New York, NY, USA, 191-198. DOI=http://dx.doi.org/10.1145/2463372.2463405
+[3] Cully, A., Clune, J., Tarapore, D., & Mouret, J. B. (2015). Robots that can adapt like animals.
+Nature, 521(7553), 503-507.
+label_author_3
+Review form: Reviewer 3 (Alan Winfield)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+This is a very good paper. It addresses some very interesting research questions in evolutionary
+robotics, which are very well formulated. The paper is very clear, well structured and the
+standard of English is very high. Thus I have only minor comments.
+1. On pages 4 and 5, section headed Evolution in Simulation: why specifically 30 independent
+runs? In the explanation that follows it is not clear what the exact relationship is between ‘setup’,
+‘run’, ‘generation’ and ‘simulation’. What is the need for a post evolution evaluation (and why
+specifically 100 simulations) given that fitness testing was presumably done during evolution?
+2. On page 6 how does a robot itself measure pt?
+3. On page section on fault injection experiments, I suggest you reference prior work
+investigating fault tolerance in swarms, i.e. Bjerknes and Winfield (2013) On fault tolerance and
+scalability of swarm robotic systems. Distributed Autonomous Robotic Systems: The 10th
+International Symposium. (83) Springer, pp. 431-444.
+4. On page 10, 11 section on evolution of collective behaviours, note that online evolution in
+O’Dowd et al, (2014) The distributed co-evolution of an on-board simulator and controller for
+swarm robot behaviours. Evolutionary Intelligence, 7 (2). pp. 95-106, took place in a similar
+timeframe (1 hour) to the experiments of your paper.
+5. Re page 14 open source data. I was disappointed that I was unable to access the data logs and
+source code. I would be especially keen to check that the data is properly annotated to explain the
+7
+data fields and structures. Also are any videos of sample experiments included to illustrate the
+different experiments?
+label_end_comment
+Decision letter (RSOS-160938)
+20-Mar-2017
+Dear Dr Silva,
+The editors assigned to your paper ("Evolutionary Online Behaviour Learning and Adaptation in
+Real Robots") have now received comments from reviewers. We would like you to revise your
+paper in accordance with the referee and Associate Editor suggestions which can be found below
+(not including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Apr-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+8
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160938
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Andrew Dunn
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor's comments:
+Comments to the Author:
+label_comment_4
+All three reviewers agree that the paper is interesting, and that the results are correct. In fact they
+were especially pleased that the experiments were carried out by physical robots rather than by
+simulation.
+9
+The main criticisms are about presentation. The authors should pay special attention to reviewer
+2 who indicates that the paper will be inaccessible to people who do not understand the previous
+work of the authors. I recommend that the revised paper should be looked at again by this
+reviewer.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_5
+The main contribution of the paper is to explore the benefits of pre-evolution (in simulation) of
+robot controllers to bootstrap online evolution. Though this is not uncommon (see for example
+[Cully et al. 2015 Nature], who uses a pre-evolved library of behaviour to recover from faults), the
+authors propose to combines noise modelling techniques as popular in the 1990's in the
+evolutionary robotics community with an online state-of-the-art optimization algorithm
+(odNEAT) that can be used for both single and multiple robots. Also, experiments are conducted
+with real robots (from 1 to 3, depending on the task), which is in itself a contribution to a field
+where real robot implementation are too rare.
+My main concern (which I think can easily be addressed) is that the scope of the contribution --
+namely: the benefits of pre-evolution to seed online learning -- is not so clear from the abstract,
+introduction and part of the paper because of a strong claim that I strongly disagree with and that
+overshadow the true contribution:
+- In the abstract, it is stated that this work "demonstrate for the first time the adaptive capabilities
+of online evolution in real robotic hardware". Such demonstration have been done at least since
+Watson et al. (2002) for multi-robot setups, and has been done again by many authors, incl. some
+who are cited later in the paper.
+- In Section Results (iii), it is stated that "this experiment is the first instance of online evolution of
+collective and coordinated behaviours in a timely manner". One could argue that aggregation as a
+result of phototaxis have been shown -- for example, [Bredeche et al. 2012] showed robots
+aggregating around a landmark for the benefits of survival, which can be seen as phototaxis a
+posteriori but which is not phototaxis defined as an objective a priori -- therefore one could argue
+that it is collective decision making to aggregate to maximise survival (and phototaxis is evolved
+as a proxy to do that). Also works from [Prieto et al. 2010 RAS] have shown collective decision
+making with real robots to address a dual foraging tasks with competing resources, which is
+collective decision making. Finally, the duration of experiments shown in earlier work are
+roughly in the same order of magnitude as those shown here and/or imply many more robots, so
+I am not sure with the "timely manner" argument. To sum it up: learning collective decision
+making with real robots is an *important* aspect of the paper, but the fact that it is an *original*
+contribution can be very controversial. Anyway, I think that the real contribution of the paper
+(pre-evolution helps online evolution) is largely relevant enough to make the paper worth
+reading.
+OdNEAT is a very nice algorithm -- benefitting from the many useful features of NEAT is great
+and its use in online evolutionary robotics is sound. In the current text, OdNEAT is, however,
+never described. I would recommend to make the manuscript self-contained and suggest to add a
+subsection to describe the algorithm -- something like half-a-page to a full page, providing the
+basics to understand the algorithm. In particular, it was not very clear to me how OdNEAT
+handles the multi-robots case (frequency of island migration, for example).
+Following are comments and/or discussions (ordered wrt paper flow):
+10
+- odNEAT is always referred to as an online evolutionary algorithm, which is true. When it comes
+to multi-robots, I am somewhat surprised that the authors do not make much reference to
+odNEAT belonging to the class of embodied evolutionary robotics (EE). As you know, EE is but a
+sub-class of online evolutionary robotics dealing with multiple robots. Actually, the multi-robot
+instanciation of odNEAT is very similar to works that are explicitly defined as embodied
+evolution algorithm, such as the work from [Usui and Arita 2003] when an encapsulated
+evolutionary algorithm (not NEAT-related, though) in terms of hybrid/island model that mostly
+rely on an internal evolutionary algorithm.
+- when describing the fitness function for navigation and obstacle avoidance: please cite the
+seminal 1994 paper from Floreano, or at least the 2000's book from Nolfi and Floreano, within this
+section.
+- Fig. 1., top is not very informative. There are keywords but it is difficult to get the idea of what
+is precisely done. "post-evaluation", "online synthesis of control", "autonomous learning and
+adaptation" need to be defined so that this figure is to be understood. Moreover, I wonder if this
+part of the figure is really useful given it is described in the text. I would suggest to remove it as it
+is more confusing that helpful compared to the description in the main text.
+- Modelling sensor noise is a good idea, and there have been a great deal of work in the second
+part of the 1990's. That said: more recent works taking different kind of approach could also be
+discussed, such as transferability [Koos et al. 2013 IEEE TEC] or recent works with map-elite
+(multiple papers from Mouret's group).
+- Fig. 3(b) shows only 2 (not three, as stated in the Section 2.C) areas. Please ensure consistency (a
+top view of the arena?).
+- could you elaborate on the "varying condition" for evaluations?
+- about "the top controller of each generation" when selecting controller for the 100 post-evolution
+evaluations. Do you mean the best from each run at the last generation (meaning 30 individuals),
+or the best for each generation for each run (meaning 100*30 individuals)?
+- Section 3.a.i: "four setups of the navigation/obstacle avoidance...?". I may have missed
+something here. Does this allude to the noise conditions? or typo and meant the four
+setups/tasks? or most probably: preevolve-nonoise, preevolve-noise1, preevolve-noise2, no-
+preevolve. Please clarify in the text
+- on the fault injection tests: (1) only the base is specified, why not preevolved+online? (2) results
+for faulty behaviours are low, and do not seem to be comparable to one another -- can you
+elaborate? (3) adding an additional experience that show the results with robots with a simple
+hand-coded wandering behaviour would be useful to estimate what you can expect from a
+"dumb" baseline.
+- you use the expression "timely manner" a lot, which not very precise... I would recommend to
+give numbers rather than opinion/interpretation (e.g. time in minutes).
+- I would suggest to move the robustness to noise and the ablation studies to a different section
+(suggest new Section "Analysis"). Both provide additional insights into the results. In particular,
+the ablation studies are not mandatory wrt to the original motivation, but provide a nice
+additional contribution. Also, this part (ablation studies) should be elaborated more wrt details
+and exact experimental protocol on how ablation were conducted to better support the claim
+made in the last sentence.
+- Discussion: can you please elaborate? there are several ideas and concepts which are difficult to
+get beyond the keywords (e.g.: I did not get at all what hyper-evolution implies). Also you might
+11
+be interested in the work on novelty search [Stanley and followers] and transfer learning by
+[Doncieux 2013 ICDL, Doncieux 2014 AAAI] where
+concepts very close to artificial curiosity are developed to drive evolution towards interesting
+behaviours.
+Minor comments:
+- during my first read, I missed the number of robots used for the aggregation experiment. The
+fact that three robots are used is indeed mention in the text, but only once. Could you please
+explicitly recall this in the results section? Thanks.
+- the naming "base evolution" (= only on-line evolution) was not so clear to me. Could you come
+up with a more explicit naming? (e.g.: simply "control" or "baseline")
+Reviewer: 2
+Comments to the Author(s)
+label_comment_6
+This paper describes experiments in which a population of small mobile robots evolve to solve
+different tasks and adapt to changes. Contrary to most published work on this topic, the authors
+use physical robots. More specifically, they ask how they could accelerate evolution on physical
+robots using results obtained in simulation. To do so, they investigate three approaches to evolve
+in simulation (without noise, with noise added to sensors, and with noise that corresponds to the
+noise measured on real robots) and 3 classic tasks (obstacle avoidance, homing, and aggregation).
+These ideas are well known, but they have not been much investigated in a distributed system.
+The controllers are evolved using odNEAT, a variant of NEAT proposed by the authors in a
+previous article. As far as I understand, the main contribution is the extension of the experiments
+with odNEAT from simulation (in the previous paper) to real robots (this paper). The authors
+conclude that odNEAT can find working controllers for these three tasks.
+Overall, I am happy to see experiments about evolution in physical systems; however, I have two
+important concerns with this article: one about the description of the methods, and one about the
+so-called success of their approach.
+First, the conclusion is that 'one the key enabler is odNEAT'... but odNEAT is never really
+described. Actually, the authors do not even say explicitely how distributed their system is. Put
+differently, nobody can understand the article in its current form if she/he does not know the
+previous work of the authors. This would be easy to fix by adding a description of odNEAT in
+the method section.
+Second, the way used by the authors to measure success is hard to understand: this makes me
+question if I understood anything from their results. Given the introduction, the reader expects
+box-plots that show that solutions found by seeding the population perform better (or worse)
+than solutions found with direct evolution on the physical robots. There is nothing like this in the
+paper. Instead, we find _in the supplementary text_ (Text S3) some numbers about 'the mean
+percentage of successful controllers' which, I suppose, is linked to the performance of each
+replicate. However, I expected something like 'the number of runs that succeed in finding
+working solutions for the task' or something like the median fitness after one hour of evolution.
+And I expected this result in the main text. In this supplementary text, we discover that (1)
+seeding makes a difference in the first task, but no difference in the other tasks (homing,
+aggregation, and task adaptation experiment) and (2) in all the tasks except the first (obstacle
+avoidance), the percentage of successful behavior is quite small (e.g. 3-4%).
+Why is this critical information hidden in the supplementaries? This should be the main result of
+the paper (at least according to the introduction). And, if I understood well, this also suggests
+that the approach proposed by the authors is not working as well as what they try to suggest it. I
+12
+think this information should be in the main text and commented; in addition, the authors should
+explain why they compute this 'mean percentage of successful controllers' (and not a more classic
+metric). Instead of having results that are easy to understand, the main text focuses on the
+performance of the (few) 'successful controllers' (Fig.4) but the differences do not appear to be
+very significant and I did not manage to understand why it was more relevant than the success
+rate / fitness at the end of each replicate.
+In summary, I cannot conclude from the current text if the approach proposed by the author
+'works' or 'does not work', and I cannot conclude if their initial proposition of seeding evolution
+with simulation results helps or not.
+A third concern is that the authors do not compare their approach to anything else, therefore I
+cannot understand how they can write (in the conclusion and in the abstract) that 'we showed
+that one key enabler of the robots' ability to effectively learn and adapt is the underlying
+evolutionary algorithm odNEAT'. As far as I understand, they only showed that all the
+components of odNEAT (which are actually the components of NEAT, published in 2002) are
+helping (in the 'ablation' experiment). They did not show that a similar result could not be
+obtained with a different algorithm.
+Minor remarks:
+- In the introduction, the authors claim that almost no experience have been carried out with
+evolving robots that can adapt to changes. References [1] and [2] are missing.
+- the term 'behavior-fitness map' was first employed in [3], but with a slightly different meaning:
+the authors should choose a different term or at least describe the differences;
+- there are statistical tests for the results reported in the supplementaries, but none in the results
+described in the main text (Fig.4 and Fig.5)
+[1] Berend Weel, Mark Hoogendoorn, and A. E. Eiben. 2012. On-line evolution of controllers for
+aggregating swarm robots in changing environments. In Proceedings of the 12th international
+conference on Parallel Problem Solving from Nature - Volume Part II (PPSN'12),
+DOI=http://dx.doi.org/10.1007/978-3-642-32964-7_25
+[2] Cristian M. Dinu, Plamen Dimitrov, Berend Weel, and A. E. Eiben. 2013. Self-adapting fitness
+evaluation times for on-line evolution of simulated robots. In Proceedings of the 15th annual
+conference on Genetic and evolutionary computation (GECCO '13), Christian Blum (Ed.). ACM,
+New York, NY, USA, 191-198. DOI=http://dx.doi.org/10.1145/2463372.2463405
+[3] Cully, A., Clune, J., Tarapore, D., & Mouret, J. B. (2015). Robots that can adapt like animals.
+Nature, 521(7553), 503-507.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_7
+This is a very good paper. It addresses some very interesting research questions in evolutionary
+robotics, which are very well formulated. The paper is very clear, well structured and the
+standard of English is very high. Thus I have only minor comments.
+1. On pages 4 and 5, section headed Evolution in Simulation: why specifically 30 independent
+runs? In the explanation that follows it is not clear what the exact relationship is between ‘setup’,
+‘run’, ‘generation’ and ‘simulation’. What is the need for a post evolution evaluation (and why
+specifically 100 simulations) given that fitness testing was presumably done during evolution?
+13
+2. On page 6 how does a robot itself measure pt?
+3. On page section on fault injection experiments, I suggest you reference prior work
+investigating fault tolerance in swarms, i.e. Bjerknes and Winfield (2013) On fault tolerance and
+scalability of swarm robotic systems. Distributed Autonomous Robotic Systems: The 10th
+International Symposium. (83) Springer, pp. 431-444.
+4. On page 10, 11 section on evolution of collective behaviours, note that online evolution in
+O’Dowd et al, (2014) The distributed co-evolution of an on-board simulator and controller for
+swarm robot behaviours. Evolutionary Intelligence, 7 (2). pp. 95-106, took place in a similar
+timeframe (1 hour) to the experiments of your paper.
+5. Re page 14 open source data. I was disappointed that I was unable to access the data logs and
+source code. I would be especially keen to check that the data is properly annotated to explain the
+data fields and structures. Also are any videos of sample experiments included to illustrate the
+different experiments?
+Author's Response to Decision Letter for (RSOS-160938)
+See Appendix A.
+label_version_2
+RSOS-160938.R1 (Revision)
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_8
+Thank you for the changes. The paper has been significantly improved, but I still have a few
+requests.
+14
+First, I still do not understand why the results are presented as "percentage of successful
+evaluations in one hour": once we have a successful controller, the adaptation is done and we can
+use this good controller. As a consequence, what matters more is "how much time (how many
+evaluations) do I need to solve the task?" Moreover, I do not understand why the "real samples"
+treatment seems to perform well in Fig.S1, but in the text the differences between the three
+treatments are not significant (3.a.ii, line 43). In addition, the success rates should be presented in
+a table or a figure.
+Second, it should be clear in the abstract and conclusion if seeding from simulation is helping or
+not. It seems to be useful for the first task, I do not know for the second task, and useless for the
+third task.
+Last, I still disagree with the sentence (in abstract and conclusion): "... one key enabler [...] is a
+high-performance approach called odNEAT". It should be something like "all the components of
+the evolutionary algorithm used in this study (odNEAT) contribute to the performance of the
+algorithm" (or something along this line: the author do not show that odNEAT is superior to any
+competing approach, even if odNEAT without some components is close to some alternative
+approaches.
+Minor requests:
+- the link to the source code is missing
+- I did not find the parameters of odNEAT (in particular, the number of robots and all the NEAT
+parameters)
+- In the supplementaries, the authors should not use means (table S1) but medians, to be
+consistent with the Mann-Whitney test and the boxplots.
+- Fig S1(A) and S1(B) have inconsistent colors
+label_end_comment
+Decision letter (RSOS-160938.R1)
+16-Jun-2017
+Dear Dr Silva:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160938.R1
+entitled "Evolutionary Online Behaviour Learning and Adaptation in Real Robots" has been
+accepted for publication in Royal Society Open Science subject to minor revision in accordance
+with the referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+15
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160938.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 25-Jun-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+16
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Andrew Dunn
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_9
+Thank you for the changes. The paper has been significantly improved, but I still have a few
+requests.
+17
+First, I still do not understand why the results are presented as "percentage of successful
+evaluations in one hour": once we have a successful controller, the adaptation is done and we can
+use this good controller. As a consequence, what matters more is "how much time (how many
+evaluations) do I need to solve the task?" Moreover, I do not understand why the "real samples"
+treatment seems to perform well in Fig.S1, but in the text the differences between the three
+treatments are not significant (3.a.ii, line 43). In addition, the success rates should be presented in
+a table or a figure.
+Second, it should be clear in the abstract and conclusion if seeding from simulation is helping or
+not. It seems to be useful for the first task, I do not know for the second task, and useless for the
+third task.
+Last, I still disagree with the sentence (in abstract and conclusion): "... one key enabler [...] is a
+high-performance approach called odNEAT". It should be something like "all the components of
+the evolutionary algorithm used in this study (odNEAT) contribute to the performance of the
+algorithm" (or something along this line: the author do not show that odNEAT is superior to any
+competing approach, even if odNEAT without some components is close to some alternative
+approaches.
+Minor requests:
+- the link to the source code is missing
+- I did not find the parameters of odNEAT (in particular, the number of robots and all the NEAT
+parameters)
+- In the supplementaries, the authors should not use means (table S1) but medians, to be
+consistent with the Mann-Whitney test and the boxplots.
+- Fig S1(A) and S1(B) have inconsistent colors
+Author's Response to Decision Letter for (RSOS-160938.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-160938.R2)
+28-Jun-2017
+Dear Dr Silva,
+I am pleased to inform you that your manuscript entitled "Evolutionary Online Behaviour
+Learning and Adaptation in Real Robots" is now accepted for publication in Royal Society Open
+Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+18
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Appendix A
+Response to the reviews for
+Evolutionary Online Behaviour Learning and
+Adaptation in Real Robots
+by Fernando Silva, Luís Correia, and Anders Lyhne Christensen
+Manuscript id: <U+200B>RSOS-160938<U+200B>, <U+200B>date: April 12, 2017
+We would like to thank the reviewers for their thorough <U+200B>reviews. We have addressed
+the comments made by the reviewers to strengthen our paper. Below, we respond to
+the reviewers’ comments individually.
+Detailed replies to the reviewers’ comments
+__________________________________________________________________
+Reviewer: 1
+Comments to the Author(s)
+label_comment_10
+The main contribution of the paper is to explore the benefits of pre-evolution (in simulation)
+of robot controllers to bootstrap online evolution. Though this is not uncommon (see for
+example [Cully et al. 2015 Nature], who uses a pre-evolved library of behaviour to recover
+from faults), the authors propose to combines noise modelling techniques as popular in the
+1990's in the evolutionary robotics community with an online state-of-the-art optimization
+algorithm (odNEAT) that can be used for both single and multiple robots. Also, experiments
+are conducted with real robots (from 1 to 3, depending on the task), which is in itself a
+contribution to a field where real robot implementation are too rare.
+My main concern (which I think can easily be addressed) is that the scope of the contribution
+-- namely: the benefits of pre-evolution to seed online learning -- is not so clear from the
+abstract, introduction and part of the paper because of a strong claim that I strongly disagree
+with and that overshadow the true contribution:
+- In the abstract, it is stated that this work "demonstrate for the first time the adaptive
+capabilities of online evolution in real robotic hardware". Such demonstration have been
+done at least since Watson et al. (2002) for multi-robot setups, and has been done again by
+many authors, incl. some who are cited later in the paper.
+<U+25CF> Reply: <U+200B>We have rephrased the abstract to improve clarity (emphasis added below to
+indicate changes to text). Contributions such as that of Watson et al. (2002) show
+real robots learning how to solve a given task online. However, real-robot
+demonstrations of the ability to overcome faults and adapt to changes in
+environmental conditions have not previously been shown in the context of online
+evolution.
+“[...] We furthermore demonstrate for the first time the adaptive capabilities of online
+evolution in real robotic hardware, <U+200B>including robots able to overcome faults
+injected in the motors of multiple units simultaneously, and to modify their
+behaviour in response to changes in the task requirements<U+200B>.<U+200B> <U+200B>[...]”
+- In Section Results (iii), it is stated that "this experiment is the first instance of online
+evolution of collective and coordinated behaviours in a timely manner". One could argue that
+aggregation as a result of phototaxis have been shown -- for example, [Bredeche et al. 2012]
+showed robots aggregating around a landmark for the benefits of survival, which can be
+seen as phototaxis a posteriori but which is not phototaxis defined as an objective a priori --
+therefore one could argue that it is collective decision making to aggregate to maximise
+survival (and phototaxis is evolved as a proxy to do that). Also works from [Prieto et al. 2010
+RAS] have shown collective decision making with real robots to address a dual foraging
+tasks with competing resources, which is collective decision making. Finally, the duration of
+experiments shown in earlier work are roughly in the same order of magnitude as those
+shown here and/or imply many more robots, so I am not sure with the "timely manner"
+argument. To sum it up: learning collective decision making with real robots is an *important*
+aspect of the paper, but the fact that it is an *original* contribution can be very controversial.
+Anyway, I think that the real contribution of the paper (pre-evolution helps online evolution) is
+argely relevant enough to make the paper worth reading.
+<U+25CF> Reply: <U+200B>Phototaxis/aggregation around a landmark, as in Bredeche et al. (2012), does
+not require coordinated movement or cooperation and, in that sense, it is a task of an
+individual nature being performed by multiple robots in parallel. On the other hand,
+aggregation without a landmark, as our version of the aggregation task, requires
+collectively coordinated behaviours so that dispersed robots move close to one
+another, and then form and remain in a single group.
+We have rephrased the second paragraph of Section 3 (a) (iii) <U+200B>to clarify that the focus
+is on the evolution of collectively coordinated behaviours (emphasis added here to
+indicate changes to text). We additionally removed the “timely manner” argument, as
+suggested by the reviewer.
+“[...] To the best of our knowledge, this experiment is the first instance of online
+evolution of <U+200B>collectively coordinated behaviours with real robots<U+200B>. Previous
+studies involving multiple robots have been limited to individual tasks such as
+phototaxis [25], dynamic phototaxis [3], foraging [26], and a combination of foraging
+and phototaxis (robots can use a moving light source as an environmental aid) in
+which controllers are evolved in an onboard simulator [27].”
+OdNEAT is a very nice algorithm -- benefitting from the many useful features of NEAT is
+great and its use in online evolutionary robotics is sound. In the current text, OdNEAT is,
+however, never described. I would recommend to make the manuscript self-contained and
+suggest to add a subsection to describe the algorithm -- something like half-a-page to a full
+page, providing the basics to understand the algorithm. In particular, it was not very clear to
+me how OdNEAT handles the multi-robots case (frequency of island migration, for example).
+<U+25CF> Reply: <U+200B>We have added a new section called “Online Evolution of Control with
+odNEAT” [Section 2(a)], in which we describe the main features of odNEAT,
+including how the algorithm operates when multiple robots are considered. As
+suggested by the reviewer, the section is approximately half a page long.
+Following are comments and/or discussions (ordered wrt paper flow):
+- odNEAT is always referred to as an online evolutionary algorithm, which is true. When it
+comes to multi-robots, I am somewhat surprised that the authors do not make much
+reference to odNEAT belonging to the class of embodied evolutionary robotics (EE). As you
+know, EE is but a sub-class of online evolutionary robotics dealing with multiple robots.
+Actually, the multi-robot instanciation of odNEAT is very similar to works that are explicitly
+defined as embodied evolution algorithm, such as the work from [Usui and Arita 2003] when
+an encapsulated evolutionary algorithm (not NEAT-related, though) in terms of hybrid/island
+model that mostly rely on an internal evolutionary algorithm.
+<U+25CF> Reply: <U+200B>In online evolutionary robotics, terms such as “embodied evolution” are often
+used inconsistently. For example, the original definition of “embodied evolution” by
+Watson et al. (2002) described a single genome/controller per robot. Usui and Arita’s
+(2003) algorithm, and several others such as odNEAT, employ one *population* of
+candidate controllers per robot.
+Given the lack of a precise and consistent use of terminology in online evolution
+research, we avoid stating that odNEAT belongs to any particular class of algorithms,
+but instead provide details on how the algorithm operates, including in the new
+section called “Online Evolution of Control with odNEAT”, as follows (emphasis
+added here):
+“odNEAT is distributed across multiple robots that exchange candidate solutions to
+the task. Specifically, the evolutionary process is implemented according to a
+physically distributed island model. <U+200B>Each robot optimises an internal population
+of genomes <U+200B>(directly encoded artificial neural networks) through intra-island
+variation, and genetic <U+200B>information between two or more robots is exchanged
+through inter-island migration<U+200B>. [...]”
+- when describing the fitness function for navigation and obstacle avoidance: please cite the
+seminal 1994 paper from Floreano, or at least the 2000's book from Nolfi and Floreano,
+within this section.
+<U+25CF> Reply: <U+200B>As suggested by the reviewer, we now cite the seminal paper from Floreano
+and Mondada (1994) when describing the fitness function for the navigation and
+obstacle avoidance task.
+- Fig. 1., top is not very informative. There are keywords but it is difficult to get the idea of
+what is precisely done. "post-evaluation", "online synthesis of control", "autonomous learning
+and adaptation" need to be defined so that this figure is to be understood. Moreover, I
+wonder if this part of the figure is really useful given it is described in the text. I would
+suggest to remove it as it is more confusing that helpful compared to the description in the
+main text.
+<U+25CF> Reply: <U+200B>As suggested by the reviewer, we have removed Fig. 1 (A).
+- Modelling sensor noise is a good idea, and there have been a great deal of work in the
+second part of the 1990's. That said: more recent works taking different kind of approach
+could also be discussed, such as transferability [Koos et al. 2013 IEEE TEC] or recent works
+with map-elite (multiple papers from Mouret's group).
+<U+25CF> Reply: <U+200B>In Section 2<U+200B>, <U+200B>we have included a discussion on how different approaches
+could be used in the modelling of robot sensors and actuators (end of page 3,
+beginning of page 4; emphasis added here):
+“[...] It should be noted that our approach to modelling robot sensors and
+actuators in simulation does not preclude the use of more elaborate
+methodologies, such as the <U+200B>transferability approach [13]. <U+200B>The transferability
+approach relies on multiobjective optimisation in which controllers are evaluated
+based on their performance in simulation and on the real robots; it uses a surrogate
+model that is updated periodically by evaluating candidate solutions in real hardware.
+The goal is to learn the discrepancies between simulation and reality, and to
+constrain evolution in order to avoid behaviours that may not transfer effectively from
+simulation to reality.”
+- Fig. 3(b) shows only 2 (not three, as stated in the Section 2.C) areas. Please ensure
+consistency (a top view of the arena?).
+<U+25CF> Reply: <U+200B>Fig. 2 (B) (page 6; real environment for the aggregation and adaptation
+experiments) actually shows three areas, namely: a white area, a gray area, and a
+black area. We have improved the caption of the figure to aid in clarity (emphasis
+added here):
+“Real environment for the homing experiments <U+200B>(A)<U+200B>, and for the aggregation and
+adaptation experiments <U+200B>(B)<U+200B>. <U+200B>The environment for the aggregation and adaptation
+experiments is composed of three areas, namely a black area (top), a grey area
+(middle), and a white area (bottom).<U+200B>”
+- could you elaborate on the "varying condition" for evaluations?
+<U+25CF> Reply: <U+200B>As suggested by the reviewer, we have elaborated on the “varying conditions”
+for evaluations (page 4, “Evolution in simulation”):
+“[...] simulations with varying conditions (e.g. randomised initial position and
+orientation, amount of noise injected at every simulation step in sensors and/or
+actuators).[...]”
+- about "the top controller of each generation" when selecting controller for the 100
+post-evolution evaluations. Do you mean the best from each run at the last generation
+(meaning 30 individuals), or the best for each generation for each run (meaning 100*30
+ndividuals)?
+<U+25CF> Reply: <U+200B>We mean the best controller of each generation, for each individual run. We
+now explicitly state the number of controllers evaluated to improve clarity (page 4,
+“Evolution in simulation”):
+“[...] The top controller of each generation was evaluated in 100 simulations (total of
+3,000 controllers evaluated without evolution) to obtain a more precise estimate of
+the performance.[...]”
+- Section 3.a.i: "four setups of the navigation/obstacle avoidance...?". I may have missed
+something here. Does this allude to the noise conditions? or typo and meant the four
+setups/tasks? or most probably: preevolve-nonoise, preevolve-noise1, preevolve-noise2,
+no-preevolve. Please clarify in the text
+<U+25CF> Reply: <U+200B>We refer precisely to the “baseline”, “no noise”, “conservative noise”, and
+“real samples”. We now explicitly list the setups in the text to aid in clarity, see
+Section 3 (a) (i), pages 9 and 10:
+“Figure 3 shows two-dimensional behaviour-fitness maps<U+200B>, which relate behaviour
+distance with task performance, for the four setups of the navigation and obstacle
+avoidance task (baseline, controllers pre-evolved in simulations using perfect sensor
+readings, a conservative form of noise in simulated sensors, and samples from real
+robots) [...].
+- on the fault injection tests: (1) only the base is specified, why not preevolved+online? (2)
+results for faulty behaviours are low, and do not seem to be comparable to one another --
+can you elaborate? (3) adding an additional experience that show the results with robots with
+a simple hand-coded wandering behaviour would be useful to estimate what you can expect
+from a "dumb" baseline.
+<U+25CF> Reply:
+<U+25CB> (1) <U+200B>In the fault-injection experiments, robots first evolve for one hour to solve
+the initial version of the aggregation task. We have selected robots from the
+baseline setup for simplicity. Specifically, we selected the best group of robots
+(highest fitness on average), which were able to efficiently solve the
+aggregation task. However, as we have added in the first paragraph of
+Section 4. Discussion, it may be interesting to actively investigate such biases
+in a future study, that is, how pre-evolution in simulation can influence not
+only learning to solve a task (as in our first set of experiments), but also
+re-adaptation in the case of changes in environmental conditions and faults
+(as in our second set of experiments).
+<U+25CB> (2) <U+200B>As indicated in the second paragraph of Section 3 (b) (ii), page 13, the
+amount of time aggregated is expected to be lower because: “[...] faulty
+robots, even after they learn to cope with a faulty wheel, are still limited in the
+speed they can achieve (from 50% to 75% of the maximum speed). As a
+result, robots require more time to find one another and aggregate [...]”.
+In addition, the different configurations cause robots to be in different
+situations. For example, in the one-fault setup “[...] only one robot is in a faulty
+state. The faulty robot has to learn to overcome the fault by itself, as
+controllers evolved by the other two robots in the group are optimised for
+non-faulty wheels, and cause the faulty robot to move in circles. [...]”, hence
+the differences in the results.
+<U+25CB> (3) <U+200B>We are not sure if and how a simple hand-coded wandering behaviour
+would constitute a meaningful baseline, and we have therefore chosen not to
+include such experiments in our study.
+- you use the expression "timely manner" a lot, which not very precise... I would recommend
+to give numbers rather than opinion/interpretation (e.g. time in minutes).
+<U+25CF> Reply: <U+200B>We have reviewed the paper and rephrased the sentences in which we
+previously used the expression “timely manner” (removed from the sentence or
+replaced with the time-frame of our experiments -- one hour). The expression “timely
+manner” is now used only in the abstract, in conjunction with the time-frame of the
+experiments:
+“[...] In all cases, capable solutions are found in a timely manner (one hour or less).”
+- I would suggest to move the robustness to noise and the ablation studies to a different
+section (suggest new Section "Analysis"). Both provide additional insights into the results. In
+particular, the ablation studies are not mandatory wrt to the original motivation, but provide a
+nice additional contribution. Also, this part (ablation studies) should be elaborated more wrt
+details and exact experimental protocol on how ablation were conducted to better support
+the claim made in the last sentence.
+<U+25CF> Reply: <U+200B>We tried the reviewer’s suggestion of dividing the results section, which is
+approximately five-pages long, into two sections. We found that this alternative
+structure broke the flow of the paper. We thus reverted back to the original structure,
+in which the presentation of the experimental results is divided into three
+subsections. In the first subsection, we report on how to best seed online evolution in
+real hardware. In the second subsection, we describe if and how online evolution can
+enable adaptation to unforeseen circumstances. In the third subsection, we detail
+and discuss how the properties and different algorithm components of odNEAT
+influence controller synthesis.
+Regarding the ablation studies, we agree with the reviewer’s comment that more
+details were needed. We therefore moved explanatory information from the
+supplementary material (section previously called “Text S2 - Ablation Experiments”)
+to the corresponding section of the main paper.
+- Discussion: can you please elaborate? there are several ideas and concepts which are
+difficult to get beyond the keywords (e.g.: I did not get at all what hyper-evolution implies).
+Also you might be interested in the work on novelty search [Stanley and followers] and
+transfer learning by [Doncieux 2013 ICDL, Doncieux 2014 AAAI] where concepts very close
+to artificial curiosity are developed to drive evolution towards interesting behaviours.
+<U+25CF> Reply: <U+200B>We have revised the first part of the discussion, namely Section 4 (a), page
+15, including the description of the principles underlying online hyper-evolution
+(which can make use of techniques such as novelty search):
+“[...] a novel paradigm called online hyper-evolution [30, 31], which can both combine
+the benefits of different algorithms for controller generation over time, and <U+200B>construct
+algorithms by selecting which algorithmic components should be employed for
+controller generation (e.g. mutation, crossover, among others). Similarly to traditional
+evolutionary robotics approaches, online hyper-evolution can employ fitness-based
+search, behaviour-based search (novelty and/or diversity), and combinations of the
+two. Future work should assess how such techniques fare in real-robot online
+evolution of control.“
+Minor comments:
+- during my first read, I missed the number of robots used for the aggregation experiment.
+The fact that three robots are used is indeed mention in the text, but only once. Could you
+please explicitly recall this in the results section? Thanks.
+<U+25CF> Reply: <U+200B>As suggested by the reviewer, we have added this information to the
+corresponding section of the results, see Section 3 (a) (iii), in order to remind the
+reader of the number of robots employed.
+- the naming "base evolution" (= only on-line evolution) was not so clear to me. Could you
+come up with a more explicit naming? (e.g.: simply "control" or "baseline")
+<U+25CF> Reply: <U+200B>As suggested by the reviewer, we now use the term “baseline” to denote the
+experiments in which only online evolution is employed.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_11
+This paper describes experiments in which a population of small mobile robots evolve to
+solve different tasks and adapt to changes. Contrary to most published work on this topic,
+the authors use physical robots. More specifically, they ask how they could accelerate
+evolution on physical robots using results obtained in simulation. To do so, they investigate
+three approaches to evolve in simulation (without noise, with noise added to sensors, and
+with noise that corresponds to the noise measured on real robots) and 3 classic tasks
+(obstacle avoidance, homing, and aggregation). These ideas are well known, but they have
+not been much investigated in a distributed system. The controllers are evolved using
+odNEAT, a variant of NEAT proposed by the authors in a previous article. As far as I
+understand, the main contribution is the extension of the experiments with odNEAT from
+simulation (in the previous paper) to real robots (this paper). The authors conclude that
+odNEAT can find working controllers for these three tasks.
+Overall, I am happy to see experiments about evolution in physical systems; however, I have
+two important concerns with this article: one about the description of the methods, and one
+about the so-called success of their approach.
+First, the conclusion is that 'one the key enabler is odNEAT'... but odNEAT is never really
+described. Actually, the authors do not even say explicitely how distributed their system is.
+Put differently, nobody can understand the article in its current form if she/he does not know
+the previous work of the authors. This would be easy to fix by adding a description of
+odNEAT in the method section.
+<U+25CF> Reply: <U+200B>We have added a new section called “Online Evolution of Control with
+odNEAT” [Section 2 (a), page 5], in which we describe the main features of odNEAT,
+including how the algorithm operates when multiple robots are considered.
+Second, the way used by the authors to measure success is hard to understand: this makes
+me question if I understood anything from their results. Given the introduction, the reader
+expects box-plots that show that solutions found by seeding the population perform better (or
+worse) than solutions found with direct evolution on the physical robots. There is nothing like
+this in the paper.
+<U+25CF> Reply: <U+200B>The main paper contains multiple behaviour-fitness maps that relate task
+performance with behaviour (Figure 3, composed of four maps), and boxplots
+comparing different approaches in the different tasks (Figure 4, composed of two
+plots, and Figure 5, composed of one plot). We have reviewed the references to the
+figures in the text to ensure that they are clear.
+Please note that we also included extensive results as part of the supplementary
+material (e.g. additional behaviour-fitness maps, and analysis of how the
+highest-performing controllers found in simulation transferred to real robots).
+Instead, we find _in the supplementary text_ (Text S3) some numbers about 'the mean
+percentage of successful controllers' which, I suppose, is linked to the performance of each
+replicate. However, I expected something like 'the number of runs that succeed in finding
+working solutions for the task' or something like the median fitness after one hour of
+evolution. And I expected this result in the main text. In this supplementary text, we discover
+that (1) seeding makes a difference in the first task, but no difference in the other tasks
+(homing, aggregation, and task adaptation experiment) and (2) in all the tasks except the
+first (obstacle avoidance), the percentage of successful behavior is quite small (e.g. 3-4%).
+<U+25CF> Reply: <U+200B>In the main paper, we now provide a more detailed analysis of the results, as
+we have moved the information on the successful controller evaluations from the
+supplementary material to the main paper. Please note that seeding does, in fact,
+impose different constraints on the online evolutionary and re-adaptation process in
+the three tasks (see text for details), and that the mean percentage of successful
+controller evaluations for all tasks but the first (navigation and obstacle avoidance) is
+on average:
+- from 3.7% to 6.3% in the homing task, which amounts to 4 to 8 solutions to the task
+per one-hour experiment,
+- from 8.7% to 14.8% in the aggregation task (10 to 18 <U+200B>groups of successful
+controllers per one-hour experiment),
+- 11.7% in the task adaptation experiments (14 groups of successful controllers per
+one-hour experiment),
+- from 3.0% to 14.7% in the fault injection experiments (4 to 18 groups of successful
+controllers) , and
+- from 1.5% to 11.5% in the ablation experiments (2 to 14 groups of successful
+controllers).
+Because every run typically produces controllers that solve the task, 'the number of
+runs that succeed in finding working solutions for the task' provides little information.
+We therefore complemented our results with an analysis of the successful controller
+evaluations per robot/run The definition of successful controller evaluations was
+originally detailed in the supplementary material (beginning of Text S3, which no
+longer exists), and has now been moved to the main paper [Section 2 (f)].
+Why is this critical information hidden in the supplementaries? This should be the main result
+of the paper (at least according to the introduction). And, if I understood well, this also
+suggests that the approach proposed by the authors is not working as well as what they try
+to suggest it. I think this information should be in the main text and commented; in addition,
+the authors should explain why they compute this 'mean percentage of successful
+controllers' (and not a more classic metric). Instead of having results that are easy to
+understand, the main text focuses on the performance of the (few) 'successful controllers'
+(Fig.4) but the differences do not appear to be very significant and I did not manage to
+understand why it was more relevant than the success rate / fitness at the end of each
+replicate.
+<U+25CF> Reply: <U+200B>We have moved the information on the mean percentage of successful
+controller evaluations from the supplementary material to the main paper.
+Regarding the comment on more classic metrics: it should be noted that we have
+analysed the fitness score of all solutions evolved (see, for example, the
+behaviour-fitness maps in the main paper and in the supplementary material). We
+have additionally complemented our analysis of fitness with metrics that could be
+considered more intuitive to the reader, namely the amount of time that robot spent in
+the target area (homing task), and the amount of time that robots spent aggregated
+(aggregation task). We have now improved the presentation and analysis of the
+results to make the above points clear.
+In summary, I cannot conclude from the current text if the approach proposed by the author
+works' or 'does not work', and I cannot conclude if their initial proposition of seeding
+evolution with simulation results helps or not.
+<U+25CF> Reply: <U+200B>As indicated above, we have addressed the reviewer’s comments in order to
+improve the presentation of results and strengthen our contribution.
+A third concern is that the authors do not compare their approach to anything else, therefore
+I cannot understand how they can write (in the conclusion and in the abstract) that 'we
+showed that one key enabler of the robots' ability to effectively learn and adapt is the
+underlying evolutionary algorithm odNEAT'. As far as I understand, they only showed that all
+the components of odNEAT (which are actually the components of NEAT, published in 2002)
+are helping (in the 'ablation' experiment). They did not show that a similar result could not be
+obtained with a different algorithm.
+<U+25CF> Reply: <U+200B>odNEAT represents a state of the art algorithm that efficiently optimises both
+the parameters and the topological structure of artificial neural networks; see, for
+example, <U+200B>Silva, F., Urbano, P., Correia, L., & Christensen, A. L. (2015). odNEAT: An
+algorithm for decentralised online evolution of robotic controllers. Evolutionary
+Computation, 23(3), 421-449 <U+200B>in which it is compared to two different state of the art
+algorithms.
+The set of algorithmic components employed by odNEAT, be them inherited from NEAT or
+exclusive to odNEAT, all contribute to the algorithm’s performance as an efficient online
+evolution algorithm. This research question is investigated in the ablation studies, in which
+we assess the contribution of the main components of odNEAT on performance, and even
+disable the algorithm’s main features. We extended the section on the ablation studies to
+clarify that, for example, disabling odNEAT’s main features transforms the algorithm into:
+“[...] a variation of the (1+1)-online algorithm [23], which was proposed after the
+classic (1+1) evolutionary strategy, and upon which multiple online evolution
+algorithms are based [3,4].”
+Minor remarks:
+- In the introduction, the authors claim that almost no experience have been carried out with
+evolving robots that can adapt to changes. References [1] and [2] are missing.
+<U+25CF> Reply: <U+200B>We have added the two references suggested by the reviewer to the list of
+examples in the introduction.
+- the term 'behavior-fitness map' was first employed in [3], but with a slightly different
+meaning: the authors should choose a different term or at least describe the differences;
+<U+25CF> Reply: <U+200B>When describing our concept of behaviour-fitness map, we now describe the
+differences with respect to the concept of “behaviour-performance map” in [3]
+(emphasis added here):
+“[...] To understand how the evolutionary process proceeds, we construct
+two-dimensional <U+200B>behaviour-fitness maps<U+200B>, which relate behaviour distance with task
+performance. It should be noted that our concept of behaviour-fitness map
+differs from the concept of <U+200B>behaviour-performance map presented in [22],
+which is used to record the highest-performing individual found during evolution for
+each point in a discretised version of the behaviour space.”
+- there are statistical tests for the results reported in the supplementaries, but none in the
+results described in the main text (Fig.4 and Fig.5)
+<U+25CF> Reply: <U+200B>We have moved the statistical tests from the supplementary material to the
+main paper [see, for instance, the first paragraph of Sections 3 (a) (i), (ii) and (iii)].
+[1] Berend Weel, Mark Hoogendoorn, and A. E. Eiben. 2012. On-line evolution of controllers
+for aggregating swarm robots in changing environments. In Proceedings of the 12th
+nternational conference on Parallel Problem Solving from Nature - Volume Part II
+(PPSN'12), DOI=<U+200B>http://dx.doi.org/10.1007/978-3-642-32964-7_25
+[2] Cristian M. Dinu, Plamen Dimitrov, Berend Weel, and A. E. Eiben. 2013. Self-adapting
+fitness evalauation times for on-line evolution of simulated robots. In Proceedings of the 15th
+annual conference on Genetic and evolutionary computation (GECCO '13), Christian Blum
+(Ed.). ACM, New York, NY, USA, 191-198. DOI=<U+200B>http://dx.doi.org/10.1145/2463372.2463405
+[3] Cully, A., Clune, J., Tarapore, D., & Mouret, J. B. (2015). Robots that can adapt like
+animals. Nature, 521(7553), 503-507.
+Reviewer: 3
+This is a very good paper. It addresses some very interesting research questions in
+evolutionary robotics, which are very well formulated. The paper is very clear, well structured
+and the standard of English is very high. Thus I have only minor comments.
+1. On pages 4 and 5, section headed Evolution in Simulation: why specifically 30
+ndependent runs? In the explanation that follows it is not clear what the exact relationship is
+between ‘setup’, ‘run’, ‘generation’ and ‘simulation’. What is the need for a post evolution
+evaluation (and why specifically 100 simulations) given that fitness testing was presumably
+done during evolution?
+<U+25CF> Reply: <U+200B>The number of independent runs was chosen to facilitate a sound statistical
+analysis. We have reviewed the description of “Evolution in simulation” to improve
+clarity:
+“[...] We conducted experiments in nine evolutionary setups (three complementary
+methods to model sensory inputs for each of the three tasks). Each evolutionary
+setup consisted of 30 independent evolutionary runs conducted in simulation. In each
+simulation-based run, the evolutionary process optimised a population of 100
+controllers for 100 generations. At each generation, a controller’s performance was
+given by the mean fitness of 10 simulations with varying conditions (e.g. randomised
+initial position and orientation, amount of noise injected at every simulation step in
+sensors and/or actuators). [...]”
+The post-evolution evaluation allows to obtain a more precise estimate of the relative
+performance of the top controllers by evaluating them in a larger number of
+simulations, and then to identify the highest-performing controller of each setup (to
+be transferred to real robots) with potentially lower error margin.
+2. On page 6 how does a robot itself measure pt?
+<U+25CF> Reply: <U+200B>The robot itself measures the “p_t” component of Equation 2.2 based on a
+built-in procedure that maps the ground sensors’ readings to a value between zero
+(target area not in range) and one (robot is in the target area), as described in the
+first paragraph of Section 2 (c).
+3. On page section on fault injection experiments, I suggest you reference prior work
+nvestigating fault tolerance in swarms, i.e. Bjerknes and Winfield (2013) On fault tolerance
+and scalability of swarm robotic systems. Distributed Autonomous Robotic Systems: The
+10th International Symposium. (83) Springer, pp. 431-444.
+<U+25CF> Reply: <U+200B>As suggested by the reviewer, we now reference the contribution of Bjerknes
+and Winfield (2013) when presenting the fault-injection experiments [Section 2 (e),
+second paragraph]:
+“The ability to tolerate and/or actively overcome faults is essential for improving the
+reliability of robot systems [18]. In the fault injection experiments, we [...]”
+4. On page 10, 11 section on evolution of collective behaviours, note that online evolution in
+O’Dowd et al, (2014) The distributed co-evolution of an on-board simulator and controller for
+swarm robot behaviours. Evolutionary Intelligence, 7 (2). pp. 95-106, took place in a similar
+timeframe (1 hour) to the experiments of your paper.
+<U+25CF> Reply: <U+200B>As suggested by the reviewer, we added the contribution of O’Dowd et al.
+(2014) to the list of studies referenced in Section 3 (a) (iii):
+“[...] Previous studies involving multiple robots have been limited to individual tasks
+such as phototaxis [25], dynamic phototaxis [3], foraging [26], <U+200B>and a combination of
+foraging and phototaxis (robots can use a moving light source as an
+environmental aid) in which controllers are evolved in an onboard simulator
+[27].<U+200B>”
+It should also be noted that we have revised the section according to the suggestions
+put forth by the other reviewers to clarify that the focus of the section is on the
+evolution of collectively coordinated behaviours, instead of the time-frame.
+5. Re page 14 open source data. I was disappointed that I was unable to access the data
+ogs and source code. I would be especially keen to check that the data is properly
+annotated to explain the data fields and structures. Also are any videos of sample
+experiments included to illustrate the different experiments?
+<U+25CF> Reply: <U+200B>When we submitted the paper, we did not have access to a Dryad account.
+We were then asked to submit the data to Dryad (which we submitted along with the
+code), and received via email the information that reviewers would be given access
+to a temporary url for reviewing the submission data.
+We have now included videos in the material submitted to Dryad.
+Appendix B
+Response to the reviews for
+Evolutionary Online Behaviour Learning and
+Adaptation in Real Robots
+by Fernando Silva, Luís Correia, and Anders Lyhne Christensen
+Manuscript id: <U+200B>RSOS-160938.R1<U+200B>, <U+200B>date: June 27, 2017
+We would like to thank reviewer #2 for her/his comments<U+200B>. We have addressed the
+issues raised by the reviewer. Below, we respond to the reviewer’s comments
+individually.
+Detailed replies to the reviewer’s comments
+Reviewer #2
+Comments to the Author(s)
+label_comment_12
+Thank you for the changes. The paper has been significantly improved, but I still
+have a few requests.
+First, I still do not understand why the results are presented as "percentage of
+successful evaluations in one hour": once we have a successful controller, the
+adaptation is done and we can use this good controller. As a consequence, what
+matters more is "how much time (how many evaluations) do I need to solve the
+task?"
+<U+25CF> Reply: One of the aspects we have studied in our contribution is whether or not
+robots can learn to solve different classes of tasks within a time-frame of one hour or
+less. While the number of evaluations required to synthesise <U+200B>one <U+200B>instance of
+collective behaviour, as suggested by the reviewer, is an interesting metric, the
+percentage of successful evaluations in a given run provides a more consistent
+metric regarding the robots’ ability to learn and adapt. We have improved the first
+paragraph of Section 2(f) to address the reviewer’s comment (emphasis added):
+“We compare results along three dimensions: (i) fitness, that is, the performance or
+quality of a controller, <U+200B>(ii) percentage of successful controller evaluations per
+experiment<U+200B>, and (iii) behaviour distance, that is, how distinct the actions performed
+during task execution by one or more reference controllers are with respect to the
+actions performed by other controllers. <U+200B>As robots are repositioned from one
+evaluation to the next, the percentage of successful evaluations is a more
+consistent metric than the traditional number of evaluations until the first
+successful controller evaluation, thus providing more accurate indications of
+the ability of robots to learn and adapt.<U+200B>”
+Moreover, I do not understand why the "real samples" treatment seems to perform
+well in Fig.S1, but in the text the differences between the three treatments are not
+significant (3.a.ii, line 43). In addition, the success rates should be presented in a
+table or a figure.
+<U+25CF> Reply: <U+200B>Please note that the results presented in Fig. S1 refer to the
+performance of the controllers <U+200B>in simulation<U+200B>, before online evolution in real
+robots is conducted. In the main article, the portion of the article indicated by
+the reviewer (Section 3.a.ii, line 43) refers to real-robot experiments. The fact
+that a given method leads to higher-performing controllers in simulation does
+not necessarily mean that such controllers will: (a) maintain similar
+performance levels in real robotic hardware, and (ii) enable evolution to
+synthesise higher-performing controllers in real robotic hardware.
+We have rephrased the second paragraph of Text S1 to clarify the point
+above (emphasis added):
+“<U+200B>The results of the simulation-based experiments, namely the fitness
+trajectories and the post-evolution evaluation fitness scores are shown in Fig.
+S1.[...]”
+Second, it should be clear in the abstract and conclusion if seeding from simulation
+is helping or not. It seems to be useful for the first task, I do not know for the second
+task, and useless for the third task.
+<U+25CF> Reply: I<U+200B> n the abstract and conclusions, we now clarify that:
+“[...] Results show that more accurate simulations may lead to higher-performing
+controllers, and that completing the optimisation process in real robots is meaningful,
+even if solutions found in simulation differ from solutions in reality. [...]” (abstract),
+and that
+“[...] Results showed (i) that the fidelity of the simulation imposes different types of
+constraints on online evolution in real robots, (ii) that more accurate simulations may
+lead to higher-performing controllers, and that (iii) completing the optimisation
+process in real robots is an effective approach, even if solutions found in simulation
+differ from solutions in reality. [...]” (conclusions)
+Last, I still disagree with the sentence (in abstract and conclusion): "... one key
+enabler [...] is a high-performance approach called odNEAT". It should be something
+like "all the components of the evolutionary algorithm used in this study (odNEAT)
+contribute to the performance of the algorithm" (or something along this line: the
+author do not show that odNEAT is superior to any competing approach, even if
+odNEAT without some components is close to some alternative approaches.
+<U+25CF> Reply: We have rephrased the abstract and the conclusions to address
+the reviewer’s comments:
+In the abstract: <U+200B>“[...] We conclude by assessing the contribution of each
+algorithmic component on the performance of the underlying evolutionary
+algorithm.”
+In the conclusions: <U+200B>“[...] To conclude, we showed that each of the main
+algorithmic components of odNEAT contributes to the algorithm's performance.”
+Minor requests:
+- the link to the source code is missing
+<U+25CF> Reply: <U+200B>The source code of the experiments is available on Dryad, see the
+Data accessibility section of the article (emphasis added):
+“Data accessibility. The raw onboard logs from our experiments and source
+code are available online on Dryad Digital Repository
+(<U+200B>doi:10.5061/dryad.b3k4p<U+200B>).”
+Please note that the link above will only become available once the article is
+published. Prior to publication, <U+200B>journal editors and reviewers should access
+the Dryad submission using the following temporary url:
+http://datadryad.org/review?doi=doi:10.5061/dryad.s8t8p (as indicated by
+Dryad).
+- I did not find the parameters of odNEAT (in particular, the number of robots and all
+the NEAT parameters)
+<U+25CF> Reply: <U+200B>The number of robots in listed in the introduction and in the
+experiments section. In the supplementary material, we have added a new
+section called “Configuration of odNEAT” that includes the main parameters of
+odNEAT. The parameters can additionally be found in the source code.
+- In the supplementaries, the authors should not use means (table S1) but medians,
+to be consistent with the Mann-Whitney test and the boxplots.
+<U+25CF> Reply: <U+200B>We have added a new column to Table S1 in which we report the
+median performance of controllers when transferred from simulation to real
+robots.
+- Fig S1(A) and S1(B) have inconsistent colors
+<U+25CF> Reply: <U+200B>We have changed the colours in Fig S1(B) in order to be achieve
+consistency.
+Society Open

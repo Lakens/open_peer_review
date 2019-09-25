@@ -1,0 +1,853 @@
+An optimized approach for local de novo assembly of
+overlapping paired-end RAD reads from multiple individuals
+Yu-Long Li, Dong-Xiu Xue, Bai-Dong Zhang and Jin-Xian Liu
+Article citation details
+R. Soc. open sci. 5: 171589.
+http://dx.doi.org/10.1098/rsos.171589
+Review timeline
+Original submission: 10 October 2017 Note: Reports are unedited and appear as
+1st revised submission: 27 December 2017 submitted by the referee. The review history
+2nd revised submission: 19 January 2018 appears in chronological order.
+Final acceptance: 19 January 2018
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-171589.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Jue Ruan)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+The paper claimed "an optimized highly efficient approach for local de novo assembly of RAD
+reads". It is a good attempt to present a efficient way of 1) distinguishing heterozygotes and
+homologous, 2) assembling RAD contigs. However, I think there are missing proofs and
+comparisons of their new approach.
+Major:
+The clustering step was using STACKS with a mismatch value of 3, is this the optimal setting
+given the high polymorphisms of the species in this study and unknown polymorphic level of
+other applications. Should an adjustable value be more reasonable? The field has published
+several tools, such as RADtools, RaPiD, STACKS, rainbow, and pyRAD. The paper has not
+compared to any of the existing methods. The statement of "either the first reads for SNP calling
+and downstream population genetic analysis or only the second reads for contigs assembly the
+information for the other reads were wasted then" was incorrect. Most of the tools support
+paired-end RAD-seq reads.
+2, I am worried about the statement “optimized highly efficient approach” in title. No
+comparison on the accuracy of previous available methods. Also for the speed, by rough
+calculation, it took about 250 hours to assemble 180k RAD loci, while no information of the CPU
+time on clustering step using STACKS.
+Minor:
+The evaluation or BLAST annotation is hard to judge. The authors used zebrafish as a reference
+and 15.4% RAD contigs can be mapped. It is hard to tell whether this is good or not.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+3
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+See attached document. (Appendix A)
+label_end_comment
+Decision letter (RSOS-171589)
+05-Dec-2017
+Dear Dr Li,
+The editors assigned to your paper ("An optimized highly efficient approach for local de novo
+assembly of multiple individuals’ reads based on overlapping paired-end RAD sequencing")
+have now received comments from reviewers.
+Both reviewers see potential merits in the approach. However, they raise a considerable number
+of substantive concerns, including evaluation and comparison with existing approaches. It will be
+important for you to carefully address all of the reviewers points and suggestions. We would like
+you to revise your paper in accordance with the referee and Associate Editor suggestions which
+can be found below (not including confidential reports to the Editor). Please note this decision
+does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 28-Dec-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+4
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171589
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+5
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Michael Tobler (Associate Editor) and Steve Brown (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments:
+We have received two reviews for this manuscript. While both reviewers find merit in the paper,
+they also highlight serious problems and avenues for improvement, particularly in terms of
+writing and presentation, evaluation and comparison to existing approches to proof the advance
+of the new approach, and utilizing simulated datasets. I encourage the authors to thoroughly
+revise the manuscript following the reviewer recommendations.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+The paper claimed "an optimized highly efficient approach for local de novo assembly of RAD
+reads". It is a good attempt to present a efficient way of 1) distinguishing heterozygotes and
+homologous, 2) assembling RAD contigs. However, I think there are missing proofs and
+comparisons of their new approach.
+Major:
+The clustering step was using STACKS with a mismatch value of 3, is this the optimal setting
+given the high polymorphisms of the species in this study and unknown polymorphic level of
+other applications. Should an adjustable value be more reasonable? The field has published
+several tools, such as RADtools, RaPiD, STACKS, rainbow, and pyRAD. The paper has not
+compared to any of the existing methods. The statement of "either the first reads for SNP calling
+and downstream population genetic analysis or only the second reads for contigs assembly the
+information for the other reads were wasted then" was incorrect. Most of the tools support
+paired-end RAD-seq reads.
+2, I am worried about the statement “optimized highly efficient approach” in title. No
+comparison on the accuracy of previous available methods. Also for the speed, by rough
+calculation, it took about 250 hours to assemble 180k RAD loci, while no information of the CPU
+time on clustering step using STACKS.
+6
+Minor:
+The evaluation or BLAST annotation is hard to judge. The authors used zebrafish as a reference
+and 15.4% RAD contigs can be mapped. It is hard to tell whether this is good or not.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+See attached document.
+Author's Response to Decision Letter for (RSOS-171589)
+See Appendix B.
+label_version_2
+RSOS-171589.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Jue Ruan)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+The revised manuscript has sufficiently addressed my previous concerns. I am pretty happy to
+see the comparison and simulation work.
+A minor but, I am concerned with the population structure in its 12 simulations. If the SNPs are
+random across all individuals (otherwise the authors should address it out), one might except 2
+novel SNPs for each cutting loci in each individual when 125 bp tag-reads with heterozygosity of
+7
+0.02. It is much different in real population. From table 1, I saw two software ‘RADassembler’ and
+‘rainbow’ achieved the best with nearly the same evaluations but the huge difference of total
+cutting sites. I know the perfect simulation is very hard and lack of available tools, but the
+authors SHOULD at least point it out for readers to avoid misunderstandings.
+Another minor but, the authors should also provide both the wall time and CPU time when
+multiple-threads involved, it is the convention in computing method papers. Better to show RAM
+peak too.
+The authors should clearly check and correct the spelling and grammar errors in the manuscript.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_6
+The authors have addressed all reviewer comments and suggestions sufficiently and the revised
+manuscript is greatly improved. Below are a few minor comments:
+Line 208 - In the simulation study the authors state that "a sequencing error rate of 0.01 was
+randomly introduced". Is this 0.01% or 1%? My understanding is the commonly accepted error
+rate of a normal Illumina sequencer is approximately 0.1%.
+Line 262 - "Furthermore, the read pairs used for assembly were also mapped back to the
+assembled contigs by using BWA 0.7.15 [24] to check number of mapped reads and properly
+mapped read." It's not clear to me what this is doing. By "read pairs used for assembly" does this
+mean the raw reads? It _sounds_ like the raw reads were mapped to the final 'contigs' assembled
+by each program, but I can't understand what this would prove. It would make more sense to
+map the final assembled contigs back to the reference sequence. This would provide a nice metric
+of whether the programs are oversplitting or overlumping.
+Line 328 - "Thus, an expected coverage of 20,469,400bp RAD library with max insert size of 700bp
+8
+for each individual was generated, which covered approximately 1.52% of the genome." It's not
+clear where the 20,469,400bp value is coming from.
+Line 334 - If the max insert size of the simulated data was 700bp, I'm confused how the mean
+contig length of the RADassembler assembly would be 661bp.
+Line 341 - "Stacks and dDocent assembled many contigs with shorter length, which was not in
+accordance with the expected size of inserts (around 700bp)." Same comment as above, I actually
+would expect the mean insert size to be more like 300bp. I would also expect the length
+distribution to look much more like that of Stacks in figure 4, more even and variable, especially
+for the simulated data.
+Line 561 - "... by using consensus sequences as and data reduction techniques." This needs
+clarification.
+label_end_comment
+Decision letter (RSOS-171589.R1)
+12-Jan-2018
+Dear Dr Li:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171589.R1
+entitled "An optimized approach for local de novo assembly of overlapping paired-end RAD
+reads from multiple individuals" has been accepted for publication in Royal Society Open Science
+subject to minor revision in accordance with the referee suggestions. Please find the referees'
+comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171589.R1
+9
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 21-Jan-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+10
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Michael Tobler (Associate Editor) and Steve Brown (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Michael Tobler):
+The revised manuscript has been reassessed by the same reviewers. The manuscript is acceptable
+for publication upon minor revision, following the reviewers' recommendations.
+11
+Reviewer comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+The authors have addressed all reviewer comments and suggestions sufficiently and the revised
+manuscript is greatly improved. Below are a few minor comments:
+Line 208 - In the simulation study the authors state that "a sequencing error rate of 0.01 was
+randomly introduced". Is this 0.01% or 1%? My understanding is the commonly accepted error
+rate of a normal Illumina sequencer is approximately 0.1%.
+Line 262 - "Furthermore, the read pairs used for assembly were also mapped back to the
+assembled contigs by using BWA 0.7.15 [24] to check number of mapped reads and properly
+mapped read." It's not clear to me what this is doing. By "read pairs used for assembly" does this
+mean the raw reads? It _sounds_ like the raw reads were mapped to the final 'contigs' assembled
+by each program, but I can't understand what this would prove. It would make more sense to
+map the final assembled contigs back to the reference sequence. This would provide a nice metric
+of whether the programs are oversplitting or overlumping.
+Line 328 - "Thus, an expected coverage of 20,469,400bp RAD library with max insert size of 700bp
+for each individual was generated, which covered approximately 1.52% of the genome." It's not
+clear where the 20,469,400bp value is coming from.
+Line 334 - If the max insert size of the simulated data was 700bp, I'm confused how the mean
+contig length of the RADassembler assembly would be 661bp.
+Line 341 - "Stacks and dDocent assembled many contigs with shorter length, which was not in
+accordance with the expected size of inserts (around 700bp)." Same comment as above, I actually
+would expect the mean insert size to be more like 300bp. I would also expect the length
+distribution to look much more like that of Stacks in figure 4, more even and variable, especially
+for the simulated data.
+Line 561 - "... by using consensus sequences as and data reduction techniques." This needs
+clarification.
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+The revised manuscript has sufficiently addressed my previous concerns. I am pretty happy to
+see the comparison and simulation work.
+A minor but, I am concerned with the population structure in its 12 simulations. If the SNPs are
+random across all individuals (otherwise the authors should address it out), one might except 2
+novel SNPs for each cutting loci in each individual when 125 bp tag-reads with heterozygosity of
+0.02. It is much different in real population. From table 1, I saw two software ‘RADassembler’ and
+‘rainbow’ achieved the best with nearly the same evaluations but the huge difference of total
+cutting sites. I know the perfect simulation is very hard and lack of available tools, but the
+authors SHOULD at least point it out for readers to avoid misunderstandings.
+12
+Another minor but, the authors should also provide both the wall time and CPU time when
+multiple-threads involved, it is the convention in computing method papers. Better to show RAM
+peak too.
+The authors should clearly check and correct the spelling and grammar errors in the manuscript.
+Author's Response to Decision Letter for (RSOS-171589.R1)
+See Appendix C.
+label_end_comment
+Decision letter (RSOS-171589.R2)
+19-Jan-2018
+Dear Dr Li,
+I am pleased to inform you that your manuscript entitled "An optimized approach for local de
+novo assembly of overlapping paired-end RAD reads from multiple individuals" is now accepted
+for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+13
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Steve Brown (Subject Editor)
+openscience@royalsociety.org
+pendix A
+<U+200B>optimized<U+200B> <U+200B>highly<U+200B> <U+200B>efficient<U+200B> <U+200B>approach<U+200B> <U+200B>for<U+200B> <U+200B>local<U+200B> <U+200B>de<U+200B> <U+200B>novo<U+200B> <U+200B>assembly<U+200B> <U+200B>of<U+200B> <U+200B>multiple<U+200B> <U+200B>individuals’<U+200B> <U+200B>reads
+ed<U+200B> <U+200B>on<U+200B> <U+200B>overlapping<U+200B> <U+200B>paired-end<U+200B> <U+200B>RAD<U+200B> <U+200B>sequencing.
+<U+200B> <U+200B>authors<U+200B> <U+200B>describe<U+200B> <U+200B>a<U+200B> <U+200B>method<U+200B> <U+200B>for<U+200B> <U+200B>assembling<U+200B> <U+200B>paired<U+200B> <U+200B>end<U+200B> <U+200B>(PE)<U+200B> <U+200B>RAD<U+200B> <U+200B>data.<U+200B> <U+200B>PE<U+200B> <U+200B>RAD<U+200B> <U+200B>from<U+200B> <U+200B>the
+inal<U+200B> <U+200B>RAD<U+200B> <U+200B>protocol<U+200B> <U+200B>(Baird<U+200B> <U+200B>et<U+200B> <U+200B>al<U+200B> <U+200B>2008)<U+200B> <U+200B>is<U+200B> <U+200B>notoriously<U+200B> <U+200B>difficult<U+200B> <U+200B>to<U+200B> <U+200B>assemble.<U+200B> <U+200B>Because<U+200B> <U+200B>of<U+200B> <U+200B>the
+ication<U+200B> <U+200B>and<U+200B> <U+200B>size<U+200B> <U+200B>selection<U+200B> <U+200B>steps<U+200B> <U+200B>the<U+200B> <U+200B>second<U+200B> <U+200B>read<U+200B> <U+200B>(R2)<U+200B> <U+200B>of<U+200B> <U+200B>each<U+200B> <U+200B>read<U+200B> <U+200B>pair<U+200B> <U+200B>can<U+200B> <U+200B>fall<U+200B> <U+200B>at<U+200B> <U+200B>different
+ations,<U+200B> <U+200B>complicating<U+200B> <U+200B>the<U+200B> <U+200B>alignment.<U+200B> <U+200B>The<U+200B> <U+200B>authors<U+200B> <U+200B>describe<U+200B> <U+200B>a<U+200B> <U+200B>two<U+200B> <U+200B>step<U+200B> <U+200B>protocol<U+200B> <U+200B>for<U+200B> <U+200B>assembling
+<U+200B> <U+200B>type<U+200B> <U+200B>of<U+200B> <U+200B>data.<U+200B> <U+200B>First<U+200B> <U+200B>they<U+200B> <U+200B>independently<U+200B> <U+200B>assemble<U+200B> <U+200B>read<U+200B> <U+200B>1<U+200B> <U+200B>(R1)<U+200B> <U+200B>and<U+200B> <U+200B>R2,<U+200B> <U+200B>and<U+200B> <U+200B>then<U+200B> <U+200B>merge<U+200B> <U+200B>R1
+<U+200B> <U+200B>R2<U+200B> <U+200B>contigs.<U+200B> <U+200B>Next<U+200B> <U+200B>they<U+200B> <U+200B>perform<U+200B> <U+200B>an<U+200B> <U+200B>assembly<U+200B> <U+200B>of<U+200B> <U+200B>these<U+200B> <U+200B>merged<U+200B> <U+200B>contigs.<U+200B> <U+200B>Additionally,<U+200B> <U+200B>the
+hors<U+200B> <U+200B>do<U+200B> <U+200B>some<U+200B> <U+200B>performance<U+200B> <U+200B>evaluation<U+200B> <U+200B>of<U+200B> <U+200B>two<U+200B> <U+200B>different<U+200B> <U+200B>de<U+200B> <U+200B>novo<U+200B> <U+200B>assembly<U+200B> <U+200B>methods.
+neral<U+200B> <U+200B>Comments:
+1. The<U+200B> <U+200B>manuscript<U+200B> <U+200B>is<U+200B> <U+200B>not<U+200B> <U+200B>well<U+200B> <U+200B>written.<U+200B> <U+200B>The<U+200B> <U+200B>description<U+200B> <U+200B>of<U+200B> <U+200B>the<U+200B> <U+200B>methods<U+200B> <U+200B>lacks<U+200B> <U+200B>precision,<U+200B> <U+200B>and
+the<U+200B> <U+200B>results<U+200B> <U+200B>are<U+200B> <U+200B>difficult<U+200B> <U+200B>to<U+200B> <U+200B>interpret.<U+200B> <U+200B>Specifically<U+200B> <U+200B>the<U+200B> <U+200B>details<U+200B> <U+200B>of<U+200B> <U+200B>the<U+200B> <U+200B>two-step<U+200B> <U+200B>assembly
+method<U+200B> <U+200B>are<U+200B> <U+200B>very<U+200B> <U+200B>unclear<U+200B> <U+200B>(described<U+200B> <U+200B>in<U+200B> <U+200B>the<U+200B> <U+200B>Methods<U+200B> <U+200B>section`De<U+200B> <U+200B>novo<U+200B> <U+200B>assembly<U+200B> <U+200B>of<U+200B> <U+200B>RAD
+reference`,<U+200B> <U+200B>and<U+200B> <U+200B>illustrated<U+200B> <U+200B>in<U+200B> <U+200B>Figure<U+200B> <U+200B>1).<U+200B> <U+200B>Additionally,<U+200B> <U+200B>there<U+200B> <U+200B>are<U+200B> <U+200B>significant<U+200B> <U+200B>problems<U+200B> <U+200B>with
+grammar<U+200B> <U+200B>and<U+200B> <U+200B>usage<U+200B> <U+200B>of<U+200B> <U+200B>technical<U+200B> <U+200B>terminology.<U+200B> <U+200B>I<U+200B> <U+200B>have<U+200B> <U+200B>not<U+200B> <U+200B>undertaken<U+200B> <U+200B>to<U+200B> <U+200B>make
+suggestions<U+200B> <U+200B>for<U+200B> <U+200B>fixing<U+200B> <U+200B>any<U+200B> <U+200B>of<U+200B> <U+200B>these<U+200B> <U+200B>because<U+200B> <U+200B>they<U+200B> <U+200B>are<U+200B> <U+200B>too<U+200B> <U+200B>numerous,<U+200B> <U+200B>rather<U+200B> <U+200B>I<U+200B> <U+200B>note<U+200B> <U+200B>this<U+200B> <U+200B>is<U+200B> <U+200B>a
+general<U+200B> <U+200B>pattern<U+200B> <U+200B>here<U+200B> <U+200B>and<U+200B> <U+200B>suggest<U+200B> <U+200B>it<U+200B> <U+200B>should<U+200B> <U+200B>be<U+200B> <U+200B>addressed<U+200B> <U+200B>before<U+200B> <U+200B>publication.
+2. Puritz<U+200B> <U+200B>et<U+200B> <U+200B>al<U+200B> <U+200B>(2014)<U+200B> <U+200B>introduced<U+200B> <U+200B>a<U+200B> <U+200B>very<U+200B> <U+200B>similar<U+200B> <U+200B>strategy<U+200B> <U+200B>for<U+200B> <U+200B>assembling<U+200B> <U+200B>PE<U+200B> <U+200B>RAD<U+200B> <U+200B>data<U+200B> <U+200B>in<U+200B> <U+200B>their
+dDocent<U+200B> <U+200B>software<U+200B> <U+200B>pipeline.<U+200B> <U+200B>dDocent<U+200B> <U+200B>uses<U+200B> <U+200B>different<U+200B> <U+200B>tools<U+200B> <U+200B>internally,<U+200B> <U+200B>but<U+200B> <U+200B>the<U+200B> <U+200B>two<U+200B> <U+200B>stage
+process<U+200B> <U+200B>is<U+200B> <U+200B>extremely<U+200B> <U+200B>similar.<U+200B> <U+200B>The<U+200B> <U+200B>authors<U+200B> <U+200B>should<U+200B> <U+200B>cite<U+200B> <U+200B>Puritz<U+200B> <U+200B>et<U+200B> <U+200B>al<U+200B> <U+200B>(2014),<U+200B> <U+200B>clearly
+differentiate<U+200B> <U+200B>their<U+200B> <U+200B>method<U+200B> <U+200B>from<U+200B> <U+200B>that<U+200B> <U+200B>of<U+200B> <U+200B>Puritz<U+200B> <U+200B>et<U+200B> <U+200B>al<U+200B> <U+200B>(2014),<U+200B> <U+200B>and<U+200B> <U+200B>should<U+200B> <U+200B>compare
+assemblies<U+200B> <U+200B>between<U+200B> <U+200B>the<U+200B> <U+200B>two<U+200B> <U+200B>methods.
+3. Introduction:<U+200B> <U+200B>It's<U+200B> <U+200B>not<U+200B> <U+200B>clear<U+200B> <U+200B>that<U+200B> <U+200B>authors<U+200B> <U+200B>are<U+200B> <U+200B>referring<U+200B> <U+200B>specifically<U+200B> <U+200B>to<U+200B> <U+200B>the<U+200B> <U+200B>difficulty<U+200B> <U+200B>of
+assembling<U+200B> <U+200B>paired<U+200B> <U+200B>end<U+200B> <U+200B>(PE)<U+200B> <U+200B>sequencing<U+200B> <U+200B>of<U+200B> <U+200B>the<U+200B> <U+200B>original<U+200B> <U+200B>RAD<U+200B> <U+200B>protocol<U+200B> <U+200B>(Baird<U+200B> <U+200B>2008).<U+200B> <U+200B>I<U+200B> <U+200B>think
+it's<U+200B> <U+200B>critical<U+200B> <U+200B>to<U+200B> <U+200B>mention<U+200B> <U+200B>ddRAD<U+200B> <U+200B>and<U+200B> <U+200B>why<U+200B> <U+200B>PE<U+200B> <U+200B>ddRAD<U+200B> <U+200B>is<U+200B> <U+200B>much<U+200B> <U+200B>easier<U+200B> <U+200B>to<U+200B> <U+200B>assemble,<U+200B> <U+200B>and<U+200B> <U+200B>also
+to<U+200B> <U+200B>be<U+200B> <U+200B>more<U+200B> <U+200B>explicit<U+200B> <U+200B>about<U+200B> <U+200B>why<U+200B> <U+200B>PE<U+200B> <U+200B>RAD<U+200B> <U+200B>is<U+200B> <U+200B>difficult<U+200B> <U+200B>(R2<U+200B> <U+200B>is<U+200B> <U+200B>staggered<U+200B> <U+200B>because<U+200B> <U+200B>of<U+200B> <U+200B>sonication
+and<U+200B> <U+200B>size<U+200B> <U+200B>selection).
+4. The<U+200B> <U+200B>authors<U+200B> <U+200B>should<U+200B> <U+200B>explicitly<U+200B> <U+200B>define<U+200B> <U+200B>what<U+200B> <U+200B>they<U+200B> <U+200B>mean<U+200B> <U+200B>by<U+200B> <U+200B>"contig"<U+200B> <U+200B>and<U+200B> <U+200B>"locus".<U+200B> <U+200B>In<U+200B> <U+200B>my<U+200B> <U+200B>mind
+a<U+200B> <U+200B>contig<U+200B> <U+200B>is<U+200B> <U+200B>a<U+200B> <U+200B>gapless<U+200B> <U+200B>sequence<U+200B> <U+200B>of<U+200B> <U+200B>assembled<U+200B> <U+200B>reads.<U+200B> <U+200B>In<U+200B> <U+200B>the<U+200B> <U+200B>context<U+200B> <U+200B>of<U+200B> <U+200B>RAD<U+200B> <U+200B>data<U+200B> <U+200B>a<U+200B> <U+200B>"locus"
+normally<U+200B> <U+200B>refers<U+200B> <U+200B>to<U+200B> <U+200B>the<U+200B> <U+200B>unique<U+200B> <U+200B>genomic<U+200B> <U+200B>position<U+200B> <U+200B>from<U+200B> <U+200B>which<U+200B> <U+200B>a<U+200B> <U+200B>cluster<U+200B> <U+200B>of<U+200B> <U+200B>of<U+200B> <U+200B>RAD<U+200B> <U+200B>reads<U+200B> <U+200B>are
+obtained.<U+200B> <U+200B>For<U+200B> <U+200B>an<U+200B> <U+200B>example<U+200B> <U+200B>of<U+200B> <U+200B>how<U+200B> <U+200B>this<U+200B> <U+200B>interferes<U+200B> <U+200B>with<U+200B> <U+200B>understanding<U+200B> <U+200B>see<U+200B> <U+200B>Line<U+200B> <U+200B>74
+"...quality<U+200B> <U+200B>of<U+200B> <U+200B>RAD<U+200B> <U+200B>assembly<U+200B> <U+200B>should<U+200B> <U+200B>not<U+200B> <U+200B>merely<U+200B> <U+200B>rely<U+200B> <U+200B>on<U+200B> <U+200B>the<U+200B> <U+200B>length<U+200B> <U+200B>or<U+200B> <U+200B>the<U+200B> <U+200B>number<U+200B> <U+200B>of<U+200B> <U+200B>contigs
+per<U+200B> <U+200B>locus."<U+200B> <U+200B>Given<U+200B> <U+200B>my<U+200B> <U+200B>understanding<U+200B> <U+200B>of<U+200B> <U+200B>these<U+200B> <U+200B>terms,<U+200B> <U+200B>evaluating<U+200B> <U+200B>an<U+200B> <U+200B>assembly<U+200B> <U+200B>by<U+200B> <U+200B>counting
+"the<U+200B> <U+200B>number<U+200B> <U+200B>of<U+200B> <U+200B>contigs<U+200B> <U+200B>per<U+200B> <U+200B>locus"<U+200B> <U+200B>doesn't<U+200B> <U+200B>make<U+200B> <U+200B>sense.
+5. This<U+200B> <U+200B>is<U+200B> <U+200B>the<U+200B> <U+200B>kind<U+200B> <U+200B>of<U+200B> <U+200B>study<U+200B> <U+200B>that<U+200B> <U+200B>would<U+200B> <U+200B>greatly<U+200B> <U+200B>benefit<U+200B> <U+200B>from<U+200B> <U+200B>analysis<U+200B> <U+200B>of<U+200B> <U+200B>simulated<U+200B> <U+200B>data.<U+200B> <U+200B>I
+would<U+200B> <U+200B>recommend<U+200B> <U+200B>the<U+200B> <U+200B>authors<U+200B> <U+200B>simulate<U+200B> <U+200B>a<U+200B> <U+200B>PE<U+200B> <U+200B>RAD<U+200B> <U+200B>dataset<U+200B> <U+200B>under<U+200B> <U+200B>a<U+200B> <U+200B>known<U+200B> <U+200B>model<U+200B> <U+200B>of
+divergence<U+200B> <U+200B>and<U+200B> <U+200B>then<U+200B> <U+200B>analyze<U+200B> <U+200B>the<U+200B> <U+200B>results<U+200B> <U+200B>of<U+200B> <U+200B>an<U+200B> <U+200B>assembly<U+200B> <U+200B>using<U+200B> <U+200B>their<U+200B> <U+200B>two-step<U+200B> <U+200B>procedure.
+6. The<U+200B> <U+200B>results<U+200B> <U+200B>from<U+200B> <U+200B>the<U+200B> <U+200B>assessment<U+200B> <U+200B>of<U+200B> <U+200B>the<U+200B> <U+200B>different<U+200B> <U+200B>short<U+200B> <U+200B>read<U+200B> <U+200B>assemblers<U+200B> <U+200B>could<U+200B> <U+200B>be
+interesting<U+200B> <U+200B>and<U+200B> <U+200B>useful,<U+200B> <U+200B>but<U+200B> <U+200B>they<U+200B> <U+200B>simply<U+200B> <U+200B>do<U+200B> <U+200B>not<U+200B> <U+200B>go<U+200B> <U+200B>far<U+200B> <U+200B>enough.<U+200B> <U+200B>This<U+200B> <U+200B>paper<U+200B> <U+200B>is<U+200B> <U+200B>not<U+200B> <U+200B>really
+about<U+200B> <U+200B>comparing<U+200B> <U+200B>assemblers,<U+200B> <U+200B>it's<U+200B> <U+200B>about<U+200B> <U+200B>a<U+200B> <U+200B>specific<U+200B> <U+200B>method<U+200B> <U+200B>for<U+200B> <U+200B>assembling<U+200B> <U+200B>PE<U+200B> <U+200B>RAD<U+200B> <U+200B>data.
+In<U+200B> <U+200B>this<U+200B> <U+200B>context,<U+200B> <U+200B>the<U+200B> <U+200B>discussion<U+200B> <U+200B>about<U+200B> <U+200B>the<U+200B> <U+200B>strengths<U+200B> <U+200B>and<U+200B> <U+200B>weaknesses<U+200B> <U+200B>of<U+200B> <U+200B>VelvetOptimiser
+versus<U+200B> <U+200B>CAP3<U+200B> <U+200B>feels<U+200B> <U+200B>like<U+200B> <U+200B>a<U+200B> <U+200B>distraction,<U+200B> <U+200B>and<U+200B> <U+200B>the<U+200B> <U+200B>results<U+200B> <U+200B>will<U+200B> <U+200B>certainly<U+200B> <U+200B>fail<U+200B> <U+200B>to<U+200B> <U+200B>generalize<U+200B> <U+200B>to
+other<U+200B> <U+200B>assemblers.
+les<U+200B> <U+200B>and<U+200B> <U+200B>Figures<U+200B> <U+200B>Comments:
+Figure<U+200B> <U+200B>1<U+200B> <U+200B>-<U+200B> <U+200B>This<U+200B> <U+200B>figure<U+200B> <U+200B>is<U+200B> <U+200B>confusing.<U+200B> <U+200B>It<U+200B> <U+200B>appears<U+200B> <U+200B>to<U+200B> <U+200B>represent<U+200B> <U+200B>assembly<U+200B> <U+200B>of<U+200B> <U+200B>two<U+200B> <U+200B>different<U+200B> <U+200B>loci
+d<U+200B> <U+200B>and<U+200B> <U+200B>blue).<U+200B> <U+200B>This<U+200B> <U+200B>figure<U+200B> <U+200B>should<U+200B> <U+200B>just<U+200B> <U+200B>illustrate<U+200B> <U+200B>the<U+200B> <U+200B>assembly<U+200B> <U+200B>process<U+200B> <U+200B>at<U+200B> <U+200B>one<U+200B> <U+200B>locus.<U+200B> <U+200B>Figure<U+200B> <U+200B>1A
+uld<U+200B> <U+200B>also<U+200B> <U+200B>have<U+200B> <U+200B>the<U+200B> <U+200B>steps<U+200B> <U+200B>illustrated<U+200B> <U+200B>in<U+200B> <U+200B>order.<U+200B> <U+200B>As<U+200B> <U+200B>it<U+200B> <U+200B>is<U+200B> <U+200B>the<U+200B> <U+200B>order<U+200B> <U+200B>of<U+200B> <U+200B>steps<U+200B> <U+200B>is<U+200B> <U+200B>implicitly<U+200B> <U+200B>left<U+200B> <U+200B>to<U+200B> <U+200B>right
+<U+200B> <U+200B>top<U+200B> <U+200B>to<U+200B> <U+200B>bottom,<U+200B> <U+200B>but<U+200B> <U+200B>it's<U+200B> <U+200B>not<U+200B> <U+200B>straightforward.
+Figure<U+200B> <U+200B>2<U+200B> <U+200B>-<U+200B> <U+200B>What<U+200B> <U+200B>is<U+200B> <U+200B>going<U+200B> <U+200B>on<U+200B> <U+200B>with<U+200B> <U+200B>the<U+200B> <U+200B>contig<U+200B> <U+200B>length<U+200B> <U+200B>histogram<U+200B> <U+200B>for<U+200B> <U+200B>O.<U+200B> <U+200B>c.<U+200B> <U+200B>lewesi<U+200B>?<U+200B> <U+200B>No<U+200B> <U+200B>mention
+his<U+200B> <U+200B>weird<U+200B> <U+200B>bimodal<U+200B> <U+200B>distribution<U+200B> <U+200B>in<U+200B> <U+200B>the<U+200B> <U+200B>main<U+200B> <U+200B>text.
+ecific<U+200B> <U+200B>Comments<U+200B> <U+200B>(Main<U+200B> <U+200B>Text):
+1. Line<U+200B> <U+200B>57<U+200B> <U+200B>-<U+200B> <U+200B> <U+200B>Be<U+200B> <U+200B>more<U+200B> <U+200B>specific<U+200B> <U+200B>about<U+200B> <U+200B>what<U+200B> <U+200B>exactly<U+200B> <U+200B>is<U+200B> <U+200B>a<U+200B> <U+200B>"RAD<U+200B> <U+200B>reference<U+200B> <U+200B>assembly".
+2. Line<U+200B> <U+200B>77<U+200B> <U+200B>-<U+200B> <U+200B>Authors<U+200B> <U+200B>should<U+200B> <U+200B>demonstrate<U+200B> <U+200B>that<U+200B> <U+200B>"few<U+200B> <U+200B>studies<U+200B> <U+200B>make<U+200B> <U+200B>full<U+200B> <U+200B>use<U+200B> <U+200B>of<U+200B> <U+200B>paired-end<U+200B> <U+200B>RAD
+data",<U+200B> <U+200B>not<U+200B> <U+200B>simply<U+200B> <U+200B>state<U+200B> <U+200B>this<U+200B> <U+200B>as<U+200B> <U+200B>a<U+200B> <U+200B>fact.
+3. Line<U+200B> <U+200B>147<U+200B> <U+200B>-<U+200B> <U+200B>N50<U+200B> <U+200B>is<U+200B> <U+200B>not<U+200B> <U+200B>commonly<U+200B> <U+200B>used<U+200B> <U+200B>to<U+200B> <U+200B>quantify<U+200B> <U+200B>the<U+200B> <U+200B>quality<U+200B> <U+200B>of<U+200B> <U+200B>RAD<U+200B> <U+200B>assemblies.<U+200B> <U+200B>In<U+200B> <U+200B>any
+RAD<U+200B> <U+200B>assembly<U+200B> <U+200B>the<U+200B> <U+200B>N50<U+200B> <U+200B>will<U+200B> <U+200B>approach<U+200B> <U+200B>the<U+200B> <U+200B>maximum<U+200B> <U+200B>insert<U+200B> <U+200B>size<U+200B> <U+200B>length,<U+200B> <U+200B>so<U+200B> <U+200B>I'm<U+200B> <U+200B>not<U+200B> <U+200B>sure<U+200B> <U+200B>it's
+really<U+200B> <U+200B>that<U+200B> <U+200B>informative.
+4. Line<U+200B> <U+200B>184<U+200B> <U+200B>-<U+200B> <U+200B>Define<U+200B> <U+200B>epsilon.
+5. Line<U+200B> <U+200B>248<U+200B> <U+200B>-<U+200B> <U+200B>It's<U+200B> <U+200B>not<U+200B> <U+200B>clear<U+200B> <U+200B>which<U+200B> <U+200B>assembly<U+200B> <U+200B>is<U+200B> <U+200B>being<U+200B> <U+200B>analyzed.<U+200B> <U+200B>I<U+200B> <U+200B>assume<U+200B> <U+200B>this<U+200B> <U+200B>is<U+200B> <U+200B>the<U+200B> <U+200B>two-step
+assembly<U+200B> <U+200B>of<U+200B> <U+200B>the<U+200B> <U+200B>T.<U+200B> <U+200B>fasciatus<U+200B> <U+200B>dataset<U+200B> <U+200B>using<U+200B> <U+200B>parameter<U+200B> <U+200B>set<U+200B> <U+200B>C,<U+200B> <U+200B>but<U+200B> <U+200B>I<U+200B> <U+200B>shouldn't<U+200B> <U+200B>have<U+200B> <U+200B>to
+guess.<U+200B> <U+200B>This<U+200B> <U+200B>isn't<U+200B> <U+200B>explicitly<U+200B> <U+200B>mentioned<U+200B> <U+200B>in<U+200B> <U+200B>the<U+200B> <U+200B>methods.<U+200B> <U+200B>Also,<U+200B> <U+200B>I'm<U+200B> <U+200B>not<U+200B> <U+200B>clear<U+200B> <U+200B>on<U+200B> <U+200B>why<U+200B> <U+200B>the
+authors<U+200B> <U+200B>perform<U+200B> <U+200B>the<U+200B> <U+200B>assembly<U+200B> <U+200B>of<U+200B> <U+200B>the<U+200B> <U+200B>other<U+200B> <U+200B>three<U+200B> <U+200B>species,<U+200B> <U+200B>but<U+200B> <U+200B>do<U+200B> <U+200B>not<U+200B> <U+200B>do<U+200B> <U+200B>perform
+genotyping<U+200B> <U+200B>or<U+200B> <U+200B>population<U+200B> <U+200B>analysis.
+Appendix B
+Response to Reviewer 1:
+Comments: The clustering step was using STACKS with a mismatch value of 3, is this
+the optimal setting given the high polymorphisms of the species in this study and
+unknown polymorphic level of other applications. Should an adjustable value be more
+reasonable?
+Response:
+Ilut et al. (2014) presented a protocol for selecting the optimal similarity thresholds for
+the de novo clustering. We have added this protocol in our approach as implemented in
+RADassembler. RADassembler will select the similarity threshold that maximized the
+number of clusters with two haplotypes and simultaneously minimized the number of
+clusters with one haplotype. Besides, RADassembler also implements a novel method
+to identify the optimal similarity threshold across individuals. RADassembler can now
+efficiently identify the optimal threshold within and across individuals without prior
+knowledge of heterozygosity. Please check the revised manuscript (methods section)
+for details. The mismatch values can be chosen by users.
+Comments: The field has published several tools, such as RADtools, RaPiD, STACKS,
+rainbow, and pyRAD. The paper has not compared to any of the existing methods.
+Response:
+We have added the evaluation and comparison of RADassembler to three other popular
+tools supporting RPE reads, including the stable version of Stacks, Rainbow, and
+dDocent. A set of assessment criteria were used, including the mapping rate of the
+assembled contigs to the reference genome, the proper mapping rate of read pairs to the
+assembled contigs, and the distribution of contigs length, etc.. Both the results based on
+simulation and real datasets suggested the better performance of our approach to the
+other three tools. Please check details in methods and results in the revised manuscript.
+Comments: The statement of "either the first reads for SNP calling and downstream
+population genetic analysis or only the second reads for contigs assembly the
+information for the other reads were wasted then" was incorrect. Most of the tools
+support paired-end RAD-seq reads.
+Response:
+Thanks for the suggestions, yes, most of the tools support PE RAD reads, such as
+pyRAD, Stacks, Rainbow. But many of them can not directly support the RPE reads
+with random shared ends, such as Stacks, pyRAD, RADtools. We have clarified this in
+the revised manuscript.
+Comments: I am worried about the statement “optimized highly efficient approach” in
+title. No comparison on the accuracy of previous available methods. Also for the speed,
+by rough calculation, it took about 250 hours to assemble 180k RAD loci, while no
+information of the CPU time on clustering step using STACKS.
+Response:
+We have added the comparison of ours to other tools by using both simulation and real
+datasets. By mapping the assembled contigs to the reference genome, as well as
+mapping the read pairs to the assembled contigs, both the results suggested the high
+accuracy and quality of our approach compared to other tools. On time efficiency,
+RADassembler uses data reduction and parallelization techniques to efficiently reduce
+the running time. In addition, we have also added the comparison of running time
+(including the time for clustering) of RADassembler to other tools. Using both
+simulation and real datasets, RADassembler was much faster than the original Stacks
+and Rainbow, though dDocent was the fastest one of the four tools because of its data
+reduction strategy. Please check the supporting information for details.
+Comments:
+Minor:
+The evaluation or BLAST annotation is hard to judge. The authors used zebrafish as a
+reference and 15.4% RAD contigs can be mapped. It is hard to tell whether this is good
+or not.
+Response:
+Thanks for the advice, this part has been deleted from the revised manuscript.
+Response to Reviewer 2:
+Comments: The manuscript is not well written. The description of the methods lacks
+precision, and the results are difficult to interpret. Specifically the details of the two-
+step assembly method are very unclear (described in the Methods section ’De novo
+assembly of RAD reference’, and illustrated in Figure 1). Additionally, there are
+significant problems with grammar and usage of technical terminology. I have not
+undertaken to make suggestions for fixing any of these because they are too numerous,
+rather I note this is a general pattern here and suggest it should be addressed before
+publication.
+Response:
+Thanks for the suggestions. We have thoroughly revised the manuscript, especially for
+the description of the methods and results. We have now explicitly clarified our
+approach, and fixed problems with grammar and usage of technical terminology as
+much as possible. The descriptions of methods and the interpretation of the results are
+much clear and easy to follow now, please check the revised manuscript for details.
+Comments: Puritz et al (2014) introduced a very similar strategy for assembling PE
+RAD data in their dDocent software pipeline. dDocent uses different tools internally,
+but the two stage process is extremely similar. The authors should cite Puritz et al
+(2014), clearly differentiate their method from that of Puritz et al (2014), and should
+compare assemblies between the two methods.
+Response:
+dDocent is an excellent pipeline software, which supports most types of the RAD
+datasets. But the assembly of dDocent is quite different with ours as implemented in
+RADassembler. dDocent was originally designed and optimized for flRAD datasets (e.g.
+ddRAD), its current version has already supported RPE (original RAD) datasets. At the
+first step of assembly, dDocent uses the concatenated PE reads (only the first reads were
+used for RPE) to count the occurrences of unique reads, then users can choose a cut-off
+level of coverage for reads to be used for assembly. The choosing for a cut-off of unique
+reads within individuals is similar to that in ustacks (minimum depth of coverage
+required to create a stack) of Stacks. The remaining concatenated reads are then divided
+back into read pairs, clustered, and locally assembled by Rainbow (in the current
+version of dDocent, CD-HIT is used for clustering). Rainbow will use both the
+forward and reverse reads simultaneously for the local de novo assembly of each
+locus. Finally, the assembled contigs are clustered based on the overall sequence
+similarity using CD-HIT. By contrast, RADassembler only uses the second reads of
+each locus for local assembly in its first assembly step. The assembled contigs for the
+second reads are then merged (either assembled or padded by ten ‘N’) with the
+corresponded consensus sequences. In addition, by using data of multiple individuals,
+RADassembler can assemble a more comprehensive information for a full de novo
+assembly of RAD loci, while the output reference contigs of dDocent represent only a
+subset of the total input reads.
+We have cited Puritz et al (2014), and compared our tool with dDocent, Rainbow and
+Stacks, clearly explained and compared the performance of theses tools in the revised
+manuscript. Please check details in the revised manuscript.
+Comments: Introduction: It's not clear that authors are referring specifically to the
+difficulty of assembling paired end (PE) sequencing of the original RAD protocol
+(Baird 2008). I think it's critical to mention ddRAD and why PE ddRAD is much easier
+to assemble, and also to be more explicit about why PE RAD is difficult (R2 is
+staggered because of sonication and size selection).
+Response:
+Thanks for the advice, we have revised the introduction accordingly, compared PE
+ddRAD with RPE datasets carefully following the suggestions.
+Comments: The authors should explicitly define what they mean by "contig" and
+"locus". In my mind a contig is a gapless sequence of assembled reads. In the context
+of RAD data a "locus"normally refers to the unique genomic position from which a
+cluster of of RAD reads are obtained. For an example of how this interferes with
+understanding see Line 74 "...quality of RAD assembly should not merely rely on the
+length or the number of contigs per locus." Given my understanding of these terms,
+evaluating an assembly by counting "the number of contigs per locus" doesn't make
+sense.
+Response:
+Thanks for the valuable suggestions. The forward reads should overlap with the contigs
+assembled by the reverse reads using overlapping RPE reads under ideal situations, thus
+a locus will assemble into one contig. But in practice, reads for some locus do not
+overlap due to stochastic factors. Moreover, the reverse reads with randomly shared
+ends might be assembled into split contigs due to repeats, indels in the genome or other
+stochastic situations. Thus some loci might assemble into two or more sequences in
+practice. This results can be used to check if the overlapping RPE strategy is successful
+and evaluate if the assembly is well enough, as used by Hohenlohe et al. (2013). In the
+previous version of RADassembler, all the contigs were retained, but this was changed
+in the updated version. If the consensus sequences of the forward reads did not overlap
+with the contigs of the reverse reads, then ten ‘N’ were padded between the forward
+consensus sequences with the (longest) contig. For straightforward purpose, the
+evaluation of one contigs for one locus was removed in the revised manuscript.
+Comments: This is the kind of study that would greatly benefit from analysis of
+simulated data. I would recommend the authors simulate a PE RAD dataset under a
+known model of divergence and then analyze the results of an assembly using their two-
+step procedure.
+Response:
+Thanks for the suggestions. As the editor suggested, simulations datasets have been
+added in the revised manuscript. We have also compared the assembly performance of
+RADassembler with other tools supporting RPE reads, including the stable version of
+Stacks, Rainbow, and dDocent. Both the results based on simulation and real datasets
+indicated the outperformance of RADassembler to other tools.
+Comments: The results from the assessment of the different short read assemblers could be
+interesting and useful, but they simply do not go far enough. This paper is not really about
+comparing assemblers, it's about a specific method for assembling PE RAD data. In this context,
+the discussion about the strengths and weaknesses of VelvetOptimiser versus CAP3 feels like
+a distraction, and the results will certainly fail to generalize to other assemblers.
+Response:
+Thanks for the suggestions. We have added more information about comparison of
+different tools with ours in the discussion section, clearly clarified the differences and
+similarities among them. Both OLC based assemblers CAP3 (used in RADassembler)
+and Rainbow assembled the correct size of contigs using both simulation and real
+datasets, suggested its advantage over DBG based assemblers for RPE reads. It might
+be attributed to the fact that the huge difference of depth between the two reads of RPE,
+and the differences of OLC and DBG based assemblers, as discussed in the previous
+and revised manuscript.
+Comments: Figure 1 - This figure is confusing. It appears to represent assembly of two
+different loci (red and blue). This figure should just illustrate the assembly process at
+one locus. Figure 1A should also have the steps illustrated in order. As it is the order of
+steps is implicitly left to right and top to bottom, but it's not straightforward.
+Response:
+Figure 1 has been reformed, and the captions has been revised. We have explicitly
+explained the details of our approach in the figure and captions, including the addition
+of serial number for the order of two-step assembly steps. Different loci (red and blue)
+represent different situations. Locus in red represents that the assembled contig for the
+second (reverse) reads overlaps with the consensus sequences, while locus in blue does
+not overlap. Ten ‘N’ will be padded to concatenate the consensus sequences (forward
+reads) and the contig (reverse reads) for locus in blue.
+Comments: Figure 2 - What is going on with the contig length histogram for O. c. lewesi ?
+No mention of this weird bimodal distribution in the main text.
+Response:
+Datasets of O. c. lewesi were from Hohenlohe et al. (2013), there might be some special
+treatment for fragments selection during the libraries preparations. The datasets have been
+removed in the revised manuscript.
+Comments: Line 57 - Be more specific about what exactly is a "RAD reference assembly".
+Response:
+RAD reference assembly is a comprehensive information for de novo assembly of RAD loci.
+We have amended it in the revised manuscript.
+Comments: Line 77 - Authors should demonstrate that "few studies make full use of paired-
+end RAD data", not simply state this as a fact.
+Response:
+Thanks for the advice, we have amended it in the revised manuscript.
+Comments: Line 147 - N50 is not commonly used to quantify the quality of RAD
+assemblies. In any RAD assembly the N50 will approach the maximum insert size length, so
+I'm not sure it's really that informative.
+Response:
+Yes, N50 will approach the maximum insert size length under ideal situations. But in practice,
+N50 is still useful for the evaluation of different assemblers on RPE reads. As shown in our
+results, both Velvet and dDocent assembled shorter contigs (N50 is small) on simulation and
+real RPE reads (Figure 4 and Figure 5), which suggested the failure of assembling the correct
+contigs size.
+Comments: Line 184 - Define epsilon.
+Response:
+The section of SNP calling has been removed in the revised manuscript.
+Comments: Line 248 - It's not clear which assembly is being analyzed. I assume this
+is the two-step assembly of the T. fasciatus dataset using parameter set C, but I
+shouldn't have to guess. This isn't explicitly mentioned in the methods. Also, I'm not
+clear on why the authors perform the assembly of the other three species, but do not
+do perform genotyping or population analysis.
+Response:
+Parameters setting have been clearly explained in the revised manuscript. The revised
+manuscript is mainly focused on the comparison and evaluation of assembly for our
+approach (RADassembler) with other tools on both simulation and real RPE datasets.
+The methodology of RADassembler has been explicitly clarified in the method
+section. Please check the revised manuscript for details.
+Appendix C
+Response to Reviewer 1:
+Comments: A minor but, I am concerned with the population structure in its 12
+simulations. If the SNPs are random across all individuals (otherwise the authors should
+address it out), one might except 2 novel SNPs for each cutting loci in each individual
+when 125 bp tag-reads with heterozygosity of 0.02. It is much different in real
+population. From table 1, I saw two software ‘RADassembler’ and ‘rainbow’ achieved
+the best with nearly the same evaluations but the huge difference of total cutting sites.
+I know the perfect simulation is very hard and lack of available tools, but the authors
+SHOULD at least point it out for readers to avoid misunderstandings.
+Response:
+Thanks for the suggestions. SNPs for simulation datasets were randomly generated
+across all individuals, this might be the cause of the huge difference of total clusters
+between RADassembler and Rainbow. We have pointed it out in the revised manuscript.
+Comments: Another minor but, the authors should also provide both the wall time and
+CPU time when multiple-threads involved, it is the convention in computing method
+papers. Better to show RAM peak too.
+Response:
+Thanks for the suggestions. We have provided the wall time (real time), CPU time and
+system time in the supporting information. Because we did not record the RAM usage
+in all the calculations, these information were not presented.
+Response to Reviewer 2:
+Comments: Line 208 - In the simulation study the authors state that "a sequencing error
+rate of 0.01 was randomly introduced". Is this 0.01% or 1%? My understanding is the
+commonly accepted error rate of a normal Illumina sequencer is approximately 0.1%.
+Response:
+The sequencing error rate for the simulation dataset in our study was 1%. For Illumina,
+the 0.1% error rate (Q30) applies to > 85% of reads (Glenn 2011), and for Illumina
+HiSeq X System, =75% of bases are above Q30 at 2×150 bp (Illumina official datasheet,
+https://www.illumina.com/documents/products/datasheets/datasheet-hiseq-x-ten.pdf).
+So the overall error rate for all reads of a normal Illumina sequencer should be higher
+than 0.1%. Reports in the literature suggest that Illumina sequences produce errors at a
+rate of ~0.1-1×10-2 per base sequenced (Lou et al. 2013, Loman et al. 2012 and
+Meacham el al. 2011). The default values in the simulation software ‘wgsim’ as well as
+‘ezmsim’ are both 2%. An error rate of 1% was adopted in our study, which might be a
+high threshold value. However, compared to low error rate, a high error rate is more
+suitable for the comparisons of assembly performance on complicated datasets by
+different programs (approaches).
+Comments: Line 262 - "Furthermore, the read pairs used for assembly were also
+mapped back to the assembled contigs by using BWA 0.7.15 [24] to check number of
+mapped reads and properly mapped read." It's not clear to me what this is doing. By
+"read pairs used for assembly" does this mean the raw reads? It _sounds_ like the raw
+reads were mapped to the final 'contigs' assembled by each program, but I can't
+understand what this would prove. It would make more sense to map the final
+assembled contigs back to the reference sequence. This would provide a nice metric of
+whether the programs are oversplitting or overlumping.
+Response:
+The read pairs were mapped to the RAD contigs to check the properly mapped reads,
+which were those with the forward read and the reverse read mapped on the same contig
+and with right orientation as well as proper insert size. Most of the read pairs should be
+properly mapped if the assembled contigs were correct (e.g. correct contig bases and
+sizes for read pairs to place on), so this would provide a good metric for the evaluations
+of different programs, especially for de novo assembly, where a reference genome is
+not available.
+Comments: Line 328 - "Thus, an expected coverage of 20,469,400bp RAD library with
+max insert size of 700bp for each individual was generated, which covered
+approximately 1.52% of the genome." It's not clear where the 20,469,400bp value is
+coming from.
+Response:
+Using in silico digest, there were 29,242 cut sites in the genome. The simulator
+(‘ezmsim’) generated RAD libraries with max insert sizes of 700bp, and the program
+only generated tags from one direction. For each (most) RAD locus, the simulated data
+include inserts of all 11 sizes, which range from 200 bp to 700 bp with an elongation of
+50bp, so the actual coverage of each (most) RAD locus is 700bp. Therefore, the
+expected approximate coverage was 29,242 × 700bp = 20,469,400bp, this is how the
+value comes from, the same calculation can be also found in Chong et al. 2012.
+Comments: Line 334 - If the max insert size of the simulated data was 700bp, I'm
+confused how the mean contig length of the RADassembler assembly would be 661bp.
+Response:
+Under ideal conditions most of the RAD loci will be assembled into contigs of length
+700bp. However, the program might not always perform well in practice due to factors,
+such as sequence errors, polymorphisms, etc. Furthermore, there could be two cut sites
+within a 700bp region in the genome, which could result in simulated RAD loci with a
+coverage of less than 700bp. So there were short contigs in the assembled contigs and
+the mean contig length was a little shorter than 700bp.
+Comments: Line 341 - "Stacks and dDocent assembled many contigs with shorter
+length, which was not in accordance with the expected size of inserts (around 700bp)."
+Same comment as above, I actually would expect the mean insert size to be more like
+300bp. I would also expect the length distribution to look much more like that of Stacks
+in figure 4, more even and variable, especially for the simulated data.
+Response:
+For each RAD locus, we simulated a set of insert size libraries initiated from 200bp and
+elongation of 50bp each by 10 steps (i.e. 200bp, 250bp …till 700bp), so the insert sizes
+for a locus were variable, the maximum is 700bp. The assembler should assemble
+simulated reads of each RAD locus into a contig of the max insert size (700 bp) due to
+the overlapping features of different inserts (the read length is longer than 50bp) for
+each locus under ideal conditions. So the length distribution for the correctly assembled
+contigs should be around max insert size (700bp) for the simulation datasets.
+Comments: Line 561 - "... by using consensus sequences as and data reduction
+techniques." This needs clarification.
+Response:
+RADassembler uses data reduction techniques to help reduce the complexity of
+assembly, it uses the consensus sequences of the forward reads (rather than all the reads),
+and it will randomly select a maximum of 400 reverse reads (set by users) in its two-
+step assembly. We have clarified it in the revised manuscript.
+Society Open

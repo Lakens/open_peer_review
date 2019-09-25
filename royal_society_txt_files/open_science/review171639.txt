@@ -1,0 +1,1130 @@
+Modelling of retinal vasculature based on genetically tuned
+parametric L-system
+Seyed Mohammad Ali Aghamirmohammadali, Ramin Bozorgmehry Boozarjomehry and
+Mohammad Abdekhodaie
+Article citation details
+R. Soc. open sci. 5: 171639.
+http://dx.doi.org/10.1098/rsos.171639
+Review timeline
+Original submission: 27 October 2017 Note: Reports are unedited and appear as
+Revised submission: 7 February 2018 submitted by the referee. The review history
+Revised submission: 2 April 2018 appears in chronological order.
+Final acceptance: 3 April 2018
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-171639.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Ian McQuillan)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+Overall, the paper is very well-written. It was almost always easy to follow and understand,
+although there are some areas where more detail could be provided or the writing could be made
+clearer. There are no significant typos or grammatical errors that would affect a reader’s ability to
+understand the paper. In general, the logical flow is well done although I do find sometimes the
+authors present something and then explain it, which can be a bit confusing. The authors should
+consider re-ordering some of their explanations just so that it is clearer. The paper is scientifically
+valid. The research methodology is clearly expressed. The results are described qualitatively,
+which is a bit of weakness to the paper since there are well-known metrics for analyzing these
+results (the authors even mention them in the paper). The authors provide a few examples, but
+they claim to have analyzed over 100 images so some quantitative analysis would be better. The
+conclusions do match the results, although again with only a few examples provide, the
+conclusions are not particularly strong.
+I recommend this paper with minor revisions, but I think the authors would do themselves a
+great service by strengthening their results a quantitative analysis.
+The Introduction is excellent. It is well-written and establishes the authors work in the context of
+literature very well. Existing works are explained well and the authors cover most of the key
+works in pertaining to their research. There are two small areas for improvement: 1) the authors
+could expand slightly on why image data/modelling is useful by perhaps providing a concrete
+example, 2) the authors could provide some extra detail on how good are the existing approaches
+in a more concrete way, i.e. how accurate are existing approaches?
+Section 2 on L-systems is well-explained. Although very minor, the authors could expand slightly
+on the parametric elements for the parametric D0L-system, since some readers may not be
+familiar with it. Currently, the authors only state that there is a set of formal parameters. The
+example helps to illustrate but it could be explained in a bit more detail.
+Section 3 is well-done. Authors should expand on the parameters in their example so that it can
+be more easily understood by the reader.
+Section 4. I didn’t understand the paragraph from lines 43 to the next page line 15 where they are
+describing equation (5) very well without re-reading several times. It might be more helpful to re-
+order the explanation and describe the alphabet and such first.
+Section 4.1.1. Although I agree with the authors’ points in the next section on feature matching, it
+is not entirely clear why a pixel-by-pixel fitness function is inappropriate if the goal is to
+reproduce input imagery. Can the authors expand on this?
+Section 4.1.2 is well done. The authors do a good job of providing a motivation for feature
+matching.
+Section 4.1.3. I’m not sure what this means “Also, every graphical structure has an L-system
+representation in the format of one final parametric string.”
+3
+Authors should provide more detail Farooq et al. What did they find exactly?
+If [43] and [44] have an approach to this problem then why does the authors’ work need to exist?
+The authors should expand on the limitations of the existing works or provide some detail more
+detail on what their approach contributes to solving these problems.
+The text surrounding equation (6) is unclear. Why is it better to find a line of length 100 then the
+appropriate symbols to represent such a string? Four “F” symbols will produce a very different
+string when the re-writing rules are applied then a single “F”.
+“1, 2, and 3 are weight factors that should be defined properly for each case” How is this done on
+a case-by-case basis? What factors determine the different weights? How are the other thresholds
+determined as well?
+In equation (10), what are fa,b and fa,c?
+Section 5. With respect to the GA operators, did the authors have any specific reasons for their
+choices?
+“the worst individuals were removed based on roulette wheel selection scheme” sounds like a
+contradiction? Were the worst individuals removed or were population members removed based
+on a roulette wheel in proportion to their fitness? It sounds like the authors mean the latter.
+Section 6. For equation (13), it may not be clear to the reader where (24,15) come from, especially
+the 15 parameter. I see it is explained in the next sentence. The authors should consider re-
+ordering this.
+For equation (15) and (16), it is not clear how the authors constructed this candidate rules. How
+can they be certain that only the single “F” symbol could be an “A” instead?
+Section 7.
+“more than hundred fundus images” This could be 101 to many thousands. It might be better to
+be more specific.
+With respect to the results, do the L-systems presented re-create the entire image or just the
+highlighted areas in the figures? If they do not re-create the entire image, can the authors expand
+on how it can re-create the imagery? Would it be re-run for each branch?
+“It should be noted that in spite of the accuracy of the correlated functions at each growth cycle,
+they cannot be used for couple of consecutive growth cycle due to the error propagation and
+amplification. In other words, the obtained correlated functions should be used merely for the
+prediction purposes.” I’m not quite sure what this means. Can the authors clarify?
+Conclusion.
+In the conclusions, it seems that the authors’ main focus is on prediction of blood vessels. This
+did not really come through in the Introduction. It seemed that the authors intended to reproduce
+imagery. That being said, the conclusion that the authors can predict blood vessels matches very
+well with their results.
+Typos/Grammar/Misc:
+“delivery conditions in the circulatory system[9].” Missing space before [9].
+“the Axiom is going through” Axiom should be lowercase.
+4
+“Also, segmentation of overlaid branches with different origins will be possible more reliably.”
+Reliably should be reliable I think?
+“functions used in L-system Inverse problem modeling” Inverse should be lowercase.
+“functions used in L-system Inverse problem” Inverse should be lowercase.
+“L-system Grammar matching” Grammar should be lowercase.
+“applying rewriting rules on axiom as the” Maybe on an axiom or the axiom?
+, = 3.17
+(10)
+, = 1.62 Font sizes are different.
+Notes:
+“Also, a reliable vascular structure model is necessary to investigate hemodynamic parameters
+and drug delivery conditions in the circulatory system[9]. Image data is a useful tool to extract
+blood vessels morphological properties such as length, width, tortuosity, and branching pattern.
+Retinal fundus image is one of the most important data for diagnostic and treatment of diseases
+that change the morphological and functional characteristics of blood vessels [8]. This is due to
+the fact that retina is the only organ whose blood vessels can be visualized non-invasively
+and directly in vivo.” Should expand on this to provide more motivation, just some additional
+details/examples.
+“The results of image processing methods are generally in good agreement with source images.”
+More specific would be better. It would give the reader a sense of how good is the state-of-the-art.
+Is there a lot of room for improvement?
+“(37)[+(38)(16)[+(27)(11) + (14)(12) +
+(6)(19)[+(47)(19)][-(6)(17)]][-(14)(22) + (37)(19)[-(6)(12) +
+(34)(18) + (32)(14)][-(43)(24)]]][(37)[-(7)(8) + (43)(24)][-(14)(26)]]
+(3)” Authors should describe this in greater detail. What are the parameters? What do they
+represent?
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+5
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+In its current form, the main contribution of this work is devising a method to solve a particular
+instance of the L-system inverse problem. However, the accuracy of the method is not
+benchmarked against existing methods in the literature whether they are general or specific to
+vasculature. It is therefore difficult to assess the real impact of the work. Furthermore, the
+applicability of the method to identifying vascular conditions in the eye, as stated in the
+conclusions, is merely speculative. The idea of rule similarity comparison is interesting but it is
+not developed in any depth. The idea of predicting inaccessible vascular branches in Section 6.4 is
+also interesting but lacks any proper validation.
+Given the importance of equation (7) for the overall method, the authors should provide formal
+definitions of the g functions on the right-hand-side of the equation.
+Figure 7 compares graphically a target and a L-system simulated vascular tree. In page 18 line 44,
+the authors state that the structures are matched perfectly. This comparison should be
+quantitative to be meaningful. The same applies to Figure 10 in the Results section. Note how
+equation (7) could be used for this purpose.
+In terms of presentation, the paper reads too much like a tutorial. Section 2 introduces L-system
+to a level of detail that can be found in other references. Sections 3-6 should be rewritten together
+as a single presentation of the method. I do not see the need to take the reader through the step-
+by-step derivation of the method.
+label_end_comment
+Decision letter (RSOS-171639)
+15-Jan-2018
+Dear Professor Bozorgmehry Boozarjomehry,
+The editors assigned to your paper ("Modeling of retinal vasculature based on genetically tuned
+parametric L-system") have now received comments from reviewers. We would like you to
+revise your paper in accordance with the referee and Associate Editor suggestions which can be
+found below (not including confidential reports to the Editor). Please note this decision does not
+guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 07-Feb-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+6
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171639
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+7
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Francois Fages (Associate Editor) and R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments (Dr Francois Fages):
+Dear authors
+Your paper has been peer-reviewed and it appears that it is currently lacking quantitative results
+to justify the conclusions. Please take into account the enclosed reviews to prepare a major
+revision of your communication in order to include some quantitative evaluation of the merits of
+your method.
+Best regards
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Overall, the paper is very well-written. It was almost always easy to follow and understand,
+although there are some areas where more detail could be provided or the writing could be made
+clearer. There are no significant typos or grammatical errors that would affect a reader’s ability to
+understand the paper. In general, the logical flow is well done although I do find sometimes the
+8
+authors present something and then explain it, which can be a bit confusing. The authors should
+consider re-ordering some of their explanations just so that it is clearer. The paper is scientifically
+valid. The research methodology is clearly expressed. The results are described qualitatively,
+which is a bit of weakness to the paper since there are well-known metrics for analyzing these
+results (the authors even mention them in the paper). The authors provide a few examples, but
+they claim to have analyzed over 100 images so some quantitative analysis would be better. The
+conclusions do match the results, although again with only a few examples provide, the
+conclusions are not particularly strong.
+I recommend this paper with minor revisions, but I think the authors would do themselves a
+great service by strengthening their results a quantitative analysis.
+The Introduction is excellent. It is well-written and establishes the authors work in the context of
+literature very well. Existing works are explained well and the authors cover most of the key
+works in pertaining to their research. There are two small areas for improvement: 1) the authors
+could expand slightly on why image data/modelling is useful by perhaps providing a concrete
+example, 2) the authors could provide some extra detail on how good are the existing approaches
+in a more concrete way, i.e. how accurate are existing approaches?
+Section 2 on L-systems is well-explained. Although very minor, the authors could expand slightly
+on the parametric elements for the parametric D0L-system, since some readers may not be
+familiar with it. Currently, the authors only state that there is a set of formal parameters. The
+example helps to illustrate but it could be explained in a bit more detail.
+Section 3 is well-done. Authors should expand on the parameters in their example so that it can
+be more easily understood by the reader.
+Section 4. I didn’t understand the paragraph from lines 43 to the next page line 15 where they are
+describing equation (5) very well without re-reading several times. It might be more helpful to re-
+order the explanation and describe the alphabet and such first.
+Section 4.1.1. Although I agree with the authors’ points in the next section on feature matching, it
+is not entirely clear why a pixel-by-pixel fitness function is inappropriate if the goal is to
+reproduce input imagery. Can the authors expand on this?
+Section 4.1.2 is well done. The authors do a good job of providing a motivation for feature
+matching.
+Section 4.1.3. I’m not sure what this means “Also, every graphical structure has an L-system
+representation in the format of one final parametric string.”
+Authors should provide more detail Farooq et al. What did they find exactly?
+If [43] and [44] have an approach to this problem then why does the authors’ work need to exist?
+The authors should expand on the limitations of the existing works or provide some detail more
+detail on what their approach contributes to solving these problems.
+The text surrounding equation (6) is unclear. Why is it better to find a line of length 100 then the
+appropriate symbols to represent such a string? Four “F” symbols will produce a very different
+string when the re-writing rules are applied then a single “F”.
+“1, 2, and 3 are weight factors that should be defined properly for each case” How is this done on
+9
+a case-by-case basis? What factors determine the different weights? How are the other thresholds
+determined as well?
+In equation (10), what are fa,b and fa,c?
+Section 5. With respect to the GA operators, did the authors have any specific reasons for their
+choices?
+“the worst individuals were removed based on roulette wheel selection scheme” sounds like a
+contradiction? Were the worst individuals removed or were population members removed based
+on a roulette wheel in proportion to their fitness? It sounds like the authors mean the latter.
+Section 6. For equation (13), it may not be clear to the reader where (24,15) come from, especially
+the 15 parameter. I see it is explained in the next sentence. The authors should consider re-
+ordering this.
+For equation (15) and (16), it is not clear how the authors constructed this candidate rules. How
+can they be certain that only the single “F” symbol could be an “A” instead?
+Section 7.
+“more than hundred fundus images” This could be 101 to many thousands. It might be better to
+be more specific.
+With respect to the results, do the L-systems presented re-create the entire image or just the
+highlighted areas in the figures? If they do not re-create the entire image, can the authors expand
+on how it can re-create the imagery? Would it be re-run for each branch?
+“It should be noted that in spite of the accuracy of the correlated functions at each growth cycle,
+they cannot be used for couple of consecutive growth cycle due to the error propagation and
+amplification. In other words, the obtained correlated functions should be used merely for the
+prediction purposes.” I’m not quite sure what this means. Can the authors clarify?
+Conclusion.
+In the conclusions, it seems that the authors’ main focus is on prediction of blood vessels. This
+did not really come through in the Introduction. It seemed that the authors intended to reproduce
+imagery. That being said, the conclusion that the authors can predict blood vessels matches very
+well with their results.
+Typos/Grammar/Misc:
+“delivery conditions in the circulatory system[9].” Missing space before [9].
+“the Axiom is going through” Axiom should be lowercase.
+“Also, segmentation of overlaid branches with different origins will be possible more reliably.”
+Reliably should be reliable I think?
+“functions used in L-system Inverse problem modeling” Inverse should be lowercase.
+“functions used in L-system Inverse problem” Inverse should be lowercase.
+“L-system Grammar matching” Grammar should be lowercase.
+“applying rewriting rules on axiom as the” Maybe on an axiom or the axiom?
+10
+, = 3.17
+(10)
+, = 1.62 Font sizes are different.
+Notes:
+“Also, a reliable vascular structure model is necessary to investigate hemodynamic parameters
+and drug delivery conditions in the circulatory system[9]. Image data is a useful tool to extract
+blood vessels morphological properties such as length, width, tortuosity, and branching pattern.
+Retinal fundus image is one of the most important data for diagnostic and treatment of diseases
+that change the morphological and functional characteristics of blood vessels [8]. This is due to
+the fact that retina is the only organ whose blood vessels can be visualized non-invasively
+and directly in vivo.” Should expand on this to provide more motivation, just some additional
+details/examples.
+“The results of image processing methods are generally in good agreement with source images.”
+More specific would be better. It would give the reader a sense of how good is the state-of-the-art.
+Is there a lot of room for improvement?
+“(37)[+(38)(16)[+(27)(11) + (14)(12) +
+(6)(19)[+(47)(19)][-(6)(17)]][-(14)(22) + (37)(19)[-(6)(12) +
+(34)(18) + (32)(14)][-(43)(24)]]][(37)[-(7)(8) + (43)(24)][-(14)(26)]]
+(3)” Authors should describe this in greater detail. What are the parameters? What do they
+represent?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+In its current form, the main contribution of this work is devising a method to solve a particular
+instance of the L-system inverse problem. However, the accuracy of the method is not
+benchmarked against existing methods in the literature whether they are general or specific to
+vasculature. It is therefore difficult to assess the real impact of the work. Furthermore, the
+applicability of the method to identifying vascular conditions in the eye, as stated in the
+conclusions, is merely speculative. The idea of rule similarity comparison is interesting but it is
+not developed in any depth. The idea of predicting inaccessible vascular branches in Section 6.4 is
+also interesting but lacks any proper validation.
+Given the importance of equation (7) for the overall method, the authors should provide formal
+definitions of the g functions on the right-hand-side of the equation.
+Figure 7 compares graphically a target and a L-system simulated vascular tree. In page 18 line 44,
+the authors state that the structures are matched perfectly. This comparison should be
+quantitative to be meaningful. The same applies to Figure 10 in the Results section. Note how
+equation (7) could be used for this purpose.
+In terms of presentation, the paper reads too much like a tutorial. Section 2 introduces L-system
+to a level of detail that can be found in other references. Sections 3-6 should be rewritten together
+as a single presentation of the method. I do not see the need to take the reader through the step-
+by-step derivation of the method.
+11
+Author's Response to Decision Letter for (RSOS-171639)
+See Appendix A.
+label_version_2
+RSOS-171639.R1 (Revision)
+label_author_3
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+I’m generally happy with the way the authors have addressed my comments. Providing
+quantification of the method accuracy will allow other authors to benchmark any future
+developments against this work. Two remaining concerns are:
+1) I still believe that the paper falls short when it comes to showing feasibility of the approach for
+the identification of vascular conditions in the eye. The authors should, at least, provide a brief
+outline of how this can be achieved in the future directions part of the Conclusions.
+2) In addition, I would like the authors to emphasise the novelty of the work in the Introduction
+by explicitly stating that this is the first time that an algorithm to solve a L-system inverse
+problem is proposed in order to obtain parametric growth rules of a target structure.
+12
+label_end_comment
+Decision letter (RSOS-171639.R1)
+26-Mar-2018
+Dear Professor Bozorgmehry Boozarjomehry:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171639.R1
+entitled "Modeling of retinal vasculature based on genetically tuned parametric L-system" has
+been accepted for publication in Royal Society Open Science subject to minor revision in
+accordance with the referee suggestions. Please find the referees' comments at the end of this
+email.
+Please ensure you also check and revise as necessary the written English in this manuscript. You
+are encouraged to seek the advice of a native speaker of English or the assistance of a language
+polishing service to assist with this. Examples of language polishing services are found at
+https://royalsociety.org/journals/authors/language-polishing/.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171639.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+13
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 04-Apr-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+14
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Francois Fages (Associate Editor) and R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Francois Fages):
+Associate Editor: 1
+Comments to the Author:
+label_comment_6
+Dear authors
+It is my pleasure to inform you that your paper is basically accepted with minor revisions. Please
+take this opportunity to improve the final version of your communication as suggested by the
+reviewer, to better emphasise the novelty of your work compared to the state-of-the-art for
+solving inverse problems in L-systems, and better discuss the applicability of your approach and
+future plans for the morphological analysis of blood vessels in the eye and diagnosis.
+Reviewer comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+I’m generally happy with the way the authors have addressed my comments. Providing
+quantification of the method accuracy will allow other authors to benchmark any future
+developments against this work. Two remaining concerns are:
+15
+1) I still believe that the paper falls short when it comes to showing feasibility of the approach for
+the identification of vascular conditions in the eye. The authors should, at least, provide a brief
+outline of how this can be achieved in the future directions part of the Conclusions.
+2) In addition, I would like the authors to emphasise the novelty of the work in the Introduction
+by explicitly stating that this is the first time that an algorithm to solve a L-system inverse
+problem is proposed in order to obtain parametric growth rules of a target structure.
+Author's Response to Decision Letter for (RSOS-171639.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-171639.R2)
+03-Apr-2018
+Dear Professor Bozorgmehry Boozarjomehry,
+I am pleased to inform you that your manuscript entitled "Modeling of retinal vasculature based
+on genetically tuned parametric L-system" is now accepted for publication in Royal Society Open
+Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+16
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+ppendix A
+Reviewers' comments and author’s response
+e comments have been reproduced in boldface and the response (in blue) are given
+below each comment
+viewer #1
+erall, the paper is very well-written. It was almost always easy to follow and
+derstand, although there are some areas where more detail could be provided
+the writing could be made clearer. There are no significant typos or grammatical
+ors that would affect a reader’s ability to understand the paper. In general, the
+ical flow is well done although I do find sometimes the authors present
+mething and then explain it, which can be a bit confusing. The authors should
+nsider re-ordering some of their explanations just so that it is clearer. The paper
+scientifically valid. The research methodology is clearly expressed. The results
+described qualitatively, which is a bit of weakness to the paper since there are
+ll-known metrics for analyzing these results (the authors even mention them in
+paper). The authors provide a few examples, but they claim to have analyzed
+er 100 images so some quantitative analysis would be better. The conclusions
+match the results, although again with only a few examples provide, the
+nclusions are not particularly strong.
+e authors would like to thank the respected reviewer for endorsement of our work. We
+d our best to address the concerns of the reviewer as below.
+<U+F0B7> As it is shown in section 4.1.1 with an illustrative example, pixel-by-pixel
+comparison and related metrics such as accuracy, specificity, and selectivity are
+not appropriate for driving the growth rules from a target structure which is our goal
+in this work. But, we have now provided above mentioned well-known metrics
+along with the values of our proposed fitness function elements to compare the
+results of proposed algorithm with target structure, quantitatively. Added sections
+are as follow:
+Paragraph 1 of page 20:
+“To express the results quantitatively based on Eq. (7), the pixels that belong to
+the branch in the target image and that are simulated correctly, are counted as true
+positives (TP), otherwise they are counted as false negatives (FN). The pixels that
+belong to the background and that are simulated as branch, are counted as false
+positives (FP), otherwise they are counted as true negatives (TN). Accuracy,
+sensitivity, and specificity are well-known metrics for pixel-by-pixel comparison [14]
+defined as follows:
+<U+0001D447><U+0001D443> + <U+0001D447><U+0001D441>
+<U+0001D434><U+0001D450><U+0001D450> =
+<U+0001D447><U+0001D443> + <U+0001D447><U+0001D441> + <U+0001D439><U+0001D443> + <U+0001D439><U+0001D441> (22)
+<U+0001D447><U+0001D443>
+<U+0001D446><U+0001D452> =
+<U+0001D447><U+0001D443> + <U+0001D439><U+0001D441>
+1
+<U+0001D447><U+0001D441>
+<U+0001D446><U+0001D45D> =
+<U+0001D447><U+0001D441> + <U+0001D439><U+0001D443>
+The values of accuracy, sensitivity, specificity, <U+0001D454>^<U+0001D43B> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ), <U+0001D454>^<U+0001D43A> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ), and
+<U+0001D454>^<U+0001D443> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ), resulted from comparison of target and simulated branches, are
+provided in Table 5.”
+Paragraph 3 of page 24:
+“Accuracy, sensitivity, specificity, and fitness function values for simulated and
+predicted branches in both cases, are given in Table 11. As mentioned in section
+6, COSFIRE algorithm was used to extract blood vessels in the first step.
+Performance of the COSFIRE algorithm which was used in the first step of
+proposed algorithm, affects the results of simulation performance with regard to
+accuracy, specificity and selectivity metrics. As shown in Table 11, the accuracy
+and specificity are not changed significantly compared to the segmentation step
+(COSFIRE results). Sensitivity of the simulated and predicted results are far less
+than segmentation result due to the limitations imposed by obtained growth rules.
+However, unlike image processing methods, the proposed algorithm has the
+capability to obtain the structure growth rules, if any exists.”
+<U+F0B7> Similarity of the growth rules of the retinal blood vessels for twelve cases (brought
+in data availability section) are shown in Table 10. Also, application of the obtained
+rules to predict the inaccessible parts are provided for 2 cases in section 7. So, it
+was concluded that the proposed algorithm can be used as a tool, in a richer
+database to provide more details about our findings.
+The Introduction is excellent. It is well-written and establishes the authors
+rk in the context of literature very well. Existing works are explained well and
+authors cover most of the key works in pertaining to their research. There are
+o small areas for improvement: The authors could expand slightly on why image
+a/modelling is useful by perhaps providing a concrete example.
+ew example applications are now added to paragraph 2, page 2, as below:
+tinal blood vessel extraction and modeling has found applications in automatic early
+ease diagnosis and monitoring such as diabetic retinopathy, hypertensive retinopathy,
+d branch retinal vein occlusion [10], evaluation and optimization of eye nutrient,
+gen, and drug delivery [11,12], as well as examination of the factors affecting retinal
+cularization and angiogenesis [13].”
+The authors could provide some extra detail on how good are the existing
+proaches in a more concrete way, i.e. how accurate are existing approaches?
+mentioned in paragraph 1 of page 3 “Performance of image processing approaches
+be evaluated and compared with indexes such as sensitivity, specificity, and
+2
+uracy”. The following explanation based on [14] which is a review article on image
+cessing methods, was added to this paragraph in order to address your issue:
+e results of image processing methods are generally in good agreement with source
+ges which typically have an accuracy of more than 0.8, a sensitivity of more than 0.6
+d a selectivity of more than 0.9 [14].”
+Section 2 on L-systems is well-explained. Although very minor, the authors
+uld expand slightly on the parametric elements for the parametric D0L-system,
+ce some readers may not be familiar with it. Currently, the authors only state
+t there is a set of formal parameters. The example helps to illustrate but it could
+explained in a bit more detail.
+spite the fact that, we could go through in-depth explanation of the L-System and its
+responding issues, for the sake of brevity and due to space limitation, we just
+cribed the fundamental issues which are necessary and required to establish the
+posed algorithm. It should be noted that other reviewer(s) claim that some part of the
+nuscript has a style of tutorial material and should be revised to make it more concise
+d right to the point. In order to keep such a balance, we took such a style in the
+lanation and description of various techniques and concepts used in our proposed
+orithm. However, various references have been mentioned which can be referred for
+her details and In order to address your concern, we added an explanation about
+ameters based on your advice in paragraph 3 of page 6, as below:
+ually, parameters represent the length and angle dimensions which can be varied in
+h rewriting step through nonlinear or linear functions.”
+Section 3 is well-done. Authors should expand on the parameters in their
+ample so that it can be more easily understood by the reader.
+we mentioned in section 2, “L-system symbols which were used in this work for retinal
+culature modeling, are shown in Table 1.” We added more information about symbols
+d parameters after Eq. (3), as below:
+which <U+0001D439>(<U+0001D451>) represents a line of length <U+0001D451> and ±(<U+0001D6FF>) denotes rotation by angle <U+0001D6FF>.”
+Section 4. I didn’t understand the paragraph from lines 43 to the next page line
+where they are describing equation (5) very well without re-reading several
+es. It might be more helpful to re-order the explanation and describe the
+habet and such first.
+e following sentences have been added to the manuscript (from paragraph 1 to
+agraph 3 of page 9) to address your concern, the revised section is as follows
+ghlighted):
+s problem can be formulated as the following optimization problem:
+3
+min <U+0001D453>(<U+0001D446><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D446><U+0001D461><U+0001D45F><U+0001D460> )
+<U+0001D460><U+0001D462><U+0001D44F><U+0001D457><U+0001D452><U+0001D450><U+0001D461> <U+0001D461><U+0001D45C> : (4)
+<U+0001D44F> >
+<U+0001D45F><U+0001D460> = <U+0001D43A><<U+0001D714>, <U+0001D45D>1…<U+0001D45B> , <U+0001D440><U+0001D45A>,<U+0001D45B>
+ere <U+0001D453> calculates morphological differences between simulated structure (<U+0001D446><U+0001D461><U+0001D45F><U+0001D460> ),
+ulted from L-system, and target structure (<U+0001D446><U+0001D461><U+0001D45F><U+0001D461> ) obtained from fundus images. In fact,
+<U+0001D460> is obtained from the L-system supposed to model the tree-like structure of the retinal
+culature. Considering <U+0001D440><U+0001D45A> as a sequence of L-system parametric symbols defined as
+<U+0001D44F> >)
+ow, Eq. (5) represents such a model (<U+0001D43A><<U+0001D714>, <U+0001D45D>1…<U+0001D45B> , <U+0001D440><U+0001D45A>,<U+0001D45B> in its general form:
+' (<U+0001D467>
+: <U+0001D447>0 0 , <U+0001D703>0 )
+' (<U+0001D44D>, T) <U+2192> <U+0001D440><U+0001D45A>,<U+0001D45B>0 1 2
+…<U+0001D45B> : <U+0001D447>1,1…<U+0001D45B> [<U+0001D440><U+0001D45A>,<U+0001D45B> ][<U+0001D440><U+0001D45A>,<U+0001D45B> ] (5)
+<U+0001D44F>
+<U+0001D45A>,<U+0001D45B> = (<U+0001D437><U+0001D44F> (<U+0001D454><U+0001D44F> (<U+0001D44D>, T))<U+0001D447> <U+0001D44F> (<U+0001D453> <U+0001D44F> (<U+0001D44D>, T)))
+1…<U+0001D45A>,1…<U+0001D45B>
+ere,
+<U+2208> {<U+0001D439>, <U+0001D434>, <U+0001D435>, Ø}
+<U+2208> {<U+0001D439>, <U+0001D434>, <U+0001D435>}
+<U+2208> {+, -, Ø}
+<U+0001D44D>, T), <U+0001D453>(<U+0001D44D>, T): <U+0001D453><U+0001D462><U+0001D45B><U+0001D450><U+0001D461><U+0001D456><U+0001D45C><U+0001D45B><U+0001D460> <U+0001D44E><U+0001D460> <U+0001D461>h<U+0001D452> <U+0001D45F><U+0001D462><U+0001D459><U+0001D452><U+0001D460> <U+0001D45D><U+0001D44E><U+0001D45F><U+0001D44E><U+0001D45A><U+0001D452><U+0001D461><U+0001D452><U+0001D45F><U+0001D460>
+, <U+0001D703>0 <U+2208> R
+which <U+0001D714> is axiom, <U+0001D45D>1…<U+0001D45B> is rule set, and <U+0001D44F>, <U+0001D45B>, and <U+0001D45A> denote the number of blocks, rules,
+d alphabets, respectively. <U+0001D454>(<U+0001D44D>, T) and <U+0001D453>(<U+0001D44D>, T) are two general functions that specify the
+ationship between predecessor and successor parameters. To have a meaningful L-
+tem, axiom and predecessor alphabet (<U+0001D447>') could not be null (Ø). So, this is why <U+0001D447>' was
+sidered as the superset of <U+0001D447> which shows successor alphabet.
+Section 4.1.1. Although I agree with the authors’ points in the next section on
+ture matching, it is not entirely clear why a pixel-by-pixel fitness function is
+ppropriate if the goal is to reproduce input imagery. Can the authors expand on
+s?
+we mentioned in section 4, our goal is to obtain L-system rules with a set of general
+ameters that can provide a good approximate of the target structure. So, the simulated
+ucture is the result of L-system rules and parameters manipulation. In some situations,
+el-by-pixel comparison results in an inappropriate solution candidate in optimization
+cess. The example in section 4.1.1 has been modified to make it clearer why pixel-by-
+el comparison fails to solve L-system inverse problem as below:
+nsider the L-system introduced in Example 1 (Figure 3(a)). As was shown in Figure
+changing axiom parameters while keeping the same rules, which leads to the same
+ucture with different scale (Figure 3(b)) and orientation (Figure 3(c)), pixel-by-pixel
+mparison gives inappropriate fitness scores comparing to those of another structure
+h a different rules set provided in Figure 3(d).”
+4
+ure 1 Failure of pixel-by-pixel comparison of (a) <U+0001D434>(100,90°) with (b) <U+0001D434>(50,90°) and (c)
+(100,45°) having the same rules defined in Example1 and with (d) <U+0001D434>(100,90°) which
+has a different rule
+gure 3 shows that the main problem with the pixel-by-pixel comparison is that
+culated scores do not provide an insight into morphological similarity between two
+uctures.”
+Section 4.1.3. I’m not sure what this means “Also, every graphical structure
+s an L-system representation in the format of one final parametric string.”
+revised paragraph 2 of page 12, to the following:
+previously noted, there are algorithms which have been proposed to obtain non-
+ametric L-system rules, from a string of non-parametric L-system symbols [38]. So, a
+ential fitness function for proposed L-system inverse problem could be the comparison
+he L-system string obtained from target image (target string) and the string generated
+GA (final string). Every graphical structure can be converted to a final string with
+erent algorithms [33,47,48] whose graphical interpretation results in the given
+phical structure.”
+Authors should provide more detail Farooq et al. What did they find exactly?
+43] and [44] have an approach to this problem then why does the authors’ work
+ed to exist? The authors should expand on the limitations of the existing works
+provide some detail more detail on what their approach contributes to solving
+se problems.
+mentioned above, our goal is to solve L-system inverse problem obtaining parametric
+wth rules. [43] and [44] results are limited to convert image to a string of parametric L-
+tem symbols as the final string without providing rules whose rewriting results in the
+l string. In fact our main objective is coming up with a method whose solution leads
+set of rules which generate that final string. Considering Example 1, these algorithms
+convert an image to Eq. (2) but cannot obtain Eq. (1) which generates Eq. (2) in a
+riting procedure.
+mentioned in our algorithms in section 6, the result of [44] was used as the first step
+olve L-system inverse problem.
+make this clearer in the article, we added following sentence to paragraph 2 of page
+5
+wever, none of these algorithms can solve L-system inverse problem to obtain
+ametric growth rules.”
+The text surrounding equation (6) is unclear. Why is it better to find a line of
+gth 100 then the appropriate symbols to represent such a string? Four “F”
+mbols will produce a very different string when the re-writing rules are applied
+n a single “F”.
+mentioned in paragraph 2, page 8, Santos and Coelho [38] proposed an algorithm to
+ain non-parametric L-system rules from a non-parametric L-system string with
+mparing strings. So, a potential fitness function for proposed L-system inverse problem
+ld be XOR comparison of the L-system string obtained from target structure (target
+ng) and the string generated by GA (final string). In section 4.1.3, the methods which
+convert an image to a target string were reviewed. Also, final string matching as the
+ess function to solve parametric L-system inverse problem instead of nonparametric,
+s investigated.
+Example, if F(100) is obtained from target structure, and
+5)+(0)F(25)+(0)F(25)+(0)F(25) is generated by GA as final string, XOR comparison of
+symbols in these strings leads to inappropriate scores while their graphical
+rpretation is completely identical.
+sed on the above explanation, the text in section 4.1.3 was revised and changed to the
+owing one:
+hough XOR comparison of target string against the string generated by GA, can be
+pful as the fitness function, it will fail in some situations in parametric L-systems. For
+mple, consider the following two simple L-system strings:
+<U+0001D439>(100) (6)
+<U+0001D439>(25) + (0) <U+0001D439>(25) + (0) <U+0001D439>(25) + (0) <U+0001D439>(25)
+imple line with a length of 100 is the graphical interpretation of both strings, but XOR
+mparison of alphabets of two strings leads to an inappropriate score.”
+“<U+0001D714>1, <U+0001D714>2, and <U+0001D714>3 are weight factors that should be defined properly for each
+se” How is this done on a case-by-case basis? What factors determine the
+ferent weights? How are the other thresholds determined as well?
+ight factors in our work, were obtained via a trial and error procedure, but their
+imum values can be found through another optimization process. Structure properties
+h as complexity or self-similarity of branches, are typical factors that could affect these
+ights. Furthermore, the weight factors can affect optimization convergence and run
+e due to shortcomings mentioned for each part of fitness function in section 4.1.
+mming distance threshold (<U+0001D70F>) was considered 40 as noted in Example 3 based on [42].
+added following description to paragraph 2 of page 14 to address this issue in the
+ised manuscript.
+6
+e weight factors can affect optimization convergence and run time. In this work, weight
+tors were obtained via a trial and error procedure, but their optimum values can be
+nd through another optimization process.”
+. In equation (10), what are fa,b and fa,c?
+e following sentence has been added in the revised manuscript, after Eq. (10) to
+dress the concern of respected reviewer:
+hich <U+0001D453><U+0001D44E>,<U+0001D44F> and <U+0001D453><U+0001D44E>,<U+0001D450> are differences between Figures 5(a)-5(b), and Figures 5(a)-5(c)
+ording to Eq. (9).”
+Section 5. With respect to the GA operators, did the authors have any specific
+sons for their choices?
+e worst individuals were removed based on roulette wheel selection scheme”
+unds like a contradiction? Were the worst individuals removed or were
+pulation members removed based on a roulette wheel in proportion to their
+ess? It sounds like the authors mean the latter.
+act the respected reviewer point is valid, what we have used and meant by the roulette
+eel selection is what the reviewer mentioned, however, this will lead to the removal of
+worst individuals in an implicit manner. In other words, since their chances of selection
+the parents of the individuals in the next generation are in proportion to their fitness
+ich are not high), they are doomed to get removed throughout the next generations.
+Section 6. For equation (13), it may not be clear to the reader where (24,15)
+me from, especially the 15 parameter. I see it is explained in the next sentence.
+e authors should consider re-ordering this.
+as re-ordered in the revised manuscript according to your advice as following:
+rther, it was assumed that the axiom length and angle are equivalent to those for the
+in root of the target structure. In this case, the length of the main root and its angle
+ative to the axis X are 24 and 15, respectively. So, we have:”
+: <U+0001D434>(24,15) (13)
+For equation (15) and (16), it is not clear how the authors constructed this
+ndidate rules. How can they be certain that only the single “F” symbol could be
+“A” instead?
+ese candidate rules were resulted from optimization process. For the sake of brevity,
+y were proposed as the first candidate in the step-by-step solution example.
+7
+revised the sentence above Eqs. (15) and (16) as follows:
+r the sake of brevity, the following rules resulted from optimization process have been
+gested as candidate rules”
+“more than hundred fundus images” This could be 101 to many thousands.
+ight be better to be more specific.
+revised the mentioned sentence to the following in order to address your concern:
+investigate the similarity of growth rules of retinal vasculature in different eyes, 108
+dus images were analyzed by the algorithm represented in this work.”
+With respect to the results, do the L-systems presented re-create the entire
+age or just the highlighted areas in the figures? If they do not re-create the entire
+age, can the authors expand on how it can re-create the imagery? Would it be
+run for each branch?
+mentioned in paragraph 3 page 21, results proposed in the article are related to the
+cified branches marked with red color in Figure 9. Our proposed algorithm has no
+itation to reproduce continuous branches. So, to re-create different branches with
+erent growth rules, the algorithm must be run independently.
+“It should be noted that in spite of the accuracy of the correlated functions
+each growth cycle, they cannot be used for couple of consecutive growth cycle
+e to the error propagation and amplification. In other words, the obtained
+related functions should be used merely for the prediction purposes.” I’m not
+te sure what this means. Can the authors clarify?
+hould be noted that the proposed algorithm has no limitation to reconstruct and
+ulate segmented vessels, and this is due to the fact that various functions have been
+d to give the geometric characteristics (e.g., length and orientation angles) of each
+nch. These values are obtained based on the linear functions in each rewriting step.
+wever, these functions are merely localized mappings whose results are local
+proximations obtained through an optimization approach. In other words, characteristic
+ues have not been modeled and expressed through a detailed phenomenological or
+chanistic model. Hence, correlating general parameters (presented in Table 10)
+ough these functions to reproduce the whole structure from an axiom through multiple
+riting procedure results in loss of accuracy due to the mentioned uncertainty.
+In the conclusions, it seems that the authors’ main focus is on prediction of
+od vessels. This did not really come through in the Introduction. It seemed that
+authors intended to reproduce imagery. That being said, the conclusion that
+authors can predict blood vessels matches very well with their results.
+8
+e main objective of the work is to obtain parametric L-system rules which leads to the
+st similar structure to a target structure (retinal blood vessels). However, using
+ained rules to reconstruct inaccessible branches as a predictive manner has been
+estigated.
+added following sentence to paragraph 2 of page 5 (introduction):
+so using obtained L-system model to reconstruct inaccessible branches as prediction
+ability, has been investigated.”
+Typos/Grammar/Misc:
+<U+F0B7> “delivery conditions in the circulatory system[9].” Missing space before [9].
+<U+F0B7> “the Axiom is going through” Axiom should be lowercase.
+<U+F0B7> “Also, segmentation of overlaid branches with different origins will be
+possible more reliably.” Reliably should be reliable I think?
+<U+F0B7> “functions used in L-system Inverse problem modeling” Inverse should be
+lowercase.
+<U+F0B7> “functions used in L-system Inverse problem” Inverse should be lowercase.
+<U+F0B7> “L-system Grammar matching” Grammar should be lowercase.
+<U+F0B7> “applying rewriting rules on axiom as the” Maybe on an axiom or the axiom?
+<U+F0B7> Different font sizes in Eq. (10)
+items have been corrected.
+tes:
+so, a reliable vascular structure model is necessary to investigate
+modynamic parameters and drug delivery conditions in the circulatory system
+Image data is a useful tool to extract blood vessels morphological properties
+ch as length, width, tortuosity, and branching pattern. Retinal fundus image is
+e of the most important data for diagnostic and treatment of diseases that
+ange the morphological and functional characteristics of blood vessels [8]. This
+due to the fact that retina is the only organ whose blood vessels can be
+ualized non-invasively and directly in vivo.” Should expand on this to provide
+re motivation, just some additional details/examples.
+s concern has been addressed based on the comments mentioned in First Item. (i.e.,
+m 1)
+he results of image processing methods are generally in good agreement with
+urce images.” More specific would be better. It would give the reader a sense of
+w good is the state-of-the-art. Is there a lot of room for improvement?
+9
+s concern has been addressed based on the comments mentioned in Second Item.
+., Item 2)
+37)[+(38)<U+0001D439>(16)[+(27)<U+0001D439>(11) + (14)<U+0001D439>(12) +
+<U+0001D439>(19)[+(47)<U+0001D439>(19)][-(6)<U+0001D439>(17)]][-(14)<U+0001D439>(22) + (37)<U+0001D439>(19)[-(6)<U+0001D439>(12) +
+)<U+0001D439>(18) + (32)<U+0001D439>(14)][-(43)<U+0001D439>(24)]]][<U+0001D439>(37)[-(7)<U+0001D439>(8) + (43)<U+0001D439>(24)][-(14)<U+0001D439>(26)]]
+” Authors should describe this in greater detail. What are the parameters? What
+they represent?
+s item has been addressed in comments corresponding to Item 4.
+10
+viewer #2
+ts current form, the main contribution of this work is devising a method to solve
+articular instance of the L-system inverse problem. However, the accuracy of
+method is not benchmarked against existing methods in the literature whether
+y are general or specific to vasculature. It is therefore difficult to assess the real
+pact of the work. Furthermore, the applicability of the method to identifying
+scular conditions in the eye, as stated in the conclusions, is merely speculative.
+e idea of rule similarity comparison is interesting but it is not developed in any
+pth. The idea of predicting inaccessible vascular branches in Section 6.4 is also
+eresting but lacks any proper validation.
+thank the respected reviewer for his/her precise comments. We tried our best to
+dress the requested issues as below. As advised, and elaborated below, major
+isions have been now made in the light of the reviewer's suggestions.
+should re-emphasize that we proposed an algorithm to solve parametric L-system
+erse problem in order to obtain parametric growth rules of a target structure, for the
+t time. There is no similar work to compare the performance of our proposed method
+d its corresponding results against them. As mentioned in the introduction of
+nuscript, due to complicated nature of vascular growth, assumptions used in the
+ious model based approaches along with unknown parameters result in an
+onsistency between morphological properties of simulated vascular network and
+ge data. On the other hand, applying image processing approaches leads to the
+mentation of vessels without providing any additional knowledge.
+r proposed algorithm, has been applied to obtain parametric L-system rules from a
+thetic rule-based structure such as Example 1, successfully. In order to show the real
+act of the proposed algorithm, we selected retinal vasculature which is known as a
+mplicated subject to modeling. We just showed in this article that our algorithm can be
+d as a tool to study vasculature growth rules. If any changes occur in vasculature,
+h as curvature or angle changes (vascular condition), due to numerical nature of the
+orithm, they will be easily detectable. Furthermore, rule similarity was shown for twelve
+es (brought in data availability section) in Table 10 with the coefficient of determination
+square) values. The growth rules, coefficients, and similarity hypothesis can be
+dified with a richer database than the one [52] we used.
+address the respected reviewer’s comment, we have now presented a quantitative
+ex based on our defined fitness function and well-known image processing metrics.
+en the importance of equation (7) for the overall method, the authors should
+vide formal definitions of the g functions on the right-hand-side of the equation.
+11
+have presented definition and weaknesses of <U+0001D488><U+0001D477> , <U+0001D488><U+0001D46F> , and <U+0001D488><U+0001D46E> in sections 4.1.1, 4.1.2,
+d 4.1.3, respectively. Furthermore, we provided an example (Example 3) with detailed
+re results to make it easy to follow. XOR operator has been used in pixel-by-pixel and
+ystem grammar comparison. Image feature matching scores have been calculated
+h mean Hamming distance between matched keypoints of the target and simulated
+uctures which were detected and described with ORB Algorithm. For the sake of
+vity, the details of mentioned algorithms which are all well-defined in literature, were
+provided in manuscript.
+added following sentences to address your concerns in paragraph 1 of page 14:
+penCV C++ library [46] was used to implement XOR algorithm for pixel-by-pixel
+mparison and ORB algorithm for mean Hamming distance calculation between
+tched keypoints. Also, bitwise XOR operation for grammar comparison was
+lemented in our C++ platform [39].”
+ure 7 compares graphically a target and a L-system simulated vascular tree. In
+ge 18 line 44, the authors state that the structures are matched perfectly. This
+mparison should be quantitative to be meaningful. The same applies to Figure
+in the Results section. Note how equation (7) could be used for this purpose.
+order to address the concern of the respected reviewer about having quantitative
+asures of the accuracy of the reconstructed structure and the original one, we used
+antitative metrics to measure accuracy, specificity, and selectivity, along with the
+ues of fitness function elements in the revised manuscript. As are presented in Table
+metrics such as accuracy, specificity, and selectivity are good choices to determine
+ge processing performance, but in this manuscript, our main objective was to obtain
+wth rules which lead to the best matching structure to the target structure. The values
+proposed fitness function elements (Eq. (7)) along with above mentioned metrics are
+vided to compare simulated and predicted structures with target structure in fundus
+ge, quantitatively. We added the following sections in the revised manuscript to
+dress your concern:
+Paragraph 1 of page 20:
+“To express the results quantitatively based on Eq. (7), the pixels that belong to
+the branch in the target image and that are simulated correctly, are counted as true
+positives (TP), otherwise they are counted as false negatives (FN). The pixels that
+belong to the background and that are simulated as branch, are counted as false
+positives (FP), otherwise they are counted as true negatives (TN). Accuracy,
+sensitivity, and specificity are well-known metrics for pixel-by-pixel comparison [14]
+defined as follows:
+<U+0001D447><U+0001D443> + <U+0001D447><U+0001D441>
+<U+0001D434><U+0001D450><U+0001D450> =
+<U+0001D447><U+0001D443> + <U+0001D447><U+0001D441> + <U+0001D439><U+0001D443> + <U+0001D439><U+0001D441>
+<U+0001D447><U+0001D443> (22)
+<U+0001D446><U+0001D452> =
+<U+0001D447><U+0001D443> + <U+0001D439><U+0001D441>
+<U+0001D447><U+0001D441>
+<U+0001D446><U+0001D45D> =
+<U+0001D447><U+0001D441> + <U+0001D439><U+0001D443>
+12
+The values of accuracy, sensitivity, specificity, <U+0001D454>^<U+0001D43B> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ), <U+0001D454>^<U+0001D43A> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ), and
+<U+0001D454>^<U+0001D443> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ), resulted from comparison of target and simulated branches, are
+provided in Table 5.”
+Paragraph 3 of page 24:
+“Accuracy, sensitivity, specificity, and fitness function values for simulated and
+predicted branches in both cases, are given in Table 11. As mentioned in section
+6, COSFIRE algorithm was used to extract blood vessels in the first step.
+Performance of the COSFIRE algorithm which was used in the first step of
+proposed algorithm, affects the results of simulation performance with regard to
+accuracy, specificity and selectivity metrics. As shown in Table 11, the accuracy
+and specificity are not changed significantly compared to the segmentation step
+(COSFIRE results). Sensitivity of the simulated and predicted results are far less
+than segmentation result due to the limitations imposed by obtained growth rules.
+However, unlike image processing methods, the proposed algorithm has the
+capability to obtain the structure growth rules, if any exists.”
+terms of presentation, the paper reads too much like a tutorial. Section 2
+roduces L-system to a level of detail that can be found in other references.
+ctions 3-6 should be rewritten together as a single presentation of the method. I
+not see the need to take the reader through the step-by-step derivation of the
+thod.
+spite the fact that, revising the manuscript to address your concern regarding the
+oval of the standard materials corresponding to L-System, other reviewer(s)
+gested to describe these concepts in more details and even providing more
+criptive examples, hence we had to somehow keep a balance between these two
+ectations. This is the main reason why the authors have not done any revision in this
+ard.
+13
+Table 5 Quantitative results for illustrative case study
+Accuracy 0.99
+Specificity 0.99
+Sensitivity 0.68
+<U+0001D454>^<U+0001D443> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ) 0.47
+<U+0001D454>^<U+0001D43B> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ) 0.11
+<U+0001D454>^<U+0001D43A> (<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ) 0.22
+Table 11 Quantitative results for Figure 10
+Figure 10(a) Figure 10(b)
+COSFIRE [51] Simulated Predicted COSFIRE [51] Simulated Predicted
+curacy 0.98 0.91 0.93 0.98 0.90 0.93
+ecificity 0.99 0.95 0.96 0.99 0.95 0.97
+nsitivity 0.92 0.57 0.67 0.90 0.51 0.56
+(<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ) - 0.58 0.50 - 0.63 0.58
+(<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ) - 0.21 0.13 - 0.33 0.16
+(<U+0001D460><U+0001D461><U+0001D45F><U+0001D461> , <U+0001D460><U+0001D461><U+0001D45F><U+0001D460> ) - 0.31 0.48 - 0.38 0.53
+14
+pendix B
+Reviewers' comments and author’s response
+e comments have been reproduced in boldface and the response (in blue) are given
+below each comment
+viewer #1
+generally happy with the way the authors have addressed my comments.
+viding quantification of the method accuracy will allow other authors to
+nchmark any future developments against this work.
+e authors would like to thank the respected reviewer for re-endorsement of our work.
+did our best to address the concerns of the reviewer as below.
+I still believe that the paper falls short when it comes to showing feasibility of
+approach for the identification of vascular conditions in the eye. The authors
+ould, at least, provide a brief outline of how this can be achieved in the future
+ections part of the Conclusions.
+order to address this issue, the following paragraph has been added to page 26-27:
+e algorithm proposed in this work can be used to obtain parametric rules in different
+ease stage which affect retinal blood vessels for identification of changes in
+rphology of blood vessels. A richer database including both normal and abnormal
+dus images with similar growth rules should be applied for further study on the role of
+erent diseases in deviating from normal condition. Having the parametric L-system
+del in hand, deviation from normal width, length, and tortuosity of retinal blood vessels
+e to a disease such as retinopathy of prematurity [56] or diabetic retinopathy [57], can
+investigated numerically.”
+In addition, I would like the authors to emphasize the novelty of the work in
+Introduction by explicitly stating that this is the first time that an algorithm to
+ve a L-system inverse problem is proposed in order to obtain parametric growth
+es of a target structure.
+order to clearly emphasize that such a work is a first algorithmic framework which can
+ve a group of specific L-System inverse problems, the following sentence has been
+ded to the introduction of the manuscript (paragraph 2 of page 5):
+the current work, an algorithm is proposed for the first time to solve this problem and
+the parametric growth rules of a target structure.”
+h Best Regards,
+B. Boozarjomehry
+1
+Society Open

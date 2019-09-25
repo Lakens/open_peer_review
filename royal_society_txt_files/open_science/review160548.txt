@@ -1,0 +1,792 @@
+RAD sequencing resolves fine-scale population structure in
+a benthic invertebrate: with implications for understanding
+phenotypic plasticity
+David L. J. Vendrami, Luca Telesca, Hannah Weigand, Martina Weiss, Katie Fawcett,
+Katrin Lehman, M. S. Clark, Florian Leese, Carrie McMinn, Heather Moore and Joseph I.
+Hoffman
+Article citation details
+R. Soc. open sci. 4: 160548.
+http://dx.doi.org/10.1098/rsos.160548
+Review timeline
+Original submission: 26 July 2016 Note: Reports are unedited and appear as
+Revised submission: 20 October 2016 submitted by the referee. The review history
+Final acceptance: 4 January 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-160548.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Gordana Rašic)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Raw sequencing and genotyping data are not accessible. Morphological measurements should be
+in the Supplemental material.
+Do you have any ethical concerns with this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Manuscript ID: RSOS-160548
+Title: “High throughput sequencing reveals fine-scale population structure and phenotypic
+plasticity in a benthic invertebrate”
+Vendrami and colleagues examine the extent of genetic and morphological structuring in a
+marine bivalve Pecten maximus using two marker systems (microsatellites and ddRAD-
+generated SNPs) and indices of shell shape and color. The authors report a lack of genetic
+structuring among samples, despite considerable morphological structuring, and argue that their
+findings support high morphological plasticity in this species. They also indicate the greater
+power of genome-wide SNPs in comparison to several microsatellites when detecting genetic
+structure.
+In my opinion, the study does not fully exploit the genome-wide SNP and morphological data, as
+it is restricted around a comparison between different marker systems. Moreover, the main
+conclusions are based on one analytical approach that inherently underestimates the level of
+genetic structuring. I list several issues that should be addressed and offer some ideas for the
+analyses that could strengthen authors’ arguments. Therefore, I recommend a Major Revision -
+Resubmission.
+Marine invertebrates seem to be a challenging model system, where it is often difficult to
+disentangle the processes that underlie the patterns of genetic variation. Genetic structure is
+commonly not detected across hundreds of kilometers (e.g. Miller et al. 2016 Mol Ecol), and the
+main issue is to decipher if this observation is an artifact of the low-resolution markers.
+Major points:
+1) Authors should use simulations (e.g. POWSIM at least for msats) to test if their markers
+have power to detect genetic structure. I agree that >10,000 genome-wide SNPs should be
+sufficient to pick up signals of restricted gene flow under some scenarios, but we come to the
+second issue:
+2) It is not clear to me how FST values for msats were not significantly different from zero
+despite being relatively high (>0.01) in many cases? A multi-allelic marker system (3-16 In your
+msat dataset) inherently produces lower FST values than a biallelic marker system (SNP), yet
+your FST heatmap and tables indicate the values are very similar between the two marker
+systems...How do you explain this?
+3) STRUCTURE is a clustering approach that generally underestimates the “true” extent of
+genetic structuring (i.e. it detects the “uppermost” level of hierarchical structuring). Therefore,
+there could be more structuring in your dataset that is being missed. I think at least another
+approach for structure inference should be employed, for a null hypothesis not to be rejected (see
+suggestions below).
+4) De novo RAD tag assembly requires iteration over multiple parameters (-M, -m, -n)
+before an optimal combination is chosen. Essentially, authors need to demonstrate the robustness
+of their chosen parameter set (by doing sensitivity analysis where multiple runs with different
+parameters are assessed in terms of: the number of tags, heterozygosity, etc). A table that
+summarizes these key quality indicators under different parameters should be an integral part of
+the manuscript. The study is not reproducible without such information.
+3
+5) If absence of structure is confirmed with more than one analytical approach, what
+mechanisms, apart from high gene flow can be responsible? Would you always detect structure if
+local selection is present? ...Local adaptation could occur even under high gene flow, and you
+could be missing genetic information for a few key selected loci that underlie the measured
+phenotypes.....You mention some of these points, but a more detailed discussion is needed.
+Suggestions:
+1) Methods like PCA or DAPC would be suitable for inferring genetic structuring in a
+genome-wide SNP dataset. In this case, there is no need to remove highly linked markers –
+retaining more markers should be useful in a situation where genetic structure is indeed weak...
+2) Morphological variation (individual PC scores) can be modeled in terms of individual
+genetic (e.g. PC or DAPC scores) and spatial PC scores. This would be a more explicit test of the
+phenotypic plasticity hypothesis and would strengthen the conclusions.
+3) It would be straightforward to do a Mantel test for individual-based genetic (SNP) and
+geographic distances. There are several individual-based distance measures that can be used (e.g.
+Roussett’s a). This way, potentially biased FST estimates (due to very small sample sizes) are
+circumvented. Estimates from a small sample (<=6 individuals) are highly dependent on
+whether they capture the population diversity (i.e. if they are indeed the representative
+population samples), and this can be very species-specific and often difficult to confirm.
+Minor points:
+Highly species-specific jargon (e.g. spat, byssus, line 100) and colloquialism (shallow genetic
+structure, line 67) could be avoided – or defined/explained.
+End of comments.
+Gordana Rasic
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, "Raw reads are currently being deposited into the Short Read Archive.
+723 SNP and microsatellite genotypes are currently being submitted to DRYAD"
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+4
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Review of Vendrami et al “High throughput sequencing reveals fine-scale population structure
+and phenotypic plasticity in a benthic invertebrate”
+Vendrami et al are comparing two molecular markers, i.e. microsatellites and SNPs, in their
+power to resolve population structure across scallop populations along the coast of Northern
+Ireland. The study is well conducted and the manuscript very well written. I have only minor
+comments on the statistical analysis of the morphometric analysis and the lack of a direct
+comparison between morphological and genetic distances.
+Introduction
+I understand that the focus of the paper was on comparing SNPs with microsatellites, but there
+have been several other molecular markers used to test the presence of phenotypic
+plasticity/detect population structure. I think there should be a reference to these alternative
+markers in the Introduction.
+Materials and methods
+It is common statistical procedure that in a PCA, the minimal number of subjects should be about
+five times the number of variables being analysed. However, if I understand correctly, PCA was
+performed on 84 descriptors per 180 specimens (i.e. 9x20). To ensure robustness of the PCA
+results, I recommend that the number of harmonics should be reduced to 8, resulting in 32
+variables (descriptors), which will in my experience suffice in describing shape variation.
+Results
+Results of genetic and morphological analyses are presented completely separated, so the reader
+is a bit of a loss why the two aspects were actually investigated in this study. It would be
+interesting, for example, to examine the relationships between genetic and morphological
+distances between populations.
+I also do not understand the rationale in performing MANOVA on PC-axes rather than the raw
+values, i.e. harmonics. Please explain.
+label_end_comment
+Decision letter (RSOS-160548)
+19-Sep-2016
+Dear Mr Vendrami,
+The editors assigned to your paper ("High throughput sequencing reveals fine-scale population
+structure and phenotypic plasticity in a benthic invertebrate") have now received comments from
+reviewers. Both referees are positive about publication but raise a number of substantive issues
+that will need to be dealt with in an improved manuscript. We would like you to revise your
+paper in accordance with the referee and Subject Editor suggestions which can be found below
+(not including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Oct-2016). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+5
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160548
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+6
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator, Royal Society Open Science
+on behalf of Steve Brown
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Manuscript ID: RSOS-160548
+Title: “High throughput sequencing reveals fine-scale population structure and phenotypic
+plasticity in a benthic invertebrate”
+Vendrami and colleagues examine the extent of genetic and morphological structuring in a
+marine bivalve Pecten maximus using two marker systems (microsatellites and ddRAD-
+generated SNPs) and indices of shell shape and color. The authors report a lack of genetic
+structuring among samples, despite considerable morphological structuring, and argue that their
+findings support high morphological plasticity in this species. They also indicate the greater
+power of genome-wide SNPs in comparison to several microsatellites when detecting genetic
+structure.
+In my opinion, the study does not fully exploit the genome-wide SNP and morphological data, as
+it is restricted around a comparison between different marker systems. Moreover, the main
+conclusions are based on one analytical approach that inherently underestimates the level of
+genetic structuring. I list several issues that should be addressed and offer some ideas for the
+analyses that could strengthen authors’ arguments. Therefore, I recommend a Major Revision -
+Resubmission.
+Marine invertebrates seem to be a challenging model system, where it is often difficult to
+disentangle the processes that underlie the patterns of genetic variation. Genetic structure is
+7
+commonly not detected across hundreds of kilometers (e.g. Miller et al. 2016 Mol Ecol), and the
+main issue is to decipher if this observation is an artifact of the low-resolution markers.
+Major points:
+1) Authors should use simulations (e.g. POWSIM at least for msats) to test if their markers
+have power to detect genetic structure. I agree that >10,000 genome-wide SNPs should be
+sufficient to pick up signals of restricted gene flow under some scenarios, but we come to the
+second issue:
+2) It is not clear to me how FST values for msats were not significantly different from zero
+despite being relatively high (>0.01) in many cases? A multi-allelic marker system (3-16 In your
+msat dataset) inherently produces lower FST values than a biallelic marker system (SNP), yet
+your FST heatmap and tables indicate the values are very similar between the two marker
+systems...How do you explain this?
+3) STRUCTURE is a clustering approach that generally underestimates the “true” extent of
+genetic structuring (i.e. it detects the “uppermost” level of hierarchical structuring). Therefore,
+there could be more structuring in your dataset that is being missed. I think at least another
+approach for structure inference should be employed, for a null hypothesis not to be rejected (see
+suggestions below).
+4) De novo RAD tag assembly requires iteration over multiple parameters (-M, -m, -n)
+before an optimal combination is chosen. Essentially, authors need to demonstrate the robustness
+of their chosen parameter set (by doing sensitivity analysis where multiple runs with different
+parameters are assessed in terms of: the number of tags, heterozygosity, etc). A table that
+summarizes these key quality indicators under different parameters should be an integral part of
+the manuscript. The study is not reproducible without such information.
+5) If absence of structure is confirmed with more than one analytical approach, what
+mechanisms, apart from high gene flow can be responsible? Would you always detect structure if
+local selection is present? ...Local adaptation could occur even under high gene flow, and you
+could be missing genetic information for a few key selected loci that underlie the measured
+phenotypes.....You mention some of these points, but a more detailed discussion is needed.
+Suggestions:
+1) Methods like PCA or DAPC would be suitable for inferring genetic structuring in a
+genome-wide SNP dataset. In this case, there is no need to remove highly linked markers –
+retaining more markers should be useful in a situation where genetic structure is indeed weak...
+2) Morphological variation (individual PC scores) can be modeled in terms of individual
+genetic (e.g. PC or DAPC scores) and spatial PC scores. This would be a more explicit test of the
+phenotypic plasticity hypothesis and would strengthen the conclusions.
+3) It would be straightforward to do a Mantel test for individual-based genetic (SNP) and
+geographic distances. There are several individual-based distance measures that can be used (e.g.
+Roussett’s a). This way, potentially biased FST estimates (due to very small sample sizes) are
+circumvented. Estimates from a small sample (<=6 individuals) are highly dependent on
+whether they capture the population diversity (i.e. if they are indeed the representative
+population samples), and this can be very species-specific and often difficult to confirm.
+Minor points:
+Highly species-specific jargon (e.g. spat, byssus, line 100) and colloquialism (shallow genetic
+structure, line 67) could be avoided – or defined/explained.
+End of comments.
+Gordana Rasic
+8
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Review of Vendrami et al “High throughput sequencing reveals fine-scale population structure
+and phenotypic plasticity in a benthic invertebrate”
+Vendrami et al are comparing two molecular markers, i.e. microsatellites and SNPs, in their
+power to resolve population structure across scallop populations along the coast of Northern
+Ireland. The study is well conducted and the manuscript very well written. I have only minor
+comments on the statistical analysis of the morphometric analysis and the lack of a direct
+comparison between morphological and genetic distances.
+Introduction
+I understand that the focus of the paper was on comparing SNPs with microsatellites, but there
+have been several other molecular markers used to test the presence of phenotypic
+plasticity/detect population structure. I think there should be a reference to these alternative
+markers in the Introduction.
+Materials and methods
+It is common statistical procedure that in a PCA, the minimal number of subjects should be about
+five times the number of variables being analysed. However, if I understand correctly, PCA was
+performed on 84 descriptors per 180 specimens (i.e. 9x20). To ensure robustness of the PCA
+results, I recommend that the number of harmonics should be reduced to 8, resulting in 32
+variables (descriptors), which will in my experience suffice in describing shape variation.
+Results
+Results of genetic and morphological analyses are presented completely separated, so the reader
+is a bit of a loss why the two aspects were actually investigated in this study. It would be
+interesting, for example, to examine the relationships between genetic and morphological
+distances between populations.
+I also do not understand the rationale in performing MANOVA on PC-axes rather than the raw
+values, i.e. harmonics. Please explain.
+Author's Response to Decision Letter for (RSOS-160548)
+See Appendix A.
+label_version_2
+RSOS-160548.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Gordana Rašic)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+9
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+-
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+Authors have thoroughly addressed comments from both referees. I am glad the authors have
+found the contribution of both reviewers valuable, leading to a significantly improved
+manuscript. I do not have any objections to recommend acceptance (as is).
+label_end_comment
+Decision letter (RSOS-160548.R1)
+04-Jan-2017
+Dear Mr Vendrami,
+I am pleased to inform you that your manuscript entitled "ddRAD sequencing resolves fine-scale
+population structure in a benthic invertebrate with implications for understanding phenotypic
+plasticity" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+10
+Reviewer(s)' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+Authors have thoroughly addressed comments from both referees. I am glad the authors have
+found the contribution of both reviewers valuable, leading to a significantly improved
+manuscript. I do not have any objections to recommend acceptance (as is).
+we have extended our analysis performing a power analysis and a Principal Component Analysis
+PCA) on the two genetic datasets, modelling morphological variability in terms of genetic variability
+hrough the construction of GLMMs, testing the robustness of our ddRAD de novo assembly via
+sensitivity analysis carried out on the three main parameters –m, -M and –n and re-performing the
+morphometric analysis after having reduced the number of harmonics. New paragraphs have been
+consequently written in the Methods, Results and Discussion sections and have been accompanied
+with new figures and tables. We have also expanded our introduction following the reviewers’
+ecommendations. We believe that the quality of our manuscript has greatly improved and that
+support for our conclusions has strengthened. We are therefore grateful to the reviewers for their
+constructive suggestions. Here we present detailed answers to each one of the reviewers’
+comments.
+19-Sep-2016
+Dear Mr Vendrami,
+The editors assigned to your paper ("High throughput sequencing reveals fine-scale population structure
+and phenotypic plasticity in a benthic invertebrate") have now received comments from reviewers. Both
+eferees are positive about publication but raise a number of substantive issues that will need to be dealt
+with in an improved manuscript. We would like you to revise your paper in accordance with the referee and
+Subject Editor suggestions which can be found below (not including confidential reports to the Editor).
+Please note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Oct-2016). If we do not hear
+rom you within this time then it will be assumed that the paper has been withdrawn. In exceptional
+circumstances, extensions may be possible if agreed with the Editorial Office in advance.We do not allow
+multiple rounds of revision so we urge you to make every effort to fully address all of the comments at this
+stage. If deemed necessary by the Editors, your manuscript will be sent back to one or more of the original
+eviewers for assessment. If the original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your Author Centre,
+where you will find your manuscript title listed under "Manuscripts with Decisions." Under "Actions," click on
+Create a Revision." Your manuscript number has been appended to denote a revision. Revise your
+manuscript and upload a new version through your Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the referees and
+upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to document how you
+have responded to the comments, and the adjustments you have made. In order to expedite the processing
+of the revised manuscript, please be as specific as possible in your response.
+n addition to addressing all of the reviewers' and editor's comments please also ensure that your revised
+manuscript contains the following sections as appropriate before the reference list:
+Ethics statement (if applicable)
+f your study uses humans or animals please include details of the ethical approval received, including the
+name of the committee that granted approval. For human studies please also detail whether informed
+consent was obtained. For field studies on animals please include details of all permissions, licences and/or
+approvals granted to carry out the fieldwork.
+Data accessibility
+t is a condition of publication that all supporting data are made available either as supplementary
+nformation or preferably in a suitable permanent repository. The data accessibility section should state
+where the article's supporting data can be accessed. This section should also include details, where
+possible of where to access other relevant research materials such as statistical tools, protocols, software
+database, accession number and link to the DOI for all data from the article that have been made publicly
+available. Data sets that have been deposited in an external repository and have a DOI should also be
+appropriately cited in the manuscript and included in the reference list.
+f you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify your current
+submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160548
+Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no competing
+nterests.
+Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions section which
+ndividually lists the specific contribution of each author. The list of Authors should meet all of the following
+criteria; 1) substantial contributions to conception and design, or acquisition of data, or analysis and
+nterpretation of data; 2) drafting the article or revising it critically for important intellectual content; and 3)
+inal approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence alignments,
+participated in the design of the study and drafted the manuscript; CD carried out the statistical analyses;
+EF collected field data; GH conceived of the study, designed the study, coordinated the study and helped
+draft the manuscript. All authors gave final approval for publication.
+Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship criteria.
+Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look forward to
+eceiving your revision. If you have any questions at all, please do not hesitate to get in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator, Royal Society Open Science
+on behalf of Steve Brown
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+Manuscript ID: RSOS-160548
+Title: “High throughput sequencing reveals fine-scale population structure and phenotypic plasticity in a
+benthic invertebrate”
+Vendrami and colleagues examine the extent of genetic and morphological structuring in a marine bivalve
+Pecten maximus using two marker systems (microsatellites and ddRAD-generated SNPs) and indices of
+shell shape and color. The authors report a lack of genetic structuring among samples, despite
+considerable morphological structuring, and argue that their findings support high morphological plasticity in
+his species. They also indicate the greater power of genome-wide SNPs in comparison to several
+microsatellites when detecting genetic structure.
+n my opinion, the study does not fully exploit the genome-wide SNP and morphological data, as it is
+estricted around a comparison between different marker systems. Moreover, the main conclusions are
+based on one analytical approach that inherently underestimates the level of genetic structuring. I list
+several issues that should be addressed and offer some ideas for the analyses that could strengthen
+authors’ arguments. Therefore, I recommend a Major Revision - Resubmission.
+Response 1: We centered much of our analysis around the comparison between traditional
+microsatellite markers and a large SNP dataset generated by RAD sequencing as rather surprisingly
+such a comparison is essentially absent from the literature. We focused on Fst comparisons, which
+are a standard method and as far as we are aware do not inherently underestimate the strength of
+structure. However, it is true that Structure can have difficulty detecting weak population structure,
+a point that we make in our revised discussion. We concur that the manuscript could nonetheless
+be expanded to include a number of additional analyses and have therefore explicitly followed the
+eferees’ suggestions (see Responses 8 and 9).
+Marine invertebrates seem to be a challenging model system, where it is often difficult to disentangle the
+processes that underlie the patterns of genetic variation. Genetic structure is commonly not detected across
+hundreds of kilometers (e.g. Miller et al. 2016 Mol Ecol), and the main issue is to decipher if this observation
+s an artifact of the low-resolution markers.
+Response 2: We have now included a power analysis at the suggestion of the referee and this
+clearly shows that, although power is somewhat limited using the traditional markers, it is ample (in
+he order of one!) with the SNP dataset (see Response 3). This strengthens our conclusion that the
+SNPs are superior at detecting population structure and also indicates that, in cases where we do
+not find genetic differences between populations, this cannot be due to a lack of power. We have
+ncluded these results as an additional table and of course written relevant sections in the methods,
+esults and discussion sections. We are grateful for the suggestion as this considerably
+strengthens our arguments.
+Major points:
+1) Authors should use simulations (e.g. POWSIM at least for msats) to test if their markers have power
+o detect genetic structure. I agree that >10,000 genome-wide SNPs should be sufficient to pick up signals
+of restricted gene flow under some scenarios, but we come to the second issue:
+Response 3: We have done this, and the resulting analyses show indeed that we have ample power
+o detect genetic differences between populations using the SNP dataset (see Response 2 for
+details). This has been included in our revised manuscript, which again is considerably improved as
+a result of this helpful suggestion.
+2) It is not clear to me how FST values for msats were not significantly different from zero despite being
+elatively high (>0.01) in many cases? A multi-allelic marker system (3-16 In your msat dataset) inherently
+produces lower FST values than a biallelic marker system (SNP), yet your FST heatmap and tables indicate
+he values are very similar between the two marker systems...How do you explain this?
+Response 4: From the heatmaps it can be seen that, although not all of the pairwise Fst values are
+higher for SNPs, those involving Mulroy Bay are considerably higher. The Fst values themselves are
+also shown in Supplementary Table 2. As stated in our discussion, such a pattern is to be expected,
+partly due to homoplasy at the microsatellites (Coates et al 2009). The key point here is that the level
+of significance is affected both by the number of markers (which influences the error variance in the
+need not show a simple concurrence. We also do not agree with the referee that an Fst value of 0.01
+s high. In fact, we would consider this to be rather low, although elsewhere, others have cautioned
+against drawing inferences solely on the magnitude of Fst (Meirmans et al 2011).
+3) STRUCTURE is a clustering approach that generally underestimates the “true” extent of genetic
+structuring (i.e. it detects the “uppermost” level of hierarchical structuring). Therefore, there could be more
+structuring in your dataset that is being missed. I think at least another approach for structure inference
+should be employed, for a null hypothesis not to be rejected (see suggestions below).
+Response 5: That depends partly on whether one chooses the maximal value of LnP(D), which
+potentially captures even very small differences, or delta K, which selects for the uppermost level of
+structure (see Evanno et al 2005). We did the former, so there is no reason to believe that we will
+have missed some deeper level of structure. Nevertheless, we have included the additional analyses
+he referee has suggested (see Response 8) Overall, this makes the paper somewhat longer but we
+agree that it is nice to have additional lines of evidence in support of our conclusions so in many
+espects this is an improvement.
+4) De novo RAD tag assembly requires iteration over multiple parameters (-M, -m, -n) before an optimal
+combination is chosen. Essentially, authors need to demonstrate the robustness of their chosen parameter
+set (by doing sensitivity analysis where multiple runs with different parameters are assessed in terms of: the
+number of tags, heterozygosity, etc). A table that summarizes these key quality indicators under different
+parameters should be an integral part of the manuscript. The study is not reproducible without such
+nformation.
+Response 6: We have now explored the above parameters at the reviewer's request and tabulated
+he results in the paper. Our results show that there are few differences among runs in which these
+parameters are changed, both in terms of the number of markers obtained, and critically, the main
+esult - i.e. that there is no population structure after excluding Mulroy Bay - does not change. This
+has been written into the manuscript, and is a valuable addition as it shows that our results are
+highly robust.
+5) If absence of structure is confirmed with more than one analytical approach, what mechanisms, apart
+rom high gene flow can be responsible? Would you always detect structure if local selection is present?
+..Local adaptation could occur even under high gene flow, and you could be missing genetic information for
+a few key selected loci that underlie the measured phenotypes.....You mention some of these points, but a
+more detailed discussion is needed.
+Response 7: We have now confirmed the absence of structure, both by adding the PCA analysis as
+suggested by the referee and by confirming that our power to detect population structure is very
+high based on the SNP dataset. We already had a fairly detailed and lengthy discussion of the
+possibility that phenotypic differences could potentially reflect loci that are not captured in our
+marker panel. We are unclear exactly what more the referee would like us to say, as we believe we
+have already covered the key points. Nevertheless, we have expanded and modified this section.
+Suggestions:
+1) Methods like PCA or DAPC would be suitable for inferring genetic structuring in a genome-wide SNP
+dataset. In this case, there is no need to remove highly linked markers – retaining more markers should be
+useful in a situation where genetic structure is indeed weak...
+suggestion of the reviewer. These reveal a lack of discernable structure with microsatellites and a
+clear separation of Mulroy Bay from the other populations in the case of SNPs, as shown in the
+igure below. This is strong support for our original conclusions. We have written new sections in
+he methods, results and discussion sections an included an additional figure.
+2) Morphological variation (individual PC scores) can be modeled in terms of individual genetic (e.g. PC
+or DAPC scores) and spatial PC scores. This would be a more explicit test of the phenotypic plasticity
+hypothesis and would strengthen the conclusions.
+Response 9: We have done this, specifically constructing GLMMs with population as a random
+effect, the response variables being the morphological PCs and the predictor variables being the
+genetic PCs 1 and 2 based on the SNP dataset. As this test was aimed at testing for phenotypic
+plasticity, we excluded Mulroy Bay from this analysis, as it was genetically differentiated at the
+SNPs. No significant relationship was found between shell shape PC1 and SNP-based PCs, while for
+he colour index a weak but significant value was found for PC1 and a not significant value was
+obtained for PC2. We have included these results and discuss them in the context of our broader
+indings.
+3) It would be straightforward to do a Mantel test for individual-based genetic (SNP) and geographic
+distances. There are several individual-based distance measures that can be used (e.g. Roussett’s a). This
+way, potentially biased FST estimates (due to very small sample sizes) are circumvented. Estimates from a
+small sample (<=6 individuals) are highly dependent on whether they capture the population diversity (i.e. if
+hey are indeed the representative population samples), and this can be very species-specific and often
+difficult to confirm.
+Response 10: We do not concur, as treating each individual as an independent data point when in
+act individuals within populations are non-independent (because they were sampled from the same
+ocality) amounts to pseudoreplication. It is therefore appropriate to do the Mantel test at the
+population level, which is what the vast majority of studies do. In any case, we cannot imagine that
+much could be gained by repeating this analysis with individuals as it is clear to us from the Fst
+values, the Structure results and the PCA results that there is no structure among the populations
+after excluding Mulroy Bay.
+Minor points:
+Highly species-specific jargon (e.g. spat, byssus, line 100) and colloquialism (shallow genetic structure, line
+Response 11: 'spat' and 'byssus' are not jargon - they are specific technical terms with a precise
+meaning. We have changed 'shallow' to 'weak', although to us these words have essentially the
+same meaning.
+End of comments.
+Gordana Rasic
+Reviewer: 2
+Comments to the Author(s)
+label_comment_8
+Review of Vendrami et al “High throughput sequencing reveals fine-scale population structure and
+phenotypic plasticity in a benthic invertebrate”
+Vendrami et al are comparing two molecular markers, i.e. microsatellites and SNPs, in their power to
+esolve population structure across scallop populations along the coast of Northern Ireland. The study is
+well conducted and the manuscript very well written. I have only minor comments on the statistical analysis
+of the morphometric analysis and the lack of a direct comparison between morphological and genetic
+distances.
+Response 12: Excellent - thank you for the positive appraisal.
+ntroduction
+understand that the focus of the paper was on comparing SNPs with microsatellites, but there have been
+several other molecular markers used to test the presence of phenotypic plasticity/detect population
+structure. I think there should be a reference to these alternative markers in the Introduction.
+Response 13: This is a good point. We also note in the introduction that other genetic markers like
+AFLPs have also been used for the same purpose.
+Materials and methods
+t is common statistical procedure that in a PCA, the minimal number of subjects should be about five times
+he number of variables being analysed. However, if I understand correctly, PCA was performed on 84
+descriptors per 180 specimens (i.e. 9x20). To ensure robustness of the PCA results, I recommend that the
+number of harmonics should be reduced to 8, resulting in 32 variables (descriptors), which will in my
+experience suffice in describing shape variation.
+Response 14: The advantage of using Elliptic Fourier approaches on shells outlines is that any
+shape can be virtually fitted provided that the number of harmonics is large and the outline
+sufficiently smooth between the sampled points (Bonhomme et al. 2014; Kuhl, F. P. & Giardina
+1982). Scallop shells have not outlines as round as other bivalve species (i.e. mussel, clams) since
+hey present an hinge area with edges forming almost right angles, features requiring usually a high
+number of harmonics to be incorporated in the numerical signature (Kuhl & Giardina 1982; Giardina
+& Kuhl 1977). Moreover, the only study available on scallops, to the best of our knowledge, using
+Fourier analysis, showed that only the first 24 harmonics were able to provide a sufficiently good
+shape reconstruction (Kenchington & Full 1993).
+The critical question in outline analysis is about the correct number of harmonics to be retained in
+order to provide both an acceptable shape reconstruction and robust statistical conclusions.
+Unfortunately, no objective criteria exist so far, since they uniquely depends on the scope of the
+study and the level of detail the analyst wants to achieve (Bonhomme et al. 2014). However, different
+approaches that can be of help in this selection have been proposed (i.e. shape reconstruction,
+deviation and harmonics power) (see the updated Supplementary Document 3 for details).
+both qualitative and quantitative methods available. A comparison of those showed that 21
+harmonics effectively capture 99% of the total harmonic power (shape information). While, an
+nspection with more qualitative approaches showed that the effective number providing a reliable
+shape reconstruction and an acceptable deviation from the best possible fit was significantly lower
+between 13 and 18 harmonics).
+A more accurate analysis of the observed range showed that 15 harmonics was the minimum
+number to provide a good shell shape and a reliable reconstruction of the hinge area (which is the
+eature of main interest for our morphological comparisons). Therefore, 15 harmonics were selected
+as an optimal compromise in order to capture a sufficiently high proportion of shape information
+98%) and to provide increased robustness of statistical analysis (PCA) by significantly reducing the
+number of descriptors calculated (from 84 for 21 harmonics to 60 for 15 harmonics).
+We agree that for a PCA is common practice having observations about five times the number of
+variables being used, but it is also true that this procedure has been shown to be more a “rule of
+humb” that analysts apply with small sample size (<100 observations), so it should be used with
+care (Lance & Vandenberg 2009). In fact, recent works suggest that the required sample size for
+orthogonal transformations depends on the number of variables and how well they explain the
+variance in the data (Bandalos & Boehm-Kaufman, 2009). Simulation studies also showed that the
+quality of the results vary so much that considering the variables/observations ratio is not advisable
+o decide on the required number of observations. Specifically, Preacher & MacCallum (2002) and
+Mundfrom, Shaw & Ke (2005) showed robust estimations with both extremely small and big sample
+sizes; however, what constitutes an adequate sample size is still somewhat complicated.
+Therefore, only the first 15 harmonics were retained as an optimal compromise in order to:
+<U+F0B7> capture a sufficiently high proportion of shape information (98%);
+<U+F0B7> provide a good shape reconstruction and specifically a detailed hinge area, which
+we found to me the morphological feature describing the most of the variability
+among the analysed populations;
+<U+F0B7> enhance robustness of statistical analysis (PCA) by significantly reducing the
+number of descriptors calculated.
+Results
+Results of genetic and morphological analyses are presented completely separated, so the reader is a bit of
+a loss why the two aspects were actually investigated in this study. It would be interesting, for example, to
+examine the relationships between genetic and morphological distances between populations.
+Response 15: We agree with this and we have therefore written new paragraphs in the results
+“Relationship between genetic and morphometric variation”) and discussion sections. Specifically,
+we addressed this comment constructing GLMMs (see Response 9) where morphological variation
+was modelled in terms of genetic variation including population of origin as a random effect. We
+believe this has improved the quality of our manuscript and we are therefore grateful for this
+comment.
+also do not understand the rationale in performing MANOVA on PC-axes rather than the raw values, i.e.
+harmonics. Please explain.
+Response 15: MANOVA is usually seen as an extension of the analysis of variance with multiple
+dependant variables and it is known to share assumptions of strictly related statistical tests (LDA,
+ANOVA and multiple regression) such as normality, homoscedasticity and absence of outliers
+Quinn & Keough 2002; Johnson & Field 1993).
+Additional assumptions of MANOVA include linearity, equality of covariance matrices and absence
+of multi-collinearity (Quinn & Keough 2002; Claude 2008). Specifically, collinearity between
+esponse variables is a problem in the same way as for multiple regression. The discriminant
+unction coefficients will be quite sensitive to which variables are included or exclude when they are
+highly correlated (Quinn & Keough 2002; Johnson & Field 1993).
+Absence of multicollinearity should be checked by evaluating correlations among the dependent
+variables that should all be moderately related (main requirement for MANOVA and LDA). But any
+becomes a near-linear combination of the other dependent variables, and under such
+circumstances, it would be statistically redundant. Therefore, not including highly correlated
+variables will help to lessen the impact of collinearity and, since it reduces the dimensionality of the
+data matrix, will also make MANOVA more robust to heterogeneous variance-covariance matrices
+Quinn & Keough 2002; Tabachnick & Fidell 1996)
+Because of these assumptions, performing MANOVA directly on the raw data would be quite
+problematic, since harmonic coefficients present a high degree of collinearity, with many of the
+variables having correlations even higher that .80 or .90. Their collinearity is intrinsically related to
+he way coefficients are calculated from the harmonics and it can be easily observed through
+nspections of pairwise correlations on the raw data. In addition, MANOVA is quite sensitive to
+excessive multidimensionality (as in our case with 60 descriptors) and tends to be too generous in
+significance test (Tabachnick & Fidell 1996; Johnson & Field 1993).
+Performing MANOVA on the whole set of Principal Components or harmonic coefficients should be
+strictly equivalent as they are as many PCs as quantitative variables. However, using the PCs as
+esponse variables would have different advantages:
+<U+F0B7> The same amount of shape information can be captured by a smaller number of variables
+(15 PCs versus 60 raw variables);
+<U+F0B7> Significant reduction of dataset multidimensionality with increased test robustness;
+<U+F0B7> Multicollinearity is completely avoided by using uncorrelated (orthogonal) variables as
+Principal Components.
+Performing MANOVA on PC-axes rather than the raw coefficients has also been increasingly used in
+morphometrics applied to biology and different field (Claude 2013; Claude 2008; Bonhomme et al.
+2016; Lipo et al. 2016)
+*********************************************
+Journal Name: Royal Society Open Science
+Journal Code: RSOS
+Online ISSN: 2054-5703
+Journal Admin Email: openscience@royalsociety.org
+Journal Editor: Emilie Aime
+Journal Editor Email: emilie.aime@royalsociety.org
+MS Reference Number: RSOS-160548
+Article Status: SUBMITTED
+MS Dryad ID: RSOS-160548
+MS Title: High throughput sequencing reveals fine-scale population structure and phenotypic plasticity in a
+benthic invertebrate
+MS Authors: Vendrami, David; Telesca, Luca; Weigand, Hannah; Weiss, Martina; Fawcett, Katie; Lehman,
+Katrin; Clark, Melody; Leese, Florian; McMinn, Carrie; Moore, Heather; Hoffman, Joseph
+Contact Author: David Vendrami
+Contact Author Email: david.vendrami@student.unife.it
+Contact Author Address 1: University of Bielefeld
+Contact Author Address 2: Postfach 100131
+Contact Author Address 3: 33501 Bielefeld
+Contact Author City: Bielefeld
+Contact Author State:
+Contact Author Country: Germany
+Contact Author ZIP/Postal Code: 33615
+Keywords: Pecten maximus, phenotypic plasticity, microsatellite, single nucleotide polymorphism,
+morphometrics, great scallop
+Abstract: Molecular ecology studies are gradually shifting from using small panels of classical genetic
+markers such as microsatellites to larger panels of SNPs generated by approaches like restriction site
+associated DNA sequencing (RADseq). However, very few empirical studies have compared the ability of
+hese approaches to resolve population structure. This could have implications for understanding
+ine-scale population differentiation. We therefore compared the ability of microsatellites and RADseq to
+esolve microgeographic population structure in a commercially important benthic invertebrate by
+genotyping great scallops (Pecten maximus) from nine populations around Northern Ireland at 13
+microsatellites and 10,539 SNPs. The shells were then subjected to morphometric and colour analysis to
+compare patterns of phenotypic and genetic variation. We found that RADseq was superior at detecting
+ine-scale genetic differences, yielding higher Fst values and support for two distinct genetic clusters
+whereas only one cluster could be detected in a Bayesian analysis of the microsatellite dataset. We also
+ound appreciable phenotypic variation in size-independent shell shape and colouration, including among
+ocalities that did not differ significantly at either marker. Our study demonstrates empirically how RADseq
+can provide deeper insights into fine-scale population structure and provides arguably the strongest
+evidence from a study of this kind for phenotypic plasticity in a natural mollusc population.
+EndDryadContent
+Coates, B. S., Sumerford, D. V., Miller, N. J., Kim, K. S., Sappington, T. W., Siegfried, B. D., & Lewis, L. C.
+2009). Comparative performance of single nucleotide polymorphism and microsatellite markers for
+population genetic analysis. Journal of Heredity, 100(5), 556-564.
+Meirmans, P. G., & Hedrick, P. W. (2011). Assessing population structure: FST and related
+measures. Molecular ecology resources, 11(1), 5-18.
+Evanno, G., Regnaut, S., & Goudet, J. (2005). Detecting the number of clusters of individuals using the
+software STRUCTURE: a simulation study.Molecular ecology, 14(8), 2611-2620.
+Bandalos, D. L., and M. R. Boehm-Kaufman (2009) Four Common Misconceptions in Exploratory Factor
+Analysis. In Statistical and Methodological Myths and Urban Legends, edited by C. E. Lance and R. J.
+Vandenberg, 61–87. New York: Routledge.
+Bonhomme, V. et al. (2016) The first shoots of a modern morphometrics approach to the origins of
+agriculture. Web Ecol. 16, 1–2.
+Bonhomme, V., Picq, S., Gaucherel, C. & Claude, J. (2014) Momocs : Outline Analysis Using R. J. Stat.
+Softw. 56, 1–24.
+Claude, J. (2008) Morphometrics with R. Springer.
+Claude, M. Log-shape ratios, Procrustes superimposition, elliptic Fourier analysis: Three worked examples
+n R. Hystrix 24, 94–102 (2013).
+Giardina, C. R. & Kuhl, F. P. (1977) Accuracy of curve approximation by harmonically related vectors with
+elliptical loci. Comput. Graph. Image Process. 6, 277–285.
+Johnson, C.R. & Field, C.A. (1993) Using fixed-effects model multivariate analysis of variance in marine
+biology and ecology. Oceanography and Marine Biology Annual Review 31: 177–221.
+Kenchington, E. L. & Full, W. E. (1994) Fourier Analysis of Sea Scallop ( Placopecten magellanicus ) Shells
+in Determining Population Structure. Can. J. Fish. Aquat. Sci. 51, 348–356.
+Kuhl, F. P. & Giardina, C. R. (1982) Elliptic Fourier features of a closed contour. Comput. Graph. Image
+Process. 18, 236–258.
+Lance C.E. & R. J. Vandenberg (2009) Statistical and Methodological Myths and Urban Legends. New
+York: Routledge.
+Lipo, C. P. et al. (2016) Weapons of war? Rapa Nui mata’a morphometric analyses. Antiquity 90, 172–187.
+Mundfrom, D.J., Shaw, D.G., & Ke, T.L. (2005) Minimum sample size recommendations for conducting
+actor analyses. International Journal of Testing, 5 (2), 159-168.
+Preacher, K.J., & MacCallum, R.C. (2002) Exploratory factor analysis in behavior genetics research: Factor
+ecovery with small sample sizes. Behavior Genetics, 32 (2), 153-161.
+Quinn G.P & Keough M.J. (2002) Experimental Design and Data Analysis for Biologists, 1st edition.
+Cambridge University Press.
+Tabachnick, B. & Fidell, L. (1996) Using Multivariate Statistics, 3rd edition. Harper & Row, New York.
+Society Open

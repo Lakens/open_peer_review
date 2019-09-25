@@ -1,0 +1,680 @@
+Telomeres as integrative markers of exposure to stress and
+adversity: a systematic review and meta-analysis
+Gillian V. Pepper, Melissa Bateson and Daniel Nettle
+Article citation details
+R. Soc. open sci. 5: 180744.
+http://dx.doi.org/10.1098/rsos.180744
+Review timeline
+Original submission: 11 May 2018 Note: Reports are unedited and appear as
+Revised submission: 2 July 2018 submitted by the referee. The review history
+Final acceptance: 11 July 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-180744.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Maya Mathur)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+OVERALL COMMENTS
+This meta-analysis is impressive in its scope, methods, and interpretation, and it constitutes an
+important contribution to the telomere length (TL) literature. I have a few concerns (most
+importantly #2, 3, and 6 below), but I am optimistic that these could be addressed in a revision.
+MAJOR COMMENTS
+1.) I commend the authors for their preregistration and publicly available materials on Zenodo,
+which are both exemplary in their level of detail and reproducibility. I was able to quickly and
+easily reproduce some of the primary analyses.
+2.) My most important concern with this paper is that the sampling frame and inclusion criteria
+are hard to interpret. Given the search terms, ultimately the sampling frame for the primary
+analysis appears to be “studies measuring the association between TL and some exposure that
+happened to be described as either ‘stress’ or ‘adversity’”. It seems that a study’s inclusion in the
+meta-analysis was ultimately based on whether that study happened to describe an exposure as
+“stress” or “adversity”. For stress itself, probably almost all published studies measuring this
+exposure would be captured in the search. However, for many of the other analyzed exposures,
+such as the nutritional variables or smoking, I would not expect all, or even most, studies
+measuring those exposures to describe them as “adversity” or “stress” and thus survive to
+inclusion in the meta-analysis.
+If the goal was to include any kind of environmental, behavioral, or psychosocial exposure
+(which appears to be what the analyses ultimately did include), then it seems that much broader
+search terms would have been necessary (e.g., just “telomere length”). As it stands, it seems that
+the inclusion criteria were much broader than the search terms, meaning we are left with a
+strange and hard-to-interpret sampling frame.
+3.) Given the breadth of the sampling frame, I was suspicious about the normality assumption
+used in REML-based meta-analysis. Indeed, thanks to the authors’ publicly available dataset and
+R script, I made Q-Q plots and found that the effect estimates appear to be very heavy-tailed. It is
+therefore important to present at least sensitivity analyses using methods robust to the normality
+assumption. I believe the metaplus R package has some such methods.
+4.) Throughout, when reporting heterogeneity, please report tau (the estimated standard
+deviation of the true effects), not just the somewhat hard-to-interpret Q.
+5.) I appreciate the attention to publication bias. As the authors describe, funnel plots and Egger’s
+test have some important limitations. For this reason, I’d recommend supplementing these with
+one of various likelihood-based approaches to estimating selection in the literature. For example,
+using Hedges & Vevea’s selection model [1], we can estimate that in the full dataset, the relative
+probability of publication for a study with a “significant” p-value is about 10-fold higher (CI: 4.8,
+15.8) than for a study with a nonsignificant p-value, and correcting for this mechanism of
+publication bias yields a pooled effect estimate of -0.09 (CI: -0.10, -0.07), similar to what the
+authors found with traditional methods. Here is the R code I used:
+3
+library(weightr)
+( wf = weightfunct( d$ValencedEffect, d$CommonEffectVariance, steps = c(0.025, 1) ) )
+Indeed, a strength of this enormous dataset is that such models can actually yield fairly precise
+estimates of the degree of selectivity due to publication bias in the TL literature, which are quite
+interesting in their own right and corroborate the authors’ concerns in the Discussion about
+publication bias.
+6.) The Discussion is overall excellent and appropriately considers challenges to inferring
+causation for any of these exposures given methodological limitations. These issues should be
+handled more explicitly in analysis and reporting as well. Specifically, it would be helpful to fit
+post hoc counterparts to some of the coarser analyses including only longitudinal studies that
+control for baseline telomere length. (Addressing my comment #8 below regarding the meta-
+regressive analyses would also help.) For example, I refit the primary model using only the
+longitudinal studies, resulting in a slightly stronger pooled effect size (r=-0.20). Additionally, I’d
+like to see some discussion of what kinds of confounders the studies typically adjusted for (e.g.,
+age).
+7.) Discussion, line 319: “This is almost bound to…over the life-course”. No, I do not agree that
+this “almost bound” to be the case. It’s entirely possible that longitudinal studies’ better control of
+baseline confounding could wipe out spurious associations of exposures with TL.
+8.) Table 2: Please also provide the estimated coefficients and CIs on the correlation scale for each
+moderator (e.g., -0.0059 for longitudinal vs. not).
+MINOR COMMENTS
+9.) Introduction, last sentence: I’d remove. This is in the Methods section.
+10.) Methods, line 121: What is meant by “the [analysis] closest to the raw data”? Does this refer
+to unadjusted, marginal effect sizes rather than covariate-adjusted analyses?
+11.) Methods, line 164-168: Please clarify that the analyses comparing different exposure
+categories used meta-regression, although we can eventually infer this from lines 216-217 in
+Results.
+12.) Methods: Please state the estimation method for the meta-analyses (REML based on the R
+scripts).
+13.) Methods: How were effect sizes extracted and converted to correlations for the longitudinal
+studies?
+14.) Line 397 has a typo: “more carefully reporting of statistics”.
+15.) References: Please include the direct link to the OSF repository in reference 24.
+Signed,
+Maya B. Mathur
+Department of Biostatistics
+Harvard University
+4
+REFERENCES
+1. Vevea, J. L., & Hedges, L. V. (1995). A general linear model for estimating effect size in the
+presence of publication bias. Psychometrika, 60(3), 419-435.
+(They have a nice website as well: https://vevealab.shinyapps.io/WeightFunctionModel/)
+label_author_2
+Review form: Reviewer 2 (Dan Nussey)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept as is
+Comments to the Author(s)
+label_comment_2
+This is a very well put-together, interesting and valuable meta-analysis that I feel will make a
+sizeable impact on the field. A lot has been written in many papers about the relationship
+between telomere length and forms of environmental stress, and this manuscript offers easily the
+most comprehensive meta-analysis of the literature I have seen before. It's results are illuminating
+and important - there is clearly an overall weak trend for diverse forms of stress/disease to
+predict shorter telomeres, but there is considerable unexplained heterogeneity in these
+relationships which we must strive to better understand before there is any hope of telomere
+length being some kind of useful and general biomarker of stress. I have no real comments or
+criticisms - which is very unusual in my experience of reviewing papers, I must say. This is well
+written, conceived and executed. The journal is lucky to have the option of publishing it.
+One very minor suggestion - it is standard for meta-analyses to present PRISMA diagrams
+illustrating the literature search process. I did feel that inclusion of such a figure would have been
+helpful here, although not essential by any means.
+Dan Nussey
+Edinburgh, June 2018.
+5
+label_end_comment
+Decision letter (RSOS-180744.R0)
+18-Jun-2018
+Dear Dr Nettle,
+The editors assigned to your paper ("Telomeres as integrative markers of exposure to stress and
+adversity: A systematic review and meta-analysis") have now received comments from reviewers.
+We would like you to revise your paper in accordance with the referee and Associate Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 11-Jul-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+6
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180744
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+7
+on behalf of Dr Ryan Y Wong (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments (Dr Ryan Y Wong):
+Associate Editor: 1
+Comments to the Author:
+label_comment_3
+Dear Dr. Nettle,
+Your manuscript has been reviewed by two reviewers. Both reviewers agree that the manuscript
+is well-written and makes an important contribution to the field. However, several concerns were
+bought up that need to be addressed. In particular, Reviewer 1 suggested some additional
+analyses that could help strengthen arguments made in the manuscript. A major revision is
+required before we can consider your work for publication. Attached is the assessment from each
+reviewer and each point will need to be addressed in a revised version.
+Editor comments:
+The reviewers were both overwhelmingly positive about this paper and feel that it will be a
+terrific contribution. One reviewer suggested some further work that may take a little while, and
+so I am recommending a "major revision" decision so that the authors will have time to revise
+comfortably. Thanks so much for submitting.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+OVERALL COMMENTS
+This meta-analysis is impressive in its scope, methods, and interpretation, and it constitutes an
+important contribution to the telomere length (TL) literature. I have a few concerns (most
+importantly #2, 3, and 6 below), but I am optimistic that these could be addressed in a revision.
+MAJOR COMMENTS
+1.) I commend the authors for their preregistration and publicly available materials on Zenodo,
+which are both exemplary in their level of detail and reproducibility. I was able to quickly and
+easily reproduce some of the primary analyses.
+2.) My most important concern with this paper is that the sampling frame and inclusion criteria
+are hard to interpret. Given the search terms, ultimately the sampling frame for the primary
+analysis appears to be “studies measuring the association between TL and some exposure that
+happened to be described as either ‘stress’ or ‘adversity’”. It seems that a study’s inclusion in the
+meta-analysis was ultimately based on whether that study happened to describe an exposure as
+“stress” or “adversity”. For stress itself, probably almost all published studies measuring this
+exposure would be captured in the search. However, for many of the other analyzed exposures,
+such as the nutritional variables or smoking, I would not expect all, or even most, studies
+measuring those exposures to describe them as “adversity” or “stress” and thus survive to
+inclusion in the meta-analysis.
+If the goal was to include any kind of environmental, behavioral, or psychosocial exposure
+8
+(which appears to be what the analyses ultimately did include), then it seems that much broader
+search terms would have been necessary (e.g., just “telomere length”). As it stands, it seems that
+the inclusion criteria were much broader than the search terms, meaning we are left with a
+strange and hard-to-interpret sampling frame.
+3.) Given the breadth of the sampling frame, I was suspicious about the normality assumption
+used in REML-based meta-analysis. Indeed, thanks to the authors’ publicly available dataset and
+R script, I made Q-Q plots and found that the effect estimates appear to be very heavy-tailed. It is
+therefore important to present at least sensitivity analyses using methods robust to the normality
+assumption. I believe the metaplus R package has some such methods.
+4.) Throughout, when reporting heterogeneity, please report tau (the estimated standard
+deviation of the true effects), not just the somewhat hard-to-interpret Q.
+5.) I appreciate the attention to publication bias. As the authors describe, funnel plots and Egger’s
+test have some important limitations. For this reason, I’d recommend supplementing these with
+one of various likelihood-based approaches to estimating selection in the literature. For example,
+using Hedges & Vevea’s selection model [1], we can estimate that in the full dataset, the relative
+probability of publication for a study with a “significant” p-value is about 10-fold higher (CI: 4.8,
+15.8) than for a study with a nonsignificant p-value, and correcting for this mechanism of
+publication bias yields a pooled effect estimate of -0.09 (CI: -0.10, -0.07), similar to what the
+authors found with traditional methods. Here is the R code I used:
+library(weightr)
+( wf = weightfunct( d$ValencedEffect, d$CommonEffectVariance, steps = c(0.025, 1) ) )
+Indeed, a strength of this enormous dataset is that such models can actually yield fairly precise
+estimates of the degree of selectivity due to publication bias in the TL literature, which are quite
+interesting in their own right and corroborate the authors’ concerns in the Discussion about
+publication bias.
+6.) The Discussion is overall excellent and appropriately considers challenges to inferring
+causation for any of these exposures given methodological limitations. These issues should be
+handled more explicitly in analysis and reporting as well. Specifically, it would be helpful to fit
+post hoc counterparts to some of the coarser analyses including only longitudinal studies that
+control for baseline telomere length. (Addressing my comment #8 below regarding the meta-
+regressive analyses would also help.) For example, I refit the primary model using only the
+longitudinal studies, resulting in a slightly stronger pooled effect size (r=-0.20). Additionally, I’d
+like to see some discussion of what kinds of confounders the studies typically adjusted for (e.g.,
+age).
+7.) Discussion, line 319: “This is almost bound to…over the life-course”. No, I do not agree that
+this “almost bound” to be the case. It’s entirely possible that longitudinal studies’ better control of
+baseline confounding could wipe out spurious associations of exposures with TL.
+8.) Table 2: Please also provide the estimated coefficients and CIs on the correlation scale for each
+moderator (e.g., -0.0059 for longitudinal vs. not).
+MINOR COMMENTS
+9.) Introduction, last sentence: I’d remove. This is in the Methods section.
+9
+10.) Methods, line 121: What is meant by “the [analysis] closest to the raw data”? Does this refer
+to unadjusted, marginal effect sizes rather than covariate-adjusted analyses?
+11.) Methods, line 164-168: Please clarify that the analyses comparing different exposure
+categories used meta-regression, although we can eventually infer this from lines 216-217 in
+Results.
+12.) Methods: Please state the estimation method for the meta-analyses (REML based on the R
+scripts).
+13.) Methods: How were effect sizes extracted and converted to correlations for the longitudinal
+studies?
+14.) Line 397 has a typo: “more carefully reporting of statistics”.
+15.) References: Please include the direct link to the OSF repository in reference 24.
+Signed,
+Maya B. Mathur
+Department of Biostatistics
+Harvard University
+REFERENCES
+1. Vevea, J. L., & Hedges, L. V. (1995). A general linear model for estimating effect size in the
+presence of publication bias. Psychometrika, 60(3), 419-435.
+(They have a nice website as well: https://vevealab.shinyapps.io/WeightFunctionModel/)
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+This is a very well put-together, interesting and valuable meta-analysis that I feel will make a
+sizeable impact on the field. A lot has been written in many papers about the relationship
+between telomere length and forms of environmental stress, and this manuscript offers easily the
+most comprehensive meta-analysis of the literature I have seen before. It's results are illuminating
+and important - there is clearly an overall weak trend for diverse forms of stress/disease to
+predict shorter telomeres, but there is considerable unexplained heterogeneity in these
+relationships which we must strive to better understand before there is any hope of telomere
+length being some kind of useful and general biomarker of stress. I have no real comments or
+criticisms - which is very unusual in my experience of reviewing papers, I must say. This is well
+written, conceived and executed. The journal is lucky to have the option of publishing it.
+One very minor suggestion - it is standard for meta-analyses to present PRISMA diagrams
+illustrating the literature search process. I did feel that inclusion of such a figure would have been
+helpful here, although not essential by any means.
+Dan Nussey
+Edinburgh, June 2018.
+10
+Author's Response to Decision Letter for (RSOS-180744.R0)
+See Appendix A.
+label_version_2
+RSOS-180744.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Maya Mathur)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_6
+The authors have thoroughly addressed all of my previous concerns, and at this point I would
+enthusiastically recommend acceptance without further revisions. I continue to feel that this is an
+important and methodologically meticulous paper.
+label_end_comment
+Decision letter (RSOS-180744.R1)
+11-Jul-2018
+Dear Dr Nettle,
+I am pleased to inform you that your manuscript entitled "Telomeres as integrative markers of
+exposure to stress and adversity: A systematic review and meta-analysis" is now accepted for
+publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+11
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Ryan Y Wong (Associate Editor) and Prof. Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Ryan Y Wong):
+Associate Editor: 1
+Comments to the Author:
+label_comment_7
+Dear Dr. Nettle,
+I am happy to announce that after another round of reviews of your revised manuscript, I am
+recommending that it be accepted as is. Your revised manuscript addressed all the concerns by
+the previous reviewers and makes an important contribution to the field.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+The authors have thoroughly addressed all of my previous concerns, and at this point I would
+enthusiastically recommend acceptance without further revisions. I continue to feel that this is an
+important and methodologically meticulous paper.
+Appendix A
+Response to Reviewers
+We would like to thank the two reviewers for their positive and supportive
+comments (“impressive in its scope, methods, and interpretation….it constitutes an
+important contribution to the telomere length (TL) literature”; “a very well put-
+together, interesting and valuable meta-analysis that I feel will make a sizeable
+impact on the field”); and also to reviewer 1 in particular for pushing us
+methodologically to explore our dataset further. We have addressed all the
+comments from both reviewers, and feel that the paper has been strengthened as a
+result. Below, we respond point by point.
+We would also like to point out that in preparing the revisions, we caught an error:
+in our original screening of the papers, we identified four that appear to report
+results that are already reported by a different paper in the dataset. We flagged
+these with a variable, but our final R script failed to include the line that filtered
+them out, and hence they were analysed along with their duplicates. We have now
+reinstated the line of code that filters them out. Hence, almost all numbers in the
+paper have changed, but slightly: instead of 553 associations from 142 papers, it is
+543 associations from 138 papers. The headline result changes slightly from r = -0.14
+(-0.18 to -0.11) to r = -0.15 (-0.18 to -0.11). No substantive conclusions are affected.
+Reviewer 1
+1.) I commend the authors for their preregistration and publicly available materials
+on Zenodo, which are both exemplary in their level of detail and reproducibility. I
+was able to quickly and easily reproduce some of the primary analyses.
+Thank you
+2.) My most important concern with this paper is that the sampling frame and
+inclusion criteria are hard to interpret. Given the search terms, ultimately the
+sampling frame for the primary analysis appears to be “studies measuring the
+association between TL and some exposure that happened to be described as either
+‘stress’ or ‘adversity’”. It seems that a study’s inclusion in the meta-analysis was
+ultimately based on whether that study happened to describe an exposure as
+“stress” or “adversity”. For stress itself, probably almost all published studies
+measuring this exposure would be captured in the search. However, for many of the
+other analyzed exposures, such as the nutritional variables or smoking, I would not
+expect all, or even most, studies measuring those exposures to describe them as
+“adversity” or “stress” and thus survive to inclusion in the meta-analysis. If the goal
+was to include any kind of environmental, behavioral, or psychosocial exposure
+(which appears to be what the analyses ultimately did include), then it seems that
+much broader search terms would have been necessary (e.g., just “telomere
+length”). As it stands, it seems that the inclusion criteria were much broader than
+the search terms, meaning we are left with a strange and hard-to-interpret sampling
+frame.
+The reviewer is absolutely right, but we would still defend the utility of what we
+have done. We see our strategy as yielding a good ‘transect’ through the field rather
+than an exhaustive or even representative sample. This does mean that certain
+inferences should not be made (for example, just because we found more studies of
+psychosocial stress than smoking does not mean that there exist more studies of
+psychosocial stress than smoking; it’s more of an artefact of our search strategy).
+However, our dataset is nonetheless robust enough for shedding some light on the
+questions we set out in the Introduction (what are the different kinds of things
+being studied; how do typical associations compare across exposure types; do early-
+life exposures have stronger associations than later ones; and are there general
+methodological influences such as technique of measurement or study design. We
+defend the robustness of the dataset for at least helping address these questions in
+the following way: 1. It is very large; 2. Our search strategy yielded a decent number
+of associations for all of the major categories that we were able to form; and 3.
+Where there are specialist meta-analyses using more straightforward search
+strategies for a particular exposure, the agreement with the relevant subset of our
+larger dataset is very good (table 3). Thus, we feel that what we have done is still
+valuable despite the limitation the reviewer points out.
+In response to this point, we have:
+1. Slightly strengthened the wording in the Introduction when we introduce
+our strategy: “Our search strategy was not intended to find the whole of the
+literature on telomeres and any particular exposure variable. Authors may
+not always have used the descriptors we searched, and may have been
+more likely to do so for some exposure variables than others.”
+2. Greatly expanded the second paragraph of the Discussion, to acknowledge
+the limitation more explicitly. “We emphasise that because our search
+strategy was based on ‘stress’ and ‘adversity’, our dataset is neither
+exhaustive, nor a representative sample of all the work being carried out in
+human telomere epidemiology. We are likely to have captured almost all
+work on psychosocial stress, which necessarily involves one of our search
+terms, but only some of the studies of smoking or physical diseases. Thus,
+the relative abundance of exposure types in the dataset should not be
+interpreted: for example, our dataset contains more studies of psychosocial
+exposures than of smoking, whereas the true abundances in the literature
+may well be the opposite way around [see 17,18]. However, the dataset is
+very large, and there are substantial numbers of studies in every broad
+category. Thus, it is still useful for exploring cross-cutting issues, and for
+comparing the typical strength of association of different types of exposure
+with telomere measures. For several of the exposure variables in our
+dataset, there are published specialist meta-analyses covering just that
+exposure type. In many cases, these have appeared since we began data
+collection for this paper. Where such a specialist meta-analysis exists and
+we had more than 5 associations in our dataset, we compared the by-
+category results from our figure 3 with the key results of the corresponding
+specialist meta-analyses (table 3). There was, overall, a high degree of
+agreement. We view this good agreement between the specialist reviews
+and subsets of our dataset as confirmation that the search strategy we used
+yielded a sufficiently robust transect of the telomere epidemiology
+literature for the comparisons we have presented to be meaningful.”
+3.) Given the breadth of the sampling frame, I was suspicious about the normality
+assumption used in REML-based meta-analysis. Indeed, thanks to the authors’
+publicly available dataset and R script, I made Q-Q plots and found that the effect
+estimates appear to be very heavy-tailed. It is therefore important to present at least
+sensitivity analyses using methods robust to the normality assumption. I believe the
+metaplus R package has some such methods.
+This is a very good suggestion, but implementing it proves complex. Our data-set is
+multi-level (multiple associations from the same study, multiple studies), and thus
+requires two levels of random effects to study it properly, one for the study and one
+for the individual association nested within study. Metaplus and the associated
+mixture model are not implemented for such a situation (we checked this with
+package author Ken Beath). Nonetheless, we did want to address the point
+somehow.
+The strategy we developed is to make down-sampled versions of the data where
+only one association from each independent study is used (chosen at random from
+however many there are). This turns out to be reasonably robust because the
+different associations from the same study are usually very similar (<U+03C1> is close to 1).
+Thus, choosing any one association to be typical of the whole study leads to broadly
+similar conclusions to the multi-level model, and has the bonus of producing a
+dataset with no multilevel structure.
+We then implemented the ‘metaplus’ mixture model on these down-sampled
+datasets (repeating ten times to allow for sampling variability). Indeed, it does seem
+that we have heavy tails: 12 studies are consistently assigned as being outliers, with
+more extreme associations than you would expect from a Normal distribution.
+Modelling these as outliers shrinks the central estimate from r = -0.15 to r = -0.09.
+We can also look at which studies these are: they are mostly small-n studies finding
+anomalously strong negative correlations.
+This is a useful analysis but we decided to include it in a supplementary analysis
+document rather than the main paper. The reasons for doing so are as follows.
+1. It is quite heavy-duty to explain, involving as it does resampling the dataset
+multiple times, and it is necessary to first establish the validity of doing this.
+2. It’s an approximate analysis not using all the data, and has some limitations:
+studies all of whose associations are anomalously strong will be consistently
+identified as outliers, but studies reporting many associations only one of
+which is an outlier will often be missed.
+3. The conclusions that it leads to were already implicit in simpler analyses of
+the whole data set we already present. For example, we showed in the
+original paper that if you excluded all the small studies, the estimates
+shrank from about r = -0.15 to r = -0.08. The metaplus analysis shows that a
+few of the small studies are outliers, and that modelling them as such
+shrinks the estimates from about r = -0.15 to r = -0.09, so the same
+conclusion, but bought at much greater complexity.
+We thus hope that those who are really interested in the inferential methods can
+read the supplementary document, but the arguments of the main paper are
+unaffected. We briefly refer to the supplementary document at appropriate points
+in the main Results text.
+4.) Throughout, when reporting heterogeneity, please report tau (the estimated
+standard deviation of the true effects), not just the somewhat hard-to-interpret Q.
+We have reported tau (and where relevant its counterpart rho which is needed to
+demonstrate where the variability resides, between studies or between associations
+from the same study) whenever we discuss the amount of residual heterogeneity
+present. We have not added tau values to table 2 as it is the Q value that provides
+the direct statistical test of moderation, and as almost all of these tests are non-
+significant anyway, the tau is the same or almost the same in every row.
+5.) I appreciate the attention to publication bias. As the authors describe, funnel
+plots and Egger’s test have some important limitations. For this reason, I’d
+recommend supplementing these with one of various likelihood-based approaches to
+estimating selection in the literature. For example, using Hedges & Vevea’s selection
+model [1], we can estimate that in the full dataset, the relative probability of
+publication for a study with a “significant” p-value is about 10-fold higher (CI: 4.8,
+15.8) than for a study with a nonsignificant p-value, and correcting for this
+mechanism of publication bias yields a pooled effect estimate of -0.09 (CI: -0.10, -
+0.07), similar to what the authors found with traditional methods.
+Again, this is a good suggestion, but complex to implement because of the
+multilevel structure of the data. We have implemented it using down-sampled
+versions of the dataset in the supplementary document (the example code the
+reviewer included ignores the multilevel structure of the data, and we would prefer
+not to do this). The analysis produces similar conclusions to those we had already
+drawn on the basis of simpler analyses reported in the main paper; though it
+clarifies the following interesting insight: the publication bias, if there is any, seems
+to be non-publication of results from small studies that go strongly against the
+hypothesis that stress and adversity shorten telomeres, rather than differential non-
+publication of results if they go in the expected direction but fall short of
+significance (see figure S2 in the supplement). We briefly refer to this analysis in the
+supplementary document where most relevant in the main text Results.
+6.) The Discussion is overall excellent and appropriately considers challenges to
+inferring causation for any of these exposures given methodological limitations.
+These issues should be handled more explicitly in analysis and reporting as well.
+Specifically, it would be helpful to fit post hoc counterparts to some of the coarser
+analyses including only longitudinal studies that control for baseline telomere
+length. (Addressing my comment #8 below regarding the meta-regressive analyses
+would also help.) For example, I refit the primary model using only the longitudinal
+studies, resulting in a slightly stronger pooled effect size (r=-0.20). Additionally, I’d
+like to see some discussion of what kinds of confounders the studies typically
+adjusted for (e.g., age).
+There are two points here. First, as for refitting models using only longitudinal
+studies, in our view there is no justification for doing this since the test of
+moderation by longitudinal design is non-significant (or anywhere near). In fact, the
+parameter estimate for longitudinal design is very close to zero. Thus we cannot say
+with confidence that longitudinal studies systematically produce stronger effects.
+We have added the coefficients to table 2 (as suggested in comment 8 below), and
+this allows the reader to see this, without need for fitting an extra model.
+On the adjustment for confounders issue, the studies vary so much that it is hard to
+generalize. The most common adjustment is simply age (some studies add sex).
+Because of our policy of choosing the least-adjusted model, there are unlikely to be
+more extensive adjustments than this in cross-sectional cases, though longitudinal
+studies may have additional adjustments for baseline telomere length and/or length
+of follow-up. We can however say that 54% involve no adjustment at all – we now
+report this in the first paragraph of Results.
+7.) Discussion, line 319: “This is almost bound to…over the life-course”. No, I do not
+agree that this “almost bound” to be the case. It’s entirely possible that longitudinal
+studies’ better control of baseline confounding could wipe out spurious associations
+of exposures with TL.
+Our statement was poorly worded. What we meant was that if there are true
+environmental effects, the measured effect sizes are likely to be weak in cross-
+sectional studies. The reviewer is quite right that there could be spurious
+associations too. We have rephrased to “Where there are true environmental
+effects on telomere attrition, measured associations between telomere length and
+environmental factors in cross-sectional studies are likely to be weak, since the
+individual variation in telomere length at birth, which is substantially heritable,
+dwarfs the amount by which telomeres shorten over the life-course”
+8.) Table 2: Please also provide the estimated coefficients and CIs on the correlation
+scale for each moderator (e.g., -0.0059 for longitudinal vs. not
+We have added these coefficients to the table.
+9.) Introduction, last sentence: I’d remove. This is in the Methods section
+Done
+10.) Methods, line 121: What is meant by “the [analysis] closest to the raw data”?
+Does this refer to unadjusted, marginal effect sizes rather than covariate-adjusted
+analyses?
+Yes, we have clarified the wording to:
+“Where several alternative analyses were presented, we chose unadjusted in
+preference to adjusted analyses; and from several adjusted analyses where no
+unadjusted data were available, the analysis that adjusted for the fewest variables.
+This was to maximise comparability between studies that included different sets of
+control variables in multivariate models”
+11.) Methods, line 164-168: Please clarify that the analyses comparing different
+exposure categories used meta-regression, although we can eventually infer this
+from lines 216-217 in Results.
+We have added “Meta-regression was used to examine differences in association
+strength for different types of exposure, and different methodological features”
+12.) Methods: Please state the estimation method for the meta-analyses (REML
+based on the R scripts).
+We have added this information to the data analysis section
+13.) Methods: How were effect sizes extracted and converted to correlations for the
+longitudinal studies?
+We have added the sentence: “For longitudinal studies, associations were between
+change in telomere length (i.e. difference between follow-up and baseline) and the
+exposure variable” to the association format section of the Methods.
+14.) Line 397 has a typo: “more carefully reporting of statistics”.
+Corrected
+15.) References: Please include the direct link to the OSF repository in reference 24.
+We have done this manually as our reference management software seems
+determined not to display it.
+Reviewer 2
+One very minor suggestion - it is standard for meta-analyses to present PRISMA
+diagrams illustrating the literature search process. I did feel that inclusion of such a
+figure would have been helpful here, although not essential by any means.
+We have included a PRISMA diagram as electronic supporting material. We would
+like to thank the referee for this suggestion, because it was in preparing the PRISMA
+that we found our exclusion error (see top of document).
+Society Open

@@ -1,0 +1,801 @@
+Leaving safety to visit a feeding site: is it optimal to hesitate
+while exposed?
+Sean A. Rands
+Article citation details
+R. Soc. open sci. 4: 160910.
+http://dx.doi.org/10.1098/rsos.160910
+Review timeline
+Original submission: 19 August 2016 Note: Reports are unedited and appear as
+Revised submission: 11 November 2016 submitted by the referee. The review history
+Final acceptance: 6 December 2016 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-160595.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Anders Brodin)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Comments to ”Leaving safety to visit a feeding site: is it optimal to hesitate while exposed?”
+This is a stochastic dynamic programming model about an interesting topic: how should an
+animal trade off predation risk versus starvation risk. In classic OFT risk-sensitive foraging deals
+exclusively with the risk of not finding a sufficient amount of food or energy. This model is a
+more modern and appropriate version this topic; here predation risk and starvation risk are
+incorporated in the same optimisation, hence this could be called “true risk-sensitive foraging” or
+something such. If I had written this manuscript, I would have stressed this more than the
+hesitation part as this could be the most important contribution of this model.
+My next point may be a bit philosophical, but are the results really showing hesitation? To me
+hesitation is failure or delay in making a decision. In this model turning around or stopping half-
+way to the food source is the optimal decision. For example, if a forager that approaches a food
+source would stop in order to scan for predators at some distance from the food this is a correct
+optimal decision, not hesitation. Maybe stopping, turning back or dawdling can be called
+hesitation because it looks that way, but in this type of model a behaviour is always optimal. If
+Turning or stopping occurs when a predator appears this must be truly optimal.
+Even though I think that this model is important and that the problem is an interesting one, this
+manuscript feels like a project rather than a focussed, finalized manuscript. Why are these
+parameters chosen? Are they realistic in relation to each other? The lack of realistic
+parametrisation makes the results hard to evaluate. Will the three policies ever occur in nature? A
+decreasing or intermediate policy sounds plausible, but under what conditions would a blue tit
+use an increasing policy? It would be very helpful if you could exemplify your choice of
+parameters in words, for example “fat bird in low predation/high food abundance habitat” and
+plot this as a function of distance.
+Also, it is a question in a model such as this how clear the differences are between the various
+policies. A small green isolated square such as the one at the lower left side of figure 2d suggests
+that the differences in optimality between the various behaviours is very small, maybe on the
+scale of the last decimal in a double-precision float? Figure 2b looks more like if differences are
+clear here.
+If you choose to focus on the three policies you should explain more clearly what they mean. Are
+they applicable to real birds? When would we expect them to occur? What is the main reason for
+their differences?
+A small detail: figure 1 is not be the best illustration for this model. This may not be that
+important but I cannot refrain from remarking on this. The food source side of it is OK, a bird
+such as a blue tit going to a bird feeder. This is a concentrated source of food at a known distance.
+The choice of predator is funny, looks like a peregrine hunting blue tits. Neither peregrines (nor
+hobbies) would hunt in arboreal habitats, a sparrowhawk would be more appropriate. Also, the
+“safe refuge” side of the illustration feels more like a fox-rabbit system than a passerine bird-
+airborne predator system. A bird such as a blue tit does not have a safe refuge, it will not enter a
+tree hole or nest box. If attacked by a sparrowhawk it will try to escape by evasive manoeuvres.
+The safest habitat for a blue tit will be dense foliage or such. The safety here consists of a small
+probability of being spotted. Once spotted, this habitat is no longer safe. It may be safe for an
+immobile bird perching there, but it is not a completely safe refuge. A completely safe refuge is
+more appropriate for a rabbit or vole that can escape into its underground burrow when
+attacked.
+Detailed comments:
+Line 74: “some consideration” is an understatement here as it is a main topic of most of these
+models. These dynamic programming models are summarized in Brodin 2006…
+Line 130: What is a policy? If a threshold it is increasing or decreasing over the whole distance to
+the food I can see this as something general, a policy, but do you also call optimal behaviour for a
+single time step “policy”? In that case, wouldn’t optimal behaviour be better to separate these
+3
+two concepts?
+Line 135: Did you test-run predation in the forward iteration? A comparison of the proportion
+predated with the value of V in the backward iteration would be a good test that the algorithm is
+not leaking probabilities…
+Line 157-158: Couldn’t it stop in one period and turn around in the next?
+Line 193-202. This sounds very reasonable. It is hard to evaluate, however, which parts of figure 2
+that are important. Where in this figure would individuals occur in the forward iteration? Is it
+possible, for example, that an animal that should move homewards should have stayed there and
+never have moved away from the refuge?
+Line 220: Compared to the maximum amount of energy reserves it occurs to be a small jump…
+Line 301: What do you mean here, different values of D?
+Line334: Food supple? I assume you mean supply.
+Line 380: This is true!
+Page 18-19: Could you explain the notation on the summation marks clearer? I read it as
+summation of K of K over K. From what? Zero to K?
+Line 645: What did the sensitivity analyses tell you? Is the effect of variable values important
+when the parameters are arbitrary?
+Figure 4 was very hard to read, some error with line numbers here.
+The equations look sound, maybe you can use the same equation for intermediate locations, the
+food source and the refuge by defining V as zero for non-possible behaviours?
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+This manuscript reports the results of a modelling study of the optimal behaviour of animals
+travelling to and from a feeding site. Whilst patch use and central-place foraging are well studied,
+optimal behaviour under the risk of predation whilst travelling has been overlooked The author
+uses an appropriate methodology, state-dependent dynamic programming, to address this gap. I
+found the question interesting and the manuscript very well written. I have identified some
+potential issues with the particulars of the approach, and feel that presentation of predictions
+could be clearer, which would increase the value of this new theory.
+4
+The author makes a laudable effort to make the manuscript accessible by an extensive verbal
+description of the model that leaves out mathematical details. However, this might have gone a
+little far. Some readers would like to clearly see how sigma affects risk, and how energy reserves
+change, because the current wording does not capture this unambiguously. One consequence of
+omitting details is that the two kappas and two gammas are undefined, despite appearing in the
+legend of Figure 2.
+The model makes some interesting predictions, but they are a little obscured by the stochastic
+approach to parameter exploration. The author chose to run thousands of analyses with
+randomly selected parameter values. I'm not completely convinced of the value of this, as
+opposed to a systematic exploration using a grid of values. One of the benefits of this would be to
+ease the display of the interactions between parameter values: Figure 3 shows their individual
+effects, but it is likely that their relative values is what matters. For example, it is likely that the
+ratio of gamma to kappa (energy gain to energy use) determines behaviour, not their absolute
+values.
+One consequence of the current presentation is that the reader does not know whether the policy
+type and animal fatness are confounded. Figure 2 suggests that increasing policies occur when
+more fat must be stored. Is this actually always the case? It would be useful to make clear
+predictions about when we expect animals to be fatter, and when we expect then to have longer
+foraging bouts, for example.
+As the author points out, the policies actually lie on a continuum (between decreasing and
+increasing), so I wasn't sure of the value of categorising their behaviour (Table 1), especially since
+the policy cannot be directly observed. It would be preferable to plot the relationship between
+parameters (which we may manipulate) and behaviour (which we can observe).
+One potentially important extra parameter is the relative predation risk at the feeding site
+compared to the intermediate points; we might see more dawdling if foraging is riskier than
+travelling, which might happen if predators make sensible decisions.
+Most importantly, I am concerned that one of the main conclusions of the manuscript follows
+from an unrealistic assumption. The author discusses how under some policies the animal should
+not return always to the refuge, but rest at an intermediate point. This occurs because there is no
+benefit to activities other than foraging, so the animal just waits until reserves drop to the
+threshold. This assumption makes sense under some conditions (e.g. survival over a long period
+in winter when time steps are long, such as hours), but in most situations animals have other
+things to do than eating, such as signalling territory ownership, social bonding behaviour,
+sleeping, etc. In such a case, the animal should return to the refuge to increase its fitness. I found
+myself wondering whether the predictions would be the same if the animal received a fitness
+payoff when not foraging, perhaps when also in the refuge, and the policy maximises the sum of
+these fitness payoffs before death, rather than just maximising survival. Most obviously, we
+would expect animals to avoid dawdling, because it wastes (potentially useful) time, so we might
+not get the prediction shown in Figure 4.
+Minor Comments
+15: Delete "occasionally".
+24: "return a partial distance" was unclear on first reading.
+53-63: May belong at the end of the Introduction; lines 72:76 perhaps belongs earlier.
+76: Make it clear that the feeding site is as dangerous as travelling.
+208: "extreme example", not "extreme policy".
+229: Are "intermediate" all non-monotonic and v.v.? It is not clear.
+234: "In all cases" suggests that this is true comparing across parameter values. Perhaps "all else
+being equal"?
+262: Delete "presumably"; this is clearly the cause.
+267-270: This is a counter-intuitive prediction; explain why it occurs.
+5
+334: "supply"
+582: "patch" is undefined. Does it mean the whole world of the animal, or one spatial unit?
+Figure 3d seems unnecessary: it is not very different to Figure 3c and it is little discussed, and in
+any case might just be a grid effect.
+label_end_comment
+Decision letter (RSOS-160595.R0)
+21-Sep-2016
+Dear Dr Rands,
+The editors assigned to your paper ("Leaving safety to visit a feeding site: is it optimal to hesitate
+whilst exposed?") have now received comments from reviewers. We would like you to revise
+your paper in accordance with the referee and Subject Editor suggestions which can be found
+below (not including confidential reports to the Editor). Please note this decision does not
+guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 14-Oct-2016). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+6
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160595
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Comments to ”Leaving safety to visit a feeding site: is it optimal to hesitate while exposed?”
+7
+This is a stochastic dynamic programming model about an interesting topic: how should an
+animal trade off predation risk versus starvation risk. In classic OFT risk-sensitive foraging deals
+exclusively with the risk of not finding a sufficient amount of food or energy. This model is a
+more modern and appropriate version this topic; here predation risk and starvation risk are
+incorporated in the same optimisation, hence this could be called “true risk-sensitive foraging” or
+something such. If I had written this manuscript, I would have stressed this more than the
+hesitation part as this could be the most important contribution of this model.
+My next point may be a bit philosophical, but are the results really showing hesitation? To me
+hesitation is failure or delay in making a decision. In this model turning around or stopping half-
+way to the food source is the optimal decision. For example, if a forager that approaches a food
+source would stop in order to scan for predators at some distance from the food this is a correct
+optimal decision, not hesitation. Maybe stopping, turning back or dawdling can be called
+hesitation because it looks that way, but in this type of model a behaviour is always optimal. If
+Turning or stopping occurs when a predator appears this must be truly optimal.
+Even though I think that this model is important and that the problem is an interesting one, this
+manuscript feels like a project rather than a focussed, finalized manuscript. Why are these
+parameters chosen? Are they realistic in relation to each other? The lack of realistic
+parametrisation makes the results hard to evaluate. Will the three policies ever occur in nature? A
+decreasing or intermediate policy sounds plausible, but under what conditions would a blue tit
+use an increasing policy? It would be very helpful if you could exemplify your choice of
+parameters in words, for example “fat bird in low predation/high food abundance habitat” and
+plot this as a function of distance.
+Also, it is a question in a model such as this how clear the differences are between the various
+policies. A small green isolated square such as the one at the lower left side of figure 2d suggests
+that the differences in optimality between the various behaviours is very small, maybe on the
+scale of the last decimal in a double-precision float? Figure 2b looks more like if differences are
+clear here.
+If you choose to focus on the three policies you should explain more clearly what they mean. Are
+they applicable to real birds? When would we expect them to occur? What is the main reason for
+their differences?
+A small detail: figure 1 is not be the best illustration for this model. This may not be that
+important but I cannot refrain from remarking on this. The food source side of it is OK, a bird
+such as a blue tit going to a bird feeder. This is a concentrated source of food at a known distance.
+The choice of predator is funny, looks like a peregrine hunting blue tits. Neither peregrines (nor
+hobbies) would hunt in arboreal habitats, a sparrowhawk would be more appropriate. Also, the
+“safe refuge” side of the illustration feels more like a fox-rabbit system than a passerine bird-
+airborne predator system. A bird such as a blue tit does not have a safe refuge, it will not enter a
+tree hole or nest box. If attacked by a sparrowhawk it will try to escape by evasive manoeuvres.
+The safest habitat for a blue tit will be dense foliage or such. The safety here consists of a small
+probability of being spotted. Once spotted, this habitat is no longer safe. It may be safe for an
+immobile bird perching there, but it is not a completely safe refuge. A completely safe refuge is
+more appropriate for a rabbit or vole that can escape into its underground burrow when
+attacked.
+Detailed comments:
+Line 74: “some consideration” is an understatement here as it is a main topic of most of these
+models. These dynamic programming models are summarized in Brodin 2006…
+Line 130: What is a policy? If a threshold it is increasing or decreasing over the whole distance to
+the food I can see this as something general, a policy, but do you also call optimal behaviour for a
+single time step “policy”? In that case, wouldn’t optimal behaviour be better to separate these
+two concepts?
+Line 135: Did you test-run predation in the forward iteration? A comparison of the proportion
+predated with the value of V in the backward iteration would be a good test that the algorithm is
+not leaking probabilities…
+Line 157-158: Couldn’t it stop in one period and turn around in the next?
+8
+Line 193-202. This sounds very reasonable. It is hard to evaluate, however, which parts of figure 2
+that are important. Where in this figure would individuals occur in the forward iteration? Is it
+possible, for example, that an animal that should move homewards should have stayed there and
+never have moved away from the refuge?
+Line 220: Compared to the maximum amount of energy reserves it occurs to be a small jump…
+Line 301: What do you mean here, different values of D?
+Line334: Food supple? I assume you mean supply.
+Line 380: This is true!
+Page 18-19: Could you explain the notation on the summation marks clearer? I read it as
+summation of K of K over K. From what? Zero to K?
+Line 645: What did the sensitivity analyses tell you? Is the effect of variable values important
+when the parameters are arbitrary?
+Figure 4 was very hard to read, some error with line numbers here.
+The equations look sound, maybe you can use the same equation for intermediate locations, the
+food source and the refuge by defining V as zero for non-possible behaviours?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+This manuscript reports the results of a modelling study of the optimal behaviour of animals
+travelling to and from a feeding site. Whilst patch use and central-place foraging are well studied,
+optimal behaviour under the risk of predation whilst travelling has been overlooked The author
+uses an appropriate methodology, state-dependent dynamic programming, to address this gap. I
+found the question interesting and the manuscript very well written. I have identified some
+potential issues with the particulars of the approach, and feel that presentation of predictions
+could be clearer, which would increase the value of this new theory.
+The author makes a laudable effort to make the manuscript accessible by an extensive verbal
+description of the model that leaves out mathematical details. However, this might have gone a
+little far. Some readers would like to clearly see how sigma affects risk, and how energy reserves
+change, because the current wording does not capture this unambiguously. One consequence of
+omitting details is that the two kappas and two gammas are undefined, despite appearing in the
+legend of Figure 2.
+The model makes some interesting predictions, but they are a little obscured by the stochastic
+approach to parameter exploration. The author chose to run thousands of analyses with
+randomly selected parameter values. I'm not completely convinced of the value of this, as
+opposed to a systematic exploration using a grid of values. One of the benefits of this would be to
+ease the display of the interactions between parameter values: Figure 3 shows their individual
+effects, but it is likely that their relative values is what matters. For example, it is likely that the
+ratio of gamma to kappa (energy gain to energy use) determines behaviour, not their absolute
+values.
+One consequence of the current presentation is that the reader does not know whether the policy
+type and animal fatness are confounded. Figure 2 suggests that increasing policies occur when
+more fat must be stored. Is this actually always the case? It would be useful to make clear
+predictions about when we expect animals to be fatter, and when we expect then to have longer
+foraging bouts, for example.
+As the author points out, the policies actually lie on a continuum (between decreasing and
+increasing), so I wasn't sure of the value of categorising their behaviour (Table 1), especially since
+the policy cannot be directly observed. It would be preferable to plot the relationship between
+parameters (which we may manipulate) and behaviour (which we can observe).
+One potentially important extra parameter is the relative predation risk at the feeding site
+9
+compared to the intermediate points; we might see more dawdling if foraging is riskier than
+travelling, which might happen if predators make sensible decisions.
+Most importantly, I am concerned that one of the main conclusions of the manuscript follows
+from an unrealistic assumption. The author discusses how under some policies the animal should
+not return always to the refuge, but rest at an intermediate point. This occurs because there is no
+benefit to activities other than foraging, so the animal just waits until reserves drop to the
+threshold. This assumption makes sense under some conditions (e.g. survival over a long period
+in winter when time steps are long, such as hours), but in most situations animals have other
+things to do than eating, such as signalling territory ownership, social bonding behaviour,
+sleeping, etc. In such a case, the animal should return to the refuge to increase its fitness. I found
+myself wondering whether the predictions would be the same if the animal received a fitness
+payoff when not foraging, perhaps when also in the refuge, and the policy maximises the sum of
+these fitness payoffs before death, rather than just maximising survival. Most obviously, we
+would expect animals to avoid dawdling, because it wastes (potentially useful) time, so we might
+not get the prediction shown in Figure 4.
+Minor Comments
+15: Delete "occasionally".
+24: "return a partial distance" was unclear on first reading.
+53-63: May belong at the end of the Introduction; lines 72:76 perhaps belongs earlier.
+76: Make it clear that the feeding site is as dangerous as travelling.
+208: "extreme example", not "extreme policy".
+229: Are "intermediate" all non-monotonic and v.v.? It is not clear.
+234: "In all cases" suggests that this is true comparing across parameter values. Perhaps "all else
+being equal"?
+262: Delete "presumably"; this is clearly the cause.
+267-270: This is a counter-intuitive prediction; explain why it occurs.
+334: "supply"
+582: "patch" is undefined. Does it mean the whole world of the animal, or one spatial unit?
+Figure 3d seems unnecessary: it is not very different to Figure 3c and it is little discussed, and in
+any case might just be a grid effect.
+Author's Response to Decision Letter for (RSOS-160595.R0)
+See Appendix A.
+label_version_2
+RSOS-160910.R0 (Revision)
+label_author_3
+Review form: Reviewer 1 (Anders Brodin)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+10
+Is it clear how to access all supporting data?
+-
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+As I was positive towards this manuscript already in the first round, and the answers to my
+questions are satisfactory, I have really nothing to add. The model is very general and not specific
+for any system, but this is OK as this is the intention of the author.
+Anders Brodin
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_6
+I am happy with the responses of the author and have no further comments.
+11
+label_end_comment
+Decision letter (RSOS-160910)
+06-Dec-2016
+Dear Dr Rands,
+I am pleased to inform you that your manuscript entitled "Leaving safety to visit a feeding site: is
+it optimal to hesitate whilst exposed?" is now accepted for publication in Royal Society Open
+Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Ms Alice Power, Mr Andrew Dunn
+alice.power@royalsociety.org, andrew.dunn@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Reviewer(s)' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+As I was positive towards this manuscript already in the first round, and the answers to my
+questions are satisfactory, I have really nothing to add. The model is very general and not specific
+for any system, but this is OK as this is the intention of the author.
+Anders Brodin
+Reviewer: 2
+Comments to the Author(s)
+label_comment_8
+I am happy with the responses of the author and have no further comments.
+Appendix A
+Dr Sean Rands
+School of Biological Sciences
+University of Bristol
+Bristol Life Sciences Building
+Tyndall Avenue
+Bristol BS8 1TQ, United Kingdom
+t +44 (0)117 394 1198
+e sean.rands@bristol.ac.uk
+Wednesday 9th November 2016 w seanrands.com
+Dear Editor,
+Please find enclosed a revised version of “Leaving safety to visit a feeding site: is it optimal to
+hesitate whilst exposed?”, originally submitted to Royal Society Open Science as manuscript ID
+label_version_3
+RSOS-160595. Thanks to you and the reviewers for allowing a resubmission – I hope I have
+satisfactorily addressed any concerns with this revision. A full response follows below.
+I confirm again that I am the sole author, and that nobody else contributed anything of note to
+this work (barring the details given in the acknowledgements). I also confirm again that no part of
+this work has either been published or is being considered for publication elsewhere (noting that
+one of the zipped supplementary files is by another author and distributed under a GNU license,
+the conditions of which are complied with in this submission).
+I look forwards to hearing from you.
+With best wishes
+Sean
+I note here that there are no editor comments that need responding to.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_9
+Comments to ”Leaving safety to visit a feeding site: is it optimal to hesitate while exposed?”
+This is a stochastic dynamic programming model about an interesting topic: how should an
+animal trade off predation risk versus starvation risk. In classic OFT risk-sensitive foraging deals
+exclusively with the risk of not finding a sufficient amount of food or energy. This model is a more
+modern and appropriate version this topic; here predation risk and starvation risk are
+incorporated in the same optimisation, hence this could be called “true risk-sensitive foraging” or
+something such. If I had written this manuscript, I would have stressed this more than the
+hesitation part as this could be the most important contribution of this model.
+Wow – thank you for the kind compliment of suggesting this could be ‘true risk-sensitive
+foraging’ J! However, I’m wary of trying to sell this as a more modern version of OFT as I don’t
+feel this manuscript goes far enough to justify that. My intentions with this manuscript are
+genuinely to try and explore/advertise the observation that this pausing behaviour can occur, so I
+kindly beg to differ with the reviewer here, and keep the focus I originally gave.
+My next point may be a bit philosophical, but are the results really showing hesitation? To me
+hesitation is failure or delay in making a decision. In this model turning around or stopping half-
+way to the food source is the optimal decision. For example, if a forager that approaches a food
+source would stop in order to scan for predators at some distance from the food this is a correct
+optimal decision, not hesitation. Maybe stopping, turning back or dawdling can be called
+hesitation because it looks that way, but in this type of model a behaviour is always optimal. If
+Turning or stopping occurs when a predator appears this must be truly optimal.
+This is a useful point, but I am quite happy to use the word hesitation here to mean the
+momentary stopping behaviour seen here: it’s only used in the title (where I think it is appropriate
+to use a word to describe stopping for a while in a place that doesn’t seem right), and in the
+context of ‘hesitancy’ as reported in fish experiments, where the behaviour seen is extremely
+similar to what is seen in the fish.
+Even though I think that this model is important and that the problem is an interesting one, this
+manuscript feels like a project rather than a focussed, finalized manuscript. Why are these
+parameters chosen? Are they realistic in relation to each other? The lack of realistic
+parametrisation makes the results hard to evaluate. Will the three policies ever occur in nature?
+A decreasing or intermediate policy sounds plausible, but under what conditions would a blue tit
+use an increasing policy? It would be very helpful if you could exemplify your choice of
+parameters in words, for example “fat bird in low predation/high food abundance habitat” and
+plot this as a function of distance.
+The model is unashamedly unattached to a specific system, but rather was conceived to explore
+the behaviours that individuals make when they are travelling between points of interest in an
+environment that isn’t particularly dangerous (putting my cards on the table, this was originally
+conceived for shoaling fish moving slowly from a refuge to a foraging site in bursts of
+movement). I genuinely think the interesting thing here is the fact that you get hesitation with
+bursts of behaviour, and that you get individuals failing to return to safety. I am very reluctant to
+label parameter sets for specific species here because I am not convinced that what I present in
+the current model is fine-scale enough for any particular system to make a prediction
+meaningful. Rather, there I think the important result here is that there is a qualitative prediction
+that a specific repeatable behaviour (both the hesitation and the stop-start approach) might be
+observable and explainable. I am hoping to produce a number of models that are aimed much
+more specifically at known systems, but what I give here is purely a prospective attempt to
+justify some more precise work.
+Also, it is a question in a model such as this how clear the differences are between the various
+policies. A small green isolated square such as the one at the lower left side of figure 2d
+suggests that the differences in optimality between the various behaviours is very small, maybe
+on the scale of the last decimal in a double-precision float? Figure 2b looks more like if
+differences are clear here.
+Figure 2d was included as an indicator that some policies observed threw out a little bit of ‘kink’
+similar to what was given in the figure – a few cases make this additional lump a bit bigger, but it
+is very unlikely that the foraging animal is ever going to spend very much time with its state
+variables within this region. As reviewer #2 rightly suggests (very last comment in this
+document), this region is most likely a computational artefact
+If you choose to focus on the three policies you should explain more clearly what they mean. Are
+they applicable to real birds? When would we expect them to occur? What is the main reason for
+their differences?
+Please see my earlier response: I don’t think this model is parameterisable as it stands. From my
+perspective, the policies described fell out of the model as being three very distinct forms, so it
+makes sense to describe them in some detail. However, it is the behaviours that result from
+these policies that is what we are going to observe when we watch animals emerging from
+shelter, and so the focus of the discussion shifts towards that rather than the policy forms
+themselves.
+A small detail: figure 1 is not be the best illustration for this model. This may not be that
+important but I cannot refrain from remarking on this. The food source side of it is OK, a bird
+such as a blue tit going to a bird feeder. This is a concentrated source of food at a known
+distance. The choice of predator is funny, looks like a peregrine hunting blue tits. Neither
+peregrines (nor hobbies) would hunt in arboreal habitats, a sparrowhawk would be more
+appropriate. Also, the “safe refuge” side of the illustration feels more like a fox-rabbit system
+than a passerine bird-airborne predator system. A bird such as a blue tit does not have a safe
+refuge, it will not enter a tree hole or nest box. If attacked by a sparrowhawk it will try to escape
+by evasive manoeuvres. The safest habitat for a blue tit will be dense foliage or such. The safety
+here consists of a small probability of being spotted. Once spotted, this habitat is no longer safe.
+It may be safe for an immobile bird perching there, but it is not a completely safe refuge. A
+completely safe refuge is more appropriate for a rabbit or vole that can escape into its
+underground burrow when attacked.
+In retrospect, I can see why figure 1 may be confusing! It was added in response to a suggestion
+from a reviewer on an earlier version, but I think it makes more sense to remove it here as it
+looks like it may simply end up confusing the intended empirical audience, and its inclusion is
+not essential. Removing it keeps the manuscript focussed as a theoretical investigation (and
+there are now only a few throwaway suggestions in the abstract and suggestion tying this to
+birds in particular). Thanks for the honest opinion!
+Detailed comments:
+Line 74: “some consideration” is an understatement here as it is a main topic of most of these
+models. These dynamic programming models are summarized in Brodin 2006…
+I don’t agree with you here, but I suspect this might be through a bit of miswording on my part.
+Yes, all of these dynamic programming models definitely consider the trade-off between
+starvation and predation (and I have added a reference to Brodin 2007 here, which I think is the
+review paper you are referring to), but what I mean to say here is that there has been little focus
+in these models on explicitly moving between a safe site and an exposed site, rather than
+showing a behavioural change where it is implicitly assumed that they are safe or exposed.
+Line 130: What is a policy? If a threshold it is increasing or decreasing over the whole distance to
+the food I can see this as something general, a policy, but do you also call optimal behaviour for
+a single time step “policy”? In that case, wouldn’t optimal behaviour be better to separate these
+two concepts?
+A policy here is the full set of immediate optimal decisions an individual makes at a moment in
+time dependent upon its energy reserves, location, and current predator experience. I’m fairly
+certain I have described this in the correct manner.
+Line 135: Did you test-run predation in the forward iteration? A comparison of the proportion
+predated with the value of V in the backward iteration would be a good test that the algorithm is
+not leaking probabilities…
+I hadn’t thought of doing this – it’s an interesting idea. I’ve run out of time to rewrite the code to
+implement this, but have given the predator-free code I ran some close scrutiny to make sure
+that I haven’t made any silly mistakes. I’m not fully certain that the comparison suggested would
+be useful though: as the Houston & McNamara models ‘small bird in winter’ models suggest,
+changing predation risks leads to an observed change in the proportion of a population that
+starves, and vice versa, and so a direct comparison of the predation risk experienced and the
+actual forward-run population predation probability may not be the same thing.
+Line 157-158: Couldn’t it stop in one period and turn around in the next?
+Yes, but that has been accounted for in the rest of the paragraph (so I say that they are
+‘considered to be moving either homewards or outwards’, and then define all possible
+sequences of actions such that a pausing behaviour will still count as homewards or outwards).
+So, no need to change anything here.
+Line 193-202. This sounds very reasonable. It is hard to evaluate, however, which parts of figure
+2 that are important. Where in this figure would individuals occur in the forward iteration? Is it
+possible, for example, that an animal that should move homewards should have stayed there
+and never have moved away from the refuge?
+I have added a sentence at the end of this first paragraph of the results that notes that
+individuals following an optimal policy tend to stay in the region of state space close to the
+threshold between the two behavioural options.
+Line 220: Compared to the maximum amount of energy reserves it occurs to be a small jump…
+A fair point, but it is a large jump in comparison to the energy reserves the individual should have
+when it is in the refuge. I have compromised by just using ‘jump’.
+Line 301: What do you mean here, different values of D?
+Yes – thankyou for pointing this ambiguity out. I have altered the text to make this more explicit.
+Line334: Food supple? I assume you mean supply.
+Oops! Thankyou - changed.
+Line 380: This is true!
+Agreed. My intention for producing this paper is to demonstrate that the patterns seen are
+possible, and I hope that it will be a useful starting point for some more realistic theoretical work.
+Page 18-19: Could you explain the notation on the summation marks clearer? I read it as
+summation of K of K over K. From what? Zero to K?
+I have altered my notation in appendix 1 to satisfy this request.
+Line 645: What did the sensitivity analyses tell you? Is the effect of variable values important
+when the parameters are arbitrary?
+There would potentially be a lot to pick apart in the sensitivity analyses, as was originally flagged
+in the introductory page of the supplementary information (unchanged in the current version).
+Given that my focus of this manuscript is on the policy forms generated and their broader
+generation of the intermediate waiting behaviour, I felt it was appropriate to present these
+analyses as extra data for readers to explore if they were interested in the potential effects of the
+parameters, rather than as a body of descriptions that would be monotonous and of little value
+to the paper. To make this more explicit, I have now also flagged this in the last sentence of the
+methods section.
+Figure 4 was very hard to read, some error with line numbers here.
+I think the problem here is the automatic line numbering and other information added by the
+journal management system, rather than anything I have done (as I’ve formatted the image file to
+hit the journal criteria)! The axes on the left that are obscured by the line numbers in the version
+I’ve just downloaded should read “distance, d” and “energy, x”
+The equations look sound, maybe you can use the same equation for intermediate locations, the
+food source and the refuge by defining V as zero for non-possible behaviours?
+I appreciate the suggestion, and considered this at some length when originally putting the
+manuscript together. I decided to go for the longer ‘separate equation’ form here for clarity, and
+believe that trying to compound these down to a single equation containing site-dependent
+information would have made things more difficult to pick apart.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_10
+This manuscript reports the results of a modelling study of the optimal behaviour of animals
+travelling to and from a feeding site. Whilst patch use and central-place foraging are well
+studied, optimal behaviour under the risk of predation whilst travelling has been overlooked The
+author uses an appropriate methodology, state-dependent dynamic programming, to address
+this gap. I found the question interesting and the manuscript very well written. I have identified
+some potential issues with the particulars of the approach, and feel that presentation of
+predictions could be clearer, which would increase the value of this new theory.
+Many thanks.
+The author makes a laudable effort to make the manuscript accessible by an extensive verbal
+description of the model that leaves out mathematical details. However, this might have gone a
+little far. Some readers would like to clearly see how sigma affects risk, and how energy reserves
+change, because the current wording does not capture this unambiguously. One consequence
+of omitting details is that the two kappas and two gammas are undefined, despite appearing in
+the legend of Figure 2.
+Thankyou for pointing this out! The different levels of gamma and kappa were defined
+appropriately in the appendix, but I’d originally taken the decision of stating that there were
+mean values of these terms in the main text, which I now realise is definitely ambiguous. The
+third paragraph of the model outline now makes this more explicit. I have also added a sentence
+at the end of the first paragraph of this section that makes the use of sigma more obvious.
+The model makes some interesting predictions, but they are a little obscured by the stochastic
+approach to parameter exploration. The author chose to run thousands of analyses with
+randomly selected parameter values. I'm not completely convinced of the value of this, as
+opposed to a systematic exploration using a grid of values. One of the benefits of this would be
+to ease the display of the interactions between parameter values: Figure 3 shows their individual
+effects, but it is likely that their relative values is what matters. For example, it is likely that the
+ratio of gamma to kappa (energy gain to energy use) determines behaviour, not their absolute
+values.
+I explored a number of ways of presenting and explaining the model predictions for the
+manuscript, and eventually decided on the technique used simply because it was the most
+intuitive: there was sufficient complexity generated by the different parameters that it proved
+meaningless to systematically explore parameter space (annoyingly so – it would have been
+genuinely nice to have been able to give a more systematic discussion of parameter effects).
+One consequence of the current presentation is that the reader does not know whether the
+policy type and animal fatness are confounded. Figure 2 suggests that increasing policies occur
+when more fat must be stored. Is this actually always the case? It would be useful to make clear
+predictions about when we expect animals to be fatter, and when we expect then to have longer
+foraging bouts, for example.
+It would be nice to make these predictions, but, as noted in the previous response, there wasn’t
+a simple way to make some nice qualitative predictions here. If I could have done this with
+certainty in the predictions, then I would have!
+As the author points out, the policies actually lie on a continuum (between decreasing and
+increasing), so I wasn't sure of the value of categorising their behaviour (Table 1), especially
+since the policy cannot be directly observed. It would be preferable to plot the relationship
+between parameters (which we may manipulate) and behaviour (which we can observe).
+I agree that the policy forms lie in a continuum, but nonetheless stand by the attempt I have
+made to classify them, as I think it demonstrates that policy can take differing forms but produce
+similar results. As I mentioned in my response to reviewer #1, the sensitivity analysis provided
+gives a thorough exploration of the effects of parameters on behaviour, but doesn’t really add to
+the message I am trying to make with this manuscript, concerning the prediction that pausing
+and stop/start behaviour might be seen if observed. I have now made it more apparent that
+these sensitivity analyses are available for the reader in the supplementary information.
+One potentially important extra parameter is the relative predation risk at the feeding site
+compared to the intermediate points; we might see more dawdling if foraging is riskier than
+travelling, which might happen if predators make sensible decisions.
+Good point. I have added some brief discussion about this in the methods section.
+Most importantly, I am concerned that one of the main conclusions of the manuscript follows
+from an unrealistic assumption. The author discusses how under some policies the animal
+should not return always to the refuge, but rest at an intermediate point. This occurs because
+there is no benefit to activities other than foraging, so the animal just waits until reserves drop to
+the threshold. This assumption makes sense under some conditions (e.g. survival over a long
+period in winter when time steps are long, such as hours), but in most situations animals have
+other things to do than eating, such as signalling territory ownership, social bonding behaviour,
+sleeping, etc. In such a case, the animal should return to the refuge to increase its fitness. I
+found myself wondering whether the predictions would be the same if the animal received a
+fitness payoff when not foraging, perhaps when also in the refuge, and the policy maximises the
+sum of these fitness payoffs before death, rather than just maximising survival. Most obviously,
+we would expect animals to avoid dawdling, because it wastes (potentially useful) time, so we
+might not get the prediction shown in Figure 4.
+This is a fair point, and will be nice to explore in some less basic models. The model presented is
+definitely aimed at an exploration of a short-term behaviour (decisions when moving between
+shelter and a risky close foraging site, in much the way classic optimal foraging theory models
+work), rather than taking a longer-term life history-style approach, and I would argue that the
+model is an entirely justifiable toy system. I make this fairly explicit in the closing sentences of
+the introduction, and I have adjusted the opening sentence of the discussion to try and make
+this assumption clearer.
+Minor Comments
+15: Delete "occasionally".
+Done.
+24: "return a partial distance" was unclear on first reading.
+I now say “stop its travel at a point before it reaches the refuge”.
+53-63: May belong at the end of the Introduction; lines 72:76 perhaps belongs earlier.
+I follow your logic here, and am tempted to make this change, but, on balance, think the current
+order is more appropriate to the audience: the final paragraph of the current introduction is more
+focussed on technique and lays out the broader goals being developed, which will satisfy a
+number of my more critical colleagues about how a paper should be structured.
+76: Make it clear that the feeding site is as dangerous as travelling.
+Added “, where the danger is as great as being at the foraging site”.
+208: "extreme example", not "extreme policy".
+Good spot! Done.
+229: Are "intermediate" all non-monotonic and v.v.? It is not clear.
+The intermediate forms are all non-monotonic – I have clarified this in the second paragraph of
+the results. I am sorry – I cannot work out what “v.v.” means, and cannot respond to this point.
+234: "In all cases" suggests that this is true comparing across parameter values. Perhaps "all
+else being equal"?
+A fair point - changed.
+262: Delete "presumably"; this is clearly the cause.
+A fair point. Done.
+267-270: This is a counter-intuitive prediction; explain why it occurs.
+I think this a case of ambiguous wording. I have changed it to “Movement towards the foraging
+site tended to be punctuated by a series of stops and starts, giving a slow mean outward speed
+(table 1) resulting from a large amount of their time spent static in the exposed region between
+refuge and foraging site (table 1)”.
+334: "supply"
+Done.
+582: "patch" is undefined. Does it mean the whole world of the animal, or one spatial unit?
+I’ve used it elsewhere in the manuscript to refer solely to the foraging site, and feel that that use
+is more appropriate, so I have replaced ‘patch’ here with environment, which is much more
+correct.
+Figure 3d seems unnecessary: it is not very different to Figure 3c and it is little discussed, and in
+any case might just be a grid effect.
+Agreed: original figure 2d has been removed (I think the reviewer is referring to the original figure
+2d rather than 3d here) – see my response to reviewer #1. On consideration, this region is most
+likely a grid effect: there is a lot of smoothing within the model, but grid effects are still likely to
+crop up at the extremes. It’s unlikely that an animal will ever spend much time in this region of
+the policy space, and it therefore seems appropriate to reduce the emphasis I give to this
+artefact.
+Society Open

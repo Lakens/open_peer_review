@@ -1,0 +1,871 @@
+An arc fault diagnosis algorithm using multiinformation
+fusion and support vector machines
+Jian-hong Yang, Huai-ying Fang, Ren-cheng Zhang and Kai Yang
+Article citation details
+R. Soc. open sci. 5: 180160.
+http://dx.doi.org/10.1098/rsos.180160
+Review timeline
+Original submission: 4 May 2018 Note: Reports are unedited and appear as
+1st revised submission: 3 July 2018 submitted by the referee. The review history
+2nd revised submission: 21 August 2018 appears in chronological order.
+Final acceptance: 23 August 2018
+Review History
+label_version_1
+RSOS-180160.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Fabrice Auzanneau)
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This paper deals with the problem of arc fault detection in low voltage electrical circuits. It
+proposes 3 indicators and shows how to process the measured signals to compute the indicators
+and present a data fusion algorithm based on the use of support vector machines to provide a
+detection information.
+The paper is written in good english (as far as I can tell, I'm not a native english speaker),
+although there are some mistakes or ambiguities in the vocabulary used which make some parts
+difficult to understand. The paper should be proof-read by a fluent english speaker.
+The introduction is too short and does not describe the problem of varying loads or circuit
+impedances which prevent from efficient arc detection. It doesn't explain why the authors have
+investigated new methods nor how the chose these methods. Someone who is not expert in this
+field may not understand this choice nor know if it is the best choice of detection methods.
+The 3 indicators are presented (high frequency feature extraction, current slope signal
+measurement, periodic integral characteristics extraction) in 3 separate chapters.
+The last sentence of the chapter describing the first method is hard to understand: " Using the
+high frequency pulse as a criterion therefore __invites signal loss__". Do the authors mean
+"implies"?
+The second indicator is quite efficient at detecting arc-fault mode, and recognize them from
+normal operation or on-switching of loads. As shown in this chapter, this indicator can be used
+alone for arc fault detection.
+The third indicator is shown to be efficient at detecting the change between normal mode and arc
+fault mode.
+I don't understand why the authors do not simply use only one of them (such as slope
+measurement). There is no real comparison of the output of the 3 methods on the same dataset.
+The introductory sentence of section 3 says that the 3 methods "indicate arc faults in __different
+circumstances__" but this is not clearly shown in the preceding chapters. The reader cannot easily
+compare the performances of the 3 methods if they are not used in the same conditions.
+Section 3 presents the application of support vector machines (SVM) to the fusion of the results of
+the 3 methods. It is quite complex to understand, as the equations use symbols which are not
+defined or explained in the text. The results are interesting: tables 1 and 2 show that the fusion of
+the 3 methods can efficiently recognize an ar fult from normal operation and load start-up. But
+these table do not show the results from each method in all the test cases, to justify the need for
+the data fusion algorithm. The reader cannot see from these tables if (for example) method
+number 2 alone would have detected the arc faults.
+I recommend that the paper requires major revision before publication:
+- improve the introduction and state of the art description, showing why new methods are
+required,
+- proof read the paper by a fluent english speaker
+- explain the choice of indicators. A signal due to an arc fault is quite chaotic, irregular or random.
+This means that any processing method aiming at finding regularities in a signal can be used as
+an indicator (showing no regularitiy thus detecting an arc fault). Why choosing these particular
+3
+methods and not others such as moving average, short time Fourier transform, autocorrelation,
+etc. ?
+- compare more deeply the 3 methods, in the same conditions, to show their advantages and
+drawbacks and help the reader understand why it is necessary to use data fusion on the 3 results
+- in the table of results, add the results of each signle method to better justify the need for the
+fusion algorithm
+- verify the equations (sometimes capital letters in the text reference small letters used in
+equations, N is not defined for eqn 4, etc)
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Arc fault is the main potential of electrical fire. A novel detection method was proposed and
+tested in low-voltage electrical circuits in this paper. In its technical content, the research carried
+out and results are of good quality. I believe it could be accepted after the following revisions are
+accomplished.
+1) The authors should give more details about the power supply of experiments, such as
+frequency. Why the power supply in Fig. 2(b) is different from that in Fig. 2(a)?
+2) Current-period integral-characteristic is one of the three arc fault features in this paper.
+Periodic integral time of each cycle is an important parameter, and the specific value should be
+added.
+3) Arc fault, arc in a branch and trunk arc are mentioned many times in this paper, especially in
+Tabs. 1 & 2, what are differences among them?
+4) Page 16 lines 3 “current-cycle eigenvalues from arc-fault currents”. Current-cycle eigenvalues
+have several types. The authors should point out the specific characteristics.
+Other comments are:
+i) To better describe arc faults, “indicator” in this paper may be replaced with “characteristics”,
+such as page 2-14“…provides another indicator”, page 2-16 “These three indicators…”, page 8-10
+“other indicators are…”. Please check.
+4
+ii) Page 4-48 “A 100-m long copper wire…” may be replaced with “A 100 m long copper wire…”.
+iii) The authors should pay attention to the use of the singular and the plural, such as page 7-29
+“…results for series arc fault”, page 7-55 “…results of parallel arc fault”. The “fault” may be used
+as the plural.
+iv) All abbreviations in this paper should use a unified form,such as Page 16-45 “JH. Y. and HY.
+F contributed…” may be replaced with “JH. Y. and HY. F. contributed…”.
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_3
+The authors present an arc-fault diagnosis algorithm based on the use of multiple criteria and
+support vector machine approach.
+The topic is very important and interesting. However, the presented work is flawed in several
+ways. The paper is not well organized. It is very difficult to distinguish the experimental part
+from the part where the method should be presented. The methods section starts with the
+experimental scheme where the experimental bench used to generate the results exploited in the
+work is presented. Then, the high frequency feature extraction scheme is presented. This part is
+concluded with the three indicators chosen for arc fault detection. Then in the results section the
+authors present the method used to exploit these before mention criteria. The whole paper is
+organized in that awkward way. The reader finds all information scattered all over the paper
+which makes the reading and evaluation of the paper very difficult. Some parts of the results
+section should be moved to the methods section.
+The authors mention briefly in the introduction part the main methods used for arc fault
+detection, without further explanation. The references are outdated and should be updated.
+The criteria introduced by authors are not at all justified. More explanations should be provided
+5
+for all introduced criteria and a comparison
+with the state-of-the-art methods criteria.
+When the authors say that the parameters beta, C and T were optimized, what were the criteria of
+optimization used for this optimization?
+If other loads (not mentioned in Table 2) are tested, does the whole system needs to be trained
+again? Will the similar results be obtained?
+In the results section, there is no comparison with the state-of-the-art works on the same topic.
+label_end_comment
+Decision letter (RSOS-180160.R0)
+01-Jun-2018
+Dear Dr Yang,
+The editors assigned to your paper ("An Arc-Fault Diagnosis Algorithm using Multi-information
+Fusion and Support Vector Machines") have now received comments from reviewers. We would
+like you to revise your paper in accordance with the referee and Associate Editor suggestions
+which can be found below (not including confidential reports to the Editor). Please note this
+decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 24-Jun-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+6
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180160
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+7
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+Editor's comments:
+Please ensure that you seek the advice of a native speaker of English or the assistance of a
+language polishing service (https://royalsociety.org/journals/authors/language-polishing/)
+before resubmitting (and provide evidence of having done so, or your paper will be returned to
+you). Furthermore, several of the referees comment that your paper's structure requires work.
+Please pay attention to these comments. If you do not fully satisfy the referees with this revision,
+you will not be entitled to a further round of revision, and your paper may be rejected.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+This paper deals with the problem of arc fault detection in low voltage electrical circuits. It
+proposes 3 indicators and shows how to process the measured signals to compute the indicators
+and present a data fusion algorithm based on the use of support vector machines to provide a
+detection information.
+The paper is written in good english (as far as I can tell, I'm not a native english speaker),
+although there are some mistakes or ambiguities in the vocabulary used which make some parts
+difficult to understand. The paper should be proof-read by a fluent english speaker.
+The introduction is too short and does not describe the problem of varying loads or circuit
+impedances which prevent from efficient arc detection. It doesn't explain why the authors have
+investigated new methods nor how the chose these methods. Someone who is not expert in this
+field may not understand this choice nor know if it is the best choice of detection methods.
+The 3 indicators are presented (high frequency feature extraction, current slope signal
+measurement, periodic integral characteristics extraction) in 3 separate chapters.
+The last sentence of the chapter describing the first method is hard to understand: " Using the
+high frequency pulse as a criterion therefore __invites signal loss__". Do the authors mean
+"implies"?
+The second indicator is quite efficient at detecting arc-fault mode, and recognize them from
+normal operation or on-switching of loads. As shown in this chapter, this indicator can be used
+alone for arc fault detection.
+8
+The third indicator is shown to be efficient at detecting the change between normal mode and arc
+fault mode.
+I don't understand why the authors do not simply use only one of them (such as slope
+measurement). There is no real comparison of the output of the 3 methods on the same dataset.
+The introductory sentence of section 3 says that the 3 methods "indicate arc faults in __different
+circumstances__" but this is not clearly shown in the preceding chapters. The reader cannot easily
+compare the performances of the 3 methods if they are not used in the same conditions.
+Section 3 presents the application of support vector machines (SVM) to the fusion of the results of
+the 3 methods. It is quite complex to understand, as the equations use symbols which are not
+defined or explained in the text. The results are interesting: tables 1 and 2 show that the fusion of
+the 3 methods can efficiently recognize an ar fult from normal operation and load start-up. But
+these table do not show the results from each method in all the test cases, to justify the need for
+the data fusion algorithm. The reader cannot see from these tables if (for example) method
+number 2 alone would have detected the arc faults.
+I recommend that the paper requires major revision before publication:
+- improve the introduction and state of the art description, showing why new methods are
+required,
+- proof read the paper by a fluent english speaker
+- explain the choice of indicators. A signal due to an arc fault is quite chaotic, irregular or random.
+This means that any processing method aiming at finding regularities in a signal can be used as
+an indicator (showing no regularitiy thus detecting an arc fault). Why choosing these particular
+methods and not others such as moving average, short time Fourier transform, autocorrelation,
+etc. ?
+- compare more deeply the 3 methods, in the same conditions, to show their advantages and
+drawbacks and help the reader understand why it is necessary to use data fusion on the 3 results
+- in the table of results, add the results of each signle method to better justify the need for the
+fusion algorithm
+- verify the equations (sometimes capital letters in the text reference small letters used in
+equations, N is not defined for eqn 4, etc)
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+Arc fault is the main potential of electrical fire. A novel detection method was proposed and
+tested in low-voltage electrical circuits in this paper. In its technical content, the research carried
+out and results are of good quality. I believe it could be accepted after the following revisions are
+accomplished.
+1) The authors should give more details about the power supply of experiments, such as
+frequency. Why the power supply in Fig. 2(b) is different from that in Fig. 2(a)?
+2) Current-period integral-characteristic is one of the three arc fault features in this paper.
+Periodic integral time of each cycle is an important parameter, and the specific value should be
+added.
+3) Arc fault, arc in a branch and trunk arc are mentioned many times in this paper, especially in
+Tabs. 1 & 2, what are differences among them?
+4) Page 16 lines 3 “current-cycle eigenvalues from arc-fault currents”. Current-cycle eigenvalues
+have several types. The authors should point out the specific characteristics.
+Other comments are:
+i) To better describe arc faults, “indicator” in this paper may be replaced with “characteristics”,
+such as page 2-14“…provides another indicator”, page 2-16 “These three indicators…”, page 8-10
+“other indicators are…”. Please check.
+ii) Page 4-48 “A 100-m long copper wire…” may be replaced with “A 100 m long copper wire…”.
+9
+iii) The authors should pay attention to the use of the singular and the plural, such as page 7-29
+“…results for series arc fault”, page 7-55 “…results of parallel arc fault”. The “fault” may be used
+as the plural.
+iv) All abbreviations in this paper should use a unified form,such as Page 16-45 “JH. Y. and HY.
+F contributed…” may be replaced with “JH. Y. and HY. F. contributed…”.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_6
+The authors present an arc-fault diagnosis algorithm based on the use of multiple criteria and
+support vector machine approach.
+The topic is very important and interesting. However, the presented work is flawed in several
+ways. The paper is not well organized. It is very difficult to distinguish the experimental part
+from the part where the method should be presented. The methods section starts with the
+experimental scheme where the experimental bench used to generate the results exploited in the
+work is presented. Then, the high frequency feature extraction scheme is presented. This part is
+concluded with the three indicators chosen for arc fault detection. Then in the results section the
+authors present the method used to exploit these before mention criteria. The whole paper is
+organized in that awkward way. The reader finds all information scattered all over the paper
+which makes the reading and evaluation of the paper very difficult. Some parts of the results
+section should be moved to the methods section.
+The authors mention briefly in the introduction part the main methods used for arc fault
+detection, without further explanation. The references are outdated and should be updated.
+The criteria introduced by authors are not at all justified. More explanations should be provided
+for all introduced criteria and a comparison
+with the state-of-the-art methods criteria.
+When the authors say that the parameters beta, C and T were optimized, what were the criteria of
+optimization used for this optimization?
+If other loads (not mentioned in Table 2) are tested, does the whole system needs to be trained
+again? Will the similar results be obtained?
+In the results section, there is no comparison with the state-of-the-art works on the same topic.
+Author's Response to Decision Letter for (RSOS-180160.R0)
+See Appendix A.
+10
+label_version_2
+RSOS-180160.R1 (Revision)
+label_author_4
+Review form: Reviewer 1 (Fabrice Auzanneau)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_7
+I think the quality of the current version of the paper has increased. I believe it can be published if
+some minor revisions are done :
+- explain the meaning of GB14287.4-2014 and how it impacts the simulation platform
+- change the capital Xs to lowercase x in equation (1)
+- add one worldwide recognized reference about SVM
+- explain briefly the matrix analysis algorithm used in the multi information fusion box (chapter
+2.3.3)
+Table 1 and 2 greatly help compare the 3 methods and understand their complementarity.
+label_author_5
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+11
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_5
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_8
+This version of the paper is greatly improved in comparison with the initial one.
+However, I have some remarks that should be corrected for the final version.
+There are still some typos in the paper: flourier -> fourier
+Slavisa Jovanovic present -> Jovanovic et al. present
+In the sentence "The method's reference current is used as the starting point four our method
+tested on a large variety of loads:" our is for the authors' method or for the method presented in
+this paper?
+What does it mean "the load are complicated and dynamic"?
+The end of the introduction part should be improved. I think that a new paragraph should start
+from "Therefore, there is some limitation in the identification ..." and a better transition to what is
+presented in this paper.
+In the methods part, it is a bit confusing the use of both HFRC signals or High-frequency
+coupling signals. Try to use only one notation.
+In section 2.2.2 data points x1 to xm are sometimes in capital letters, and sometimes in small
+letters. Try to use the same style throughout the paper.
+In section 2.2.3, there is a problem with sentence "Considering that some of the loads are in
+normal operation in a faults circuit, ..."
+In equation (6), there is inner product between xi and x. What is x? Is there an index missing?
+For the same equation "where alpha Lagrangian multiplier" "is" is missing.
+In section 2.3.3, how the value of C=100 is chosen?
+There is a problem with a sentence at the line 43 of the page 15.
+Page 16, line 33: The HFRC, CWSC, ... is -> are
+Page 16, line 41: Stable operation -> stable operation
+Page 16, line 42: Start-up of load is easily considered "as" arc faults by CWPIC.
+Page 17, line 2: There is a problem with the first sentence of the first paragraph.
+label_end_comment
+Decision letter (RSOS-180160.R1)
+03-Aug-2018
+Dear Dr Yang:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-180160.R1
+entitled "An Arc-Fault Diagnosis Algorithm using Multi-information Fusion and Support Vector
+Machines" has been accepted for publication in Royal Society Open Science subject to minor
+revision in accordance with the referee suggestions. Please find the referees' comments at the end
+of this email.
+12
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180160.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+13
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 12-Aug-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If you do not think you will be able to meet this date
+please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+14
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+Editor comments:
+The referees have reviewed your revision and find that it is largely ready for publication, but
+recommend a number of final modifications to improve the paper. Please ensure that these are
+taken into consideration and responded to before submitting your revision.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_9
+I think the quality of the current version of the paper has increased. I believe it can be published if
+some minor revisions are done :
+- explain the meaning of GB14287.4-2014 and how it impacts the simulation platform
+- change the capital Xs to lowercase x in equation (1)
+- add one worldwide recognized reference about SVM
+- explain briefly the matrix analysis algorithm used in the multi information fusion box (chapter
+2.3.3)
+Table 1 and 2 greatly help compare the 3 methods and understand their complementarity.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_10
+This version of the paper is greatly improved in comparison with the initial one.
+However, I have some remarks that should be corrected for the final version.
+There are still some typos in the paper: flourier -> fourier
+Slavisa Jovanovic present -> Jovanovic et al. present
+In the sentence "The method's reference current is used as the starting point four our method
+tested on a large variety of loads:" our is for the authors' method or for the method presented in
+this paper?
+What does it mean "the load are complicated and dynamic"?
+The end of the introduction part should be improved. I think that a new paragraph should start
+from "Therefore, there is some limitation in the identification ..." and a better transition to what is
+presented in this paper.
+15
+In the methods part, it is a bit confusing the use of both HFRC signals or High-frequency
+coupling signals. Try to use only one notation.
+In section 2.2.2 data points x1 to xm are sometimes in capital letters, and sometimes in small
+letters. Try to use the same style throughout the paper.
+In section 2.2.3, there is a problem with sentence "Considering that some of the loads are in
+normal operation in a faults circuit, ..."
+In equation (6), there is inner product between xi and x. What is x? Is there an index missing?
+For the same equation "where alpha Lagrangian multiplier" "is" is missing.
+In section 2.3.3, how the value of C=100 is chosen?
+There is a problem with a sentence at the line 43 of the page 15.
+Page 16, line 33: The HFRC, CWSC, ... is -> are
+Page 16, line 41: Stable operation -> stable operation
+Page 16, line 42: Start-up of load is easily considered "as" arc faults by CWPIC.
+Page 17, line 2: There is a problem with the first sentence of the first paragraph.
+Author's Response to Decision Letter for (RSOS-180160.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-180160.R2)
+23-Aug-2018
+Dear Dr Yang,
+I am pleased to inform you that your manuscript entitled "An Arc-Fault Diagnosis Algorithm
+using Multi-information Fusion and Support Vector Machines" is now accepted for publication in
+Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+16
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof. R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+Appendix A
+Dear editor,
+Thank you for your letter accepting the manuscript entitled An Arc Fault
+Diagnosis Algorithm using Multi-information Fusion and Support Vector
+Machines.
+We have made all the changes you suggested in your letter and address all
+the comments of the reviewers in the note below. Please note that comments are
+shown in plain type and our responses in bold type.
+Respond to comments by Reviewer: 1
+- improve the introduction and state of the art description, showing why new
+methods are required,
+The introduction had been revised. The third sections are added to the
+introduction. The shortcomings of single feature recognition arc faults are
+mainly introduced. Please see line 18-28 in page 3.
+- proof read the paper by a fluent english speaker
+I'm very sorry that the poor English writing influenced your review. English
+writing has been corrected by a fluent English speaker, The author did his
+best to modify the English writing of the paper. but I am not sure whether to
+meet the requirements.
+- explain the choice of indicators. A signal due to an arc fault is quite chaotic,
+irregular or random. This means that any processing method aiming at finding
+regularities in a signal can be used as an indicator (showing no regularitiy thus
+detecting an arc fault). Why choosing these particular methods and not others
+such as moving average, short time Fourier transform, autocorrelation, etc. ?
+Through short-time Fourier transform, we also made arc faults detection in
+the early stage. This method is effective when the characteristics of zero
+crossing are obvious, but the characteristics of some zero crossing points are
+not obvious. In the previous arc fault detection experiment, the three arc
+fault features are found to be changed for different loads and working
+conditions. Only one characteristic is not suitable for all working conditions
+and loads. Multi-information fusion can improve the accuracy of
+recognition. The characteristics of each criterion are introduced, and the
+necessity of multi information fusion criterion is also verified in detail.
+Please see line 15-28 in page 3, Table.1 and Table.2.
+- compare more deeply the 3 methods, in the same conditions, to show their
+advantages and drawbacks and help the reader understand why it is necessary to
+use data fusion on the 3 results
+- in the table of results, add the results of each signle method to better justify the
+need for the fusion algorithm
+We calculate the results of the arc fault identification for each single feature.
+These results are compared with the recognition results of the
+multi-information fusion algorithm. The results are compared to table.1 and
+table.2.
+- verify the equations (sometimes capital letters in the text reference small letters
+used in equations, N is not defined for eqn 4, etc)
+The equation 4 had been revised. N was defined, and all the formulas were
+checked and modified. For example, formula 1
+Respond to comments by Reviewer: 2
+1) The authors should give more details about the power supply of experiments,
+such as frequency. Why the power supply in Fig. 2(b) is different from that in
+Fig. 2(a)?
+Reply 1): The power supply of all experiments is 220V AC (50Hz). The
+power supply in Fig. 2(b) is 220V AC as well as in Fig. 2(a). The 220V DC in
+Fig. 2(b) is an editing error.
+2) Current-period integral-characteristic is one of the three arc fault features in
+this paper. Periodic integral time of each cycle is an important parameter, and the
+specific value should be added.
+Reply 2): The current-cycle is 20ms. We have added the specific value in
+this paper.
+3) Arc fault, arc in a branch and trunk arc are mentioned many times in this paper,
+especially in Tabs. 1 & 2, what are differences among them?
+Reply 3): Arc in a branch and trunk arc are both arc faults in this paper,
+they are used to describe different kinds of arc faults. The accurate
+expression of “arc in a branch and trunk arc” is “arc fault in a branch and
+trunk arc fault”. We have modified corresponding places in this paper.
+4) Page 16 lines 3 “current-cycle eigenvalues from arc-fault currents”.
+Current-cycle eigenvalues have several types. The authors should point out the
+specific characteristics.
+Reply 4): Current-cycle eigenvalues indicate current cycle integral
+characteristics. We have modified in this paper.
+Other comments are:
+i) To better describe arc faults, “indicator” in this paper may be replaced with
+“characteristics”, such as page 2-14“…provides another indicator”,
+page 2-16 “These three indicators…”, page 8-10 “other indicators are…”. Please
+check.
+Reply i): “Indicator” in this paper has been replaced with “characteristics”
+in this paper.
+ii) Page 4-48 “A 100-m long copper wire…” may be replaced with “A 100 m
+long copper wire…”.
+Reply ii): We have modified in this paper.
+iii) The authors should pay attention to the use of the singular and the plural,
+such as page 7-29 “…results for series arc fault”, page 7-55 “…results of parallel
+arc fault”. The “fault” may be used as the plural.
+Reply iii): The “fault” mentioned above should be used as the plural. We
+have rechecked the use of the singular and the plural in this paper.
+iv) All abbreviations in this paper should use a unified form,such as Page 16-45
+“JH. Y. and HY. F contributed…” may be replaced with “JH. Y. and HY. F.
+contributed…”.
+Reply iv): “JH. Y. and HY. F. contributed…” is right. We have modified in
+this paper.
+Respond to comments by Reviewer: 3
+The topic is very important and interesting. However, the presented work is
+flawed in several ways. The paper is not well organized. It is very difficult to
+distinguish the experimental part
+from the part where the method should be presented. The methods section starts
+with the experimental scheme where the experimental bench used to generate the
+results exploited in the work is presented. Then, the high frequency feature
+extraction scheme is presented. This part is concluded with the three indicators
+chosen for arc fault detection. Then in the results section the authors present the
+method used to exploit these before mention criteria. The whole paper is
+organized in that awkward way. The reader finds all information scattered all
+over the paper which makes the reading and evaluation of the paper very difficult.
+Some parts of the results section should be moved to the methods section.
+This is a very good suggestion. The paper is not well organized. I'm sorry to
+have spent a lot of your time review this paper. We had changed the
+structure of the paper. For the old papers, the arc fault feature extraction
+results in the second section were moved to the third section. The support
+vector machine and the multi information fusion algorithm in the third
+quarter are moved to the second quarter. So, the second section is about the
+construction of experimental platform, experimental scheme and data
+processing method. The third section is mainly about the results of arc fault
+feature extraction and the results of arc fault recognition. Please see the
+second and third section in the revised paper.
+The authors mention briefly in the introduction part the main methods used for
+arc fault detection, without further explanation. The references are outdated and
+should be updated.
+The main methods used for arc fault detection had been further explained.
+Please see line 17-20 in page 3 and line 1-12 in page 4. In the introduction,
+Some new references have been added and some old references have been
+removed. Please see reference 3-6 and reference 8-12. The existing low
+voltage arc fault diagnosis algorithm is discussed.
+The criteria introduced by authors are not at all justified. More explanations
+should be provided for all introduced criteria and a comparison
+with the state-of-the-art methods criteria.
+An experimental platform for arc fault simulation is built, which simulates
+series and parallel arc faults by point contact, metallic contact and
+Carbonization path, and Some of the loads are selected by UL1699-2011 and
+GB14287.4-2014. The criteria introduced were explained. Please see
+line20-27 in page 4. But the method of identifying the arc wave is not
+specified. The work of this paper focuses on the identification of arc
+waveform. During the experiment, we ensured the arc generator to generate
+multiple arc half waves by means of the distance adjustment device. Sure
+arc faults can be produced.
+When the authors say that the parameters beta, C and T were optimized, what
+were the criteria of optimization used for this optimization?
+Thank you very much for pointing out this mistake. The C is a penalty
+factor that represents tolerance for recognition errors, C is a constant, not
+an optimized variable. On the optimization criteria and steps of beta and T,
+please see line 4-9 in page 11.
+If other loads (not mentioned in Table 2) are tested, does the whole system needs
+to be trained again? Will the similar results be obtained?
+We tested the load according to the standard. Testing more different loads
+will help to make the recognition model more accurate. If the resistance and
+inductance characteristics of the load are very peculiar, the recognition
+model needs to be trained and optimized again.
+In the results section, there is no comparison with the state-of-the-art works on
+the same topic.
+We compare the results of various single feature recognition arc faults with
+the results of multi information fusion recognition. The results are shown in
+Table.1 and table.2. And the results of each recognition are further
+explained. Please see section 3 in the paper.
+Appendix B
+Dear editor,
+Thank you for your letter accepting the manuscript entitled An Arc Fault
+Diagnosis Algorithm using Multi-information Fusion and Support Vector
+Machines.
+We have made all the changes you suggested in your letter and address all
+the comments of the reviewers in the note below. Please note that comments are
+shown in plain type and our responses in bold type.
+Respond to comments by Reviewer: 1
+explain the meaning of GB14287.4-2014 and how it impacts the simulation
+platform
+The GB14287.4-2014 was explained. Please see the line 2-6 in section 2.1
+change the capital Xs to lowercase x in equation (1)
+The problem had been modified. Please see the equation (1).
+add one worldwide recognized reference about SVM
+We have added one worldwide recognized reference. Please see reference[14]
+Corinna Cortes, Vladimir Vapnik. Support-vector networks. Machine
+Learning. 20(3)(1995)273–297.
+explain briefly the matrix analysis algorithm used in the multi information fusion
+box (chapter 2.3.3)
+We have modified in this paper. Please see the line 5-8 in section 2.3.3.
+Respond to comments by Reviewer: 3
+There are still some typos in the paper: flourier -> fourier
+The spelling mistakes of the full text have been modified.
+Slavisa Jovanovic present -> Jovanovic et al. present
+This reference has been modified. Please see the line 14 section 1.
+In the sentence "The method's reference current is used as the starting point four
+our method tested on a large variety of loads:" our is for the authors' method or
+for the method presented in this paper?
+"The method's reference current is used as the starting point four our
+method tested on a large variety of loads:" our is for the authors' method.
+The sentence had been modified. Please see the line 16 in section 1.
+What does it mean "the load are complicated and dynamic"?
+"the load are complicated and dynamic" had been explained. Please see the
+line 20-21 in section 1.
+The end of the introduction part should be improved. I think that a new
+paragraph should start from "Therefore, there is some limitation in the
+identification ..." and a better transition to what is presented in this paper.
+The end of the introduction part had been improved. Please see the last
+paragraph in section 1.
+In the methods part, it is a bit confusing the use of both HFRC signals or
+High-frequency coupling signals. Try to use only one notation.
+HFRC signals or High-frequency coupling signals had been unified.
+In section 2.2.2 data points x1 to xm are sometimes in capital letters, and
+sometimes in small letters. Try to use the same style throughout the paper.
+The style of the letter ‘xm’ had been unified. Please see the line 6-8 in section
+2.2.2.
+In section 2.2.3, there is a problem with sentence "Considering that some of the
+loads are in normal operation in a faults circuit, ..."
+The sentence had been modified. Please see the line 4-5 in section 2.2.3.
+In equation (6), there is inner product between xi and x. What is x? Is there an
+index missing?
+For the same equation "where alpha Lagrangian multiplier" "is" is missing.
+The equation(6) had been modified and every variable was explained. Please
+see the line 14-18 in section 2.3.1
+In section 2.3.3, how the value of C=100 is chosen?
+The value of C was chosen by experience and multiple calculations. Please
+see the line 3-4 in section 2.3.3
+There is a problem with a sentence at the line 43 of the page 15.
+The problem had been modified.
+Page 16, line 33: The HFRC, CWSC, ... is -> are
+The problem had been modified. Please see the second paragraph in section
+3.3
+Page 16, line 41: Stable operation -> stable operation
+The problem had been modified. Please see the 8 in section 3.4
+Page 16, line 42: Start-up of load is easily considered "as" arc faults by CWPIC.
+The problem had been modified. Please see the 11 in section 3.4
+Page 17, line 2: There is a problem with the first sentence of the first paragraph.
+The problem had been modified. Please see the second paragraph in section
+3.4
+Society Open

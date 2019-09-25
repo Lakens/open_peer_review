@@ -1,0 +1,1082 @@
+Cleaner fish escape salmon farms and hybridize with local
+wrasse populations
+Ellika Faust, Kim Tallaksen Halvorsen, Per Andersen, Halvor Knutsen and Carl André
+Article citation details
+R. Soc. open sci. 5: 171752.
+http://dx.doi.org/10.1098/rsos.171752
+Review timeline
+Original submission: 27 October 2017 Note: Reports are unedited and appear as
+Revised submission: 9 January 2018 submitted by the referee. The review history
+Final acceptance: 13 February 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-171752.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The work by Faust et al describes population genomic analysis of corkwing wrasse
+demonstrating that this species escapes from fish farms and hybridizes with local population at
+the northern edge of its current distribution. Overall, this manuscript describes relatively
+interesting but small case of hybridization in corkwing wrasse, which most likely is driven by
+human mediated transportation of cleaner fish. The manuscript is well written and easy to
+understand, while analysis and presentation of data is clear. In terms of weaknesses, the biggest
+shortcoming is probably lack of samples from large area from Bergen to Flatanger, which does
+not allow to properly describe the genetic structuring of Western populations. While I think the
+main conclusions are valid, adding nearby Western population(s) would have increased the
+robustness of the findings. I think the authors should at least acknowledge this in the Discussion
+section. The other limitation is related to small number of individuals screened in main target
+location, which do not allow reliable estimation of various type of hybrids and farm escapees.
+Thus, ideally much higher number of individuals should have been screened from Flatanger.
+Other questions/comments
+In the introduction, it is noted that technical replicates of four individuals were used to control
+for methodical artefacts. However, the authors do not provide any information on how replicates
+were used to control for genotyping errors. Also, I am not able to find estimates of inconsistent
+genotyping calls etc. which would allow to evaluate the reliability of this work.
+Do all fish from Flatanger came from the same exact location? It would be interesting, if the
+authors provide more information of the distance between the closest net pens and sampling
+site(s).
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+3
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+Review of Faust et al. submitted to Royal Society Open Science.
+The authors describe a study evaluating the presence of hybridization between trans-located
+feeder fish used in Salmon aquaculture and wild local populations in Norway. The paper is well
+written, clear, and convincing. I have some suggestions regarding modifications to existing
+methods or new methods that may be included. In particular, the paper is presently lacking any
+evaluation of power to identify hybrids and hybrid classes using this dataset and this should be
+completed and included. Overall this is a great paper and should be acceptable following
+revisions.
+Specific Comments:
+Abstract.
+Ln 26. Perhaps “the genetic impact of farmed…”
+Methods
+Page 3 Ln 2. How individuals were pooled per lanes. How those samples were distributed across
+lanes? Randomly selected ? By sites ? This can be a significant source of bias, details should be
+given.
+Page 3. Ln 15. Missing genotypes are very common in RADseq approaches. To evaluate the
+impact it is useful to conduct an identity-by-missingness analysis. This type of analysis could
+reveal pattern of missing data generated during DNA extraction, library preparation and even
+sequencing. If missing data pattern is present, filtering can be conducted to remove those
+patterns. Two links to help with this:
+PLINK IBM analysis - http://zzz.bwh.harvard.edu/plink/summary.shtml#clustermissing
+grur R package with missing visualization analysis https://github.com/thierrygosselin/grur
+Page 3. Ln 18. Was the MAF threshold of 0.01 used overall samples or at the sampling site level?
+Using a general value of 0.01, similar to so many other RADseq studies is inadequate for this
+study. Authors should keep any markers that pass the local and/or global MAF threshold in 1
+population only. You want to keep markers that are polymorphic globally, but monomorphic at
+the population level (fixed for different alleles). This threshold of requiring 1 population should
+not change with increasing number of sampling sites or populations. Otherwise, it will create bias
+towards some populations.
+Page 3. Ln 26. What about LD among loci? This should be examined and used below.
+Page 3. Ln 49. I agree with the authors that Newhybrids is the best way to evaluate the presence
+of hybrids in this dataset. What is missing is an examination of power (i.e. accuracy and
+efficiency) based on carefully simulated individuals. Without this sort of analysis, it is impossible
+to evaluate how accurate the hybrid identifications are likely to be. This sort of analysis should
+evaluate how power changes with number of loci, and threshold for acceptance of assignments
+for each hybrid class. When identifying possible loci, loci should be filtered for LD which can
+upwardly bias estimates of accuracy. This R package might be of use:
+Wringe, B.F., Stanley, R.R.E., Jeffery, N.W., Anderson, E.C., and Bradbury, I.R. 2017.
+4
+hybriddetective: A workflow and package to facilitate the detection of hybridization using
+genomic data in r. Mol. Ecol. Res. 17(6): e275-e284.
+Discussion
+Page Ln 50. Not sure how I feel about speculating on growth rates etc based on 3 fish. Might be
+worth leaving this for later in the discussion with the caveats can be clearly presented.
+How well does the sampling distribution cover the entire natural range in Norway? How might
+the distribution of samples have impacted the hybrid identifications?
+label_end_comment
+Decision letter (RSOS-171752)
+01-Dec-2017
+Dear Ms Faust,
+The editors assigned to your paper ("Cleaner fish escape salmon farms and hybridize with local
+wrasse populations") have now received comments from reviewers. We would like you to revise
+your paper in accordance with the referee and Associate Editor suggestions which can be found
+below (not including confidential reports to the Editor). Please note this decision does not
+guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 24-Dec-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+5
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171752
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+6
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Michael Tobler (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments:
+We have received two thoughtful reviews of the manuscript. Both reviewers had an overall
+positive impression of the paper and suggest a series of improvements that the authors should
+implement during revisions.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+The work by Faust et al describes population genomic analysis of corkwing wrasse
+demonstrating that this species escapes from fish farms and hybridizes with local population at
+the northern edge of its current distribution. Overall, this manuscript describes relatively
+interesting but small case of hybridization in corkwing wrasse, which most likely is driven by
+human mediated transportation of cleaner fish. The manuscript is well written and easy to
+understand, while analysis and presentation of data is clear. In terms of weaknesses, the biggest
+shortcoming is probably lack of samples from large area from Bergen to Flatanger, which does
+not allow to properly describe the genetic structuring of Western populations. While I think the
+main conclusions are valid, adding nearby Western population(s) would have increased the
+robustness of the findings. I think the authors should at least acknowledge this in the Discussion
+section. The other limitation is related to small number of individuals screened in main target
+location, which do not allow reliable estimation of various type of hybrids and farm escapees.
+Thus, ideally much higher number of individuals should have been screened from Flatanger.
+Other questions/comments
+In the introduction, it is noted that technical replicates of four individuals were used to control
+for methodical artefacts. However, the authors do not provide any information on how replicates
+were used to control for genotyping errors. Also, I am not able to find estimates of inconsistent
+genotyping calls etc. which would allow to evaluate the reliability of this work.
+Do all fish from Flatanger came from the same exact location? It would be interesting, if the
+authors provide more information of the distance between the closest net pens and sampling
+site(s).
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Review of Faust et al. submitted to Royal Society Open Science.
+7
+The authors describe a study evaluating the presence of hybridization between trans-located
+feeder fish used in Salmon aquaculture and wild local populations in Norway. The paper is well
+written, clear, and convincing. I have some suggestions regarding modifications to existing
+methods or new methods that may be included. In particular, the paper is presently lacking any
+evaluation of power to identify hybrids and hybrid classes using this dataset and this should be
+completed and included. Overall this is a great paper and should be acceptable following
+revisions.
+Specific Comments:
+Abstract.
+Ln 26. Perhaps “the genetic impact of farmed…”
+Methods
+Page 3 Ln 2. How individuals were pooled per lanes. How those samples were distributed across
+lanes ? Randomly selected ? By sites ? This can be a significant source of bias, details should be
+given.
+Page 3. Ln 15. Missing genotypes are very common in RADseq approaches. To evaluate the
+impact it is useful to conduct an identity-by-missingness analysis. This type of analysis could
+reveal pattern of missing data generated during DNA extraction, library preparation and even
+sequencing. If missing data pattern is present, filtering can be conducted to remove those
+patterns. Two links to help with this:
+PLINK IBM analysis - http://zzz.bwh.harvard.edu/plink/summary.shtml#clustermissing
+grur R package with missing visualization analysis https://github.com/thierrygosselin/grur
+Page 3. Ln 18. Was the MAF threshold of 0.01 used overall samples or at the sampling site level?
+Using a general value of 0.01, similar to so many other RADseq studies is inadequate for this
+study. Authors should keep any markers that pass the local and/or global MAF threshold in 1
+population only. You want to keep markers that are polymorphic globally, but monomorphic at
+the population level (fixed for different alleles). This threshold of requiring 1 population should
+not change with increasing number of sampling sites or populations. Otherwise, it will create bias
+towards some populations.
+Page 3. Ln 26. What about LD among loci? This should be examined and used below.
+Page 3. Ln 49. I agree with the authors that Newhybrids is the best way to evaluate the presence
+of hybrids in this dataset. What is missing is an examination of power (i.e. accuracy and
+efficiency) based on carefully simulated individuals. Without this sort of analysis, it is impossible
+to evaluate how accurate the hybrid identifications are likely to be. This sort of analysis should
+evaluate how power changes with number of loci, and threshold for acceptance of assignments
+for each hybrid class. When identifying possible loci, loci should be filtered for LD which can
+upwardly bias estimates of accuracy. This R package might be of use:
+Wringe, B.F., Stanley, R.R.E., Jeffery, N.W., Anderson, E.C., and Bradbury, I.R. 2017.
+hybriddetective: A workflow and package to facilitate the detection of hybridization using
+genomic data in r. Mol. Ecol. Res. 17(6): e275-e284.
+8
+Discussion
+Page Ln 50. Not sure how I feel about speculating on growth rates etc based on 3 fish. Might be
+worth leaving this for later in the discussion with the caveats can be clearly presented.
+How well does the sampling distribution cover the entire natural range in Norway? How might
+the distribution of samples have impacted the hybrid identifications?
+Author's Response to Decision Letter for (RSOS-171752)
+See Appendices A & B.
+label_version_2
+RSOS-171752.R1 (Revision)
+label_author_3
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+The authors have done a great job of revising the paper. No further concerns at all. This paper
+represents a valuable contribution to the field.
+9
+label_end_comment
+Decision letter (RSOS-171752.R1)
+13-Feb-2018
+Dear Ms Faust,
+I am pleased to inform you that your manuscript entitled "Cleaner fish escape salmon farms and
+hybridize with local wrasse populations" is now accepted for publication in Royal Society Open
+Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Michael Tobler (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Michael Tobler):
+The authors have addressed all reviewer concerns in a satisfactory way, and I recommend this
+manuscript for publication without additional revisions.
+10
+Reviewer comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_6
+The authors have done a great job of revising the paper. No further concerns at all. This paper
+represents a valuable contribution to the field.
+Appendix A
+Dear Editor,
+Thank you for considering our manuscript for publication in RSOS. We are grateful for all of the
+valuable suggestions and feedback. Please find below our responses. Indicated lines refer to the
+revised manuscript showing tracked changes.
+Response to Reviewer 1
+1) In terms of weaknesses, the biggest shortcoming is probably lack of samples from large area from
+Bergen to Flatanger, which does not allow to properly describe the genetic structuring of Western
+populations. While I think the main conclusions are valid, adding nearby Western population(s)
+would have increased the robustness of the findings. I think the authors should at least acknowledge
+this in the Discussion section.
+The genetic structure along the coast of Norwary has previously been investigated by Gonzales et al.
+(2016). They found only minor differences along the western coast of Norway that could be explained
+by a isolation by distance model, also when correcting for environment. Hence, adding populations to
+this study would unlikely have contributed with further information. We acknowledge that there is a
+gap in sampling that should be mentioned, and we have now made changes to the discussion (lines
+231-233).
+2) The other limitation is related to small number of individuals screened in main target location,
+which do not allow reliable estimation of various type of hybrids and farm escapees. Thus, ideally
+much higher number of individuals should have been screened from Flatanger.
+We agree with reviewer 1 that a larger number of individuals from the target location could have
+given further information and improved this manuscript. The small sample size is largely due to the
+very low density of corkwing wrasse at the northern range front in Flatanger and thus the difficulties
+with catching enough fish. Corkwing wrasse is virtually absent in the wrasse fishery here, so the
+fisherman contracted was therefore instructed to preserve any corkwing he caught during the fishing
+season for this study.
+For future work we hope to collect and analyse more individuals and to investigate this hybridisation
+event further, but we firmly believe that the information presented in the present ms is both robust
+and novel, and of timely importance for fishery and invasive species management.
+3) In the introduction, it is noted that technical replicates of four individuals were used to control for
+methodical artefacts. However, the authors do not provide any information on how replicates were
+used to control for genotyping errors.
+We agree this is an important point and have expanded on the section describing how technical
+replicates were used to control for genotyping errors (lines 82-86). More detailed information can be
+found in the scripts manual which is available on github
+https://github.com/ellikafaust/2bRAD_denovo.
+4) Also, I am not able to find estimates of inconsistent genotyping calls etc. which would allow to
+evaluate the reliability of this work.
+Genotyping accuracy and reproducibility was assessed using the 48 replicates and we have included
+inconsistency estimates in lines 160-161.
+5) Do all fish from Flatanger came from the same exact location? It would be interesting, if the
+authors provide more information of the distance between the closest net pens and sampling site(s).
+We have added information regarding the exact location of catches in Flatanger and local salmon
+farms where cleaner fish might be used in the supplementary information and lines 59-60.
+Response to Reviewer 2
+Abstract
+1) Ln 26. Perhaps “the genetic impact of farmed…”
+We have changed the sentence accordingly (line 1 in abstract)
+Methods
+2) Page 3 Ln 2. How individuals were pooled per lanes. How those samples were distributed across
+lanes ? Randomly selected ? By sites ? This can be a significant source of bias, details should be
+given.
+40 individuals were sampled from each site and split into two pools with 20 individuals each (plus 4
+technical replicates) that were sequenced in 2 separate lanes. Individuals were pooled by sampling
+site to minimise the risk of mix up during extraction and library preparation. We felt that this was
+especially important as the aim was to identify escapees and potential hybrids. However, having two
+independent pools per site would at the same time account for possible sequencing biases. We have
+explained this in lines 68-71
+3) Page 3. Ln 15. Missing genotypes are very common in RADseq approaches. To evaluate the impact
+it is useful to conduct an identity-by-missingness analysis. This type of analysis could reveal pattern
+of missing data generated during DNA extraction, library preparation and even sequencing. If
+missing data pattern is present, filtering can be conducted to remove those patterns. Two links to
+help with this:
+PLINK IBM analysis - http://zzz.bwh.harvard.edu/plink/summary.shtml#clustermissing
+grur R package with missing visualization analysis https://github.com/thierrygosselin/grur
+We have conducted an identity by missingness analysis and a mds plot using PLINK. We found no
+obvious pattern of subgrouping of individuals due to missingness and have added a mds plot and
+summary statistics of the pairwise comparisons in the supplementary as well as in lines 111-114 and
+163-164
+4) Page 3. Ln 18. Was the MAF threshold of 0.01 used overall samples or at the sampling site level?
+Using a general value of 0.01, similar to so many other RADseq studies is inadequate for this
+study. Authors should keep any markers that pass the local and/or global MAF threshold in 1
+population only. You want to keep markers that are polymorphic globally, but monomorphic at the
+population level (fixed for different alleles). This threshold of requiring 1 population should not
+change with increasing number of sampling sites or populations. Otherwise, it will create bias
+towards some populations.
+Initially we tested different global maf thresholds (0, 0.01 and 0.05) and found that changing the maf
+did not alter the outcome of the analyses (Structure, Fst, PCA). We have now added this information
+to the ms in line 91-94. Considering our data, a local maf of 0.01 would mean that no SNPs would be
+removed as it would be enough to have one occurrence of an allele in one sample to be within the
+threshold (40 diploid individuals * maf 0.01 = 0.8 alleles). The global maf of 0.01 effectively means
+that the minor allele has to occur a minimum of 5 times globally, given that there is no missing data,
+and so we would catch any markers which are monomorphic on a local level. Hence, we believe that
+a global maf threshold is sufficient for our current data set
+5) Page 3. Ln 26. What about LD among loci? This should be examined and used below.
+We tested for LD using Genepop and replaced 13 linked loci of the battery of 200 SNPs to use in the
+Newhybrid analysis. (lines 132-135). The slightly new set gave similar results to the previous set (Fig 4
+and line 197-206).
+6) Page 3. Ln 49. I agree with the authors that Newhybrids is the best way to evaluate the presence
+of hybrids in this dataset. What is missing is an examination of power (i.e. accuracy and efficiency)
+based on carefully simulated individuals. Without this sort of analysis, it is impossible to evaluate
+how accurate the hybrid identifications are likely to be. This sort of analysis should evaluate how
+power changes with number of loci, and threshold for acceptance of assignments for each hybrid
+class. When identifying possible loci, loci should be filtered for LD which can upwardly bias
+estimates of accuracy. This R package might be of use:
+Wringe, B.F., Stanley, R.R.E., Jeffery, N.W., Anderson, E.C., and Bradbury, I.R. 2017. hybriddetective:
+A workflow and package to facilitate the detection of hybridization using genomic data in r. Mol.
+Ecol. Res. 17(6): e275-e284.
+We thank the reviewer for suggesting power analysis. We filtered the loci by LD (as mentioned
+above) and used the recommended r package Hybriddetective to create simulated data in order to
+estimate power, accuracy and efficiency. The method and estimates are now included in the revised
+ms in lines 136-145, 206-208, Fig 5 and supplementary.
+Discussion
+7) Page Ln 50. Not sure how I feel about speculating on growth rates etc based on 3 fish. Might be
+worth leaving this for later in the discussion with the caveats can be clearly presented.
+We agree that three fish are not enough for concluding on the growth of hybrids, and as suggested,
+we have now moved the essence of this sentence to the appropriate paragraph in the discussion (line
+284-287), were the limitation of sample size is also mentioned. However, we find it noteworthy that
+these findings are consistent with previous studies on growth data were large differences were found
+between western and southern Norway in both growth rate and size.
+8) How well does the sampling distribution cover the entire natural range in Norway? How might
+the distribution of samples have impacted the hybrid identifications?
+See response to reviewer 1 question 1.
+Yours sincerely,
+Ellika Faust
+Appendix B
+Cleaner fish escape salmon farms and hybridize with
+local wrasse populations
+Ellika Faust1*, Kim Tallaksen Halvorsen2, Per Andersen3, Halvor
+Knutsen4,5,6, Carl André1
+1
+Department of Marine Sciences - Tjärnö, University of Gothenburg, 45296 Strömstad, Sweden
+2
+Institute of Marine Research, Austevoll Research Station, Storebø, Norway
+3
+Marine senior advisor Nord-Trøndelag, 7770 Flatanger, Norway
+4
+Institute of Marine Research, Flødevigen, Norway
+5
+Centre for Ecological and Evolutionary Synthesis, Department of Biosciences, University of Oslo, Oslo,
+Norway
+6
+Centre for Coastal Research, University of Agder, Kristiansand, Norway
+Keywords: Aquaculture, Wrasse, Sea lice, Hybrid, RAD, Salmon
+1. Abstract
+The genetic impact of farmed fish escaping aquaculture is a highly debated issue. However, non-target species, such as
+cleaner fish used to remove sea lice from farmed fish, are rarely considered. Here we report that wild corkwing wrasse
+(Symphodus melops), which are transported long distances to be used as cleaner fish in salmon farms, escape and hybridize
+with local populations. Recently, increasing numbers of corkwing wrasse have been reported in Flatanger in Norway,
+north of its described distribution range, an area heavily relying on import of cleaner fish from Skagerrak. Using genetic
+markers identified with 2bRAD sequencing, we show that, although the Flatanger population largely is a result of a
+northwards range expansion, there is also evidence of considerable gene flow from southern populations in Skagerrak and
+Kattegat. Out of 40 corkwing wrasses sampled in Flatanger, we discovered two individuals with clear southern genotypes,
+one first generation hybrid, and twelve potential second-generation hybrids. In summary, we provide evidence that
+corkwing wrasse escape from fish farms and hybridize with local populations at the leading edge of an ongoing range
+expansion. Although the magnitude and significance of escapees warrants further investigation, these results should be
+taken in consideration in the use of translocated cleaner fish.
+2. Introduction
+Marine species display a range of levels of genetic divergence among populations, from panmictic species to species with
+marked genetic structure, as a consequence of reduced gene flow, genetic drift and/or local adaptation [1]. Transferring
+individuals between spatially separated populations that are genetically distinct is likely to result in genetic changes to
+native populations. Such changes could involve shifts in allelic composition, loss of genetic variation, erosion of local
+adaptation and/or breakdown of population structure [2]. Human mediated releases of genetically different individuals to
+native populations are increasingly common. Farmed fish escaping aquaculture is a serious threat to wild fish populations,
+through competition, transfer of diseases and pathogens, and gene flow through interbreeding [3]. There are many
+examples from open pen farming of salmonids, where escapees have hybridized with local river populations, leading to
+genetic swamping and reduced fitness [4,5].
+Salmon farming may also promote inadvertent gene flow in populations of species of wrasses (Labridae) in Norway and
+*Author for correspondence (ellika.faust@gmail.com).
+†Present address: Department of Marine Sciences - Tjärnö,
+University of Gothenburg, Hättebäcksvägen 7, 45296 Strömstad,,
+Sweden
+1
+UK, where wild wrasses are caught and used as cleaner fish to mitigate the increasing problems of sea lice infestations in
+the farmed salmon [6,7]. These wrasses are relatively small predatory fish, typically abundant at shallow depths on rocky
+coastlines in Northern Europe. They had little to no commercial value until their function as cleaner fish in captivity was
+discovered and applied in the late 1980s [8–10]. The use of cleaner fish increased drastically in 2010 as a result of sea lice
+evolving resistance to the most widely used pharmaceutical treatments [11]. In Norway, the national landings of wrasse
+have now surpassed 20 million fish annually [12]. However, in mid Norway, the demand for cleaner fish exceeds the
+supply from local stocks, and wild-caught wrasses are imported from southern Norway and western Sweden, areas where
+salmon farming is absent [13]. Similarly, in the UK, most salmon farms are situated in Scotland, but due to local supply not
+meeting the demand, an estimated 1 million wrasse are harvested in southwestern England annually for live transport to
+Scotland [14,15]. Furthermore, the UK wrasse fishery is largely undocumented, and the records of landed wrasse is rarely
+specified by species, only under a generic wrasse code. The lack of data on species composition and landings makes it
+difficult to assess the impact of the wrasse fishery. This is a concern which has received increasing attention in recent
+years, resulting in restrictions on wrasse fisheries in southwestern UK by regional Inshore Fisheries and Conservation
+Authorities (IFCA) [15–17].
+In Norway, two species, the goldsinny wrasse (Ctenolabrus rupestris) and the corkwing wrasse (Symphodus melops) are the
+most commonly used wild cleaner fish, with 39 % and 52 % of the total Norwegian official landings 2016, respectively
+(Norwegian directorate of Fisheries; https://www.fiskeridir.no/Yrkesfiske/Tema/Leppefiske/Registrert-uttak-av-leppefisk-
+i-2017). A recent study found relatively low genetic divergence between wild goldsinny populations in farming areas in
+mid Norway and populations in southern Norway and Sweden, suggesting inadvertent gene flow [18]. In contrast to the
+goldsinny, which generally shows weak population structure, the corkwing has highly differentiated populations in
+Scandinavia with a strong genetic break between southern and western Norway and overall lower genetic diversity in the
+southern area [19]. The difference in population structure between the two species could be related to differences in
+population connectivity caused by different reproductive strategies: the goldsinny is a broadcast spawner with a fraction
+of the eggs being pelagic, while the corkwing lay benthic eggs in seaweed nests [6,20,21]. Furthermore, southern corkwing
+populations have been found to grow faster and mature earlier than the populations further north [22], which aligns with
+the genetic break [19]. Thus, if corkwing with southern origin escapes and hybridizes with local populations further north,
+we could expect to see changes in genotype composition with possible phenotypic effects.
+The corkwing’s northern distribution range was earlier reported to extend to the Trondheimsfjord in mid Norway. In the
+Flatanger municipality, North Trøndelag county, 130 km further north, no corkwing were found during extensive field
+surveys of wrasse in the 1990s [23]. However, in recent years, occasional observations of corkwing have been reported in
+North Trøndelag (but not further north; The Norwegian Fishermen’s Sales Organization, pers.com), indicating a recent
+northward range expansion. Knutsen et al. [24] proposed that the current increase in abundance in southern Scandinavia is
+a result of population growth due to rising temperatures, and that the predicted rise in sea temperature could facilitate a
+northwards expansion. The other possibility would be that this northwards expansion is a direct result of wrasse escaping
+from the salmon pens through tears in the net, small fish slipping through the mesh [13,25] or intentional release at the end
+of the season [26].
+Here, we investigate the origin of wild corkwing wrasse captured in Flatanger, amidst Salmon farms where wrasses are
+currently used as cleaner fish and rely heavily on the import of wrasse from southern Norway and Sweden. We used the
+restriction-site associated DNA (RAD) sequencing method 2b-RAD [27] to simultaneously discover and genotype
+thousands of SNPs (single nucleotide polymorphisms) across the entire genome [24]. Our objective is to investigate
+whether the wild corkwing in Flatanger represent: 1) the leading edge of an ongoing northwards range expansion [24], 2)
+escaped wrasse from aquaculture with origin from Skagerrak and Kattegat, or 3) a mix of both. In order to answer these
+questions, we compared SNPs from corkwing wrasse collected in Flatanger with wrasse collected: 1) in western Norway,
+where wrasse is harvested but used locally, and 2) further south on the Skagerrak-Kattegat coast, where all wrasses are
+harvested for live transport to salmon farms in mid and northern Norway.
+3. Materials and Methods
+Sampling and DNA extraction
+With the help of commercial fishermen and local researchers we collected corkwing wrasse from Flatanger in mid
+Norway; from two locations in western Norway: Austevoll and Stavanger (western population) and three locations at the
+Skagerrak-Kattegat coast: Kristiansand, Strömstad and Kungsbacka (southern population) (Fig. 1). Fin clips from forty
+individuals per location were taken June - October 2016 and stored in 96% ethanol until further analysis. For fish sampled
+in Flatanger, we dissected otoliths and aged them by counting annual growth increments following Halvorsen et al. [22].
+Additional sampling information, such as coordinates and sampling location in relation to salmon farms, can be found in
+supplementary material (S1; S2)
+R. Soc. open sci.
+R. Soc. open sci. article template
+3
+Genomic DNA was extracted using DNeasy® Blood & Tissue Kit (Qiagen) with optional RNAse treatment (200mg
+RNAse), and purified and concentrated with standard ethanol/isopropanol precipitation. DNA quantity and quality (i.e.
+presence of contaminants, degradation etc.) was assessed using Qubit® ds DNA BR AssayKit (Invitrogen–ThermoFisher
+Scientific) and on a 1% agarose gel. 2b-RAD libraries were prepared following a protocol modified from Matz &
+Aglyamova [28], available in a dedicated github repository (https://github.com/ellikafaust/S.melopsPopGen). All
+individual DNA samples were tagged with unique barcodes and then pooled in sets of 24 per sequencing lane, including
+technical replicates of 4 individuals to control for methodical artefacts. Pooling was done by sampling site, where each
+sample (40 individuals) was divided in two independent pools that were sequenced in separate lanes. This was done to
+minimise risk of mixing up samples during library preparation, while having two independent pools to account for any
+lane bias. Single-read, 50bp target length sequencing on Illumina HiSeq2500 platform was conducted at the SNP&SEQ
+Technology Platform in Uppsala, Uppsala University.
+Bioinformatics
+The bioinformatic analysis of the DNA sequences followed a modified de novo pipeline from Pierre de Wit [29] using
+scripts developed by Mikhail Matz (scripts and manual available at https://github.com/z0on/2bRAD_denovo). First, low
+quality reads and redundant sequences (i.e. restriction sites and duplicates) were removed. Remaining fragments were
+then clustered into rad tags, allowing up to 3 mismatches among reads (identity threshold 91%) and with a minimum
+depth of 20 reads. Individual genotypes were called, following the criteria of Mindp=5 (min depth for calling a
+homozygote), hetero=0.8 (max fraction of heterozygotes allowed), aobs=20 (min number of times allele has to be observed
+across all samples) and strbias=20 (strand bias cutoff). Four technical replicates per lane were used to control for
+methodical artefacts using the recalibrateSNPs.pl script. Variants that had been identical genotyped between the replicates
+were used as reference for non-parametric quality recalibration of all variants, estimating their probability of being “true”
+SNPs. Loci with recalibrated quality below 20 and alleles with quality below 20 were removed. Only variants with less
+than 75% heterozygotes and less than 50% missing data were kept for thinning (removing) of the dataset. SNPs occurring
+on the same RAD-tag were removed, leaving only the SNP with the highest minor allele frequency (MAF) in each RAD-
+tag. Technical replicates and poorly sequenced individuals (individuals with more than 50% missing data) were removed.
+Finally, we removed loci that were missing in more than 30% of the individuals or with a global minor allele frequency
+below 1%. Initially, different levels of minor allele frequency (maf 0%, 1% and 5%) were tested. Since the different datasets
+did not change the outcome of the analyses (data not shown) we only present results from loci with maf > 1%, maintaining
+the most number of loci, whilst still removing genotyping errors and uninformative polymorphisms [30]. Data conversions
+between different softwares was done using PGD spider [31].
+Statistical analysis
+Population diversity and differentiation
+We used the R package diveRsity [32] in R v.3.3.2 [33] to calculate observed and expected heterozygosity for each locus in
+the different samples. Whether observed heterozygosity (Ho) values deviated from expected heterozygosity (He) was
+assessed by calculating FIS according to Weir and Cockerham [34]. Deviations from Hardy-Weinberg (HW) proportions
+were estimated with exact tests, with P-values calculated according to the complete enumeration method [35] and adjusted
+for multiple testing using False Discovery Rate (FDR) correction [36]. Loci that deviated (q < 0.05) from HW proportions in
+more than one of the samples were subsequently removed. Weir & Cockerham’s FST was estimated for each population
+pair and over all samples using diveRsity. Statistical significance of FST values were assessed using Fisher’s exact
+probability test with 5000 Monte Carlo replicates, followed by FDR correction.
+Individual-based clustering
+Missing genotypes can induce patterns of similarity or differentiation that are easily confused with genetic structure. In
+order to detect such biases, we clustered individuals based on their identity-by-missingness (IBM) in PLINK v 1.9 [37,38]
+where pairwise distances between individuals are calculated from the proportion of missing site which are not shared
+between individual pairs. Pairwise distances were visualised with a multidimensional scaling (MDS) plot.
+In order to estimate and visualise genetic differentiation among individuals we applied two individual-based clustering
+methods, STRUCTURE v.2.3.4 [39] and Principal Component Analysis (PCA) in the R package ade4 [40–42]. STRUCTURE
+uses model-based Bayesian clustering to find the most likely number of population clusters K. Once K is defined it
+estimates the posterior probability of each individual's genotype to originate in each cluster. STRUCTURE analyses were
+performed assuming uncorrelated allele frequencies, allowing admixture and with no locprior. The burn-in period was set
+to 10 000 and the number of MCMC (Markov Chain Monte Carlo) repetitions to 50 000. Clusters K from 1-7 were run 3
+times per K. The different runs were merged for visual analysis with CLUMPAK [43]. Calculations of the most likely
+number of population clusters (K) was estimated using STRUCTURE HARVESTER [44] by calculating the posterior
+R. Soc. open sci.
+probability for each value of K (mean lnP(K)) and the modal value of Delta K. The second individual-based clustering
+method (PCA) uses a multivariate exploratory approach that makes no prior assumptions about how many populations
+exist or boundaries between populations. Allele frequencies were centred but not scaled and missing data were replaced
+by mean allele frequencies with the function scaleGen in ADEGENET [45,46]. PCA was performed using the function
+dudi.pca in ade4.
+Hybridization
+In order to remove potential bias in hybrid analysis, 200 SNPs with the highest over all FST were tested for linkage
+disequilibrium (LD) in Genepop on the web [47] using 10 000 dememorizations, 100 batches and 5 000 iterations per batch.
+SNPs with significant LD after FDR corrections were removed and replaced with new SNPs until no significant
+comparisons remained. In order to assess the accuracy, efficiency and power to correctly identify individuals belonging to
+different hybrid classes, we used the R package HYBRIDDETECTIVE [48]. We used the function
+freqbasedsim_AlleleSample to generate three replicates of three simulated data sets with pure parents (Pure_A and
+Pure_B), first and second-generation hybrids (F1 and F2) and backcrosses between F1 and pure parents (BC_A and BC_B).
+The data sets contained 720 individuals and was based on the genotype frequencies from the 200 loci in the western
+(PureA = Austevoll and Stavanger) and southern (PureB = Kristiansand, Strömstad and Kungsbacka) samples. Simulations
+were analysed in NEWHYBRIDS v. 1.1 [49] which estimates the posterior probability of each individual to belong to one of
+the six hybrid classes. The analysis was done using the uniform prior option and default genotype proportions with a
+burn-in period of 50 000 iteration and 300 000 MCMC sweeps. Power was estimated as the product of efficiency (correctly
+assigned individuals over the known individuals per class) and accuracy (correctly assigned individuals over individuals
+assigned to that class) as described in [48].
+Finally, we investigated the occurrence of hybridization in the northern-most location Flatanger in mid Norway with the
+software NEWHYBRIDS. Individuals from Skagerrak (Kristiansand, Strömstad and Kungsbacka) and western Norway
+(Austevoll and Stavanger) were included in the runs as the pure parent genotypes using the “z” and “s” options. The
+analysis was performed using the same 200 loci as for the simulated data, displaying the highest over all FST estimates and
+no LD. The data was analysed using the uniform prior option, default genotype proportions and the burn-in period was
+set to 50 000 and the number of MCMC sweeps after burn-in to 300 000.
+4. Results
+Genetic diversity and population differentiation
+From the in total 48 technical replicates (4 for each pool of 20) we called 237 090 SNPs (average 4939 ± 126 SD per replicate
+pair). Of these, 9% ± 0.05% SD are inconsistent between technical replicates. Data filtering resulted in a total of 4372
+polymorphic SNPs, and none of the 240 individuals had to be removed due to missing data. Of the 57 600 missing data
+comparisons, only 479 pairwise comparisons have an identity of missingness higher than 20% (max 47%), and no obvious
+patterns of identity by missingness can be observed (S3). FIS estimates indicate heterozygote excess in all samples (mean FIS
+ranging from -0.344 to -0.052). Fifteen loci deviated significantly (q < 0.05) from HW proportions in more than one sample
+and were subsequently removed, leaving 4357 SNPs for final analysis. No more than eight loci deviate significantly from
+HW proportions in any of the western or southern samples. However, a much higher number of loci, in total 1724 loci,
+deviate from HW proportions in the Flatanger sample, 1722 of which display negative FIS values, indicating heterozygosity
+excess. Furthermore, wrasse from the western population display an overall higher genetic diversity (mean Ho = 0.30,
+mean He = 0.32, polymorphic loci = 95.2%) compared to wrasse from the southern population (mean Ho = 0.26, mean He =
+0.24, polymorphic loci = 82.3%). The Flatanger population shows the highest genetic diversity (mean Ho = 0.50 mean He =
+0.35, polymorphic loci = 97%). Global genetic differentiation, estimated as FST = 0.0789, is significantly (p < 0.05) different
+from zero. Pairwise FST estimates (S4) demonstrate higher genetic differentiation between the western and southern
+populations (FST = 0.101-0.1312) than among the southern samples (FST = 0.0023-0.0030) or between western samples (FST =
+0.0065). Overall, Flatanger is genetically more similar to the western population (FST = 0.0243-0.0277) than the southern
+population (FST = 0.1163-0.1258).
+Individual-based clustering
+STRUCTURE analyses suggest the existence of two, potentially three, genetically differentiated clusters (Fig. 2; S5). The
+first two clusters correspond to the divide between southern and western populations (blue and orange, respectively), in
+concordance with pairwise FST estimates and previous studies [19]. Most individuals from Flatanger assigned to the
+western population for K = 2, and partially to a third cluster (purple) for K = 3. However, two individuals from Flatanger
+(FKH48 and FKH50) assigned to the southern population (blue). Another individual from the Flatanger sample (FKH67)
+assigned equally to both populations, suggesting admixture.
+R. Soc. open sci.
+R. Soc. open sci. article template
+5
+In order to estimate and visualise genetic differentiation among individuals without prior assumptions about the
+population model, we conducted a PCA (Fig. 3). The first principal component separates data into two main clusters,
+which correspond closely to southern and western clusters observed in the STRUCTURE analysis. The second principal
+component (y-axis) splits the Flatanger population from the western population, placing Flatanger closer to the southern
+population than the western. Succeeding components explain less than 1% of the total variance each, and are not shown.
+The same two individuals from Flatanger (FKH48 and FKH50) which assigned to the southern cluster in the STRUCTURE
+analyses, group with the southern cluster in the PCA. The Flatanger individual which assigned equally to both clusters in
+the STRUCTURE analyses (FKH67) is closer to the southern cluster than any of the other individuals from the Flatanger or
+western population.
+Hybridization
+We used the software NEWHYBRIDS to identify potential hybrids in Flatanger (Fig. 4). The two individuals that assigned
+to the southern cluster in both STRUCTURE and the PCA (FKH48 and FKH50), were identified as southern backcrosses,
+i.e. 75% southern genotype and 25% western genotype. FKH67 was detected as a F1 hybrid, carrying 50% of both the
+southern and western genotype. Furthermore, another 12 individuals from Flatanger have a high probability (>50%) of
+being western backcrosses, i.e. 75% western genotype and 25% southern genotype. Some fish from the “pure” southern
+and western samples closest to the southern/western genetic break (two individuals in Kristiansand and eight in
+Stavanger) are also distinguished as genetic backcrosses (Fig. 4a), indicating gene flow across the break. Simulated data
+demonstrated high efficiency, accuracy and power to detect individuals from all of the six hybrid classes given the battery
+of 200 loci used (Fig. 5; S6). The battery of SNPs is able to call individuals as pure western, pure southern, F1, F2, western
+or southern backcross with a power above 95% at a probability threshold of 90%.
+Comparison of length measurements for individuals of the same sex and age (Fig. 6) show that the F1 individual (FKH67)
+and one of the individuals with southern genotype (FKH48) are the largest two-year-old males in the sample. The second
+individual with a southern genotype (FKH50) is a three-year-old female above median length.
+5. Discussion
+Here we provide the first evidence that translocated corkwing wrasse escape salmon farms and hybridize with local
+populations. Our results support previous studies by finding marked genetic differentiation between southern Skagerrak
+corkwing wrasse populations and those in western Norway. We expand on current knowledge by discovering that almost
+half of the individuals sampled at the northern limit of the species distribution range have partial southern genotypes.
+Three of these individuals carry 50% or more of the southern genotype. We discuss the potential consequences of human
+mediated geneflow, and the concerns with the current practice of large-scale translocation of wrasse.
+As expected under isolation-by-distance, pairwise FST estimates (S2) demonstrate that the Flatanger as a whole is
+genetically most similar to Austevoll, followed by Stavanger, whilst almost a tenfold more differentiated from the
+southern sampling locations. We observe similar patterns of genetic differentiation in the individual-based clustering
+methods for a majority of individuals from Flatanger (Fig. 2, 3). This suggests that the Flatanger population is largely a
+result of an ongoing northward range expansion, as suggested by Knutsen et al, [24]. It is possible that a more continuous
+sampling along the west coast of Norway would have improved upon these results by adding samples closer to Flatanger,
+and hence more likely to have contributed to a range expansion.
+While we find a clear western/southern genetic break and an overall lower genetic diversity in the southern, Skagerrak
+region [19,24], the highest diversity can be seen in Flatanger, which is rather surprising, considering that this area has been
+colonised recently [19,23,24] and is on the leading edge of a range expansion [19,24]. Typically a reduction in genetic
+diversity is to be expected when a species colonises a new area [50]. The high genetic diversity in Flatanger is therefore
+likely to be a result of multiple sources of origin and recent interbreeding [50], as indicated by the fact that roughly 40% of
+all loci demonstrated a significant heterozygosity excess in the Flatanger sample.
+Furthermore, two individuals (FKH48 and FKH50) exhibit high similarity to the southern population whilst differentiating
+from all western and Flatanger individuals. They clearly cluster with southern individuals in STRUCTURE and PCA,
+suggesting a southern genotype. A third individual (FKH67) did not cluster with either southern or western populations,
+and was classified as a F1 hybrid (50:50 western:southern) by NEWHYBRIDS (Fig. 4). Furthermore, NEWHYBRIDS found
+twelve Flatanger individuals to have more than 50% probability of being western backcrosses. This strongly supports
+ongoing hybridization between the southern and western genotypes in the wild, which has previously only been
+documented in captivity [26]. In addition to the hybrids discovered in Flatanger, we also detected two potential
+backcrosses in Kristiansand and seven in Stavanger (Fig. 4b). Stavanger and Kristiansand are the two samples collected
+closest to the genetic break on the western and the southern side, respectively. Except for Flatanger, we did not detect any
+R. Soc. open sci.
+indication of hybrids in any of the other samples further from the genetic break, indicating the existence of isolated
+populations [19].
+The relative high number of Southern-Western hybrids in Flatanger is therefore convincing evidence of escapement and
+hybridization of cleaner fish sourced from Skagerrak and/or Kattegat. Recently, Jansson et al. [18] showed there to be much
+lower differentiation in goldsinny wrasse between Flatanger and Skagerrak populations indicating escapees and possibly
+hybridization. Unfortunately, there are no official records on the locations of source and destination of wrasses used as
+cleaner fish, which could have facilitated further interpretation of these results. Upon consulting with the four wrasse
+transport companies, they confirmed that the clear majority of wrasse being translocated in Norway are exported from
+Skagerrak-Kattegat coast to farms in mid and northern Norway. Furthermore, translocations of wrasse from western
+Norway to mid Norway has been strongly discouraged by food-safety authorities due to the possibility of wrasse being a
+carrier of pancreas disease which affects farmed salmon and is endemic in western Norway south of Hustadvika [51].
+Combined, this supports the conclusion that western backcrosses in Flatanger must have been the result of hybridization
+with southern genotypes from Skagerrak and/or Kattegat. We did not find any western backcrosses east of Kristiansand in
+the Skagerrak. Consequently, the western backcross genotypes we found in Flatanger are likely a result of second-
+generation hybridization that occurred after translocation. Two of the companies reported to also have transported wrasse
+from Skagerrak to farms in western Norway. Thus, it is presently unclear whether the occurrence of western backcrosses
+in the Stavanger area is a result of human-mediated translocation, or if it is due to occasional natural gene-flow across the
+genetic break between the southern and western populations.
+The onset of gene flow between previously isolated populations may have genetic, physiological and ecological
+consequences. The corkwing wrasse in Flatanger most likely colonised the area within the last two decades [23]. This and
+low catch rates attest to a very low abundance in the Flatanger area compared to regions further south (Per Andersen,
+pers.obs.), rendering this population vulnerable to even a low number of successful introgressions. Presently, fishing for
+wrasse in Sweden is allowed from the 15th of May, and occurs during their spawning period in May and June [52]. Hence,
+there is a possibility that ready-to-spawn corkwing are escaping during the spawning season, increasing the probability of
+hybridization. In Norway, the wrasse fishery is closed until the end of the spawning season [22], which reduces the
+chances of hybridization. In the UK, wrasse fishery has no temporal restrictions nationally, but in 2017 three southwestern
+IFCAs (Inshore Fisheries and Conservation Authorities) implemented byelaws that restrict wrasse fishery to certain
+periods of the year in specified areas [15–17].
+The effects of hybridization between genetically distinct populations are hard to predict and depend on many factors.
+Fitness can increase as a result of introducing favourable alleles and genotypes (overdominance), or because of deleterious
+alleles are being sheltered (heterosis) [50]. The three individuals with more than 50 % southern genotype tended to be
+larger than the native fish at the same age. Although a conclusion cannot be reached without a larger sample size of
+hybrids, this is consistent with earlier findings of southern corkwing growing faster than western [22]. If the faster growth
+and larger body size for southern populations has a genetic basis, hybrids may have a fitness advantage in reproduction,
+either through sexual selection for large males or higher fecundity of large females. Alternatively, a reduction in fitness can
+occur due to genetic incompatibilities (intrinsic outbreeding depression) or reduced adaptation to the local environment
+(extrinsic outbreeding depression) [50]. The life history differences between southern and western populations has been
+suggested to reflect temperature differences between these regions [22]. If there is local adaptation, it is likely that the
+continued transfer of unfit individuals would cause the loss of locally adapted alleles and genotypes, known as genetic
+swamping [53]. However, introgression and admixture of the southern genotype into the Flatanger population is likely to
+continue, whether there is an increase of fitness or not. This is because, all of the hybrids progeny will also be hybrids [50].
+Populations on the boundary of a species range exist in conditions similar to the habitats just outside the distribution
+range, making them more likely to carry genotypes that are able to colonise new habitats [54]. The Flatanger population,
+constituting the northern boundary of the species distribution range, is likely to play an important role for future
+adaptation potential, and range expansion. However, the asymmetric geneflow to the edges of a species range can obstruct
+this adaptation [55]. Admixing with southern genotypes might therefore work as a barrier to further range expansion.
+Furthermore, southern corkwing is also translocated to salmon farms even further north, to the Nordland county (Jacob
+Meland, Lovundlaks, pers.com.), where no wild corkwing populations are present. This could facilitate further spreading
+of southern genotypes beyond the current natural range. In addition to the genetic and ecological risks discussed above,
+escaping wrasse may introduce new diseases or parasites to conspecifics, salmon and other species in the wild [13,56,57].
+Murray [58] argues that the risks of disease transfer from cleaner fish to salmon is small compared to the risk posed by sea
+lice, but disease transfer to the local populations of wrasse and other species was not considered. With ongoing
+hybridization, the risk of disease transfer may be an even greater threat to local populations, since hybrids may be more
+susceptible to diseases and parasites, as seen in other fish species [59,60].
+In the face of climate induced changing environments, conservation of populations on the leading edge should be
+prioritised in order to maximise future adaptive potential [54,61,62]. We argue that any evaluation of the risks with the
+translocation of wrasse needs to include effects on wild populations and ecosystems. Furthermore, prohibition of long
+R. Soc. open sci.
+R. Soc. open sci. article template
+7
+distance wrasse transports would not necessarily solve this issue. Salmon farms would be restricted to use cleaner fish that
+are sourced from local populations or raised in aquaculture, which would pose other challenges. Local stocks of wrasse are
+prone to overexploitation [12,22,63] and cultured cleaner fish would need to be sourced from the same population where
+cleaner fish are used and have not undergone artificial selection. An obstacle for effective management is that the current
+practice of cleaner fish use is poorly documented and regulated. Norwegian law states that aquacultures are obligated to
+report all escaping fish from aquaculture installations, but presently only the target species cultured are recorded.
+Moreover, Norwegian and UK transporters are not required to log and report the source or the destination of cleaner fish,
+which complicates the possibilities to assess and address the problem of escapees.
+6. Conclusion
+We provide the first evidence that translocated wild corkwing wrasse used as cleaner fish in salmon farms escape and
+hybridize with local populations at the northern limit of its distribution. These findings provide important information for
+aquaculture management and conservation of wild populations of non-target species, and have implications for the
+increasing use of cleaner fish as parasite control in fish farms, which is both poorly documented and regulated. Moving
+genetic material between isolated populations could drastically alter the genetic composition, erode population structure
+and potentially result in loss of local adaptation, hampering the species expansion. The geographical extent and
+magnitude of introgression and the ecological consequences remain unknown for this and other wrasse species. It is
+urgent to address these gaps of knowledge, as there is no immediate sign of reduction of the current practice in Norway,
+and wrasse are increasingly being deployed in other areas such as the United Kingdom.
+Acknowledgments
+We wish to thank local fishermen, fisherwomen and research colleagues for assisting with sampling, especially Åsa Strand
+for help with Swedish sampling, and Lars Mårvik for collecting corkwing in Flatanger, Reine Andreasson for collecting
+corkwing in Strömstad. Torkel Larsen assisted with the otolith work and age-reading. Pierre de Wit gave valuable advice
+on the 2bRAD method and Mats Töpel on SNP data storage and analysis. Sequencing was performed by the SNP&SEQ
+Technology Platform in Uppsala. The facility is part of the National Genomics Infrastructure (NGI) Sweden and Science
+for Life Laboratory. The SNP&SEQ Platform is also supported by the Swedish Research Council and the Knut and Alice
+Wallenberg Foundation. All bioinformatics analyses were run on the Albiorix computer cluster
+(http://albiorix.bioenv.gu.se/) at the Department of Marine Sciences, University of Gothenburg. This study was conducted
+within the Linnaeus Centre for Marine Evolutionary Biology (CeMEB)
+Ethical Statement
+Fish sampling was conducted in compliance with the Norwegian animal welfare Act (LOV 2009-06-19 nr 97) and the
+Swedish Board of Agriculture (Dnr 35-2016, addition to 59-2015). We strived to minimize handling time and stress
+imposed on the fish.
+Funding Statement
+Ellika Faust - EU Interreg project MarGen; Swedish Research Council FORMAS
+Kim Tallaksen Halvorsen – No funding to report
+Per Andersen – No funding to report
+Halvor Knutsen - EU Interreg project MarGen; Norwegian Research Council (grant number 234328/E40)
+Carl Andre - EU Interreg project MarGen; Swedish Research Council FORMAS
+Data Accessibility
+Data is deposited on Dryad (doi:10.5061/dryad.tv553).
+Raw data is available on NCBIs Sequence Read Archive (BioProject PRJNA415388).
+Scripts used for bioinformatic analysis can be found at https://github.com/z0on/2bRAD_denovo
+Log of the pipeline used can be found at https://github.com/ellikafaust/S.melopsPopGen/blob/master/2bRAD_log_escapee
+Competing Interests
+We have no competing interests.
+Authors' Contributions
+R. Soc. open sci.
+KH and CA conceived the study. EF, KH, HK and CA planned the research. EF, KH, PA and HK conducted and
+coordinated sample collection. EF conducted the molecular laboratory and bioinformatic work. KH performed
+morphometrics and age analysis. EF and CA performed statistical analyses. EF drafted the manuscript with help from KH
+and CA. All authors contributed to the final writing and approval of the publication.
+References
+1. Hauser L, Carvalho GR. 289–300. Ellis J. 2017 Northern
+2008 Paradigm shifts in (doi:10.1017/CBO978110741 European Wrasse –
+marine fisheries genetics: 5324.004) Summary of commercial
+Ugly hypotheses slain by 8. Bjordal Å. 1988 Cleaning use, fisheries and
+beautiful facts. Fish Fish. 9, symbiosis between wrasse implications for
+333–362. (doi:10.1111/j.1467- (Labridae) and lice infested management.
+2979.2008.00299.x) salmon (Salmo salar) in 15. Devon & Severn IFCA. 2017
+2. Laikre L, Schwartz MK, mariculture. Int. Counc. Potting Permit Byelaw.
+Waples RS, Ryman N, Explor. Sea Devon Sev. IFCA, Inshore
+Group TGW. 2010 9. Bjordal Å. 1991 Wrasse as Fish. Conserv. Auth.
+Compromising genetic cleaner fish for farmed 16. Cornwall IFCA. 2017 Live
+diversity in the wild: salmon. Prog. Underw. Sci. Wrasse Fishery Guidance
+Unmonitored large-scale 16, 17–28. 2017-18. Cornwall IFCA,
+release of plants and (doi:10.1017/CBO978110741 Inshore Fish. Conserv. Auth.
+animals. Trends Ecol. Evol. 5324.004) 17. Southern IFCA. 2017
+25, 520–529. 10. Deady S, Varian SJA, Fives Wrasse Fishery Guidance.
+(doi:10.1016/j.tree.2010.06.0 JM. 1995 The use of cleaner- South. IFCA, Inshore Fish.
+13) fish to control sea lice on Conserv. Auth.
+3. Jensen, Dempster T, two Irish salmon (Salmo 18. Jansson E et al. 2017 Genetic
+Thorstad EB, Uglem I, salar) farms with particular analysis of goldsinny
+Fredheim A. 2010 Escapes reference to wrasse wrasse reveals evolutionary
+of fishes from Norwegian behaviour in salmon cages. insights into population
+sea-cage aquaculture: Aquaculture 131, 73–90. connectivity and potential
+Causes, consequences and (doi:10.1016/0044- evidence of inadvertent
+prevention. Aquac. Environ. 8486(94)00331-H) translocation via
+Interact. 1, 71–83. 11. Besnier F et al. 2014 Human- aquaculture. ICES J. Mar.
+(doi:10.3354/aei00008) induced evolution caught in Sci.
+4. Glover KA et al. 2017 Half a action: SNP-array reveals (doi:10.1093/icesjms/fsx046)
+century of genetic rapid amphi-atlantic spread 19. Blanco Gonzalez E, Knutsen
+interaction between farmed of pesticide resistance in the H, Jorde PE. 2016 Habitat
+and wild Atlantic salmon: salmon ecotoparasite discontinuities separate
+Status of knowledge and Lepeophtheirus salmonis. genetically divergent
+unanswered questions. Fish BMC Genomics 15, 937. populations of a rocky
+Fish. , 890–927. (doi:10.1186/1471-2164-15- shore marine fish. PLoS One
+(doi:10.1111/faf.12214) 937) 11.
+5. Bolstad GH et al. 2017 Gene 12. Halvorsen KT, Larsen T, (doi:10.1371/journal.pone.01
+flow from domesticated Sørdalen TK, Vøllestad LA, 63052)
+escapes alters the life Knutsen H, Olsen EM. 2017 20. Potts GW. 1985 The Nest
+history of wild Atlantic Impact of harvesting Structure of the Corkwing
+salmon. Nat. Ecol. Evol. 1, cleaner fish for salmonid Wrasse, Crenilabrus Melops
+124. (doi:10.1038/s41559- aquaculture assessed from (Labridae: Teleostei). J. Mar.
+017-0124) replicated coastal marine Biol. Assoc. United Kingdom
+6. Darwall W, Costello M, protected areas. Mar. Biol. 65, 531–546.
+Donelly R, Lysaght S. 1992 Res. , 1–11. (doi:10.1017/S002531540005
+Implications of life-history (doi:10.1080/17451000.2016. 058X)
+strategies for a new wrasse 1262042) 21. Hilldén N-O. 1984
+fishery. J. Fish Biol. 41, 111– 13. Svåsand T, Grefsrud ES, Behavioural ecology of the
+123. (doi:10.1111/j.1095- Karlsen Ø, Kvamme BO, labrid fishes (Teleostei,
+8649.1992.tb03873.x) Glover K., Husa V, Labridae) at Tjärnö on the
+7. Skiftesvik AB et al. 2014 Kristiansen TS (red. ). 2017 Swedish west coast.
+Wrasse (Labridae) as cleaner Risikorapport norsk 22. Halvorsen KT, Sørdalen TK,
+fish in salmonid fiskeoppdrett 2017. Fisk. og Durif C, Knutsen H, Olsen
+aquaculture - The havet EM, Skiftesvik AB, Rustand
+Hardangerfjord as a case 14. Riley A, Jeffery K, TE, Bjelland RM, Vøllestad
+study. Mar. Biol. Res. 10, Cochrane-dyet T, White P, LA. 2016 Male-biased
+R. Soc. open sci.
+R. Soc. open sci. article template
+9
+sexual size dimorphism in RAD_log_August2016.sh. Purcell SM, Lee JJ. 2015
+the nest building corkwing See Second-generation PLINK:
+wrasse (Symphodus melops): https://github.com/DeWitP/ Rising to the challenge of
+implications for a size BONUS_BAMBI_IDOTEA/ larger and richer datasets.
+regulated fishery. ICES J. blob/master/IB14_2b- Gigascience 4, 1–16.
+Mar. Sci. 73, 2586–2594. RAD_log_August2016.sh (doi:10.1186/s13742-015-
+(doi:10.1093/icesjms/fsw135 (accessed on 26 May 2017). 0047-8)
+) 30. Roesti M, Salzburger W, 38. Purcell S, Chang C. 2017
+23. Maroni K, Andersen P. 1996 Berner D. 2012 PLINK. , 9.
+Distribution and abundance Uninformative 39. Pritchard JK, Stephens M,
+of wrasse in an area of polymorphisms bias Donnelly P. 2000 Inference
+northern Norway. In genome scans for signatures of population structure
+Wrasse: Biology and use in of selection. BMC Evol. Biol. using multilocus genotype
+Aquaculture. (eds MDJ 12, 94. (doi:10.1186/1471- data. Genetics 155, 945–959.
+Sayer, MJ Costello, JW 2148-12-94) (doi:10.1111/j.1471-
+Treasurer), pp. 70–73. 31. Lischer HEL, Excoffier L. 8286.2007.01758.x)
+Oxford: Fishing News 2012 PGDSpider: An 40. Chessel D, Dufour AB,
+Books. automated data conversion Thioulouse J. 2004 The ade4
+24. Knutsen H, Jorde PE, tool for connecting package - I : One-table
+Blanco Gonzalez E, Robalo population genetics and methods. R News 4, 5–10.
+JI, Albretsen J, Almada V. genomics programs. (doi:10.2307/3780087)
+2013 Climate Change and Bioinformatics 28, 298–299. 41. Dray S, Dufour AB, Chessel
+Genetic Structure of (doi:10.1093/bioinformatics/ D. 2007 The ade4 package-
+Leading Edge and Rear End btr642) II: Two-table and K-table
+Populations in a 32. Keenan K, Mcginnity P, methods. R News 7, 47–52.
+Northwards Shifting Cross TF, Crozier WW, (doi:10.1159/000323281)
+Marine Fish Species, the Prodöhl PA. 2013 diveRsity: 42. Dray S, Dufour AB. 2007
+Corkwing Wrasse An R package for the The ade4 Package:
+(Symphodus melops). PLoS estimation and exploration Implementing the Duality
+One 8, e67492. of population genetics Diagram for Ecologists. J.
+(doi:10.1371/journal.pone.00 parameters and their Stat. Softw. 22, 1–20.
+67492) associated errors. Methods (doi:10.1.1.177.8850)
+25. Woll AK, Bakke S, Aas GH, Ecol. Evol. 4, 782–788. 43. Kopelman NM, Mayzel J,
+Solevåg SE, Skiftesvik AB, (doi:10.1111/2041- Jakobsson M, Rosenberg
+Bjelland RM. 2013 Velferd 210X.12067) NA, Mayrose I. 2015
+leppefisk i merd. 33. R Core Team. 2015 R: a CLUMPAK: a program for
+26. Blanco Gonzalez E, de Boer language and environment identifying clustering
+F. 2017 The development of for statistical computing. R modes and packaging
+the Norwegian wrasse foundation for statistical population structure
+fishery and the use of computing. Vienna, inferences across K. Mol.
+wrasses as cleaner fish in Austria. See http://www.r- Ecol. Resour. 15, 1179–1191.
+the salmon aquaculture project.org. (doi:10.1111/1755-
+industry. Fish. Sci. 34. Weir BS, Cockerham CC. 0998.12387)
+(doi:10.1007/s12562-017- 1984 Estimating F-Statistics 44. Earl DA, Von Holdt BM.
+1110-4) for the analysis of 2012 STRUCTURE
+27. Wang S, Meyer E, McKay population structure. HARVESTER: a website
+JK, Matz M V. 2012 2b- Evolution (N. Y). 38, 1358– and program for visualizing
+RAD: a simple and flexible 1370. STRUCTURE output and
+method for genome-wide 35. Louis EJ, Dempster ER. implementing the Evanno
+genotyping. Nat. Methods 9, 1987 An Exact Test for method. Conserv. Genet.
+808–810. Hardy-Weinberg and Resour. 4, 359–361.
+(doi:10.1038/nmeth.2023) Multiple Alleles. Int. (doi:10.1007/s12686-011-
+28. Matz M V, Aglyamova G. Biometric Soc. 43, 805–811. 9548-7)
+2014 Protocol for Illumina 36. Benjamini Y, Hochberg Y. 45. Jombart T. 2008 Adegenet:
+2bRAD sample preparation. 1995 Controlling the false A R package for the
+See discovery rate: a practical multivariate analysis of
+http://www.bio.utexas.edu/ and powerful approach to genetic markers.
+research/matz_lab/matzlab/ multiple testing. J. R. Stat. Bioinformatics 24, 1403–1405.
+Methods_files/2bRAD_prot Soc. Ser. B. 57, 289–300. (doi:10.1093/bioinformatics/
+ocol-1.pdf (accessed on 26 (doi:10.2307/2346101) btn129)
+May 2017). 37. Chang CC, Chow CC, 46. Jombart T, Ahmed I. 2011
+29. De Wit P. 2016 IB14_2b- Tellier LCAM, Vattikuti S, adegenet 1.3-1: New tools
+R. Soc. open sci.
+for the analysis of genome- 55. Kirkpatrick M, Barton NH. Values and Risks of Life on
+wide SNP data. 1997 Evolution of a species’ the Edge. Fisheries 35, 530–
+Bioinformatics 27, 3070–3071. range. Am. Nat. 150, 1–23. 549. (doi:10.1577/1548-8446-
+(doi:10.1093/bioinformatics/ (doi:10.1086/286054) 35.11.530)
+btr521) 56. Treasurer JW. 2012 Diseases 62. Rehm EM, Olivas P, Stroud
+47. Rousset F. 2008 of north European wrasse J, Feeley KJ. 2015 Losing
+GENEPOP’007: A complete (Labridae) and possible your edge : climate change
+re-implementation of the interactions with cohabited and the conservation value
+GENEPOP software for farmed salmon, Salmo salar of range-edge populations
+Windows and Linux. Mol. L. J. Fish Dis. 35, 555–62. When will Range-edge
+Ecol. Resour. 8, 103–106. (doi:10.1111/j.1365- Populations be. Ecol. Evol.
+(doi:10.1111/j.1471- 2761.2012.01389.x) 14, 4315–4326.
+8286.2007.01931.x) 57. Wallace IS, Donald K, (doi:10.1002/ece3.1645)
+48. Wringe BF, Stanley RRE, Munro LA, Murray W, Pert 63. Halvorsen KT. 2017
+Jeffery NW, Anderson EC, CC, Stagg H, Hall M, Bain Selective harvesting and life
+Bradbury IR. 2017 N. 2015 A survey of wild history variability of
+HYBRIDDETECTIVE: A marine fish identifies a corkwing and goldsinny
+workflow and package to potential origin of an wrasse in Norway:
+facilitate the detection of outbreak of viral Implications for
+hybridization using haemorrhagic septicaemia management and
+genomic data in R. Mol. in wrasse, Labridae, used as conservation. Doctoral
+Ecol. Resour. 17, e275–e284. cleaner fish on marine thesis, University of Oslo
+(doi:10.1111/1755- Atlantic salmon, Salmo
+0998.12704) salar L., farms. J. Fish Dis.
+49. Anderson EC, Thompson E 38, 515–521.
+a. 2002 A model-based (doi:10.1111/jfd.12259)
+method for identifying 58. Murray AG. 2017 A model
+species hybrids using of the process of spillover
+multilocus data. Genetics and adaption leading to
+160, 1217–1229. potential emergence of
+50. Allendorf FW, Luikar G, disease in salmon held with
+Aitken SN. 2013 cleaner fish used to control
+Conservation and the genetics lice. Aquaculture 473, 283–
+of populations. 2nd edn. 290.
+Wiley-Blackwell. (doi:10.1016/j.aquaculture.2
+51. Olsen AB, Jensen BB, Nilsen 017.02.028)
+H, Grøntvedt RN, Gjerset B, 59. Currens KP, Hemmingsen
+Taksdal T, Høgåsen HR. AR, French RA, Buchanan
+2011 Risikovurdering for D V., Schreck CB, Li HW.
+spredning av pancreas 1997 Introgression and
+disease virus (PD-virus) susceptibility to disease in a
+ved bruk av leppefisk i wild population of rainbow
+norsk laksefiskoppdrett. trout. North Am. J. Fish.
+52. Swedish Agency for Marin Manag. 17, 1065–1078.
+and Water Management. (doi:10.1577/1548-
+2017 Swedish exempted 8675(1997)017<1065:IASTDI
+fishing permits. >2.3.CO;2)
+53. Lenormand T. 2002 Gene 60. Goldberg TL, Grant EC,
+flow and the limits to Inendino KR, Kassler TW,
+natural selection. Trends Claussen JE, Philipp DP.
+Ecol. Evol. 17, 183–189. 2005 Increased Infectious
+(doi:10.1016/S0169- Disease Susceptibility
+5347(02)02497-7) Resulting from
+54. Gibson SY, Marel RC Van Outbreeding Depression.
+Der, Starzomski BM. 2009 Conserv. Biol. 19, 455–462.
+Climate Change and (doi:10.1111/j.1523-
+Conservation of Leading- 1739.2005.00091.x)
+Edge Peripheral 61. Haak AL, Williams JE,
+Populations. Conserv. Biol. Neville HM, Dauwalter DC,
+23, 1369–1373. Colyer WT. 2010
+(doi:10.1111/j.1523- Conserving Peripheral
+1739.2009.01375.x) Trout Populations : The
+R. Soc. open sci.
+R. Soc. open sci. article template
+11
+Figures
+R. Soc. open sci.
+R. Soc. open sci.
+R. Soc. open sci. article template
+13
+Figure captions
+Figure 1. Map of sampling locations. Kristiansand, Strömstad and Kungsbacka are referred to as “southern population”,
+Austevoll and Stavanger as “western population” and Flatanger as mid Norwegian population.
+Figure 2. STRUCTURE cluster assignment of corkwing wrasse based on 4357 SNPs for K = 2 (top) and K = 3 (bottom). Each
+vertical line represents one individual and the colour shows the proportion of each individual assigned to the K different
+genetic clusters. Individuals from Skagerrak/Kattegat cluster together (blue) and individuals from western Norway cluster
+together (orange), visualising the genetic break between southern and western populations. Majority of individuals in mid
+Norway (Flatanger) cluster with the western population, with the exception of FKH48 and FKH50, which cluster with
+southern population, and FKH67, which does not group to either cluster.
+Figure 3. First (x-axis) and second (y-axis) component of a principal component analysis (PCA) on 240 corkwing wrasse
+individuals from 6 locations based on 4357 SNPs. The first component explains 13.1% of the total variation and the second
+1.89%. Additional components explain less than 1% of the total variance each, and are not shown. Each point represents
+one individuals, which are colour coded by sampling site. On the first axis, majority of individuals from Flatanger cluster
+with individuals from western Norway (left), but two individuals from Flatanger (FKH48 and FKH50) cluster together
+R. Soc. open sci.
+individuals from Skagerrak/Kattegat (right) and one individual (FKH67) separates from both clusters. On the second axis,
+individuals from Flatanger are more separated, but overall closer to Skagerrak/Kattegat than western Norway.
+Figure 4. Hybrid analysis of all individuals (A) and individuals sampled in Flatanger (B) using the 200 SNPs with highest
+FST estimates and no LD. Each vertical line represents one individual and its probability to belong to one of the six
+genotype classes: pure western, pure southern, F1 hybrid (50:50 western:southern), F2 hybrid (none present) or
+backcrosses (75% western or southern) between F1 and pure western or pure southern. Hybrids are only detected in
+Flatanger and the two samples next to the genetic break, Stavanger and Kristiansand. Out of the 40 individuals from
+Flatanger, we discovered two individuals with clear southern genotypes (FKH48 and FKH50), one first generation hybrid
+(FKH67), and twelve potential second-generation hybrids (light orange).
+Figure 5. Hybrid detection power at different probability thresholds based on three sets of simulated genotype data from
+200 SNPs with the highest over all FST and no LD. Solid lines represent the 6 genotype classes, pure parents (PopA =
+western population and PopB = southern population), first and second-generation hybrids (F1 and F2) and backcrosses
+(BC_A and BC_B). The dashed lines stand for the standard deviation among the simulations for each class.
+Figure 6. Boxplots showing length-at-age for corkwing wrasse sampled in Flatanger. FKH48, FKH50 and FKH67 are
+individuals with genotypes closely resembling southern populations.
+R. Soc. open sci.
+Society Open

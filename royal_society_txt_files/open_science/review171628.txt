@@ -1,0 +1,2106 @@
+Forward and inverse problems in the mechanics of soft
+filaments
+M. Gazzola, L. H. Dudte, A. G. McCormick and L. Mahadevan
+Article citation details
+R. Soc. open sci. 5: 171628.
+http://dx.doi.org/10.1098/rsos.171628
+Review timeline
+Original submission: 16 August 2017 Note: Reports are unedited and appear as
+1st revised submission: 13 October 2017 submitted by the referee. The review history
+2nd revised submission: 29 January 2018 appears in chronological order.
+3rd revised submission: 9 April 2018
+Final acceptance: 30 April 2018
+Review History
+label_version_1
+RSOS-171138.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Reject
+Comments to the Author(s)
+label_comment_1
+A numerical approach is proposed to simulate the dynamics of elastic filaments. Shearing and
+stretching modes are included and applications to locomotion involving specific external forces
+are presented.
+Simulations of filaments that can shear and stretch is by no means new. Peskin and Lim proposed
+a numerical scheme that does exactly this (Lim Phys. Fluids 2010, Lim SIAM J. Sci. Comput. 31
+2008) and is now used in a number papers on viscous fluid-structure interaction, see for example
+the work of S. Olson. Simulating shearing and stretching is not particularly challenging either: the
+constrained case (inextensible/unshearable) addressed in previous work is actually much more
+difficult than the unconstrained case addressed in this paper. The authors should clearly state in
+their manuscript that the shearable/extensible case that they address is numerically easier than
+the unshearable/inextensible case treated in the literature.
+The shearable/extensible extension of beam model is presented as the main contribution of the
+paper but it is very limited both in terms of scope and accuracy. As noted by the authors, the
+usual unshearable/inextensible model is applicable to most situations. The analysis of the
+plectoneme/solenoid transition found in the paper is the only example that makes use of
+shearability/extensibility, and this example is very specific, and treated in a crude way: for
+quantitive predictions a 3d model would be required. A honest and thorough discussion of the
+limitations of the Cosserat model is missing.
+The discussion of the linear constitutive laws is very confusing. If the authors are trying to take
+into account a finite axial stretching e, then the strain are finite and linear constitutive relations
+are irrelevant. If instead e is close to 1, then there is no point rescaling everything as in equation
+2.10.
+Overall, I find the applications unimpressive. There is no real numerical challenge in the 2d
+slithering problem. Swimming in low-Reynolds number fluids has already been treated at length
+in the literature and with more refined fluid models.
+The manuscript does not read well at all and I find its organization is loose. To give just one
+example, the equations of motion are discretized in a seemingly arbitrary way; later on, it is
+asserted that the discrete model is conservative (page 9 line 37) but without any proof or
+indication why this should be true. An appendix is referred to in several places but is not
+included. The discussion of the existing literature is highly insufficient for a numerical paper,
+especially in view of the long literature on the simulation of elastic rods.
+To sum up, I am having difficulties identifying any strong contribution in this manuscript. The
+numerical model is similar to that of Peskin. The examples are really not impressive. I
+recommend rejection.
+3
+label_author_2
+Review form: Reviewer 2 (Charles W Wolgemuth)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This manuscript presents a numerical method for handling the general inertial dynamics of
+elastic filamentary objects in the presence of external forces, such as fluid drag, self-repulsion,
+and active internal forces. There are a large number of biological and engineering systems that
+require analysis of these types of systems, and numerical algorithms are not generally available to
+handle these systems, especially in the broad context in which this method is developed.
+Therefore, I am supportive of publication. However, I do think that there are a few points that
+need to be addressed.
+1. While there are not many widely available methods for handling these types of problems,
+there are methods that have been crudely described in the literature. For example, my own work
+has developed a finite difference method spatial discretization routine that uses a semi-implicit
+Crank-Nicolson time stepping to handle inextensible, overdamped filaments in viscous fluids.
+(We have also recently augmented this to a finite volume scheme that is better because it
+guarantees that the total force and torque on a self-propelled swimmer are identically zero). The
+method proposed here is definitely more general than the other methods that I am familiar with;
+however, what I am wondering is how efficient this algorithm is. Is it fairly typical for
+manuscripts on numerical algorithms to provide information on the computational cost as a
+function of grid spacing. How long do the simulations described here take to run on whatever
+system they were computed on?
+2. Similar to above, how stable is the algorithm? Can the authors derive or estimate CFL
+conditions for the algorithm in at least some characteristic cases (e.g., purely inertial,
+overdamped, etc.).
+Charles Wolgemuth
+University of Arizona
+4
+label_end_comment
+Decision letter (RSOS-171138.R0)
+20-Sep-2017
+Dear Dr Mahadevan:
+I write you in regards to manuscript RSOS-171138 entitled "Computational mechanics of soft
+filaments" which you submitted to Royal Society Open Science.
+In view of the criticisms of the reviewers and editors, found at the bottom of this letter, your
+manuscript has been rejected for publication.
+Thank you for considering Royal Society Open Science for the publication of your research. I
+hope this decision will not discourage you from submitting manuscripts in the future.
+Yours sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of R. Kerry Rowe
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Similar work has been published elsewhere.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+A numerical approach is proposed to simulate the dynamics of elastic filaments. Shearing and
+stretching modes are included and applications to locomotion involving specific external forces
+are presented.
+Simulations of filaments that can shear and stretch is by no means new. Peskin and Lim proposed
+a numerical scheme that does exactly this (Lim Phys. Fluids 2010, Lim SIAM J. Sci. Comput. 31
+2008) and is now used in a number papers on viscous fluid-structure interaction, see for example
+the work of S. Olson. Simulating shearing and stretching is not particularly challenging either: the
+constrained case (inextensible/unshearable) addressed in previous work is actually much more
+difficult than the unconstrained case addressed in this paper. The authors should clearly state in
+their manuscript that the shearable/extensible case that they address is numerically easier than
+the unshearable/inextensible case treated in the literature.
+The shearable/extensible extension of beam model is presented as the main contribution of the
+paper but it is very limited both in terms of scope and accuracy. As noted by the authors, the
+usual unshearable/inextensible model is applicable to most situations. The analysis of the
+plectoneme/solenoid transition found in the paper is the only example that makes use of
+5
+shearability/extensibility, and this example is very specific, and treated in a crude way: for
+quantitive predictions a 3d model would be required. A honest and thorough discussion of the
+limitations of the Cosserat model is missing.
+The discussion of the linear constitutive laws is very confusing. If the authors are trying to take
+into account a finite axial stretching e, then the strain are finite and linear constitutive relations
+are irrelevant. If instead e is close to 1, then there is no point rescaling everything as in equation
+2.10.
+Overall, I find the applications unimpressive. There is no real numerical challenge in the 2d
+slithering problem. Swimming in low-Reynolds number fluids has already been treated at length
+in the literature and with more refined fluid models.
+The manuscript does not read well at all and I find its organization is loose. To give just one
+example, the equations of motion are discretized in a seemingly arbitrary way; later on, it is
+asserted that the discrete model is conservative (page 9 line 37) but without any proof or
+indication why this should be true. An appendix is referred to in several places but is not
+included. The discussion of the existing literature is highly insufficient for a numerical paper,
+especially in view of the long literature on the simulation of elastic rods.
+To sum up, I am having difficulties identifying any strong contribution in this manuscript. The
+numerical model is similar to that of Peskin. The examples are really not impressive. I
+recommend rejection.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+This manuscript presents a numerical method for handling the general inertial dynamics of
+elastic filamentary objects in the presence of external forces, such as fluid drag, self-repulsion,
+and active internal forces. There are a large number of biological and engineering systems that
+require analysis of these types of systems, and numerical algorithms are not generally available to
+handle these systems, especially in the broad context in which this method is developed.
+Therefore, I am supportive of publication. However, I do think that there are a few points that
+need to be addressed.
+1. While there are not many widely available methods for handling these types of problems,
+there are methods that have been crudely described in the literature. For example, my own work
+has developed a finite difference method spatial discretization routine that uses a semi-implicit
+Crank-Nicolson time stepping to handle inextensible, overdamped filaments in viscous fluids.
+(We have also recently augmented this to a finite volume scheme that is better because it
+guarantees that the total force and torque on a self-propelled swimmer are identically zero). The
+method proposed here is definitely more general than the other methods that I am familiar with;
+however, what I am wondering is how efficient this algorithm is. Is it fairly typical for
+manuscripts on numerical algorithms to provide information on the computational cost as a
+function of grid spacing. How long do the simulations described here take to run on whatever
+system they were computed on?
+2. Similar to above, how stable is the algorithm? Can the authors derive or estimate CFL
+conditions for the algorithm in at least some characteristic cases (e.g., purely inertial,
+overdamped, etc.).
+Charles Wolgemuth
+University of Arizona
+6
+Author's Response to Decision Letter for (RSOS-171138.R0)
+See Appendix A.
+label_version_2
+RSOS-171628.R0
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_5
+See PDF document (Appendix B)
+label_author_4
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+7
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_6
+Summary
+This manuscript focuses on developing a robust method to simulate the dynamics of elastic
+filaments. The method is able to handle different scenarios with ease. The method is detailed and
+several test cases are given. Note that I am reading this as a new reviewer after revisions have
+already been made.
+Overall, I do agree with Reviewer 2 that there are many applications where this method can be
+used and since it is able to handle a large class of problems, it is worthy of publication.
+On the other hand, I do not think the authors did a `complete’ job in answering reviewer 1. I do
+agree with the reviewers that the method that Lim & Peskin first developed is to solve a different
+subclass of problems. However, the authors have sold that method short and did not properly
+cite all of the work. The authors take a line from the 2008 paper and say that it is only first order.
+This is true for the initial method, but if the authors had looked a bit further, there was a
+publication a few years later demonstrating that of this method can be made formally second
+order accurate. Thus, only first order convergence is not a limitation of this other model since it
+can be done with second order accuracy. Additionally, the 2008 paper cited by the authors did
+not account for self contact. But, if the authors again had looked at newer publications by Lim &
+Peskin, a fairly simple repulsive term was used in a very similar way to the current study. Thus,
+in some ways I do agree with the first reviewer in that the way that the self-repulsion, active
+internal forces, and fluid drag are handled is not new or novel in any way. I also agree with
+Reviewer 1 in that many of the applications did not provide any new insight other than that one
+could use this model to simulate these phenomena. I did find the inverse problem as the most
+interesting and promising.
+I do agree with Reviewer 2 and the authors rebuttal in that the major novelty is the ability to
+account for stretching and shearing beyond a small numerical deviation as in the Lim and Peskin
+approach. However, in the technical detail of this manuscript and the many examples, somehow
+this point gets a bit lost.
+Comments:
+o I believe the discussion could be made a bit more clear and put this modeling framework
+in a better context. A paragraph in the discussion that points out again why one would choose
+this method for a particular application is of the utmost importance. It is also necessary for the
+authors to point interested readers to alternate methods based on what the modeler is interested
+in. As pointed out above, these take home points are totally lost in the technicalities and all of the
+examples. If a short paragraph that then made clear one chooses this type of approach if
+interested in the context of applications where stretching and shearing beyond a small threshold
+were of interest. If one was not concerned with larger stretching and shearing and wanted an
+accurate fluid solver (instead of RFT approximation), then the Lim & Peskin approach (with
+newer added terms over the years) might be a better approach that again can handle self contact
+8
+etc. Again, other numerical approaches should be cited and this should be a fair summary of
+when/why you would use this approach.
+Minor comments:
+* On p.5 after 2.2 towards end of the paragraph, there was a missing parentheses after Fig. 1
+* Something is not right with the first sentence in the paragraph containing Eq 2.8. (We assume vs
+“Assuming”?)
+* Appendix: On p. 4 above Eq A1, the reference # is missing
+label_author_5
+Review form: Reviewer 4 (Neil RIBE)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_5
+Accept as is
+Comments to the Author(s)
+label_comment_7
+See attached file (Appendix C)
+label_author_6
+Review form: Reviewer 5
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+9
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_6
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_8
+This paper presents a discrete Cosserat rod model and a large number of applications to that
+model. While I enjoyed reading this paper, I have a major complaint : the authors do not compare
+their simulator to existing Cosserat simulators. In the introduction, it is claimed that previous
+simulators were specific to Kirchhoff rod models, but this is wrong. For instance, CORDE
+(Spillman et al.) was an implementation of a discrete Cosserat model, allowing for
+streching/shearing/bending/twisting. Other authors have worked on Cosserat discrete models,
+but are omitted here: Joachim Linn (see, e.g., Discrete kinematics of Cosserat rods based on the
+difference geometry of framed curves) and Olivier Brüls (see, e.g., Geometrically exact beam
+finite element formulated on the special Euclidean group), using similar formalisms. These
+references should absolutely be commented on and compared against. Other reference missing :
+Bertails et al., Super-helices for predicting the dynamics of natural hair (another discrete
+Kirchhoff rod model). Likewise, there has been mutlipled approaches to couple thin elastic rods
+to frictional contact, see e.g. Daviet et al, A Hybrid Iterative Solver for Robustly Capturing
+Coulomb Friction in Hair Dynamics, and Durville, Numerical simulation of entangled materials
+mechanical properties. Some discussion/comparisons would be needed there.
+That said, I appreciated the variety and scope of applications proposed, based on the developed
+discrete model. I think this is the main strength of the paper. I particularly like the
+plectonema/coiled formation comparison, since this is a nice case where simulating
+stretching+bending really makes a difference. So far, papers I saw on discrete Cosserat rod
+models failed to convince me that stretching was really needed, since their scenarios would not
+involve any stretching deformation. In this paper, for the first time this is made (impressively)
+clear.
+In conclusion, this paper is interesting and well-written, but fails to compare its approach to
+others. Since I believe the strength of the paper is not really the proposed numerical model itself
+(or, this should be proven by the authors by making fair comparisons with alternatives; showing
+that their model can handle scenarios that other could not handle), I'm still suggesting acceptance
+with major recommendation, so that the authors can better place the emphasis on their
+applications, and fairly acknowledge prior art.
+label_end_comment
+Decision letter (RSOS-171628.R0)
+19-Jan-2018
+Dear Dr Mahadevan,
+The Subject Editor assigned to your paper ("Computational mechanics of soft filaments") has now
+received comments from reviewers. We would like you to revise your paper in accordance with
+10
+the referee and Associate Editor suggestions which can be found below (not including
+confidential reports to the Editor). Please note this decision does not guarantee eventual
+acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 11-Feb-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance. We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to each of the comments, and the adjustments you have
+made. In order to expedite the processing of the revised manuscript, please be as specific as
+possible in your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171628
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+11
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Xiaoyu Luo (Associate Editor) and R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+12
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_9
+See PDF document
+Reviewer: 3
+Comments to the Author(s)
+label_comment_10
+Summary
+This manuscript focuses on developing a robust method to simulate the dynamics of elastic
+filaments. The method is able to handle different scenarios with ease. The method is detailed and
+several test cases are given. Note that I am reading this as a new reviewer after revisions have
+already been made.
+Overall, I do agree with Reviewer 2 that there are many applications where this method can be
+used and since it is able to handle a large class of problems, it is worthy of publication.
+On the other hand, I do not think the authors did a `complete’ job in answering reviewer 1. I do
+agree with the reviewers that the method that Lim & Peskin first developed is to solve a different
+subclass of problems. However, the authors have sold that method short and did not properly
+cite all of the work. The authors take a line from the 2008 paper and say that it is only first order.
+This is true for the initial method, but if the authors had looked a bit further, there was a
+publication a few years later demonstrating that of this method can be made formally second
+order accurate. Thus, only first order convergence is not a limitation of this other model since it
+can be done with second order accuracy. Additionally, the 2008 paper cited by the authors did
+not account for self contact. But, if the authors again had looked at newer publications by Lim &
+Peskin, a fairly simple repulsive term was used in a very similar way to the current study. Thus,
+in some ways I do agree with the first reviewer in that the way that the self-repulsion, active
+internal forces, and fluid drag are handled is not new or novel in any way. I also agree with
+Reviewer 1 in that many of the applications did not provide any new insight other than that one
+could use this model to simulate these phenomena. I did find the inverse problem as the most
+interesting and promising.
+I do agree with Reviewer 2 and the authors rebuttal in that the major novelty is the ability to
+account for stretching and shearing beyond a small numerical deviation as in the Lim and Peskin
+approach. However, in the technical detail of this manuscript and the many examples, somehow
+this point gets a bit lost.
+Comments:
+o I believe the discussion could be made a bit more clear and put this modeling framework
+in a better context. A paragraph in the discussion that points out again why one would choose
+this method for a particular application is of the utmost importance. It is also necessary for the
+authors to point interested readers to alternate methods based on what the modeler is interested
+in. As pointed out above, these take home points are totally lost in the technicalities and all of the
+examples. If a short paragraph that then made clear one chooses this type of approach if
+interested in the context of applications where stretching and shearing beyond a small threshold
+were of interest. If one was not concerned with larger stretching and shearing and wanted an
+accurate fluid solver (instead of RFT approximation), then the Lim & Peskin approach (with
+newer added terms over the years) might be a better approach that again can handle self contact
+13
+etc. Again, other numerical approaches should be cited and this should be a fair summary of
+when/why you would use this approach.
+Minor comments:
+* On p.5 after 2.2 towards end of the paragraph, there was a missing parentheses after Fig. 1
+* Something is not right with the first sentence in the paragraph containing Eq 2.8. (We assume vs
+“Assuming”?)
+* Appendix: On p. 4 above Eq A1, the reference # is missing
+Reviewer: 4
+Comments to the Author(s)
+label_comment_11
+see attached file
+Reviewer: 5
+Comments to the Author(s)
+label_comment_12
+This paper presents a discrete Cosserat rod model and a large number of applications to that
+model. While I enjoyed reading this paper, I have a major complaint : the authors do not compare
+their simulator to existing Cosserat simulators. In the introduction, it is claimed that previous
+simulators were specific to Kirchhoff rod models, but this is wrong. For instance, CORDE
+(Spillman et al.) was an implementation of a discrete Cosserat model, allowing for
+streching/shearing/bending/twisting. Other authors have worked on Cosserat discrete models,
+but are omitted here: Joachim Linn (see, e.g., Discrete kinematics of Cosserat rods based on the
+difference geometry of framed curves) and Olivier Brüls (see, e.g., Geometrically exact beam
+finite element formulated on the special Euclidean group), using similar formalisms. These
+references should absolutely be commented on and compared against. Other reference missing :
+Bertails et al., Super-helices for predicting the dynamics of natural hair (another discrete
+Kirchhoff rod model). Likewise, there has been mutlipled approaches to couple thin elastic rods
+to frictional contact, see e.g. Daviet et al, A Hybrid Iterative Solver for Robustly Capturing
+Coulomb Friction in Hair Dynamics, and Durville, Numerical simulation of entangled materials
+mechanical properties. Some discussion/comparisons would be needed there.
+That said, I appreciated the variety and scope of applications proposed, based on the developed
+discrete model. I think this is the main strength of the paper. I particularly like the
+plectonema/coiled formation comparison, since this is a nice case where simulating
+stretching+bending really makes a difference. So far, papers I saw on discrete Cosserat rod
+models failed to convince me that stretching was really needed, since their scenarios would not
+involve any stretching deformation. In this paper, for the first time this is made (impressively)
+clear.
+In conclusion, this paper is interesting and well-written, but fails to compare its approach to
+others. Since I believe the strength of the paper is not really the proposed numerical model itself
+(or, this should be proven by the authors by making fair comparisons with alternatives; showing
+that their model can handle scenarios that other could not handle), I'm still suggesting acceptance
+with major recommendation, so that the authors can better place the emphasis on their
+applications, and fairly acknowledge prior art.
+Author's Response to Decision Letter for (RSOS-171628.R0)
+See Appendix D.
+14
+label_version_3
+RSOS-171628.R1 (Revision)
+label_author_7
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_7
+Accept as is
+Comments to the Author(s)
+label_comment_13
+I am satisfied with the manuscript and recommend publication
+label_author_8
+Review form: Reviewer 5
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+15
+Recommendation?
+label_recommendation_8
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_14
+The authors have appropriately cited the references I've pointed to them. However, the focus of
+the paper is still maintained on "selling" a new numerical model, as a model which would
+outperforms others. I'm still not convinced about it. I believe previous art (work by Spillman,
+Bergou, Linn) is discarded much too quickly. What's the key ingredient that your model has and
+that others do not? At this point, I'm really not sure previous models would not be allowed to
+tackle the scenarios developed here. I've seen in the past some impressive simulations made by J.
+Linn, where cables can bend, twist, strech, shear (not infinitesimally), be in contact with other
+objects, all at interactive rates, and in a very robust manner. I believe this could be a serious
+competitor (and there are probably others), and I would like to see fair comparisons of the codes
+to be convinced of the novelty of the model. Moreover, all other add-ons (contact and friction
+handlings, etc.), are classical, and even sometimes below current state-of-the-art (nonsmooth
+methods are now used for treating Signorini-Coulomb constraints implicitly, see e.g. Daviet et al.
+2011).
+That said, if the numerical model proposed here was not really new nor better than previous
+approaches, this would not be killing the paper : as I said before, the true strength and richness of
+the paper is to conduct many interesting experiments where very good agreement is shown
+between the model and the experiement. No one has done that thorough and extensive validation
+work in the past, and I believe that's a good contribution that would justify publication per se.
+However, the paper would have to be fully oriented towards these applications, thus reducing
+the importance of the numerical model developed (still it would be interesting to have its full
+description in the main text or in appendix, for the sake of completeness and reproducibility).
+Currently, the abstract clearly makes the focus on the numerical model, not on this validation
+work, so this would have to be reworked too.
+For me, the two options are good:
+- either prove the novelty and gain brought by your numerical model, by making proper
+evaluation and fair comparisons against previous relevant methods (meaning perhaps some
+reimplementing of previous methods, if code is not readily available)
+- or focus on the applications, reducing the weight on the novelty of the code.
+I'd like to see a revision implementing successfully one of these two options.
+To me, this is the only way that this paper advances the state of the art in a fair and useful way
+for the scientific community.
+label_end_comment
+Decision letter (RSOS-171628.R1)
+19-Mar-2018
+Dear Dr Mahadevan:
+Manuscript ID RSOS-171628.R1 entitled "Computational mechanics of soft filaments" which you
+submitted to Royal Society Open Science, has been reviewed. The comments of the reviewer(s)
+are included at the bottom of this letter.
+Please submit a copy of your revised paper within three weeks (i.e. by the 11-Apr-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+16
+advance. We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+17
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Xiaoyu Luo (Associate Editor) and R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Xiaoyu Luo):
+Associate Editor: 1
+Comments to the Author:
+label_comment_15
+Please address the issues of the reviewer.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_16
+I am satisfied with the manuscript and recommend publication
+Reviewer: 5
+Comments to the Author(s)
+label_comment_17
+The authors have appropriately cited the references I've pointed to them. However, the focus of
+the paper is still maintained on "selling" a new numerical model, as a model which would
+18
+outperforms others. I'm still not convinced about it. I believe previous art (work by Spillman,
+Bergou, Linn) is discarded much too quickly. What's the key ingredient that your model has and
+that others do not? At this point, I'm really not sure previous models would not be allowed to
+tackle the scenarios developed here. I've seen in the past some impressive simulations made by J.
+Linn, where cables can bend, twist, strech, shear (not infinitesimally), be in contact with other
+objects, all at interactive rates, and in a very robust manner. I believe this could be a serious
+competitor (and there are probably others), and I would like to see fair comparisons of the codes
+to be convinced of the novelty of the model. Moreover, all other add-ons (contact and friction
+handlings, etc.), are classical, and even sometimes below current state-of-the-art (nonsmooth
+methods are now used for treating Signorini-Coulomb constraints implicitly, see e.g. Daviet et al.
+2011).
+That said, if the numerical model proposed here was not really new nor better than previous
+approaches, this would not be killing the paper : as I said before, the true strength and richness of
+the paper is to conduct many interesting experiments where very good agreement is shown
+between the model and the experiement. No one has done that thorough and extensive validation
+work in the past, and I believe that's a good contribution that would justify publication per se.
+However, the paper would have to be fully oriented towards these applications, thus reducing
+the importance of the numerical model developed (still it would be interesting to have its full
+description in the main text or in appendix, for the sake of completeness and reproducibility).
+Currently, the abstract clearly makes the focus on the numerical model, not on this validation
+work, so this would have to be reworked too.
+For me, the two options are good:
+- either prove the novelty and gain brought by your numerical model, by making proper
+evaluation and fair comparisons against previous relevant methods (meaning perhaps some
+reimplementing of previous methods, if code is not readily available)
+- or focus on the applications, reducing the weight on the novelty of the code.
+I'd like to see a revision implementing successfully one of these two options.
+To me, this is the only way that this paper advances the state of the art in a fair and useful way
+for the scientific community.
+Author's Response to Decision Letter for (RSOS-171628.R1)
+See Appendix E.
+label_end_comment
+Decision letter (RSOS-171628.R2)
+30-Apr-2018
+Dear Dr Mahadevan,
+I am pleased to inform you that your manuscript entitled "Forward and inverse problems in the
+mechanics of soft filaments" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+19
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Xiaoyu Luo (Associate Editor) and R. Kerry Rowe (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Xiaoyu Luo):
+Accept
+Appendix A
+Response to reviewer’s comments:
+We thank the reviewers for their valuable time and consideration. In the
+following, the comments of the reviewers are listed followed by our responses.
+We hope that the reviewers consider our answers acceptable and the
+improved manuscript is suitable for publication.
+Reviewer #1
+Comments to the authors: A numerical approach is proposed to simulate
+the dynamics of elastic filaments. Shearing and stretching modes are included
+and applications to locomotion involving specific external forces are
+presented.
+1) Simulations of filaments that can shear and stretch is by no means new.
+Peskin and Lim proposed a numerical scheme that does exactly this
+(Lim Phys. Fluids 2010, Lim SIAM J. Sci. Comput. 31 2008) and is now
+used in a number papers on viscous fluid-structure interaction, see for
+example the work of S. Olson.
+We acknowledge that some relevant references have been accidentally
+omitted. To amend this we have included the references suggested by the
+reviewer both in the introduction and in the section relative to swimming.
+Nevertheless, we wish to emphasize that the main contribution of our paper
+lies in providing a general purpose, practical numerical framework able to
+account for a number of physical effects, from stretching and shearing to self-
+contact, friction, muscular activity, hydrodynamics etc.
+The articles mentioned by the reviewer describe a numerical methodology
+which avoids mathematically enforcing unstretchability and unshearability and
+instead postulates an energy function to approximate them, by allowing for
+slight numerical deviations. Although ingenious, those articles do not actually
+treat stretching and shearing, and are instead specialized to resolve one
+physical problem related to an almost inextensible ribbon immersed in Stokes
+flows – an important, but rather narrow class of problems relative to those we
+treat, as emphasized by the second Reviewer #2.
+We quote verbatim from Lim SIAM J. Sci. Comput. 31 2008: “we avoid these
+constraints on the fluid velocity by allowing the rod to stretch and also by
+allowing the orientation of the triad to deviate from alignment with the direction
+of the space curve. Instead of imposing the above constraints exactly, we
+postulate an elastic energy function which tends to maintain them. Thus, our
+rod is allowed to stretch slightly, and our triad is allowed to deviate slightly
+from the alignment with the tangent direction to the rod”, and “It is assumed
+that the rod has a circular cross section with constant radius.” The latter
+assumption can only be consistent with the unstretchable/unshearable case
+(in the presence of stretching mass is not conserved if the radius is not
+rescaled appropriately). If the papers referred to were to actually account for
+stretching (beyond slight numerical deviations), they would inconsistent. In
+contrast, in the Cosserat formulation considered in our manuscript, filaments
+are actually allowed to stretch and shear beyond slight numerical deviations,
+and therefore, for consistency, we rescale the cross-section radii as stretching
+occurs.
+Finally, the paper the reviewer highlights is limited from both numerical and
+physical perspectives. From Lim SIAM J. Sci. Comput. 31 2008: “A limitation
+of the proposed method, at least in its current form, is that it is only first order
+accurate. This is shown by an empirical convergence study”. The paper also
+neglects inertia, which is a fundamental aspect in many physical settings.
+Again, quoting from the paper verbatim, the model equations (Lim SIAM J. Sci.
+Comput. 31 2008) solved are:
+where it is evident that the inertia term (left hand side) is missing. This is not
+at all incorrect in the context of very viscous flows, but it is nonetheless a
+limitation of the model the reviewer refers to.
+Additionally, the paper mentioned does not consider friction, does not
+consider contact and does not consider self-contact. See Fig 1 below from
+Lim Phys. Fluids 2010:
+As can be seen, the simulated ribbons (from Lim Phys. Fluids 2010) cross
+each other and overlap in an unphysical fashion, limiting the capabilities of
+those articles to address a vast class of problems, that instead our model can
+handle.
+In summary, we respectfully disagree here with the reviewer. In fact, the
+articles which are claimed to have already explored the work that we
+presented in our manuscript do not consider stretch and shear, do not
+consider inertia, contact forces, are characterized by a lower convergence
+order, and are restricted in the class of physical problems they address.
+Finally, they only address the forward problem, i.e. they have not been proved
+in an optimization procedure (inverse problem) which typically represents a
+demanding stress test for any simulation algorithm, since the optimizer may
+explore unusual parameter sets or conditions.
+In contrast, we include the effects of inertia, stretch, shear, show second order
+convergence, and tackle a broader range of physical applications rather than
+a single one specialized to Stokes flow. Moreover, we pose and solve both
+the forward and inverse design problems and introduce an optimization
+approach that spans a large space of possible design parameters to show
+that our solver can operate in unusual and unanticipated conditions, and
+eventually lead to a biologically consistent solution.
+Overall, we believe that Reviewer #1 does not acknowledge how general and
+versatile our proposed framework is, and focuses on results from papers that
+although very relevant to our study, are more limited in scope, as we just
+highlighted.
+This assessment is also in stark contrast with Reviewer #2 (Prof. Charles
+Wolgemuth), who explicitly states: “There are a large number of biological and
+engineering systems that require analysis of these types of systems, and
+numerical algorithms are not generally available to handle these systems,
+especially in the broad context in which this method is developed. Therefore,
+I am supportive of publication” and “The method proposed here is definitely
+more general than the other methods that I am familiar with”.
+2) The constrained case (inextensible/unshearable) addressed in
+previous work is actually much more difficult than the unconstrained
+case addressed in this paper. The authors should clearly state in their
+manuscript that the shearable/extensible case that they address is
+numerically easier than the unshearable/inextensible case treated in
+the literature.
+We agree with the reviewer, and in fact we never made this claim. We are
+simply discretizing and solving a different set of equations since our goal is to
+provide a multi-purpose framework able to capture a host of physical aspects
+among which are shearability and stretchability, friction, inertia etc.
+As requested by the reviewer we have expanded the first paragraph of section
+2b: “Since we wish to account for all six deformation modes associated with
+the six degrees of freedom at each cross section along the rod, we must
+augment the Kirchhoff description of the previous section and add three more
+constitutive laws to define the local stress resultants n. In fact, they are no
+longer defined as Lagrange multipliers that enforce the condition of
+inextensibility and unshearability, i.e. we now must allow t ¹ d3. We note that
+this not only enables the model of Eqs. (2.4-2.7) to capture a richer set of
+physical phenomena, but also significantly simplifies its numerical treatment
+(Lagrange multipliers no longer needed), rendering our proposed approach
+both flexible and relatively straightforward to implement.”
+3) The shearable/extensible extension of beam model is presented as the
+main contribution of the paper but it is very limited both in terms of
+scope and accuracy. As noted by the authors, the usual
+unshearable/inextensible model is applicable to most situations. The
+analysis of the plectoneme/solenoid transition found in the paper is the
+only example that makes use of shearability/extensibility, and this
+example is very specific, and treated in a crude way: for quantitive
+predictions a 3d model would be required. A honest and thorough
+discussion of the limitations of the Cosserat model is missing.
+We respectfully disagree with the reviewer on this:
+a) Indeed, we did show that our framework is able to tackle a host of physical
+phenomena, and we rigorously show its accuracy in terms of convergence
+and by comparison with known analytic solutions (see section 3d and
+Appendix) and experimental data (Section 5).
+b) The very specific application to solenoids and plectonemes is not, in our
+opinion, an objective statement but rather a personal opinion, which is
+contradicted by recent articles that explicitly leverage on these phenomena in
+the context of soft robotics and artificial muscles (see Ray Baughman's group:
+Harvesting electrical energy from carbon nanotube yarn twist. Science, 2017,
+and Artificial muscles from fishing line and sewing thread. Science, 2014, and
+New twist on artificial muscles, PNAS, 2016). Therefore, we consider this a
+timely application with ramifications in several domains, from robotics to more
+fundamental questions that relate topological changes to mechanical
+responses.
+c) The limitations of the Cosserat theory are implicit in its assumptions, which
+we report in the very first sentence of the manuscript. The theory is valid for
+structures characterized by lengths much larger than the other dimensions,
+and to test its accuracy we perform a rigorous validation against a number of
+benchmark problems (Section 3d and Appendix) and verification against
+experimental data (Section 5). The use of a 3D model would represent yet
+another validation, but in our opinion would not add much to the tests we
+already carried out, as we can rely on either analytic solutions or directly
+experimental data to assess the accuracy of our numerical schemes.
+4) The discussion of the linear constitutive laws is very confusing. If the
+authors are trying to take into account a finite axial stretching e, then
+the strain are finite and linear constitutive relations are irrelevant. If
+instead e is close to 1, then there is no point rescaling everything as in
+equation 2.10.
+We are unsure on the second part on the comment. If substantial axial strains
+are considered, it is of paramount importance to appropriately rescale the
+governing equations with respect to the rest reference configuration so as to
+conserve mass, account for varying rod diameters and for computing internal
+forces and torques. Section 2b of the manuscript is entirely dedicated to the
+rescaling of the governing equations via the term “e” due to axial strain, and a
+rigorous mathematical derivation of our final equations is described step by
+step in the Appendix.
+5) Overall, I find the applications unimpressive. There is no real numerical
+challenge in the 2d slithering problem. Swimming in low-Reynolds
+number fluids has already been treated at length in the literature and
+with more refined fluid models.
+It is not up to us to claim whether the presented application are impressive or
+not. In the paper we argue why we believe they are relevant in the context of
+soft robotics design or bio-physics. Our aim is to showcase the versatility and
+robustness of our framework, and illustrate how this can be successfully
+employed both in the case of forward and inverse problems.
+Although the referee is obviously free to consider these demonstration
+ineffective, we belive that such a statement should be further articulated,
+supported by references or data. Indeed, the slithering simulations involving
+anisotropic friction turned out to be the most challenging among all our study
+cases. In fact, even though the friction model is simple, the slip and stick
+behavior (static vs kinetic friction) together with the inertia of the rod model
+render these simulations prone to noise, and only a careful implementation
+can avoid spurious oscillations (see smooth curves for example in Fig 10).
+Moreover, the reviewer assessment is also directly refuted by Reviewer #2
+who states “There are a large number of biological and engineering systems
+that require analysis of these types of systems, and numerical algorithms are
+not generally available to handle these systems, especially in the broad
+context in which this method is developed. Therefore, I am supportive of
+publication” and “The method proposed here is definitely more general than
+the other methods that I am familiar with”.
+Finally, we wish to emphasize that the main point of these bio-locomotion
+studies (slithering and swimming) is to showcase the versatility of our solver in
+a bio-physical context, as well as its practical use and robustness in an
+inverse design context. We now explicitly state this in the first paragraph of
+Section 5: “We emphasize here that one of the main points of these bio-
+locomotion studies, beside verifying the versatility and prediction capabilities
+of our solver in bio-physical settings, is to demonstrate its practical use in an
+inverse (optimization) design process, which typically represents a demanding
+stress test for any simulation algorithm, as unusual parameter sets or
+conditions are explored.” Our optimal solutions are then compared with
+experimental data, showing how our approach captures observed animal
+behavior, verifying the prediction capabilities of our framework in a bio-
+physical context.
+6) The manuscript does not read well at all and I find its organization is
+loose. To give just one example, the equations of motion are
+discretized in a seemingly arbitrary way; later on, it is asserted that the
+discrete model is conservative (page 9 line 37) but without any proof or
+indication why this should be true.
+We respectfully disagree with the reviewer on this. The spatial discretization
+presented here is not arbitrary, our continuum equations are discretized by
+applying standard discrete operators and closely follows the approach
+presented in M. Bergou, M. Wardetzky, S. Robinson, B. Audoly, and E.
+Grinspun. Discrete elastic rods. ACM Transactions on Graphics (TOG),
+27(3):1–12, 2008. We directly reference to this paper in our discretization
+section. Nevertheless, all mathematical derivations are reported either in the
+main text or in the Appendix.
+Finally, in our case (Hamiltonian system of mass particles) conservation of
+energy depends on the time discretization: we employ a standard symplectic
+time stepper which conserves energy by design, and we numerically show
+that indeed energy is conserved in Fig 3d. We tried to clarify this point by
+expanding the first paragraph of Section 3c: “If no additional physical effects
+are introduced, for example via the external forces Fi and couples CiL, the
+above discrete Hamiltonian system must be advanced via a conservative time
+integrator to preserve energy. To this end, we choose a symplectic, second-
+order Verlet scheme, so that our complete numerical scheme is energy-
+preserving in the case of conservative dynamics. We note that despite the
+failure of Verlet schemes to integrate rotational equations of motion when
+represented by quaternions, in our case their use is justified as rotations are
+represented instead by Euler angles [40].”
+Reviewer #2
+Comments to the authors: This manuscript presents a numerical method for
+handling the general inertial dynamics of elastic filamentary objects in the
+presence of external forces, such as fluid drag, self-repulsion, and active
+internal forces. There are a large number of biological and engineering
+systems that require analysis of these types of systems, and numerical
+algorithms are not generally available to handle these systems, especially in
+the broad context in which this method is developed. Therefore, I am
+supportive of publication. However, I do think that there are a few points that
+need to be addressed.
+We wish to thank the reviewer for his time and the generally positive
+disposition towards this paper. We very much appreciate the effort and
+precise comments which have helped us to improve the content of this paper.
+1) While there are not many widely available methods for handling these
+types of problems, there are methods that have been crudely described
+in the literature. For example, my own work has developed a finite
+difference method spatial discretization routine that uses a semi-implicit
+Crank-Nicolson time stepping to handle inextensible, overdamped
+filaments in viscous fluids. (We have also recently augmented this to a
+finite volume scheme that is better because it guarantees that the total
+force and torque on a self-propelled swimmer are identically zero). The
+method proposed here is definitely more general than the other
+methods that I am familiar with; however, what I am wondering is how
+efficient this algorithm is. Is it fairly typical for manuscripts on
+numerical algorithms to provide information on the computational cost
+as a function of grid spacing. How long do the simulations described
+here take to run on whatever system they were computed on?
+2) Similar to above, how stable is the algorithm? Can the authors derive
+or estimate CFL conditions for the algorithm in at least some
+characteristic cases (e.g., purely inertial, overdamped, etc.).
+We wish to thank the reviewer for highlighting these points. We now
+expanded Section 3c (relative to the time discretization) to address the
+comment relative to the choice of an explicit time integration scheme as well
+as the potential derivation of a CFL condition: “This algorithm strikes a
+balance between computing costs, numerical accuracy and implementation
+modularity: by foregoing an implicit integration scheme we can incorporate a
+number of additional physical effects and soft constraints, even though this
+may come at the expense of computational efficiency. Indeed, for large
+Young’s or shear moduli or for very thin rods, the system of Eqs. (2.4-2.7)
+might become stiff, so that small timesteps must be employed to ensure
+stability. Although we have not derived a rigorous CFL condition, throughout
+this work we employed the empirical relation dt = a*dl, with a ~ 10e-2 s/m,
+and found it reliable in preventing numerical instabilities. Despite the potential
+stiffness of this model, since the computational cost per timestep scales
+linearly with the number of discretization elements n (the model is one-
+dimensional), we could carry out all our computation on a laptop (details and
+representative timings are summarized in the Appendix). It is worth to note
+that because of the condition dt = a*dl, a smaller number of elements implies
+larger timesteps (dl = L/n). Therefore, the time-to-solution may scale between
+linearly and quadratically, depending on how the timestep is set.”
+Moreover, as suggested by the reviewer we now report representative timings
+relative to our studycases, for different level of resolutions. They are
+summarized in the last section of the Appendix, and we report here a table for
+the reviewer’s convenience.
+Despite the potential stiffness of this model, since the computational cost per
+timestep scales linearly with the number of discretization elements n, we
+could carry out all our computation on a single processor on a MacBook Pro
+equipped with a 2.3GHz dual-core Intel Core i5, Turbo Boost up to 3.6GHz,
+with 64MB of eDRAM. Because of the condition dt = a*dl, a smaller number of
+elements implies larger timesteps (dl = L/n). Therefore, as highlighte before,
+the time-to-solution may scale between linearly and quadratically, depending
+on how the timestep is set. This can be noted by inspecting the Euler and
+helical buckling studies reported in the table below. In the Euler buckling
+simulations the timestep is set to be the same for both case 1 and case 2, and
+indeed by halving n, the time-to-solution and the time per timestep reduce by
+a factor of 2. In the helical buckling study instead, the timstep was adaptively
+selected according to dt = a*dl, so that, when n is halved, the time-to-solution
+reduces by a factor of 4, while the time per timestep reduces by a factor of 2.
+ppendix B
+eviewer #1
+omments to the authors: A numerical approach is proposed to
+mulate the dynamics of elastic filaments. Shearing and
+retching modes are included and applications to locomotion
+volving specific external forces are presented.
+Simulations of filaments that can shear and stretch is by no
+eans new. Peskin and Lim proposed a numerical scheme that
+oes exactly this (Lim Phys. Fluids 2010, Lim SIAM J. Sci.
+omput. 31 2008) and is now used in a number papers on
+scous fluid-structure interaction, see for example the work of S.
+lson.
+e acknowledge that some relevant references have been
+ccidentally omitted. To amend this we have included the
+ferences suggested by the reviewer both in the introduction and
+the section relative to swimming.
+evertheless, we wish to emphasize that the main contribution of
+ur paper lies in providing a general purpose, practical numerical
+amework able to account for a number of physical effects, from
+retching and shearing to self- contact, friction, muscular activity,
+ydrodynamics etc.
+he articles mentioned by the reviewer describe a numerical
+ethodology which avoids mathematically enforcing
+nstretchability and unshearability and instead postulates an
+nergy function to approximate them, by allowing for slight
+umerical deviations. Although ingenious, those articles do not
+ctually treat stretching and shearing, and are instead specialized
+resolve one physical problem related to an almost inextensible
+bbon immersed in Stokes flows – an important, but rather narrow
+ass of problems relative to those we treat, as emphasized by the
+econd Reviewer #2.
+e quote verbatim from Lim SIAM J. Sci. Comput. 31 2008: “we
+void these constraints on the fluid velocity by allowing the rod to
+retch and also by allowing the orientation of the triad to deviate
+om alignment with the direction of the space curve. Instead of
+posing the above constraints exactly, we postulate an elastic
+nergy function which tends to maintain them. Thus, our rod is
+lowed to stretch slightly, and our triad is allowed to deviate
+ightly from the alignment with the tangent direction to the rod”,
+nd “It is assumed that the rod has a circular cross section with
+onstant radius.” The latter assumption can only be consistent
+ith the unstretchable/unshearable case (in the presence of
+retching mass is not conserved if the radius is not rescaled
+ppropriately). If the papers referred to were to actually account
+r stretching (beyond slight numerical deviations), they would
+consistent. In contrast, in the Cosserat formulation considered in
+ur manuscript, filaments are actually allowed to stretch and
+hear beyond slight numerical deviations, and therefore, for
+onsistency, we rescale the cross-section radii as stretching
+ccurs.
+nally, the paper the reviewer highlights is limited from both
+umerical and physical perspectives. From Lim SIAM J. Sci.
+omput. 31 2008: “A limitation of the proposed method, at least in
+s current form, is that it is only first order Again, quoting from the
+aper verbatim, the model equations (Lim SIAM J. Sci. Comput.
+1 2008: “A limitation of the proposed method, at least in its
+urrent form, is that it is only first order accurate. This is shown by
+n empirical convergence study”. The paper also neglects inertia,
+hich is a fundamental aspect in many physical settings. Again,
+uoting from the paper verbatim, the model equations (Lim SIAM
+Sci. Comput. 31 2008) solved are:
+here it is evident that the inertia term (left hand side) is missing.
+his is not at all incorrect in the context of very viscous flows, but
+is nonetheless a limitation of the model the reviewer refers to.
+dditionally, the paper mentioned does not consider friction, does
+ot consider contact and does not consider self-contact. See Fig
+below from Lim Phys. Fluids 2010:
+s can be seen, the simulated ribbons (from Lim Phys. Fluids
+010) cross each other and overlap in an unphysical fashion,
+miting the capabilities of those articles to address a vast class of
+oblems, that instead our model can handle.
+summary, we respectfully disagree here with the reviewer. In
+ct, the articles which are claimed to have already explored the
+ork that we consider inertia, contact forces, are characterized by
+lower convergence order, and are restricted in the class of
+hysical problems they address. Finally, they only address the
+rward problem, i.e. they have not been proved in an
+ptimization procedure (inverse problem) which typically
+presents a demanding stress test for any simulation algorithm,
+nce the optimizer may explore unusual parameter sets or
+onditions.
+contrast, we include the effects of inertia, stretch, shear, show
+econd order convergence, and tackle a broader range of
+hysical applications rather than a single one specialized to
+tokes flow. Moreover, we pose and solve both the forward and
+verse design problems and introduce an optimization approach
+at spans a large space of possible design parameters to show
+at our solver can operate in unusual and unanticipated
+onditions, and eventually lead to a biologically consistent
+olution.
+verall, we believe that Reviewer #1 does not acknowledge how
+eneral and versatile our proposed framework is, and focuses on
+sults from papers that although very relevant to our study, are
+ore limited in scope, as we just highlighted.
+his assessment is also in stark contrast with Reviewer #2 (Prof.
+harles Wolgemuth), who explicitly states: “There are a large
+umber of biological and engineering systems that require
+nalysis of these types of systems, and numerical algorithms are
+ot generally available to handle these systems, especially in the
+oad context in which this method is developed. Therefore, I am
+upportive of publication” and “The method proposed here is
+efinitely more general than the other methods that I am familiar
+ith”.
+esponse from reviewer
+he authors are essentially arguing here that they achieved a
+nique combination of ingredients in their model: their answer
+oes along ‘X did not include effect A, Y did not include effect B,
+c’. I am not objecting this. What I am saying is that they
+ollected ingredients here and there and that this was neither
+articularly difficult nor led to particularly impressive applications. I
+nderstand Lim et al did not include inertia, focussed on a
+articular geometry and did not treat self-contact but they do have
+hear and extension like many others have (in fact your reference
+2 for instance does this, although the way you cite it makes it
+possible to guess). Similarly, Bergou et al did not consider
+hear but they do have both extensible and non-extensible
+ehavior, as well as inertia and self-contact. On top of this, the
+uthors of the manuscript added an extra layer of ingredients
+ptimization, friction) but I see no strong contribution here either.
+The constrained case (inextensible/unshearable) addressed in
+evious work is actually much more difficult than the
+nconstrained case addressed in this paper. The authors should
+early state in their manuscript that the shearable/extensible case
+at they address is numerically easier than the unshearable/
+extensible case treated in the literature.
+e agree with the reviewer, and in fact we never made this claim.
+e are simply discretizing and solving a different set of equations
+nce our goal is to provide a multi-purpose framework able to
+apture a host of physical aspects among which are shearability
+nd stretchability, friction, inertia etc.
+s requested by the reviewer we have expanded the first
+aragraph of section 2b: “Since we wish to account for all six
+eformation modes associated with the six degrees of freedom at
+ach cross section along the rod, we must augment the Kirchhoff
+escription of the previous section and add three more
+onstitutive laws to define the local stress resultants n. In fact,
+ey are no longer defined as Lagrange multipliers that enforce
+e condition of inextensibility and unshearability, i.e. we now
+ust allow t 1 d3. We note that this not only enables the model of
+qs. (2.4-2.7) to capture a richer set of physical phenomena, but
+so significantly simplifies its numerical treatment (Lagrange
+ultipliers no longer needed), rendering our proposed approach
+oth flexible and relatively straightforward to implement.”
+The shearable/extensible extension of beam model is
+esented as the main contribution of the paper but it is very
+mited both in terms of scope and accuracy. As noted by the
+uthors, the usual unshearable/inextensible model is applicable to
+ost situations. The analysis of the plectoneme/solenoid
+ansition found in the paper is the only example that makes use
+shearability/extensibility, and this example is very specific, and
+eated in a crude way: for quantitive predictions a 3d model
+ould be required. A honest and thorough discussion of the
+mitations of the Cosserat model is missing.
+e respectfully disagree with the reviewer on this:
+Indeed, we did show that our framework is able to tackle a host
+physical phenomena, and we rigorously show its accuracy in
+rms of convergence and by comparison with known analytic
+olutions (see section 3d and Appendix) and experimental data
+ection 5).
+The very specific application to solenoids and plectonemes is
+ot, in our opinion, an objective statement but rather a personal
+pinion, which is the context of soft robotics and artificial muscles
+ee Ray Baughman's group: Harvesting electrical energy from
+arbon nanotube yarn twist. Science, 2017, and Artificial muscles
+om fishing line and sewing thread. Science, 2014, and New twist
+n artificial muscles, PNAS, 2016). Therefore, we consider this a
+mely application with ramifications in several domains, from
+botics to more fundamental questions that relate topological
+hanges to mechanical responses.
+The limitations of the Cosserat theory are implicit in its
+ssumptions, which we report in the very first sentence of the
+anuscript. The theory is valid for structures characterized by
+ngths much larger than the other dimensions, and to test its
+ccuracy we perform a rigorous validation against a number of
+xperimental data (Section 5). The use of a 3D model would
+present yet another validation, but in our opinion would not add
+uch to the tests we already carried out, as we can rely on either
+nalytic solutions or directly experimental data to assess the
+ccuracy of our numerical schemes.
+esponse from reviewer
+eiterate that the plectononeme/solenoid example is the most
+teresting contribution in this manuscript; this is the only
+mulation example that cannot obviously be simulated using
+xisting methods. Statement c) is incorrect, the Cosserat theory is
+ot quantitatively accurate when applied to elastic cylinders
+ndergoing finite strain even when their aspect ratio is small. For
+oblems such as the solenoid where there is no separation of
+cales the only quantitatively correct approach would be the three
+m. finite-elasticity. Now, it is interesting that you can reproduce
+e plectoneme/solenoid transition with this model but, again, no
+ne should expect quantitative match with experiments or three
+m simulations and you should make this very clear.
+ind it very exaggerated to call your section 5 a rigorous
+alidation against a number of experimental data.
+he slithering problem is two dimensional, and makes no use of
+tations in 3d, shearability nor extensibility. It mostly
+sconnected from the core of the paper which is the formulation
+the rod model.
+ame remark for the swimming problem which does not use the
+pecifics of this particular numerical rod model, and adds an extra
+yer of optimization.
+The discussion of the linear constitutive laws is very confusing.
+the authors are trying to take into account a finite axial
+retching e, then the strain are finite and linear constitutive
+lations are irrelevant. If instead e is close to 1, then there is no
+oint rescaling everything as in equation 2.10.
+e are unsure on the second part on the comment. If substantial
+xial strains are considered, it is of paramount importance to
+ppropriately rescale the governing equations with respect to the
+st reference configuration so as to conserve mass, account for
+arying rod diameters and for computing internal forces and
+rques. Section 2b of the manuscript is entirely dedicated to the
+scaling of the governing equations via the term “e” due to axial
+rain, and a rigorous mathematical derivation of our final
+quations is described step by step in the Appendix.
+esponse of the reviewer.
+ne more time: how can you expect your linear constitutive laws
+be valid if your material deforms in the non-linear range?
+Overall, I find the applications unimpressive. There is no real
+umerical challenge in the 2d slithering problem. Swimming in
+w-Reynolds number fluids has already been treated at length in
+e literature and with more refined fluid models.
+is not up to us to claim whether the presented application are
+pressive or not. In the paper we argue why we believe they are
+levant in the context of soft robotics design or bio-physics. Our
+m is to showcase the versatility and robustness of our
+amework, and illustrate how this can be successfully employed
+oth in the case of forward and inverse problems.
+lthough the referee is obviously free to consider these
+emonstration ineffective, we belive that such a statement should
+e further articulated, supported by references or data. Indeed,
+e slithering simulations involving anisotropic friction turned out
+be the most challenging among all our study cases. In fact,
+ven though the friction model is simple, the slip and stick
+ehavior (static vs kinetic friction) together with the inertia of the
+d model render these simulations prone to noise, and only a
+areful implementation can avoid spurious oscillations (see
+mooth curves for example in Fig 10). Moreover, the reviewer
+ssessment is also directly refuted by Reviewer #2 who states
+here are a large number of biological and engineering systems
+at require analysis of these types of systems, and numerical
+gorithms are not generally available to handle these systems,
+specially in the broad context in which this method is developed.
+herefore, I am supportive of publication” and “The method
+oposed here is definitely more general than the other methods
+at I am familiar with”.
+nally, we wish to emphasize that the main point of these bio-
+comotion studies (slithering and swimming) is to showcase the
+ersatility of our solver in a bio-physical context, as well as its
+actical use and robustness in an inverse design context. We
+ow explicitly state this in the first paragraph of Section 5: “We
+mphasize here that one of the main points of these bio-
+comotion studies, beside verifying the versatility and prediction
+apabilities of our solver in bio-physical settings, is to
+emonstrate its practical use in an inverse (optimization) design
+ocess, which typically represents a demanding stress test for
+ny simulation algorithm, as unusual parameter sets or conditions
+e explored.” Our optimal solutions are then compared with
+xperimental data, showing how our approach captures observed
+nimal behavior, verifying the prediction capabilities of our
+amework in a bio- physical context.
+The manuscript does not read well at all and I find its
+ganization is loose. To give just one example, the equations of
+otion are discretized in a seemingly arbitrary way; later on, it is
+sserted that the discrete model is conservative (page 9 line 37)
+ut without any proof or indication why this should be true.
+e respectfully disagree with the reviewer on this. The spatial
+scretization presented here is not arbitrary, our continuum
+quations are discretized by applying standard discrete operators
+nd closely follows the approach presented in M. Bergou, M.
+ardetzky, S. Robinson, B. Audoly, and E. Grinspun. Discrete
+astic rods. ACM Transactions on Graphics (TOG), 27(3):1–12,
+008. We directly reference to this paper in our discretization
+ection. Nevertheless, all mathematical derivations are reported
+ther in the main text or in the Appendix.
+nally, in our case (Hamiltonian system of mass particles)
+onservation of energy depends on the time discretization: we
+mploy a standard symplectic time stepper which conserves
+nergy by design, and we numerically show that indeed energy is
+onserved in Fig 3d. We tried to clarify this point by expanding the
+st paragraph of Section 3c: “If no additional physical effects are
+troduced, for example via the external forces Fi and couples
+iL, the above discrete Hamiltonian system must be advanced via
+conservative time integrator to preserve energy. To this end, we
+hoose a symplectic, second- order Verlet scheme, so that our
+omplete numerical scheme is energy- preserving in the case of
+onservative dynamics. We note that despite the failure of Verlet
+chemes to integrate rotational equations of motion when
+presented by quaternions, in our case their use is justified as
+tations are represented instead by Euler angles [40].”
+esponse of the reviewer.
+ow can you claim that your system is conservative/Hamiltonian if
+ou don’t even provide the expression of its energy? Again, your
+screte equations of motion should derive from some discrete
+nergy/Hamiltonian, which I don’t see in you manuscript. I am
+peaking of space discretization, not even time discretization.
+Appendix C
+Review of Computational mechanics of soft filaments by M. Gazzola et al.
+I did not review this manuscript the first time around, and the authors
+have done a careful job responding to the earlier referees, so I will confine
+myself to a few remarks. The authors propose a new numerical algorithm
+for modeling the mechanics of thin soft elastic filaments. Unlike previous
+approaches to the problem, the filaments are allowed to deform by shear and
+stretching in addition to the usual bending and twisting modes. The numer-
+ical algorithm is based on a discrete (rather than continuous) representation
+of the filament. The authors carefully validate their basic model against
+known analytical solutions. They then extend the model by adding additional
+physical effects, including dissipation (viscosity), internal (muscular) activ-
+ity, self-contact, contact with solid boundaries, surface friction, and slender-
+body hydrodynamics. Finally, the authors illustrate three applications of
+their new formalism: plectonemes and solenoids (which involve self-contact,
+bending, and twist), self-propulsion by slithering, and low Reynolds-number
+swimming.
+Having gone carefully through the authors’ responses to the comments of
+the referees, I think that the manuscript is now publishable.
+Referee: Neil RIBE, FAST, Orsay (France)
+1
+Appendix D
+Response to reviewer’s comments:
+We thank the reviewers for their valuable time and consideration. In the
+following, the comments of the reviewers are listed followed by our responses.
+Any modified text in the manuscript is highlighted in red for the reviewers’
+convenience.
+We hope that the reviewers consider our answers acceptable and that the
+improved manuscript is suitable for publication.
+1
+Reviewer #1
+I did not review this manuscript the first time around, and the authors have done
+a careful job responding to the earlier referees, so I will confine myself to a few
+remarks. The authors propose a new numerical algorithm for modeling the
+mechanics of thin soft elastic filaments. Unlike previous approaches to the
+problem, the filaments are allowed to deform by shear and stretching in addition
+to the usual bending and twisting modes. The numerical algorithm is based on
+a discrete (rather than continuous) representation of the filament. The authors
+carefully validate their basic model against known analytical solutions. They
+then extend the model by adding additional physical effects, including
+dissipation (viscosity), internal (muscular) activity, self-contact, contact with
+solid boundaries, surface friction, and slender- body hydrodynamics. Finally,
+the authors illustrate three applications of their new formalism: plectonemes
+and solenoids (which involve self-contact, bending, and twist), self-propulsion
+by slithering, and low Reynolds-number swimming.
+Having gone carefully through the authors’ responses to the comments of the
+referees, I think that the manuscript is now publishable.
+We thank the reviewer for the positive assessment. We also realized that our
+manuscript would benefit from the inclusion of references from the reviewer
+himself, in order to better contextualize previous works that employed Cosserat
+models for the investigation of viscous threads. We now included in the
+introduction the references to:
+• N. Ribe, M. Habibi, and D. Bonn. Liquid rope coiling. Annual review of fluid
+mechanics, 44:249–266, 2012.
+2
+Reviewer #3
+Summary:
+This manuscript focuses on developing a robust method to simulate the
+dynamics of elastic filaments. The method is able to handle different scenarios
+with ease. The method is detailed and several test cases are given. Note that I
+am reading this as a new reviewer after revisions have already been made.
+Overall, I do agree with Reviewer 2 that there are many applications where this
+method can be used and since it is able to handle a large class of problems, it
+is worthy of publication.
+On the other hand, I do not think the authors did a `complete’ job in answering
+reviewer 1. I do agree with the reviewers that the method that Lim & Peskin first
+developed is to solve a different subclass of problems. However, the authors
+have sold that method short and did not properly cite all of the work. The
+authors take a line from the 2008 paper and say that it is only first order. This
+is true for the initial method, but if the authors had looked a bit further, there
+was a publication a few years later demonstrating that of this method can be
+made formally second order accurate. Thus, only first order convergence is not
+a limitation of this other model since it can be done with second order accuracy.
+Additionally, the 2008 paper cited by the authors did not account for self contact.
+But, if the authors again had looked at newer publications by Lim & Peskin, a
+fairly simple repulsive term was used in a very similar way to the current study.
+Thus, in some ways I do agree with the first reviewer in that the way that the
+self-repulsion, active internal forces, and fluid drag are handled is not new or
+novel in any way. I also agree with Reviewer 1 in that many of the applications
+did not provide any new insight other than that one could use this model to
+simulate these phenomena. I did find the inverse problem as the most
+interesting and promising.
+I do agree with Reviewer 2 and the authors rebuttal in that the major novelty is
+the ability to account for stretching and shearing beyond a small numerical
+deviation as in the Lim and Peskin approach. However, in the technical detail
+of this manuscript and the many examples, somehow this point gets a bit lost.
+Comments:
+I believe the discussion could be made a bit more clear and put this modeling
+framework in a better context. A paragraph in the discussion that points out
+again why one would choose this method for a particular application is of the
+utmost importance. It is also necessary for the authors to point interested
+readers to alternate methods based on what the modeler is interested in. As
+pointed out above, these take home points are totally lost in the technicalities
+and all of the examples. If a short paragraph that then made clear one chooses
+this type of approach if interested in the context of applications where
+stretching and shearing beyond a small threshold were of interest. If one was
+not concerned with larger stretching and shearing and wanted an accurate fluid
+solver (instead of RFT approximation), then the Lim & Peskin approach (with
+newer added terms over the years) might be a better approach that again can
+handle self contact etc. Again, other numerical approaches should be cited and
+this should be a fair summary of when/why you would use this approach.
+3
+We thank the reviewer for her/his overall positive assessment. We agree with
+the reviewer on the need to better position our work with respect to previous
+works, to emphasize the application aspect of this study, and to highlight where
+and when our framework is advantageous over other methods, and vice-versa.
+To this end we added three recent references from Lim and Peskin (Griffith,
+Lim, Communications in Computational Physics, 2012; Lim, Peskin, Physical
+Review E, 2012; Ko et al, Physical Review E, 2017) to acknowledge the
+improved convergence accuracy of their flow solver, and the inclusion of a self-
+contact model in publications following up their SIAM, 2008 study.
+We now refer to these and the previous references in the introduction, and in
+the section related to hydrodynamic coupling (page 20). There we added the
+sentence “For more advanced and accurate viscous flow models we refer the
+reader to [Lim&Peskin publications]”, so that the reader, if interested in forward
+problems that do not entail significant stretching and shear, may find a more
+suitable approach.
+In the introduction, the references are reported in a more general paragraph
+that aims at better positioning our work with respect to previous studies across
+a broad range of applications (among which fluid-mechanic interaction of elastic
+filaments and ribbons). Overall, the introduction has been substantially
+reworded to:
+• Better position our work with respect to previous studies
+• Place more emphasis on applications and on the multi-physics
+capabilities of our solver (especially targeting soft-robotics), rather than
+on the numerics itself
+• Highlight the importance of including stretch and shear via a clear
+example related to plectonemes and solenoids formation
+• Emphasize the importance and the need of realistic solvers that are
+robust enough to be employed in inverse design processes, an emerging
+paradigm to aid the design of robotic prototypes as well as to
+characterize from an optimal standpoint bio-physical phenomena.
+The core three new paragraphs now read:
+These mathematical foundations [5] prompted a number of discrete
+computational models [12–16] that allow for the exploration of a range of
+physical phenomena. These include, for example, the study of polymers and
+DNA [12,17], elastic ribbons and filaments [14,18,19], botanical applications
+[20,21], woven cloth [22] and tangled hair and fibers [19,23–25]. Because the
+scaled ratio of the stretching and shearing stiffness to the bending stiffness for
+slender filaments is L2/r2 » 1, the assumption of inextensibility and/or
+unshearability is usually appropriate, justifying the widespread use of the
+Kirchhoff model in the aforementioned applications.
+Fewer studies have considered, in different flavors, the Cosserat model, mostly
+to take advantage of relaxed extension and shearing constraints to simplify
+numerical implementations and to facilitate the integration of additional physical
+4
+effects. For example, specialized models including extension and constitutive
+laws based on strain rates have been developed for the investigation of viscous
+threads [15,16,26–30]. Lim and Peskin allow for small numerical shear and
+axial strain and couple their model with an accurate viscous flow solver to
+investigate fluid-mechanic interactions of ribbons and flagella [31–36]. The
+graphics software CORDE [13] implements a Cosserat-based fast solver for
+the rendering of looping systems, accounts for (self) contact, operates in the
+small extension regime and maintains the unshearability constraint,
+showcasing a number of visually impressive and physically plausible scenarios.
+Durville [25] introduced a fiber model specialized to efficiently resolve contact-
+friction effects in entangled materials. Linn [37] explored an elegant theoretical
+connection between Cosserat rods and differential geometry of framed curves,
+and numerically tested it on the classic Euler’s Elastica and Kirchhoff’s helix
+problems [38]. Finally, Sonneville [39] presents a geometrically exact finite
+element formulation on the Euclidean group SE(3) and verifies it on test cases
+that do not involve stretching nor environmental effects.
+More recently, there has been a need to generalize the model to explain new
+experimental phenomena such as the plectoneme-solenoid transition [40], that
+has been used as the basis for artificial muscles [41–43]. Additional new
+technologies such as soft robotics [44,45] are also generating applications for
+highly stretchable and shearable elastomeric structures raising the need for
+methods able to realistically handle these large strains together with a variety
+of interface and environmental effects. Moreover, the capability to
+computationally solve both forward [46–48] and inverse problems is emerging
+as a crucial paradigm to aid the design of novel, more capable soft-robotic
+prototypes [49,50], as well as to characterize from an optimality standpoint bio-
+physical phenomena [51–56]. Motivated by these advancements and
+challenges, we present a relatively simple, versatile and robust numerical
+framework that complements and extends the scope of previous models,
+enables inverse design processes and substantially broadens the spectrum of
+potential engineering and bio-physical investigations. By taking full advantage
+of the Cosserat formalism, and consistently with the full Euclidean group SE(3),
+we allow for bend, twist, and significant shear and stretch [4], and demonstrate
+the importance of the latter through an example inspired by artificial muscle
+actuation [41,42] in which the transition between plectonemes and solenoids is
+crucially enabled by axial extension. Then, moving beyond the passive
+mechanics of individual filaments, we also account for the interaction between
+filaments and complex environments with a number of additional biological and
+physical features, including muscular activity, self-contact and contact with solid
+boundaries, isotropic and anisotropic surface friction and viscous interaction
+with a fluid. Therefore, these features (some of which already considered in
+previous works as pointed our earlier) are now included and tested in a single
+framework. Finally, and unlike previous works, we demonstrate the capabilities
+and the robustness of our solver by embedding it in an inverse design cycle for
+the identification of optimal terrestrial and aquatic limbless locomotion
+strategies.
+The same concepts are now recapped in the Conclusion section, where we
+added the sentences:
+5
+“Particular emphasis is placed in realistically accounting for substantial axial
+extensions and shear strains, targeting emerging soft robotic applications.”
+and
+“We emphasize that in general the solution of an inverse problem, in this case
+achieved by coupling our method with evolutionary strategies, severely tests
+the robustness of any solver, due to the (often unforeseen) variety of candidate
+solutions produced throughout the process. This is an additional aspect that
+sets our work apart from previous studies.”
+We hope that this new version satisfactorily addresses the comments of the
+reviewer and fairly summarizes previous/alternative approaches.
+Minor comments:
+On p.5 after 2.2 towards end of the paragraph, there was a missing parentheses
+after Fig. 1
+Something is not right with the first sentence in the paragraph containing Eq
+2.8. (We assume vs “Assuming”?)
+Appendix: On p. 4 above Eq A1, the reference # is missing
+We thank the reviewer for pointing this out, we now corrected the typos
+above.
+6
+Reviewer #4
+The authors are essentially arguing here that they achieved a unique
+combination of ingredients in their model: their answer goes along ‘X did not
+include effect A, Y did not include effect B, etc’. I am not objecting this. What I
+am saying is that they collected ingredients here and there and that this was
+neither particularly difficult nor led to particularly impressive applications. I
+understand Lim et al did not include inertia, focused on a particular geometry
+and did not treat self-contact but they do have shear and extension like many
+others have (in fact your reference 22 for instance does this, although the way
+you cite it makes it impossible to guess). Similarly, Bergou et al did not consider
+shear but they do have both extensible and non-extensible behavior, as well as
+inertia and self-contact. On top of this, the authors of the manuscript added an
+extra layer of ingredients (optimization, friction) but I see no strong contribution
+here either.
+We thank the reviewer for appreciating the integration of previous approaches
+to broaden the spectrum of possible applications that can be tackled with our
+framework. Regarding the lack of difficulty in doing so, the lack of impressive
+applications, and the limited contribution related to inverse design, we accept
+her/his personal assessment. We will limit ourselves to address the technical
+content of the above comment.
+We added three recent references from Lim and Peskin (Griffith, Lim,
+Communications in Computational Physics, 2012; Lim, Peskin, Physical
+Review E, 2012; Ko et al, Physical Review E, 2017) to acknowledge the
+improved convergence accuracy of their flow solver, and the inclusion of a self-
+contact model in publications following up their SIAM, 2008 study.
+We now refer to these and the previous references in the introduction, and in
+the section related to hydrodynamic coupling (page 20). There we added the
+sentence “For more advanced and accurate viscous flow models we refer the
+reader to [Lim&Peskin publications]”, so that the reader, if interested in forward
+problems that do not entail significant stretching and shear, may find a more
+suitable approach.
+In the introduction, the references are reported in a more general paragraph
+that aims at better positioning our work with respect to previous studies across
+a broad range of applications (among which fluid-mechanic interaction of elastic
+filaments and ribbons). Overall, the introduction has been substantially
+reworded to:
+• Better position our work with respect to previous studies
+• Place more emphasis on applications and on the multi-physics
+capabilities of our solver (especially targeting soft-robotics), rather than
+on the numerics itself
+• Highlight the importance of including stretch and shear via a clear
+example related to plectonemes and solenoids formation
+• Emphasize the importance and the need of realistic solvers that are
+robust enough to be employed in inverse design processes, an emerging
+paradigm to aid the design of robotic prototypes as well as to
+characterize from an optimal standpoint bio-physical phenomena.
+7
+The core three new paragraphs now read:
+These mathematical foundations [5] prompted a number of discrete
+computational models [12–16] that allow for the exploration of a range of
+physical phenomena. These include, for example, the study of polymers and
+DNA [12,17], elastic ribbons and filaments [14,18,19], botanical applications
+[20,21], woven cloth [22] and tangled hair and fibers [19,23–25]. Because the
+scaled ratio of the stretching and shearing stiffness to the bending stiffness for
+slender filaments is L2/r2 » 1, the assumption of inextensibility and/or
+unshearability is usually appropriate, justifying the widespread use of the
+Kirchhoff model in the aforementioned applications.
+Fewer studies have considered, in different flavors, the Cosserat model, mostly
+to take advantage of relaxed extension and shearing constraints to simplify
+numerical implementations and to facilitate the integration of additional physical
+effects. For example, specialized models including extension and constitutive
+laws based on strain rates have been developed for the investigation of viscous
+threads [15,16,26–30]. Lim and Peskin allow for small numerical shear and
+axial strain and couple their model with an accurate viscous flow solver to
+investigate fluid-mechanic interactions of ribbons and flagella [31–36]. The
+graphics software CORDE [13] implements a Cosserat-based fast solver for
+the rendering of looping systems, accounts for (self) contact, operates in the
+small extension regime and maintains the unshearability constraint,
+showcasing a number of visually impressive and physically plausible scenarios.
+Durville [25] introduced a fiber model specialized to efficiently resolve contact-
+friction effects in entangled materials. Linn [37] explored an elegant theoretical
+connection between Cosserat rods and differential geometry of framed curves,
+and numerically tested it on the classic Euler’s Elastica and Kirchhoff’s helix
+problems [38]. Finally, Sonneville [39] presents a geometrically exact finite
+element formulation on the Euclidean group SE(3) and verifies it on test cases
+that do not involve stretching nor environmental effects.
+More recently, there has been a need to generalize the model to explain new
+experimental phenomena such as the plectoneme-solenoid transition [40], that
+has been used as the basis for artificial muscles [41–43]. Additional new
+technologies such as soft robotics [44,45] are also generating applications for
+highly stretchable and shearable elastomeric structures raising the need for
+methods able to realistically handle these large strains together with a variety
+of interface and environmental effects. Moreover, the capability to
+computationally solve both forward [46–48] and inverse problems is emerging
+as a crucial paradigm to aid the design of novel, more capable soft-robotic
+prototypes [49,50], as well as to characterize from an optimality standpoint bio-
+physical phenomena [51–56]. Motivated by these advancements and
+challenges, we present a relatively simple, versatile and robust numerical
+framework that complements and extends the scope of previous models,
+enables inverse design processes and substantially broadens the spectrum of
+potential engineering and bio-physical investigations. By taking full advantage
+of the Cosserat formalism, and consistently with the full Euclidean group SE(3),
+we allow for bend, twist, and significant shear and stretch [4], and demonstrate
+the importance of the latter through an example inspired by artificial muscle
+actuation [41,42] in which the transition between plectonemes and solenoids is
+8
+crucially enabled by axial extension. Then, moving beyond the passive
+mechanics of individual filaments, we also account for the interaction between
+filaments and complex environments with a number of additional biological and
+physical features, including muscular activity, self-contact and contact with solid
+boundaries, isotropic and anisotropic surface friction and viscous interaction
+with a fluid. Therefore, these features (some of which already considered in
+previous works as pointed our earlier) are now included and tested in a single
+framework. Finally, and unlike previous works, we demonstrate the capabilities
+and the robustness of our solver by embedding it in an inverse design cycle for
+the identification of optimal terrestrial and aquatic limbless locomotion
+strategies.
+The same concepts are now recapped in the Conclusion section, where we
+added the sentences:
+“Particular emphasis is placed in realistically accounting for substantial axial
+extensions and shear strains, targeting emerging soft robotic applications.”
+and
+“We emphasize that in general the solution of an inverse problem, in this case
+achieved by coupling our method with evolutionary strategies, severely tests
+the robustness of any solver, due to the (often unforeseen) variety of candidate
+solutions produced throughout the process. This is an additional aspect that
+sets our work apart from previous studies.”
+I reiterate that the plectononeme/solenoid example is the most interesting
+contribution in this manuscript; this is the only simulation example that cannot
+obviously be simulated using existing methods. Statement c) is incorrect, the
+Cosserat theory is not quantitatively accurate when applied to elastic cylinders
+undergoing finite strain even when their aspect ratio is small. For problems such
+as the solenoid where there is no separation of scales the only quantitatively
+correct approach would be the three dim. finite-elasticity. Now, it is interesting
+that you can reproduce the plectoneme/solenoid transition with this model but,
+again, no one should expect quantitative match with experiments or three dim
+simulations and you should make this very clear. I find it very exaggerated to
+call your section 5 a rigorous validation against a number of experimental data.
+The slithering problem is two dimensional, and makes no use of rotations in 3d,
+shearability nor extensibility. It mostly disconnected from the core of the paper
+which is the formulation of the rod model. Same remark for the swimming
+problem which does not use the specifics of this particular numerical rod model,
+and adds an extra layer of optimization.
+We thank the reviewer for her/his appreciation for our plectoneme/solenoid
+investigation. Regarding the quantitative accuracy of the Cosserat model, if no
+stretching occurs and if separation of scales holds, we have showed in our
+manuscript good agreement with a number of benchmark problems. Other
+works have performed quantitative comparison with 3D finite element models
+finding very good agreement (we refer the reviewer to H. Lang and J. Linn. A
+second order semi-discrete Cosserat rod model suitable for dynamic
+simulations in real time. AIP Conference Proceedings, 1168(1):1057–1060,
+2009; H. Lang, J. Linn, and M. Arnold. Multi-body dynamics simulation of
+9
+geometrically exact Cosserat rods. Multibody System Dynamics, 25(3):285–
+312, 2011). We note, that they also considered the test case of a swinging
+rubber rod undergoing small, but finite elongation and found the classic
+Cosserat model to compare well with ABAQUS simulations. Others (S. Sadati,
+S. Naghibi, A. Shiva, I. Walker, K. Althoefer, and T. Nanayakkara. Mechanics
+of continuum manipulators, a comparative study of five methods with
+experiments. Conference Towards Autonomous Robotic Systems, pages 686–
+702, 2017) were able to quantitatively predict the behavior of a real slender
+robotic arm within 10% accuracy via Cosserat models. Of course, the Cosserat
+model cannot capture highly non-uniform stress distribution over cross sections,
+and therefore we do expect to observe discrepancies among our model and 3D
+FEM simulations for large stretching, as the reduction in cross sectional areas
+is intrinsically a 3D phenomenon. Moreover, as pointed out by the reviewer, in
+the case of tightly packed solenoids separation of scales might no longer hold.
+This is why in the specific case of solenoids we never claimed quantitative
+accuracy, but we explicitly mentioned that our solver was able to qualitatively
+reproduce the observed topological transitions (we highlighted this in the text
+for the reviewer’s convenience). We also note that capturing such topological
+rearrangements is a challenging feature even for 3D FEM solvers, given the
+inaccuracies that arise from mesh nodes displacements, computational
+elements distortion and meshing re-initializations. Since the submission of this
+paper, we have carried out a more in-depth investigation of the
+plectoneme/solenoid problem and compared with our own and others’
+experimental observations. We find that our model is capable of reproducing
+observed complex topological transitions (work under review). Motivated by
+these results, we plan to carry out a careful quantitative comparison between
+our model, 3D simulations and experiments on this particular problem to
+establish the limits within which our approach and full scale simulations can be
+successfully employed for the design of real soft actuators.
+Finally, we do not see the slithering and swimming problems as disconnected
+from the rest of the paper. In fact they integrate well with the overall narrative
+that we require simulation methods for a range of problems that involve slender
+elastic filaments, e.g. soft-robotics, where there is an increasing need for
+inverse designs approaches able to handle flexible structures interacting with
+the surrounding environment. The slithering and swimming problems illustrate
+the suitability of our solver to tackle this particular kind of problem, which reflect
+an actual practical need.
+One more time: how can you expect your linear constitutive laws to be valid if
+your material deforms in the non-linear range? How can you claim that your
+system is conservative/Hamiltonian. if you don’t even provide the expression of
+its energy? Again, your discrete equations of motion should derive from some
+discrete energy/Hamiltonian, which I don’t see in you manuscript. I am speaking
+of space discretization, not even time discretization.
+We thank the reviewer to point this out. Indeed we should have been more
+explicit in the class of materials that we are interested in addressing with our
+model. Given our motivation to aid soft-robotic design, we are interested in
+modeling materials such as rubber, elastomers and biological tissue. Many of
+these materials are hyper-elastic, i.e. they are materials that can exhibit very
+10
+large strains (sometimes up to 700% their initial length). We do not want to
+necessarily consider such large deformations (indeed the maximum extension
+considered in the paper for the solenoid formation case is around ~15%), but
+we want to be able to capture the behavior of this class of solids over a
+reasonably large compression/extension range (say 30%). Two popular hyper-
+elastic models are Neo-Hookean and Mooney-Rivlin. For the purpose of
+computing the contact loads acting on our filaments, it turns out that the simple
+linear stress-strain relation combined with the rescaling of cross sectional
+areas as elongation takes place (which renders the load-strain relation no
+longer linear) provides a reasonably good approximation of both Neo-Hookean
+and Mooney models (within a 10% deformation range), and of the Neo-
+Hookean model up to a 30% deformation range, as can be noticed in the Figure
+below. The figure below illustrates the load as a function of the elongation factor
+e for the four different models indicated in the legend. We considered for
+simplicity the case of a rubber filament axially loaded and computed the force
+response for prescribed elongations. While our approach progressively departs
+from the more accurate Neo-Hookean and Mooney-Rivlin approaches, within a
+30% compression/stretch range is consistent with the predictions of the above
+mentioned models.
+Linear
+Current
+Neo-Hookean
+Mooney-Rivlin
+We now report in the Appendix the details of this calculation (new section, page
+3), together with the expressions of the 1D Neo-Hookean and Mooney-Rivlin
+models. Moreover, in the main text (page 7) we added a paragraph to better
+specify the class of solids we are interested in, and to highlight the relation
+between our approach and more advanced hyper-elastic models. The new
+paragraphs reads: “This is consistent with the modeling of hyperelastic
+materials such as rubbers, silicones, and biological tissues and therefore in line
+with targeted soft robotic applications. Indeed, the combination of linear stress-
+strain constitutive models with the geometrical rescaling by e, leads to a
+11
+reasonable approximation of Neo-Hookean [58] and Mooney-Rivlin models
+[59,60] (especially tailored to hyperelastic solids) over a compression/extension
+range up to 30%. See the Appendix for a quantitative comparison in the axial
+stretch case.”
+Relative to the Hamiltonian structure of the system [3.6-3.9], we misinterpreted
+the original comment of the reviewer and provide now a more precise answer.
+Our derivation, starting from linear and angular momentum balance
+transparently shows how material laws are integrated, and how equations are
+geometrically rescaled to conserve mass as the filament undergoes extension
+or compression. Finally, the smooth equations are directly discretized making
+use of a vertex-edges approach (M. Bergou, M. Wardetzky, S. Robinson, B.
+Audoly, and E. Grinspun. Discrete elastic rods. ACM Transactions on Graphics
+(TOG), 27(3):1–12, 2008), and standard difference and average difference
+operators based on trapezoidal quadrature rule (definition of integrated
+quantities over edge length: M. Bergou, M. Wardetzky, S. Robinson, B. Audoly,
+and E. Grinspun. Discrete elastic rods. ACM Transactions on Graphics (TOG),
+27(3):1–12, 2008; difference operators: T. Futterer, A. Klar, and R. Wegener.
+An energy conserving numerical scheme for the dynamics of hyperelastic rods.
+International Journal of Differential Equations, 2009). Obviously, depending on
+the choice of constitutive laws, on the nature of the acting external loads and
+couples, and on the presence of dissipative models (such as internal viscous
+dissipation which in the case of rubbers and biological tissue is very relevant)
+the obtained system might not be conservative. Nevertheless, by construction,
+in the bare case of infinitesimal axial strains and linear stress-strain relations,
+we recover the classic Cosserat model which is conservative (see for example:
+Z. Ge, H. Kruse, and J. Marsden. The limits of Hamiltonian structures in three-
+dimensional elasticity, shells, and rods. Journal of Nonlinear Science, 6(1):19–
+57, 1996.) and that can be equivalently determined from its quadratic energy
+functionals [reported in the main text] (see for example: in H. Lang, J. Linn, and
+M. Arnold. Multi-body dynamics simulation of geometrically exact Cosserat rods.
+Multibody System Dynamics, 25(3):285–312, 2011; M. Bergou, M. Wardetzky,
+S. Robinson, B. Audoly, and E. Grinspun. Discrete elastic rods. ACM
+Transactions on Graphics (TOG), 27(3):1–12, 2008). Therefore, for consistency,
+we employ a symplectic energy-preserving time integrator. Moreover, for the
+sake of generality, we removed from the text the claim of Hamiltonian system,
+and clarified the aspects outlined above in a new paragraph in page 10. The
+paragraph reads: “The derivation above leads to a system that in general is not
+Hamiltonian, as this depends on the nature of the external loads acting on the
+filament as well as on the choice of constitutive laws. Nonetheless, without
+external loads and under the assumptions of linear stress-strain relations, this
+derivation amounts to a geometric rescaling through e of the classic Cosserat
+rod model (here directly discretized via standard finite difference and
+trapezoidal quadrature rule, as outlined in [14,18,67,68]), which is a
+Hamiltonian system [18,69] with quadratic energy functionals [68]: [reported in
+the main text]. Therefore, by construction, in the limit of e <U+2192> 1 (no axial
+elongation) the equivalence with the Cosserat model holds, and for consistency
+we opt for an energy preserving time integrator, and in particular a symplectic,
+second-order Verlet scheme.”
+12
+We thank the reviewer for her/his comments that helped to clarify some of the
+fine details of our work, and we hope that the revised manuscript is now
+acceptable for publication.
+13
+Reviewer #5
+This paper presents a discrete Cosserat rod model and a large number of
+applications to that model. While I enjoyed reading this paper, I have a major
+complaint: the authors do not compare their simulator to existing Cosserat
+simulators. In the introduction, it is claimed that previous simulators were
+specific to Kirchhoff rod models, but this is wrong. For instance, CORDE
+(Spillman et al.) was an implementation of a discrete Cosserat model, allowing
+for streching/shearing/bending/twisting. Other authors have worked on
+Cosserat discrete models, but are omitted here: Joachim Linn (see, e.g.,
+Discrete kinematics of Cosserat rods based on the difference geometry of
+framed curves) and Olivier Brüls (see, e.g., Geometrically exact beam finite
+element formulated on the special Euclidean group), using similar formalisms.
+These references should absolutely be commented on and compared against.
+Other reference missing : Bertails et al., Super-helices for predicting the
+dynamics of natural hair (another discrete Kirchhoff rod model). Likewise, there
+has been mutlipled approaches to couple thin elastic rods to frictional contact,
+see e.g. Daviet et al, A Hybrid Iterative Solver for Robustly Capturing Coulomb
+Friction in Hair Dynamics, and Durville, Numerical simulation of entangled
+materials mechanical properties. Some discussion/comparisons would be
+needed there.
+That said, I appreciated the variety and scope of applications proposed, based
+on the developed discrete model. I think this is the main strength of the paper.
+I particularly like the plectonema/coiled formation comparison, since this is a
+nice case where simulating stretching+bending really makes a difference. So
+far, papers I saw on discrete Cosserat rod models failed to convince me that
+stretching was really needed, since their scenarios would not involve any
+stretching deformation. In this paper, for the first time this is made
+(impressively) clear.
+In conclusion, this paper is interesting and well-written, but fails to compare its
+approach to others. Since I believe the strength of the paper is not really the
+proposed numerical model itself (or, this should be proven by the authors by
+making fair comparisons with alternatives; showing that their model can handle
+scenarios that other could not handle), I'm still suggesting acceptance with
+major recommendation, so that the authors can better place the emphasis on
+their applications, and fairly acknowledge prior art.
+We thank the reviewer for her/his overall positive assessment, and for pointing
+out a number of works that allowed us to better contextualize the present study.
+We agree with the reviewer on the need to better position our work with respect
+to previous investigations and to emphasize the application aspect of this study.
+To this end we included all the references highlighted by the reviewer, and
+briefly summarized their contribution in the context of Cosserat modeling. We
+then specify the target application of this study (soft-robotics) highlighting the
+need for a framework able to capture substantial finite stretch strains, and
+robust enough to be employed in an inverse design cycle to aid soft robotic
+prototyping. Following the reviewer’s suggestion we extensively reworded the
+introduction to:
+14
+• Better position our work with respect to previous studies
+• Place more emphasis on applications and on the multi-physics
+capabilities of our solver (especially targeting soft-robotics), rather than
+on the numerics itself
+• Highlight the importance of including stretch and shear via a clear
+example related to plectonemes and solenoids formation
+• Emphasize the importance and the need of realistic solvers that are
+robust enough to be employed in inverse design processes, an emerging
+paradigm to aid the design of robotic prototypes as well as to
+characterize from an optimal standpoint bio-physical phenomena.
+The core three new paragraphs now read:
+These mathematical foundations [5] prompted a number of discrete
+computational models [12–16] that allow for the exploration of a range of
+physical phenomena. These include, for example, the study of polymers and
+DNA [12,17], elastic ribbons and filaments [14,18,19], botanical applications
+[20,21], woven cloth [22] and tangled hair and fibers [19,23–25]. Because the
+scaled ratio of the stretching and shearing stiffness to the bending stiffness for
+slender filaments is L2/r2 » 1, the assumption of inextensibility and/or
+unshearability is usually appropriate, justifying the widespread use of the
+Kirchhoff model in the aforementioned applications.
+Fewer studies have considered, in different flavors, the Cosserat model, mostly
+to take advantage of relaxed extension and shearing constraints to simplify
+numerical implementations and to facilitate the integration of additional physical
+effects. For example, specialized models including extension and constitutive
+laws based on strain rates have been developed for the investigation of viscous
+threads [15,16,26–30]. Lim and Peskin allow for small numerical shear and
+axial strain and couple their model with an accurate viscous flow solver to
+investigate fluid-mechanic interactions of ribbons and flagella [31–36]. The
+graphics software CORDE [13] implements a Cosserat-based fast solver for
+the rendering of looping systems, accounts for (self) contact, operates in the
+small extension regime and maintains the unshearability constraint,
+showcasing a number of visually impressive and physically plausible scenarios.
+Durville [25] introduced a fiber model specialized to efficiently resolve contact-
+friction effects in entangled materials. Linn [37] explored an elegant theoretical
+connection between Cosserat rods and differential geometry of framed curves,
+and numerically tested it on the classic Euler’s Elastica and Kirchhoff’s helix
+problems [38]. Finally, Sonneville [39] presents a geometrically exact finite
+element formulation on the Euclidean group SE(3) and verifies it on test cases
+that do not involve stretching nor environmental effects.
+More recently, there has been a need to generalize the model to explain new
+experimental phenomena such as the plectoneme-solenoid transition [40], that
+has been used as the basis for artificial muscles [41–43]. Additional new
+technologies such as soft robotics [44,45] are also generating applications for
+highly stretchable and shearable elastomeric structures raising the need for
+methods able to realistically handle these large strains together with a variety
+of interface and environmental effects. Moreover, the capability to
+computationally solve both forward [46–48] and inverse problems is emerging
+15
+as a crucial paradigm to aid the design of novel, more capable soft-robotic
+prototypes [49,50], as well as to characterize from an optimality standpoint bio-
+physical phenomena [51–56]. Motivated by these advancements and
+challenges, we present a relatively simple, versatile and robust numerical
+framework that complements and extends the scope of previous models,
+enables inverse design processes and substantially broadens the spectrum of
+potential engineering and bio-physical investigations. By taking full advantage
+of the Cosserat formalism, and consistently with the full Euclidean group SE(3),
+we allow for bend, twist, and significant shear and stretch [4], and demonstrate
+the importance of the latter through an example inspired by artificial muscle
+actuation [41,42] in which the transition between plectonemes and solenoids is
+crucially enabled by axial extension. Then, moving beyond the passive
+mechanics of individual filaments, we also account for the interaction between
+filaments and complex environments with a number of additional biological and
+physical features, including muscular activity, self-contact and contact with solid
+boundaries, isotropic and anisotropic surface friction and viscous interaction
+with a fluid. Therefore, these features (some of which already considered in
+previous works as pointed our earlier) are now included and tested in a single
+framework. Finally, and unlike previous works, we demonstrate the capabilities
+and the robustness of our solver by embedding it in an inverse design cycle for
+the identification of optimal terrestrial and aquatic limbless locomotion
+strategies.
+The same concepts are now recapped in the Conclusion section, where we
+added the sentences:
+“Particular emphasis is placed in realistically accounting for substantial axial
+extensions and shear strains, targeting emerging soft robotic applications.”
+and
+“We emphasize that in general the solution of an inverse problem, in this case
+achieved by coupling our method with evolutionary strategies, severely tests
+the robustness of any solver, due to the (often unforeseen) variety of candidate
+solutions produced throughout the process. This is an additional aspect that
+sets our work apart from previous studies.”
+We hope that this new version satisfactorily addresses the comments of the
+reviewer and fairly summarizes previous/alternative approaches.
+16
+Appendix E
+Response to reviewer’s comments:
+We thank the reviewer for her/his valuable time and consideration. In the
+following, the comments of the reviewer are listed followed by our responses.
+Modified text is the manuscript is highlighted in red for the reviewer’s
+convenience.
+We hope that the reviewer considers our answers acceptable and the improved
+manuscript is suitable for publication.
+Reviewer #5
+The authors have appropriately cited the references I've pointed to them.
+However, the focus of the paper is still maintained on "selling" a new numerical
+model, as a model which would outperforms others. I'm still not convinced about
+it. I believe previous art (work by Spillman, Bergou, Linn) is discarded much too
+quickly. What's the key ingredient that your model has and that others do not?
+At this point, I'm really not sure previous models would not be allowed to tackle
+the scenarios developed here. I've seen in the past some impressive
+simulations made by J. Linn, where cables can bend, twist, strech, shear (not
+infinitesimally), be in contact with other objects, all at interactive rates, and in a
+very robust manner. I believe this could be a serious competitor (and there are
+probably others), and I would like to see fair comparisons of the codes to be
+convinced of the novelty of the model. Moreover, all other add-ons (contact and
+friction handlings, etc.), are classical, and even sometimes below current state-
+of-the-art (nonsmooth methods are now used for treating Signorini-Coulomb
+constraints implicitly, see e.g. Daviet et al. 2011).
+That said, if the numerical model proposed here was not really new nor better
+than previous approaches, this would not be killing the paper : as I said before,
+the true strength and richness of the paper is to conduct many interesting
+experiments where very good agreement is shown between the model and the
+experiement. No one has done that thorough and extensive validation work in
+the past, and I believe that's a good contribution that would justify publication
+per se. However, the paper would have to be fully oriented towards these
+applications, thus reducing the importance of the numerical model developed
+(still it would be interesting to have its full description in the main text or in
+appendix, for the sake of completeness and reproducibility). Currently, the
+abstract clearly makes the focus on the numerical model, not on this validation
+work, so this would have to be reworked too.
+For me, the two options are good:
+- either prove the novelty and gain brought by your numerical model, by making
+proper evaluation and fair comparisons against previous relevant methods
+(meaning perhaps some reimplementing of previous methods, if code is not
+readily available)
+- or focus on the applications, reducing the weight on the novelty of the code.
+I'd like to see a revision implementing successfully one of these two options.
+To me, this is the only way that this paper advances the state of the art in a fair
+and useful way for the scientific community.
+We thank the reviewer for the overall positive assessment and comments. We
+did attempt to shift the emphasis to the application side in our previous review,
+and in light of the new comments we have taken additional steps to further
+highlight this point. These are summarized in the following:
+• We modified the title that now reads: “Forward and inverse problems in
+the mechanics of soft filaments” instead of “Computational mechanics of
+soft filaments” to shift the focus from the computational methodology
+perspective to its use in terms of applications.
+• Consistent with this, we have reworked the entire abstract, to clarify
+upfront our interest in validating and using the Cosserat model, across a
+broad set of applications. The new abstract now reads: “Soft slender
+structures are ubiquitous in natural and artificial systems, in active and
+passive settings and across scales, from polymers and flagella to snakes
+or space tethers. Here we demonstrate the use of a simple and practical
+numerical implementation based on the Cosserat rod model to simulate
+the dynamics of filaments that can bend, twist, stretch and shear, while
+interacting with complex environments via muscular activity, surface
+contact, friction and hydrodynamics. We validate our simulations by
+solving a number of forward problems of passive filament mechanics, by
+comparing with known analytic results and experimental observations
+relative to solenoid and plectoneme formation in twisted, stretched
+filaments. We then study active filaments such as snakes and other
+slender organisms, by solving inverse problems to identify optimal gaits
+for limbless locomotion on solid surfaces and in bulk liquids.”
+• In the same spirit in the introduction we added a sentence that
+emphasizes the use of our numerical implementation, rather than its
+numerical novelty : “Motivated by these advancements and challenges,
+we use a versatile implementation of the Cosserat model that we
+validate in a set of physical simulations, and then deploy in the context
+of inverse design problems to broaden the spectrum of its potential
+engineering and bio-physical investigations.”
+• Throughout the text we removed all claims of numerical novelty, so as
+to emphasize the application aspect of this study.
+• Finally, we modified accordingly the conclusions. Note that at the end of
+it we explicitly state that showcasing the use of the Cosserat model in a
+broad spectrum of application is the main contribution of this
+investigation, while we removed the claim of numerical novelty. “We
+have presented a versatile implementation of the Cosserat rod model for
+the simulation of soft filaments deforming in three dimensional space.
+These filaments at any given cross section can experience all
+deformation modes, namely normal and orthonormal bending, twisting,
+stretching and shearing. Particular emphasis is placed in realistically
+accounting for substantial axial extensions and shear strains, targeting
+emerging soft robotic applications. The solver also handles self-contact,
+muscular activity, solid boundaries, isotropic and anisotropic friction as
+well as hydrodynamics. The outcome is a simple algorithm suitable to
+tackle a plethora of engineering and bio-physical phenomena. We
+verified this against a battery of benchmark problems entailing different
+physical aspects and boundary conditions, and used it to solve a range
+of forward and inverse problems spanning mechanics and bio-physics.
+In particular we studied the formation of solenoids and plectonemes and
+the evolutionary optimization of terrestrial limbless locomotion and
+swimming. We emphasize that in general the solution of an inverse
+problem, in this case achieved by coupling our method with evolutionary
+strategies, severely tests the robustness of any solver, due to the (often
+unforeseen) variety of candidate solutions produced throughout the
+process. Our results demonstrate the utility of a modeling approach
+based on Cosserat rods in a wide range of settings that involve
+active and passive soft filaments, broadening the scope of
+previous studies. We emphasize here that this is the main
+contribution of this investigation. Ongoing work involves its coupling
+to realistic high Reynolds number flow solvers [100], its integration with
+sensory feedback models for the characterization of locomotory neural
+circuitry [80], and its use for the rational design of bio-hybrid bots
+[45,101].”
+We believe that these modifications now clearly emphasize the application
+aspect of our study, rather than its numerical novelty, as suggested by the
+reviewer. We nevertheless retain in the main text the algorithm description for
+the sake of reproducibility. Moreover, since the code is openly distributed, the
+algorithmic description serves the purpose of clarifying the various aspects of
+our software.
+We hope that these changes will satisfy the reviewer, and that this new version
+is found acceptable for publication.
+Society Open

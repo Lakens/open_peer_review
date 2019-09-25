@@ -1,0 +1,902 @@
+A mathematical understanding of how cytoplasmic dynein
+walks on microtubules
+L. Trott, M. Hafezparast and A. Madzvamuse
+Article citation details
+R. Soc. open sci. 5: 171568.
+http://dx.doi.org/10.1098/rsos.171568
+Review timeline
+Original submission: 31 October 2017 Note: Reports are unedited and appear as
+Revised submission: 13 May 2018 submitted by the referee. The review history
+Final acceptance: 13 July 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-171568.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+The manuscript by Trott et al. presents an integrative mechanistic model describing the motility
+of cytoplasmic dynein. The model integrates the temporal dynamics of all dynein components
+(cargo, tail, AAA+ rings, and MTBDs) as the motor walks to test the effect of inter-head
+coordination on the stepping properties of dynein by comparing the numerical simulations to the
+experimental observations. The derived formula is then further modelled to take into account the
+backward stepping and the variable step size and dwelling. The model suggests that stochastic
+stepping with limited coordination between the motor domains (probability of stepping is
+independent of which head stepped previously) cannot replicate the experimental observations
+of the frequency of alternating steps, indicating a higher level of coordination between the two
+heads (probability of stepping is higher in the trailing head). Further relaxing the model to
+assume that the two motor domains step independently (both heads can bind ATP and detach at
+the same time) also cannot replicate the experimentally observed stepping profile, and in
+addition the simulated run lengths were significantly lower measured values due to premature
+termination, suggesting that coordination also is important to achieve high run lengths.
+Extending the model framework to account for backward stepping, variable step sizes and large
+scale dwelling of dynein shows that the likelihood of backward steps is directly related to the
+separation distance between the two heads, and the same applies to the frequency of passing
+steps as it decreases when the separation distance increases. The same model suggests that 10% of
+the MTBDs steps are of a zero-step size (motor detaches and binds at the same position on the
+microtubule), which cannot be determined by the step finding algorithms used in analysis of the
+experimental data.
+The study extends our understanding of the level of coordination between the head domains of
+dynein to achieve processive unidirectional runs that reproduce the experimental observations.
+The reported observations on the MTBDs standing relative to each other and relative to the head
+domains provide useful information on the stepping properties of dynein because tagging this
+region can be technically challenging for in vitro experiments.
+Overall, the study is technically sound and is expected to advance the scientific knowledge of
+molecular motors. The manuscript is clearly written. I am listing major and minor concerns that
+need to be addressed before I recommend publication.
+Major Points
+Most critically, the authors should read the dynein literature more carefully and precisely reflect
+where the field currently stands in the main text. For that, I strongly recommend the authors to
+discuss their model in detail with a dynein biophysicist or a structural biologist before revising
+the manuscript. There are many examples in text the authors discuss studies that are now
+obsolete based on more recent findings and fully neglect some the findings crucial for modeling
+dynein stepping mechanism. I will give a few examples below, but this list is not comprehensive.
+Abstract: “…it reflects recent experimental observations that dynein walks on microtubules using
+a handover-hand processive motion and through shuffling.” This sentence can be misleading to
+the reader. Hand over hand is used to describe strictly alternating stepping pattern of the heads
+and that heads passing each other after every step on a single protofilament. Shuffling is used to
+describe a situation in which the heads move side by side by taking alternating steps. In the case
+of dynein, the heads are only weakly coordinated and the stepping of the two heads are largely
+independent of each other. I recommend the authors to revise this sentence to better reflect where
+the field stands.
+In Figure 2, that stalks are shown as identical springs pointing towards each other. However,
+structural studies showed that both stalk are tilted towards the plus end and more or less in
+3
+parallel orientation to each other (rather than pointing towards each other). This needs to be
+fixed. Imai et al. Nat Comm have more detailed experimental data about how the stalk angles
+change with respect to the distance between the AAA rings and this information can be useful to
+improve the model.
+I was surprised to see that the authors do not mention Cleary et al. Nat Comm. 2014 study at all.
+This study showed how interhead separation induces partial coordination in the stepping
+mechanism. This is done through an intramolecular tension of the linker domain which gates
+ATP induced stepping of the heads. I think this study, along with Qiu et al. and Dewitt et al., is
+the most relevant work to the model presented in this manuscript. The authors should discuss if
+they agree or disagree with this study. For example, page 33 line 12-13: “We note that by allowing
+the head domains to step independently, they are able to diverge considerably which may not be
+biologically realistic”. Cleary et al already showed why this is not the case.
+The authors mainly compare their percentage of passing/not passing and alternating/non-
+alternating steps with Qiu et al., yet they take the maximum interhead separation (48 nm) from
+Dewitt et al. 48 nm separation was not seen by Qiu et al. I suggest the authors compare their
+findings to both studies in detail rather than choosing parameters from one study and comparing
+the results to the other.
+Page 33, lines 37-47: The reason why murine dynein has a short run length in the absence of
+dynactin is not related to dynactin dependent coordination of dynein stepping. Torisawa et al
+NCB, Zhang et al Cell and many others showed that dynein from higher organisms than yeast
+favors an autoinhibited conformation on its own. Forming a ternary complex with dynactin and a
+cargo adaptor activates processive motility. Similarly, Loa dynein was not processive because the
+protein autoinhibits itself without its cofactors. All of the prior in vitro work on mammalian
+dynein prior to McKenney Science 2014 and Schlager EMBO Reports 2014 used
+inactive/autoinhibited or partially inactive complexes. Therefore, their findings cannot explain
+how dynein works when it is in its active form.
+The authors argue that interhead coordination is required for observed long run lengths of
+dynein. Without knowing the duty ratio of the motor, or how fast a head steps and rebinds
+microtubule, it is impossible to make correct statements on this.
+Minor points:
+The authors derive two parameters (<U+03B3>ATP and KATP) that determine the size of the ATP force
+produced by the modelled dashpot on unbound MTBD upon ATP binding. It is unclear how they
+estimated the values of these two parameters in table 1, and how changing of these two numbers
+could translate to significant increases in the observed number of steps and run lengths (tables 5
+and 6).
+Based on stochastic stepping with limited coordination, the authors simulated traces for the
+positions of several dynein components. In figure 4b, the presented trace of cargo does not show
+a stepping pattern while the tail, rings, and MTBDs all show a stepping behavior (figure 4c,d,e,f).
+There are no external forces acting on the cargo and I was expecting to see a similar stepping
+profile at the cargo, especially the numerical solutions for independent stepping assumption
+shows a clear stepping pattern for the cargo similar to the tail region (figure 9a, b).
+The authors should provide an explanation of why the cargo velocity increases over time before
+reaching a plateau (figure 5a).
+The authors observed differences in the stepping behavior of the two rings compared to the
+MTBDs with rings are positioned further apart from each other and crossing paths at different
+time points (figure 11 e, f). I would encourage them to provide further details on how the MTBDs
+positioning vary over time relative to the head and if the frequency of not passing and alternating
+steps differs between them.
+4
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Review of the article
+"A mathematical understanding of how cytoplasmic dynein walks on microtubules"
+by
+L. Trott, M. Hafezparast, and A. Madzvamuse
+This paper deals with the migration of the cytoplasmic protein dynein along the microtubules.
+The authors propose a one-dimensional mechanical model that addresses the evolution in time of
+the positions of several of the protein components: cargo, the tail domain, the AAA+ rings, and
+the microtubules binding domains (MTBDs).
+The derivation of the model results from force balance principles. After a series of assumptions
+and simplifications the authors propose the main formulation (4.20)-(4.25). In the continuation of
+the paper, the authors discuss variants of this model, simulate them, and compare the results
+with experimental data.
+Overall, it is a nicely written work that is worth publishing in RSOS. I have though a number of
+remarks that would like to see them addressed before publication.
+Point 1) Comparison with the previous work [29] of some of the authors.
+Point 2) Page 5, last point: While you state "There are no external forces ... trap", in page 6 line 25
+you state "For the cargo there is a spring ... on it". Rephrase to avoid the ambiguity.
+Point 3) Page 6 line 23: A more extensive discussion of the expected differences between the 1-
+and the 2- dimensional versions of the model and the biological reality.
+Point 4) Page 8, Remark 4.2: You refer to 2-dimensional stepping implying that the protein will
+be walking along the surface of the microtubule? You should discuss that slightly more.
+5
+Point 5) Page 9: The explanation of the synchronization between the two heads in the paragraph
+before (4.14) should be more clear.
+Point 6) Page 9: Remark 4.3: Reformulate "...in Section (d) and in Section (d)..."
+Point 7) Page 9, Remark 4.4: Clearly this works for discrete steps. How does the model
+incorporate the continuity of time?
+Point 8) Page 10, Nondimensionalization: Do you mean that the coefficient of the acceleration
+terms, as they emerge from the dimensional analysis, are small and hence neglected, or do you
+make additional assumptions on their magnitude?
+Point 9) Page 11: Independent stepping: "It has been suggested..." Do you mean previously in the
+literature? This sentence implies that some discussion took place for which the reader of this
+paper is unaware of.
+Point 10) Page 12: Replace the small letter \tau by the capital in the interval [0, \tau_\text{Final}]
+Point 11) Page 12: You refer to the ode45 solver of MATLAB. It would be advisable to briefly
+mention the underlying numerical method that this solver incorporates. This will increase the
+numerical value of the paper and allow for non-MATLAB users to reproduce your experiments
+with greater ease. Same remark holds for the solver ode15s that appears later in the manuscript.
+Also take care and refer to MATLAB with all capital letters.
+Point 12) Page 17, Remark 5.4: It is not clear what the meaning of the "with an average of ... 20%"
+is. Please reformulate. Also give a conclusion to this Remark, i.e. is the fact "This is just under..."
+good or bad for the model?
+Point 13) Page 19, line 16: It seems that the citation [42] refers to the particular dwelling model
+instead of MATLAB.
+Point 14) Page 20, line 33: What do you mean by "external to the model"? Are there more
+processes that affect the mathematical model without being addressed in the paper?
+Point 15) Page 13, Figure 4: What do you mean by "trajectory" for the cargo and the rest of the
+components? Is it distance/position? The model (4.20)-(4.25) that you solve is 1 dimensional after
+all.
+Point 16) Page 13, Figure 4: Have you verified that the acceleration that the cargo velocity (sub-
+)figure implies, is small enough to be neglected in (4.20)-(4.25)? For later times, as Figure 5
+exhibits, the cargo reaches "constant" velocity.
+Point 17) Page 20 line 50: "stepping probability ... has stepped" isn't this the definition of $P_D$?
+The reader has done some effort to accept to the notation and it is better to use it.
+Point 18) Page 23 line 16: E. Campillo-Funollet is not a sole author in [45].
+Point 19) Page 23 line 19: Reformulate the sentence "For such a framework ... data". Refrain from
+suggesting other scientists to "... measure some of the processes ..." via the manuscript.
+6
+label_end_comment
+Decision letter (RSOS-171568.R0)
+06-Apr-2018
+Dear Professor Madzvamuse,
+The editors assigned to your paper ("A mechanical model describing how cytoplasmic dynein
+walks on microtubules") have now received comments from reviewers. We would like you to
+revise your paper in accordance with the referee and Associate Editor suggestions which can be
+found below (not including confidential reports to the Editor). Please note this decision does not
+guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 29-Apr-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+7
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171568
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Anna Marciniak-Czochra (Associate Editor) and Mark Chaplain (Subject Editor)
+8
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+The manuscript by Trott et al. presents an integrative mechanistic model describing the motility
+of cytoplasmic dynein. The model integrates the temporal dynamics of all dynein components
+(cargo, tail, AAA+ rings, and MTBDs) as the motor walks to test the effect of inter-head
+coordination on the stepping properties of dynein by comparing the numerical simulations to the
+experimental observations. The derived formula is then further modelled to take into account the
+backward stepping and the variable step size and dwelling. The model suggests that stochastic
+stepping with limited coordination between the motor domains (probability of stepping is
+independent of which head stepped previously) cannot replicate the experimental observations
+of the frequency of alternating steps, indicating a higher level of coordination between the two
+heads (probability of stepping is higher in the trailing head). Further relaxing the model to
+assume that the two motor domains step independently (both heads can bind ATP and detach at
+the same time) also cannot replicate the experimentally observed stepping profile, and in
+addition the simulated run lengths were significantly lower measured values due to premature
+termination, suggesting that coordination also is important to achieve high run lengths.
+Extending the model framework to account for backward stepping, variable step sizes and large
+scale dwelling of dynein shows that the likelihood of backward steps is directly related to the
+separation distance between the two heads, and the same applies to the frequency of passing
+steps as it decreases when the separation distance increases. The same model suggests that 10% of
+the MTBDs steps are of a zero-step size (motor detaches and binds at the same position on the
+microtubule), which cannot be determined by the step finding algorithms used in analysis of the
+experimental data.
+The study extends our understanding of the level of coordination between the head domains of
+dynein to achieve processive unidirectional runs that reproduce the experimental observations.
+The reported observations on the MTBDs standing relative to each other and relative to the head
+domains provide useful information on the stepping properties of dynein because tagging this
+region can be technically challenging for in vitro experiments.
+Overall, the study is technically sound and is expected to advance the scientific knowledge of
+molecular motors. The manuscript is clearly written. I am listing major and minor concerns that
+need to be addressed before I recommend publication.
+Major Points
+Most critically, the authors should read the dynein literature more carefully and precisely reflect
+where the field currently stands in the main text. For that, I strongly recommend the authors to
+discuss their model in detail with a dynein biophysicist or a structural biologist before revising
+the manuscript. There are many examples in text the authors discuss studies that are now
+obsolete based on more recent findings and fully neglect some the findings crucial for modeling
+dynein stepping mechanism. I will give a few examples below, but this list is not comprehensive.
+Abstract: “…it reflects recent experimental observations that dynein walks on microtubules using
+a handover-hand processive motion and through shuffling.” This sentence can be misleading to
+the reader. Hand over hand is used to describe strictly alternating stepping pattern of the heads
+and that heads passing each other after every step on a single protofilament. Shuffling is used to
+describe a situation in which the heads move side by side by taking alternating steps. In the case
+of dynein, the heads are only weakly coordinated and the stepping of the two heads are largely
+independent of each other. I recommend the authors to revise this sentence to better reflect where
+the field stands.
+9
+In Figure 2, that stalks are shown as identical springs pointing towards each other. However,
+structural studies showed that both stalk are tilted towards the plus end and more or less in
+parallel orientation to each other (rather than pointing towards each other). This needs to be
+fixed. Imai et al. Nat Comm have more detailed experimental data about how the stalk angles
+change with respect to the distance between the AAA rings and this information can be useful to
+improve the model.
+I was surprised to see that the authors do not mention Cleary et al. Nat Comm. 2014 study at all.
+This study showed how interhead separation induces partial coordination in the stepping
+mechanism. This is done through an intramolecular tension of the linker domain which gates
+ATP induced stepping of the heads. I think this study, along with Qiu et al. and Dewitt et al., is
+the most relevant work to the model presented in this manuscript. The authors should discuss if
+they agree or disagree with this study. For example, page 33 line 12-13: “We note that by allowing
+the head domains to step independently, they are able to diverge considerably which may not be
+biologically realistic”. Cleary et al already showed why this is not the case.
+The authors mainly compare their percentage of passing/not passing and alternating/non-
+alternating steps with Qiu et al., yet they take the maximum interhead separation (48 nm) from
+Dewitt et al. 48 nm separation was not seen by Qiu et al. I suggest the authors compare their
+findings to both studies in detail rather than choosing parameters from one study and comparing
+the results to the other.
+Page 33, lines 37-47: The reason why murine dynein has a short run length in the absence of
+dynactin is not related to dynactin dependent coordination of dynein stepping. Torisawa et al
+NCB, Zhang et al Cell and many others showed that dynein from higher organisms than yeast
+favors an autoinhibited conformation on its own. Forming a ternary complex with dynactin and a
+cargo adaptor activates processive motility. Similarly, Loa dynein was not processive because the
+protein autoinhibits itself without its cofactors. All of the prior in vitro work on mammalian
+dynein prior to McKenney Science 2014 and Schlager EMBO Reports 2014 used
+inactive/autoinhibited or partially inactive complexes. Therefore, their findings cannot explain
+how dynein works when it is in its active form.
+The authors argue that interhead coordination is required for observed long run lengths of
+dynein. Without knowing the duty ratio of the motor, or how fast a head steps and rebinds
+microtubule, it is impossible to make correct statements on this.
+Minor points:
+The authors derive two parameters (<U+03B3>ATP and KATP) that determine the size of the ATP force
+produced by the modelled dashpot on unbound MTBD upon ATP binding. It is unclear how they
+estimated the values of these two parameters in table 1, and how changing of these two numbers
+could translate to significant increases in the observed number of steps and run lengths (tables 5
+and 6).
+Based on stochastic stepping with limited coordination, the authors simulated traces for the
+positions of several dynein components. In figure 4b, the presented trace of cargo does not show
+a stepping pattern while the tail, rings, and MTBDs all show a stepping behavior (figure 4c,d,e,f).
+There are no external forces acting on the cargo and I was expecting to see a similar stepping
+profile at the cargo, especially the numerical solutions for independent stepping assumption
+shows a clear stepping pattern for the cargo similar to the tail region (figure 9a, b).
+The authors should provide an explanation of why the cargo velocity increases over time before
+reaching a plateau (figure 5a).
+The authors observed differences in the stepping behavior of the two rings compared to the
+MTBDs with rings are positioned further apart from each other and crossing paths at different
+time points (figure 11 e, f). I would encourage them to provide further details on how the MTBDs
+positioning vary over time relative to the head and if the frequency of not passing and alternating
+steps differs between them.
+10
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Review of the article
+"A mathematical understanding of how cytoplasmic dynein walks on microtubules"
+by
+L. Trott, M. Hafezparast, and A. Madzvamuse
+This paper deals with the migration of the cytoplasmic protein dynein along the microtubules.
+The authors propose a one-dimensional mechanical model that addresses the evolution in time of
+the positions of several of the protein components: cargo, the tail domain, the AAA+ rings, and
+the microtubules binding domains (MTBDs).
+The derivation of the model results from force balance principles. After a series of assumptions
+and simplifications the authors propose the main formulation (4.20)-(4.25). In the continuation of
+the paper, the authors discuss variants of this model, simulate them, and compare the results
+with experimental data.
+Overall, it is a nicely written work that is worth publishing in RSOS. I have though a number of
+remarks that would like to see them addressed before publication.
+Point 1) Comparison with the previous work [29] of some of the authors.
+Point 2) Page 5, last point: While you state "There are no external forces ... trap", in page 6 line 25
+you state "For the cargo there is a spring ... on it". Rephrase to avoid the ambiguity.
+Point 3) Page 6 line 23: A more extensive discussion of the expected differences between the 1-
+and the 2- dimensional versions of the model and the biological reality.
+Point 4) Page 8, Remark 4.2: You refer to 2-dimensional stepping implying that the protein will
+be walking along the surface of the microtubule? You should discuss that slightly more.
+Point 5) Page 9: The explanation of the synchronization between the two heads in the paragraph
+before (4.14) should be more clear.
+Point 6) Page 9: Remark 4.3: Reformulate "...in Section (d) and in Section (d)..."
+Point 7) Page 9, Remark 4.4: Clearly this works for discrete steps. How does the model
+incorporate the continuity of time?
+Point 8) Page 10, Nondimensionalization: Do you mean that the coefficient of the acceleration
+terms, as they emerge from the dimensional analysis, are small and hence neglected, or do you
+make additional assumptions on their magnitude?
+Point 9) Page 11: Independent stepping: "It has been suggested..." Do you mean previously in the
+literature? This sentence implies that some discussion took place for which the reader of this
+paper is unaware of.
+Point 10) Page 12: Replace the small letter \tau by the capital in the interval [0, \tau_\text{Final}]
+11
+Point 11) Page 12: You refer to the ode45 solver of MATLAB. It would be advisable to briefly
+mention the underlying numerical method that this solver incorporates. This will increase the
+numerical value of the paper and allow for non-MATLAB users to reproduce your experiments
+with greater ease. Same remark holds for the solver ode15s that appears later in the manuscript.
+Also take care and refer to MATLAB with all capital letters.
+Point 12) Page 17, Remark 5.4: It is not clear what the meaning of the "with an average of ... 20%"
+is. Please reformulate. Also give a conclusion to this Remark, i.e. is the fact "This is just under..."
+good or bad for the model?
+Point 13) Page 19, line 16: It seems that the citation [42] refers to the particular dwelling model
+instead of MATLAB.
+Point 14) Page 20, line 33: What do you mean by "external to the model"? Are there more
+processes that affect the mathematical model without being addressed in the paper?
+Point 15) Page 13, Figure 4: What do you mean by "trajectory" for the cargo and the rest of the
+components? Is it distance/position? The model (4.20)-(4.25) that you solve is 1 dimensional after
+all.
+Point 16) Page 13, Figure 4: Have you verified that the acceleration that the cargo velocity (sub-
+)figure implies, is small enough to be neglected in (4.20)-(4.25)? For later times, as Figure 5
+exhibits, the cargo reaches "constant" velocity.
+Point 17) Page 20 line 50: "stepping probability ... has stepped" isn't this the definition of $P_D$?
+The reader has done some effort to accept to the notation and it is better to use it.
+Point 18) Page 23 line 16: E. Campillo-Funollet is not a sole author in [45].
+Point 19) Page 23 line 19: Reformulate the sentence "For such a framework ... data". Refrain from
+suggesting other scientists to "... measure some of the processes ..." via the manuscript.
+Author's Response to Decision Letter for (RSOS-171568.R0)
+See Appendix A.
+label_version_2
+RSOS-171568.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+12
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+The authors have addressed all of my concerns. I recommend publication of the manuscript.
+label_end_comment
+Decision letter (RSOS-171568.R1)
+13-Jul-2018
+Dear Professor Madzvamuse,
+I am pleased to inform you that your manuscript entitled "A mathematical understanding of how
+cytoplasmic dynein walks on microtubules" is now accepted for publication in Royal Society
+Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+13
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Anna Marciniak-Czochra (Associate Editor) and Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+The authors have addressed all of my concerns. I recommend publication of the manuscript.
+ppendix A
+esponses to Reviewer’s comments: RSOS Manuscript ID
+SOS-171568
+tle: A mathematical understanding of how cytoplasmic dynein walks on micro-
+bules
+uthors: Laurie, E. Trott, M. Hafezparast, and A. Madzvamuse
+ar Andrew, Associate Editor and Subject Editor,
+We would like to thank you and the Editors for handling our manuscript and the
+iewers for the positive criticism and suggestions. We have addressed the reviewers’
+mments and these have resulted in a substantial improvement of the manuscript and
+readability. It is pleasing to note that both reviewers recommend that the study
+suitable for RSOS readership, and that the work extends our understanding of the
+el of coordination between the head domains to achieve processive unidirectional
+ns that reproduce experimental observations. Below we detail our responses to re-
+wers’ comments. In the revised manuscripts, new material is highlighted in blue to
+the reviewing process.
+We hope that the present revised manuscript addresses the reviewers’ comments
+d that it is suitable for acceptance for publication in the Royal Society Open Science
+urnal.
+ith best regards,
+otida Madzvamuse (corresponding author)
+urie Trott
+ajid Hafezparast
+etailed responses to reviewers’ comments
+eviewer: 1
+1. The manuscript by Trott et al. presents an integrative mechanistic model describ-
+ing the motility of cytoplasmic dynein. The model integrates the temporal dynam-
+ics of all dynein components (cargo, tail, AAA+ rings, and MTBDs) as the mo-
+tor walks to test the effect of inter-head coordination on the stepping properties of
+dynein by comparing the numerical simulations to the experimental observations.
+The derived formula is then further modelled to take into account the backward
+stepping and the variable step size and dwelling. The model suggests that stochas-
+tic stepping with limited coordination between the motor domains (probability of
+stepping is independent of which head stepped previously) cannot replicate the ex-
+perimental observations of the frequency of alternating steps, indicating a higher
+level of coordination between the two heads (probability of stepping is higher in
+the trailing head). Further relaxing the model to assume that the two motor do-
+mains step independently (both heads can bind ATP and detach at the same time)
+also cannot replicate the experimentally observed stepping profile, and in addition
+the simulated run lengths were significantly lower measured values due to prema-
+ture termination, suggesting that coordination also is important to achieve high
+run lengths. Extending the model framework to account for backward stepping,
+variable step sizes and large scale dwelling of dynein shows that the likelihood of
+backward steps is directly related to the separation distance between the two heads,
+and the same applies to the frequency of passing steps as it decreases when the
+separation distance increases. The same model suggests that 10% of the MTBDs
+steps are of a zero-step size (motor detaches and binds at the same position on
+the microtubule), which cannot be determined by the step finding algorithms used
+in analysis of the experimental data. The study extends our understanding of the
+level of coordination between the head domains of dynein to achieve processive
+unidirectional runs that reproduce the experimental observations. The reported
+observations on the MTBDs standing relative to each other and relative to the
+head domains provide useful information on the stepping properties of dynein be-
+cause tagging this region can be technically challenging for in vitro experiments.
+Overall, the study is technically sound and is expected to advance the scientific
+knowledge of molecular motors. The manuscript is clearly written. I am listing
+major and minor concerns that need to be addressed before I recommend publica-
+tion.
+Response: We thank the reviewer for these positive comments about the
+novelty and the impact of our manuscript in advancing scientific knowledge in
+2
+molecular motors. Below we address the major and minor comments raised.
+2. Most critically, the authors should read the dynein literature more carefully and
+precisely reflect where the field currently stands in the main text. For that, I
+strongly recommend the authors to discuss their model in detail with a dynein
+biophysicist or a structural biologist before revising the manuscript. There are
+many examples in text the authors discuss studies that are now obsolete based
+on more recent findings and fully neglect some the findings crucial for modeling
+dynein stepping mechanism. I will give a few examples below, but this list is not
+comprehensive.
+Response: We thank the reviewer for these important suggestions. The area
+of cytoplasmic dynein is constantly evolving with hundreds of papers published
+annually. Within this context, we have carried out a detailed literature review to
+identify, to the best of our knowledge, the most appropriate references that reflect
+where the field currently stands. As a result, we have substantially re-written the
+introduction and motivation as well as the discussion, both from experimental and
+modelling points of view. We fully agree with the reviewer that engaging with a
+dynein biophysicist or a structural biologist would be beneficial, we think the best
+scenario would be if there is detailed space-time series data for a specific type of
+dynein to which the solution of the mathematical model can be best-fit to the
+data in order to determine fully the parameter values within an inverse problem
+framework. The idea would be to find optimal parameters as distributions by say,
+using the Bayesian approach (see Campillo-Funollet, E. et al., (2016), for further
+details) we have developed in our research group, given quantitative measure-
+ments (raw data) in the form of space-time series. This approach will then allow
+us and the experimentalist(s) to carry out detailed sensitivity analysis, statistical
+classification and identification of key parameters with the ultimate goal of mak-
+ing model predictions that could then be tested experimentally. This approach
+is the focus of our current studies and we thank the reviewer for confirming our
+long term research ambition.
+3. Abstract: ” · · · it reflects recent experimental observations that dynein walks on
+microtubules using a handover-hand processive motion and through shuffling.”
+This sentence can be misleading to the reader. Hand over hand is used to de-
+scribe strictly alternating stepping pattern of the heads and that heads passing
+each other after every step on a single protofilament. Shuffling is used to describe
+a situation in which the heads move side by side by taking alternating steps. In
+the case of dynein, the heads are only weakly coordinated and the stepping of the
+two heads are largely independent of each other. I recommend the authors to re-
+vise this sentence to better reflect where the field stands.
+3
+Response: We again thank the reviewer for this insightful critique. The
+reviewer is absolutely correct. Instead of using hand-over-hand and shuffling,
+we have restricted ourselves to specific stepping patterns that can be categorised
+as alternating, non-alternating, passing and not-passing given the fact that our
+model is strictly one-dimensional. These terms reflect more appropriately the
+physical stepping patterns in 1-D. Hand-over-hand and shuffling have been shown
+to be more associated with kinesin and myosin stepping patterning rather than
+with dynein. It will be interesting to see what type of stepping patterns emerge
+for the case of two- and three-dimensional models, where the heads have more
+freedom to step on and off the microtubule surface. However, such a study is
+beyond the scope of this manuscript.
+4. In Figure 2, that stalks are shown as identical springs pointing towards each other.
+However, structural studies showed that both stalk are tilted towards the plus end
+and more or less in parallel orientation to each other (rather than pointing to-
+wards each other). This needs to be fixed. Imai et al. Nat Comm have more
+detailed experimental data about how the stalk angles change with respect to the
+distance between the AAA rings and this information can be useful to improve the
+model.
+Response: The reviewer is absolutely spot on. We have developed a general
+model that allows for both scenarios to be taken into account and we argue that
+during the stepping process, stalks assume different geometrical configurations
+and yet the underlying stepping behavior remains unchanged. To demonstrate
+this observation, we have included in the Supplementary Material (i) the new
+model if one was to assume that the stalks are tilted towards the plus end and lie
+more or less in parallel orientation to each other and (ii) presented a snap shot
+of some of the numerical results illustrating the stepping patterns with identical
+model parameter values to those of the model when the stalks are more or less
+in a vertical position and pointing towards each other. The conclusions drawn
+from both models and simulations are identical. As a result, we have inserted
+appropriate text on page 7 of the new manuscript explaining the model framework
+and how it relates to the structural design reported in experimental papers.
+5. I was surprised to see that the authors do not mention Cleary et al. Nat Comm.
+2014 study at all. This study showed how interhead separation induces partial
+coordination in the stepping mechanism. This is done through an intramolecular
+tension of the linker domain which gates ATP induced stepping of the heads. I
+think this study, along with Qiu et al. and Dewitt et al., is the most relevant work
+4
+to the model presented in this manuscript. The authors should discuss if they
+agree or disagree with this study. For example, page 33 line 12-13: ”We note
+that by allowing the head domains to step independently, they are able to diverge
+considerably which may not be biologically realistic”. Cleary et al already showed
+why this is not the case.
+Response: We are grateful to the reviewer for this valuable comment. We
+are aware of the work by Cleary et al., but we thought it might not be ap-
+propriate since we are not modelling explicitly the linker and its role in gating
+ATP-dependent release of dynein from the microtubule. However, it is clear to us
+now, that the linker could actually be a critical component to include in a future
+model whereby retraction of the leading head or pulling of the lagging head at
+larger interhead separation distances might help counter balance the continuous
+divergence of the interheads without such a linker. Throughout the manuscript we
+have added appropriate text to explain possible remedies to deal with diverging
+heads.
+6. The authors mainly compare their percentage of passing/not passing and alternating/non-
+alternating steps with Qiu et al., yet they take the maximum interhead separation
+(48 nm) from Dewitt et al. 48 nm separation was not seen by Qiu et al. I suggest
+the authors compare their findings to both studies in detail rather than choosing
+parameters from one study and comparing the results to the other.
+Response: We agree fully with the reviewer’s comment. In all our simulations
+(unless stated otherwise), we have taken the maximum interhead separation dis-
+tance to be 48nm. This choice was based on the fact that we explored a wide
+range of values for the maximum separation distance as shown in Tables 3 and
+7, and an optimal value of 48nm was chosen. It must be noted that data from
+DeWitt et al., showed head separation distances of the range 23 ± 13.2 nm, not
+48nm. It was not our intention to choose data from one paper to validate results
+from another but that we found some optimal parameters that gave rise to the
+mathematical predictions outlined. This again, brings us to the point that in or-
+der to make a full parameter identification such that the model best-fits to data,
+we need quantitative space-time distributions of the stepping profiles.
+7. Page 33, lines 37-47: The reason why murine dynein has a short run length in the
+absence of dynactin is not related to dynactin dependent coordination of dynein
+stepping. Torisawa et al NCB, Zhang et al Cell and many others showed that
+dynein from higher organisms than yeast favors an autoinhibited conformation on
+its own. Forming a ternary complex with dynactin and a cargo adaptor activates
+5
+processive motility. Similarly, Loa dynein was not processive because the protein
+autoinhibits itself without its cofactors. All of the prior in vitro work on mam-
+malian dynein prior to McKenney Science 2014 and Schlager EMBO Reports
+2014 used inactive/autoinhibited or partially inactive complexes. Therefore, their
+findings cannot explain how dynein works when it is in its active form.
+Response: The reason why the mean run lengths are lower than those seen in
+experiments could be due the regulatory functions of dynactin and other cargo
+adaptor proteins such as BICD2 present in vivo, which activate long distance
+movement of the motor [see Zhang et al, Cell, 2017, Torisawa et al. NCB, 2014].
+Further modelling in this direction might help to confirm or refute such a hypoth-
+esis. We have added appropriate text in the manuscript along these lines.
+8. The authors argue that interhead coordination is required for observed long run
+lengths of dynein. Without knowing the duty ratio of the motor, or how fast a
+head steps and rebinds microtubule, it is impossible to make correct statements
+on this.
+Response: We agree fully with the reviewer. To this end, we have rephrased
+our statements to reflect the need for knowing the duty ratio of the motor as well
+as data on how fast the head steps and rebinds on microtubules.
+9. The authors derive two parameters (<U+03B3>AT P and KAT P ) that determine the size of
+the ATP force produced by the modelled dashpot on unbound MTBD upon ATP
+binding. It is unclear how they estimated the values of these two parameters in
+table 1, and how changing of these two numbers could translate to significant in-
+creases in the observed number of steps and run lengths (tables 5 and 6).
+Response: The two parameters <U+03B3>AT P and KAT P are estimated by trial error
+(hence the need for a rigorous parameter identification approach). We have in-
+cluded a statement of this nature in the heading (see Table 1 caption). Indeed
+these two parameters play a key role in the number of steps and lengths as shown
+in Tables 5 and 6. It must be noted that these two parameter determine how
+fast the head steps and rebinds to the MT (related to the reviewer’s previous
+comment above) so that is how they would relate to the number of steps and run
+lengths. i.e. if the head does not step fast enough, the other one steps and so
+the complex falls off. In order to rigorously quantify the statistical significance of
+these and other parameters, sensitivity analysis of the model parameters would
+be beneficial but for this, space-time series data will be essential.
+6
+0. Based on stochastic stepping with limited coordination, the authors simulated
+traces for the positions of several dynein components. In figure 4b, the presented
+trace of cargo does not show a stepping pattern while the tail, rings, and MTBDs
+all show a stepping behavior (figure 4c,d,e,f ). There are no external forces acting
+on the cargo and I was expecting to see a similar stepping profile at the cargo,
+especially the numerical solutions for independent stepping assumption shows a
+clear stepping pattern for the cargo similar to the tail region (figure 9a, b).
+Response: Although the locus of the cargo does not seem to show a stepping
+pattern, zooming in will show however that this is not the case and that the
+cargo does indeed step. The amplitude of the steps are not so pronounced. When
+dwelling is included in the modelling, the cargo exhibits large amplitudes of the
+same magnitudes as those of the other units and therefore the stepping patterns
+are well pronounced. We have included appropriate text to highlight this point
+to the reader.
+1. The authors should provide an explanation of why the cargo velocity increases
+over time before reaching a plateau (figure 5a).
+Response: The temporal dynamics of the cargo start with zero velocity since
+the cargo is at rest. Given that there are no external forces, the cargo has to be
+pick up speed once dynein starts to move along the microtubule but this speed
+does not continue to increase, instead it reaches a plateau where the profile of the
+velocity is oscillatory. This is in synch with the stepping patterns of the domains.
+2. The authors observed differences in the stepping behavior of the two rings com-
+pared to the MTBDs with rings are positioned further apart from each other and
+crossing paths at different time points (figure 11 e, f ). I would encourage them to
+provide further details on how the MTBDs positioning vary over time relative to
+the head and if the frequency of not passing and alternating steps differs between
+them.
+Response: Our computational results show that the frequency of alternating
+steps did not differ (an emergent process of the modelling). On the other hand,
+our results show that the not-passing steps differed by approximately 1-4% for
+optimal parameters, which is not such a big variation. However, this variation
+was significant for small values of the maximum separation distance (see Supple-
+mentary Material for details). We provided further explanation in the manuscript
+to highlight these differences.
+7
+eviewer: 2
+1. This paper deals with the migration of the cytoplasmic protein dynein along the
+microtubules. The authors propose a one-dimensional mechanical model that ad-
+dresses the evolution in time of the positions of several of the protein components:
+cargo, the tail domain, the AAA+ rings, and the microtubules binding domains
+(MTBDs). The derivation of the model results from force balance principles.
+After a series of assumptions and simplifications the authors propose the main
+formulation (4.20)-(4.25). In the continuation of the paper, the authors discuss
+variants of this model, simulate them, and compare the results with experimental
+data. Overall, it is a nicely written work that is worth publishing in RSOS. I
+have though a number of remarks that would like to see them addressed before
+publication.
+Response: We thank the reviewer for the positive comments about the quality
+of the manuscript and that it is appropriate for publication in the RSOS journal.
+Below we address the remarks raised by the reviewer.
+2. Point 1) Comparison with the previous work [29] of some of the authors.
+Response: Thank you. We have included some remarks detailing the compar-
+ison between this work and that previously published by Crossley et al., (2012).
+Unlike this current work, the previous study was devoid of any statistical analy-
+sis which forms the bulk of the current model. The main key differences are the
+stochastic multiscale modelling, the use of continuous functions to model bind-
+ing and ATP force, and the introduction of the tail component. Furthermore,
+we modelled for the first time variable stepping, including heads being able to
+move independently, not in a strictly coordinated pattern. Other processes such
+as variable steps, backward stepping, dwelling times, etc. were not modelled in
+the previous study. Comparison with previous work has been detailed in the
+appropriate section of the manuscript.
+3. Point 2) Page 5, last point: While you state ”There are no external forces ...
+trap”, in page 6 line 25 you state ”For the cargo there is a spring ... on it”.
+Rephrase to avoid the ambiguity.
+Response: We have rephrased this statement by precisely stating what we do
+not model as part of the cargo.
+4. Point 3) Page 6 line 23: A more extensive discussion of the expected differences
+between the 1- and the 2- dimensional versions of the model and the biological
+8
+reality.
+Response: We have included an extensive discussion of the expected differ-
+ences between the 1- and 2-dimensional versions both experimentally and theoret-
+ically. A 2-dimensional model is closer to biological reality, and a 3-dimensional
+model will be the closest model to biological reality. However, due to the chal-
+lenges both experimentally and computationally, such extensions are beyond the
+scope of this manuscript.
+5. Point 4) Page 8, Remark 4.2: You refer to 2-dimensional stepping implying that
+the protein will be walking along the surface of the microtubule? You should dis-
+cuss that slightly more. .
+Response: We have included a brief explanation on the effects of two-dimensional
+stepping. Two-dimensional studies are of great interest and forms part of our cur-
+rent studies.
+6. Point 5) Page 9: The explanation of the synchronization between the two heads
+in the paragraph before (4.14) should be more clear.
+Response: We have rephrased the wording above equation (4.14) appropri-
+ately.
+7. Point 6) Page 9: Remark 4.3: Reformulate ”...in Section (d) and in Section
+(d)...”.
+Response: Thank you. The RSOS template does not differentiate between
+subsections from different sections. We had to make this explicit in the text file.
+Thank you once again.
+8. Point 7) Page 9, Remark 4.4: Clearly this works for discrete steps. How does the
+model incorporate the continuity of time?.
+Response: Time continuity is reflected and embedded in the time-variables
+associated with the domains. These variables are monitored (once computed) if
+they are located at the discrete steps or not.
+9. Point 8) Page 10, Nondimensionalization: Do you mean that the coefficient of
+the acceleration terms, as they emerge from the dimensional analysis, are small
+9
+and hence neglected, or do you make additional assumptions on their magnitude?.
+Response: We thank the reviewer for this useful comment. Indeed, the coeffi-
+cients of the acceleration terms can be shown to be small and therefore negligible
+compared to the velocity terms and other leading terms. We do not make any
+additional assumptions about their magnitudes, these are computed through non-
+dimensionalisation.
+0. Point 9) Page 11: Independent stepping: ”It has been suggested...” Do you mean
+previously in the literature? This sentence implies that some discussion took place
+for which the reader of this paper is unaware of.
+Response: We have rephrased this statement and indicated with a reference
+to show that this suggestion was stated in the literature.
+1. Point 10) Page 12: Replace the small letter t by the capital in the interval
+[0, tFinal ].
+Response: We have changed the notation accordingly.
+2. Point 11) Page 12: You refer to the ode45 solver of MATLAB. It would be ad-
+visable to briefly mention the underlying numerical method that this solver in-
+corporates. This will increase the numerical value of the paper and allow for
+non-MATLAB users to reproduce your experiments with greater ease. Same re-
+mark holds for the solver ode15s that appears later in the manuscript. Also take
+care and refer to MATLAB with all capital letters.
+Response: Detailed explanations of MATLAB solvers for systems of (stiff
+and non-stiff) ordinary differential equations have been included in appropriate
+sections where these appear at first. MATLAB is now referred throughout in
+capital letters.
+3. Point 12) Page 17, Remark 5.4: It is not clear what the meaning of the ”with
+an average of ... 20%” is. Please reformulate. Also give a conclusion to this
+Remark, i.e. is the fact ”This is just under...” good or bad for the model?.
+Response: The wording as been reformulated. Thanks for the suggestion.
+4. Point 13) Page 19, line 16: It seems that the citation [42] refers to the particular
+dwelling model instead of MATLAB.
+10
+Response: Well spotted. We have moved the reference to where it is most
+appropriate. Thanks a lot.
+5. Point 14) Page 20, line 33: What do you mean by ”external to the model”? Are
+there more processes that affect the mathematical model without being addressed
+in the paper?.
+Response: We have rephrased and stated which external processes are not
+modelled.
+6. Point 15) Page 13, Figure 4: What do you mean by ”trajectory” for the cargo
+and the rest of the components? Is it distance/position? The model (4.20)-(4.25)
+that you solve is 1 dimensional after all.
+Response: The trajectory refers to the path taken by each of the xi (t), the
+distances travelled in time. Also these could be referred to as positions of the
+components as a function of time. We have added appropriate wording.
+7. Point 16) Page 13, Figure 4: Have you verified that the acceleration that the cargo
+velocity (sub-)figure implies, is small enough to be neglected in (4.20)-(4.25)? For
+later times, as Figure 5 exhibits, the cargo reaches ”constant” velocity.
+Response: Since we have neglected acceleration in our model formulation
+through non-dimensionalisation, in the model, there are no terms associated with
+acceleration.
+8. Point 17) Page 20 line 50: ”stepping probability ... has stepped” isn’t this the
+definition of PD ? The reader has done some effort to accept to the notation and
+it is better to use it.
+Response: Indeed it is the definition, however, we feel the text description is
+more suitable than the mathematical definition, for this particular instance.
+9. Point 18) Page 23 line 16: E. Campillo-Funollet is not a sole author in [45].
+Response: The work referenced by Campillo-Funollet et al. has been now
+correctly cited within the discussion on parameter identification using Bayesian
+approach.
+11
+0. Point 19) Page 23 line 19: Reformulate the sentence ”For such a framework ...
+data”. Refrain from suggesting other scientists to ”... measure some of the pro-
+cesses ...” via the manuscript.
+Response: This statement has been removed and we have indicated the need
+for space-time series data to help with the inverse problem of finding parameters
+given experimental data and the solution of the mathematical model.
+12
+Society Open

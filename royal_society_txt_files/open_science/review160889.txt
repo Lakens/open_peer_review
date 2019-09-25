@@ -1,0 +1,845 @@
+Adaptive recursive algorithm for optimal weighted
+suprathreshold stochastic resonance
+Liyan Xu, Fabing Duan, Xiao Gao, Derek Abbott and Mark D. McDonnell
+Article citation details
+R. Soc. open sci. 4: 160889.
+http://dx.doi.org/10.1098/rsos.160889
+Review timeline
+Original submission: 8 November 2016 Note: Reports are unedited and appear as
+Revised submission: 10 May 2017 submitted by the referee. The review history
+Final acceptance: 14 August 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-160889.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This paper investigates signal reconstruction from an array of threshold quantizers assisted by
+noise via suprathreshold stochastic resonance. Specifically, the paper shows that optimal
+weighted decoding can be implemented adaptively by combining a Kalman filter and a least-
+mean-square (LMS) recursive algorithm, offering a solution for reconstruction of non-stationary
+input signals or input signals with partially known statistics.
+The paper is interesting and contributes new results to the timely and important subject of
+suprathreshold stochastic resonance and noise-enhanced information processing. It could
+however be improved along the following lines before it can be published.
+1) It is not clear if the vector w^o in Eqs. (2.2) or (2.4) always exists for any k. The conditions
+thereof should be clarified.
+2) The statistical expectation E(.) introduced in Eq. (2.6) should be clarified. According to which
+probability distribution(s) is it defined? There is the distribution of the array noise. But for the
+input signal x_k, it should be clarified if it is handled as a deterministic or a stochastic signal, and
+if/when its probability distribution is involved in the expectation E(.).
+3) The authors insist for their approach on the "tracking capability for the time-varying input
+signal, provided that the variations are sufficiently slow". It would be interesting to provide more
+explicit and quantitative elements to appreciate what "slow" means in this context. For the input
+signal, the authors choose a time variation as sin(200\pi t), which amounts in the input to a
+period T=0.01. In which respect is this "slow" or not? This should be referred in particular to an
+intrinsic time scale for the adaptive algorithm. Such an intrinsic time scale for the adaptive
+algorithm should be made explicit and used as a basis to analyze the temporal dynamics of the
+adaptive process, and discuss the issue of convergence of the adaptive algorithm.
+4) Also, since there is no dynamic effect or intrinsic time constant in the system of Fig. 1, it seems
+that only the instantaneous signal amplitudes should matter for determining the response of the
+system to a stationary input. In such conditions, there should be no influence of the correlation
+time (the second-order statistics) of the array noise, only the amplitude distribution (the first-
+order statistics) of this noise should matter. Varying the correlation time \tau in Eq. (3.2) plays a
+role only via changing the amplitude distribution of the noise, but with no direct relevance to the
+dynamics of the system of Fig. 1. What is done by varying \tau in Eq. (3.2) can be undone by
+adjusting D in Eq. (3.2) so as to form equivalent driving conditions for the system of Eq. (1). In
+this respect, the curves of Fig. 3 for a stationary input probably show several times the same
+response of the system driven in equivalent conditions via a proper interpretation of the
+parameters \tau and D.
+5) An intrinsic time scale in the adaptive algorithm could also be referred to the correlation time
+\tau of the noise (or conversely), but currently no such scale is made explicit and discussed.
+6) Things would change with a non-stationary input, but in such conditions the dynamics should
+be analyzed by also referring the correlation time \tau to the time scale T introduced by the non-
+stationary input. If this time scale is T=0.01 then correlation times \tau = 0.15 or 0.3 or 0.5 only
+probe three times the same regime of \tau >> T, while it could be more useful to investigate
+three distinct regimes of \tau >> T, or \tau << T, or \tau of the order of T.
+7) It is more or less the same for the signal amplitudes. It would be useful to identify meaningful
+intrinsic physical scales for the signal amplitudes and refer the analysis to such scales. For
+instance, since in Figs. 2, 5(A), 6 the MSE is referred to the standard deviation \sigma_\eta
+3
+defined for the array noise, it would be more relevant in Figs. 3, 4, 5(B) to refer the MSE to the
+standard deviation of the correlated noise instead of D. Also in Section 3(c) the distribution of
+thresholds m/(M+1) is meaningful only in relation to a meaningful scale to refer the signal
+amplitudes.
+8) At the end of the 2nd parag. of Section 3(a) the parameter \sigma has not been defined (it
+seems).
+9) There are two issues concerning the autocorrelation of Eq. (3.3): the exponential should include
+a minus sign; the prefactor should be D/(2\tau).
+_____________________________________________
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The manuscript presents a study of supra threshold stochastic resonance (SR). The phenomenon
+is well known ad it has been widely studied by the authors for many years. In this ms they plan
+to extend their work to use optimal weighted decoding with more general input characteristics
+by utilizing the Kalman-LMS recursive algorithm. The paper is well written and of potential
+interest for specialised readers.
+Before publication, however, I recommend the following points:
+1) In the discussion of the coloured noise effects, the authors write: “A further observation is that
+the minimum MSE value is almost invariant with t increasing.” This is a potentially interesting
+observation that requires a deeper explanation. Can the authors discuss why there is this
+behaviour?
+2) The references need some integration:
+- SR in multi threshold systems was initially introduced in this paper: “Stochastic resonance in
+multi-threshold systems”, L Gammaitoni, Physics Letters A 208 (4-6), 315-322 (1995). This paper is
+not cited and it should be.
+- Reference 28 should be quoted in the paper as “Mandic et al.” in order to facilitate the reader.
+4
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+This paper adresses the classical problem of finding the optimal weigth distribution in a
+weighted summing array of noisy nonlinear elements which exhibits suprathreshold stocastic
+resonance ( a nonlinear phenonenon widely studied where noise can play a positive effect in
+signal quantization)
+The proposed study is restricted to a static nonlinearity, that is a simple threshold filtering which
+is submitted to white or more realistic colored noise. A Ornstein Uhlenbeck process provides this
+colored noise which corresponds to a low pass filtering of the white noise.
+Throughout the paper, two cases are considered for the distribution of the network thresholds:
+- the case where all thresholds of the network are set to the same value,
+- and the case where linear growing values of thresholds are set for various size of grouped
+nonlinear elements.
+The main interest of this paper lies in using a Kalman least mean square recursive algorithm to
+set the weight distribution of the summing network.
+Compared to a Gaussian input signal with unitary standard deviation, it is shown that better
+performances are achieved when the standard deviation of the input signal slowly evolves versus
+time according to a sinusoidal law. Indeed, the Mean square error is far smaller when the input
+signal features are non stationary, whatever the considered noise (white or colored) or whatever
+the considered thresholds distribution (same threshold for all nonlinearities or grouped
+thresholds)
+The paper is clearly written and well organized and the results have been rather well presented.
+Despite some parameters choices (see point C below), to my point of view this paper deserves
+publication. I think the following points could be raised by the authors before publications to
+enhance the paper and its impact:
+5
+A) Minor remark:
+line 29 and 31 p6, for the noise root mean square amplitude, the subscript \eta of \sigma is
+missing in the text since it refers to the xlabel of Figure 2.
+B) Missing details in the study:
+It is not precised what slow time varing exactly means for the standard deviation of the input
+signal. Moreover a sinusoidal law of frequency 100 is considered for the input signal standard
+deviation. Please, could you briefly specify what is the impact of the frequency of this sinusoidal
+law on the presented results.
+C) Remark concerning the modus operandi to present the results:
+- C 1 ) line 9 to 12 p 7: "It is noted that, for sufficient time duration, the average power for .." The
+authors explain that for stationary input (unitary standard deviation), the average power is unity
+while for non stationary input with sinusoidally standard deviation the average power is 1/2.
+i regret that the authors have not also taken an average power of 1/2 for the stationary input.
+Indeed, I think it should have been more appropriate to compare stationary and non stationary
+input signal performances with same average power.
+- C 2) Concerning colored noise and white noise, I also think that noise with same power could
+have been considered. Indeed, for the colored noise presented in this paper, the power depends
+on the corelation time of the Ornsein-Uhlenbeck process (see reference below)
+Coherence resonance induced by colored noise near Hopf bifurcation Juan Ma, Tiejun Xiao,
+Zhonghuai Hou, and Houwen Xin Chaos 18, 043116 (2008); doi: 10.1063/1.3013178 Note that i
+don't want the authors to cite this reference. I think, it explains the shift of the curves of Fig 3,
+where greater noise intensities are requested to minimize the Mean Square Error when the
+corelation time increases
+Please briefly comment this two points in the article.
+D ) Comments concerning the impact of the paper:
+The results of this paper are restricted to static nonlinearities.
+To enhance the impact of their paper, i suggest the author to discuss if their finding could be
+extended to other nonlinear systems. For instance, since one subject area selected for this paper is
+biophysics, It could be discussed potential applications to nonlinear dynamical systems.
+label_end_comment
+Decision letter (RSOS-160889)
+20-Mar-2017
+Dear Dr xu,
+The editors assigned to your paper ("Adaptive recursive algorithm for optimal weighted
+suprathreshold stochastic resonance") have now received comments from reviewers. We would
+like you to revise your paper in accordance with the referee and Associate Editor suggestions
+which can be found below (not including confidential reports to the Editor). Please note this
+decision does not guarantee eventual acceptance.
+6
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Apr-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160889
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+7
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of R. Kerry Rowe
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+This paper investigates signal reconstruction from an array of threshold quantizers assisted by
+noise via suprathreshold stochastic resonance. Specifically, the paper shows that optimal
+weighted decoding can be implemented adaptively by combining a Kalman filter and a least-
+mean-square (LMS) recursive algorithm, offering a solution for reconstruction of non-stationary
+input signals or input signals with partially known statistics.
+The paper is interesting and contributes new results to the timely and important subject of
+suprathreshold stochastic resonance and noise-enhanced information processing. It could
+however be improved along the following lines before it can be published.
+1) It is not clear if the vector w^o in Eqs. (2.2) or (2.4) always exists for any k. The conditions
+thereof should be clarified.
+2) The statistical expectation E(.) introduced in Eq. (2.6) should be clarified. According to which
+probability distribution(s) is it defined? There is the distribution of the array noise. But for the
+input signal x_k, it should be clarified if it is handled as a deterministic or a stochastic signal, and
+if/when its probability distribution is involved in the expectation E(.).
+8
+3) The authors insist for their approach on the "tracking capability for the time-varying input
+signal, provided that the variations are sufficiently slow". It would be interesting to provide more
+explicit and quantitative elements to appreciate what "slow" means in this context. For the input
+signal, the authors choose a time variation as sin(200\pi t), which amounts in the input to a
+period T=0.01. In which respect is this "slow" or not? This should be referred in particular to an
+intrinsic time scale for the adaptive algorithm. Such an intrinsic time scale for the adaptive
+algorithm should be made explicit and used as a basis to analyze the temporal dynamics of the
+adaptive process, and discuss the issue of convergence of the adaptive algorithm.
+4) Also, since there is no dynamic effect or intrinsic time constant in the system of Fig. 1, it seems
+that only the instantaneous signal amplitudes should matter for determining the response of the
+system to a stationary input. In such conditions, there should be no influence of the correlation
+time (the second-order statistics) of the array noise, only the amplitude distribution (the first-
+order statistics) of this noise should matter. Varying the correlation time \tau in Eq. (3.2) plays a
+role only via changing the amplitude distribution of the noise, but with no direct relevance to the
+dynamics of the system of Fig. 1. What is done by varying \tau in Eq. (3.2) can be undone by
+adjusting D in Eq. (3.2) so as to form equivalent driving conditions for the system of Eq. (1). In
+this respect, the curves of Fig. 3 for a stationary input probably show several times the same
+response of the system driven in equivalent conditions via a proper interpretation of the
+parameters \tau and D.
+5) An intrinsic time scale in the adaptive algorithm could also be referred to the correlation time
+\tau of the noise (or conversely), but currently no such scale is made explicit and discussed.
+6) Things would change with a non-stationary input, but in such conditions the dynamics should
+be analyzed by also referring the correlation time \tau to the time scale T introduced by the non-
+stationary input. If this time scale is T=0.01 then correlation times \tau = 0.15 or 0.3 or 0.5 only
+probe three times the same regime of \tau >> T, while it could be more useful to investigate
+three distinct regimes of \tau >> T, or \tau << T, or \tau of the order of T.
+7) It is more or less the same for the signal amplitudes. It would be useful to identify meaningful
+intrinsic physical scales for the signal amplitudes and refer the analysis to such scales. For
+instance, since in Figs. 2, 5(A), 6 the MSE is referred to the standard deviation \sigma_\eta
+defined for the array noise, it would be more relevant in Figs. 3, 4, 5(B) to refer the MSE to the
+standard deviation of the correlated noise instead of D. Also in Section 3(c) the distribution of
+thresholds m/(M+1) is meaningful only in relation to a meaningful scale to refer the signal
+amplitudes.
+8) At the end of the 2nd parag. of Section 3(a) the parameter \sigma has not been defined (it
+seems).
+9) There are two issues concerning the autocorrelation of Eq. (3.3): the exponential should include
+a minus sign; the prefactor should be D/(2\tau).
+_____________________________________________
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+The manuscript presents a study of supra threshold stochastic resonance (SR). The phenomenon
+is well known ad it has been widely studied by the authors for many years. In this ms they plan
+to extend their work to use optimal weighted decoding with more general input characteristics
+by utilizing the Kalman-LMS recursive algorithm. The paper is well written and of potential
+interest for specialised readers.
+Before publication, however, I recommend the following points:
+9
+1) In the discussion of the coloured noise effects, the authors write: “A further observation is that
+the minimum MSE value is almost invariant with t increasing.” This is a potentially interesting
+observation that requires a deeper explanation. Can the authors discuss why there is this
+behaviour?
+2) The references need some integration:
+- SR in multi threshold systems was initially introduced in this paper: “Stochastic resonance in
+multi-threshold systems”, L Gammaitoni, Physics Letters A 208 (4-6), 315-322 (1995). This paper is
+not cited and it should be.
+- Reference 28 should be quoted in the paper as “Mandic et al.” in order to facilitate the reader.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_6
+This paper adresses the classical problem of finding the optimal weigth distribution in a
+weighted summing array of noisy nonlinear elements which exhibits suprathreshold stocastic
+resonance ( a nonlinear phenonenon widely studied where noise can play a positive effect in
+signal quantization)
+The proposed study is restricted to a static nonlinearity, that is a simple threshold filtering which
+is submitted to white or more realistic colored noise. A Ornstein Uhlenbeck process provides this
+colored noise which corresponds to a low pass filtering of the white noise.
+Throughout the paper, two cases are considered for the distribution of the network thresholds:
+- the case where all thresholds of the network are set to the same value,
+- and the case where linear growing values of thresholds are set for various size of grouped
+nonlinear elements.
+The main interest of this paper lies in using a Kalman least mean square recursive algorithm to
+set the weight distribution of the summing network.
+Compared to a Gaussian input signal with unitary standard deviation, it is shown that better
+performances are achieved when the standard deviation of the input signal slowly evolves versus
+time according to a sinusoidal law.
+Indeed, the Mean square error is far smaller when the input signal features are non stationary,
+whatever the considered noise (white or colored) or whatever the considered thresholds
+distribution (same threshold for all nonlinearities or grouped thresholds)
+The paper is clearly written and well organized and the results have been rather well presented.
+Despite some parameters choices (see point C below), to my point of view this paper deserves
+publication. I think the following points could be raised by the authors before publications to
+enhance the paper and its impact:
+A) Minor remark:
+line 29 and 31 p6, for the noise root mean square amplitude, the subscript \eta of \sigma is
+missing in the text since it refers to the xlabel of Figure 2.
+B) Missing details in the study:
+It is not precised what slow time varing exactly means for the standard deviation of the input
+signal.
+Moreover a sinusoidal law of frequency 100 is considered for the input signal standard deviation.
+Please, could you briefly specify what is the impact of the frequency of this sinusoidal law on the
+presented results.
+C) Remark concerning the modus operandi to present the results:
+10
+- C 1 ) line 9 to 12 p 7: "It is noted that, for sufficient time duration, the average power for .."
+The authors explain that for stationary input (unitary standard deviation), the average power is
+unity while for non stationary input with sinusoidally standard deviation the average power is
+1/2. i regret that the authors have not also taken an average power of 1/2 for the stationary input.
+Indeed, I think it should have been more appropriate to compare stationary and non stationary
+input signal performances with same average power.
+- C 2) Concerning colored noise and white noise, I also think that noise with same power could
+have been considered. Indeed, for the colored noise presented in this paper, the power depends
+on the corelation time of the Ornsein-Uhlenbeck process (see reference below)
+Coherence resonance induced by colored noise near Hopf bifurcation Juan Ma, Tiejun Xiao,
+Zhonghuai Hou, and Houwen Xin Chaos 18, 043116 (2008); doi: 10.1063/1.3013178 Note that i
+don't want the authors to cite this reference. I think, it explains the shift of the curves of Fig 3,
+where greater noise intensities are requested to minimize the Mean Square Error when the
+corelation time increases
+Please briefly comment this two points in the article.
+D ) Comments concerning the impact of the paper:
+The results of this paper are restricted to static nonlinearities.
+To enhance the impact of their paper, i suggest the author to discuss if their finding could be
+extended to other nonlinear systems. For instance, since one subject area selected for this paper is
+biophysics, It could be discussed potential applications to nonlinear dynamical systems.
+Author's Response to Decision Letter for (RSOS-160889)
+See Appendix A.
+label_version_2
+RSOS-160889.R1 (Revision)
+label_author_4
+Review form: Reviewer 4
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+11
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_7
+This paper proposes an optimal weighted decoding scheme based on the Kalman-LMS recursive
+algorithm to realize suprathreshold stochastic resonance (SSR). It is very interesting and novel to
+the best of my knowledge. The paper is well written and the analysis is convincing. I have no
+objections against publication of the manuscript in its present form.
+label_end_comment
+Decision letter (RSOS-160889.R1)
+14-Aug-2017
+Dear Dr xu,
+I am pleased to inform you that your manuscript entitled "Adaptive recursive algorithm for
+optimal weighted suprathreshold stochastic resonance" is now accepted for publication in Royal
+Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+12
+Reviewer(s)' Comments to Author:
+Reviewer: 4
+Comments to the Author(s)
+label_comment_8
+This paper proposes an optimal weighted decoding scheme based on the Kalman-LMS recursive
+algorithm to realize suprathreshold stochastic resonance (SSR). It is very interesting and novel to
+the best of my knowledge. The paper is well written and the analysis is convincing. I have no
+objections against publication of the manuscript in its present form.
+Appendix A
+Reply Letter
+May 10, 2017
+Dear Prof. Alice Power, Editor of Royal Society Open Science,
+Thank you for your messages on March 20, 2017, regarding our manuscript RSOS-160889 “
+Adaptive recursive algorithm for optimal weighted suprathreshold stochastic resonance,” by
+L. Xu, F. Duan, X. Gao, D. Abbott and M. D. McDonnell.
+We have taken into account all the points raised by the referees and have thereby improved
+the paper. We thank the reviewers very much for these insightful comments and suggestion-
+s. Following these suggestions, we have improved the current manuscript. We reply to the
+reviewers comments as follows in detail.
+———————————————————-
+Responses to the report of Referee 1
+Comments 1: It is not clear if the vector wo in Eqs. (2.2) or (2.4) always exists
+for any k. The conditions thereof should be clari<U+FB01>ed.
+Reply:
+In Eq. (2.2), we note that the outputs yi,k = 1 depend on the nonlinearity g and the input
+xk + <U+03B7>i,k . Assume the vectors yk = [y1,k , y2,k , · · · , yN,k ]<U+22A4> and wo = [w1,k
+o o
+, w2,k , · · · , wN,k
+o
+]<U+22A4> ,
+then we have
+xk = yk<U+22A4> wo . (R1)
+When the inverse matrix (yk ykT )-1 exists, the Wiener optimal weight vector wo is given by
+wo = (yk ykT )-1 yk xk . (R2)
+For the stationary input xk , the memoryless nonlinearity g and the stationary noise <U+03B7>k , we
+assume the optimal weight vector wko converges to the Wiener solution of wo .
+Change:
+After Eq.(2.2), we clari<U+FB01>ed the existence of the vector wo . We added “When the inverse
+matrix (yk ykT )-1 exists, the Wiener optimal weight vector wo is given by wo = (yk ykT )-1 yk xk
+[16,21]. For the stationary input xk , the memoryless nonlinearity g and the stationary noise
+<U+03B7>k , we assume the optimal weights wko converges to the Wiener solution of wo .”
+Comments 2: The statistical expectation E(.) introduced in Eq.(2.6) should
+be clari<U+FB01>ed. According to which probability distribution(s) is it de<U+FB01>ned? There
+is the distribution of the array noise. But for the input signal xk , it should be
+clari<U+FB01>ed if it is handled as a deterministic or a stochastic signal, and if/when its
+probability distribution is involved in the expectation E(.).
+Reply: Thank you for this good suggestion. Here, we can treat the input xk as a de-
+terministic signal or a stationary stochastic process [29]. The statistical expectation E(·)
+introduced in Eq. (2.6) is de<U+FB01>ned in terms of the joint probability of the output yk and the
+weight error error w~k . Note that the probability distribution yk is closely related to the
+input signal xk and the array noise <U+03B7>k . The theoretical calculation of MSE is di<U+FB03>cult, and
+we will numerically present the MSE distortion for a su<U+FB03>ciently large observation time in
+the following experiments.
+Changes:
+1: In the Section of Model and method (a) Model, we clarify “All elements receive the
+same input signal xk representing the kth element in the time series, which is assumed to be
+a deterministic signal or a stationary stochastic process [29].”
+2: Below Eq. (2.6), we clarify the de<U+FB01>nition of statistical expectation E(·) introduced in
+Eq.(2.6). We added “where the statistical expectation E(·) introduced in Eq. (2.6) is de<U+FB01>ned
+in terms of the joint probability of the output yk and the weight error vector w~k .”
+3: We also rewrite the instantaneous time-varying MSE of Eq. (2.7), which is derived
+with the assumption of the output yk at the recursion step k being unrelated to the weight
+error vector w~k-1 at the time step k - 1.
+Comments 3: The authors insist for their approach on the ”tracking capabil-
+ity for the time-varying input signal, provided that the variations are su<U+FB03>ciently
+slow”. It would be interesting to provide more explicit and quantitative ele-
+ments to appreciate what ”slow” means in this context. For the input signal,
+the authors choose a time variation as sin(200pt), which amounts in the input
+to a period T = 0.01. In which respect is this ”slow” or not? This should be
+referred in particular to an intrinsic time scale for the adaptive algorithm. Such
+an intrinsic time scale for the adaptive algorithm should be made explicit and
+used as a basis to analyze the temporal dynamics of the adaptive process, and
+discuss the issue of convergence of the adaptive algorithm.
+Reply:
+Thanks for these good suggestions. In the previous version, we mainly introduce the
+adaptive algorithm into the weighted suprathreshold stochastic resonance for real-time sig-
+nal processing problems. Yes, the issues of convergence of the adaptive algorithm and the
+intrinsic time scale are necessary, and need to be explicitly explained.
+1: Issue of convergence of the adaptive algorithm.
+Based on Eqs. (2.4) and (2.8), the convergence of wk to the optimal weight vector wo is equiv-
+alent to the convergence of the mean square deviation Jk . We also note that, for every recur-
+sion step, the instantaneous time-varying MSE of Eq. (2.7) is denoted by <U+03C2>k = ykT Pk-1 yk = 0.
+From Eq. (2.14), the mean square deviation Jk in Eq. (2.13) can be written as
+Jk = Jk-1 - gkT Pk-1 yk
+yT P T Pk-1 yk
+= Jk-1 - k Tk-1
+yk Pk-1 yk
+||Pk-1 yk ||2
+= Jk-1 - . (R3)
+<U+03C2>k
+Note that Jk = E[||w e k ||2 ] = 0 and ykT Pk-1
+T
+Pk-1 yk = ||Pk-1 yk ||2 = 0, thus we <U+FB01>nd
+0 = Jk = Jk-1 , (R4)
+for <U+03C2>k <U+0338>= 0 and any recursion step k. In practice, we update the learning gain as
+Pk-1 yk Pk-1 yk
+gk = = , (R5)
+ykT Pk-1 yk + d <U+03C2>k + d
+and the mean square deviation Jk becomes
+||Pk-1 yk ||2
+Jk = Jk-1 - , (R6)
+<U+03C2>k + d
+for d > 0 and <U+03C2>k + d > 0. The inequality of Eq. (R4) still holds. Therefore, as k <U+2192> 8, the
+mean square deviation Jk <U+2192> 0 is convergent.
+2: Issue of convergent time.
+In order to obtain the fastest convergence time, we need to maximize the term of ||Pk-1 yk ||2 /<U+03C2>k
+in Eq. (R3). Since Pk-1 is a symmetric positive semi-de<U+FB01>nite matrix, thus we have the normal
+form
+Pk-1 = Q<U+039B>k-1 QT , (R7)
+with the normalized orthonormal matrix QQT = I and the eigenvalue matrix <U+039B>k-1 =
+diag[<U+03BB>1 , <U+03BB>2 , · · · , <U+03BB>N ]. Then, we can rewrite the term
+ykT Pk-1
+T
+Pk-1 yk ykT Q<U+039B>k-1 QT Q<U+039B>k-1 QT yk zT 2
+k <U+039B>k-1 zk
+= = , (R8)
+ykT Pk-1 yk ykT Q<U+039B>k-1 QT yk zT
+k <U+039B>k-1 zk
+with zk = QT yk . Noting the Rayleigh quotient, we obtain
+zT 2
+k <U+039B>k-1 zk
+T
+tr(ykT Pk-1 Pk-1 yk ) <U+03C2>k
+0 = <U+03BB>min = T
+= <U+03BB>max = = = 1, (R9)
+zk <U+039B>k-1 zk <U+03C2>k + d <U+03C2>k + d
+with <U+03BB>min = min{<U+03BB>1 , <U+03BB>2 , · · · , <U+03BB>N } and <U+03BB>max = max{<U+03BB>1 , <U+03BB>2 , · · · , <U+03BB>N }. Thus, the convergence
+time is related to both the output vector yk and the weight error covariance matrix Pk-1 .
+In practice, we choose the unit matrix P0 = I, thus the initial mean square deviation
+J0 = tr(P0 ) = N . From Eq. (R6), we <U+FB01>nd J1 = N - ||y1 ||2 /(||y1 ||2 + d) ˜ N - 1. For
+each recursion step k and from Eq. (R9), we assume Jk ˜ N - k. Therefore, the fastest
+convergence time is about N times sampling time <U+2206>t, i.e. the recursion step k = N . The
+larger the parallel array size N is, the longer the convergent time is. We must note that this
+is an ideal assumption of convergence time N <U+2206>t, and the experimental results tell us the
+intrinsic time scale for the adaptive algorithm is larger than N <U+2206>t.
+3: Tracking capability of the adaptive algorithm for time-varying inputs
+It is well known [21-27] that adaptive methods o<U+FB00>er the possibility of tracking nonstationary
+changes of the environment, as long as such changes occur slowly enough to allow convergence
+between changes.
+With the above analysis of 2: Issue of convergent time, it is seen that, for a given array
+size N and the sampling time <U+2206>t, the fastest or ideal convergence time is N <U+2206>t. Thus, the
+tracking capability of the adaptive algorithm for time-varying inputs is certainly limited by
+this intrinsic time scale N <U+2206>t. It requires that the time variation of nonstationary inputs
+must be slower than N <U+2206>t. In the previous manuscript, under the conditions of <U+2206>t = 10-3 s
+and N = 63, the fastest convergence time is N <U+2206>t = 0.063 s. For the time-varying standard
+deviation sx (t) = sin(200pt) with period T = 0.01 s, the adaptive v algorithm is overly eval-
+uated. Thus, in the current revised version, we take sx (t) = 2 sin(2pt) with period T = 1
+s. The mean square deviation Jk for nonstationary inputs with di<U+FB00>erent time variation is
+shown in Fig. 2 (a new <U+FB01>gure in this revised version). The Jk shows better tracking capabil-
+ities for the nonstationary variations of sx (t) = sin(2pt) and sx (t) = sin(0.2pt) than that of
+sx (t) = sin(200pt).
+Changes:
+1: In Appendix, we present the convergence issues of this adaptive algorithm, and also
+approximately derive the intrinsic time scale of N <U+2206>t.
+2: In order to illustrate the tracking capability of the adaptive algorithm, we added a
+new <U+FB01>gure of Fig. 2 in this revised version.
+3: After the <U+FB01>fth paragraph of Section 3(a), we present the reason of choosing the time
+variation of standard deviation of sx (t) = sin(2pt). We added “We now consider the case
+v xk is Gaussian distribut-
+where the input xk is non-stationary stochastic signal. For instance,
+ed...since such time variations of standard deviation sx (t) = 2 sin(2pf t), compared with
+the intrinsic time scale of N <U+2206>t, occur slowly enough.”
+4: Invthis revised version, the nonstationary inputs are all with the standard deviation
+sx (t) = 2 sin(2pt).
+Comments 4: Also, since there is no dynamic e<U+FB00>ect or intrinsic time constant
+in the system of Fig. 1, it seems that only the instantaneous signal amplitudes
+should matter for determining the response of the system to a stationary input.
+In such conditions, there should be no in<U+FB02>uence of the correlation time (the
+second-order statistics) of the array noise, only the amplitude distribution (the
+<U+FB01>rst-order statistics) of this noise should matter. Varying the correlation time
+t in Eq. (3.2) plays a role only via changing the amplitude distribution of the
+noise, but with no direct relevance to the dynamics of the system of Fig. 1. What
+is done by varying t in Eq. (3.2) can be undone by adjusting D in Eq. (3.2)
+so as to form equivalent driving conditions for the system of Eq. (1). In this
+respect, the curves of Fig. 3 for a stationary input probably show several times
+the same response of the system driven in equivalent conditions via a proper
+interpretation of the parameters t and D.
+Reply:
+Yes, the reviewer proposed a good question. There is no dynamic e<U+FB00>ect or intrinsic time
+constant in the system of Fig. 1, the curves of Fig. 4 (Fig. 3 of the previous version) for
+a stationary input probably show several times the same response of the system driven in
+equivalent conditions. This point can be inferred from Eq. (3.3) of the variance sc2 = D/t
+of OU noise. In Fig. 3 of the previous version, we <U+FB01>nd that, upon increasing the correlation
+time t , the position of the minimum MSE value shifts toward higher D values. But, the OU
+noise variance where the minimum MSE value occurs is constant. Therefore, the minimum
+MSE value is almost invariant with the increase of t . According to the 7th advice, we plot
+the MSE distortion as a function of the standard deviation s<U+03B7> of OU noise in Fig. 4 in the
+current version.
+However, in Eq. (2.7), we assume the output yk at the recursion step k is not related to
+the weight error vector w~k-1 at the time step k - 1. Thus, the instantaneous time-varying
+MSE and the mean square deviation Jk are obtained. Based on Eq. (2.8), we deduce the
+weight vector estimate wk at each recursion step k. Here, we just apply this adaptive algo-
+rithm to the case of colored noise. In Fig. 4, it is seen that, as the correlation time t = 0.1 s,
+1 s and 10 s, the corresponding MSE distortions increase for both the non-stationary (dashed
+lines) or stationary (solid lines) inputs. The correlation time t does not a<U+FB00>ect the position
+of the minimum MSE value, but degrades the MSE distortion.
+Changes:
+1: In this version, Fig. 4 is replotted as a function of the standard deviation s<U+03B7> of OU
+noise.
+2 Before Fig. 4, we explain the e<U+FB00>ect of the correlation time t on the MSE distortion. We
+added “Figure 4 shows the MSE distortion against the standard deviation s<U+03B7> of the OU noise
+with di<U+FB00>erent correlation time t = 0.1 s, 1 s and 10 s...It is seen that, as the correlation time
+t increases, the corresponding MSE distortions increase for both the non-stationary (dashed
+lines) or stationary (solid lines) inputs.”
+Comments 5: An intrinsic time scale in the adaptive algorithm could also be
+referred to the correlation time t of the noise (or conversely), but currently no
+such scale is made explicit and discussed.
+Reply:
+In Appendix, we derive an intrinsic time scale of N <U+2206>t in the adaptive algorithm. In line
+with this way, the correlation time t of the noise is chosen as t = 0.1 s, 1 s and 10 s that
+all are larger than the time scale of N <U+2206>t = 0.063 s. We expect that the proposed adaptive
+algorithm is convergent in the interval of the correlation time.
+Change:
+In Fig. 4, the correlation time t of the noise is chosen as t = 0.1 s, 1 s and 10 s that all
+are larger than the time scale of N <U+2206>t = 0.063 s.
+Comments 6: Things would change with a non-stationary input, but in such
+conditions the dynamics should be analyzed by also referring the correlation
+time t to the time scale T introduced by the non-stationary input. If this time
+scale is T = 0.01 then correlation times t = 0.15 or 0.3 or 0.5 only probe three
+times the same regime of t >> T , while it could be more useful to investigate
+three distinct regimes of t >> T , or t << T , or t of the order of T.
+Reply: Thank you for your good suggestion. In this revised version, we investigate three
+distinct regimes of t >> T , or t << T , or t of the order of T. Please see the detailed reply
+to Comments 4, where the period is taken as T = 1 s.
+Comments 7: It is more or less the same for the signal amplitudes. It would
+be useful to identify meaningful intrinsic physical scales for the signal ampli-
+tudes and refer the analysis to such scales. For instance, since in Figs. 2, 5(A),
+6 the MSE is referred to the standard deviation s<U+03B7> de<U+FB01>ned for the array noise,
+it would be more relevant in Figs. 3, 4, 5(B) to refer the MSE to the standard
+deviation of the correlated noise instead of D. Also in Section 3(c) the distribu-
+tion of thresholds m/(M + 1) is meaningful only in relation to a meaningful scale
+to refer the signal amplitudes.
+Changes: Thank you for your good suggestions. In this revised version, we identify the
+intrinsic physical scale for the signal amplitudes.
+1: In Figs. 4, 5, and 6(B) (Figs. 3,4,5(B) of the previous version), we have referred the
+MSE to s<U+03B7> of the OU noise in stead of D.
+2: Regarding the distribution of thresholds m/(M + 1) in Section 3(c), we have changed
+<U+03B8>m = m/(M + 1) to <U+03B8>m = msx /(M + 1).
+Comments 8: At the end of the 2nd parag. of Section 3(a) the parameter s
+has not been de<U+FB01>ned (it seems).
+Change: It’s our mistake. We have changed the parameter s to s<U+03B7> at the end of the
+2nd parag. of Section 3(a).
+Comments 9: There are two issues concerning the autocorrelation of Eq. (3.3):
+the exponential should include a minus sign; the prefactor should be D/(2t ).
+Changes: These are our mistakes. In this revised version, Eq. (3.3) has been remodi<U+FB01>ed as
+<U+27E8><U+03BE>(t)<U+03BE>(s)<U+27E9> = (D/t ) exp(-|t - s|/t ). In the meanwhile, we have changed the autocorrelation
+of Gaussian white noise <U+27E8><U+03BE>w (t)<U+03BE>w (s)<U+27E9> = d(t - s) to <U+27E8><U+03BE>w (t)<U+03BE>w (s)<U+27E9> = 2d(t - s).
+———————————————————-
+Responses to the report of Referee 2
+Comments 1: In the discussion of the coloured noise e<U+FB00>ects, the authors write:
+A further observation is that the minimum MSE value is almost invariant with
+increasing. This is a potentially interesting observation that requires a deeper
+explanation. Can the authors discuss why there is this behaviour?
+Reply: Please see the reply to Comments 4 from Referee 1.
+Comments 2: The references need some integration: - SR in multi threshold
+systems was initially introduced in this paper: Stochastic resonance in multi-
+threshold systems, L Gammaitoni, Physics Letters A 208 (4-6), 315-322 (1995).
+This paper is not cited and it should be. - Reference 28 should be quoted in the
+paper as Mandic et al. in order to facilitate the reader.
+Changes: Many thanks for your good suggestions.
+1: In this revised version, we have now added it in Reference:
+[1] L. Gammaitoni, Stochastic resonance in multi-threshold systems, Phys. Lett. A, vol. 208,
+pp. 315–322 1995. (doi:10.1103/PhysRevLett.84.2310)
+2: In the <U+FB01>rst paragraph of Section 1, it now reads: “Stochastic resonance (SR) in multi
+threshold systems was initially investigated in [1]...”
+3: In addition, we have quoted Reference 28 as “Mandic et al.”
+———————————————————-
+Responses to the report of Referee 3
+Comments A: line 29 and 31 p6, for the noise root mean square amplitude,
+the subscript <U+03B7> of s is missing in the text since it refers to the xlabel of Figure 2.
+Changes: Many thanks for your good suggestion. It’s our mistake. We have changed
+the parameter s to s<U+03B7> at the end of the 2nd parag. of Section 3(a).
+Comments B: It is not precised what slow time varying exactly means for the
+standard deviation of the input signal. Moreover a sinusoidal law of frequen-
+cy 100 is considered for the input signal standard deviation. Please, could you
+brie<U+FB02>y specify what is the impact of the frequency of this sinusoidal law on the
+presented results.
+Reply: The lower the frequency of this sinusoidal law is, the better the tracking ability
+of adaptive algorithm is. Our analysis in Appendix shows that the fastest convergence time
+or the intrinsic time scale is about N <U+2206>t. N is the array size, and <U+2206>t is the sampling time.
+Thus, when N and <U+2206>t are given, the fastest time variation rate of nonstationary inputs is
+determined. In our previous version, the frequency of this sinusoidal law is 100 Hz, which
+is not slow enough. Thus, in this revised version, we take the frequency of this sinusoidal
+modulation as f = 1 Hz. Regarding the issue of what slow time varying exactly means for
+the standard deviation of the input signal, please see the reply to Comments 3 from Referee 1.
+Change:
+Please see the corresponding changes in the Comments 3 from Referee 1.
+Comments C1: line 9 to 12 p 7: ”It is noted that, for su<U+FB03>cient time duration,
+the average power for ..” The authors explain that for stationary input (unitary
+standard deviation), the average power is unity while for non stationary input
+with sinusoidally standard deviation the average power is 1/2. i regret that the
+authors have not also taken an average power of 1/2 for the stationary input.
+Indeed, I think it should have been more appropriate to compare stationary and
+non stationary input signal performances with same average power.
+Reply: Many thanks for your good suggestion. In this revised version, we have now made
+the comparison for the case of same average power in Fig. 3 (Fig. 2 of the previous version).
+All results in Figs. 4-6 are also obtained under the same average power. Here, we present the
+results for three cases of Gaussian distributed with sx = 1 (solid lines), Gaussian distribut-
+ed with standard deviation v sx (t) = sin(2pt) (dashed lines), and Gaussian distributed with
+standard deviation sx (t) = 2 sin(2pt) (circled lines) in Fig. R1.
+0.9
+0.8
+0.7
+0.6
+0.5
+MSE
+0.4
+0.3
+0.2
+0.1
+0
+0 0.5 1 1.5
+s
+<U+03B7>
+Figure R1: MSE distortion versus s<U+03B7> for Gaussian noise with identical thresholds. The dashed
+blue lines represent the MSE distortion for non-stationary input that is Gaussian distributed
+with standard deviation sx (t) = sin(2pt), and the circle lines for standard deviation sx (t) =
+v
+2 sin(2pt). The solid red lines correspond to the MSE distortion for stationary input that
+is Gaussian distributed with sx = 1. (For the two cases of input characteristics, from top to
+bottom the array sizes are N = 1, 3, 15 and 63.)
+Changes:
+1: In the 2nd parag. of Section 3(a), the 2ndv sentence has been rewritten as “Here, the
+signal standard deviation is chosen as sx (t) = 2 sin(2pt),...”
+2: In the 6th parag. of Section 3(a), it now reads “For comparison, the solid red lines
+correspond to the MSE distortion curves for stationary Gaussian input signal with standard
+deviation sx = 1. It is noted that these two inputs have been chosen to give the same average
+power. For a su<U+FB03>cient time duration, their average powers are all unity...”
+3: In the 4th parag. of Section 3(a), we stress “Unless speci<U+FB01>cally mentioned, all results in
+v for non-stationary
+the following parts are obtained for the example case where the input signal
+characteristics is Gaussian distributed with standard deviation sx (t) = 2 sin(2pt), and the
+input signal for stationary characteristics is Gaussian distributed with sx = 1.”
+Comments C2: Concerning colored noise and white noise, I also think that noise
+with same power could have been considered. Indeed, for the colored noise p-
+resented in this paper, the power depends on the the corelation time of the
+Ornsein-Uhlenbeck process (see reference below) Coherence resonance induced
+by colored noise near Hopf bifurcation Juan Ma, Tiejun Xiao, Zhonghuai Hou,
+and Houwen Xin Chaos 18, 043116 (2008); doi: 10.1063/1.3013178 Note that i
+don’t want the authors to cite this reference. I think, it explains the shift of the
+curves of Fig 3, where greater noise intensities are requested to minimize the
+Mean Square Error when the correlation time increases. Please brie<U+FB02>y comment
+this two points in the article.
+Reply: Thanks for your good suggestion. I have carefully read your article (Chaos 18,
+043116 (2008); doi: 10.1063/1.3013178). It is a good reference for my paper. In this revised
+version, we added it in Reference:
+[30]Ma J, Xiao T, Hou Z, Xin H. 2008 Coherence resonance induced by colored noise near
+Hopf bifurcation. Chaos 18, 043116. (doi:10.1063/1.3013178)
+Regarding explaining the shift of the curves of Fig 3, please see the reply to Comments 4
+from Referee 1.
+In addition, since the MSE is referred to the standard deviation s<U+03B7> de<U+FB01>ned for Gaussian
+noise, it would be more relevant for the case of OU noise to also refer the MSE to the stan-
+dard deviation instead of D. Therefore, in this revised version we have referred the MSE to
+the standard deviation of OU noise in Fig. 4, 5, 6(B).
+Comments C3: The results of this paper are restricted to static nonlinearities.
+To enhance the impact of their paper, i suggest the author to discuss if their
+<U+FB01>nding could be extended to other nonlinear systems. For instance, since one
+subject area selected for this paper is biophysics, It could be discussed potential
+applications to nonlinear dynamical systems.
+Reply: This is a good suggestion. We argue that this Kalman-LMS adaptive algorith-
+m might be extended to other nonlinear systems, for instance, the Hodgkin-Huxley neuron
+model [5], the reduced FitzHugh-Nagumo neuron model [4,32,34], the auditory model [6,7,16],
+or biomedical devices [38]. However, the dynamical nonlinear system has its intrinsic time
+scale that controls the evolution of the system state. The system outputs at adjacent time
+steps are also correlated with each other to a certain extent, even the input signal or the
+input noise are mutually independent. These factors will lead to larger misalignment between
+the true and estimated weights. Thus, a more general Kalman-LMS adaptive algorithm for
+estimating the time-varying weight vector needs to be developed.
+Change: In the <U+FB01>nal section of Conclusion and Discussion, we discuss the potential ap-
+plications to nonlinear dynamical systems. After Fig. 7, we added “Beyond the memoryless
+nonlinearity considered in Fig. 1, ... Thus, a more general Kalman-LMS adaptive algorithm
+for estimating the time-varying weight vector needs to be developed.”
+—————————————————-
+We would like to thank the referees and editors of Royal Society Open Science for their
+helps in improving this manuscript. Please <U+FB01>nd the attached revised version of the paper.
+Best regards,
+Yours sincerely,
+Authors: L. Xu, F. Duan, X. Gao, D. Abbott and M. D. McDonnell
+Society Open

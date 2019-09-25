@@ -1,0 +1,755 @@
+Genotype-specific relationships among phosphorus use,
+growth and abundance in Daphnia pulicaria
+Ryan E. Sherman, Priyanka Roy Chowdhury, Kristina D. Baker, Lawrence J. Weider and
+Punidan D. Jeyasingh
+Article citation details
+R. Soc. open sci. 4: 170770.
+http://dx.doi.org/10.1098/rsos.170770
+Review timeline
+Original submission: 23 June 2017 Note: Reports are unedited and appear as
+Revised submission: 12 October 2017 submitted by the referee. The review history
+Final acceptance: 6 November 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-170770.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Review of Sherman et al.
+This manuscript addresses how intraspecific variation in the stoichiometry of Daphnia might
+explain variation in growth and competitive ability among genotypes. Interestingly the authors
+moves beyond measuring solely whole body P-content, but also quantify P-kinetics (acquisition,
+assimilation, incorporation, retention), and focus on how these 5 traits vary among 10 genotypes
+reared under low and high P-diets for 5 days. For all traits they find significant GxE interactions,
+which are particularly strong for the four P-kinetics traits. Finally, they find that these P-kinetics
+are more likely to explain variation in competitive ability and growth rate then P-content alone.
+In general, I think all of these conclusion are interesting, important, and potentially justified by
+the dataset.
+While I found the design and execution of the experiments interesting, the presentation of the
+results was poorly organised and difficult to follow, and there are several statistical issues that
+need resolving. The writing could also be improved to focus on the main points, as I believe I
+have outlined in the summary above.
+Major points:
+First, why are there more than 20 points in each panel of figure 2 and 3? You have 10 genotypes
+measured in two conditions (HP and LP). Anything more is pseudoreplication.
+Second, why are the predictor variables in Figure 2 (a and b) and figure 3 reversed? I find figure 2
+more intuitive - given a genotypes with variation in %P, is the variation in %P correlated with P-
+kinetics traits. In this case, one has a few predictions for LP and HP environments. If there are
+strong tradeoffs at LP, then you would see negative relationships in LP but not in HP. I think all
+of the results could be better organised around a set of predictions. Right now it seems like you
+are just asking if they are all correlated or not.
+Third, in Figure 4, your multivariate analysis includes 5 P-traits, but also density, growth rate,
+and competitive ability. Including growth rate seems ok, but competitive ability is on a frequency
+scale and total density seems a bit meaningless to include in a PCA with traits. Can you explain
+this justification, or redo the analysis with just 5 traits and growth. Part of the reason for
+excluding density, is that you add assumption that these 5 P-traits are related to fecundity and
+population level parameters. But the P-kinetics traits are more likely only explaining variation in
+growth of individuals and have a weaker relationship to individual fecundity (which you didn’t
+measure?).
+Fourth, I think the introduction could set out a clearer set of predictions that are tested. Right
+now the paper is written more as a descriptive summary of all the things you did, rather than
+being integrated around a series of hypotheses. This is what makes it hard to follow.
+Minor points:
+Abstract - I don’t think the abstract highlights the main themes of the paper very well. I think the
+main point is that you are comparing to what extent %P and P-kinetics can explain variation in
+growth and competitive ability.
+3
+L46: “success of a given species” - how about just growth and competitive ability?
+L52: is congenerics correct in this context?
+L55 - “similarly”? plants have different homeostasis… I not sure this is a similar comparison to
+Daphnia as the initial expectations would be very different.
+L68 - “of [Daphnia] genotypes”
+L73 - this substantial genetic variation in expression is for plants. But is this a fair comparison for
+animal studies?
+L79 - 80: Leal et al. 2017 addresses allocation differences among fish populations with similar %P
+of whole body.
+L84: Without any change in whole body stoichiometry. Other stoichiometric traits could change.
+L217: Here you say there are 30 trials, but you did this in each environment no? So 60 trials in
+total (see line 234)
+L235-239: I am confused here. You don’t mean total number of genotypes, but rather: the number
+of individuals of the target genotype divided by the total number of individuals. L238: here as
+well you mean fraction of individuals of the target genotype, not the “number of experimental
+genotypes”… which would have always been 2 (or 1 if exclusion happened?) in these pairwise
+competition trials, no?
+L282: Why do you undermine your results with this statement? If there is a significant interaction
+term, then you would not necessarily expect the main effect that you are describing (i.e. a
+consistence difference between LP and HP). That the whole point of the interaction term.
+L286: I don’t understand what supports this statement.
+L287-288: This analysis should be redone to account for fact that response variable is a frequency
+and unlikely normally distributed. You could either use an arcsine transformation, or use glms
+(e.g. logit link function). The “betareg” R package might be helpful for response variables that
+continuous and bounded between 0 and 1.
+L326: I don’t understand how this is supported?
+L343: Why start with the results from Table 2 and 3? This seems backwards from how you
+organise the paper.
+L352: By P-use, you mean P-kinetics? It’s confusing to switch back and forth between this
+terminology.
+L356: Again, the support for canalised growth is unclear, and may a minor point.
+L356-358: I don’t find this to be an important conclusion, but rather a method. Plus, I would be
+more interested in a multivariate analysis that did not mix traits too much (see above).
+In general, the discussion is well written, but it starts off in a confusing way.
+4
+label_author_2
+Review form: Reviewer 2 (Brooks Miner)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The authors describe an impressive study of phosphorus kinetics and growth-related traits,
+including competitive ability, in 10 genotypes of Daphnia pulicaria. This kind of intraspecific
+comparison of traits related to ecological stoichiometry is a novel and worthwhile extension of
+previous interspecific analyses. That the results do not always conform to the predictions of
+ecological stoichiometry makes this study all the more important.
+I only have one modest concern about the ms, and a handful of smaller concerns, which I describe
+below.
+My modest concern relates to the 10 genotypes used in the study. On L127 the authors state that
+“Ten genotypes from this resurrected population were used.” I would typically ask whether these
+genotypes can be distinguished from each other using genetic markers, so that the authors can be
+certain that each genotype is independent (no risk that two “genotypes” are actually identical
+clones - this can happen with Daphnia). I would ask for verification here that the 10 genotypes
+are independent, but I know from later in the paper that, for the markers used, there was some
+redundancy in GPI electromorph profiles (L313-314). It’s not clear whether this redundancy exists
+among the 10 genotypes studied, or only between some of these 10 genotypes and the reference
+genotypes. If there is redundancy among the 10 focal genotypes, I would recommend that the
+authors revise the presentation of the data to include only genotypes known to be genetically
+distinct. This would likely simplify the presentation of the results anyway. In contrast, if each of
+the 10 focal genotypes can be distinguished from the other 9 by a genetic marker, the authors
+should make a statement to that effect here in the methods section at L127.
+Other concerns:
+L282-284. For acquisition, 5 of 10 genotypes look to have HP/LP effects (from the figure). For
+assimilation, it is 8 of 10 genotypes. Particularly for the assimilation result, the statement that the
+pattern is “driven primarily by a few genotypes” seems inaccurate. The statement describing
+these results could be more nuanced.
+5
+L305-6: Perhaps it is worth pointing out that the (potential) correlation under HP is stronger than
+under LP? Or maybe the authors would rather not address that, since in neither case is the
+correlation significant.
+L312-317: I feel that this issue about some genotypes being indistinguishable with markers should
+be addressed sooner. For example, at L286 there is no mention of this issue even though it is
+relevant to the result presented there. Also the introduction of Fig. 1f in line 287 does not clarify
+why only 8 genotypes are included here rather than the full 10. The explanation for why this is
+the case does not appear until L312, in a different section of the results.
+Fig. 4: Why show the graph in Fig. 4b (PC3 results) if these data are not discussed in the narrative
+at all? It would be more straightforward to only include Fig. 4a. Fig 4b could be included as
+supplemental material if the authors desire.
+(Very) Minor edits:
+L28: “we are yet to understand” should be “we have yet to understand”
+L177-179: Two sentences in a row beginning with “It is important to note…”
+L267: The authors state that they used Akaike information criterion (note that it should be the
+singular criteriON), but then use the acronym AICc, which represented AIC corrected for small
+sample sizes. Please clarify whether the correction for small sample size was applied - this is what
+AICc represents.
+L273: The correct term is “Generalized linear models,” not General linear models.
+L290, L348, L383: Replace “between” with “among,” because in each case you are talking about
+genotypes, which are not distinguished as individual entities in the grammar of the sentences.
+L345: Change “Genotypes showed varied plastic…” to “Genotypes varied in plastic…”
+L347: remove comma after “nature”
+L355-6: The authors state “while some exhibited canalized growth,” but actually only one
+genotype exhibited this (36x). Change “some” to “one genotype” or “a single genotype”
+L356: The sentence that ends with “P- use physiology” should probably have a parenthetical
+citation to Fig. 4
+L361: “slower growth” would work just as well as “slower growth rate”
+L365-6: I would suggest changing “Under replete P conditions there exists little variation in P
+acquisition as compared to conditions of limited P supply” to something like, “There was less
+variation in P acquisition under replete P conditions than under P-limited conditions.’
+L368: “… differences in P content is…” should be “differences in P content are”
+L370: comma after “noting” should be removed
+L374: “represents” should be “represent” (the subject “Differences” is plural)
+L379: misspelling, “consistant” should be “consistent”
+6
+L397: “… better at predicting growth rates and competitive abilities, as compared to P content
+alone” could be replaced with “ “… better at predicting growth rates and competitive abilities
+than P content alone”
+Review by Brooks Miner, Ithaca College Department of Biology
+label_end_comment
+Decision letter (RSOS-170770)
+14-Sep-2017
+Dear Mr Sherman,
+The editors assigned to your paper ("Genotype-specific relationships among phosphorus use,
+growth, and abundance in Daphnia pulicaria") have now received comments from reviewers. We
+would like you to revise your paper in accordance with the referee and Associate Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 07-Oct-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+7
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-170770
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+8
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Review of Sherman et al.
+This manuscript addresses how intraspecific variation in the stoichiometry of Daphnia might
+explain variation in growth and competitive ability among genotypes. Interestingly the authors
+moves beyond measuring solely whole body P-content, but also quantify P-kinetics (acquisition,
+assimilation, incorporation, retention), and focus on how these 5 traits vary among 10 genotypes
+reared under low and high P-diets for 5 days. For all traits they find significant GxE interactions,
+which are particularly strong for the four P-kinetics traits. Finally, they find that these P-kinetics
+are more likely to explain variation in competitive ability and growth rate then P-content alone.
+In general, I think all of these conclusion are interesting, important, and potentially justified by
+the dataset.
+While I found the design and execution of the experiments interesting, the presentation of the
+results was poorly organised and difficult to follow, and there are several statistical issues that
+need resolving. The writing could also be improved to focus on the main points, as I believe I
+have outlined in the summary above.
+Major points:
+First, why are there more than 20 points in each panel of figure 2 and 3? You have 10 genotypes
+measured in two conditions (HP and LP). Anything more is pseudoreplication.
+Second, why are the predictor variables in Figure 2 (a and b) and figure 3 reversed? I find figure 2
+more intuitive - given a genotypes with variation in %P, is the variation in %P correlated with P-
+kinetics traits. In this case, one has a few predictions for LP and HP environments. If there are
+strong tradeoffs at LP, then you would see negative relationships in LP but not in HP. I think all
+of the results could be better organised around a set of predictions. Right now it seems like you
+are just asking if they are all correlated or not.
+Third, in Figure 4, your multivariate analysis includes 5 P-traits, but also density, growth rate,
+and competitive ability. Including growth rate seems ok, but competitive ability is on a frequency
+scale and total density seems a bit meaningless to include in a PCA with traits. Can you explain
+this justification, or redo the analysis with just 5 traits and growth. Part of the reason for
+excluding density, is that you add assumption that these 5 P-traits are related to fecundity and
+population level parameters. But the P-kinetics traits are more likely only explaining variation in
+growth of individuals and have a weaker relationship to individual fecundity (which you didn’t
+measure?).
+Fourth, I think the introduction could set out a clearer set of predictions that are tested. Right
+now the paper is written more as a descriptive summary of all the things you did, rather than
+being integrated around a series of hypotheses. This is what makes it hard to follow.
+Minor points:
+Abstract - I don’t think the abstract highlights the main themes of the paper very well. I think the
+main point is that you are comparing to what extent %P and P-kinetics can explain variation in
+growth and competitive ability.
+L46: “success of a given species” - how about just growth and competitive ability?
+L52: is congenerics correct in this context?
+9
+L55 - “similarly”? plants have different homeostasis… I not sure this is a similar comparison to
+Daphnia as the initial expectations would be very different.
+L68 - “of [Daphnia] genotypes”
+L73 - this substantial genetic variation in expression is for plants. But is this a fair comparison for
+animal studies?
+L79 - 80: Leal et al. 2017 addresses allocation differences among fish populations with similar %P
+of whole body.
+L84: Without any change in whole body stoichiometry. Other stoichiometric traits could change.
+L217: Here you say there are 30 trials, but you did this in each environment no? So 60 trials in
+total (see line 234)
+L235-239: I am confused here. You don’t mean total number of genotypes, but rather: the number
+of individuals of the target genotype divided by the total number of individuals. L238: here as
+well you mean fraction of individuals of the target genotype, not the “number of experimental
+genotypes”… which would have always been 2 (or 1 if exclusion happened?) in these pairwise
+competition trials, no?
+L282: Why do you undermine your results with this statement? If there is a significant interaction
+term, then you would not necessarily expect the main effect that you are describing (i.e. a
+consistence difference between LP and HP). That the whole point of the interaction term.
+L286: I don’t understand what supports this statement.
+L287-288: This analysis should be redone to account for fact that response variable is a frequency
+and unlikely normally distributed. You could either use an arcsine transformation, or use glms
+(e.g. logit link function). The “betareg” R package might be helpful for response variables that
+continuous and bounded between 0 and 1.
+L326: I don’t understand how this is supported?
+L343: Why start with the results from Table 2 and 3? This seems backwards from how you
+organise the paper.
+L352: By P-use, you mean P-kinetics? It’s confusing to switch back and forth between this
+terminology.
+L356: Again, the support for canalised growth is unclear, and may a minor point.
+L356-358: I don’t find this to be an important conclusion, but rather a method. Plus, I would be
+more interested in a multivariate analysis that did not mix traits too much (see above).
+In general, the discussion is well written, but it starts off in a confusing way.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The authors describe an impressive study of phosphorus kinetics and growth-related traits,
+including competitive ability, in 10 genotypes of Daphnia pulicaria. This kind of intraspecific
+10
+comparison of traits related to ecological stoichiometry is a novel and worthwhile extension of
+previous interspecific analyses. That the results do not always conform to the predictions of
+ecological stoichiometry makes this study all the more important.
+I only have one modest concern about the ms, and a handful of smaller concerns, which I describe
+below.
+My modest concern relates to the 10 genotypes used in the study. On L127 the authors state that
+“Ten genotypes from this resurrected population were used.” I would typically ask whether these
+genotypes can be distinguished from each other using genetic markers, so that the authors can be
+certain that each genotype is independent (no risk that two “genotypes” are actually identical
+clones - this can happen with Daphnia). I would ask for verification here that the 10 genotypes
+are independent, but I know from later in the paper that, for the markers used, there was some
+redundancy in GPI electromorph profiles (L313-314). It’s not clear whether this redundancy exists
+among the 10 genotypes studied, or only between some of these 10 genotypes and the reference
+genotypes. If there is redundancy among the 10 focal genotypes, I would recommend that the
+authors revise the presentation of the data to include only genotypes known to be genetically
+distinct. This would likely simplify the presentation of the results anyway. In contrast, if each of
+the 10 focal genotypes can be distinguished from the other 9 by a genetic marker, the authors
+should make a statement to that effect here in the methods section at L127.
+Other concerns:
+L282-284. For acquisition, 5 of 10 genotypes look to have HP/LP effects (from the figure). For
+assimilation, it is 8 of 10 genotypes. Particularly for the assimilation result, the statement that the
+pattern is “driven primarily by a few genotypes” seems inaccurate. The statement describing
+these results could be more nuanced.
+L305-6: Perhaps it is worth pointing out that the (potential) correlation under HP is stronger than
+under LP? Or maybe the authors would rather not address that, since in neither case is the
+correlation significant.
+L312-317: I feel that this issue about some genotypes being indistinguishable with markers should
+be addressed sooner. For example, at L286 there is no mention of this issue even though it is
+relevant to the result presented there. Also the introduction of Fig. 1f in line 287 does not clarify
+why only 8 genotypes are included here rather than the full 10. The explanation for why this is
+the case does not appear until L312, in a different section of the results.
+Fig. 4: Why show the graph in Fig. 4b (PC3 results) if these data are not discussed in the narrative
+at all? It would be more straightforward to only include Fig. 4a. Fig 4b could be included as
+supplemental material if the authors desire.
+(Very) Minor edits:
+L28: “we are yet to understand” should be “we have yet to understand”
+L177-179: Two sentences in a row beginning with “It is important to note…”
+L267: The authors state that they used Akaike information criterion (note that it should be the
+singular criteriON), but then use the acronym AICc, which represented AIC corrected for small
+sample sizes. Please clarify whether the correction for small sample size was applied - this is what
+AICc represents.
+L273: The correct term is “Generalized linear models,” not General linear models.
+11
+L290, L348, L383: Replace “between” with “among,” because in each case you are talking about
+genotypes, which are not distinguished as individual entities in the grammar of the sentences.
+L345: Change “Genotypes showed varied plastic…” to “Genotypes varied in plastic…”
+L347: remove comma after “nature”
+L355-6: The authors state “while some exhibited canalized growth,” but actually only one
+genotype exhibited this (36x). Change “some” to “one genotype” or “a single genotype”
+L356: The sentence that ends with “P- use physiology” should probably have a parenthetical
+citation to Fig. 4
+L361: “slower growth” would work just as well as “slower growth rate”
+L365-6: I would suggest changing “Under replete P conditions there exists little variation in P
+acquisition as compared to conditions of limited P supply” to something like, “There was less
+variation in P acquisition under replete P conditions than under P-limited conditions.’
+L368: “… differences in P content is…” should be “differences in P content are”
+L370: comma after “noting” should be removed
+L374: “represents” should be “represent” (the subject “Differences” is plural)
+L379: misspelling, “consistant” should be “consistent”
+L397: “… better at predicting growth rates and competitive abilities, as compared to P content
+alone” could be replaced with “ “… better at predicting growth rates and competitive abilities
+than P content alone”
+Review by Brooks Miner, Ithaca College Department of Biology
+Author's Response to Decision Letter for (RSOS-170770)
+See Appendix A.
+label_version_2
+RSOS-170770.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+12
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+I think the changes to the manuscript address my main initial concerns/confusions with the
+initial submission. I recommend publication in its current form.
+label_end_comment
+Decision letter (RSOS-170770.R1)
+06-Nov-2017
+Dear Mr Sherman,
+I am pleased to inform you that your manuscript entitled "Genotype-specific relationships among
+phosphorus use, growth, and abundance in Daphnia pulicaria" is now accepted for publication in
+Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+13
+Reviewer(s)' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+I think the changes to the manuscript address my main initial concerns/confusions with the
+initial submission. I recommend publication in its current form.
+pendix A
+COLLEGE OF ART S AND SCIENCES
+Department of Integrative Biology Ryan Sherman
+PhD candidate,
+501 Life Sciences West
+Stillwater, Oklahoma 74078-3052
+Phone: (405) 744-5555
+Alice Power, Editorial Coordinator, Royal Society Open Science
+ject: Revision of Research Article
+12st October, 2017
+Stillwater, OK USA
+ar Alice Power,
+I am submitting revisions for the manuscript entitled “Genotype-specific relationships
+ong phosphorus use, growth, and abundance in Daphnia pulicaria” by Ryan E. Sherman,
+yanka Roy Chowdhury, Kristina D. Baker, Lawrence J. Weider, and Punidan D. Jeyasingh for
+sideration for publication in Royal Society Open Science. Thanks to the Subject Editor Kevin
+ian and the reviewers for providing comments and suggestions to improve the manuscript.
+following pages contain our responses to each reviewer’s main comments and concerns as
+l as line edits. All authors have approved the revised manuscript submission. All persons
+tled authorship have been given authorship, and other sources of input have been duly
+nowledged. Thank you for your time and further consideration of our manuscript for
+lication in Royal Society Open Science.
+Sincerely,
+Ryan Sherman
+iewer: 1
+jor points:
+t, why are there more than 20 points in each panel of figure 2 and 3? You have 10 genotypes
+asured in two conditions (HP and LP). Anything more is pseudoreplication.
+ponse: All of the points on Fig. 2 & 3 are all individual data points, rather than the averages
+ach genotype under the two phosphorus treatments. We did this to examine overall patterns,
+just at the genotype level. The symbols in each figure have been color coded to show which
+otype each point represents.
+ond, why are the predictor variables in Figure 2 (a and b) and figure 3 reversed? I find figure
+ore intuitive - given a genotypes with variation in %P, is the variation in %P correlated with
+inetics traits. In this case, one has a few predictions for LP and HP environments. If there are
+ng tradeoffs at LP, then you would see negative relationships in LP but not in HP. I think all
+he results could be better organised around a set of predictions. Right now it seems like you
+just asking if they are all correlated or not.
+ponse: We agree with the reviewer’s suggestion and have switched the axes on Fig. 3 to
+ke this more intuitive. All x-axes on Fig. 3 are now P content, with P-kinetics on the y-axis.
+assumptions of stoichiometry are as phosphorus (P) assimilation increases, P content should
+increase, this of course depends on P retention. The last paragraph of the introduction,
+ting L120 includes clear sets of predictions including predictions regarding the relationship
+ween P content and P kinetics traits.
+rd, in Figure 4, your multivariate analysis includes 5 P-traits, but also density, growth rate,
+competitive ability. Including growth rate seems ok, but competitive ability is on a frequency
+le and total density seems a bit meaningless to include in a PCA with traits. Can you explain
+justification, or redo the analysis with just 5 traits and growth. Part of the reason for
+luding density, is that you add assumption that these 5 P-traits are related to fecundity and
+ulation level parameters. But the P-kinetics traits are more likely only explaining variation in
+wth of individuals and have a weaker relationship to individual fecundity (which you didn’t
+asure?).
+ponse: Our reasoning for including both competitive ability and density in the PCA analysis
+hat individual growth should affect both density and competitive ability. The reason for
+uding both density and competitive ability is that two genotypes can have the same frequency
+ompetition with a reference genotype, however this does not mean that they have the same
+l density. We feel that both of these measures are important to include in this multivariate
+lysis. The reviewer’s point about P-kinetics being more likely to explain variation in growth
+er than fecundity could be true, but have yet to be tested (hence this effort). In is worth
+ing that population models in stoichiometry often use individual growth (i.e. the GRH) to
+ke mechanistic inferences about population growth.
+rth, I think the introduction could set out a clearer set of predictions that are tested. Right
+the paper is written more as a descriptive summary of all the things you did, rather than
+ng integrated around a series of hypotheses. This is what makes it hard to follow.
+ponse: We are confused. The last paragraph of the introduction clearly laid out our
+dictions. L115: “Based on stoichiometric models built to describe performance of species
+ering in somatic stoichiometry [1], we predicted that genotypes with lower P content will
+ibit slower growth rate and be competitively superior in conditions of lower P supply.
+reover, based on the growth rate hypothesis [6], we predicted that P content should be
+related with growth, which is strongly related to competitive ability in Daphnia [38]. Further,
+ng physiological models [39], we predicted that all genotypes will increase rates of P
+uisition, assimilation, and retention under lower P supply conditions. In addition, we
+dicted that genotypes with lower P content will acquire, assimilate, and retain P at a slower
+compared to genotypes with higher P content. Finally, we tested the impact of using multi-
+xy measures of P kinetics in forecasting genotypic success (growth and competition) using
+ltivariate approaches coupled with model reduction criterion.” We have strived to make this
+re apparent, and better organized the entire ms around these predictions.
+nor points:
+stract - I don’t think the abstract highlights the main themes of the paper very well. I think the
+n point is that you are comparing to what extent %P and P-kinetics can explain variation in
+wth and competitive ability.
+ponse: We have edited part of the abstract to address the reviewer’s comment. L30 “We
+ized variation in phosphorus (P) content within a Daphnia species to test the extent to which
+predicted growth and competition” has been changed to “We utilized variation in phosphorus
+content within a Daphnia species to test the extent to which %P can explain variation in
+wth and competition.”
+: “success of a given species” - how about just growth and competitive ability?
+ponse: Success has been changed to growth and competitive ability.
+: is congenerics correct in this context?
+ponse: The line has been changed to make the study cited clearer in regards to species
+parison. L52 (now L54) now reads, “For example, Iwabuchi & Urabe [7] conducted
+rocosm experiments on three Daphnia species and found that those with low phosphorus (P)-
+and species of the freshwater cladoceran genus Daphnia, outcompeted others with a high P-
+and, under P-limiting conditions.”
+- “similarly”? plants have different homeostasis… I not sure this is a similar comparison to
+phnia as the initial expectations would be very different.
+ponse: Has been changed to “Within plants,…”
+- “of [Daphnia] genotypes”
+ponse: This line has been corrected as the reviewer suggested to be more specific.
+- this substantial genetic variation in expression is for plants. But is this a fair comparison
+animal studies?
+ponse: We have kept these examples of genetic variation in plants, and noted that there is
+e known about such variation in animals. We have also included examples of differential
+ression under varied P supply conditions in Daphnia. See L73: “P supply has been shown to
+nificantly alter the expression of ~20% of the genes in the Daphnia genome (e.g., Jeyasingh et
+2011). Genotypic comparisions of transcriptomes revealed that genotypes differed in the
+ression of as much as 30% of the genes in common gardens (Roy Chowdhury et al. 2014;
+y Chowdhury et al. 2015).”
+- 80: Leal et al. 2017 addresses allocation differences among fish populations with similar
+of whole body.
+ponse: We appreciate the reviewer’s suggested citation and have included it to our list of
+mples of genetic variation in P allocation (now L83).
+: Without any change in whole body stoichiometry. Other stoichiometric traits could change.
+ponse: L84, now L95, has been edited to specifically discuss whole body stoichiometry. L95
+ds, “Thus, it is possible that fitness-relevant classical traits (e.g. intrinsic rate of natural
+rease) can be expressed and maintained in a genotype by altering elemental kinetics without
+change in individual body stoichiometry, and yet this results in distinctive competitive or
+ess outcomes under the same supply stoichiometry.”
+7: Here you say there are 30 trials, but you did this in each environment no? So 60 trials in
+l (see line 234)
+ponse: L217(now L223) has been changed to “30 trials per treatment.”
+5-239: I am confused here. You don’t mean total number of genotypes, but rather: the
+mber of individuals of the target genotype divided by the total number of individuals. L238:
+e as well you mean fraction of individuals of the target genotype, not the “number of
+erimental genotypes” which would have always been 2 (or 1 if exclusion happened?) in these
+rwise competition trials, no?
+ponse: L235 (now L247) has been changed to “the number of individuals of the target
+otype divided by the total number of individuals.”
+8 (now L249) has been changed to “fraction of individuals of the target genotype.”
+2: Why do you undermine your results with this statement? If there is a significant
+raction term, then you would not necessarily expect the main effect that you are describing
+. a consistence difference between LP and HP). That the whole point of the interaction term.
+ponse: We agree with the reviewer’s critique. This statement, “In general, the patterns
+gest that D. pulicaria acquire and assimilate more P under LP conditions than under HP
+ditions, however, this is driven primarily by a few genotypes, and is not true for all genotypes
+mined” has been removed as it did not reflect the results accurately. As we had previously
+ressed in the discussion, L368, P acquisition and assimilation increased under LP conditions
+exhibited more variation among genotypes as compared to HP conditions.
+6: I don’t understand what supports this statement.
+ponse: We agree, and have removed “, however this was primarily driven by one genotype
+), Fig. while the other genotypes did not behave this way.”
+7-288: This analysis should be redone to account for fact that response variable is a
+uency and unlikely normally distributed. You could either use an arcsine transformation, or
+glms (e.g. logit link function). The “betareg” R package might be helpful for response
+iables that continuous and bounded between 0 and 1.
+ponse: The frequency response variable was previously transformed to meet normality
+umptions as stated in L251 (now 257) “All non-normal data were log-transformed for
+lyses to fit assumptions for GLMMs.”
+6: I don’t understand how this is supported?
+ponse: Now L334, this genotype (36x) did not differ in growth rate response between
+tments. We have removed the term “canalized.”
+3: Why start with the results from Table 2 and 3? This seems backwards from how you
+anise the paper.
+ponse: We are not sure why the reviewer thinks the discussion starts with results from Table
+nd 3. The discussion begins discussing results in the same order as they have previously been
+sented, as we have cited Fig. 1 early in the discussion.
+2: By P-use, you mean P-kinetics? It’s confusing to switch back and forth between this
+minology.
+ponse: All discussion of 33P kinetics are now referred to as P kinetics as compared to P-use
+rring to PUE (Phosphorus use efficiency).
+6: Again, the support for canalised growth is unclear, and may a minor point.
+ponse: L356 (now L362) has been changed to “Genotypes varied in multivariate space, with
+st genotypes altering growth between high and low P conditions, while one genotype
+ibited no difference in growth that was achieved by altering P kinetics (Fig. 4).”
+6-358: I don’t find this to be an important conclusion, but rather a method. Plus, I would be
+re interested in a multivariate analysis that did not mix traits too much (see above).
+ponse: We don’t understand the rationale for this comment. We disagree that this is a
+hod. It is a result of the PCA, clearly indicating which traits explain the most variation along
+h PC axes. A central motivation for this work was to call attention to precisely this type of
+traction. Nutrient processing traits (e.g., acquisition, assimilation, allocation) are expressed
+temporaneously which all can affect fitness parameters (e.g., growth, fecundity) distinctly.
+dying traits discretely often tells us little about the evolutionary scope of a trait, as post-
+omic evolutionary biology has made quite apparent.
+iewer: 2
+modest concern relates to the 10 genotypes used in the study. On L127 the authors state that
+n genotypes from this resurrected population were used.” I would typically ask whether these
+otypes can be distinguished from each other using genetic markers, so that the authors can be
+ain that each genotype is independent (no risk that two “genotypes” are actually identical
+nes - this can happen with Daphnia). I would ask for verification here that the 10 genotypes
+independent, but I know from later in the paper that, for the markers used, there was some
+undancy in GPI electromorph profiles (L313-314). It’s not clear whether this redundancy
+sts among the 10 genotypes studied, or only between some of these 10 genotypes and the
+rence genotypes. If there is redundancy among the 10 focal genotypes, I would recommend
+the authors revise the presentation of the data to include only genotypes known to be
+etically distinct. This would likely simplify the presentation of the results anyway. In
+trast, if each of the 10 focal genotypes can be distinguished from the other 9 by a genetic
+rker, the authors should make a statement to that effect here in the methods section at L127.
+ponse: Each genotype used in this study is independent. L244 (now L236) previously
+lained that, “Each genotype possessed a unique allozyme (i.e., electromorph) marker at the
+cose-6-phosphate isomerase (GPI; Enzyme Commission (EC) 5.3.1.9) locus and/or
+sphoglucomutase (PGM; EC 5.4.2.2) locus.” We have also added this explanation earlier in
+manuscript in L130.
+er concerns:
+2-284. For acquisition, 5 of 10 genotypes look to have HP/LP effects (from the figure). For
+milation, it is 8 of 10 genotypes. Particularly for the assimilation result, the statement that the
+ern is “driven primarily by a few genotypes” seems inaccurate. The statement describing
+se results could be more nuanced.
+ponse: This is a similar critique brought up by Reviewer 1. We agree that this statement is
+an accurate reflection of the interaction term and have removed it. As we had previously
+ressed in the discussion, L368, P acquisition and assimilation increased under LP conditions
+exhibited more variation among genotypes as compared to HP conditions.
+5-6: Perhaps it is worth pointing out that the (potential) correlation under HP is stronger than
+er LP? Or maybe the authors would rather not address that, since in neither case is the
+relation significant.
+ponse: We agree it could be potentially important as the reviewer states but since it was not
+nificant we think it not necessary to discuss. We did however, include the p-values for each.
+2-317: I feel that this issue about some genotypes being indistinguishable with markers
+uld be addressed sooner. For example, at L286 there is no mention of this issue even though
+relevant to the result presented there. Also the introduction of Fig. 1f in line 287 does not
+ify why only 8 genotypes are included here rather than the full 10. The explanation for why
+is the case does not appear until L312, in a different section of the results.
+ponse: We have now addressed this issue earlier in the manuscript. L238 now states “Two
+erimental genotypes (from 20-24 cm sediment layer) share the same GPI electromorph
+files with two of the reference genotypes (from the 4-8 cm sediment layer). Distinguishing
+se three experimental genotypes from the reference genotypes under competition proved
+ivocal using the Phosphoglucomutase (PGM; EC 5.4.2.2) locus. Therefore, these two
+otypes were excluded from analysis involving competitive ability.”
+. 4: Why show the graph in Fig. 4b (PC3 results) if these data are not discussed in the
+rative at all? It would be more straightforward to only include Fig. 4a. Fig 4b could be
+uded as supplemental material if the authors desire.
+ponse: We have now cited Fig. 4b and think it important to remain in the main part of the
+er because it shows the relationships among all 3 significant axes.
+ry) Minor edits:
+: “we are yet to understand” should be “we have yet to understand”
+ponse: L28, now L29 has been changed to “we have yet to understand”
+7-179: Two sentences in a row beginning with “It is important to note…”
+ponse: The repetition has been remedied.
+7: The authors state that they used Akaike information criterion (note that it should be the
+gular criteriON), but then use the acronym AICc, which represented AIC corrected for small
+ple sizes. Please clarify whether the correction for small sample size was applied - this is
+at AICc represents.
+ponse: L267 (now L278) now indicates that the AIC corrected for small sample sizes was
+eed applied
+3: The correct term is “Generalized linear models,” not General linear models.
+ponse: L273 (now L284) General linear models has been changed to generalized linear
+dels
+0, L348, L383: Replace “between” with “among,” because in each case you are talking about
+otypes, which are not distinguished as individual entities in the grammar of the sentences.
+ponse: For all lines, “between” has been replaced with “among.”
+5: Change “Genotypes showed varied plastic…” to “Genotypes varied in plastic…”
+ponse: This change has been made.
+7: remove comma after “nature”
+ponse: Comma removed.
+5-6: The authors state “while some exhibited canalized growth,” but actually only one
+otype exhibited this (36x). Change “some” to “one genotype” or “a single genotype”
+ponse: L356 (now L362) has been changed to “Genotypes varied in multivariate space, with
+st genotypes altering growth between high and low P conditions, while one genotype
+ibited no difference in growth that was achieved by altering P kinetics (Fig. 4).”
+6: The sentence that ends with “P- use physiology” should probably have a parenthetical
+tion to Fig. 4
+ponse: This line now has a parenthetical citation to Fig. 4
+1: “slower growth” would work just as well as “slower growth rate”
+ponse: This line has been changed to “slower growth”
+5-6: I would suggest changing “Under replete P conditions there exists little variation in P
+uisition as compared to conditions of limited P supply” to something like, “There was less
+iation in P acquisition under replete P conditions than under P-limited conditions.’
+ponse: This line has been changed to “There was less variation in P acquisition under replete
+onditions than under P-limited conditions.”
+8: “… differences in P content is…” should be “differences in P content are”
+ponse: Sentence reads “… variation in P content is…”
+0: comma after “noting” should be removed
+ponse: Comma has been removed.
+4: “represents” should be “represent” (the subject “Differences” is plural)
+ponse: “represents” has been changed to “represent”
+9: misspelling, “consistant” should be “consistent”
+ponse: The misspelling has been corrected.
+7: “… better at predicting growth rates and competitive abilities, as compared to P content
+ne” could be replaced with “ “… better at predicting growth rates and competitive abilities
+n P content alone”
+ponse: The line has been changed to “… better at predicting growth rates and competitive
+ities than P content alone”
+Society Open

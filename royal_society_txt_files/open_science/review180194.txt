@@ -1,0 +1,974 @@
+A computational model for driver's cognitive state, visual
+perception and intermittent attention in a distracted car
+following task
+Jami Pekkanen, Otto Lappi, Paavo Rinkkala, Samuel Tuhkanen, Roosa Frantsi and Heikki
+Summala
+Article citation details
+R. Soc. open sci. 5: 180194.
+http://dx.doi.org/10.1098/rsos.180194
+Review timeline
+Original submission: 5 February 2018 Note: Reports are unedited and appear as
+1st revised submission: 18 May 2018 submitted by the referee. The review history
+2nd revised submission: 8 August 2018 appears in chronological order.
+Final acceptance: 10 August 2018
+Review History
+label_version_1
+RSOS-180194.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Engström Johan)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+I find this a very interesting manuscript which I think makes a major theoretical contribution to
+the understanding of attention allocation in driving as well as other naturalistic tasks. In my
+view, the core idea that the allocation of attention is governed to action uncertainty is spot on and
+the computational model offers an explicit mechanistic account of how this may work. The model
+also opens up for many novel practical applications, such as simulating the underlying causes of
+rear-end crashes.
+Given the important theoretical contribution of the manuscript, I would have liked to see more
+discussion of how the proposed model is related to existing theories, including conceptual driver
+models such as the classical zero-risk theory developed by the 6th author as well as modern
+cognitive science and neuroscience models which are based on very similar principles as the
+proposed model. Some of these models are mentioned in the Discussion but not further
+discussion “for brievity”. Some examples of the latter include the “Bayesian brain hypothesis”
+(e.g., Knill and Pouget, 2004), predictive processing/coding (Clark, 2017) or the free energy
+principle (e.g., Feldman and Friston, 2010). Engstrom et al. (2018) offer an application of
+predictive processing to driving which seem based on very similar ideas as the proposed model.
+My main concern with the manuscript is that I find the description if the model somewhat
+incomplete and hard to understand in places. I appreciate that the idea was to first introduce the
+model on a conceptual level in section 2 and then provide mathematical detail in section 3.
+However, I found it hard to understand some of the key ideas from the conceptual description
+only which was somewhat frustrating. Thus, either the conceptual description needs to be
+substantially more detailed or the mathematical description in section 3 moved into section 2. I’m
+leaning towards the latter option as some of the concepts are hard to explain without providing
+the equations.
+More specifically, here are some of the items I think need to be better explained:
+116-117: “…driver’s internal model of the environment dynamics consists of predicted leader
+acceleration aL and an ”efference copy” of the driver’s own desired acceleration…”. It is unclear
+how the model “consists” of the acceleration and efference copy variables. I guess it is the model
+that produces values of these variables.
+135: The concept of “visual flow”, later referred to as “environment flow” is never explained.
+First, I think “optical flow” is the correct term. Second, please provide a brief explanation of this
+concept, possibly referring to references on speed perception such as Larish and Flach, 1990).
+138: What is the function relating distance to precision in perception?
+130-131: How does the update of the state estimate based on evaluation of predicted percepts
+against actual percepts work. I could not find any explanation of this neither in section 2, not
+section 3.
+352-377: Please provide some more detail on the model parameterization. In particular, how was
+the data combined with simulation to obtain the parameters?
+I also have some comments on the Results and Discussion section:
+401-404: What could be a possible reason for the discrepancy to the results from the previous
+study?
+408-410: “The overall level of speed, time headway and occlusion duration is replicated quite well
+by the model, but this is to be expected as aggregate (median) values of these are used for
+3
+calibration.” I find this sentence unclear. In particular, what is meant by “calibration”?
+Figure 7: I don’t understand how the occlusion duration can be represented as a continuous
+signal. Please clarify.
+529-531: The statement “In the very least the intermittency and imperfection in the state
+estimation and control are complementary and – especially regarding the attentional mechanisms
+– probably cause synergistic effects.” is interesting but it is not clear in what way the models are
+complementary and what the potential synergistic effects are. Please expand.
+There are also a relatively large number of typos and other editorial errors. Below are the ones I
+spotted, but I would strongly suggest a thorough proof-reading.
+41: “…performance OF the actual driving task”
+108: Reference to “section i” does not make sense. Should be something like “3.c.i” (I assume the
+proper reference format is given in the journal style guides)
+136 write out “w.r.t”
+142: “estimate” -> “estimated”
+240: “cars speed” -> “vehicle speed”
+240: Suggest rephrasing “At the cars front was a laser scanner (IBEO Lux)…” to “A laser scanner
+(IBEO Lux) was mounted at the vehicle’s front…”
+266: “…gray rectangle was displayed…” remove “was”
+271: “…front like the you” remove “the”
+286: “After this,the” add space
+294: “…comfortable AND waited”
+307: “Approximate “steady state” -> An approximate “steady state’””
+311-312: These were further processed to speeds, accelerations and relative distances without
+further prosessing.” This sentence does not make sense. Also, correct spelling of “processing”.
+322: “internal scene representation” I suppose this should be “state representation” to be
+consistent with the terminology used above
+330: “driver acceleration, or leader volatility” I assume it should be “leader acceleration”. Also, I
+think the term “leader volatility” needs to be further explained.
+332: ”…copy of THE driver’s…”
+362: The “IDM” acronym needs to be introduced above
+364: “be systematically to…” is incomplete. Do you mean “be systematically related to…”
+272: Replace “than” with “to those that”
+435: “with” -> “and”
+446: “it’s” -> “it is”
+453: ”than THEY would”
+470: “state estimate uncertainty” -> “state estimates of uncertainty”
+489: Remove the first “correlation”
+References
+Clark, A. 2016. Surfing Uncertainty. Oxford: Oxford University Press.
+Engström, J., Bärgman, J., Nilsson, D., Seppelt, B., Markkula, G., Bianchi Piccinini, G., & Victor, T.
+(2018). Great expectations: A predictive processing account of automobile driving. Theoretical
+Issues in Ergonomics Science. 2(19), pp. 156-194.
+Feldman, H., and K.J. Friston. 2010. “Attention, Uncertainty, and Free-Energy.” Frontiers in
+Human Neuroscience, 4(215).
+Knill, D., and A. Pouget. 2004. “The Bayesian Brain: The Role of Uncertainty in Neural Coding
+and Computation.” Trends in Neuroscience 27(12): 712–719.
+Larish, J. F., & Flach, J. M. 1990. Sources of optical information useful for perception of speed of
+rectilinear self-motion. Journal of Experimental Psychology: Human Perception and Performance,
+16, 295–302.
+4
+label_author_2
+Review form: Reviewer 2 (Martin Treiber)
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+In this paper, the authors propose a novel car-following model explicitely taking into account the
+driver's imperfect perception and his or her internal cognitive state. Basically, this is a worthy
+contribution. However, there are several technical and conceptual inconsistencies and obviously
+wrong or poorly explained equations. Finally the state of the art review is incomplete. Some
+specific points follow.
+(1) When dealing with car-following models implementing genuinely human aspects, one should
+also mention modeling approaches based on the perceived risk using prospect theory or
+maximization of classic expected utility. In these models, the driver choses a local action
+(acceleration, deceleration, steering) so as to maximize the expected utility (or the expectation of
+the prospect-theoretic perceived utility) by weighting the time savings against the risk of crashes,
+see, e.g., [Samer H. Hamdar, Hani S. Mahmassani, and Martin Treiber, Transportation Research
+Part B: Methodological 78, 32-53].
+(2) The model's internal state/scene variables should be described in a better way. Specifically, I
+did not find a precise mathematical specification for the time instants where the model "requests
+a visual sample" as mentioned in the caption of Fig. 2. Finally, the acceleration spikes (e.g., the
+acceleration drop from near zero to -3 m/s^2 for a few milliseconds and then back) are utterly
+unrealistic, regardless of whether the physical or perceived values are meant.
+(3) The authors do not bring convincing arguments for assuming the visual flow to be logarithmic
+with the speed meaning that a speed difference between 5 km/h and 10 km/h is perceived
+similarly as that between 50 km/h and 100 km/h which is somewhat inplausible.
+(4) The mathematical specification seems to be erroneous. For example, assuming a width u of the
+leading vehicle and a longitudinal distance d+d0 between the driver's eyes and the back bumper,
+the visual angle of that leader is given by
+phi=2*tan^{-1}(0.5*u/(d0+d)) (1)
+5
+not by
+phi=2*tan^{-1}(2*l/(d0+d))
+(the vehicle length is totally irrelevant for that angle)
+Interestingly, when defining v_{phi}=d(phi)/dt, the last equation of (3.1) is the correct time
+derivative of Eq (1) above. However, to my knowledge, people perceive the *relative* rate of
+change R=v_{phi}/phi which, interestingly, is directly given by the inverse of the time-to-
+collision. The equations need to be corrected and the perception physio-psychology (v_{phi} or R?
+) needs to be discussed.
+(5) several errors in the unnumbered update equations between the lines 337 and 338. For
+example, the first one should read
+\hat{d}[i]=\hat{d}[i-1]+\hat{r}[i-1]*delta t
+in the second one, one equates a number (lhs) with a distribution (rhs), i.e., apples with bananas.
+This one should read
+\hat{v}[i] \sim N(E(\hat{v}[i-1])+\bar{a}*delta t, (\lambda*\bar{a}*delta t)^2)
+or similar. The next ones seem to be erroneous as well.
+(6) Fig. 5: There are many data points with time headways above 4 s which is unrealistic for not
+freely driving drivers (the driver follows a leader). I wonder if these data points belong to free
+traffic or to the car-following regime.
+Minor
+The presentation should be improved. For example, at the end of the top-level paragraph of
+Section 2, a reference to Section i is mentioned. In reality, it is Section 3(c)i. In Fig. 2, there are
+several scene variables, not only one, etc
+label_end_comment
+Decision letter (RSOS-180194.R0)
+24-Apr-2018
+Dear Mr Pekkanen,
+The editors assigned to your paper ("A computational model for driver's cognitive state, visual
+perception and intermittent attention in a distracted car following task") have now received
+comments from reviewers. We would like you to revise your paper in accordance with the
+referee and Associate Editor suggestions which can be found below (not including confidential
+reports to the Editor). Please note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 17-May-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+6
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180194
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+7
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Stephen Jackson (Associate Editor) and Antonia Hamilton (Subject Editor)
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+I find this a very interesting manuscript which I think makes a major theoretical contribution to
+the understanding of attention allocation in driving as well as other naturalistic tasks. In my
+view, the core idea that the allocation of attention is governed to action uncertainty is spot on and
+the computational model offers an explicit mechanistic account of how this may work. The model
+also opens up for many novel practical applications, such as simulating the underlying causes of
+rear-end crashes.
+8
+Given the important theoretical contribution of the manuscript, I would have liked to see more
+discussion of how the proposed model is related to existing theories, including conceptual driver
+models such as the classical zero-risk theory developed by the 6th author as well as modern
+cognitive science and neuroscience models which are based on very similar principles as the
+proposed model. Some of these models are mentioned in the Discussion but not further
+discussion “for brievity”. Some examples of the latter include the “Bayesian brain hypothesis”
+(e.g., Knill and Pouget, 2004), predictive processing/coding (Clark, 2017) or the free energy
+principle (e.g., Feldman and Friston, 2010). Engstrom et al. (2018) offer an application of
+predictive processing to driving which seem based on very similar ideas as the proposed model.
+My main concern with the manuscript is that I find the description if the model somewhat
+incomplete and hard to understand in places. I appreciate that the idea was to first introduce the
+model on a conceptual level in section 2 and then provide mathematical detail in section 3.
+However, I found it hard to understand some of the key ideas from the conceptual description
+only which was somewhat frustrating. Thus, either the conceptual description needs to be
+substantially more detailed or the mathematical description in section 3 moved into section 2. I’m
+leaning towards the latter option as some of the concepts are hard to explain without providing
+the equations.
+More specifically, here are some of the items I think need to be better explained:
+116-117: “…driver’s internal model of the environment dynamics consists of predicted leader
+acceleration aL and an ”efference copy” of the driver’s own desired acceleration…”. It is unclear
+how the model “consists” of the acceleration and efference copy variables. I guess it is the model
+that produces values of these variables.
+135: The concept of “visual flow”, later referred to as “environment flow” is never explained.
+First, I think “optical flow” is the correct term. Second, please provide a brief explanation of this
+concept, possibly referring to references on speed perception such as Larish and Flach, 1990).
+138: What is the function relating distance to precision in perception?
+130-131: How does the update of the state estimate based on evaluation of predicted percepts
+against actual percepts work. I could not find any explanation of this neither in section 2, not
+section 3.
+352-377: Please provide some more detail on the model parameterization. In particular, how was
+the data combined with simulation to obtain the parameters?
+I also have some comments on the Results and Discussion section:
+401-404: What could be a possible reason for the discrepancy to the results from the previous
+study?
+408-410: “The overall level of speed, time headway and occlusion duration is replicated quite well
+by the model, but this is to be expected as aggregate (median) values of these are used for
+calibration.” I find this sentence unclear. In particular, what is meant by “calibration”?
+Figure 7: I don’t understand how the occlusion duration can be represented as a continuous
+signal. Please clarify.
+529-531: The statement “In the very least the intermittency and imperfection in the state
+estimation and control are complementary and – especially regarding the attentional mechanisms
+– probably cause synergistic effects.” is interesting but it is not clear in what way the models are
+complementary and what the potential synergistic effects are. Please expand.
+There are also a relatively large number of typos and other editorial errors. Below are the ones I
+spotted, but I would strongly suggest a thorough proof-reading.
+41: “…performance OF the actual driving task”
+108: Reference to “section i” does not make sense. Should be something like “3.c.i” (I assume the
+proper reference format is given in the journal style guides)
+136 write out “w.r.t”
+142: “estimate” -> “estimated”
+240: “cars speed” -> “vehicle speed”
+240: Suggest rephrasing “At the cars front was a laser scanner (IBEO Lux)…” to “A laser scanner
+(IBEO Lux) was mounted at the vehicle’s front…”
+9
+266: “…gray rectangle was displayed…” remove “was”
+271: “…front like the you” remove “the”
+286: “After this,the” add space
+294: “…comfortable AND waited”
+307: “Approximate “steady state” -> An approximate “steady state’””
+311-312: These were further processed to speeds, accelerations and relative distances without
+further prosessing.” This sentence does not make sense. Also, correct spelling of “processing”.
+322: “internal scene representation” I suppose this should be “state representation” to be
+consistent with the terminology used above
+330: “driver acceleration, or leader volatility” I assume it should be “leader acceleration”. Also, I
+think the term “leader volatility” needs to be further explained.
+332: ”…copy of THE driver’s…”
+362: The “IDM” acronym needs to be introduced above
+364: “be systematically to…” is incomplete. Do you mean “be systematically related to…”
+272: Replace “than” with “to those that”
+435: “with” -> “and”
+446: “it’s” -> “it is”
+453: ”than THEY would”
+470: “state estimate uncertainty” -> “state estimates of uncertainty”
+489: Remove the first “correlation”
+References
+Clark, A. 2016. Surfing Uncertainty. Oxford: Oxford University Press.
+Engström, J., Bärgman, J., Nilsson, D., Seppelt, B., Markkula, G., Bianchi Piccinini, G., & Victor, T.
+(2018). Great expectations: A predictive processing account of automobile driving. Theoretical
+Issues in Ergonomics Science. 2(19), pp. 156-194.
+Feldman, H., and K.J. Friston. 2010. “Attention, Uncertainty, and Free-Energy.” Frontiers in
+Human Neuroscience, 4(215).
+Knill, D., and A. Pouget. 2004. “The Bayesian Brain: The Role of Uncertainty in Neural Coding
+and Computation.” Trends in Neuroscience 27(12): 712–719.
+Larish, J. F., & Flach, J. M. 1990. Sources of optical information useful for perception of speed of
+rectilinear self-motion. Journal of Experimental Psychology: Human Perception and Performance,
+16, 295–302.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+In this paper, the authors propose a novel car-following model explicitely taking into account the
+driver's imperfect perception and his or her internal cognitive state. Basically, this is a worthy
+contribution. However, there are several technical and conceptual inconsistencies and obviously
+wrong or poorly explained equations. Finally the state of the art review is incomplete. Some
+specific points follow.
+(1) When dealing with car-following models implementing genuinely human aspects, one should
+also mention modeling approaches based on the perceived risk using prospect theory or
+maximization of classic expected utility. In these models, the driver choses a local action
+(acceleration, deceleration, steering) so as to maximize the expected utility (or the expectation of
+the prospect-theoretic perceived utility) by weighting the time savings against the risk of crashes,
+see, e.g., [Samer H. Hamdar, Hani S. Mahmassani, and Martin Treiber, Transportation Research
+Part B: Methodological 78, 32-53].
+10
+(2) The model's internal state/scene variables should be described in a better way. Specifically, I
+did not find a precise mathematical specification for the time instants where the model "requests
+a visual sample" as mentioned in the caption of Fig. 2. Finally, the acceleration spikes (e.g., the
+acceleration drop from near zero to -3 m/s^2 for a few milliseconds and then back) are utterly
+unrealistic, regardless of whether the physical or perceived values are meant.
+(3) The authors do not bring convincing arguments for assuming the visual flow to be logarithmic
+with the speed meaning that a speed difference between 5 km/h and 10 km/h is perceived
+similarly as that between 50 km/h and 100 km/h which is somewhat inplausible.
+(4) The mathematical specification seems to be erroneous. For example, assuming a width u of the
+leading vehicle and a longitudinal distance d+d0 between the driver's eyes and the back bumper,
+the visual angle of that leader is given by
+phi=2*tan^{-1}(0.5*u/(d0+d)) (1)
+not by
+phi=2*tan^{-1}(2*l/(d0+d))
+(the vehicle length is totally irrelevant for that angle)
+Interestingly, when defining v_{phi}=d(phi)/dt, the last equation of (3.1) is the correct time
+derivative of Eq (1) above. However, to my knowledge, people perceive the *relative* rate of
+change R=v_{phi}/phi which, interestingly, is directly given by the inverse of the time-to-
+collision. The equations need to be corrected and the perception physio-psychology (v_{phi} or R?
+) needs to be discussed.
+(5) several errors in the unnumbered update equations between the lines 337 and 338. For
+example, the first one should read
+\hat{d}[i]=\hat{d}[i-1]+\hat{r}[i-1]*delta t
+in the second one, one equates a number (lhs) with a distribution (rhs), i.e., apples with bananas.
+This one should read
+\hat{v}[i] \sim N(E(\hat{v}[i-1])+\bar{a}*delta t, (\lambda*\bar{a}*delta t)^2)
+or similar. The next ones seem to be erroneous as well.
+(6) Fig. 5: There are many data points with time headways above 4 s which is unrealistic for not
+freely driving drivers (the driver follows a leader). I wonder if these data points belong to free
+traffic or to the car-following regime.
+Minor
+The presentation should be improved. For example, at the end of the top-level paragraph of
+Section 2, a reference to Section i is mentioned. In reality, it is Section 3(c)i. In Fig. 2, there are
+several scene variables, not only one, etc
+11
+Author's Response to Decision Letter for (RSOS-180194.R0)
+See Appendix A.
+label_version_2
+RSOS-180194.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Engström Johan)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+I think the authors has done a great job in addressing my previous comments and the manuscript
+has been greatly improved with the new revision.
+My only remaining technical comment concerns the presentation of the predictive processing
+(PP) framework versus the model developed by Markkula et al ref [70], where the former was
+added response to one of my previous comments. In the revision, these are both addressed in
+Section 5.2 named “The predictive processing perspective”. However, I think it is incorrect to put
+the model described in ref. [70] under the heading of predictive processing, as it has been
+developed quite independently of the PP framework (although, as discussed in ref. [70], it
+incorporates ideas from, and can be viewed as compatible with, PP). In particular, the key
+concepts of intermittent control and evidence accumulation in [70] are not directly related to PP.
+Moreover, the “criticism” (that I think is well-taken) that the Markkula et al. model [70] does not
+account for “higher-level” predictions (and does not entail a cognitive state representation) does
+not apply to PP. Rather, in PP (and the Bayesian brain hypothesis) such a state (or prior)
+representation maintained by the generative model is a central feature.
+Thus, I would suggest moving the first part of section 5.2 (lines 642-658) to the end of section 5.1
+and make the point that many of the key features of the present model (as well as ZRT) are
+strongly related to PP and thus well-grounded in modern cognitive neuroscience (which I think is
+12
+a great strength of the model). Section 5.2 can then be entirely devoted to discussing the specific
+relation to the Markkula et al. model (changing the title accordingly).
+Editorial comments
+40 “… , which reaction is…” suggest replacing with “where the reaction is” or similar
+68 “…rich and diverse, we will…” add “and” before “we”
+84 “… line of inquiry are…” replace “are” with “is”
+135 “… using such function as a dynamical system…” strange English, please rephrase
+Figure 3. I can’t find an explanation for the acronym MAD in the y-axis label. Please add.
+316 “…, comprising of” please remove “of”
+447 “… driving the same task…” suggest replacing with “…performing the same driving task…”
+452 add “the” before “average”
+733 use “is not” and does not” rather than “isn’t” and “doesn’t”
+label_author_4
+Review form: Reviewer 2 (Martin Treiber)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_6
+Martin Treiber, TU Dresden:
+The authors have corrected their paper according to my suggestions and it has much improved.
+However, one residual inconsistency related to Question 5 of my previous report remain: The
+mathematical notation of (2.3) and (2.4) is still somewhat unorthodox, at least when assuming
+that the past state, e.g., \hat{v}(t-Delta t) is a number and not a distribution. However, both are
+mixed there. For example, (2.3) should read (leaving out the hats and dashes)
+v(t)=v(t-\Delta t)+A*\Delta t, A \sim N(a(t-\Delta t),(...)^2),
+i.e., a realisation of a normal distributed variable is added, not the distribution itself. At least, this
+13
+should be clarified, e.g., by saying that N(..) means the realisation of a distributed variable, not
+the distribution itself.
+Apart from this minor point, it clarifies things when transferring the expectation of random
+variables to the deterministic part:
+v(t)=v(t-\Delta t)+(a(t-\Delta t)+A)*\Delta t, A \sim i.d. N(0,(...)^2),
+Finally, I wonder why the variance of the own acceleration increases with the expectation while
+that of the leader does not.
+label_end_comment
+Decision letter (RSOS-180194.R1)
+31-Jul-2018
+Dear Mr Pekkanen:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-180194.R1
+entitled "A computational model for driver's cognitive state, visual perception and intermittent
+attention in a distracted car following task" has been accepted for publication in Royal Society
+Open Science subject to minor revision in accordance with the referee suggestions. Please find
+the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180194.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+14
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 09-Aug-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If you do not think you will be able to meet this date
+please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+15
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Stephen Jackson (Associate Editor) and Antonia Hamilton (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+Martin Treiber, TU Dresden:
+The authors have corrected their paper according to my suggestions and it has much improved.
+However, one residual inconsistency related to Question 5 of my previous report remain: The
+mathematical notation of (2.3) and (2.4) is still somewhat unorthodox, at least when assuming
+16
+that the past state, e.g., \hat{v}(t-Delta t) is a number and not a distribution. However, both are
+mixed there. For example, (2.3) should read (leaving out the hats and dashes)
+v(t)=v(t-\Delta t)+A*\Delta t, A \sim N(a(t-\Delta t),(...)^2),
+i.e., a realisation of a normal distributed variable is added, not the distribution itself. At least, this
+should be clarified, e.g., by saying that N(..) means the realisation of a distributed variable, not
+the distribution itself.
+Apart from this minor point, it clarifies things when transferring the expectation of random
+variables to the deterministic part:
+v(t)=v(t-\Delta t)+(a(t-\Delta t)+A)*\Delta t, A \sim i.d. N(0,(...)^2),
+Finally, I wonder why the variance of the own acceleration increases with the expectation while
+that of the leader does not.
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+I think the authors has done a great job in addressing my previous comments and the manuscript
+has been greatly improved with the new revision.
+My only remaining technical comment concerns the presentation of the predictive processing
+(PP) framework versus the model developed by Markkula et al ref [70], where the former was
+added response to one of my previous comments. In the revision, these are both addressed in
+Section 5.2 named “The predictive processing perspective”. However, I think it is incorrect to put
+the model described in ref. [70] under the heading of predictive processing, as it has been
+developed quite independently of the PP framework (although, as discussed in ref. [70], it
+incorporates ideas from, and can be viewed as compatible with, PP). In particular, the key
+concepts of intermittent control and evidence accumulation in [70] are not directly related to PP.
+Moreover, the “criticism” (that I think is well-taken) that the Markkula et al. model [70] does not
+account for “higher-level” predictions (and does not entail a cognitive state representation) does
+not apply to PP. Rather, in PP (and the Bayesian brain hypothesis) such a state (or prior)
+representation maintained by the generative model is a central feature.
+Thus, I would suggest moving the first part of section 5.2 (lines 642-658) to the end of section 5.1
+and make the point that many of the key features of the present model (as well as ZRT) are
+strongly related to PP and thus well-grounded in modern cognitive neuroscience (which I think is
+a great strength of the model). Section 5.2 can then be entirely devoted to discussing the specific
+relation to the Markkula et al. model (changing the title accordingly).
+Editorial comments
+40 “… , which reaction is…” suggest replacing with “where the reaction is” or similar
+68 “…rich and diverse, we will…” add “and” before “we”
+84 “… line of inquiry are…” replace “are” with “is”
+135 “… using such function as a dynamical system…” strange English, please rephrase
+Figure 3. I can’t find an explanation for the acronym MAD in the y-axis label. Please add.
+316 “…, comprising of” please remove “of”
+447 “… driving the same task…” suggest replacing with “…performing the same driving task…”
+452 add “the” before “average”
+733 use “is not” and does not” rather than “isn’t” and “doesn’t”
+17
+Author's Response to Decision Letter for (RSOS-180194.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-180194.R2)
+10-Aug-2018
+Dear Mr Pekkanen,
+I am pleased to inform you that your manuscript entitled "A computational model for driver's
+cognitive state, visual perception and intermittent attention in a distracted car following task" is
+now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Stephen Jackson (Associate Editor) and Antonia Hamilton (Subject Editor)
+openscience@royalsociety.org
+Appendix A
+We thank the reviewers for their comments on the manuscript. As an overview of
+changes we made in response, we added discussion on several pointed out topics,
+merged the formal and conceptual descriptions of the model and made the
+mathematical discussion more rigorous.
+We have addressed the individual issues raised as follows:
+> *Reviewer #1*:
+> Given the important theoretical contribution of the manuscript, I would have liked
+to see more discussion of how the proposed model is related to existing theories,
+including conceptual driver models such as the classical zero-risk theory developed
+by the 6th author as well as modern cognitive science and neuroscience models
+which are based on very similar principles as the proposed model. Some of these
+models are mentioned in the Discussion but not further discussion “for brievity”.
+Some examples of the latter include the “Bayesian brain hypothesis” (e.g., Knill and
+Pouget, 2004), predictive processing/coding (Clark, 2017) or the free energy
+principle (e.g., Feldman and Friston, 2010). Engstrom et al. (2018) offer an
+application of predictive processing to driving which seem based on very similar
+ideas as the proposed model.
+The traffic psychological models are now introduced in section 1.2 and discussed in
+relation to the current model in section 5.1. The modern cognitive science and
+computational neuroscience perspective is now discussed in section 5.2.
+> *Reviewer #1*
+> My main concern with the manuscript is that I find the description if the model
+somewhat incomplete and hard to understand in places. I appreciate that the idea
+was to first introduce the model on a conceptual level in section 2 and then provide
+mathematical detail in section 3. However, I found it hard to understand some of
+the key ideas from the conceptual description only which was somewhat frustrating.
+Thus, either the conceptual description needs to be substantially more detailed or
+the mathematical description in section 3 moved into section 2. I’m leaning towards
+the latter option as some of the concepts are hard to explain without providing the
+equations.
+We have now incorporated the mathematical description with the conceptual
+description of section 2. We've tried to keep the conceptual description to be
+understandable also without the formalism by concentrating the mathematical
+detail in the end of each subsection.
+> *Reviewer #1*
+> More specifically, here are some of the items I think need to be better explained:
+> 116-117: “…driver’s internal model of the environment dynamics consists of
+predicted leader acceleration aL and an ”efference copy” of the driver’s own desired
+acceleration…”. It is unclear how the model “consists” of the acceleration and
+efference copy variables. I guess it is the model that produces values of these
+variables.
+It is indeed so that the model produces these values based on the model and its
+previous acceleration. We have now rephrased this in section 2.1 as (mathematical
+symbols omitted due to typographical constraints):
+"The driver has also a stochastic model of some of the environments dynamics,
+namely
+predicted leader acceleration ... and an ”efference copy” ... of the own desired
+acceleration
+at the previous time instant (see section 2.3), which the driver considers a noisy
+version of the
+actuated acceleration"
+> *Reviewer #1*
+> 135: The concept of “visual flow”, later referred to as “environment flow” is never
+explained. First, I think “optical flow” is the correct term. Second, please provide a
+brief explanation of this concept, possibly referring to references on speed
+perception such as Larish and Flach, 1990).
+We changed the term to "optical flow" throughout, added reference to Larish and
+Flach, 1990, and now briefly explain it in section 2.2:
+"Own movement in a textured environment produces a visual movement pattern,
+or optic flow, whose magnitude F is related to the landspeed v"
+> *Reviewer #1*
+> 138: What is the function relating distance to precision in perception?
+We added Figure 3 to illustrate the relationship between the state variables
+and typical estimation error of a single sample. The resulting error distributions
+are rather complex and apart from the own speed estimate likely don't admit to
+simple
+closed form solutions, but we hope that the figure clarifies the relationships
+sufficiently.
+> *Reviewer #1*
+> 130-131: How does the update of the state estimate based on evaluation of
+predicted percepts against actual percepts work. I could not find any explanation of
+this neither in section 2, not section 3.
+This was indeed not well explained. We now elaborate on it in section 2.2
+conceptually:
+"The evaluation can be seen as giving more weight to the states that ”predicted” the
+observed percept better, while taking account the inaccuracies of the perceptual
+system and what is known about how the environment should behave."
+and define it formally in equations 2.8 and 2.9.
+> *Reviewer #1*
+> 352-377: Please provide some more detail on the model parameterization. In
+particular, how was the data combined with simulation to obtain the parameters?
+We have now explained this in more depth in the end of section 3.3.1.
+> *Reviewer #1*
+> I also have some comments on the Results and Discussion section:
+> 401-404: What could be a possible reason for the discrepancy to the results from
+the previous study?
+We now briefly discuss the possible reason in section 4.2:
+"This is likely at least partly due to the more subdued speeds and accelerations of
+the leading vehicle (mandated by
+safety and practicalities of the real car experiment) leading to less variation in the
+within-subject
+time headways."
+> *Reviewer #1*
+> 408-410: “The overall level of speed, time headway and occlusion duration is
+replicated quite well by the model, but this is to be expected as aggregate (median)
+values of these are used for calibration.” I find this sentence unclear. In particular,
+what is meant by “calibration”?
+We've now clarified the phrasing in section 4.2:
+"The overall level of speed, time headway and occlusion duration is replicated quite
+well by the model, but this is to be expected as the parameter estimation procedure
+optimizes the model to match per-subject aggregates (medians) of time headway
+and occlusion duration and 99th percentile of acceleration."
+> *Reviewer #1*
+> Figure 7: I don’t understand how the occlusion duration can be represented as a
+continuous signal. Please clarify.
+The occlusion duration indeed is not a continuous signal. We plot it as line so that
+the trends can be seen more clearly. This is now explained in the caption of what's
+now Figure 8:
+"The plotted occlusion duration is the duration of the occlusion following the glance
+at the x-
+axis indicated time, and the line is formed by linearly interpolating this value
+between adjacent glance instants."
+> *Reviewer #1*
+> There are also a relatively large number of typos and other editorial errors. Below
+are the ones I spotted, but I would strongly suggest a thorough proof-reading.
+We've corrected the errors pointed out and have done additional passes of
+proofreading.
+> *Reviewer #2*
+> (1) When dealing with car-following models implementing genuinely human
+aspects, one should also mention modeling approaches based on the perceived risk
+using prospect theory or maximization of classic expected utility. In these models,
+the driver choses a local action (acceleration, deceleration, steering) so as to
+maximize the expected utility (or the expectation of the prospect-theoretic
+perceived utility) by weighting the time savings against the risk of crashes, see, e.g.,
+[Samer H. Hamdar, Hani S. Mahmassani, and Martin Treiber, Transportation
+Research Part B: Methodological 78, 32-53].
+The section 1.1 now includes a brief review of modeling human factors in car
+following models and introduces the expected utility models. Expected utility
+models are also discussed further in relation to the traffic psychological models in
+section 1.2 and in relation to potential future developments in section 5.1.
+> *Reviewer #2*
+> (2) The model's internal state/scene variables should be described in a better way.
+We now introduce the state and scene variables in more detail and along with
+mathematical definition in section 2.1.
+> *Reviewer #2*
+Specifically, I did not find a precise mathematical specification for the time instants
+where the model "requests a visual sample" as mentioned in the caption of Fig. 2.
+This is now described in the end of section 2.3 and mathematically specified in
+equations 2.11 and 2.12.
+> *Reviewer #2*
+> Finally, the acceleration spikes (e.g., the acceleration drop from near zero to -3
+m/s^2 for a few milliseconds and then back) are utterly unrealistic, regardless of
+whether the physical or perceived values are meant.
+We now elaborate on this in the caption of figure 2:
+"The acceleration variable (bottom panel, green) represents the desired
+acceleration of the driver based on the environment state estimate. Note that for
+simplicity the model can directly control their acceleration (desired acceleration is
+equal to the true acceleration), and thus can produce physically unrealistic values
+and variation (see section 5.3 for further discussion)."
+Section 5.3 also discusses the idealized acceleration model further.
+> *Reviewer #2*
+> (3) The authors do not bring convincing arguments for assuming the visual flow to
+be logarithmic with the speed meaning that a speed difference between 5 km/h and
+10 km/h is perceived similarly as that between 50 km/h and 100 km/h which is
+somewhat inplausible.
+The logarithmic relationship is indeed an idealization extrapolated from laboratory
+studies reporting approximately logarithmic relationships, which are now
+referenced (Larish & Flach 1990, Zanker 1995, Wei et al 2010), and the idealization
+is discussed section 5.3.
+> *Reviewer #2*
+> (4) The mathematical specification seems to be erroneous. For example, assuming
+a width u of the leading vehicle and a longitudinal distance d+d0 between the
+driver's eyes and the back bumper, the visual angle of that leader is given by
+>
+> phi=2*tan^{-1}(0.5*u/(d0+d)) (1)
+>
+> not by
+>
+> phi=2*tan^{-1}(2*l/(d0+d))
+>
+> (the vehicle length is totally irrelevant for that angle)
+This was indeed an error in the manuscript. The equation for the visual angle is now
+corrected in equation 2.6. In the code used for the simulations the function was
+correct, as can be verified in:
+https://gitlab.com/mulsimco/cfmodels/blob/rsos/particlePredictor.hpp#L197
+> *Reviewer #2*
+> Interestingly, when defining v_{phi}=d(phi)/dt, the last equation of (3.1) is the
+correct time derivative of Eq (1) above.
+> However, to my knowledge, people perceive the *relative* rate of change
+R=v_{phi}/phi which, interestingly, is directly given by the inverse of the time-to-
+collision. The equations need to be corrected and the perception physio-psychology
+(v_{phi} or R? ) needs to be discussed.
+We now discuss the issue of tau versus "distance normalized angular rate" in section
+5.3 and explicate the motivation of using the latter in our model due to it being
+more readily compatible with the state representation.
+> *Reviewer #2*
+> (5) several errors in the unnumbered update equations between the lines 337 and
+338. For example, the first one should read
+>
+> \hat{d}[i]=\hat{d}[i-1]+\hat{r}[i-1]*delta t
+>
+> in the second one, one equates a number (lhs) with a distribution (rhs), i.e., apples
+with bananas. This one should read
+>
+> \hat{v}[i] \sim N(E(\hat{v}[i-1])+\bar{a}*delta t, (\lambda*\bar{a}*delta t)^2)
+>
+> or similar. The next ones seem to be erroneous as well.
+The update equations indeed used a non-standard and likely confusing notation,
+where the \sim was overloaded to mean sampling from a distribution. We have now
+incorporated the equations in a more rigorous form to section 2 (equations 2.1-2.5
+and 2.8-2.9). The implementation as a particle filter is now discussed separately in
+section 3.3.2.
+> *Reviewer #2*
+> Minor
+> The presentation should be improved. For example, at the end of the top-level
+paragraph of Section 2, a reference to Section i is mentioned. In reality, it is Section
+3(c)i.
+The previous section labeling and references were based on the provided Latex
+template. We have now adjusted the template to use
+labeling similar to published RSOS articles.
+> *Reviewer #2*
+> In Fig. 2, there are several scene variables, not only one, etc
+We've updated the Figure 2 caption and clarified the presentation throughout the
+article.
+Appendix B
+We thank the reviewers for their time and pointers for improving the manuscript.
+We have addressed the latest comments as follows.
+Reviewer 2: "However, one residual inconsistency related to Question 5 of my
+previous report remain: The mathematical notation of (2.3) and (2.4) is still
+somewhat unorthodox, at least when assuming that the past state, e.g., \hat{v}(t-
+Delta t) is a number and not a distribution."
+We agree that the proposed notation clarifies the separation between a variable
+and its distribution and we have updated the equations 2.3 and 2.4 as suggested,
+although we keep the original variable names \hat{a}[t] and \hat{a}_L[t].
+Reviewer 2: "Finally, I wonder why the variance of the own acceleration increases
+with the expectation while that of the leader does not."
+The rationale is now explained in a footnote: "The magnitude-related noise is
+formalization of an assumption that the efference copy prediction follows similar
+magnitude-related precision as most other perceptual processes. Intuitively, it is
+assumed that outcomes of smaller control adjustments are predicted more
+accurately than of larger adjustments. See 5.4 for further discussion of magnitude-
+related precision."
+Reviewer 1: "Thus, I would suggest moving the first part of section 5.2 (lines 642-
+658) to the end of section 5.1 and make the point that many of the key features of
+the present model (as well as ZRT) are strongly related to PP and thus well-
+grounded in modern cognitive neuroscience (which I think is a great strength of the
+model). Section 5.2 can then be entirely devoted to discussing the specific relation
+to the Markkula et al. model (changing the title accordingly)."
+The Markkula et al. and related models are now discussed separately from the
+Predictive Processing framework in the new section 5.3. The PP framework
+discussion is now in its own section 5.2.
+Reviewer 1: Editorial comments
+40 “… , which reaction is…” suggest replacing with “where the reaction is” or similar
+68 “…rich and diverse, we will…” add “and” before “we”
+84 “… line of inquiry are…” replace “are” with “is”
+135 “… using such function as a dynamical system…” strange English, please
+rephrase
+Figure 3. I can’t find an explanation for the acronym MAD in the y-axis label. Please
+add.
+316 “…, comprising of” please remove “of”
+447 “… driving the same task…” suggest replacing with “…performing the same
+driving task…”
+452 add “the” before “average”
+733 use “is not” and does not” rather than “isn’t” and “doesn’t”
+Corrected as suggested.
+Society Open

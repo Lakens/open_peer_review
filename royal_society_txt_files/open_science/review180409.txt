@@ -1,0 +1,525 @@
+Multi-robot replication of ant collective towing behaviours
+Sean Wilson, Aurélie Buffin, Stephen C. Pratt and Spring Berman
+Article citation details
+R. Soc. open sci. 5: 180409.
+http://dx.doi.org/10.1098/rsos.180409
+Review timeline
+Original submission: 26 March 2018 Note: Reports are unedited and appear as
+Revised submission: 5 September 2018 submitted by the referee. The review history
+Final acceptance: 6 September 2018 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-180409.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Melanie E. Moses)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Reports © 2018 The Reviewers; Decision Letters © 2018 The Reviewers and Editors;
+Responses © 2018 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This paper explains that the transport speed of Novomessor ants during collective carry declines
+predictably with the size of the group carrying the load. The explanation is consistent with
+statistical expectations given a normal distribution of ant speeds given that the load moves at the
+speed of the slowest individual. The prediction is confirmed using experiments with mobile
+robots. It’s a very nice use of a simple model, verified with robotic experiments, to explain a
+biological phenomenon.
+The paper is well-written, interesting, and an excellent contribution. Terms, equations and figures
+are explained clearly and concisely. There is a nice balance between the ant and robot focus. The
+setup with the force-resistor and fiducial tag for tracking is an excellent one for testing the
+hypothesis in the paper.
+However, there are two issues that I think should be addressed.
+First, lines 194 – 221 are a bit confusing and almost seem contradictory. It’s stated that significant
+rotation of the load is not observed in ant experiments. But the robot solution appears to rely on
+perceived rotation of the load. Is this purported to be the case for ants, and if so, why isn’t
+rotation of the load observed? I think the authors are suggesting that small corrections occur
+before the load rotates a large amount (that’s what is implied about robot movement in 212 – 221,
+but again it’s not completely clear). It would help to completely explain what is hypothesized for
+ants (line 209) before beginning the explanation of robot experiments. Is it assumed that ants
+given knowledge of the location of the goal can sense small rotations away from that goal? Is it
+also assumed that they sense changes in force, allowing immediate corrections in speed without
+requiring large rotations of the load?
+Second, the role of the simple ML routine isn’t clear. Is there not a simpler mechanism that would
+allow ants to detect rotation and adjust speed accordingly. Line 253 – 256 seems to justify why the
+ML approach is required (rather than a much more simple feedback mechanism based on
+rotation of the load, but it’s not clear to me that they would get stuck in loops (ie could a small
+random perterbuation more simply address the problem of loops?). It would be helpful to see a
+demonstration of why a simple feedback mechanism (slow if rotating) is not effective. Such an
+explanation would justify why the procedure in Fig 6 is necessary for ants or robots.
+Minor comments:
+- The concept of stigmergy is mentioned several times, but explained only the third time it is used
+in the paper.
+- When the neural network is introduced, it was not that clear to me what the rewards and
+penalties to the robots were.
+label_author_2
+Review form: Reviewer 2 (Christopher Reid)
+Is the manuscript scientifically sound in its present form?
+Yes
+3
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This modelling and robotics paper is an excellent addition to the experimental work that is
+already submitted to PLoS ONE. Attempting to explain the counter-intuitive result that
+cooperatively transported loads move slower as more ants join the moving team, the authors
+propose two models and test these models in a collective robotics system. In doing so they not
+only provide evidence that the collective speed conforms to the speed of the slowest team-mate,
+but also provide valuable control algorithms for teams of robot movers. The experimental design
+is excellent, and the manuscript is well written. My recommendation is for acceptance after minor
+revision.
+Reading through the manuscript, it seemed obvious to me that if rapid transport of food items
+back to the nest is valuable, there would be a strong evolutionary pressure to select for a simple
+rule – ants sensing they are the slowest transporters should disengage from transport. This would
+lead to faster transport times and could be accomplished using the mechanisms proposed in this
+manuscript. The authors propose the logical ultimate explanation of enhanced robustness of
+transport in the final parts of the discussion, however I feel that transport speed vs robustness
+should be a stronger theme that runs through the manuscript. To this end, it would be very
+useful if the authors could provide any observations of this behaviour during ant transport – did
+ants ever disengage from transport, and was this behaviour more likely for slow-transporting
+ants? It may be that this data appears in Reference 13.
+In Figure 3, we see a trend of decreasing velocity with increasing group size. In the single-ant-
+transport scenario, we see a large variation in absolute velocity, but what was the individual
+transport speeds of the ants in the >1-transporter scenarios? If slower ants are over-represented in
+these group-transport scenarios, then we could expect to see decreasing load velocities simply as
+an average of individual transporter speeds, rather than the proposed mechanism of social
+conformation to the slowest transporter. Presumably this data appears in Reference 13, and if so,
+the group compositions need further explanation here.
+Basic statistical tests are completely absent in the manuscript, and need to be provided for the
+data in Figures 3, 7 and 8. For instance in Figure 3, we see a decreasing trend, but there is no
+explanation of statistical significance of comparisons of each group. Similarly in Figures 7 and 8,
+simple tests such as an ANOVA would provide statistical reassurance that indeed mean load
+velocity does not vary with the addition of extra robots and out-of-phase stepping. A lack of
+descriptive statistics is normally grounds for rejection, but I do not believe that in this case the
+necessary statistical reporting will change the results or discussion.
+The authors provide a link to a Github repository, however it appears broken and needs to be
+4
+fixed (I received a 404 error when I clicked on the link).
+Other than these minor points, I think this is an excellent manuscript and a very worthy addition
+of knowledge to the field.
+label_end_comment
+Decision letter (RSOS-180409.R0)
+09-Aug-2018
+Dear Dr Wilson
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-180409 entitled
+"Multi-Robot Replication of Ant Collective Towing Behaviors" has been accepted for publication
+in Royal Society Open Science subject to minor revision in accordance with the referee
+suggestions. Please find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180409
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+5
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 18-Aug-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If you do not think you will be able to meet this date
+please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees. We strongly recommend uploading two versions of your revised manuscript:
+1) Identifying all the changes that have been made (for instance, in coloured highlight, in bold
+text, or tracked changes);
+2) A 'clean' version of the new manuscript that incorporates the changes made, but does not
+highlight them.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document";
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format);
+6
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account;
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript. Make sure it is clear in your data accessibility statement how the data
+can be accessed;
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://rs.figshare.com/). The heading and legend provided for
+each supplementary file during the submission process will be used to create the figshare page,
+so please ensure these are accurate and informative so that your files can be found in searches.
+Files on figshare will be made available approximately one week before the accompanying article
+so that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication, you will be
+asked to pay the article processing charge, unless you request a waiver and this is approved by
+Royal Society Publishing. You can find out more about the charges at
+http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Brooke Flammang (Associate Editor) and Prof. R. Kerry Rowe (Subject
+Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Professor Brooke Flammang):
+Associate Editor: 1
+Comments to the Author:
+label_comment_3
+Thank you for submitting your manuscript RSOS-180409 entitled "Multi-Robot Replication of Ant
+Collective Towing Behaviors" to Royal Society Open Science.
+I am happy to report that the reviewers comments came back favourable overall, with minor
+suggestions for improvement. Please address the points made by the reviewers; these will greatly
+clarify your manuscript and improve its contribution to your field. Most importantly, please
+7
+address the questions with regards to the status of the related PLoS One submission and Github
+repository link.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+This paper explains that the transport speed of Novomessor ants during collective carry declines
+predictably with the size of the group carrying the load. The explanation is consistent with
+statistical expectations given a normal distribution of ant speeds given that the load moves at the
+speed of the slowest individual. The prediction is confirmed using experiments with mobile
+robots. It’s a very nice use of a simple model, verified with robotic experiments, to explain a
+biological phenomenon.
+The paper is well-written, interesting, and an excellent contribution. Terms, equations and figures
+are explained clearly and concisely. There is a nice balance between the ant and robot focus. The
+setup with the force-resistor and fiducial tag for tracking is an excellent one for testing the
+hypothesis in the paper.
+However, there are two issues that I think should be addressed.
+First, lines 194 – 221 are a bit confusing and almost seem contradictory. It’s stated that significant
+rotation of the load is not observed in ant experiments. But the robot solution appears to rely on
+perceived rotation of the load. Is this purported to be the case for ants, and if so, why isn’t
+rotation of the load observed? I think the authors are suggesting that small corrections occur
+before the load rotates a large amount (that’s what is implied about robot movement in 212 – 221,
+but again it’s not completely clear). It would help to completely explain what is hypothesized for
+ants (line 209) before beginning the explanation of robot experiments. Is it assumed that ants
+given knowledge of the location of the goal can sense small rotations away from that goal? Is it
+also assumed that they sense changes in force, allowing immediate corrections in speed without
+requiring large rotations of the load?
+Second, the role of the simple ML routine isn’t clear. Is there not a simpler mechanism that would
+allow ants to detect rotation and adjust speed accordingly. Line 253 – 256 seems to justify why the
+ML approach is required (rather than a much more simple feedback mechanism based on
+rotation of the load, but it’s not clear to me that they would get stuck in loops (ie could a small
+random perterbuation more simply address the problem of loops?). It would be helpful to see a
+demonstration of why a simple feedback mechanism (slow if rotating) is not effective. Such an
+explanation would justify why the procedure in Fig 6 is necessary for ants or robots.
+Minor comments:
+- The concept of stigmergy is mentioned several times, but explained only the third time it is used
+in the paper.
+- When the neural network is introduced, it was not that clear to me what the rewards and
+penalties to the robots were.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+This modelling and robotics paper is an excellent addition to the experimental work that is
+already submitted to PLoS ONE. Attempting to explain the counter-intuitive result that
+8
+cooperatively transported loads move slower as more ants join the moving team, the authors
+propose two models and test these models in a collective robotics system. In doing so they not
+only provide evidence that the collective speed conforms to the speed of the slowest team-mate,
+but also provide valuable control algorithms for teams of robot movers. The experimental design
+is excellent, and the manuscript is well written. My recommendation is for acceptance after minor
+revision.
+Reading through the manuscript, it seemed obvious to me that if rapid transport of food items
+back to the nest is valuable, there would be a strong evolutionary pressure to select for a simple
+rule – ants sensing they are the slowest transporters should disengage from transport. This would
+lead to faster transport times and could be accomplished using the mechanisms proposed in this
+manuscript. The authors propose the logical ultimate explanation of enhanced robustness of
+transport in the final parts of the discussion, however I feel that transport speed vs robustness
+should be a stronger theme that runs through the manuscript. To this end, it would be very
+useful if the authors could provide any observations of this behaviour during ant transport – did
+ants ever disengage from transport, and was this behaviour more likely for slow-transporting
+ants? It may be that this data appears in Reference 13.
+In Figure 3, we see a trend of decreasing velocity with increasing group size. In the single-ant-
+transport scenario, we see a large variation in absolute velocity, but what was the individual
+transport speeds of the ants in the >1-transporter scenarios? If slower ants are over-represented in
+these group-transport scenarios, then we could expect to see decreasing load velocities simply as
+an average of individual transporter speeds, rather than the proposed mechanism of social
+conformation to the slowest transporter. Presumably this data appears in Reference 13, and if so,
+the group compositions need further explanation here.
+Basic statistical tests are completely absent in the manuscript, and need to be provided for the
+data in Figures 3, 7 and 8. For instance in Figure 3, we see a decreasing trend, but there is no
+explanation of statistical significance of comparisons of each group. Similarly in Figures 7 and 8,
+simple tests such as an ANOVA would provide statistical reassurance that indeed mean load
+velocity does not vary with the addition of extra robots and out-of-phase stepping. A lack of
+descriptive statistics is normally grounds for rejection, but I do not believe that in this case the
+necessary statistical reporting will change the results or discussion.
+The authors provide a link to a Github repository, however it appears broken and needs to be
+fixed (I received a 404 error when I clicked on the link).
+Other than these minor points, I think this is an excellent manuscript and a very worthy addition
+of knowledge to the field.
+Author's Response to Decision Letter for (RSOS-180409.R0)
+See Appendix A.
+Decision Letter (RSOS-180409.R1)
+06-Sep-2018
+Dear Dr Wilson,
+I am pleased to inform you that your manuscript entitled "Multi-Robot Replication of Ant
+Collective Towing Behaviors" is now accepted for publication in Royal Society Open Science.
+9
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Brooke Flammang (Associate Editor) and Prof. R. Kerry Rowe (Subject
+Editor)
+openscience@royalsociety.org
+Appendix A
+Dear Dr. Flammang,
+We are happy to receive positive reviews for this manuscript. We understand the issues
+brought up by you and the reviewers, and we hope that this cover letter combined with
+the new revision will address them adequately and make this a stronger manuscript
+ready for publication. Our responses to each issue brought up in the decision letter are
+given below the corresponding quoted comments.
+Thank you for your time.
+–The authors (Wilson, Buffin, Pratt, and Berman)
+Response to Associate Editor Comments
+‘‘I am happy to report that the reviewers’ comments came back favourable overall, with
+minor suggestions for improvement. Please address the points made by the reviewers;
+these will greatly clarify your manuscript and im prove its contribution to your field.
+Most importantly, please address the questions with regards to the status of the related
+PLoS One submission and Github repository link.’’
+We are very pleased that this work was well received. We have addressed the
+reviewers’ comments below.
+The PloS One manuscript is still under review, after several rounds of revision in
+response to referee comments. Based on the editor’s feedback, we are optimistic about
+the outcome and expect a decision very soon. In the meantime, we can either cite the
+manuscript as under review, if Scientific Reports allows that, or we can delay
+publication of the current paper until the status of the PLoS One paper is resolved.
+The Github repository link did not work because a LaTeX error added extra symbols.
+This link has now been corrected and verified to work.
+Again, we appreciate the feedback on this manuscript to make it a better contribution
+to the community.
+Response to Reviewer #1
+‘‘This paper explains that the transport speed of Novomessor ants during collective
+carry declines predictably with the size of the group carrying the load. The explanation
+is consistent with statistical expectations given a normal distribution of ant speeds
+given that the load moves at the speed o the slowest individual. The prediction is
+confirmed using experiments with mobile robots. It’s a very nice use of a simple model,
+verified with robotic experiments, to explain a biological phenomenon. The paper is
+well-written, interesting, and an excellent contribution. Terms, equations and figures
+are explained clearly and concisely. There is a nice balance between the ant and robot
+focus. The setup with the force-resistor and fiducial tag for tracking is an excellent one
+for testing the hypothesis in the paper.
+However, there are two issues that I think should be addressed.’’
+Thank you for the kind words about this work. We address the specific changes made
+to address your concerns below.
+‘‘First, lines 194-221 are a bit confusing and almost seem contradictory. It’s stated that
+significant rotation of the load is not observed in ant experiments. But the robot
+solution appears to rely on perceived rotation of the load. Is this purported to be the
+case for ants, and if so, why isn’t rotation of the load observed? I think the authors are
+suggesting that small corrections occur before the load rotates a large amount (that’s
+what is implied about robot movement in 212-221, but again it’s not completely clear).
+It would help to completely explain what is hypothesized for ants (line 209) before
+beginning the explanation of robot experiments. Is it assumed that ants given
+knowledge of the location of the goal can sense small rotations away from that goal? Is
+it also assumed that they sense changes in force, allowing immediate corrections in
+speed without requiring large rotations of the load?’’
+These are all good points that needed further clarification. We are indeed hypothesizing
+what you suggest: that ants detect small rotations or rotational forces, and act to
+reduce these before they become large. We have included this assumption in lines 212-
+214 of the revised manuscript. We have also added another assumption about the ants
+in lines 214-219 (see our response to your next comment).
+‘‘Second, the role of the simple ML routine isn’t clear. Is there not a simpler mechanism
+that would allow ants to detect rotation and adjust speed accordingly. Line 253-256
+seems to justify why the ML approach is required (rather than a much more simple
+feedback mechanism based on rotation of the load), but it’s not clear to me that they
+would get stuck in loops (i.e. could a small random perturbation more simply address
+the problem of loops?). It would be helpful to see a demonstration of why a simple
+feedback mechanism (slow if rotating) is not effective. Such an explanation would
+justify why the procedure in Fig 6 is necessary for ants or robots.’’
+As we now describe in lines 214-219, we assume that the ants do not know their
+positions on the payload relative to its center of mass (COM). Thus, they do not know
+the effect of their acceleration on the rotation of the load, and therefore cannot use a
+simple feedback control scheme. To illustrate, for the configuration in Figure 1a, the ant
+at the bottom must speed up to negate a counterclockwise rotation of the load,
+whereas the ant at the top must slow down. However, because we assume that the
+ants do not know their positions relative to the load’s COM, they do not know whether
+speeding up or slowing down will negate the load’s rotation. The machine learning (ML)
+algorithm enables the robots, which also do not know their positions relative to the
+load’s COM, to determine the effect of their acceleration on the load’s rotation and then
+implement an appropriate feedback controller to cancel this rotation.
+We have rephrased our explanation of “robots getting stuck in loops” in lines 269-275.
+‘‘Minor comments:
+The concept of stigmergy is mentioned several times, but explained only the third time
+it is used in the paper. We have now defined stigmergy the first time it appears in the
+paper (lines 11-12). We have also clarified the type of stigmergic feedback that is used
+in our robot controllers (lines 201-203).
+When the neural network is introduced, it was not that clear to me what the rewards
+and penalties to the robots were.’’
+We have added three sentences below the reward function in Equation (14) that
+explain the rewards and penalties defined by this function.
+Response to Reviewer #2
+‘‘This modeling and robotics paper is an excellent addition to the experimental work
+that is already submitted to PLoS ONE. Attempting to explain the counter-intuitive
+result that cooperatively transported loads move slower as more ants join the moving
+team, the authors propose two models and test these models in a collective robotics
+system. In doing so they not only provide evidence that the collective speed conforms
+to the speed of the slowest teammate, but also provide valuable control algorithms for
+teams of robot movers. The experimental design is excellent, and the manuscript is
+well written. My recommendation is for acceptance after minor revision.’’
+We are glad that you find the work contained in this paper worthwhile and
+wellpresented. We address your comments below.
+‘‘Reading through the manuscript, it seemed obvious to me that if rapid transport of
+food items back to the nest is valuable, there would be a strong evolutionary pressure
+to select for a simple rule - ants sensing they are the slowest transporters should
+disengage from transport. This would lead to faster transport times and could be
+accomplished using the mechanisms proposed in this manuscript. The authors propose
+the logical ultimate explanation of enhanced robustness of transport in the final parts of
+the discussion, however I feel that transport speed vs robustness should be a stronger
+theme that runs through the manuscript. To this end, it would be very useful if the
+authors could provide any observations of this behaviour during ant transport - did ants
+ever disengage from transport, and was this behaviour more likely for slow-
+transporting ants? It may be that this data appears in Reference 13.’’
+Transporting ants certainly do let go of the load sometimes (Buffin & Pratt 2016), but
+we are not proposing disengagement from the load as a solution to slow ants. The
+problem with this solution is that the smaller team would then have a higher per capita
+burden, which would slow the team down, unless the disengaged ant was sufficiently
+slow. Instead, we explore speed adjustment assuming a constant team composition.
+We do not yet have relevant observations to determine whether slow ants are more
+likely to disengage from transport, because we have not identified the intrinsically slow
+ants in a given transport team. That would require new experiments with marked ants
+whose transport histories and typical speeds are known.
+‘‘In Figure 3, we see a trend of decreasing velocity with increasing group size. In the
+single-ant-transport scenario, we see a large variation in absolute velocity, but what
+was the individual transport speeds of the ants in the >1-transporter scenarios? If
+slower ants are over-represented in these group-transport scenarios, then we could
+expect to see decreasing load velocities simply as an average of individual transporter
+speeds, rather than the proposed mechanism of social conformation to the slowest
+transporter. Presumably this data appears in Reference 13, and if so, the group
+compositions need further explanation here.’’
+These are interesting questions, but we do not yet have this kind of data for the ants.
+As noted in our response above, we do not know the intrinsic speeds of the team
+members. What we have shown here is that, assuming variation in intrinsic speed, a
+mechanism of the sort that we model might explain the ants’ behavior. In future
+research, the kinds of measurements suggested here will have to be obtained.
+‘‘Basic statistical tests are completely absent in the manuscript, and need to be
+provided for the data in Figures 3, 7 and 8. For instance in Figure 3, we see a
+decreasing trend, but there is no explanation of statistical significance of comparisons
+of each group. Similarly in Figures 7 and 8, simple tests such as an ANOVA would
+provide statistical reassurance that indeed mean load velocity does not vary with the
+addition of extra robots and out-of-phase stepping. A lack of descriptive statistics is
+normally grounds for rejection, but I do not believe that in this case the necessary
+statistical reporting will change the results or discussion.’’
+We have added Tukey range tests (lines 103-107) for the data in Figure 3 and ANOVA
+tests (lines 335) for the data in Figure 8. In the first row of Figure 7, which shows the
+mean load velocity during the robot experiments with the learning algorithm, we have
+changed the light blue shaded region in the three plots to show the 95% confidence
+interval rather than the standard deviation. As we now point out in lines 318-320, this
+interval contains the maximum speed of the slowest transporter in the team, which is 4
+cm/s, for all three robot team sizes.
+‘‘The authors provide a link to a Github repository, however it appears broken and
+needs to be fixed (I received a 404 error when I clicked on the link).’’
+There was a LaTeX error that added more symbols to the hyperlink. The link has now
+been corrected and verified.
+‘‘Other than these minor points, I think this is an excellent manuscript and a very
+worthy addition of knowledge to the field.’’
+Thank you, we appreciate the time and effort put into reviewing this work.
+Society Open

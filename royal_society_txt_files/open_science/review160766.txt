@@ -1,0 +1,1229 @@
+Gait control in a soft robot by sensing interactions with the
+environment using self-deformation
+Takuya Umedachi, Takeshi Kano, Akio Ishiguro and Barry A. Trimmer
+Article citation details
+R. Soc. open sci. 3: 160766.
+http://dx.doi.org/10.1098/rsos.160766
+Review timeline
+Original submission: 9 February 2016 Note: Reports are unedited and appear as
+1st revised submission: 4 October 2016 submitted by the referee. The review history
+2nd revised submission: 6 November 2016 appears in chronological order.
+Final acceptance: 7 November 2016
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-160021.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Francesco Corucci)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Supplementary material are provided in the form of videos of numerical simulations and robotic
+trials. The "condition of publication" may also require, in addition, the code needed to replicate
+the simulated experiments, the data produced by those experiments, as well as the motion
+tracking data collected during robotic trials.
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+The paper is interesting, and presents a novel model as well as a robotic platform, both inspired
+by inching and crawling soft-bodied animals. The proposed control approaches are highly
+interesting for the fields of soft robotics and embodied intelligence, where this kind of
+contribution is needed. There are, however, some issues that should be fixed and clarified before
+acceptance, reason why I suggested a Major revision. Please see comments below.
+pag 9 lines 33-37: Some references supporting these statements would help.
+Pag 9 lines 57-59: Although well explained later (pag 10 lines 6-9), this statement could be
+misleading. Challenges arising from the employment of soft materials in robotics are not due to
+their “easy 3D deformability”. Please
+Pag 10 line 36: please explain what prolegs are when you first mention them (also referred in Fig
+1)
+Pag 11 line 38: Fig. 2 is cited for the first time. The picture contains lot of information that should
+be described in more detail either in the caption or in the text. I see that there's a modeling section
+later, that I imagine will refer to some of the symbols appearing in the picture thus helping the
+reader's comprehension, but it is difficult to understand Fig. 2 when it is first referred to in the
+introduction. If you are describing the picture in greater detail later, it may be wise not to refer to
+the picture in the intro at all. Besides that, please define the RTS acronym also in the caption of
+the figure.
+Pag 13 lines 35-39: Please make this sentence more fluid.
+Pag 14 line 20: the term “anterograde oscillatory pattern” appears for the first time. Looks like it is
+a very specific and not very common term, that should be defined.
+Pag 15 Tab 2: There may be an error in the caption, as you never refer to model (iii) in the second
+sentence.
+Pag 15 line 56: “using with three different” <U+2192> “using three different”
+Pag 15 lines 59-60: you may want to insert a sentence on explaining why oscillator phases
+presents an oscillatory pattern in Fig 3b, and what does it means. Also, regarding the “near
+stability” of those phases, model(i) in fig 3(b) looks clearly increasing, and thus not stable. A
+slight rising trend is observable also for model (ii). Please clarify these doubts. Also, please report
+in the caption of Fig. 3 which curve refers to which locomotion strategy, for the reader's
+convenience.
+Pag 16 lines 8-15: you state that model (ii) refers to configurations in which the caterpillar has legs
+in the middle of the body. The most intuitive choice for alpha appears to be, to an unexperienced
+reader, something like “0 0 0 0 10 10 10 10 0 0 0 0”, i.e. non-zero values in the center, an maybe
+symmetry. Model ii, on the other hand, displays a different pattern, that I feel should be better
+3
+explained. It looks like an almost arbitrary choice that doesn not appear to match your
+explanation. Please provide more details. I think that a figure that clarifies the choice of alpha
+values would help, maybe clearly comparing to the species mentioned in the text. Figure 1 may
+be part of the solution to this doubt, but please try to better clarify these doubts.
+Page 16 lines 20-24: same concerns as before regarding the specific choice and biological
+plausibility of alpha.
+Pag 15 – 2.3 Numerical experiments:
+From Eq. 5 and Tab. 2 I understand that you are simulating a surface offering very good grip,
+with high static friction at gripping points (probably never allowing feet slipping in a dynamic
+friction regime). Is it correct? I so, you may want to make this clear to the reader, maybe referring
+to the type of locomotion exhibited by the model animals. Although I tend to believe that this is a
+reasonable choice, this is not a trivial assumption, that should be motivated. Also, referring to
+Tab. 2, why did you pick exactly 10 as alpha value? A reader may also expect different
+experiments with different friction values. You should explain if and why you performed
+experiments only for this choice of alpha. Finally, details regarding the implementation of the
+model could be useful. I don't know if you are providing those later in the paper. Also: is the
+model and the simulation data made available with this publication? This would improve the
+soundness of the work, allowing reproducibility. This could be even judged as required for
+publication, as supporting data are required as a condition of publication.
+Pag 16 line 46. Why do you use 12 segments in your simulations, but then work with a robot with
+just 4? I guess you are going to compare the model against the behavior of the robot, but this
+discrepancy makes a huge difference between the two. Model-robot discrepancies should always
+be reduced, and this one is definitely under your control. I can see that building a 12 segments
+robot would be more complex, but then, why did you simulate a 12 segments robot in the first
+place? Even with a comment explaining the rationale behind this choice, I would regard it as a
+very strange one.
+Pag 16 Line 53: “[...] of the robot segment”
+Pag 16 line 59: Did you 3D-print a mold, or are you using a 3D-printer that directly prints soft
+matter? Please provide a few details on the fabrication procedure.
+Page 18 – On what type of surface was the robot moving in your experiments, and why? It looks
+that your model only describes static friction. Did you observe slipping phenomena in your
+robot, that may be one of the reasons behind the discrepancy among robotic trials and
+experiments? Did you try it on different surfaces? Please elaborate a bit on this.
+Page 18 line 24: how did you replicate these arrangements when downscaling from 12 to 4
+segments?
+Page 18 line 29: “to setting”
+Pag 18 line 34: From Fig 6, it looks like the fastest configuraton allows the robot to move, roughly,
+at 6 cm/min. The focus of the paper is not, clearly, on building a fast robot, but the reader will
+notice that the robot is rather slow. Having an idea of how fast the animals that inspired this
+design move could better sustain your work. If you make such a comparison, please normalize
+distances and speeds referring to body lengths.
+Pag 18 lines 34-36: I would not say from Fig 6b,c, that all phase states are stable. It seems that
+there's indeed some variability (particularly clear in theta3 in Fig 6c). Please elucidate this.
+4
+Reporting limit cycles could help when talking about stability. (As a side note, there are
+duplicated entries in the legend.)
+General note regarding robotic trials: single observations are generally considered weak,
+especially when analyzing complex phenomena in which variability can occur. All your
+statements would be much stronger if you could support them with data gathered in more than
+one trial and with some proper statistical analysis. The same holds for numerical simulations.
+However, it does not look like there is any source of noise/variability in your model, so you
+should be safe here.
+Page 19 lines 11-13: If I understand correctly, different species can exhibit both crawling and
+inching by modifying their morphology, affecting the gripping points, this reconfiguration being
+controlled by what their proprioceptive information, affected by the substrate they are working
+on. From the point of view of robotics and embodied intelligence, it would be extremely
+interesting to observe an automatic transition between those two gaits when the robot moves on
+different terrains, determined by proprioceptive information (instead of manually altering the
+morphology, as you did with the tape). It would be interesting either if this transition
+spontaneously emerged from the interaction of a fixed body with a changing environment, or
+controlled by slightly modifying the body (e.g. maybe just modifying the inclination of the feet).
+This would be a great example of a robot sensing the environment through the body, and
+modifying in turn the behavior by controlling morphological adaptation. This idea of altering the
+behavior by altering the body is very intruguing and promising. It is sometimes referred to as
+morphosis/morphing in embodied intelligence literature. You may want to elaborate a bit on
+this, as your setting has lot of potential in this direction. Doing so, you could consider referring to
+previous work hinting at this concept:
+F. Corucci, M. Calisti, H. Hauser, C. Laschi "Shaping the body to shape the behavior: a more
+active role of the morphology in the brain-body trade-off", 13th European Conference on
+Artificial Life (ECAL 2015) in York, United Kingdom, 20-24 July 2015
+F. Corucci, M. Calisti, H. Hauser, C. Laschi, "Novelty-based evolutionary design of morphing
+underwater robots", Genetic and Evolutionary Computation Conference (GECCO), July 11-15
+2015, Madrid, Spain
+In those works the change in the behavior arose from a manually controlled morphological
+reconfiguration (similarly to what you did by placing tape below the feets to change the friction).
+Your platform could, however, allow the automatic trigger of such reconfigurations, which is
+more powerful.
+Pag 19 lines 48-51: plesae support this statement with a reference.
+Page 20 line 26: “surficial” deformation. Did you mean “superficial”?
+Discussions: There are big discrepancies among the robot and the model, such as the different
+number of segments. This and other possible sources of discrepancies should be made clear and
+further discussed. In general, the discussion of the model/robot discrepancy (which is a very
+relevant issue) is a bit short, and could be improved.
+5
+label_author_2
+Review form: Reviewer 2 (Cecilia Laschi)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+NA
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_2
+Accept as is
+Comments to the Author(s)
+label_comment_2
+The paper presents an interesting work and provides a contribution to current knowledge and
+achievements in bioinspired robotics and soft-bodied robots, by proposing the oscillator-based
+control model.
+A few issues outlined by previous reviews have been addressed by the authors and the paper
+results clear.
+Minor issue: Please double check section numbering - 2.3 should probably be 2.5.
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Please see the comments below
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+6
+Recommendation?
+label_recommendation_3
+Reject
+Comments to the Author(s)
+label_comment_3
+Comments:
+The paper presents both a theoretical model that was tested numerically, and a physical robot
+implementation of a caterpillar like robot. The authors hypothesise that many animals use real
+time evaluation of friction forces in order to adapt the control of locomotion. Based on this
+perspective, the authors propose a decentralised control scheme for locomotion of multi
+segmented structures that uses local feedback of structure deformation to estimate friction forces
+acting on the flexible body. Three models were tested in numerical simulation, each model
+differing by the number of feet per segment that can be in contact with the ground. The numerical
+simulation showed corresponding gaits to the animal with similar proleg structure. However, the
+robot experiment seemed not to fully match the predicted behaviour.
+This paper is presented in a technically sound form and is well written. The authors hypothesise
+a very interesting approach to decentralised control and how local feedback could be used to
+synchronise the complex locomotion system. However, there are some major and a couple of
+minor issues the authors might want to consider:
+Major issues:
+The authors’ main message is that local feedback and decentralised control is solving the problem
+of coordination between the individual segments. However, there is no proof in the paper to
+validate this claim. How can the success of locomotion be attributed to the implementation of the
+third term in equation 6? Equation 6 has three terms, and as far as I understood the authors
+thought of the last "discrepancy" term and implemented it in the model and robot. It is however
+not clear if the locomotion properties are actually influenced by this novel term, or if the
+emerging gait is already defined with the first two terms. What is the influence of the three terms
+on the locomotion behavior in detail? Please elaborate on why these terms are important and how
+they contribute to the overall locomotion behaviour.
+Furthermore, it is unclear if the theoretical model was built to explain biological systems, or to
+predict the robotic implementation’s motion. It is questionable if the model can represent both
+systems, given that acting friction forces are different a 1cm long caterpillar where adhesive
+forces become more important (insects make use of adhesive or hairy pads) than for a heavier
+and larger 20cm long robot where adhesive interactions with the ground can be neglected. Why
+did the authors decide to use a dynamic friction model rather than a static one, given that
+caterpillars and the robot presumably don’t slip? I understand the position of the authors as
+bioroboticists, trying to learn more about nature by building robots even though robots can never
+be a complete replication of the biological counterpart. From that perspective it is natural to have
+some degree of discrepancies between robot and animal, though I would feel more comfortable if
+the model was verified much more carefully and clearly states the boundary conditions for which
+the model was made to be accurate.
+Furthermore, after these considerations above, the most important point we should consider is
+whether this “pseudo animal model” could give any insights into the biological systems. As
+pointed out by many bio-roboticists in the past, the most important (at least for biologists) is the
+process in which the discovery in robot platforms should be fedback to biology as hypotheses
+and verified them in animals. I’m not sure this paper can be concluded only by saying “these
+results can shed light on the basic principles of animals” at last, but it needs to clearly discuss
+what principles this paper has actually discovered. Without further detailed discussion about
+what we learnt about animals from these experiments, this paper looks only half-way done.
+7
+Minor issues:
+The concept of RTS is new for me, so please explain it in detail, and also spell out the term in
+figure 2. Please elaborate the degrees to which this is novel and different from the other
+technologies such as parallel elasticity or adjustable stiffness actuators, etc.
+Why is figure 3 only plotted until t=50? It seems like some of the models have not yet reached
+steady state. Please increase the shown time.
+It would be nice to have a comparison between the robot and the model, e.g. comparing the
+graphs shown in figure 3.
+In figure 7, why start after 80 and 46 seconds? The visibility of gaits is bad, could you improve the
+figure?
+Friction forces are usually with respect to the contact point velocity rather than the centre of mass
+velocity. The way it is implemented may be correct for rigid bodies in translation, but certainly
+not for soft bodies that are twisting and bending. Please reconsider the implementation of
+friction.
+Reference 2 has a mistake, with the authors names repeated twice.
+In conclusion, this paper presents an interesting control method based on decentralised control
+and local feedback which was implemented in a robot model and which should elucidate the
+control principles used in the animal. Although the approach seems rather promising, the
+analysis of the proposed hypothesis for control was not done very carefully. As I think that the
+authors have used the right approach for answering the question of how motion is controlled in
+caterpillar like animals (building theoretical model and testing it in a physical model), I would
+suggest revising the model and to resubmit a paper with a generous analysis of the stated
+hypothesis.
+label_end_comment
+Decision letter (RSOS-160021)
+18-Mar-2016
+Dear Dr Umedachi:
+Manuscript ID RSOS-160021 entitled "Gait control in a soft robot by sensing interactions with the
+environment using self-deformation" which you submitted to Royal Society Open Science, has
+been reviewed. The comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 15-Sep-2016. If you are unable to submit
+by this date please contact the Editorial Office.
+8
+We look forward to receiving your resubmission.
+Sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+on behalf of
+Kevin Padian, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Monica Daley):
+Associate Editor: 1
+Comments to the Author:
+label_comment_4
+The original reviewers from RS Interface were not available, so your manuscript was sent to new
+expert reviewers. All three reviewers praise the authors’ approach to the interesting problem of
+soft-bodied locomotion. However, whereas Reviewer 2 was happy with the paper as it currently
+stands, Reviewers 1 and 3 both raise concerns that require major revisions. While I appreciate
+that the authors have already made revisions to their previous version, Reviewers 1 and 3 have
+raised reasonable and constructive concerns. Reviewer 1 suggests that the authors need to
+improve the discussion about discrepancies between the simulation and physical
+implementation, which was also a concern raised in the original RS-Interface reviews.
+Additionally, Reviewer 1 would like further results and discussion on variability in the
+performance of the physical robot. Reviewer 3 requests a more thorough analysis of the specific
+importance of the third term in equation 6 for the overall locomotor performance, as this
+‘discrepancy function’ term is the specific novel contribution of the authors’ control scheme. It
+would be helpful if the authors included simulations with and without this term. Reviewer 3 also
+asks the authors to better address in the discussion what specific biological insights might be
+drawn from this work. Are there specific hypotheses and predictions that can be made about
+caterpillar locomotion based on the findings here? Please elaborate further on this.
+Associate Editor: 2
+Comments to the Author:
+label_comment_5
+(There are no comments.)
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+The paper is interesting, and presents a novel model as well as a robotic platform, both inspired
+by inching and crawling soft-bodied animals. The proposed control approaches are highly
+interesting for the fields of soft robotics and embodied intelligence, where this kind of
+contribution is needed. There are, however, some issues that should be fixed and clarified before
+acceptance, reason why I suggested a Major revision. Please see comments below.
+pag 9 lines 33-37: Some references supporting these statements would help.
+Pag 9 lines 57-59: Although well explained later (pag 10 lines 6-9), this statement could be
+misleading. Challenges arising from the employment of soft materials in robotics are not due to
+their “easy 3D deformability”. Please
+Pag 10 line 36: please explain what prolegs are when you first mention them (also referred in Fig
+1)
+9
+Pag 11 line 38: Fig. 2 is cited for the first time. The picture contains lot of information that should
+be described in more detail either in the caption or in the text. I see that there's a modeling section
+later, that I imagine will refer to some of the symbols appearing in the picture thus helping the
+reader's comprehension, but it is difficult to understand Fig. 2 when it is first referred to in the
+introduction. If you are describing the picture in greater detail later, it may be wise not to refer to
+the picture in the intro at all. Besides that, please define the RTS acronym also in the caption of
+the figure.
+Pag 13 lines 35-39: Please make this sentence more fluid.
+Pag 14 line 20: the term “anterograde oscillatory pattern” appears for the first time. Looks like it is
+a very specific and not very common term, that should be defined.
+Pag 15 Tab 2: There may be an error in the caption, as you never refer to model (iii) in the second
+sentence.
+Pag 15 line 56: “using with three different” <U+2192> “using three different”
+Pag 15 lines 59-60: you may want to insert a sentence on explaining why oscillator phases
+presents an oscillatory pattern in Fig 3b, and what does it means. Also, regarding the “near
+stability” of those phases, model(i) in fig 3(b) looks clearly increasing, and thus not stable. A
+slight rising trend is observable also for model (ii). Please clarify these doubts. Also, please report
+in the caption of Fig. 3 which curve refers to which locomotion strategy, for the reader's
+convenience.
+Pag 16 lines 8-15: you state that model (ii) refers to configurations in which the caterpillar has legs
+in the middle of the body. The most intuitive choice for alpha appears to be, to an unexperienced
+reader, something like “0 0 0 0 10 10 10 10 0 0 0 0”, i.e. non-zero values in the center, an maybe
+symmetry. Model ii, on the other hand, displays a different pattern, that I feel should be better
+explained. It looks like an almost arbitrary choice that doesn not appear to match your
+explanation. Please provide more details. I think that a figure that clarifies the choice of alpha
+values would help, maybe clearly comparing to the species mentioned in the text. Figure 1 may
+be part of the solution to this doubt, but please try to better clarify these doubts.
+Page 16 lines 20-24: same concerns as before regarding the specific choice and biological
+plausibility of alpha.
+Pag 15 – 2.3 Numerical experiments:
+From Eq. 5 and Tab. 2 I understand that you are simulating a surface offering very good grip,
+with high static friction at gripping points (probably never allowing feet slipping in a dynamic
+friction regime). Is it correct? I so, you may want to make this clear to the reader, maybe referring
+to the type of locomotion exhibited by the model animals. Although I tend to believe that this is a
+reasonable choice, this is not a trivial assumption, that should be motivated. Also, referring to
+Tab. 2, why did you pick exactly 10 as alpha value? A reader may also expect different
+experiments with different friction values. You should explain if and why you performed
+experiments only for this choice of alpha. Finally, details regarding the implementation of the
+model could be useful. I don't know if you are providing those later in the paper. Also: is the
+model and the simulation data made available with this publication? This would improve the
+soundness of the work, allowing reproducibility. This could be even judged as required for
+publication, as supporting data are required as a condition of publication.
+Pag 16 line 46. Why do you use 12 segments in your simulations, but then work with a robot with
+just 4? I guess you are going to compare the model against the behavior of the robot, but this
+10
+discrepancy makes a huge difference between the two. Model-robot discrepancies should always
+be reduced, and this one is definitely under your control. I can see that building a 12 segments
+robot would be more complex, but then, why did you simulate a 12 segments robot in the first
+place? Even with a comment explaining the rationale behind this choice, I would regard it as a
+very strange one.
+Pag 16 Line 53: “[...] of the robot segment”
+Pag 16 line 59: Did you 3D-print a mold, or are you using a 3D-printer that directly prints soft
+matter? Please provide a few details on the fabrication procedure.
+Page 18 – On what type of surface was the robot moving in your experiments, and why? It looks
+that your model only describes static friction. Did you observe slipping phenomena in your
+robot, that may be one of the reasons behind the discrepancy among robotic trials and
+experiments? Did you try it on different surfaces? Please elaborate a bit on this.
+Page 18 line 24: how did you replicate these arrangements when downscaling from 12 to 4
+segments?
+Page 18 line 29: “to setting”
+Pag 18 line 34: From Fig 6, it looks like the fastest configuraton allows the robot to move, roughly,
+at 6 cm/min. The focus of the paper is not, clearly, on building a fast robot, but the reader will
+notice that the robot is rather slow. Having an idea of how fast the animals that inspired this
+design move could better sustain your work. If you make such a comparison, please normalize
+distances and speeds referring to body lengths.
+Pag 18 lines 34-36: I would not say from Fig 6b,c, that all phase states are stable. It seems that
+there's indeed some variability (particularly clear in theta3 in Fig 6c). Please elucidate this.
+Reporting limit cycles could help when talking about stability. (As a side note, there are
+duplicated entries in the legend.)
+General note regarding robotic trials: single observations are generally considered weak,
+especially when analyzing complex phenomena in which variability can occur. All your
+statements would be much stronger if you could support them with data gathered in more than
+one trial and with some proper statistical analysis. The same holds for numerical simulations.
+However, it does not look like there is any source of noise/variability in your model, so you
+should be safe here.
+Page 19 lines 11-13: If I understand correctly, different species can exhibit both crawling and
+inching by modifying their morphology, affecting the gripping points, this reconfiguration being
+controlled by what their proprioceptive information, affected by the substrate they are working
+on. From the point of view of robotics and embodied intelligence, it would be extremely
+interesting to observe an automatic transition between those two gaits when the robot moves on
+different terrains, determined by proprioceptive information (instead of manually altering the
+morphology, as you did with the tape). It would be interesting either if this transition
+spontaneously emerged from the interaction of a fixed body with a changing environment, or
+controlled by slightly modifying the body (e.g. maybe just modifying the inclination of the feet).
+This would be a great example of a robot sensing the environment through the body, and
+modifying in turn the behavior by controlling morphological adaptation. This idea of altering the
+behavior by altering the body is very intruguing and promising. It is sometimes referred to as
+morphosis/morphing in embodied intelligence literature. You may want to elaborate a bit on
+11
+this, as your setting has lot of potential in this direction. Doing so, you could consider referring to
+previous work hinting at this concept:
+F. Corucci, M. Calisti, H. Hauser, C. Laschi "Shaping the body to shape the behavior: a more
+active role of the morphology in the brain-body trade-off", 13th European Conference on
+Artificial Life (ECAL 2015) in York, United Kingdom, 20-24 July 2015
+F. Corucci, M. Calisti, H. Hauser, C. Laschi, "Novelty-based evolutionary design of morphing
+underwater robots", Genetic and Evolutionary Computation Conference (GECCO), July 11-15
+2015, Madrid, Spain
+In those works the change in the behavior arose from a manually controlled morphological
+reconfiguration (similarly to what you did by placing tape below the feets to change the friction).
+Your platform could, however, allow the automatic trigger of such reconfigurations, which is
+more powerful.
+Pag 19 lines 48-51: plesae support this statement with a reference.
+Page 20 line 26: “surficial” deformation. Did you mean “superficial”?
+Discussions: There are big discrepancies among the robot and the model, such as the different
+number of segments. This and other possible sources of discrepancies should be made clear and
+further discussed. In general, the discussion of the model/robot discrepancy (which is a very
+relevant issue) is a bit short, and could be improved.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+The paper presents an interesting work and provides a contribution to current knowledge and
+achievements in bioinspired robotics and soft-bodied robots, by proposing the oscillator-based
+control model.
+A few issues outlined by previous reviews have been addressed by the authors and the paper
+results clear.
+Minor issue: Please double check section numbering - 2.3 should probably be 2.5.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_8
+Comments:
+The paper presents both a theoretical model that was tested numerically, and a physical robot
+implementation of a caterpillar like robot. The authors hypothesise that many animals use real
+time evaluation of friction forces in order to adapt the control of locomotion. Based on this
+perspective, the authors propose a decentralised control scheme for locomotion of multi
+segmented structures that uses local feedback of structure deformation to estimate friction forces
+acting on the flexible body. Three models were tested in numerical simulation, each model
+differing by the number of feet per segment that can be in contact with the ground. The numerical
+simulation showed corresponding gaits to the animal with similar proleg structure. However, the
+robot experiment seemed not to fully match the predicted behaviour.
+This paper is presented in a technically sound form and is well written. The authors hypothesise
+a very interesting approach to decentralised control and how local feedback could be used to
+synchronise the complex locomotion system. However, there are some major and a couple of
+minor issues the authors might want to consider:
+Major issues:
+The authors’ main message is that local feedback and decentralised control is solving the problem
+of coordination between the individual segments. However, there is no proof in the paper to
+12
+validate this claim. How can the success of locomotion be attributed to the implementation of the
+third term in equation 6? Equation 6 has three terms, and as far as I understood the authors
+thought of the last "discrepancy" term and implemented it in the model and robot. It is however
+not clear if the locomotion properties are actually influenced by this novel term, or if the
+emerging gait is already defined with the first two terms. What is the influence of the three terms
+on the locomotion behavior in detail? Please elaborate on why these terms are important and how
+they contribute to the overall locomotion behaviour.
+Furthermore, it is unclear if the theoretical model was built to explain biological systems, or to
+predict the robotic implementation’s motion. It is questionable if the model can represent both
+systems, given that acting friction forces are different a 1cm long caterpillar where adhesive
+forces become more important (insects make use of adhesive or hairy pads) than for a heavier
+and larger 20cm long robot where adhesive interactions with the ground can be neglected. Why
+did the authors decide to use a dynamic friction model rather than a static one, given that
+caterpillars and the robot presumably don’t slip? I understand the position of the authors as
+bioroboticists, trying to learn more about nature by building robots even though robots can never
+be a complete replication of the biological counterpart. From that perspective it is natural to have
+some degree of discrepancies between robot and animal, though I would feel more comfortable if
+the model was verified much more carefully and clearly states the boundary conditions for which
+the model was made to be accurate.
+Furthermore, after these considerations above, the most important point we should consider is
+whether this “pseudo animal model” could give any insights into the biological systems. As
+pointed out by many bio-roboticists in the past, the most important (at least for biologists) is the
+process in which the discovery in robot platforms should be fedback to biology as hypotheses
+and verified them in animals. I’m not sure this paper can be concluded only by saying “these
+results can shed light on the basic principles of animals” at last, but it needs to clearly discuss
+what principles this paper has actually discovered. Without further detailed discussion about
+what we learnt about animals from these experiments, this paper looks only half-way done.
+Minor issues:
+The concept of RTS is new for me, so please explain it in detail, and also spell out the term in
+figure 2. Please elaborate the degrees to which this is novel and different from the other
+technologies such as parallel elasticity or adjustable stiffness actuators, etc.
+Why is figure 3 only plotted until t=50? It seems like some of the models have not yet reached
+steady state. Please increase the shown time.
+It would be nice to have a comparison between the robot and the model, e.g. comparing the
+graphs shown in figure 3.
+In figure 7, why start after 80 and 46 seconds? The visibility of gaits is bad, could you improve the
+figure?
+Friction forces are usually with respect to the contact point velocity rather than the centre of mass
+velocity. The way it is implemented may be correct for rigid bodies in translation, but certainly
+not for soft bodies that are twisting and bending. Please reconsider the implementation of
+friction.
+Reference 2 has a mistake, with the authors names repeated twice.
+In conclusion, this paper presents an interesting control method based on decentralised control
+and local feedback which was implemented in a robot model and which should elucidate the
+control principles used in the animal. Although the approach seems rather promising, the
+analysis of the proposed hypothesis for control was not done very carefully. As I think that the
+authors have used the right approach for answering the question of how motion is controlled in
+caterpillar like animals (building theoretical model and testing it in a physical model), I would
+suggest revising the model and to resubmit a paper with a generous analysis of the stated
+hypothesis.
+13
+Author's Response to Decision Letter for (RSOS-160021)
+See Appendix A.
+label_version_2
+RSOS-160766.R0 (Revision)
+label_author_4
+Review form: Reviewer 1 (Francesco Corucci)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Supporting data is provided in the form of videos of both model simulations and prototype
+evaluation, which help understanding what is going on. However, in my opinion, the
+implementation of the mathematical model (i.e., the code that generated the plots and the videos)
+should also be provided by the authors to allow others to replicate the numerical simulations.
+The raw data captured from robotic trials in the real world should also be provided. Whether this
+is a necessary condition for publication or not, should be decided by the editor.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_9
+The authors did a good job addressing my comments. My only suggestion is to improve the
+supplementary material by attaching your implementation of the mathematical model as well as
+the data produced by both the model and the robotic trials.
+Francesco Corucci (1,2)
+(1) The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy
+(2) Morphology, Evolution & Cognition Lab, University of Vermont, Burlington, VT, USA
+14
+label_end_comment
+Decision letter (RSOS-160766)
+18-Oct-2016
+Dear Dr Umedachi
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-160766 entitled
+"Gait control in a soft robot by sensing interactions with the environment using self-deformation"
+has been accepted for publication in Royal Society Open Science subject to minor revision in
+accordance with the referee suggestions. Please find the referees' comments at the end of this
+email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160766
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+15
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 27-Oct-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+16
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Andrew Dunn
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to the Author:
+Thank you for your extensive efforts to revise your paper to address the points raised by
+reviewers. The revised paper will now be clearer to a multi-disciplinary audience.
+Please note that RSOS has an open access data policy, so please ensure that the data presented in
+the figures to support your findings are provided through a suitable archive repository such as
+DataDryad.org. If possible, please consider also publishing the code associated with the
+simulations to allow others to replicate them.
+Note that there is a minor typo on page 17 line 10 ('propose' should be 'proposed').
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_10
+The authors did a good job addressing my comments. My only suggestion is to improve the
+supplementary material by attaching your implementation of the mathematical model as well as
+the data produced by both the model and the robotic trials.
+Francesco Corucci (1,2)
+(1) The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy
+(2) Morphology, Evolution & Cognition Lab, University of Vermont, Burlington, VT, USA
+label_end_comment
+Decision letter (RSOS-160766.R1)
+07-Nov-2016
+Dear Dr Umedachi,
+I am pleased to inform you that your manuscript entitled "Gait control in a soft robot by sensing
+interactions with the environment using self-deformation" is now accepted for publication in
+Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+17
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Response to the editor and reviewers and log of changes
+(Comments from the editor and referee are duplicated verbatim in bold. Our response
+normal-face font and additional section of text added to the paper are duplicated in italic)
+Associate Editor Comments to Author (Dr Monica Daley):
+Associate Editor: 1
+Comments to the Author:
+label_comment_11
+The original reviewers from RS Interface were not available, so your manuscript
+was sent to new expert reviewers. All three reviewers praise the authors’
+approach to the interesting problem of soft-bodied locomotion. However,
+whereas Reviewer 2 was happy with the paper as it currently stands, Reviewers 1
+and 3 both raise concerns that require major revisions. While I appreciate that
+the authors have already made revisions to their previous version, Reviewers 1
+and 3 have raised reasonable and constructive concerns. Reviewer 1 suggests
+that the authors need to improve the discussion about discrepancies between
+the simulation and physical implementation, which was also a concern raised in
+the original RS-Interface reviews. Additionally, Reviewer 1 would like further
+results and discussion on variability in the performance of the physical robot.
+Reviewer 3 requests a more thorough analysis of the specific importance of the
+third term in equation 6 for the overall locomotor performance, as this
+‘discrepancy function’ term is the specific novel contribution of the authors’
+control scheme. It would be helpful if the authors included simulations with and
+without this term. Reviewer 3 also asks the authors to better address in the
+discussion what specific biological insights might be drawn from this work. Are
+there specific hypotheses and predictions that can be made about caterpillar
+locomotion based on the findings here? Please elaborate further on this.
+In order to improve the parts that the reviewer pointed out, we mainly revised and added the
+following three points:
+<U+F0FC> More description and analysis about the local sensory feedback and how it does work are
+added focusing on the friction force and its modeling.
+<U+F0FC> The paper consists of two-stage process: first part is modeling for extracting the
+control/design principals from the real animal, and second part is building a prototype to
+verify the principles. The logic flow of the revised paper is emphasized.
+<U+F0FC> Description of the real animal and comparison the model/prototype with the real animal are
+added.
+The details of the amendments are described below.
+Associate Editor: 2
+Comments to the Author:
+label_comment_12
+(There are no comments.)
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_13
+The paper is interesting, and presents a novel model as well as a robotic
+platform, both inspired by inching and crawling soft-bodied animals. The
+proposed control approaches are highly interesting for the fields of soft robotics
+and embodied intelligence, where this kind of contribution is needed. There are,
+however, some issues that should be fixed and clarified before acceptance,
+reason why I suggested a Major revision. Please see comments below.
+page 9 lines 33-37: Some references supporting these statements would help.
+We appreciate the precious comments. The following references are added:
+[2] Blickhan, R., Wagner, H. & Seyfarth, A. 2003 Brain or muscles. Recent Res. Dev. Biomech.
+1, 215–245.
+[3] Vogel, S. 2000 Cats’ paws and catapults: Mechanical worlds of nature and people. Nature
+392, 881. (doi:10.1063/1.882490)
+[4] Roberts, T. J. 2002 The integrated function of muscles and tendons during locomotion.
+Comp. Biochem. Physiol. Part A Mol. Integr. Physiol. 133, 1087–1099. (doi:10.1016/S1095-
+6433(02)00244-1)
+[5] Fung, Y. C. 1993 Biomechanics: Motion, Flow, Stress, and Growth.
+(doi:10.1115/1.2900838)
+[6] Alexander, R. M. 203 ADPrinciples of Animal Locomotion. Princeton University Press.
+Page 9 lines 57-59: Although well explained later (pag 10 lines 6-9), this
+statement could be misleading. Challenges arising from the employment of soft
+materials in robotics are not due to their “easy 3D deformability”. Please
+This comment is not finished so we can only guess what the reviewer would like to say. We
+presume it would be that deformation in three dimensional space without complex deformation
+does not make the designer/operator difficult to control using conventional robotics approaches.
+Yes, it is true and the sentence was misleading. So the sentence is amended as follows.
+soft materials deform into complex shapes (twisting, buckling, wrinkling and so on) easily in
+three-dimensional space which makes them difficult to control using conventional robotics
+approaches.
+Page 10 line 36: please explain what prolegs are when you first mention them
+(also referred in Fig 1)
+Sorry for using the unfamiliar word for some readers. A footnote is added to explain what a
+proleg is: A proleg is a fleshy leg that develops on an abdominal segment of some insect larvae,
+which disappear in the adult. (They are confirmed in the middle and rear segments in the Fig. 1
+(a) and the rear segments in Fig. 1 (b)).
+Page 11 line 38: Fig. 2 is cited for the first time. The picture contains lot of
+information that should be described in more detail either in the caption or in the
+text. I see that there's a modeling section later, that I imagine will refer to some
+of the symbols appearing in the picture thus helping the reader's
+comprehension, but it is difficult to understand Fig. 2 when it is first referred to
+in the introduction. If you are describing the picture in greater detail later, it may
+be wise not to refer to the picture in the intro at all. Besides that, please define
+the RTS acronym also in the caption of the figure.
+The citation is deleted and we defined the RTS acronym. We appreciate the kind advice.
+Page 13 lines 35-39: Please make this sentence more fluid.
+We are afraid that the sentence is too long, which may readers confused. So the sentence is
+divided to make it simple.
+As can be seen in figure 1, legs on the real caterpillar grip when the body segment elongates
+and the legs are in contact with the substrate. Meanwhile, legs can release the substrate as the
+segment contracts.
+Page 14 line 20: the term “anterograde oscillatory pattern” appears for the first
+time. Looks like it is a very specific and not very common term, that should be
+defined.
+Considering the reason of this comment, we thought that we should not only add an explanation
+of “anterograde oscillatory pattern” but also illustrate why such wave pattern is needed for
+inching and crawling locomotion. So the following explanation about the locomotion forms are
+added before the paragraph:
+Caterpillar’s locomotion can be classified into two distinct locomotion forms: crawling and
+inching [19]. Larger caterpillars tend to have prolegs in the middle segments and to use
+crawling locomotion. In the locomotion form, a wave of steps is initiated at the posterior, and
+the wave is transmitted to front segments. This bending and contrasting wave patterns from the
+rear to front is called anterograde wave. By contrast, smaller caterpillars tend to lack prolegs
+in the middle segments and to produce inching locomotion. In inching locomotion, the posterior
+legs are pulled forward to grip the substrate just behind the front (thoracic) segments, the front
+grip is released, and then the body is extended forward. This locomotion form also requires an
+anterograde wave in the sense that the first step is started from the rear, which is sent to the
+front.
+Page 15 Tab 2: There may be an error in the caption, as you never refer to model
+(iii) in the second sentence.
+The error was corrected. We are grateful for the comment.
+Page 15 line 56: “using with three different” <U+2192> “using three different”
+The typo is corrected. Thank you so much.
+Page 15 lines 59-60: you may want to insert a sentence on explaining why
+oscillator phases presents an oscillatory pattern in Fig 3b, and what does it
+means. Also, regarding the “near stability” of those phases, model(i) in fig 3(b)
+looks clearly increasing, and thus not stable. A slight rising trend is observable
+also for model (ii). Please clarify these doubts. Also, please report in the caption
+of Fig. 3 which curve refers to which locomotion strategy, for the reader's
+convenience.
+We have to apologize the insufficient expiation about why oscillator phases presents an
+oscillatory pattern in figure 4b (which used to be Fig 3b). The following explanation was added
+in the second paragraph in ‘2.5 Numerical experiment’:
+Model (i) is a mathematical model in which all segments have legs. This produced the most
+marked posterior to anterior phase shift (approximately 2p, figure 5) and the slowest
+locomotion. Given that the second term (diffusion term) in equation (6) serves to produce in-
+phase oscillation with the neighboring oscillators, the local sensory feedback (the third term in
+equation (6)) provides the phase shift for generating crawling locomotion. What is happening
+locally is that the local sensory feedback modifies the own phase so as to increase the ground
+friction when it moves backward whereas so as to decrease the ground friction when it moves
+forward (as equations (5-7) indicate).
+With regards to whether it is nearly stable or not, I am afraid that the previous plot was not
+sufficiently long (0-50 sec) so I replotted the data 0-200 sec. The renewed plot looks stable
+conditions of Models i, ii, and iii.
+Page 16 lines 8-15: you state that model (ii) refers to configurations in which the
+caterpillar has legs in the middle of the body. The most intuitive choice for alpha
+appears to be, to an unexperienced reader, something like “0 0 0 0 10 10 10 10 0
+0 0 0”, i.e. non-zero values in the center, an maybe symmetry. Model ii, on the
+other hand, displays a different pattern, that I feel should be better explained. It
+looks like an almost arbitrary choice that doesn’t not appear to match your
+explanation. Please provide more details. I think that a figure that clarifies the
+choice of alpha values would help, maybe clearly comparing to the species
+mentioned in the text. Figure 1 may be part of the solution to this doubt, but
+please try to better clarify these doubts.
+In order to show that the alpha arrangements in Models ii and iii are based on the morphological
+structure of the crawling and inching caterpillars, a new figure is inserted instead of Table 2 as
+figure 3. The figure clearly shows that why alpha values of some segments are zero whereas the
+other are set as positive.
+Page 16 lines 20-24: same concerns as before regarding the specific choice and
+biological plausibility of alpha.
+With regard to biological plausibility, we inserted the following description in the first
+paragraph of `2.5 Numerical experiment’:
+It is known that gripping system of the real caterpillars is very sophisticated: only one pair of
+proleg is good enough to support the entire body of the real caterpillar [20]. Hence, we assume
+value of p should be sufficiently high for the model and set p to 10 in this section.
+Furthermore, the positive value putting in alpha, p, is important parameter for the propose
+model, but we didn’t a good job about it. To compensate this, we inserted the simulation using
+different value for alpha (figure 9) and description of how alpha-arrange affects the behavior in
+the second paragraph of `4 Discussion’:
+Such switching would require local information about the interaction of the animal with its
+substrate. For instance, we can simulate less interactive circumstance between the model and
+its substrate by decreasing the value of p. Figure 9 represents the phase gap from the tail to
+front oscillators with smaller value of p. The plots indicate that crawling and inching switching
+(the distinct gap from the tail to head between Models ii and iii) disappears with less friction
+from the substrate.
+Pag 15 – 2.5 Numerical experiments:
+From Eq. 5 and Tab. 2 I understand that you are simulating a surface offering
+very good grip, with high static friction at gripping points (probably never
+allowing feet slipping in a dynamic friction regime). Is it correct? I so, you may
+want to make this clear to the reader, maybe referring to the type of locomotion
+exhibited by the model animals. Although I tend to believe that this is a
+reasonable choice, this is not a trivial assumption, that should be motivated.
+Also, referring to Tab. 2, why did you pick exactly 10 as alpha value? A reader
+may also expect different experiments with different friction values. You should
+explain if and why you performed experiments only for this choice of alpha.
+Finally, details regarding the implementation of the model could be useful. I don't
+know if you are providing those later in the paper. Also: is the model and the
+simulation data made available with this publication? This would improve the
+soundness of the work, allowing reproducibility. This could be even judged as
+required for publication, as supporting data are required as a condition of
+publication.
+Please see the above response to the previous comment.
+Movies of the numerical and prototype experiments will be submitted as attached files.
+Page 16 line 46. Why do you use 12 segments in your simulations, but then work
+with a robot with just 4? I guess you are going to compare the model against the
+behavior of the robot, but this discrepancy makes a huge difference between the
+two. Model-robot discrepancies should always be reduced, and this one is
+definitely under your control. I can see that building a 12 segments robot would
+be more complex, but then, why did you simulate a 12 segments robot in the first
+place? Even with a comment explaining the rationale behind this choice, I would
+regard it as a very strange one.
+I think it’s natural that the reviewer has the doubt (why does 12-segment model in simulation
+become 4-segment prototype?). I have to apologize the point.
+The paper is constructed with two parts. One is a mathematical model for extracting the
+mechanical and control design from the real caterpillars. To this end, the segment number of the
+model was set as 12 which corresponds to the real caterpillars (crawling and inching ones).
+Another is to design a prototype using the finding from the mathematical model. This doesn’t
+require to mimic every detail of the real caterpillar since robotics technology has still many
+limitations compared to living system (e.g., power-to-weight ratio compared to muscle,
+microfabrication, energy efficiency and buttery). Therefore, we downsize the 12-segmented
+mathematical model to 4-segmented prototype.
+In the context, we amended the last paragraph of `1. I introduction’, the first paragraph of `2
+Mathematical model’, first paragraph of `2.5 Numerical experiment’, the beginning of section 3
+as follows:
+(Last paragraph of `1. I introduction’)
+…Section 2 first introduces a mathematical model that represents the body designs of
+real crawling and inching caterpillars. The model consists of a series of oscillators with
+coupled mechanical outputs that together form a decentralized control system. This is
+implemented in a numerical simulation that produces organized locomotion. Based on
+the findings from the numerical experiments, Section 3 then…(the last paragraph of `1. I
+introduction’)
+(First paragraph of 2 Mathematical Model)
+This section is for extracting the control mechanism from the two distinct caterpillars (crawling
+and inching ones). In this end we first model the deformable structure and motion control
+mechanism of the real caterpillars. The goal here is to keep the mathematical model as simple
+as possible but still mimic the relationship between the segment length and gripping/releasing
+mechanism of the leg.
+(First paragraph of 2.5 Numerical experiment)
+To validate this control scheme we conducted a numerical simulation. The number of module,
+N, is set as 12, which corresponds to the body structures of the real crawling and inching
+caterpillars (figure 3). a_i is set as a positive coefficient, p, when the segment has prolegs,
+whereas a_i is set as zero when the segment doesn’t have proleg. It is known that gripping
+system of the real caterpillars is very sophisticated: only one pair of proleg is good enough to
+support the entire body of the real caterpillar [20]. Hence, we assume value of p should be
+sufficiently high for the model and set p to 10 in this section. We will discuss how decreasing
+the value effects the model in 4. Discussion. Three different sets of leg-arrangement are
+prepared as Models i, ii and iii (figure 3).
+Furthermore, we added the following paragraph to explain why we change the segment number
+from 12 (simulation) to 4 (the prototype) as the last paragraph of `2.5 Numerical experiment’:
+Overall, phase shift from the rear to front of the anterograde wave depends on the proleg
+arrangements. We will discuss the more these results and compare them with real animals in
+Section 4. It should be noted that the oscillators of the segments `without prolegs’ (i.e., without
+the local sensory feedback) in Models i and ii oscillate nearly in-phase between the neighboring
+oscillators (figure 5). The results also indicate that the same number of segments is not
+necessary when we design the prototype.
+Finally, we also added the following paragraph in the beginning of section 3:
+Based on the findings from the numerical experiments, we build a prototype of the model. The
+purpose is not for imitation of the real caterpillar but for validation of the extracted control
+mechanism from the mathematical model. Needless to say, the state-of-art robotics technology
+has still many limitations compared to living system (e.g., power-to-weight ratio compared to
+muscle, microfabrication technology, energy efficiency of actuators, and energy storage
+capacity of butteries). Therefore, we downsize the 12-segmented mathematical model to 4-
+segmented porotype.
+Pag 16 Line 53: “[...] of the robot segment”
+Thank you so much for this kind correction. The part is amended.
+Pag 16 line 59: Did you 3D-print a mold, or are you using a 3D-printer that
+directly prints soft matter? Please provide a few details on the fabrication
+procedure.
+We use a 3D-printer that directly print soft matter. The following sentence are added in ‘3.1
+The hardware design’:
+These parts are directly printed at once using a multimaterial printer (Objet, Connex 500).
+Page 18 – On what type of surface was the robot moving in your experiments,
+and why? It looks that your model only describes static friction. Did you observe
+slipping phenomena in your robot, that may be one of the reasons behind the
+discrepancy among robotic trials and experiments? Did you try it on different
+surfaces? Please elaborate a bit on this.
+The prototype is also slipping with the ground as the attached movie shows (especially in the
+beginning of the experiment because the phase relation for locomotion is not generated yet).
+Unfortunately, the robot legs choose the surface. We tested several surfaces. Acrylic plate is too
+sticky for the legs and it requires more power (sometimes the legs were damaged since the legs
+stuck completely). Iron plate has the same problem. We added the following sentence in the end
+of the first paragraph of `3.2 Experimental result with the robot’:
+The robot is placed on a copy paper which is glued on a leveled table.
+Page 18 line 24: how did you replicate these arrangements when downscaling
+from 12 to 4 segments?
+The reason is explained as the response of the above commend “Page 16 line 46. Why do
+you use 12 segments in your simulations…”.
+Page 18 line 29: “to setting”
+The typo is collected. Thank you so much indeed.
+Pag 18 line 34: From Fig 6, it looks like the fastest configuration allows the robot
+to move, roughly, at 6 cm/min. The focus of the paper is not, clearly, on
+building a fast robot, but the reader will notice that the robot is rather slow.
+Having an idea of how fast the animals that inspired this design move could
+better sustain your work. If you make such a comparison, please normalize
+distances and speeds referring to body lengths.
+The sale of normalized distance traveled are added. We are grateful for the comment.
+Page 18 lines 34-36: I would not say from Fig 6b,c, that all phase states are
+stable. It seems that there's indeed some variability (particularly clear in theta3 in
+Fig 6c). Please elucidate this. Reporting limit cycles could help when talking
+about stability. (As a side note, there are duplicated entries in the legend.)
+I am afraid that `stable’ is not a suitable word especially for this experiment under the complex
+friction changes in the real world. One sure thing about the experiment is that, once the
+prototype generates an anterograde wave, the prototype consistently generates crawling and
+inching locomotion gaits depending on the morphology. This is reproduced every time we
+experiment. That’s why we present the one data. To avoid the confusion, the paragraph is
+revised and add more explanation:
+Locomotion was produced in each of these configurations (figure 7a) and the oscillators
+successfully generate anterograde oscillatory pattern (figure 7b, c). It is notable that phase shift
+between the oscillators is amended so as to maintain anterograde oscillatory pattern every time
+the phase shift is perturbed: phase relation between <U+03B8>_1-<U+03B8>_0 and <U+03B8>_2-<U+03B8>_0 becomes inverse
+around 80 sec and 95 sec in figure 7b but is recovered to an anterograde oscillatory pattern
+afterward.
+This self-recovering of the phase relation is achieved by the local sensory feedback with the soft
+body. Considering that the robot form is a continuum and deformable beam with friction on
+ground, once upward bending is occurred, it can be easily sent to the peripheral segments (like
+a wave motion of a rope on a ground). The proposed feedback controls the direction of the wave
+motion, which also produces an anterograde wave eventually.
+General note regarding robotic trials: single observations are generally
+considered weak, especially when analyzing complex phenomena in which
+variability can occur. All your statements would be much stronger if you could
+support them with data gathered in more than one trial and with some proper
+statistical analysis. The same holds for numerical simulations. However, it does
+not look like there is any source of noise/variability in your model, so you should
+be safe here.
+We agree that the statistical analysis is not need in the numerical experiment since noise is not
+implemented in the simulations. With regard to the experiment with the prototype, we’ve
+already responded the comment (why we think the highlight data is good enough).
+Page 19 lines 11-13: If I understand correctly, different species can exhibit both
+crawling and inching by modifying their morphology, affecting the gripping
+points, this reconfiguration being controlled by what their proprioceptive
+information, affected by the substrate they are working on. From the point of
+view of robotics and embodied intelligence, it would be extremely interesting to
+observe an automatic transition between those two gaits when the robot moves
+on different terrains, determined by proprioceptive information (instead of
+manually altering the morphology, as you did with the tape). It would be
+interesting either if this transition spontaneously emerged from the interaction of
+a fixed body with a changing environment, or controlled by slightly modifying
+the body (e.g. maybe just modifying the inclination of the feet). This would be a
+great example of a robot sensing the environment through the body, and
+modifying in turn the behavior by controlling morphological adaptation. This
+idea of altering the behavior by altering the body is very intriguing and
+promising. It is sometimes referred to as morphosis/morphing in embodied
+intelligence literature. You may want to elaborate a bit on this, as your setting
+has lot of potential in this direction. Doing so, you could consider referring to
+previous work hinting at this concept:
+F. Corucci, M. Calisti, H. Hauser, C. Laschi "Shaping the body to shape the
+behavior: a more active role of the morphology in the brain-body trade-off", 13th
+European Conference on Artificial Life (ECAL 2015) in York, United Kingdom, 20-
+24 July 2015
+F. Corucci, M. Calisti, H. Hauser, C. Laschi, "Novelty-based evolutionary design
+of morphing underwater robots", Genetic and Evolutionary Computation
+Conference (GECCO), July 11-15 2015, Madrid, Spain
+In those works the change in the behavior arose from a manually controlled
+morphological reconfiguration (similarly to what you did by placing tape below
+the feets to change the friction). Your platform could, however, allow the
+automatic trigger of such reconfigurations, which is more powerful.
+We really appreciate the valuable comments but we are afraid that the idea (changing the proleg
+arrangement or surface condition dynamically) could not be along the context since proleg-
+arrangement depends on the species and is fixed. This is why the legs of the prototype were
+manually altered. With regard to friction change, the gripping mechanism of the real caterpillar
+is too good so the friction change does not change their behavior. We really want to take the
+direction when I will write a purely robotic content.
+Pag 19 lines 48-51: please support this statement with a reference.
+19. van Griethuijsen, L. I. & Trimmer, B. a. 2014 Locomotion in caterpillars. Biol. Rev.
+89, 656–670. (doi:10.1111/brv.12073)
+was added.
+Page 20 line 26: “surficial” deformation. Did you mean “superficial”?
+Yes. The wrong word was corrected.
+Discussions: There are big discrepancies among the robot and the model, such
+as the different number of segments. This and other possible sources of
+discrepancies should be made clear and further discussed. In general, the
+discussion of the model/robot discrepancy (which is a very relevant issue) is a
+bit short, and could be improved.
+We are grateful for the kind comment. We already added why we chose 12 segments in
+simulation and 4 segment in the prototype. The discussion are amended as we already
+mentioned.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_14
+The paper presents an interesting work and provides a contribution to current
+knowledge and achievements in bioinspired robotics and soft-bodied robots, by
+proposing the oscillator-based control model.
+A few issues outlined by previous reviews have been addressed by the authors
+and the paper results clear.
+Minor issue: Please double check section numbering - 2.3 should probably be 2.5.
+We appreciate the kind comment. The section number is corrected.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_15
+Comments:
+The paper presents both a theoretical model that was tested numerically, and a
+physical robot implementation of a caterpillar like robot. The authors hypothesise
+that many animals use real time evaluation of friction forces in order to adapt the
+control of locomotion. Based on this perspective, the authors propose a
+decentralised control scheme for locomotion of multi segmented structures that
+uses local feedback of structure deformation to estimate friction forces acting on
+the flexible body. Three models were tested in numerical simulation, each model
+differing by the number of feet per segment that can be in contact with the ground.
+The numerical simulation showed corresponding gaits to the animal with similar
+proleg structure. However, the robot experiment seemed not to fully match the
+predicted behaviour.
+This paper is presented in a technically sound form and is well written. The
+authors hypothesise a very interesting approach to decentralised control and how
+local feedback could be used to synchronise the complex locomotion system.
+However, there are some major and a couple of minor issues the authors might
+want to consider:
+Major issues:
+The authors’ main message is that local feedback and decentralised control is
+solving the problem of coordination between the individual segments. However,
+there is no proof in the paper to validate this claim. How can the success of
+locomotion be attributed to the implementation of the third term in equation 6?
+Equation 6 has three terms, and as far as I understood the authors thought of the
+last "discrepancy" term and implemented it in the model and robot. It is however
+not clear if the locomotion properties are actually influenced by this novel term,
+or if the emerging gait is already defined with the first two terms. What is the
+influence of the three terms on the locomotion behavior in detail? Please elaborate
+on why these terms are important and how they contribute to the overall
+locomotion behaviour.
+We apologize that our explanation and claim about the proposed decentralized control is not
+enough. To improve the point, we should have explained how the oscillators work more carefully.
+In the revised manuscript, we added the description in the second and fifth paragraphs.
+<Second paragraph in 2.5 Numerical experiment>
+…Given that the second term (diffusion term) in equation (6) serves to produce in-phase
+oscillation with the neighboring oscillators, the local sensory feedback (the third term in equation
+(6)) provides the phase shift for generating crawling locomotion. What is happening locally is
+that the local sensory feedback modifies the own phase so as to increase the ground friction when
+it moves backward whereas so as to decrease the ground friction when it moves forward.
+<Fifth paragraph in 2.5 Numerical experiment>
+Overall, phase shift from the rear to front of the anterograde wave depends on the proleg
+arrangements. It should be noted that the oscillators of the segments `without prolegs’ (i.e.,
+without the local sensory feedback) in Models i and ii oscillate nearly in-phase between the
+neighboring oscillators (figure 5). The results also indicate that the same number of segments is
+not necessary when we design the prototype. We will discuss the more these results and compare
+them with real animals in Section 4.
+Furthermore, in order to illustrate the effect of the local sensory feedback to the behavior
+(locomotion form), additional numerical experiments are added as Figure 9. The description is
+inserted in the second paragraph in `4 Discussion’:
+To discuss further about the importance of the local mechanosensory information, we simulated
+less interactive circumstance between the model and its substrate by decreasing the value of p.
+Figure 9 represents phase gap from the rear to front oscillators with smaller values of p. The
+plots indicate that crawling and inching switching (the distinct gap from the rear to head between
+Models ii and iii) disappears with less friction from the substrate. This simulation result
+indicates that a real caterpillar may not be able to produce appropriate locomotion gait in the
+circumstance where interaction between the body and environment is not enough. One of the most
+extreme cases is placing Maduca sexta on soft substrate: the animal cannot generate gait pattern
+and stop locomotion on the soft substrate.
+Furthermore, it is unclear if the theoretical model was built to explain biological
+systems, or to predict the robotic implementation’s motion. It is questionable if
+the model can represent both systems, given that acting friction forces are
+different a 1cm long caterpillar where adhesive forces become more important
+(insects make use of adhesive or hairy pads) than for a heavier and larger 20cm
+long robot where adhesive interactions with the ground can be neglected. Why did
+the authors decide to use a dynamic friction model rather than a static one, given
+that caterpillars and the robot presumably don’t slip? I understand the position of
+the authors as bioroboticists, trying to learn more about nature by building robots
+even though robots can never be a complete replication of the biological
+counterpart. From that perspective it is natural to have some degree of
+discrepancies between robot and animal, though I would feel more comfortable if
+the model was verified much more carefully and clearly states the boundary
+conditions for which the model was made to be accurate.
+The prototype is slipping too. Our goal is to keep the mathematical model as simple as possible
+but still mimic the relationship between the segment length and gripping/releasing mechanism of
+the leg. As the reviewer pointed out, it is ideally better to use a static friction in the simulation
+model because it is close to real situation. However, modeling a static friction is not an easy task.
+We attempted to keep the model as simple as possible, and thus, we used a dynamic friction. In
+spite of such discrepancy between the simulation and real environments, the results obtained from
+the simulations and the real-world experiments are qualitatively identical. Hence, we do not
+consider that the difference in the friction model (dynamic vs. static friction) is a crucial problem.
+Furthermore, after these considerations above, the most important point we
+should consider is whether this “pseudo animal model” could give any insights
+into the biological systems. As pointed out by many bio-roboticists in the past,
+the most important (at least for biologists) is the process in which the discovery
+in robot platforms should be fedback to biology as hypotheses and verified them
+in animals. I’m not sure this paper can be concluded only by saying “these results
+can shed light on the basic principles of animals” at last, but it needs to clearly
+discuss what principles this paper has actually discovered. Without further
+detailed discussion about what we learnt about animals from these experiments,
+this paper looks only half-way done.
+We appreciate this precious comment. We are afraid that there are three points missing in the
+previous submitted manuscript. One is the insufficient description of the real animal and
+plausibility of the model. We amend this point: we illustrate the details of crawling and inching
+caterpillars and how the proposed model matches them. Another is that the logic structure was
+not emphasized enough: first part is modeling for extracting the control/design principals from
+the real animal, and second part is building a prototype to verify the principles. Final one is that
+a declaration about our contribution to the biology is missing. So we added the following sentence
+in the conclusion:
+The results correspond to the morphological difference between crawling and inching
+caterpillars, which indicates that the animals also use the similar motion control regardless of
+the morphological difference.
+Minor issues:
+The concept of RTS is new for me, so please explain it in detail, and also spell out
+the term in figure 2. Please elaborate the degrees to which this is novel and
+different from the other technologies such as parallel elasticity or adjustable
+stiffness actuators, etc.
+We are grateful for the comment. We add insert the footnote to alleviate this:
+We have developed such passively-deformable actuator called RTS. For instance, we developed
+a coil spring that can alter its resting length forcibly wound/unwound by DC motor [17]. Passivity
+can be emulated by DC motor with Proportional–Derivative control, which is used in this paper.
+Why is figure 3 only plotted until t=50? It seems like some of the models have not
+yet reached steady state. Please increase the shown time.
+We replotted until t=200 sec. Thank you for the comment.
+It would be nice to have a comparison between the robot and the model, e.g.
+comparing the graphs shown in figure 3.
+We appreciate the comment. The comparing data with the simulations is shown as <U+03B8> <U+03B8> . This
+description is added in Figure 7.
+In figure 7, why start after 80 and 46 seconds? The visibility of gaits is bad, could
+you improve the figure?
+It takes more time to generate the continuous crawling oscillatory pattern compared to the inching
+one (These match the numerical results). That’s why we chose the snapshots start after 80 sec
+for crawling and 46 sec for inching. With regard to the visibility of gaits, we also attach a movie
+for the experiment (describing the difference between the gait patterns has limitation with the
+snapshots. That’s why we put arrows in the figure.)
+Friction forces are usually with respect to the contact point velocity rather than
+the centre of mass velocity. The way it is implemented may be correct for rigid
+bodies in translation, but certainly not for soft bodies that are twisting and bending.
+Please reconsider the implementation of friction.
+The mechanism of grip and release of the real caterpillar’s legs is more complicated than any
+combination of nonlinear viscous and elasticity of the complex leg-shape deformation. Modeling
+such friction is not our aim. Given the result and grip/release relationship with the segment length,
+we don’t feel any necessity to us. As the reviewer pointed out, it is ideally better to use a static
+friction in the simulation model because it is close to real situation. However, modeling a static
+friction is not an easy task. We attempted to keep the model as simple as possible, and thus, we
+used a dynamic friction. In spite of such discrepancy between the simulation and real
+environments, the results obtained from the simulations and the real-world experiments are
+qualitatively identical. Hence, we do not consider that the difference in the friction model
+(dynamic vs. static friction) is a crucial problem.
+Reference 2 has a mistake, with the authors names repeated twice.
+We correct it. Much obliged!
+In conclusion, this paper presents an interesting control method based on
+decentralised control and local feedback which was implemented in a robot model
+and which should elucidate the control principles used in the animal. Although the
+approach seems rather promising, the analysis of the proposed hypothesis for
+control was not done very carefully. As I think that the authors have used the right
+approach for answering the question of how motion is controlled in caterpillar like
+animals (building theoretical model and testing it in a physical model), I would
+suggest revising the model and to resubmit a paper with a generous analysis of
+the stated hypothesis.
+Society Open

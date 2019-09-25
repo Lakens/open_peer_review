@@ -1,0 +1,876 @@
+A biomolecular proportional integral controller based on
+feedback regulations of protein level and activity
+Francis Mairet
+Article citation details
+R. Soc. open sci. 5: 171966.
+http://dx.doi.org/10.1098/rsos.171966
+Review timeline
+Original submission: 3 July 2017 Note: Reports are unedited and appear as
+1st revised submission: 20 November 2017 submitted by the referee. The review history
+2nd revised submission: 18 January 2018 appears in chronological order.
+Final acceptance: 19 January 2018
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-170804.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The author shows that a proportional integral feedback improves the transient behavior in
+comparison with integral feedback. Later the author shows such specific loop exists in different
+biological examples. The paper is well written. The mathematical steps is easy, hence the main
+contribution of this work is about its application to biology. On that matter the paper needs to be
+improved as following:
+1- The author did a good job in giving examples from biology that falls in the control scheme that
+is introduced. However it is not clear how the mathematical framework is connected to such
+examples. Specifically, the connection between the parameters of the examples introduced in Fig.
+3 and Fig.4 to the parameters of the model (k_p, k_e, etc.) is not clear. It will be informative to
+derive (or mention) how they are connected and what are the crucial parameters out of so many
+parameters of the biological examples.
+2- The results here are obtained by using a lot of approximations. For each biological example it
+will be useful to show that this simple model has similar behavior as in biological examples. It
+will be also informative to show when this model fails to capture behavior of biological examples.
+I suggest adding 1-2 figures dedicated to clarify this point.
+3- Relevant refs that discuss the molecular implementation of integral and proportional
+feedbacks are missing.
+E. Klavins, ``Proportional-integral control of stochastic gene regulatory networks” IEEE
+conference on Decision and Control, 2010.
+Foo et al. “Proportional Integral Degradation Control Allows Accurate Tracking of Biomolecular
+Concentrations With Fewer Chemical Reactions”, IEEE Life Sciences Letters, 2013
+Qian et al. “Realizing integral control in living cells: How to overcome leaky integration due to
+dilution?” bioRxiv, 2017
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+3
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Reject
+Comments to the Author(s)
+label_comment_2
+The paper proposes a motif for proportional integral feedback at the molecular scale. This motif
+includes a phosphorolation cycle, wth the output of interest playing a role in de-phosphprolation,
+thereby introducing a 'proportional' term to the feedback law. It is then proposed that regulation
+of ammonium uptake, copper and zinc homeostasis, and redox regulation in phosphosynthesis
+all exhibit this proportional integral feedback motif.
+Regarding the proposed motif with x and x*, I have the following comments:
+1. Assuming that degradation of x is zeroth order is a big assumption. Dilution due to cell growth
+will ensure that a first order clearance term is always present. This first order clearance term will
+destroy the integral action. Granted that when this term is small, the steady-state error will also
+be small. But this has to be demonstrated for any specific system that is proposed as using PI
+feedback. Incidentally, a first order clearance rate for x results in a low pass filter, not an anti-
+windup scheme as proposed by the author. Anti-windup schemes have a different role.
+2. The feedback as proposed is nonlinear, and so one cannot really describe it as having
+'proportional' feedback. It is true that when one linearizes the system around the operating point,
+the feedback will be proportional-integral. However, this only applies in the small signal regime.
+Thus claiming that the feedback employs PI feedback is only true for small deviations from the
+equilibrium, and here again it is up to the author to demonstrate that the biological examples
+proposed operate in that regime.
+Regarding the biological examples proposed: this is the weakest part of the paper. While the
+proposed motif consists of three states: x, x*, and y, the biological examples have a lot more
+species and thus have models which are much larger than 3. No attempt is made to show how a
+motif that is based on three states should apply to systems with much higher order. Nor are the
+assumptions of a) zero order clearance of x, and b) small signal regime verified for the biological
+examples proposed.
+Based on the above, it is my opinion that this work is pre-mature, and much work needs to be
+done to support the claims made. Regrettably, I recommend rejection of the manuscript.
+label_end_comment
+Decision letter (RSOS-170804)
+05-Sep-2017
+Dear Dr Mairet:
+Manuscript ID RSOS-170804 entitled "A biomolecular proportional integral controller based on
+feedback regulations of protein level and activity" which you submitted to Royal Society Open
+4
+Science, has been reviewed. The comments from reviewers are included at the bottom of this
+letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 05-Mar-2018. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of
+Andrew Dunn, Royal Society Open Science
+openscience@royalsociety.org
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+The author shows that a proportional integral feedback improves the transient behavior in
+comparison with integral feedback. Later the author shows such specific loop exists in different
+biological examples. The paper is well written. The mathematical steps is easy, hence the main
+contribution of this work is about its application to biology. On that matter the paper needs to be
+improved as following:
+1- The author did a good job in giving examples from biology that falls in the control scheme that
+is introduced. However it is not clear how the mathematical framework is connected to such
+examples. Specifically, the connection between the parameters of the examples introduced in Fig.
+3 and Fig.4 to the parameters of the model (k_p, k_e, etc.) is not clear. It will be informative to
+derive (or mention) how they are connected and what are the crucial parameters out of so many
+parameters of the biological examples.
+2- The results here are obtained by using a lot of approximations. For each biological example it
+will be useful to show that this simple model has similar behavior as in biological examples. It
+will be also informative to show when this model fails to capture behavior of biological examples.
+I suggest adding 1-2 figures dedicated to clarify this point.
+5
+3- Relevant refs that discuss the molecular implementation of integral and proportional
+feedbacks are missing.
+E. Klavins, ``Proportional-integral control of stochastic gene regulatory networks” IEEE
+conference on Decision and Control, 2010.
+Foo et al. “Proportional Integral Degradation Control Allows Accurate Tracking of Biomolecular
+Concentrations With Fewer Chemical Reactions”, IEEE Life Sciences Letters, 2013
+Qian et al. “Realizing integral control in living cells: How to overcome leaky integration due to
+dilution?” bioRxiv, 2017
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The paper proposes a motif for proportional integral feedback at the molecular scale. This motif
+includes a phosphorolation cycle, wth the output of interest playing a role in de-phosphprolation,
+thereby introducing a 'proportional' term to the feedback law. It is then proposed that regulation
+of ammonium uptake, copper and zinc homeostasis, and redox regulation in phosphosynthesis
+all exhibit this proportional integral feedback motif.
+Regarding the proposed motif with x and x*, I have the following comments:
+1. Assuming that degradation of x is zeroth order is a big assumption. Dilution due to cell growth
+will ensure that a first order clearance term is always present. This first order clearance term will
+destroy the integral action. Granted that when this term is small, the steady-state error will also
+be small. But this has to be demonstrated for any specific system that is proposed as using PI
+feedback. Incidentally, a first order clearance rate for x results in a low pass filter, not an anti-
+windup scheme as proposed by the author. Anti-windup schemes have a different role.
+2. The feedback as proposed is nonlinear, and so one cannot really describe it as having
+'proportional' feedback. It is true that when one linearizes the system around the operating point,
+the feedback will be proportional-integral. However, this only applies in the small signal regime.
+Thus claiming that the feedback employs PI feedback is only true for small deviations from the
+equilibrium, and here again it is up to the author to demonstrate that the biological examples
+proposed operate in that regime.
+Regarding the biological examples proposed: this is the weakest part of the paper. While the
+proposed motif consists of three states: x, x*, and y, the biological examples have a lot more
+species and thus have models which are much larger than 3. No attempt is made to show how a
+motif that is based on three states should apply to systems with much higher order. Nor are the
+assumptions of a) zero order clearance of x, and b) small signal regime verified for the biological
+examples proposed.
+Based on the above, it is my opinion that this work is pre-mature, and much work needs to be
+done to support the claims made. Regrettably, I recommend rejection of the manuscript.
+Author's Response to Decision Letter for (RSOS-170804)
+See Appendix A.
+6
+label_version_2
+RSOS-171966.R0 (Revision)
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+This paper presents a controller motif displaying behavior similar to a PI-controller. My review is
+based on a resubmitted version as I didn’t review the original paper. It is an interesting paper
+where different biological examples are used to motivate for the existence of such an overall
+control structure. My specific/general comments are as follows:
+1
+Why is the derivation of Eq (2.4) based on synthesis of inactive protein while all the biological
+examples use synthesis of active protein? For pedagogical reasons, I would have moved the
+derivation shown in appendix A1 to the main manuscript (which is related to biological
+examples), and rather move the not-used Eq. (2.4) to the appendix.
+2
+Regarding the resemblance with a PI-controller: As an industrial process would actually function
+with only the P-part (even though the control error e>0), the proposed controller motif in this
+paper would not function with the P-part alone. That is, if the gene regulation is removed, there
+is no control of the level of y, and the underlying fundamental control structure is not a P-
+controller. This is to some degree commented in line 182, but it is not explicitly stated that the
+system is no longer regulated. This should be elaborated/commented, as we often seek to
+compare biological regulations with well-known man-made industrial control structures, and we
+can be misled to assume that your motif would function solely on the P-part alone. Furthermore,
+as you to some degree indicate in line 162, I think the underlying structure of your system share
+more similarities with feed forward loops.
+3
+Regarding the simulation results: I have simulated the entire three-dimensional nonlinear system,
+7
+and I think that your take-home message (being that the assumption of rapid equilibrium
+between x and x^* produces P(I)-like behavior) would be clarified if you include the responses of
+x and x^*. The rapid (almost immediate) change in x^* (and also x) is quite distinct when
+k_a=k_i=100, which is of course similar to the direct P-part. Thus, if you also include another
+simulation using e.g. k_a=k_i=1, the overall homeostatic behavior is not changed, but the
+observed direct action in x^* is not present anymore. Hence, the observed P-part look-alike
+behavior is highly dependent on the relation between certain rate constant values, and even
+though this is explained in the manuscript, I think this is an important point to emphasize using
+simulations.
+4
+Regarding the forgetting factor and comparison with anti-windup in A2. I think this comparison
+is a bit far-fetched. If the controller molecule is degraded by first order, the integrator in the
+controller (I-part) is replace by a first order system. Thus, the homeostatic properties are lost and
+y_ref in appendix A2 actually becomes a time dependent variable y_ref(t), where the level of
+y_ref will depend on the level of the disturbance, i.e. the level of s. This situation share
+similarities to the structure shown in Figure 8 in the work by He, Fromion and Westerhoff (2013)
+“(Im)Perfect robustness and adaptation of metabolic networks subject to metabolic and gene-
+expression regulation: marrying control engineering with metabolic control analysis“. The first
+order degradation can also be compared to a situation where the degradation is modelled as a
+non-saturated Michaelis-Menten degradation. This will lead to what Ma et. al (2009) (already
+cited) termed precision/sensitivity or to what Drengstig et. al (2012), “A basic set of homeostatic
+controller motifs” termed controller accuracy. Thus, the relation to these concepts and other
+similar work should be discussed. The benefit of using a Michaelis-Menten model in the
+degradation is that this structure, under certain conditions, is also a plausible model for zero
+order degradation.
+Specific comments:
+1
+Why is s shown as time dependent in Fig 1, while all other variables are not?
+2
+The value of y_ref=0.3 in Fig 2 should have been indicated/drawn and also shown how to be
+calculated from the differential equation of total protein X, i.e.
+y_ref = (v_f/k_d-1)*theta_f = (0.1/0.05-1)*0.3=0.3
+Thus, an important condition is that k_d<v_f.
+3
+Since Fig 3c is a well known industrial version of the structures in Fig3a/b, you should perhaps
+use another integration variable (s in Fig 3c should not be confused with the substrate s in Fig
+3a/b)
+4
+Regarding Fig 3, I think that the abstract version should be presented below the detailed version.
+5
+What are the initial conditions for the simulation in Fig 2?
+6
+What is the motivation behind the third order Hill kinetic in the example?
+7
+Regarding the statement that “transient performance of the integral controller has been
+8
+overlooked“ (line 176): There are several contributions focusing on dynamic behavior of integral
+control, e.g. Thorsen et. al (2016) “Tuning of Physiological Controller Motifs” and Ang et. al
+(2013) (already cited).
+8
+I think a sketch similar to Fig 1B indicating the rate constants used in the model example in
+chapter 4 would be useful.
+label_author_4
+Review form: Reviewer 4
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Reject
+Comments to the Author(s)
+label_comment_6
+The author has described a biochemical PI control structure involving transcription/post-
+translation, and provided a number of biochemical examples that are consistent with the
+structure. The reviewer has some comments/queries:
+- The novelty of the control structure beyond that described in [*] is not stated. In that reference,
+the P component was carried out by allosteric regulation while the I component was via
+transcription, but the relevance of the analysis to transcription/post-translation modification was
+discussed. Similarly, Ref [8] also studied an example of a PI controller involving
+transcription/post-translation.
+- The reviewer finds the proposed name of the control structure confusing. For example, a PI
+controller with transcription and allosteric regulation could also equally be called a level-activity
+PI controller.
+- The assumption of zeroth order degradation is a known issue in integral controllers (as
+discussed in the references). For the general case, a standard approach is to describe the controller
+as a lag controller and calculate the steady state error.
+- In the first example, the author should expand the explanation of the benefit of additional
+analysis beyond that of [17].
+- The claim made regarding the 2nd and 3rd examples is unclear. Is the author claiming that these
+examples have perfect adaptation, or illustrating the previously unknown mechanism/structure
+9
+causing perfect adaptation? In either case, it would be useful to expand analysis/discussion for
+these examples.
+Minor comment:
+- "widely used in industry" in the introduction unclear in a biological context. "Widely used in
+industrial automation" or similar would be clearer.
+[*] - (Im)Perfect robustness and adaptation of metabolic networks subject to metabolic and gene-
+expression regulation: marrying control engineering with metabolic control analysis, He et al,
+BMC systems biology, 2013.
+label_end_comment
+Decision letter (RSOS-171966)
+09-Jan-2018
+Dear Dr Mairet
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-171966 entitled
+"A biomolecular proportional integral controller based on feedback regulations of protein level
+and activity" has been accepted for publication in Royal Society Open Science subject to minor
+revision in accordance with the referee suggestions. Please find the referees' comments at the end
+of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171966
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+10
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 18-Jan-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+11
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Erika Mancini (Associate Editor) and Catrin Pritchard (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 3
+Comments to the Author(s)
+label_comment_7
+This paper presents a controller motif displaying behavior similar to a PI-controller. My review is
+based on a resubmitted version as I didn’t review the original paper. It is an interesting paper
+where different biological examples are used to motivate for the existence of such an overall
+control structure. My specific/general comments are as follows:
+12
+1
+Why is the derivation of Eq (2.4) based on synthesis of inactive protein while all the biological
+examples use synthesis of active protein? For pedagogical reasons, I would have moved the
+derivation shown in appendix A1 to the main manuscript (which is related to biological
+examples), and rather move the not-used Eq. (2.4) to the appendix.
+2
+Regarding the resemblance with a PI-controller: As an industrial process would actually function
+with only the P-part (even though the control error e>0), the proposed controller motif in this
+paper would not function with the P-part alone. That is, if the gene regulation is removed, there
+is no control of the level of y, and the underlying fundamental control structure is not a P-
+controller. This is to some degree commented in line 182, but it is not explicitly stated that the
+system is no longer regulated. This should be elaborated/commented, as we often seek to
+compare biological regulations with well-known man-made industrial control structures, and we
+can be misled to assume that your motif would function solely on the P-part alone. Furthermore,
+as you to some degree indicate in line 162, I think the underlying structure of your system share
+more similarities with feed forward loops.
+3
+Regarding the simulation results: I have simulated the entire three-dimensional nonlinear system,
+and I think that your take-home message (being that the assumption of rapid equilibrium
+between x and x^* produces P(I)-like behavior) would be clarified if you include the responses of
+x and x^*. The rapid (almost immediate) change in x^* (and also x) is quite distinct when
+k_a=k_i=100, which is of course similar to the direct P-part. Thus, if you also include another
+simulation using e.g. k_a=k_i=1, the overall homeostatic behavior is not changed, but the
+observed direct action in x^* is not present anymore. Hence, the observed P-part look-alike
+behavior is highly dependent on the relation between certain rate constant values, and even
+though this is explained in the manuscript, I think this is an important point to emphasize using
+simulations.
+4
+Regarding the forgetting factor and comparison with anti-windup in A2. I think this comparison
+is a bit far-fetched. If the controller molecule is degraded by first order, the integrator in the
+controller (I-part) is replace by a first order system. Thus, the homeostatic properties are lost and
+y_ref in appendix A2 actually becomes a time dependent variable y_ref(t), where the level of
+y_ref will depend on the level of the disturbance, i.e. the level of s. This situation share
+similarities to the structure shown in Figure 8 in the work by He, Fromion and Westerhoff (2013)
+“(Im)Perfect robustness and adaptation of metabolic networks subject to metabolic and gene-
+expression regulation: marrying control engineering with metabolic control analysis“. The first
+order degradation can also be compared to a situation where the degradation is modelled as a
+non-saturated Michaelis-Menten degradation. This will lead to what Ma et. al (2009) (already
+cited) termed precision/sensitivity or to what Drengstig et. al (2012), “A basic set of homeostatic
+controller motifs” termed controller accuracy. Thus, the relation to these concepts and other
+similar work should be discussed. The benefit of using a Michaelis-Menten model in the
+degradation is that this structure, under certain conditions, is also a plausible model for zero
+order degradation.
+Specific comments:
+1
+Why is s shown as time dependent in Fig 1, while all other variables are not?
+13
+2
+The value of y_ref=0.3 in Fig 2 should have been indicated/drawn and also shown how to be
+calculated from the differential equation of total protein X, i.e.
+y_ref = (v_f/k_d-1)*theta_f = (0.1/0.05-1)*0.3=0.3
+Thus, an important condition is that k_d<v_f.
+3
+Since Fig 3c is a well known industrial version of the structures in Fig3a/b, you should perhaps
+use another integration variable (s in Fig 3c should not be confused with the substrate s in Fig
+3a/b)
+4
+Regarding Fig 3, I think that the abstract version should be presented below the detailed version.
+5
+What are the initial conditions for the simulation in Fig 2?
+6
+What is the motivation behind the third order Hill kinetic in the example?
+7
+Regarding the statement that “transient performance of the integral controller has been
+overlooked“ (line 176): There are several contributions focusing on dynamic behavior of integral
+control, e.g. Thorsen et. al (2016) “Tuning of Physiological Controller Motifs” and Ang et. al
+(2013) (already cited).
+8
+I think a sketch similar to Fig 1B indicating the rate constants used in the model example in
+chapter 4 would be useful.
+Reviewer: 4
+Comments to the Author(s)
+label_comment_8
+The author has described a biochemical PI control structure involving transcription/post-
+translation, and provided a number of biochemical examples that are consistent with the
+structure. The reviewer has some comments/queries:
+- The novelty of the control structure beyond that described in [*] is not stated. In that reference,
+the P component was carried out by allosteric regulation while the I component was via
+transcription, but the relevance of the analysis to transcription/post-translation modification was
+discussed. Similarly, Ref [8] also studied an example of a PI controller involving
+transcription/post-translation.
+- The reviewer finds the proposed name of the control structure confusing. For example, a PI
+controller with transcription and allosteric regulation could also equally be called a level-activity
+PI controller.
+- The assumption of zeroth order degradation is a known issue in integral controllers (as
+discussed in the references). For the general case, a standard approach is to describe the controller
+as a lag controller and calculate the steady state error.
+- In the first example, the author should expand the explanation of the benefit of additional
+analysis beyond that of [17].
+- The claim made regarding the 2nd and 3rd examples is unclear. Is the author claiming that these
+examples have perfect adaptation, or illustrating the previously unknown mechanism/structure
+14
+causing perfect adaptation? In either case, it would be useful to expand analysis/discussion for
+these examples.
+Minor comment:
+- "widely used in industry" in the introduction unclear in a biological context. "Widely used in
+industrial automation" or similar would be clearer.
+[*] - (Im)Perfect robustness and adaptation of metabolic networks subject to metabolic and gene-
+expression regulation: marrying control engineering with metabolic control analysis, He et al,
+BMC systems biology, 2013.
+Author's Response to Decision Letter for (RSOS-171966)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-171966.R1)
+19-Jan-2018
+Dear Dr Mairet,
+I am pleased to inform you that your manuscript entitled "A biomolecular proportional integral
+controller based on feedback regulations of protein level and activity" is now accepted for
+publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+15
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Catrin Pritchard (Subject Editor)
+openscience@royalsociety.org
+ppendix A
+Response to Reviewers of ”A biomolecular proportional
+tegral controller based on feedback regulations of protein
+level and activity”
+Francis Mairet
+ould like to thank the reviewers for their comments on my manuscript. I have considered the
+gestions made by the two Reviewers, and I am convinced that the new additions have greatly
+roved the quality of the manuscript. Below I respond to the reviewer comments in detail and I
+icate which changes have been made to the manuscript (major changes in red in the delta
+sion). Note that there are some overlaps between the questions of the two reviewers, so that there
+some redundancies in my answers.
+viewer: 1
+author shows that a proportional integral feedback improves the transient behavior in
+parison with integral feedback. Later the author shows such specific loop exists in different
+logical examples. The paper is well written. The mathematical steps is easy, hence the main
+tribution of this work is about its application to biology. On that matter the paper needs to be
+roved as following:
+The author did a good job in giving examples from biology that falls in the control scheme that is
+oduced. However it is not clear how the mathematical framework is connected to such
+mples. Specifically, the connection between the parameters of the examples introduced in Fig. 3
+Fig.4 to the parameters of the model (k_p, k_e, etc.) is not clear. It will be informative to derive
+mention) how they are connected and what are the crucial parameters out of so many parameters
+he biological examples.
+structure of the biomolecular feedback for all the examples is the same as for the biochemical
+hway, with only one slight variation: the protein X is produced in its active form. Thus, very
+ilar models can be used, and the same theoretical development can be followed, leading to the
+e relation between the kinetics parameters (of production, degradation, activation, and
+ctivation) and the controller parameter given by Eq. (2.4). This is now detailled in Appendix A1.
+ditionally, I have now added in the scheme of each example (Fig. 3 and 4) what the x, x*, and y
+iables are, so that it becomes easier to connect the biological example to the mathematical
+mework.
+ally, in the previous version, the AmtB example in Fig.3 was presented in details (with all the
+naling system), which was a bit confusing. In the new version, a more abstract scheme is added,
+hat model derivation becomes easier. Given that all the signaling dynamics is fast in comparison
+h the dynamics of the transporter concentration, the mathematical model of this more abstract
+resentation can be obtained by a slow-fast approximation of the whole system.
+The results here are obtained by using a lot of approximations. For each biological example it
+l be useful to show that this simple model has similar behavior as in biological examples. It will
+also informative to show when this model fails to capture behavior of biological examples. I
+gest adding 1-2 figures dedicated to clarify this point.
+stated in my previous answer, I have now shown in appendix how to derive the dynamics of the
+ve protein for all the examples, given that it is rather general. To do so, the first hypothesis is the
+oth order degradation, as it is assumed for integral loop in biological systems (this assumption is
+discussed in Section 3). Two additional hypotheses are then necessary to get a LA-PI feedback
+. (2.4)): the time scale separation and the linear approximation. To test the validity of these
+otheses in the biochemical pathway example, I have now added simulations of regulations with
+assical I and PI controller, in comparison with the original system (i.e. before linearization and
+slow-fast approximation). We obtain very similar behaviors, showing that these hypotheses are
+id in this case. This point has been added in the subsection Numerical simulations and is further
+cussed in Section 3.
+the other examples, I do not find enough experimental data to calibrate the mathematical model
+to test the validity of my development. This paper remains thus theoretical, and an experimental
+idation should deserve future work (actually, even the integral loop – although often mentioned -
+never been fully investigated experimentally).
+Relevant refs that discuss the molecular implementation of integral and proportional feedbacks
+missing.
+Klavins, ``Proportional-integral control of stochastic gene regulatory networks” IEEE conference
+Decision and Control, 2010.
+et al. “Proportional Integral Degradation Control Allows Accurate Tracking of Biomolecular
+ncentrations With Fewer Chemical Reactions”, IEEE Life Sciences Letters, 2013
+n et al. “Realizing integral control in living cells: How to overcome leaky integration due to
+tion?” bioRxiv, 2017
+se references are now included in the discussion.
+viewer: 2
+paper proposes a motif for proportional integral feedback at the molecular scale. This motif
+ludes a phosphorolation cycle, wth the output of interest playing a role in de-phosphprolation,
+reby introducing a 'proportional' term to the feedback law. It is then proposed that regulation of
+monium uptake, copper and zinc homeostasis, and redox regulation in phosphosynthesis all
+ibit this proportional integral feedback motif.
+arding the proposed motif with x and x*, I have the following comments:
+Assuming that degradation of x is zeroth order is a big assumption. Dilution due to cell growth
+l ensure that a first order clearance term is always present. This first order clearance term will
+troy the integral action. Granted that when this term is small, the steady-state error will also be
+all. But this has to be demonstrated for any specific system that is proposed as using PI feedback.
+identally, a first order clearance rate for x results in a low pass filter, not an anti-windup scheme
+roposed by the author. Anti-windup schemes have a different role.
+ree that the zeroth order hypothesis is a big assumption. It has been widely considered - perhaps
+groundless way – in the papers dealing with integral control in biological systems. Dilution due
+ell growth concerns fast-growing cells, such as bacteria. On the other hand, growth is negligible
+ome systems, such as transporter of mammalian cells (as presented in Section 2). In any case,
+zeroth order hypothesis is always considered, but has never been verified experimentally (to my
+wledge). Experimental measurements of degradation kinetics in any biological system involving
+entially a (P)I feedback would be of great interest, but it is behind the scope of this paper. This
+nt is now discussed in Section 3.
+ncerning the effect of a first order clearance term due to growth, I agree that it corresponds in
+uency analysis to a low-pass filter with a cute-off frequency equals to the specific growth rate µ.
+error signal with a frequency higher than µ, the system acts actually as an integrator. For lower
+uency, it acts as a passband, but error signals with a frequency lower than µ are not relevant in
+st of the cases: the controller is expected to actuate on a time scale faster than growth. That is
+y, in my opinion, the frequency analysis is not suited to the present case.
+anti-windup is a scheme that avoids a windup of the integral term when the actuator saturates. In
+case, if an error persists, the integral term will saturate because of the first order clearance rate.
+s can be viewed as a kind of anti-windup scheme, although the saturation of the integral term
+l act even if the actuator is not saturated (so I agree that this is not sticto sensu an anti-windup
+eme). This has been specified in Appendix A2.
+The feedback as proposed is nonlinear, and so one cannot really describe it as having
+portional' feedback. It is true that when one linearizes the system around the operating point, the
+dback will be proportional-integral. However, this only applies in the small signal regime. Thus
+ming that the feedback employs PI feedback is only true for small deviations from the
+ilibrium, and here again it is up to the author to demonstrate that the biological examples
+posed operate in that regime.
+earizion simplifies the mathematical development. Without these approximations, we obtain a
+d of generalized PI controller. Instead of being the sum of a Proportional and an Integral terms,
+correction will be the sum of a function of the error and an integral of a function of the error,
+netheless, the same characteristics as the classical PI controller will be obtained: a fast imprecise
+ponse (equivalent to a Proportional action) coupled with a slower one which eliminates the offset
+uivalent to an Integral action). This point is now better discussed in Section 3.
+ally, we now show on Fig. 2 that the behaviors of the system and its linear approximation are
+y similar, i.e. the LA-PI controller acts as a classical PI controller.
+arding the biological examples proposed: this is the weakest part of the paper. While the
+posed motif consists of three states: x, x*, and y, the biological examples have a lot more species
+thus have models which are much larger than 3. No attempt is made to show how a motif that is
+ed on three states should apply to systems with much higher order. Nor are the assumptions of a)
+o order clearance of x, and b) small signal regime verified for the biological examples proposed.
+key aspect is that the proposed motif has been identified in all the biological examples. This is
+clearly stated in the introduction of the subsection Biological examples.
+e mathematical model is necessary to understand the behavior of the motif. Once it has been
+e for one case, the motif can be identified in other biological systems, without needing a
+thematical model.
+the other hand, the model can be useful to better apprehend the system. So I now explain in
+endix A1 how we can derive a model for all the examples. Note that we consider only the
+molecular feedback loop, which fits in all the examples to the proposed motif. We do not have to
+del the whole system, which limits the number of variables.
+the AmtB system, I represent in details the signaling mechanisms. Nonetheless, given the time-
+le separation (all these reactions are faster than gene expression), we can use quasi steady-state
+roximation (as it is done for protein activation). Thus, on the slow time scale, all these signaling
+chanisms only determines the functions f(y) and ki(y). A more precise mathematical model is not
+essary in this case, as it will be reduced by time scale separation. To avoid any confusion, the
+tB system is now represented in a more abstract way (Fig. 3A), so that it fits clearly to the
+del development. All these points are now explained in Appendix A1.
+ed on the above, it is my opinion that this work is pre-mature, and much work needs to be done
+upport the claims made. Regrettably, I recommend rejection of the manuscript.
+ppendix B
+Response to Reviewers of ”A biomolecular proportional
+tegral controller based on feedback regulations of protein
+level and activity”
+Francis Mairet
+ould like to thank the reviewers for their comments on my manuscript. I have considered the
+gestions made by the two reviewers to improve the quality of the article. Below I respond to the
+iewer comments in detail and I indicate which changes have been made to the manuscript (major
+nges in red in the delta version).
+iewer: 3
+s paper presents a controller motif displaying behavior similar to a PI-controller. My review is
+ed on a resubmitted version as I didn’t review the original paper. It is an interesting paper where
+erent biological examples are used to motivate for the existence of such an overall control
+cture. My specific/general comments are as follows:
+Why is the derivation of Eq (2.4) based on synthesis of inactive protein while all the biological
+mples use synthesis of active protein? For pedagogical reasons, I would have moved the
+ivation shown in appendix A1 to the main manuscript (which is related to biological examples),
+rather move the not-used Eq. (2.4) to the appendix.
+sake of clarity, the motif is introduced first with the theoretical example (the biochemical
+hway), before the biological examples. In the case of the biochemical pathway, enzymes are in
+eral produced and then activated (rather than produced in active form and inactivated if
+essary). That is why this presentation seems to me to be the most appropriate.
+Regarding the resemblance with a PI-controller: As an industrial process would actually function
+h only the P-part (even though the control error e>0), the proposed controller motif in this paper
+uld not function with the P-part alone. That is, if the gene regulation is removed, there is no
+trol of the level of y, and the underlying fundamental control structure is not a P-controller. This
+o some degree commented in line 182, but it is not explicitly stated that the system is no longer
+ulated. This should be elaborated/commented, as we often seek to compare biological
+ulations with well-known man-made industrial control structures, and we can be misled to
+ume that your motif would function solely on the P-part alone. Furthermore, as you to some
+ree indicate in line 162, I think the underlying structure of your system share more similarities
+h feed forward loops.
+ystem with just activity regulation (i.e. without gene regulation) is possible. Following the same
+elopment with X(t)=X_ref instead of Eq. (2 .1), we can show that it acts actually as a P
+troller, as mentioned in the discussion.
+d-Forward loops in biology deals in general with two transcription factors modulating a target
+e (the so-called FFL motif). The LAPI structure shows similarities with a FFL, but I do not
+elop further this point to avoid confusion with the FFL motif.
+egarding the simulation results: I have simulated the entire three-dimensional nonlinear system,
+I think that your take-home message (being that the assumption of rapid equilibrium between x
+x^* produces P(I)-like behavior) would be clarified if you include the responses of x and x^*.
+rapid (almost immediate) change in x^* (and also x) is quite distinct when k_a=k_i=100, which
+f course similar to the direct P-part. Thus, if you also include another simulation using e.g.
+=k_i=1, the overall homeostatic behavior is not changed, but the observed direct action in x^* is
+present anymore. Hence, the observed P-part look-alike behavior is highly dependent on the
+tion between certain rate constant values, and even though this is explained in the manuscript, I
+k this is an important point to emphasize using simulations.
+dynamics of x and x* have been added on Figure 2 for both the I and LA-PI systems, which
+ws to better understand the effect of the P-part. Note that parameter values have been slightly
+dified for sake of figure clarity.
+Regarding the forgetting factor and comparison with anti-windup in A2. I think this comparison
+a bit far-fetched. If the controller molecule is degraded by first order, the integrator in the
+troller (I-part) is replace by a first order system. Thus, the homeostatic properties are lost and
+ef in appendix A2 actually becomes a time dependent variable y_ref(t), where the level of y_ref
+l depend on the level of the disturbance, i.e. the level of s. This situation share similarities to the
+cture shown in Figure 8 in the work by He, Fromion and Westerhoff (2013) “(Im)Perfect
+ustness and adaptation of metabolic networks subject to metabolic and gene-expression
+ulation: marrying control engineering with metabolic control analysis“. The first order
+radation can also be compared to a situation where the degradation is modelled as a non-
+rated Michaelis-Menten degradation. This will lead to what Ma et. al (2009) (already cited)
+med precision/sensitivity or to what Drengstig et. al (2012), “A basic set of homeostatic
+troller motifs” termed controller accuracy. Thus, the relation to these concepts and other similar
+rk should be discussed. The benefit of using a Michaelis-Menten model in the degradation is that
+structure, under certain conditions, is also a plausible model for zero order degradation.
+first order degradation prevents the integral term from increasing too much, that is why I
+pare it with an anti-windup. To avoid misinterpretation, this comparison is no longer
+ntioned. I have slightly modified the discussion on this point, but I did not develop much more
+aspect given that it is not specific to the LA-PI controller and it has already been tackled in
+eral articles.
+cific comments:
+Why is s shown as time dependent in Fig 1, while all other variables are not?
+as been corrected.
+The value of y_ref=0.3 in Fig 2 should have been indicated/drawn and also shown how to be
+culated from the differential equation of total protein X, i.e.
+ef = (v_f/k_d-1)*theta_f = (0.1/0.05-1)*0.3=0.3
+s, an important condition is that k_d<v_f.
+ef has been added on Fig. 2. The analytical expression of y_ref and the condition on k_d are now
+en in section 4.
+ince Fig 3c is a well known industrial version of the structures in Fig3a/b, you should perhaps
+another integration variable (s in Fig 3c should not be confused with the substrate s in Fig 3a/b)
+w use tau as integration variable.
+egarding Fig 3, I think that the abstract version should be presented below the detailed version.
+now the case.
+What are the initial conditions for the simulation in Fig 2?
+ow mention in section 4 that simulations start from the equilibrium. Numerical values are
+ilable in ESM (scilab code).
+What is the motivation behind the third order Hill kinetic in the example?
+h function is classically used to represent gene regulation (see e.g. Alon U. An introduction to
+tems biology: design principles of biological circuits, 2006).
+Regarding the statement that “transient performance of the integral controller has been
+rlooked“ (line 176): There are several contributions focusing on dynamic behavior of integral
+trol, e.g. Thorsen et. al (2016) “Tuning of Physiological Controller Motifs” and Ang et. al
+13) (already cited).
+ually, « overlooked » was a bit exaggerated and it has been changed for « less explored ».
+think a sketch similar to Fig 1B indicating the rate constants used in the model example in
+pter 4 would be useful.
+igure with the reaction rates have been added as ESM.
+iewer: 4
+author has described a biochemical PI control structure involving transcription/post-translation,
+provided a number of biochemical examples that are consistent with the structure. The reviewer
+some comments/queries:
+he novelty of the control structure beyond that described in [*] is not stated. In that reference, the
+omponent was carried out by allosteric regulation while the I component was via transcription,
+the relevance of the analysis to transcription/post-translation modification was discussed.
+ilarly, Ref [8] also studied an example of a PI controller involving transcription/post-translation.
+*], the authors consider systems with both regulations, but not necessarily on the same enzyme
+Eq. 14, X and E are vectors). In my case, I show that a given enzyme can act as a PI effector.
+differences between our approach are visible in the biological examples they proposed. In the
+t one, the level of the enzyme is regulated, but not its activity. The proportional action is
+diated by changes in substrate concentration. The second example (Fig. 14), the gene-expression
+ulation and the metabolic regulation deals with different enzymes. None of these examples
+responds to the scheme I have proposed. This point is now better discussed in Section 3.
+8], the authors focused only on the integral action.
+he reviewer finds the proposed name of the control structure confusing. For example, a PI
+troller with transcription and allosteric regulation could also equally be called a level-activity PI
+troller.
+s possibility (a PI controller with transcription and allosteric regulation) was considered (as
+cussed in the third paragraph of Section 3), so that in my opinion the name is adequate.
+he assumption of zeroth order degradation is a known issue in integral controllers (as discussed
+he references). For the general case, a standard approach is to describe the controller as a lag
+troller and calculate the steady state error.
+ve some references on this point in the discussion, but I did not develop it much more given that,
+he reviewer mentioned, it is not specific to the LA-PI controller.
+the first example, the author should expand the explanation of the benefit of additional analysis
+ond that of [17].
+[17], the authors have focused only on the regulation of transporter activity. In my article, I
+lain that it is coupled with the regulation of transporter production. This difference is now better
+lained.
+he claim made regarding the 2nd and 3rd examples is unclear. Is the author claiming that these
+mples have perfect adaptation, or illustrating the previously unknown mechanism/structure
+sing perfect adaptation? In either case, it would be useful to expand analysis/discussion for these
+mples.
+the examples share the same motif, i.e. the coupling of two regulations concerning the same
+lecular actuator, acting slowly on its abundance and fast on its activity. This guarantees some
+ulation performances, as stated in the discussion. Perfect adaptation will be obtained only if the
+radation kinetics is of zeroth order. This assumption has not been verified experimentally, so that
+se systems do not present necessarily perfect adaptation. This point is now clearly stated in the
+cussion.
+nor comment:
+widely used in industry" in the introduction unclear in a biological context. "Widely used in
+ustrial automation" or similar would be clearer.
+as been corrected.
+- (Im)Perfect robustness and adaptation of metabolic networks subject to metabolic and gene-
+ression regulation: marrying control engineering with metabolic control analysis, He et al,
+C systems biology, 2013.
+Society Open

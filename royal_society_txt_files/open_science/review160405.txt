@@ -1,0 +1,929 @@
+A computational method for sharp interface advection
+Johan Roenby, Henrik Bredmose and Hrvoje Jasak
+Article citation details
+R. Soc. open sci. 3: 160405.
+http://dx.doi.org/10.1098/rsos.160405
+Review timeline
+Original submission: 19 December 2015 Note: Reports are unedited and appear as
+1st revised submission: 16 June 2016 submitted by the referee. The review history
+2nd revised submission: 27 October 2016 appears in chronological order.
+Final acceptance: 28 October 2016
+Review History
+label_version_1
+RSOS-150704.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Reject
+Comments to the Author(s)
+label_comment_1
+The authors proposed a computational method for sharp interface advection, which seems out-
+perform several algebraic VOF methods used in commercial codes. However, this manuscript is
+not recommended for publication due to the following several critical issues:
+1. Since the proposed method relies on the geometrical reconstruction as described on Secs. 2 and
+3, it is a geometric VOF method. However, the authors did not compare it with other geometric
+VOF methods even these methods are noted by the authors.
+2. Showing a geometric VOF method is more accurate but much slower than algebraic VOF
+methods is nothing new. It is well known as also pointed out by the author in the introduction.
+3. Comparing their results with those obtained by commercial codes does not indicate any
+significance of their method except they show that the methods in the commercial codes
+representing the state of art. Unfortunately, it is not the case here.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The main emphasis of the present work concerns a VoF solution using an geometric interface
+reconstruction, which is used to update local (cell based) liquid fractions. In the work, it is shown
+explicitly that this advection is based on the time and surface area integral for adjacent cell faces,
+where phase transport is occurring.
+3
+Overall, the work is valuable and it should be published. However, there are some issues that
+should be address satisfactorily before publication:
+1) The authors describe this time and surface integral formulation as being a novelty of their
+approach. It should be made clear that this is concept has been around for at least 16 years, and
+has been published previously.
+Consider for instance:
+a) A new volume of fluid advection algorithm: the defined donating region scheme (D. Harvie
+and D. Fletcher, Int. J. Num. Methods in Fluids:2001
+b) Highly accurate Lagrangian flux calculation via algebraic quadratures on spline-approximated
+donating regions
+( Qinghai Zhang, Comput. Methods Appl. Mech. Engrg. 264 (2013) 191–204)
+The authors should also search ‘donating region VoF’ to see if there is anything in JCP or similar
+journals that has been published in this regard. Work along this line of thought was presented in
+APS DFD 2014 meeting in San Francisco, and probably now those works are in the journals.
+2) It is not clear in Eq. (1.1) what is this arbitrary volume. For instance, if this volume is a material
+region, then by the Reynolds Transport Theorem this equation is wrong, since the second term is
+already accounted for in the first term. Also, if this arbitrary volume is moving at some arbitrary
+speed this equation is wrong. The only way to make sense of this governing equation is to
+actually have the volume fixed in space, but then why take the time derivative outside the
+integral ? It is confusing.
+Please present a derivation of this equation. It is central to the problem being addressed here.
+3) By convention, you should not use \rho (in LaTeX) to denote an indicator function. This
+quantity \rho is understood to be density, and its use to indicate something else will be confusing
+to the reader.
+4) Similar comment for \sigma_ij. This quantity by convention represents a stress tensor, not a
+quantity that takes -1 or +1. Also, why do you need this? For instance, by stating that the normal
+area vector dS always points outward from the cell in question, this negative sign issue should be
+automatically handled.
+5) Due to widespread use of the interfoam code in both academia and industry, comparisons
+against this code should be made here.
+6) The metrics used do not show rate of convergence information. Also, it seems that only the
+average norms are used for errors, for instance L1 error norms. The authors should provide some
+information on a L_inf (L-infinity norm) and how this norm behaves with grid resolution. This
+will be highly informative when it comes time to comparing the different methodologies.
+label_end_comment
+Decision letter (RSOS-160704)
+07-Mar-2016
+Dear Dr Roenby:
+I write you in regards to manuscript RSOS-150704 entitled "A Computational Method for Sharp
+Interface Advection" which you submitted to Royal Society Open Science.
+In view of the criticisms of the reviewers and editors, found at the bottom of this letter, your
+manuscript has been rejected for publication.
+4
+Thank you for considering Royal Society Open Science for the publication of your research. I
+hope this decision will not discourage you from submitting manuscripts in the future.
+Yours sincerely,
+Matthew Allinson
+Editorial Coordinator, Royal Society Open Science
+on behalf of Miles Padgett
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Roger Tanner):
+Associate Editor: 1
+Comments to the Author:
+label_comment_3
+This very specialised topic belongs in a specialised journal. I suggest it does not fit into RSOS.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+The authors proposed a computational method for sharp interface advection, which seems out-
+perform several algebraic VOF methods used in commercial codes. However, this manuscript is
+not recommended for publication due to the following several critical issues:
+1. Since the proposed method relies on the geometrical reconstruction as described on Secs. 2 and
+3, it is a geometric VOF method. However, the authors did not compare it with other geometric
+VOF methods even these methods are noted by the authors.
+2. Showing a geometric VOF method is more accurate but much slower than algebraic VOF
+methods is nothing new. It is well known as also pointed out by the author in the introduction.
+3. Comparing their results with those obtained by commercial codes does not indicate any
+significance of their method except they show that the methods in the commercial codes
+representing the state of art. Unfortunately, it is not the case here.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+The main emphasis of the present work concerns a VoF solution using an geometric interface
+reconstruction, which is used to update local (cell based) liquid fractions. In the work, it is shown
+explicitly that this advection is based on the time and surface area integral for adjacent cell faces,
+where phase transport is occurring.
+Overall, the work is valuable and it should be published. However, there are some issues that
+should be address satisfactorily before publication:
+1) The authors describe this time and surface integral formulation as being a novelty of their
+approach. It should be made clear that this is concept has been around for at least 16 years, and
+has been published previously.
+5
+Consider for instance:
+a) A new volume of fluid advection algorithm: the defined donating region scheme (D. Harvie
+and D. Fletcher, Int. J. Num. Methods in Fluids:2001
+b) Highly accurate Lagrangian flux calculation via algebraic quadratures on spline-approximated
+donating regions
+( Qinghai Zhang, Comput. Methods Appl. Mech. Engrg. 264 (2013) 191–204)
+The authors should also search ‘donating region VoF’ to see if there is anything in JCP or similar
+journals that has been published in this regard. Work along this line of thought was presented in
+APS DFD 2014 meeting in San Francisco, and probably now those works are in the journals.
+2) It is not clear in Eq. (1.1) what is this arbitrary volume. For instance, if this volume is a material
+region, then by the Reynolds Transport Theorem this equation is wrong, since the second term is
+already accounted for in the first term. Also, if this arbitrary volume is moving at some arbitrary
+speed this equation is wrong. The only way to make sense of this governing equation is to
+actually have the volume fixed in space, but then why take the time derivative outside the
+integral ? It is confusing.
+Please present a derivation of this equation. It is central to the problem being addressed here.
+3) By convention, you should not use \rho (in LaTeX) to denote an indicator function. This
+quantity \rho is understood to be density, and its use to indicate something else will be confusing
+to the reader.
+4) Similar comment for \sigma_ij. This quantity by convention represents a stress tensor, not a
+quantity that takes -1 or +1. Also, why do you need this? For instance, by stating that the normal
+area vector dS always points outward from the cell in question, this negative sign issue should be
+automatically handled.
+5) Due to widespread use of the interfoam code in both academia and industry, comparisons
+against this code should be made here.
+6) The metrics used do not show rate of convergence information. Also, it seems that only the
+average norms are used for errors, for instance L1 error norms. The authors should provide some
+information on a L_inf (L-infinity norm) and how this norm behaves with grid resolution. This
+will be highly informative when it comes time to comparing the different methodologies.
+Author's Response to Decision Letter for (RSOS-150704)
+See Appendix A.
+6
+label_version_2
+RSOS-160405.R0 (Resubmission)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+A URL is provided for the code, but the linked-to repository appears to be empty at the moment.
+Perhaps it will be added or made accessible in the future.
+I hope that the tests cases in the paper will also be included so they can be independently run and
+verified.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_6
+I am impressed with the paper, and am happy to support its publication *nearly* as-is. The
+description is clear and easy to follow, and the final results in many cases vastly surpass the
+comparison methods. The method seems comparatively simple to implement, and if the code is
+indeed made available and/or incorporated into OpenFOAM as promised, I could see it having
+wide impact. I have a few very minor comments.
+On page 8, the choice of interpolation ("inverse point-to-cell-centre interpolation") is very briefly
+glossed over, so I would like to see it spelled out exactly what this term means. Is this some
+variant of Shepard interpolation? Even better would be to describe and evaluate the mentioned
+alternative (volume weighting).
+The comparisons provided are all against algebraic VOF schemes. It's not made clear how the
+algorithm is expected to fare against existing geometric VOF schemes for general meshes, which
+is noted as "an active area of research". Is this choice not to compare against geometric schemes
+because there are no freely available implementations, or because the complexity of (re-)doing an
+implementation of one of these methods is high, or because they are not popular in existing
+software packages? Some expanded commentary on why the choice of these 3 schemes (and not
+geometric ones) is the most appropriate would be helpful.
+Can the method be compared against result data from an existing geometric VOF scheme paper
+without necessarily requiring an implementation to be found/written?
+There's one instance of "loosing" that should say "losing".
+7
+The notation for large integers in the paper uses decimals rather than spaces or commas. (e.g. "we
+used a mesh with 10.131.041 cells"), but the same mark is used to indicate the decimal point in
+real numbers ("0.0078)". This is not a convention I'm familiar with, and to avoid confusion I'd
+probably advocate for changing the former to use either commas or spaces.
+There are some weird characters in the bibliography (refs 8 and 9) that should be corrected.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+No
+Is it clear how to access all supporting data?
+Source code is made available - this is adequate supporting data.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_7
+Please see review comments - if addressed adequately, then recommend for publication. (See
+Appendix B)
+label_end_comment
+Decision letter (RSOS-160405)
+18-Oct-2016
+Dear Dr Roenby
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160405 entitled
+"A Computational Method for Sharp Interface Advection" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+8
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160405
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+9
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 27-Oct-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Professor Miles Padgett
+Royal Society Open Science
+openscience@royalsociety.org
+10
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+I am impressed with the paper, and am happy to support its publication *nearly* as-is. The
+description is clear and easy to follow, and the final results in many cases vastly surpass the
+comparison methods. The method seems comparatively simple to implement, and if the code is
+indeed made available and/or incorporated into OpenFOAM as promised, I could see it having
+wide impact. I have a few very minor comments.
+On page 8, the choice of interpolation ("inverse point-to-cell-centre interpolation") is very briefly
+glossed over, so I would like to see it spelled out exactly what this term means. Is this some
+variant of Shepard interpolation? Even better would be to describe and evaluate the mentioned
+alternative (volume weighting).
+The comparisons provided are all against algebraic VOF schemes. It's not made clear how the
+algorithm is expected to fare against existing geometric VOF schemes for general meshes, which
+is noted as "an active area of research". Is this choice not to compare against geometric schemes
+because there are no freely available implementations, or because the complexity of (re-)doing an
+implementation of one of these methods is high, or because they are not popular in existing
+software packages? Some expanded commentary on why the choice of these 3 schemes (and not
+geometric ones) is the most appropriate would be helpful.
+Can the method be compared against result data from an existing geometric VOF scheme paper
+without necessarily requiring an implementation to be found/written?
+There's one instance of "loosing" that should say "losing".
+The notation for large integers in the paper uses decimals rather than spaces or commas. (e.g. "we
+used a mesh with 10.131.041 cells"), but the same mark is used to indicate the decimal point in
+real numbers ("0.0078)". This is not a convention I'm familiar with, and to avoid confusion I'd
+probably advocate for changing the former to use either commas or spaces.
+There are some weird characters in the bibliography (refs 8 and 9) that should be corrected.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_9
+Please see review comments - if addressed adequately, then recommend for publication.
+Author's Response to Decision Letter for (RSOS-160405)
+See Appendix C.
+11
+label_end_comment
+Decision letter (RSOS-160405.R1)
+28-Oct-2016
+Dear Dr Roenby,
+I am pleased to inform you that your manuscript entitled "A Computational Method for Sharp
+Interface Advection" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Dear Associate Editor
+Thank you for agreeing with our appeal and for accepting a resubmission of a revised version of our
+nitially rejected manuscript entitled "A Computational Method for Sharp Interface Advection” (RSOS-
+150704).
+Please find on the following pages our response to reviewer 2 who recommended the manuscript for
+publication with a number of minor changes.
+In the revised manuscript, all major changes to the original manuscript are marked in the following way:
+The original text is red and the new text is blue. We therefore kindly ask the reviewers to disregard any
+red text except when they need to see what has changed since the original submission.
+Since the original submission, we have optimized the IsoAdvector code so it is now significantly faster.
+Therefore all simulations have been rerun and the updated error measures and calculation times have
+been inserted in figures and tables. The solution quality is unaltered, but the calculation times are now
+similar to – actually slightly faster than – the fastest reference schemes, HRIC and CICSAM, and
+significantly faster than MULES. We are now very confident that IsoAdvector represents a significant
+advancement and will have a large impact within the field of interfacial CFD.
+Kind regards on behalf of the authors,
+Johan Rønby
+------------------------------------------------------------
+Response to Reviewer 2
+------------------------------------------------------------
+In the following we address the issues raised by reviewer 2.
+Quotes from the review report are surrounded by #############.
+Our response is surrounded by ============
+###################################
+1) The authors describe this time and surface integral formulation as being a novelty of their approach.
+It should be made clear that this is concept has been around for at least 16 years, and has been
+published previously.
+Consider for instance:
+a) A new volume of fluid advection algorithm: the defined donating region scheme (D. Harvie and D.
+Fletcher, Int. J. Num. Methods in Fluids:2001
+b) Highly accurate Lagrangian flux calculation via algebraic quadratures on spline-approximated
+donating regions
+( Qinghai Zhang, Comput. Methods Appl. Mech. Engrg. 264 (2013) 191–204)
+The authors should also search ‘donating region VoF’ to see if there is anything in JCP or similar journals
+that has been published in this regard. Work along this line of thought was presented in APS DFD 2014
+meeting in San Francisco, and probably now those works are in the journals.
+###################################
+==================================
+It is incorrect that we describe the “time and surface integrated formulation” of the continuity equation
+to be a novelty of our approach. Please be more specific about where this claim is made in our paper. Is
+t the derivation leading from the continuity equation (1.1) to (1.5)? These are simply a few definitions
+and a formal time integration. It has not been the intention to present this as a result or novelty of our
+paper, and we find it difficult to see how one can get this impression. An equation similar to eqn. 1.5
+does indeed appear in reference b) (their eqn. 1.3) but not in reference a). We could have chosen to
+exclude our derivation from eqn. 1.1 to 1.5 and just refer to ref b) or one of the many other papers
+where a similar equation appears. We believe, however, that this will not benefit the readability of the
+paper, and we have therefore chosen to keep it as it is.
+Just to be clear, here is what we do claim to be novel in our approach:
+1) The way we exploit isosurface calculations to model the liquid (Fluid A) distribution inside cells in the
+reconstruction step. This avoids the step used in many VOF schemes of calculating the numerical
+cause troubles because the numerically sought function is actually a Dirac delta function.
+2) The treatment of the time integration of the submerged face area as the interface passes an arbitrary
+polygonal face. The novelty is the way we divide the integration into sub time intervals as the face-
+nterface intersection line passes the polygonal vertices. This is what makes our method work on
+unstructured meshes.
+Neither of the papers a) and b) suggested by Reviewer 2 can be justifiably said to already contain these
+deas, nor to demonstrate similarly accurate results on unstructured 3D meshes.
+To make it more clear in the article what we claim to be new, we have added a number of paragraph to
+the conclusion section.
+==================================
+###################################
+2) It is not clear in Eq. (1.1) what is this arbitrary volume. For instance, if this volume is a material
+region, then by the Reynolds Transport Theorem this equation is wrong, since the second term is already
+accounted for in the first term. Also, if this arbitrary volume is moving at some arbitrary speed this
+equation is wrong. The only way to make sense of this governing equation is to actually have the
+volume fixed in space, but then why take the time derivative outside the integral ? It is confusing.
+Please present a derivation of this equation. It is central to the problem being addressed here.
+###################################
+==================================
+We have clarified things by stressing below the equation that the volume in question is indeed
+stationary.
+Equation 1.1 as it stands could be derived by starting with the continuity equation in differential form.
+However, even though we acknowledge that most readers will be more familiar with its differential form,
+such a derivation would be a pseudo-derivation, since the integral form in eqn 1.1 is actually the starting
+point for the mathematical derivation of the differential form of the continuity equation.
+We note that the d/dt is just the ordinary differentiation with respect to t. This is because when you
+ntegrate a function rho(x,t) over x then the resulting integral is only a function of t and the
+“\partial/\partial t” is not necessary. The d/dt is outside the integral for the reader to read the equation
+as an expression for the “rate of change of mass inside the volume”. This is exactly what we are looking
+for when V is a control volume.
+==================================
+###################################
+3) By convention, you should not use \rho (in LaTeX) to denote an indicator function. This quantity \rho
+s understood to be density, and its use to indicate something else will be confusing to the reader.
+###################################
+==================================
+It is incorrect that we are using $\rho$ for indicator function. We are using $\hat{\rho}$, to indicate
+that this is indeed just the density, albeit a shifted and scaled version of it. There is no clear convention
+n literature. Some use $I$, some use $f$. We have changed it to $H$ to make the distinction to $\rho$
+more clear (H is the letter used by Tryggvason and Zaleski in their book “Direct Numerical Simulations
+of Gas-Liquid Multiphase Flows”).
+==================================
+###################################
+4) Similar comment for \sigma_ij. This quantity by convention represents a stress tensor, not a quantity
+that takes -1 or +1. Also, why do you need this? For instance, by stating that the normal area vector dS
+always points outward from the cell in question, this negative sign issue should be automatically
+handled.
+###################################
+==================================
+The quantity sigma_ij is needed because we need to work with each face separately and independently
+of which cell it belongs to. Thus, we must choose a direction of the normal for each face. This direction
+will then be outward for one of its cells, but inward for the other. Sigma_ij changes the face direction for
+possible to define \Delta V_ij, as we do in eqn. (1.6), such that it could be substituted into eqn. (1.7) to
+obtain eqn. (1.5). Regarding choice of symbol, we have changed it to s_ij to avoid confusion.
+==================================
+###################################
+5) Due to widespread use of the interfoam code in both academia and industry, comparisons against this
+code should be made here.
+###################################
+==================================
+Well, this is actually what we do: InterFoam solves the interface advection step using MULES (our 1st
+reference scheme) and the pressure-velocity coupling using a variant of the PISO algorithm. Indeed, all
+our shown MULES results are obtained using the interFoam solver with the PISO algorithm deactivated
+(since our velocity field is predetermined). We have now emphasized this in the Results section.
+==================================
+###################################
+6) The metrics used do not show rate of convergence information. Also, it seems that only the average
+norms are used for errors, for instance L1 error norms. The authors should provide some information on
+a L_inf (L-infinity norm) and how this norm behaves with grid resolution. This will be highly informative
+when it comes time to comparing the different methodologies.
+###################################
+==================================
+We have now included converge orders for the test cases where three grid resolutions are available.
+That is:
+4.1: Disc in steady 2D flow – square mesh: Order = 2.4
+4.2: Spiraling disc – square, triangular and polygonal meshes: Order = 1.9, 1.7, and 1.9, respectively.
+4.3: Sphere in steady uniform 3D flow: Order = 2.6-3.2.
+4.4: Sphere in non-uniform 3D flow – hex mesh (here we have now replaced the two simulations with dx
+= 1/100 and dx = 1/200 with three simulations using dx = 1/64, 1/128, and 1/256 to be able to
+calculate the convergence order): Order = 2.3.
+It is incorrect that we use average norms. The measure $E_1$ is not an average quantity. It is the total
+volume of fluid in the numerical solution not overlapping with the exact solution. The norms
+min($\alpha$) and 1-max($\alpha$) chosen to show boundedness errors are in fact L-infinity norms in
+the sense that they show the min and max cell errors. This has now been clarified in the Results
+section.
+We already have quite a few different error measures in the paper to quantify the solution quality. They
+have been carefully chosen to cover all the ways a VOF method can fail: lack of shape preservation
+(E_1), lack of volume conservation ($\delta V_rel$), lack of boundedness (min and max of $\alpha$),
+and lack of surface sharpness ($\delta W_{rel}$). To keep the number of tables and figures at a
+manageable level, we have chosen not to include any further error measures.
+==================================
+pendix B
+neral Comments
+<U+F0B7> The writing is cumbersome and not grammatically correct, leading the reader to
+conclude that the authors did not take care to proofread or are lacking in basic English
+skills. The grammatical errors are so distracting that the reader will likely abandon
+reading this article within a few pages. Very poor!
+<U+F0B7> Despite the poor overall presentation of the material in this manuscript, and the long
+and very specific comments (below) that the authors should address, the work
+conveyed here by the authors is new, novel, and a contribution to the field. Specifically,
+the main (if not only) contribution here is the algorithm for capturing the temporal
+topology change of the interface (isosurface) within a cell through interpolation of
+vertex velocities and recomputation of the isosurface (Section 2.2 and 3.0). This is a very
+interesting and novel algorithm that directly addresses the challenge for volume
+tracking algorithms (“VOF”) on 3D unstructured meshes, namely the need for robust
+multi-dimensional (“unsplit”) fluxing, which is a solved problem on 3D structured
+meshes. This approach, while still fraught with potential problems (e.g., allowing the
+solenoidality of the velocity field to more actively constrain the subcell isosurface
+toplogy), is a nice advance. The authors should clean up their presentation (spoon feed
+the reader more!), carefully proofread the manuscript, and address this reviewers’
+comments.
+cific Comments
+<U+F0B7> [p. 5]: First sentence after equation (1.5) is not true. A first order approximation to the
+time derivative of alpha has been used, hence this equation is not exact.
+<U+F0B7> [p. 5]: Second sentence after equation (1.5) makes no sense (not grammatically correct).
+<U+F0B7> [p. 5]: Sentence right before equation (1.7) makes no sense (not grammatically correct).
+<U+F0B7> [p. 5]: In equation (1.8), why not a center of mass velocity with a density term in the
+volume integral? The current expression will lead to problems for high density ratio
+interfacial flows (e.g., in water-air interfacial cells)
+<U+F0B7> [p. 5]: The statement “we want our subgrid model to “detect” this capture this local
+distribution information” makes no sense.
+<U+F0B7> [p. 6]: Does ParaView use the Marching Cubes algorithm for computing isosurfaces? The
+authors should give more details on the algorithm used by ParaView (since apparently
+this was an inspiration)
+<U+F0B7> [p. 6]: “This is an unavoidable price we must pay to ensure that isofaces cut surface cells
+into subcells having the correct volumetric proportions” is not true; past work has
+shown that piecewise linear (or planar in 3D) volume fractions can be made continuous
+(from cell to cell) by iterating on the plane normal.
+<U+F0B7> [p. 6]: In Section 2.2, was a 4th or 5th order RK time integration algorithm ever
+considered instead of the 1st order integration presented?
+<U+F0B7> [p. 8]: The sentence “ . . . is found by simple bisection root findingthe following
+procedure . . .” makes no sense.
+<U+F0B7> [p. 9]: In the first paragraph, how often is “rare” where the LU solution does not provide
+useful solutions?
+<U+F0B7> [p. 9]: The phrase “due of to the cell-to-vertex interpolation” makes no sense.
+<U+F0B7> [p. 9]: The phrase “same as for a regularany other mesh face” makes no sense.
+<U+F0B7> [p. 9]: In section 3.2, where any other methods for the face normal tried other then an
+area weighted valued of the triangular face normal?
+<U+F0B7> [p. 9]: By “decomposing the cell into tetrahedral all sharing the cell centre . . .” is it
+implied that this method will only work for center element types or for polyhedra in
+general?
+<U+F0B7> [p. 9]: In section 3.2, for velocity interpolation from vertices to point Xs, is density
+weighting used? If not this could be very problematic for high density ratio flows. Also is
+it true that the base assumption here is that the flow solver is vertex-centered for its
+momentum control volume? The linear interpolation of velocities within a cell implies
+an inherent 2nd order spatial discretization assumption (for velocity), otherwise the
+interpolation must be consistent with the underlying Navier-Stokes discretization
+scheme (e.g., the subcell velocity interpolation would have to be quadratic for a 3 rd
+order discretization, etc.). Also, this kind of interpolation in general breaks the
+solenoidality constraint, which is likely why volume fractions are not monotonic
+(between zero and one) after advection, hence the need for “redistribution”.
+<U+F0B7> [p. 9]: In the last paragraph, the phrase “. . . do by findingestimating the times . . .”
+makes no sense.
+<U+F0B7> [p. 10]: Equation (3.3) assumes 1st order in time – what if a higher order discretization is
+used?
+<U+F0B7> [p. 10]: Does equation (3.5) imply that time subcycling is used? If so, then what value of
+M is advised? If not, then this expression and associated text should be clarified.
+<U+F0B7> [p. 10/11]: The introductory text of Section 3.4 (“Bounding procedure”) is not quite right
+in that it reasons the introduction of new volume extrema (<0 or >1) as being because
+“there will inevitably be small errors, which, in cases where a cell is completely emptied
+or filled during a time step, will cause the algorithm to miss 0 or 1 by a small amount.”
+The only reason for the over- or under-shoots, on the contrary, is owing to the fact that
+volumes swept out multi-dimensional (“unsplit) and are not computed from a true
+multi-dimensional solenoidal velocity field; rather local approximations are made about
+the velocity field (solenoidal in a single direction) that are incorrect. This issue is
+addressed, e.g., in a recent 2008 article (SIAM J. SCI. COMPUT, Vol. 31, No. 2, pp. 865–
+889).
+<U+F0B7> [p. 12]: For error measures, why not just use L1, L2, and L-infinity for all measures? The
+authors choose to use L1 and/or L-infinity for certain cases. Why?
+<U+F0B7> Performance comparison – the authors have chosen to use other algorithms for
+comparison that are more based on convenience (MULES, HRIC, CICSAM) then use the
+“best” published algorithm (e.g., that of Liovic et al.). Why? Is it not true these choices
+shed the best possible light on the algorithm documented in this paper?
+<U+F0B7> Disk in uniform flow (Figures 4-6): The comparison results (MULES, HRIC, CICSAM) are
+terrible! These would not have been appropriate to use 25 years ago, much less now.
+The results do not entice the reader to necessarily embrace IsoAdvector because the
+baseline comparisons are so poor.
+<U+F0B7> [p. 17]: “wholes” should be “holes”.
+r Referee 1
+nk you very much for taking your time to review our manuscript and for recommending it for
+lication.
+se find below a response to each of your comments (you comment in normal font, our
+onse in italic).
+regards on behalf of the authors,
+n
+ewer: 1
+ments to the Author(s)
+impressed with the paper, and am happy to support its publication *nearly* as-is. The description is
+r and easy to follow, and the final results in many cases vastly surpass the comparison methods. The
+hod seems comparatively simple to implement, and if the code is indeed made available and/or
+rporated into OpenFOAM as promised, I could see it having wide impact. I have a few very minor
+ments.
+nk you. The code including all test case setups will be released on github.com/isoadvector
+ltaneously with the publication of this manuscript.
+age 8, the choice of interpolation ("inverse point-to-cell-centre interpolation") is very briefly glossed
+, so I would like to see it spelled out exactly what this term means. Is this some variant of Shepard
+polation? Even better would be to describe and evaluate the mentioned alternative (volume
+hting).
+arify matters, we have rephrased the first paragraph in section 3.1 to:
+first step in calculating the isosurface is to interpolate the volume fractions to the grid points of the
+h. The value in a grid point will in general be a linear combination of the volume fractions in the cells
+ing this point. Here, we have chosen to use the inverse of the distances between a grid point and the
+ounding cell centres as the weights in this interpolation step. Other options could be to use the cell
+mes or solid angles as interpolation weights. A systematic study of the influence of this choice is left for
+re work.”
+comparisons provided are all against algebraic VOF schemes. It's not made clear how the algorithm is
+cted to fare against existing geometric VOF schemes for general meshes, which is noted as "an active
+of research". Is this choice not to compare against geometric schemes because there are no freely
+able implementations, or because the complexity of (re-)doing an implementation of one of these
+hods is high, or because they are not popular in existing software packages? Some expanded
+mentary on why the choice of these 3 schemes (and not geometric ones) is the most appropriate
+ld be helpful.
+the method be compared against result data from an existing geometric VOF scheme paper without
+ssarily requiring an implementation to be found/written?
+ction 4.4 we have now included a paragraph comparing our error measures to those listed in the
+ature for this test case.
+e's one instance of "loosing" that should say "losing".
+ected – thanks.
+notation for large integers in the paper uses decimals rather than spaces or commas. (e.g. "we used a
+h with 10.131.041 cells"), but the same mark is used to indicate the decimal point in real numbers
+078)". This is not a convention I'm familiar with, and to avoid confusion I'd probably advocate for
+ging the former to use either commas or spaces.
+ected – thanks.
+e are some weird characters in the bibliography (refs 8 and 9) that should be corrected.
+ected – thanks.
+you very much for taking your time to review our manuscript thoroughly!
+find below a response to each of your comments (you comment in normal font, our response in
+gards on behalf of the authors,
+al Comments
+writing is cumbersome and not grammatically correct, leading the reader to conclude that the
+s did not take care to proofread or are lacking in basic English skills. The grammatical errors
+distracting that the reader will likely abandon reading this article within a few pages. Very
+, we were quite surprised about this comment, but then we realized what happened: In the
+etter for the submission, we wrote to the editor:
+revised manuscript, all major changes to the original manuscript are marked in the following
+he original text is red and the new text is blue. We therefore kindly ask the reviewers to
+ard any red text except when they need to see what has changed since the original
+sion.”
+ess is that you either did not receive or simply missed this important information. If you have
+rinted out the manuscript in black and white, all changed sentences must have been very
+e to read. We completely understand your frustration and thank you for recommending the
+cript for publication in spite of the poor language.
+ite the poor overall presentation of the material in this manuscript, and the long and very
+c comments (below) that the authors should address, the work conveyed here by the
+s is new, novel, and a contribution to the field. Specifically, the main (if not only)
+ution here is the algorithm for capturing the temporal topology change of the interface
+face) within a cell through interpolation of vertex velocities and recomputation of the
+ace ( Section 2.2 and 3.0). This is a very interesting and novel algorithm that directly
+ses the challenge for volume tracking algorithms (“VOF”) on 3D unstructured meshes,
+y the need for robust multi-dimensional (“unsplit”) fluxing, which is a solved problem on 3D
+idality of the velocity field to more actively constrain the subcell isosurface toplogy), is a
+vance. The authors should clean up their presentation (spoon feed the reader more!),
+lly proofread the manuscript, and address this reviewers’ comments.
+part of this comment referring to the novelty of the method: Agree, no actions needed from
+e.
+part of this comment referring to the language: Please see response to your first general
+ent above.
+c Comments
+]: First sentence after equation (1.5) is not true. A first order approximation to the time
+ive of alpha has been used, hence this equation is not exact.
+mment is incorrect. If equation (1.5) had said
+<U+0001D6FC><U+0001D456> (<U+0001D461> + <U+0001D6E5><U+0001D461>) = <U+0001D6FC><U+0001D456> (<U+0001D461>) - <U+0001D6E5><U+0001D461>(… ),
+our comment would be correct, and the = should indeed be an ˜.
+e equation says
+<U+0001D461>+<U+0394><U+0001D461>
+<U+0001D6FC><U+0001D456> (<U+0001D461> + <U+0394><U+0001D461> ) = <U+0001D6FC><U+0001D456> (<U+0001D461>) - <U+222B> (… )<U+0001D451><U+0001D70F>,
+<U+0001D461>
+have just performed a formal time integration of equation (1.3), applied the definition in
+nd the Fundamental Theorem of Calculus:
+<U+0001D44F>
+<U+222B> <U+0001D453> ' (<U+0001D70F>)<U+0001D451><U+0001D70F> = <U+0001D453> (<U+0001D44F> ) - <U+0001D453>(<U+0001D44E>).
+<U+0001D44E>
+]: Second sentence after equation (1.5) makes no sense (not grammatically correct).
+see response to your first general comment above.
+]: Sentence right before equation (1.7) makes no sense (not grammatically correct).
+see response to your first general comment above.
+]: In equation (1.8), why not a center of mass velocity with a density term in the volume
+l? The current expression will lead to problems for high density ratio interfacial flows (e.g.,
+re interface advection problem is invariant to the specific densities of the two fluids and to
+nsity ratio. Therefore, so should the solution algorithm for solving this isolated problem be.
+we look at the exact equation (1.5) again, we see that H(x,t) makes sure that it is only the
+y in the water part of the cell/face that is relevant for the update of <U+0001D6FC><U+0001D456> from time <U+0001D461> to <U+0001D461> +
+erefore, it could be a good idea to alter the velocity estimate of the interface to a “one-
+version not containing information from the “dry” surrounding cells. We might look into
+mprovements in future work.
+understanding, the problems you refer to regarding high density ratios are not related to
+erface advection problem, but rather to the pressure-velocity coupling algorithm (e.g.
+nd inconsistent treatment in this part of the flow solver of the fact that there is a sharp
+ce cutting through some cells. We are currently working on some interesting ideas for
+sing this problem. But how to provide a good quality velocity field for the interface
+ion algorithm is a separate problem. The scope of the paper is: “Given a velocity field, do
+est to passively advect an interface in it”.
+]: The statement “we want our subgrid model to “detect” this capture this local distribution
+ation” makes no sense.
+see response to your first general comment above.
+]: Does ParaView use the Marching Cubes algorithm for computing isosurfaces ? The authors
+give more details on the algorithm used by ParaView (since apparently this was an inspiration)
+e not aware of the details of the method used by Paraview. It cannot be marching cubes, since
+ethod is limited to cubic cells and Paraview can make isosurfaces for data on general
+ctured meshes. This, however, is beside the point, which is that the idea, not the
+entation details, was inspired by our usage of Paraview. To clarify this, we have changed the
+ng sentences:
+ea of using an isosurface numerically calculated from the volume fractions to represent the
+ce is inspired by our use of visualisation software, such as ParaView
+for visualising surfaces. Numerically calculated isosurfaces are topologically consistent
+uous surfaces and straightforward to calculate on arbitrary polyhedral meshes”
+ea of using isosurface calculations in the interface reconstruction step is inspired by our work
+ostprocessing of interfacial CFD data. Here, it is custom to visualize the fluid interface (e.g.
+umerically calculated isosurfaces are topologically consistent continuous surfaces, and are
+tforward to calculate on arbitrary polyhedral meshes.”
+]: “This is an unavoidable price we must pay to ensure that isofaces cut surface cells into
+ls having the correct volumetric proportions” is not true; past work has shown that piecewise
+or planar in 3D) volume fractions can be made continuous (from cell to cell) by iterating on the
+normal.
+he sentence contains the word “isofaces” it should be clear that it is in the context of using
+ace calculation that the statement holds. That being said, your statement “that piecewise
+or planar in 3D) volume fractions can be made continuous (from cell to cell) by iterating on the
+normal” cannot be strictly true in general. It is not difficult to come up with simple examples of
+e fraction data on a simple 2D square mesh, where there is no way of fiddling with straight
+tting lines to make them:
+a) cut cells into the correct volume fractions and
+b) connect at the faces.
+or instance of a 2x2 square cell mesh with all volume fractions being 0.2:
+0.2 0.2 0.2 0.2 0.2 0.2
+?
+0.2 0.2 0.2 0.2 0.4 0.2
+here is a solution, which is an inclined square around the central mesh point (left panel in
+above). There is actually a 1-parameter family of solutions because we can move the cutting
+on the two vertical faces away from the central vertex as long as we move the cutting points
+horizontal faces correspondingly inwards to preserve the enclosed area (see middle panel
+for an example). But now change one of the cell alpha values to, say, 0.4 (right panel above).
+im that in this case we must sacrifice either a) or b) (or allow for nonplanar cutting planes).
+]: In Section 2.2, was a 4th or 5th order RK time integration algorithm ever considered instead of
+order integration presented?
+ase see the reply to the first specific comment.
+]: The sentence “ . . . is found by simple bisection root findingthe following procedure . . .”
+no sense.
+]: In the first paragraph, how often is “rare” where the LU solution does not provide useful
+ns?
+atrix that we must invert is a Vandermonde matrix obtained by evaluating
+<U+0001D44E><U+0001D456> = <U+0001D434> <U+0001D453><U+0001D456>3 + <U+0001D435> <U+0001D453><U+0001D456>2 + <U+0001D436> <U+0001D453><U+0001D456> + <U+0001D437>
+four <U+0001D453><U+0001D456> values:
+<U+0001D453><U+0001D45A><U+0001D456><U+0001D45B> + (<U+0001D453><U+0001D45A><U+0001D44E><U+0001D465> - <U+0001D453><U+0001D45A><U+0001D456><U+0001D45B> ) * [0: 3]/3
+<U+0001D45A><U+0001D456><U+0001D45B> and <U+0001D453><U+0001D45A><U+0001D44E><U+0001D465> are the <U+0001D6FC>-values of the two vertex points between which the interface is moving in
+me interval. If the four <U+0001D453><U+0001D456> ’s are all distinct, the Vandermonde matrix is invertible. However, if
+- <U+0001D453><U+0001D45A><U+0001D456><U+0001D45B> | is very small, the matrix may be ill-conditioned and the numerical inversion may fail. An
+le with a cubic cell, where this will happen is depicted below:
+0.3 0.6 - <U+0001D716>
+0.6 + <U+0001D716> 0.9
+face at the time where it passes the lower left corner is shown in red and the isoface at the time
+it passes the upper right corner is shown in blue. The vertex values <U+0001D453><U+0001D45A><U+0001D456><U+0001D45B> = 0.6 - <U+0001D716> and <U+0001D453><U+0001D45A><U+0001D44E><U+0001D465> =
+<U+0001D716> are very close in this example. Therefore the LU approach for calculating the coefficients in the
+mial expression for the variation in volume fraction, <U+0001D6FC>, as the volume between these two
+s is swept, may fail.
+ve not made a systematic study of how often this kind of things happen. It will probably happen
+ver <U+0001D716> is close to machine precision, which will in general be rare.
+]: The phrase “due of to the cell-to-vertex interpolation” makes no sense.
+see response to your first general comment above.
+]: The phrase “same as for a regularany other mesh face” makes no sense.
+]: In section 3.2, where any other methods for the face normal tried other then an area
+ed valued of the triangular face normal?
+the best of our knowledge, this is the most robust method for general meshes. More
+tationally efficient methods can be used if assumptions are made (e.g. the face being exactly
+). But since this is not a critical part of the code in terms of calculation speed, there is no point
+ificing robustness for a small efficiency gain.
+]: By “decomposing the cell into tetrahedral all sharing the cell centre . . .” is it implied that
+ethod will only work for center element types or for polyhedra in general?
+ethod works on general polyhedra. When needed, a polyhedron is decomposed into tetrahedra
+rting a geometric centroid point into each face, decomposing the face into triangle using the
+ntre, and then creating tetrahedra towards the volumetric centroid of a polyhedron.
+]: In section 3.2, for velocity interpolation from vertices to point Xs, is density weighting used? If
+s could be very problematic for high density ratio flows. Also is it true that the base assumption
+that the flow solver is vertex-centered for its momentum control volume? The linear
+lation of velocities within a cell implies an inherent 2nd order spatial discretization assumption
+locity), otherwise the interpolation must be consistent with the underlying Navier-Stokes
+ization scheme (e.g., the subcell velocity interpolation would have to be quadratic for a 3 rd
+discretization, etc.). Also, this kind of interpolation in general breaks the solenoidality constraint,
+is likely why volume fractions are not monotonic (between zero and one) after advection, hence
+ed for “redistribution”.
+uestion:
+e answer to 4th specific comment. There is a lot of options to try out here. In general, we have
+o focus on describing the basic idea of IsoAdvector leaving room for improvements in details
+s this. Clearly, in the pure advection test cases presented in the manuscript the densities and
+atio are immaterial.
+d question:
+e OpenFOAM solver is based on a coupling between volumetric face fluxes (the <U+0001D719><U+0001D457> ’s in
+on 1.9) and the pressure. Within a time step the cell-centred velocities (the <U+0001D448><U+0001D456> ’s in equation
+re reconstructed from the face fluxes only after the pressure<->face flux coupling has been
+with the PISO algorithm. Thus, solenoidal in this code means that the face fluxes of a cell
+zero.
+]: In the last paragraph, the phrase “. . . do by findingestimating the times . . .” makes no sens e.
+see response to your first general comment above.
+0]: Equation (3.3) assumes 1st order in time – what if a higher order discretization is used?
+actually mentioned as a possible extension in line 279-283: “In the current implementation, we
+the <U+0001D448><U+0001D446> of an isoface as constant during the whole time step. Possible improvements could be 1)
+elocity data from previous time steps to estimate the isoface acceleration during the time step
+calculating the velocity gradient from surrounding cell velocity data to approximate the isoface
+n around its two tangential axes during the time step. Work along these lines is left for future
+pment.”
+0]: Does equation (3.5) imply that time subcycling is used? If so, then what value of M is
+d? If not, then this expression and associated text should be clarified.
+st phrase in Section 3.4, just before equation (3.5), describes the exact definition of the times
+<U+0001D461>~<U+0001D440> . From this definition, M - 2 can be seen to be the number of vertex-interface encounter times
+ined in equation 3.3) that lie within the interval [<U+0001D461>, <U+0001D461> + <U+0001D6E5><U+0001D461>]. We have now clarified that the t_k’s
+orted list of the times calculated in equation 3.3. Also, we have corrected a misprint in equation
+e upper limit of the sum should be M-1 instead of M.
+0/11]: The introductory text of Section 3.4 (“Bounding procedure”) is not quite right in that it
+s the introduction of new volume extrema (<0 or >1) as being because “there will inevitably be
+rrors, which, in cases where a cell is completely emptied or filled during a time step, will cause
+orithm to miss 0 or 1 by a small amount.” The only reason for the over- or under-shoots, on the
+ry, is owing to the fact that volumes swept out multi-dimensional (“uns plit) and are not
+ted from a true multi-dimensional solenoidal velocity field; rather local approximations are
+about the velocity field (solenoidal in a single direc tion) that are incorrect. This issue is
+sed, e.g., in a recent 2008 article (SIAM J. SCI. COMPUT, Vol. 31, No. 2, pp. 865–889).
+ve removed the word “inevitably” in the sentence by rephrasing:
+xplanation for this is that, while the method’s estimate of the <U+0394><U+0001D449><U+0001D457> ’s are typically very good, there
+vitably be small errors, which, in cases where a cell is completely emptied or filled during the
+ep, will cause the algorithm to miss 0 or 1 by a small amount.”
+xplanation for this is that, while the method's estimate of the $\Delta V_j$'s is typically very
+t is not exact. Thus, in cases where a cell is completely emptied or filled during the time step, the
+rror committed causes the algorithm to miss 0 or 1 by a small amount.”
+hat it is not correct that we make the local approximation that the field is “solenoidal in a single
+on”.
+2]: For error measures, why not just use L1, L2, and L -infinity for all measures? The authors
+to use L1 and/or L-infinity for certain cases. Why?
+beginning of the Results section (Sec. 4) we define six error measures based on the requirements
+OF scheme. In contrast to the error measure collection {L1, L2, L-infinity}, our measures cover
+r less everything that can go wrong in a VOF scheme, and by non-dimensionalising them, they
+e a geometric interpretation. For instance, E_1 is basically L_1, but non-dimensionalised, so the
+re becomes the fraction of the total fluid A contents that is misplaced compared to the exact
+n. In our first draft of the manuscript, we had tables for all error measures for all test cases. This
+the manuscript too voluminous and difficult to read, and did not provide any essential new
+ation. Therefore, we have chosen to show all error measures only for some of the test cases, and
+selection of the measures for other cases. The fact that we are making the code and test cases
+y available should make it clear, that we are not trying to hide anything by our selection. It is
+a matter of clarity in the exposition.
+rmance comparison – the authors have chosen to use other algorithms for comparison that
+re based on convenience (MULES, HRIC, CICSAM) then use the “best” published algorithm
+hat of Liovic et al.). Why? Is it not true these choices shed the best possible light on the
+hm documented in this paper?
+g form the Introduction:
+mbition in the development of the isoAdvector algorithm is to develop a VOF based interface
+ion method that works on arbitrary meshes, ...”.
+g from the top of page 12 about why we choose MULES, HRIC and CICSAM for comparison:
+schemes are chosen partly because of their wide use in practical engineering applications,
+rtly because they are developed for usage on arbitrary meshes.”
+lieve our usage of algebraic schemes for comparisons is justified by our clearly stated focus
+thods for unstructured meshes.
+eing said, it is a valid point that comparison with existing geometric VOF results will be useful
+reader where it is possible. We have therefore included in Section 4.4 a paragraph
+ring our errors with the corresponding errors listed in Liovic et al. 2006 and Xie et al. 2014
+0.1002/fld.3968). The errors are the same order of magnitude.
+in uniform flow (Figures 4-6): The comparison results (MULES, HRIC, CICSAM) are terrible!
+would not have been appropriate to use 25 years ago, much less now. The results do not
+impression that the vast majority of the industrial and marine interfacial flow CFD today is done using
+OAM, FLUENT, STAR-CCM+ and the like and are based on MULES, HRIC, CICSAM, or a similar
+ic VOF scheme. This is because of the need for working with unstructured meshes. Thus, we believe
+s large group of users will be enticed to use IsoAdvector, when they see that here is a much more
+e and just as efficient alternative, which also works on unstructured meshes.
+7]: “wholes” should be “holes”.
+ted – thanks you.
+Society Open

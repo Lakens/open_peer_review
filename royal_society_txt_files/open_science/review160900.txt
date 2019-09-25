@@ -1,0 +1,602 @@
+Prediction limits of mobile phone activity modelling
+Dániel Kondor, Sebastian Grauwin, Zsófia Kallus, István Gódor, Stanislav Sobolevsky and
+Carlo Ratti
+Article citation details
+R. Soc. open sci. 4: 160900.
+http://dx.doi.org/10.1098/rsos.160900
+Review timeline
+Original submission: 16 March 2016 Note: Reports are unedited and appear as
+1st revised submission: 8 November 2016 submitted by the referee. The review history
+2nd revised submission: 11 January 2017 appears in chronological order.
+Final acceptance: 12 January 2017
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-160194.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+A non-disclosure agreement with the data provider does not permit the authors to share the data
+(even upon request) or present any absolute numbers in any publication material.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Reject
+Comments to the Author(s)
+label_comment_1
+1) I am aware that datasets containing individual information provided by private companies are
+complicated and sometimes impossible to share, even upon request, but at least the authors must
+provide the number of calls, sms and users, particularly in Figure 1 and 2 (and SI). Moreover, I
+strongly encourage the authors to give more details about the data cleaning process and to assess
+the representativity of the sample by comparing the total number of mobile phone users with
+census data easily available on the web.
+Unfortunately, our current non-disclosure agreement with the data provider does not permit us
+to present any absolute numbers in any publication material. More detailed description of the
+data processing procedures was already presented in our previous paper (Ref. 24); a preprint
+version of that paper is freely available to anyone in the arXiv repository at
+http://arxiv.org/abs/1406.4400.
+I strongly encourage the authors to assess the representativity of the sample by comparing the
+total number of mobile phone users with census data easily available on the web.
+2) It is not clear to me how the authors aggregated the data from the voronoi cells to the different
+levels of spatial aggregation. Is the aggregation based on the proportion of the voronoi cells’
+surface in each spatial unit? I recommend the authors to add a map with the voronoi cell and/or
+a histogram of the area covered by the antennas. The authors should provide more details about
+the method used to obtain the clusters, in particular, how did the authors determine the number
+of clusters?
+Data processing and the clustering procedure was described in detail in Ref. 24 (available at
+http://arxiv.org/abs/1406.4400); here, the same results are applied in this context. More
+specifically, in the case of spatial aggregation, activity of a certain antenna is added to the spatial
+unit which contains the antenna’s location. In the case of the regular grid, a further smoothing is
+applied (i.e. an antenna’s activity is equally distributed among the grid cell containing it and it’s 8
+neighbors) to account for the uncertainty in the exact coverage areas of antennas. An inherent
+limitation in our research was that only the location of antennas was provided and not the
+coverage areas. While generally a mobile device is expected to connect to the “closest” antenna
+(antenna with the highest signal level) suggesting an approximation of coverage areas with
+Voronoi-polygons, several factors affect this (network load, antenna visibility for the radio signal,
+variation in the configuration of antennas including direction, power, planned serving area),
+estimation of which were beyond the scope of our work, partly because of not having access to
+potentially sensitive data about the details of the network configuration of the operator. The
+number of clusters were determined by looking at local maxima in the silhouette index. During
+our previous study on data from three cities including the current dataset from London as one of
+them, six clusters were found as a local maximum in all cases resulting in well-interpretable
+clusters (see Ref. 24 for more details).
+Even if the data processing procedure has been already presented in a book chapter, I strongly
+encourage the authors to give all the details (in SI) needed by the readers to fully understand the
+analysis performed in this paper.
+3) In the power spectrum of the time series (Figure S1), the second most significant component
+corresponds to 7 weeks; do the authors have any explanations to provide?
+We are not quite sure which part of the spectrum the reviewer refers to. If it is the label ‘7’ on the
+x-axis, that actually corresponds to a period of one day (i.e. 1/7 week; as the original x-axis of Fig.
+S1 displayed frequencies using the somewhat unconventional units of 1/week). To address this
+3
+possible concern, we updated the x-axis of all spectrograms to display periods in more easily
+interpretable units.
+OK
+4) The predictability score is not easy to interpret, I recommend the authors to add in SI the
+results obtained with a commonly used goodness-of-fit measure such as the relative error.
+While we understand the reviewers concern, we would like to point out that the predictability
+scores used in the manuscript are related to relative errors via a trivial transformation (Eq. (9) in
+the updated manuscript); in accordance with this, we believe that adding further analysis using
+relative errors would be highly redundant. We added further discussion after the definition of
+predictability scores (Eqs. (9) and (10) in the updated manuscript); we hope this will offer a better
+presentation of our choice to use them in this work for readers.
+The relative error (A-M)/M is, in my opinion, easier to interpret than the predictability scores. I
+recommend the authors to add in SI the results obtained with the relative error to have a clear
+idea of the deviation of the estimated values from the original ones.
+5) I do not think that it is a good idea to weight the predictability error. Generally, the error tends
+to decrease with the volume, therefore a low weighted error may be not representative of the
+predictive power of the model. Moreover, the authors should also provide the standard deviation
+along with the average.
+We believe that by using weighted averages, our results better represent that to what extent the
+typical activity accounts for the total activity in the city. Note that by weighting the relative
+residuals with the activity, the actual summation is carried out on values resembling the absolute
+residuals (note that the difference is that the relative residuals were normalized using the mean of
+the typicals and actual activity value to make predictability scores bounded), and the result is
+normalized by the total activity in the city, thus resulting in an approximation of a city-wide
+relative residual.
+I believe that weighting the predictability scores plays in favor of the high values which are
+usually easier to estimate. In any case, the authors should provide the standard deviation along
+with the average.
+6) To test a model it is important to divide the sample into two (or more) sub-samples, one to
+learn and build the model and the other one(s) to test the model.
+While the results are interpreted as how much of the real activity is predicted by typical activities,
+actual prediction of future activities is not a goal of this manuscript; the main research question is
+to quantify the regularity in mobile network activity patterns. Consequently, we looked at several
+possible ways to decompose the activity time series into typical and residual patterns and further
+methods to gain insights from the analysing the residual patterns; we believe that actual
+prediction of future activity would require more complex models built upon the results obtained
+during this analysis. Also, since the dataset is from a limited time interval, modeling seasonal
+variation would not be possible; using e.g. the spring interval for training a model would result
+in bad performance when applied to the summer period even though the phenomenon of yearly
+variation in the data is not surprising at all. To address the reviewers concerns, we modified the
+presentation of predictability scores and the related analysis to make the aims of our research and
+interpretation of results more clear to the readers.
+7) The authors claim that the “models” perform generally well, compared to what? In order to
+quantify the performance of the model I recommend the authors to add a null model (uniform
+distribution of the total volume for example).
+4
+The claim about the models in the manuscript refer to the amount of activity explained by the
+typical activity in general. We believe that quantifying this is an important result by itself and
+that the construction of a null model can be problematic due to the inherent high regularity in the
+data (i.e. comparison with time series obtained by a random redistribution of activity would not
+be relevant for this in our opinion). We modified the presentation of these results in the text to be
+more precise.
+I think that it is a problem of terminology, the authors should maybe talk about “typical
+activities”, “residual”, “quantify regularity” or “explained variability” more than “model”,
+“performance” and “predictability” which are usually used to describe how a set of explanatory
+variables can be used to estimate/predict a variable of interest.
+8) What is the time window considered to compute the errors in Figure 4?
+The averages on Fig. 4 were computed for the period between 1 April 2013 and 30 November
+2013 as explained in the text (in section “Predictability of typical patterns”). We updated the main
+text (the beginning of section “Spatial limits of predictability”) to include this information in the
+context relevant for Fig. 4 too.
+OK
+9) The correlation between z_i and v_i is clearly not significant. I recommend the authors to add
+the correlation coefficient values and/or the Figure S13 in the main text.
+We now mention the correlation coefficient in the main text. We agree with the reviewer that the
+Pearson correlation value of 0.20982 does not look very high; nevertheless, we argue that given
+the high variance in the standardized predictability scores and the large number of points, it can
+be considered significant here and thus warrants the use of the adaptive threshold described in
+the text. We note that it is not easy to perform a formal hypothesis test for correlation here as it is
+not clear how the degrees of freedom should be estimated. Fig. S13 contains a total several
+hundred thousand points, but one could argue that those are not all independent; using a modest
+estimate of 289 (the number of days in the measurement period) for the degrees of freedom, the
+correlation value yields a test statistic of t = 3.64 (for a Student t distribution) which still allows us
+to reject the null hypothesis of independent variables at 0.1% confidence level.
+Ok, but nevertheless, I recommend the authors to include the Figure S13 in the main text so that
+the reader can have a clear idea of what a relationship between two variables “somewhat”
+correlated looks like.
+label_end_comment
+Decision letter (RSOS-160194)
+10-May-2016
+Dear Dr Kondor:
+Manuscript ID RSOS-160194 entitled "Prediction limits of mobile phone activity modeling" which
+you submitted to Royal Society Open Science, has been reviewed. The comments from reviewers
+are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+5
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 07-Nov-2016. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+on behalf of
+Matthew Allinson, Royal Society Open Science
+openscience@royalsociety.org
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_2
+1) I am aware that datasets containing individual information provided by private companies are
+complicated and sometimes impossible to share, even upon request, but at least the authors must
+provide the number of calls, sms and users, particularly in Figure 1 and 2 (and SI). Moreover, I
+strongly encourage the authors to give more details about the data cleaning process and to assess
+the representativity of the sample by comparing the total number of mobile phone users with
+census data easily available on the web.
+Unfortunately, our current non-disclosure agreement with the data provider does not permit us
+to present any absolute numbers in any publication material. More detailed description of the
+data processing procedures was already presented in our previous paper (Ref. 24); a preprint
+version of that paper is freely available to anyone in the arXiv repository at
+http://arxiv.org/abs/1406.4400.
+I strongly encourage the authors to assess the representativity of the sample by comparing the
+total number of mobile phone users with census data easily available on the web.
+2) It is not clear to me how the authors aggregated the data from the voronoi cells to the different
+levels of spatial aggregation. Is the aggregation based on the proportion of the voronoi cells’
+surface in each spatial unit? I recommend the authors to add a map with the voronoi cell and/or
+a histogram of the area covered by the antennas. The authors should provide more details about
+the method used to obtain the clusters, in particular, how did the authors determine the number
+of clusters?
+Data processing and the clustering procedure was described in detail in Ref. 24 (available at
+http://arxiv.org/abs/1406.4400); here, the same results are applied in this context. More
+6
+specifically, in the case of spatial aggregation, activity of a certain antenna is added to the spatial
+unit which contains the antenna’s location. In the case of the regular grid, a further smoothing is
+applied (i.e. an antenna’s activity is equally distributed among the grid cell containing it and it’s 8
+neighbors) to account for the uncertainty in the exact coverage areas of antennas. An inherent
+limitation in our research was that only the location of antennas was provided and not the
+coverage areas. While generally a mobile device is expected to connect to the “closest” antenna
+(antenna with the highest signal level) suggesting an approximation of coverage areas with
+Voronoi-polygons, several factors affect this (network load, antenna visibility for the radio signal,
+variation in the configuration of antennas including direction, power, planned serving area),
+estimation of which were beyond the scope of our work, partly because of not having access to
+potentially sensitive data about the details of the network configuration of the operator. The
+number of clusters were determined by looking at local maxima in the silhouette index. During
+our previous study on data from three cities including the current dataset from London as one of
+them, six clusters were found as a local maximum in all cases resulting in well-interpretable
+clusters (see Ref. 24 for more details).
+Even if the data processing procedure has been already presented in a book chapter, I strongly
+encourage the authors to give all the details (in SI) needed by the readers to fully understand the
+analysis performed in this paper.
+3) In the power spectrum of the time series (Figure S1), the second most significant component
+corresponds to 7 weeks; do the authors have any explanations to provide?
+We are not quite sure which part of the spectrum the reviewer refers to. If it is the label ‘7’ on the
+x-axis, that actually corresponds to a period of one day (i.e. 1/7 week; as the original x-axis of Fig.
+S1 displayed frequencies using the somewhat unconventional units of 1/week). To address this
+possible concern, we updated the x-axis of all spectrograms to display periods in more easily
+interpretable units.
+OK
+4) The predictability score is not easy to interpret, I recommend the authors to add in SI the
+results obtained with a commonly used goodness-of-fit measure such as the relative error.
+While we understand the reviewers concern, we would like to point out that the predictability
+scores used in the manuscript are related to relative errors via a trivial transformation (Eq. (9) in
+the updated manuscript); in accordance with this, we believe that adding further analysis using
+relative errors would be highly redundant. We added further discussion after the definition of
+predictability scores (Eqs. (9) and (10) in the updated manuscript); we hope this will offer a better
+presentation of our choice to use them in this work for readers.
+The relative error (A-M)/M is, in my opinion, easier to interpret than the predictability scores. I
+recommend the authors to add in SI the results obtained with the relative error to have a clear
+idea of the deviation of the estimated values from the original ones.
+5) I do not think that it is a good idea to weight the predictability error. Generally, the error tends
+to decrease with the volume, therefore a low weighted error may be not representative of the
+predictive power of the model. Moreover, the authors should also provide the standard deviation
+along with the average.
+We believe that by using weighted averages, our results better represent that to what extent the
+typical activity accounts for the total activity in the city. Note that by weighting the relative
+residuals with the activity, the actual summation is carried out on values resembling the absolute
+residuals (note that the difference is that the relative residuals were normalized using the mean of
+the typicals and actual activity value to make predictability scores bounded), and the result is
+7
+normalized by the total activity in the city, thus resulting in an approximation of a city-wide
+relative residual.
+I believe that weighting the predictability scores plays in favor of the high values which are
+usually easier to estimate. In any case, the authors should provide the standard deviation along
+with the average.
+6) To test a model it is important to divide the sample into two (or more) sub-samples, one to
+learn and build the model and the other one(s) to test the model.
+While the results are interpreted as how much of the real activity is predicted by typical activities,
+actual prediction of future activities is not a goal of this manuscript; the main research question is
+to quantify the regularity in mobile network activity patterns. Consequently, we looked at several
+possible ways to decompose the activity time series into typical and residual patterns and further
+methods to gain insights from the analysing the residual patterns; we believe that actual
+prediction of future activity would require more complex models built upon the results obtained
+during this analysis. Also, since the dataset is from a limited time interval, modeling seasonal
+variation would not be possible; using e.g. the spring interval for training a model would result
+in bad performance when applied to the summer period even though the phenomenon of yearly
+variation in the data is not surprising at all. To address the reviewers concerns, we modified the
+presentation of predictability scores and the related analysis to make the aims of our research and
+interpretation of results more clear to the readers.
+7) The authors claim that the “models” perform generally well, compared to what? In order to
+quantify the performance of the model I recommend the authors to add a null model (uniform
+distribution of the total volume for example).
+The claim about the models in the manuscript refer to the amount of activity explained by the
+typical activity in general. We believe that quantifying this is an important result by itself and
+that the construction of a null model can be problematic due to the inherent high regularity in the
+data (i.e. comparison with time series obtained by a random redistribution of activity would not
+be relevant for this in our opinion). We modified the presentation of these results in the text to be
+more precise.
+I think that it is a problem of terminology, the authors should maybe talk about “typical
+activities”, “residual”, “quantify regularity” or “explained variability” more than “model”,
+“performance” and “predictability” which are usually used to describe how a set of explanatory
+variables can be used to estimate/predict a variable of interest.
+8) What is the time window considered to compute the errors in Figure 4?
+The averages on Fig. 4 were computed for the period between 1 April 2013 and 30 November
+2013 as explained in the text (in section “Predictability of typical patterns”). We updated the main
+text (the beginning of section “Spatial limits of predictability”) to include this information in the
+context relevant for Fig. 4 too.
+OK
+9) The correlation between z_i and v_i is clearly not significant. I recommend the authors to add
+the correlation coefficient values and/or the Figure S13 in the main text.
+We now mention the correlation coefficient in the main text. We agree with the reviewer that the
+Pearson correlation value of 0.20982 does not look very high; nevertheless, we argue that given
+the high variance in the standardized predictability scores and the large number of points, it can
+be considered significant here and thus warrants the use of the adaptive threshold described in
+the text. We note that it is not easy to perform a formal hypothesis test for correlation here as it is
+8
+not clear how the degrees of freedom should be estimated. Fig. S13 contains a total several
+hundred thousand points, but one could argue that those are not all independent; using a modest
+estimate of 289 (the number of days in the measurement period) for the degrees of freedom, the
+correlation value yields a test statistic of t = 3.64 (for a Student t distribution) which still allows us
+to reject the null hypothesis of independent variables at 0.1% confidence level.
+Ok, but nevertheless, I recommend the authors to include the Figure S13 in the main text so that
+the reader can have a clear idea of what a relationship between two variables “somewhat”
+correlated looks like.
+Author's Response to Decision Letter for (RSOS-160194)
+See Appendix A.
+label_version_2
+RSOS-160900.R0 (Revision)
+label_author_2
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Data cannot be shared due to confidentiality reasons from the data provider.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept as is
+Comments to the Author(s)
+label_comment_3
+The authors have addressed my concerns
+9
+label_end_comment
+Decision letter (RSOS-160900)
+22-Nov-2016
+Dear Dr Kondor
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-160900 entitled
+"Prediction limits of mobile phone activity modeling" has been accepted for publication in Royal
+Society Open Science subject to minor revision in accordance with the suggestions below. Please
+find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160900
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+10
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 01-Dec-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+11
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Matthew Allinson
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+The authors have addressed my concerns
+label_end_comment
+Decision letter (RSOS-160900.R1)
+12-Jan-2017
+Dear Dr Kondor,
+I am pleased to inform you that your manuscript entitled "Prediction limits of mobile phone
+activity modeling" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+for our manuscript
+“Prediction limits of mobile phone activity modeling”
+Dear Editors,
+we hereby present our responses to the second review of our manuscript. We carried out necessary mod-
+ifications in the manuscript. We list our responses to the reviewer’s outstanding concerns below. Note
+that items 3, 6 and 8 in the original lists of concerns were already answered previously, so we omit those
+and only list the items, where new concerns were raised by the reviewer. We hope that these changes
+adequately address all remaining concerns and that our work is now suitable for publication in Royal
+Society Open Science.
+Reviewer #1
+1) Original comment: “I am aware that datasets containing individual information provided by private
+companies are complicated and sometimes impossible to share, even upon request, but at least the authors
+must provide the number of calls, sms and users, particularly in Figure 1 and 2 (and SI). Moreover,
+I strongly encourage the authors to give more details about the data cleaning process and to assess the
+representativity of the sample by comparing the total number of mobile phone users with census data
+easily available on the web.”
+Original response: Unfortunately, our current non-disclosure agreement with the data provider does
+not permit us to present any absolute numbers in any publication material. More detailed description of
+the data processing procedures was already presented in our previous paper (Ref. 24); a preprint version
+of that paper is freely available to anyone in the arXiv repository at http://arxiv.org/abs/1406.4400.
+Reviewer’s response: “I strongly encourage the authors to assess the representativity of the sample
+by comparing the total number of mobile phone users with census data easily available on the web.
+New response: We carried out a comparison of aggregated communication activities and census-
+based population estimates as suggested by the reviewer. The new results are summarized in the Sup-
+plementary Material (Figures S17 and S18 and the related discussion in the text). We found nighttime
+correlation values between 0.4–0.55 depending on the data type and the area included when using the
+smoothed aggregation in 500m grid pixels. This implies that there is a significant correlation, but also
+significant differences. We believe the most important factors are that a high number of people stay
+out late and that this group generates significantly more activity (with active phone use including calls,
+texts and data, while we expect people who stay at home to be much less active or even sleeping and
+even data generated from background apps on smartphones will be subsampled due to a high percentage
+of devices connecting to a WiFi network when at home), while the presence of transient populations
+not recorded in the census (short term visitors staying at hotels, or medium term visitors staying in
+rented apartments), business subscriptions which were not filtered due to the nature of data collection,
+and uncertainty of the exact coverage areas, especially around the edge of the covered locations further
+contribute to these. Nevertheless, we believe that the spatial aggregation is still representative in terms
+of distribution of activity volumes on different levels of spatial aggregation and also for the purpose of
+estimating regularities and their dependence on the volume of activity, as evidenced by the results of the
+clustering procedure and the identified outlier regions.
+2) Original comment: “It is not clear to me how the authors aggregated the data from the voronoi
+cells to the different levels of spatial aggregation. Is the aggregation based on the proportion of the voronoi
+cells’ surface in each spatial unit? I recommend the authors to add a map with the voronoi cell and/or a
+histogram of the area covered by the antennas. The authors should provide more details about the method
+used to obtain the clusters, in particular, how did the authors determine the number of clusters?”
+Original response: Data processing and the clustering procedure was described in detail in Ref. 24
+(available at http://arxiv.org/abs/1406.4400); here, the same results are applied in this context. More
+which contains the antenna’s location. In the case of the regular grid, a further smoothing is applied
+(i.e. an antenna’s activity is equally distributed among the grid cell containing it and it’s 8 neighbors)
+to account for the uncertainty in the exact coverage areas of antennas. An inherent limitation in our
+research was that only the location of antennas was provided and not the coverage areas. While generally
+a mobile device is expected to connect to the “closest” antenna (antenna with the highest signal level)
+suggesting an approximation of coverage areas with Voronoi-polygons, several factors affect this (network
+load, antenna visibility for the radio signal, variation in the configuration of antennas including direction,
+power, planned serving area), estimation of which were beyond the scope of our work, partly because
+of not having access to potentially sensitive data about the details of the network configuration of the
+operator. The number of clusters were determined by looking at local maxima in the silhouette index.
+During our previous study on data from three cities including the current dataset from London as one
+of them, six clusters were found as a local maximum in all cases resulting in well-interpretable clusters
+(see Ref. 24 for more details).
+Reviewer’s response: “Even if the data processing procedure has been already presented in a book
+chapter, I strongly encourage the authors to give all the details (in SI) needed by the readers to fully
+understand the analysis performed in this paper.”
+New response: We have added more detail in a section of text in the Supplementary Material about
+the data processing and the clustering procedure to address this concern.
+4) Original comment: “The predictability score is not easy to interpret, I recommend the authors
+to add in SI the results obtained with a commonly used goodness-of-fit measure such as the relative error.”
+Original response: While we understand the reviewers concern, we would like to point out that
+the predictability scores used in the manuscript are related to relative errors via a trivial transformation
+(Eq. (9) in the updated manuscript); in accordance with this, we believe that adding further analysis
+using relative errors would be highly redundant. We added further discussion after the definition of
+predictability scores (Eqs. (9) and (10) in the updated manuscript); we hope this will offer a better
+presentation of our choice to use them in this work for readers.
+Reviewer’s response: “The relative error (A-M)/M is, in my opinion, easier to interpret than the
+predictability scores. I recommend the authors to add in SI the results obtained with the relative error to
+have a clear idea of the deviation of the estimated values from the original ones.”
+New response: We have added Figures S4, S11 and S15 to the Supplementary Material along with
+Tables S2, S4, S6, S8, presenting results for relative errors. These findings are all consistent with the
+original results we obtained when using the predictability scores.
+5) Original comment: “I do not think that it is a good idea to weight the predictability error.
+Generally, the error tends to decrease with the volume, therefore a low weighted error may be not rep-
+resentative of the predictive power of the model. Moreover, the authors should also provide the standard
+deviation along with the average.”
+Original response: We believe that by using weighted averages, our results better represent that
+to what extent the typical activity accounts for the total activity in the city. Note that by weighting the
+relative residuals with the activity, the actual summation is carried out on values resembling the absolute
+residuals (note that the difference is that the relative residuals were normalized using the mean of the
+typicals and actual activity value to make predictability scores bounded), and the result is normalized
+by the total activity in the city, thus resulting in an approximation of a city-wide relative residual.
+Reviewer’s response: “I believe that weighting the predictability scores plays in favor of the high
+values which are usually easier to estimate. In any case, the authors should provide the standard deviation
+along with the average.”
+New response: We have added results for predictability scores and relative errors averaged without
+weighting and their standard deviations to Tables S2-S8 in the Supplementary Material
+7) Original comment: “The authors claim that the ‘models’ perform generally well, compared to
+(uniform distribution of the total volume for example).”
+Original response: The claim about the models in the manuscript refer to the amount of activity
+explained by the typical activity in general. We believe that quantifying this is an important result by
+itself and that the construction of a null model can be problematic due to the inherent high regularity
+in the data (i.e. comparison with time series obtained by a random redistribution of activity would not
+be relevant for this in our opinion). We modified the presentation of these results in the text to be more
+precise.
+Reviewer’s response: “I think that it is a problem of terminology, the authors should maybe talk
+about “typical activities”, “residual”, “quantify regularity” or “explained variability” more than “model”,
+“performance” and “predictability” which are usually used to describe how a set of explanatory variables
+can be used to estimate/predict a variable of interest.”
+New response: We have further changed the presentation in the manuscript to clarify the concepts
+and goals of the work. We hope that the new terminology in the updated manuscript is better aligned
+with the work itself.
+9) Original comment: “The correlation between zi and vi is clearly not significant. I recommend
+the authors to add the correlation coefficient values and/or the Figure S13 in the main text.”
+Original response: We now mention the correlation coefficient in the main text. We agree with the
+reviewer that the Pearson correlation value of 0.20982 does not look very high; nevertheless, we argue
+that given the high variance in the standardized predictability scores and the large number of points,
+it can be considered significant here and thus warrants the use of the adaptive threshold described in
+the text. We note that it is not easy to perform a formal hypothesis test for correlation here as it is
+not clear how the degrees of freedom should be estimated. Fig. S13 contains a total several hundred
+thousand points, but one could argue that those are not all independent; using a modest estimate of 289
+(the number of days in the measurement period) for the degrees of freedom, the correlation value yields
+a test statistic of t = 3.64 (for a Student t distribution) which still allows us to reject the null hypothesis
+of independent variables at 0.1% confidence level.
+Reviewer’s response: “Ok, but nevertheless, I recommend the authors to include the Figure S13
+in the main text so that the reader can have a clear idea of what a relationship between two variables
+“somewhat” correlated looks like.”
+New response: We agree with the reviewer that this is an important part of the work; originally
+we put the figure in the SI mainly due to space constraints in the manuscript. Now we moved it to the
+main manuscript (as Fig. 9), while to limit the length of the main manuscript, we moved the previous
+Fig. 10 (the one depicting residuals on the day of the Marathon race) to the SI (as Fig. S16) as we believe
+that is not fundamental to the work presented, but more of an interesting application and illustration.
+Ultimately, we leave it to the discretion of the editors whether to include Fig. S16 in the main text if the
+manuscript is accepted for publication.
+Society Open

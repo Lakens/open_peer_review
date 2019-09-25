@@ -1,0 +1,449 @@
+Do-it-yourself networks: a novel method of generating
+weighted networks
+D. W. Shanafelt, K. R. Salau and J. A. Baggio
+Article citation details
+R. Soc. open sci. 4: 171227.
+http://dx.doi.org/10.1098/rsos.171227
+Review timeline
+Original submission: 1 September 2017 Note: Reports are unedited and appear as
+Revised submission: 20 October 2017 submitted by the referee. The review history
+Final acceptance: 25 October 2017 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-171227.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept as is
+Comments to the Author(s)
+label_comment_1
+I am happy with the revisions made by the authors and feel that this version meets the standards
+required for R Soc. Open Science.
+label_author_2
+Review form: Reviewer 2 (Reik Donner)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The manuscript by Shanafelt et al. presents a very nice example for the current needs in different
+disciplines to define appropriate surrogate network models for the purpose of modeling and
+hypothesis testing. While the authors focus here on the special case of habitat graphs in ecology,
+the framework developed by them is far more general and offers a wide range of possible
+applications. During the revision of their manuscript, Shanafelt et al. have substantially improved
+the presentation of their approach and achieved results. I am convinced that this work can now
+become an important reference for future work across a variety of fields of research making use
+of concepts from complex network theory. Therefore, I recommend this work for publication in
+the Royal Society Open Science conditional on a few minor points to be addressed by the authors
+in their final manuscript.
+General comments:
+1. The type of networks studied in the present work models connectivity relationships among
+ecological habitats. In this regard, I am wondering about the specific mathematical structure
+described in ll.93-99. If the main motivation would be species dispersal between spatially
+disconnected patches, the corresponding ecological processes would be conveniently represented
+by a flow, with A describing a stochastic matrix and a_{ij} being the probability of a randomly
+selected individual to migrate from patch I to patch j within a given time unit. In that case, I
+would normally expect a_{ii}>0 (in fact, eventually close to 1). Since the authors choose a
+3
+distinctively different setting with a_[ii}=0, I would in turn appreciate if they could add a few
+words to clarify which specific ecological processes are modelled by their adjacency matrix.
+2. Ll.102-103: While I generally agree with this statement, one could easily replace the
+(unweighted) node degree by the (weighted) node strength to obtain an appropriate and
+ecologically meaningful per-node network characteristic.
+3. Pp.10-11: In the description of the network generation algorithm, I understand that the final
+stochastic step is necessary to achieve an agreement between resulting network properties and
+the user-defined criteria up to a certain tolerance. However, I don’t see that it guarantees
+convergence to an optimal solution, but may also result in some local minimum of the
+optimization function (1.5). I agree that this is a pragmatic approach, but would recommend a
+few lines of discussion on convergence and optimality (also emphasizing on existence and
+uniqueness of the dedicated solution for a given set of r*, v* and s*). I explicitly don’t request any
+mathematical proof or additional results to be presented here, but would appreciate some general
+remarks in this direction. The authors partially address this point in their conclusions (p.13,
+ll.269-271). In a similar context, I would appreciate a short explanation of the reasons for the non-
+convergence of the algorithm for very small v, as well as for jointly high values of v and s, as
+shown in Fig. 2.
+Technical comments:
+• P.2, l.41: “criteria” => “criterion”
+• P.5, ll.108-110: I am no native speaker, but would find the article “the” in front of the term
+“spectral radius” more natural. Same on p.6, l.126 and on pp.6-7, ll.139-148 in relation with
+“variance” and “skewness”.
+• P.5, l.109: “there exist”(?)
+• P.7, l.143: “of a wide…”
+• P.7, l.160: “highlights”(?)
+• P.8, ll.174-175: This sentence still reads a bit odd, what about: “We choose the entries of A_0 so
+that they minimize the weighted sum of squared differences between the properties of our “new”
+adjacency matrix and our user-defined criteria, resulting in the following minimization problem:”
+• P.9, l.186: “form an”
+• P.9, l.196: “given by an”
+• Enumeration of equations: Why do you use (1.1) to (1.6) instead of just (1) to (6)?
+• Tab. 1: Should the “Basal” algorithm just read “Bansal algorithm”?
+• Fig. 1: Please explain briefly why you have a physical unit [km] for the spectral radius.
+• Since the Supplementary Material is no Appendix included in the main body of the manuscript,
+it should contain all references cited within (i.e., in SM A, citations of Salau et al. (2015) and Cao
+(1998) should be given explicitly again).
+• Suppl. Mat. A, Proposition 1: It seems to me that some of the steps are restricted to certain
+specific properties of the networks studied in the main paper and do not hold in general (e.g., the
+last inequality in eq. (S4)). Please carefully include all corresponding prerequisites in the
+proposition.
+• Suppl. Mat. B, Proposition 2: Do you have any reference for eq. (S6)? In addition, I would
+suggest adding a brief explanation for the positivity in eq. (S7).
+• Suppl. Mat. C: Why do you separate Figs. S2 and S3 instead of combining them into a single
+three-panel figure?
+• In general, I would recommend combining the contents of Suppl. Mat A, B and C into a single
+text file with three separate sections. Suppl. Mat. D should be kept separate.
+4
+label_end_comment
+Decision letter (RSOS-171227)
+09-Oct-2017
+Dear Dr Shanafelt
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171227 entitled
+"Do-it-yourself (DIY) networks: A novel method of generating weighted networks" has been
+accepted for publication in Royal Society Open Science subject to minor revision in accordance
+with the referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171227
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+5
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 18-Oct-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+6
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Mark Chaplain
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+I am happy with the revisions made by the authors and feel that this version meets the standards
+required for R Soc. Open Science.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The manuscript by Shanafelt et al. presents a very nice example for the current needs in different
+disciplines to define appropriate surrogate network models for the purpose of modeling and
+hypothesis testing. While the authors focus here on the special case of habitat graphs in ecology,
+the framework developed by them is far more general and offers a wide range of possible
+applications. During the revision of their manuscript, Shanafelt et al. have substantially improved
+the presentation of their approach and achieved results. I am convinced that this work can now
+become an important reference for future work across a variety of fields of research making use
+of concepts from complex network theory. Therefore, I recommend this work for publication in
+the Royal Society Open Science conditional on a few minor points to be addressed by the authors
+in their final manuscript.
+General comments:
+1. The type of networks studied in the present work models connectivity relationships among
+ecological habitats. In this regard, I am wondering about the specific mathematical structure
+described in ll.93-99. If the main motivation would be species dispersal between spatially
+disconnected patches, the corresponding ecological processes would be conveniently represented
+by a flow, with A describing a stochastic matrix and a_{ij} being the probability of a randomly
+selected individual to migrate from patch I to patch j within a given time unit. In that case, I
+would normally expect a_{ii}>0 (in fact, eventually close to 1). Since the authors choose a
+distinctively different setting with a_[ii}=0, I would in turn appreciate if they could add a few
+words to clarify which specific ecological processes are modelled by their adjacency matrix.
+2. Ll.102-103: While I generally agree with this statement, one could easily replace the
+(unweighted) node degree by the (weighted) node strength to obtain an appropriate and
+ecologically meaningful per-node network characteristic.
+3. Pp.10-11: In the description of the network generation algorithm, I understand that the final
+stochastic step is necessary to achieve an agreement between resulting network properties and
+the user-defined criteria up to a certain tolerance. However, I don’t see that it guarantees
+convergence to an optimal solution, but may also result in some local minimum of the
+7
+optimization function (1.5). I agree that this is a pragmatic approach, but would recommend a
+few lines of discussion on convergence and optimality (also emphasizing on existence and
+uniqueness of the dedicated solution for a given set of r*, v* and s*). I explicitly don’t request any
+mathematical proof or additional results to be presented here, but would appreciate some general
+remarks in this direction. The authors partially address this point in their conclusions (p.13,
+ll.269-271). In a similar context, I would appreciate a short explanation of the reasons for the non-
+convergence of the algorithm for very small v, as well as for jointly high values of v and s, as
+shown in Fig. 2.
+Technical comments:
+• P.2, l.41: “criteria” => “criterion”
+• P.5, ll.108-110: I am no native speaker, but would find the article “the” in front of the term
+“spectral radius” more natural. Same on p.6, l.126 and on pp.6-7, ll.139-148 in relation with
+“variance” and “skewness”.
+• P.5, l.109: “there exist”(?)
+• P.7, l.143: “of a wide…”
+• P.7, l.160: “highlights”(?)
+• P.8, ll.174-175: This sentence still reads a bit odd, what about: “We choose the entries of A_0 so
+that they minimize the weighted sum of squared differences between the properties of our “new”
+adjacency matrix and our user-defined criteria, resulting in the following minimization problem:”
+• P.9, l.186: “form an”
+• P.9, l.196: “given by an”
+• Enumeration of equations: Why do you use (1.1) to (1.6) instead of just (1) to (6)?
+• Tab. 1: Should the “Basal” algorithm just read “Bansal algorithm”?
+• Fig. 1: Please explain briefly why you have a physical unit [km] for the spectral radius.
+• Since the Supplementary Material is no Appendix included in the main body of the manuscript,
+it should contain all references cited within (i.e., in SM A, citations of Salau et al. (2015) and Cao
+(1998) should be given explicitly again).
+• Suppl. Mat. A, Proposition 1: It seems to me that some of the steps are restricted to certain
+specific properties of the networks studied in the main paper and do not hold in general (e.g., the
+last inequality in eq. (S4)). Please carefully include all corresponding prerequisites in the
+proposition.
+• Suppl. Mat. B, Proposition 2: Do you have any reference for eq. (S6)? In addition, I would
+suggest adding a brief explanation for the positivity in eq. (S7).
+• Suppl. Mat. C: Why do you separate Figs. S2 and S3 instead of combining them into a single
+three-panel figure?
+• In general, I would recommend combining the contents of Suppl. Mat A, B and C into a single
+text file with three separate sections. Suppl. Mat. D should be kept separate.
+Author's Response to Decision Letter for (RSOS-171227)
+See Appendix A.
+8
+label_end_comment
+Decision letter (RSOS-171227.R1)
+25-Oct-2017
+Dear Dr Shanafelt,
+I am pleased to inform you that your manuscript entitled "Do-it-yourself (DIY) networks: A
+novel method of generating weighted networks" is now accepted for publication in Royal Society
+Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+pendix A
+ar Reviewers -
+would like to thank you again for your help improving our manuscript. We hope that the
+rent version satisfies your remaining concerns.
+t,
+authors
+eree #1:
+mments to the Author(s)
+m happy with the revisions made by the authors and feel that this version meets the standards
+uired for R Soc. Open Science.
+ponse: We would like to thank the reviewer for their contributions in the reviewer process
+are happy that the manuscript satisfied their concerns.
+eree #2:
+mments to the Author(s)
+manuscript by Shanafelt et al. presents a very nice example for the current needs in different
+ciplines to define appropriate surrogate network models for the purpose of modeling and
+othesis testing. While the authors focus here on the special case of habitat graphs in ecology,
+framework developed by them is far more general and offers a wide range of possible
+lications. During the revision of their manuscript, Shanafelt et al. have substantially
+roved the presentation of their approach and achieved results. I am convinced that this work
+now become an important reference for future work across a variety of fields of research
+king use of concepts from complex network theory. Therefore, I recommend this work for
+lication in the Royal Society Open Science conditional on a few minor points to be addressed
+he authors in their final manuscript.
+neral comments:
+The type of networks studied in the present work models connectivity relationships among
+logical habitats. In this regard, I am wondering about the specific mathematical structure
+cribed in ll.93-99. If the main motivation would be species dispersal between spatially
+connected patches, the corresponding ecological processes would be conveniently
+resented by a flow, with A describing a stochastic matrix and a_{ij} being the probability of a
+domly selected individual to migrate from patch I to patch j within a given time unit. In that
+e, I would normally expect a_{ii}>0 (in fact, eventually close to 1). Since the authors choose
+istinctively different setting with a_[ii}=0, I would in turn appreciate if they could add a few
+ds to clarify which specific ecological processes are modelled by their adjacency matrix.
+ponse: We have clarified that we are defining a randomly-generated adjacency matrix
+cribing the cost of species movement between patches. Indeed, depending on the structure of
+model, if we were concerned with a species interaction matrix or an unweighted spatial
+work then the diagonals would correspond to the growth rate of the species and would need
+equal zero. We note this in footnote number three.
+Ll.102-103: While I generally agree with this statement, one could easily replace the
+weighted) node degree by the (weighted) node strength to obtain an appropriate and
+logically meaningful per-node network characteristic.
+ponse: True. We have amended the statement from "inappropriate" to "less appropriate" to
+make the statement less strong.
+Pp.10-11: In the description of the network generation algorithm, I understand that the
+l stochastic step is necessary to achieve an agreement between resulting network properties
+the user-defined criteria up to a certain tolerance. However, I don’t see that it guarantees
+vergence to an optimal solution, but may also result in some local minimum of the
+imization function (1.5). I agree that this is a pragmatic approach, but would recommend a
+lines of discussion on convergence and optimality (also emphasizing on existence and
+queness of the dedicated solution for a given set of r*, v* and s*). I explicitly don’t request
+mathematical proof or additional results to be presented here, but would appreciate some
+eral remarks in this direction. The authors partially address this point in their conclusions
+3, ll.269-271). In a similar context, I would appreciate a short explanation of the reasons for
+non-convergence of the algorithm for very small v, as well as for jointly high values of v and
+s shown in Fig. 2.
+ponse: At the end of the results section (lines 243-252) we now include a discussion on the
+ors limiting the convergence of the algorithm. Specifically, we discuss three: lower and
+er bounds on the feasible values of the variance and skewness of the dominant eigenvector,
+tness" of the concave function in (5) caused by the values of the desired network metrics and
+r weights, and local versus global minima.
+hnical comments:
+P.2, l.41: “criteria” => “criterion”
+P.5, ll.108-110: I am no native speaker, but would find the article “the” in front of the term
+ectral radius” more natural. Same on p.6, l.126 and on pp.6-7, ll.139-148 in relation with
+riance” and “skewness”.
+P.5, l.109: “there exist”(?)
+P.7, l.143: “of a wide…”
+P.7, l.160: “highlights”(?)
+ponse: We have modified the text accordingly.
+P.8, ll.174-175: This sentence still reads a bit odd, what about: “We choose the entries of
+so that they minimize the weighted sum of squared differences between the properties of our
+w” adjacency matrix and our user-defined criteria, resulting in the following minimization
+blem:”
+ponse: Thank you for your suggestion. We have changed the sentence.
+P.9, l.186: “form an”
+P.9, l.196: “given by an”
+ponse: Corrected.
+Enumeration of equations: Why do you use (1.1) to (1.6) instead of just (1) to (6)?
+ponse: We have changed the numbering format in the text.
+Tab. 1: Should the “Basal” algorithm just read “Bansal algorithm”?
+ponse: Yes.
+Fig. 1: Please explain briefly why you have a physical unit [km] for the spectral radius.
+ponse: Figures 1 and 2 were adapted from Salau et al. (2015), which was focused on prairie
+dispersal between spatially isolated colonies. We have removed the unit (km) from the
+ts.
+Since the Supplementary Material is no Appendix included in the main body of the
+nuscript, it should contain all references cited within (i.e., in SM A, citations of Salau et al.
+15) and Cao (1998) should be given explicitly again).
+ponse: Yes. Done.
+Suppl. Mat. A, Proposition 1: It seems to me that some of the steps are restricted to certain
+cific properties of the networks studied in the main paper and do not hold in general (e.g., the
+inequality in eq. (S4)). Please carefully include all corresponding prerequisites in the
+position.
+ponse: We now specify that in our framework we assume the existence of a positive
+minant eigenvalue, and for our habitat example, a square adjacency matrix with off-diagonal
+ries greater than zero. We then direct the reader to Horn and Johnson (1990) and Caswell
+01), which provide conditions for more general non-negative matrices with positive dominant
+envalues.
+Suppl. Mat. B, Proposition 2: Do you have any reference for eq. (S6)? In addition, I would
+gest adding a brief explanation for the positivity in eq. (S7).
+ponse: We cite Salau et al. (2015) as a reference for equation S6. We also clarify in
+tnote 4 in the main text and lines 42-43 and 92-94 in the Supplemental Material that the
+itivity of the expected value in equation S7 lies in the fact that our adjacency matrix has a
+itive dominant eigenvalue. This means that the elements of the associated eigenvector are
+positive (Caswell 2001).
+Suppl. Mat. C: Why do you separate Figs. S2 and S3 instead of combining them into a
+gle three-panel figure?
+ponse: Separating Figures S2 and S3 is simply for readability. We feel that combining them
+a single figure makes the text and markers quite small and difficult to read.
+In general, I would recommend combining the contents of Suppl. Mat A, B and C into a
+gle text file with three separate sections. Suppl. Mat. D should be kept separate.
+ponse: Done.
+FERENCES
+well, H. 2001. Matrix population models: Construction, analysis, and interpretation. Sinauer
+Associates, Sunderland, Massachusetts.
+rn, R. A. and C. R. Johnson. 1990. Matrix analysis. Cambridge University Press, Cambridge.
+au, K. R., J. A. Baggio, M. A. Janssen, J. K. Abbott, and E. P. Fenichel. 2015. Taking a
+moment to measure networks: A hierarchical approach. arXiv 1509.07813.
+Society Open

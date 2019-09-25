@@ -1,0 +1,611 @@
+Automatic prediction of tumour malignancy in breast cancer
+with fractal dimension
+Alan Chan and Jack A. Tuszynski
+Article citation details
+R. Soc. open sci. 3: 160558.
+http://dx.doi.org/10.1098/rsos.160558
+Review timeline
+Original submission: 30 August 2016 Note: Reports are unedited and appear as
+Revised submission: 18 October 2016 submitted by the referee. The review history
+Final acceptance: 7 November 2016 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-160558.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Jean Clairambault)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, clear
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+sReview of the manuscript "Automatic Prediction of Tumour Malignancy in Breast Cancer with
+Fractal Dimension" submitted to Royal Society Open Science by Alan Chan and Jack Tuszynski
+Reviewer: Jean Clairambault, INRIA and UPMC, Paris
+This article deals with a proposed method of characterisation of tissues as benign or malignant by
+fractal analysis of 2D histological images. It firstly presents the box-counting, or Hausdorff,
+dimension in a classical algorithmic manner. The illustration chosen (the Koch snowflake) it is
+clearly relevant to their study, as it concerns a mathematical object that is the limit in the 2D space
+of a 1D object, i.e., something that will necessarily have fractal dimension between 1 and 2. This
+point of view is certainly relevant in the case of contours of domains, such as the coast of
+Cornwall, or the border of a tumour (as studied, e.g., by Antonio Bru et al. in
+http://dx.doi.org/10.1016/S0006-3495(03)74715-8 … note, interestingly, that their measurements
+of fractal dimension could not be used to discriminate between tumoral and non tumoral tissues)
+by the same box-counting algorithm used by the authors of the present manuscript. In all these
+cases it assumes starting from a 1D structure.
+In the present case, the authors start from points (pixels, that by definition represent points in 2D)
+and apparently also design 1D structures ("edge detection") to calculate a box-counting
+dimension. But what do these pixels represent and what edge detection consist of in their case?
+How far are hematoxylin (basophilic) an eosin (eosinophilic) concentrations relevant to help
+design 1D structures and give account of a tissue characterisation, from the point of view of its
+possible malignancy? They are certainly relevant when analysed by trained pathologists, but in
+the case of an automated analysis, this is less clear. There may exist hidden choices in the blind
+algorithms of the software used; in this case, they should be made explicit in the manuscript.
+The authors then vary the magnification of the images, from 40X to 400X, and conclude that high
+resolution are not discriminant between benign and malignant images, whereas low resolution
+images are. It is clear indeed that when the focus dives into very tiny details, higher level
+structures are inevitably lost. What are these higher level structures is not stated, the authors only
+writing that poor differentiation in cancer should explain such good discrimination scores
+between benign and malignant tissues. I do not know what a support vector machine is, but
+classical linear discriminant analysis between clouds of points, using Mahalanobis distance,
+would certainly provide an automated discrimination algorithm without using "cutoff by hand"
+to design a best discriminant value of fractal dimension. That discrimination between subtypes is
+poor is not surprising, as it usually requires the eye of a trained pathologist, and scores relying on
+measurements finer than the raw box-counting dimension seem necessary to achieve it.
+Whatever the blackbox algorithms used in this automatic process may be, the discrimination
+scores between benign and malignant tissues are impressive, and, as stated by the authors, this
+method might be used by pathologists to increase consensus between them, and also to train
+young pathologists. I would however require that visual examples of poorly vs. finely
+differentiated cells in the tissues under study be presented to the reader to document such good
+discrimination and give hints to what discrimination consists of. In the same way, the actual
+values of the fractal dimension (visually, in average, approximately 1.7 for benign tissues vs. 1.3
+for malignant tissues) are not even considered in the text. Of course, discrimination is the goal of
+this article, but could the measured values be compared between them, on a sort of malignancy
+scale, and could they be compared (visually) with the fractal dimensions of fractal mathematical
+3
+objects such as the Koch snowflake? In particular the Cesaro fractal (consult wikipedia), with box-
+counting dimension approximately 1.78, is close to filling the area it outlines, which is certainly
+not the case of the Koch snowflake, with dimension 1.26. These two examples are close by their
+dimensions to the averages in the clouds presented on Fig. 3.
+In summary, I recommend that this manuscript be accepted after minor adjunctions, that I would
+like to see before final acceptance.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, all the data is publicly available.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+In this manuscript, the authors provide a method to classify tumors based on fractal dimension
+extracted from pathological images. The authors address an interesting topic, which could
+potentially help pathologists to classify patients based on slides taken from cancer patients. Some
+of my comments are the following:
+1. The flow is missing in the introduction section. It is important to discuss the need to
+computationally evaluate the pathological slides in detail to classify tumors as benign or
+malignant?
+2. The total number of images in Tables1, 2 does not match for benign tumors.
+3. Tables are not referenced in the main manuscript.
+4. It is not clear as to why the authors chose SVM and not logistic regression model to
+classify binary responses (benign vs. malignant), if only one feature is used for the classification?
+5. Does the algorithm account for the tumor stroma which forms a major component in the
+tissue?
+6. Can the classifier assign a classification label to the images as stroma-enriched or stroma-
+poor?
+7. How did the authors account for image artifacts (for instance, color batch effects)?
+8. The authors mentioned that, “It is clear that with just fractal dimension as the sole
+feature, the best hope for diagnostic application is through examination of 40X slides. A possible
+4
+explanation is that as one increases the magnification, it becomes more difficult to see higher-
+level features of the cell that are often indicative of cancer, like poor cell differentiation.”
+a. Is this because you have selected only one feature?
+b. Since the F1 score is high, does this imply that there are no batch effects or effects from
+the ECM in the tissue?
+9. The authors mention that, “However, our study found the opposite relationship, that
+higher values of fractal dimension tend to be associated with lower tumor malignancy.”
+a. This implies that the tissue is close to normal state. Can you validate this by testing your
+method on normal tissue image?
+10. It would be nice to have figures on the classification for subtypes in benign and
+malignant separately.
+11. It is not clear on the limitations of the current methodology.
+In conclusion, this is an interesting work and the manuscript is suitable for publication once the
+authors address the aforementioned comments.
+label_end_comment
+Decision letter (RSOS-160558)
+26-Sep-2016
+Dear Miss Tuszynski,
+The editors assigned to your paper ("Automatic Prediction of Tumour Malignancy in Breast
+Cancer with Fractal Dimension") have now received comments from reviewers. We would like
+you to revise your paper in accordance with the referee and Subject Editor suggestions which can
+be found below (not including confidential reports to the Editor). Please note this decision does
+not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 19-Oct-2016). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+5
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160558
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+6
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+sReview of the manuscript "Automatic Prediction of Tumour Malignancy in Breast Cancer with
+Fractal Dimension" submitted to Royal Society Open Science by Alan Chan and Jack Tuszynski
+Reviewer: Jean Clairambault, INRIA and UPMC, Paris
+This article deals with a proposed method of characterisation of tissues as benign or malignant by
+fractal analysis of 2D histological images. It firstly presents the box-counting, or Hausdorff,
+dimension in a classical algorithmic manner. The illustration chosen (the Koch snowflake) it is
+clearly relevant to their study, as it concerns a mathematical object that is the limit in the 2D space
+of a 1D object, i.e., something that will necessarily have fractal dimension between 1 and 2. This
+point of view is certainly relevant in the case of contours of domains, such as the coast of
+Cornwall, or the border of a tumour (as studied, e.g., by Antonio Bru et al. in
+http://dx.doi.org/10.1016/S0006-3495(03)74715-8 … note, interestingly, that their measurements
+of fractal dimension could not be used to discriminate between tumoral and non tumoral tissues)
+by the same box-counting algorithm used by the authors of the present manuscript. In all these
+cases it assumes starting from a 1D structure.
+In the present case, the authors start from points (pixels, that by definition represent points in 2D)
+and apparently also design 1D structures ("edge detection") to calculate a box-counting
+dimension. But what do these pixels represent and what edge detection consist of in their case?
+How far are hematoxylin (basophilic) an eosin (eosinophilic) concentrations relevant to help
+design 1D structures and give account of a tissue characterisation, from the point of view of its
+possible malignancy? They are certainly relevant when analysed by trained pathologists, but in
+the case of an automated analysis, this is less clear. There may exist hidden choices in the blind
+algorithms of the software used; in this case, they should be made explicit in the manuscript.
+The authors then vary the magnification of the images, from 40X to 400X, and conclude that high
+resolution are not discriminant between benign and malignant images, whereas low resolution
+images are. It is clear indeed that when the focus dives into very tiny details, higher level
+structures are inevitably lost. What are these higher level structures is not stated, the authors only
+writing that poor differentiation in cancer should explain such good discrimination scores
+between benign and malignant tissues. I do not know what a support vector machine is, but
+classical linear discriminant analysis between clouds of points, using Mahalanobis distance,
+would certainly provide an automated discrimination algorithm without using "cutoff by hand"
+to design a best discriminant value of fractal dimension. That discrimination between subtypes is
+7
+poor is not surprising, as it usually requires the eye of a trained pathologist, and scores relying on
+measurements finer than the raw box-counting dimension seem necessary to achieve it.
+Whatever the blackbox algorithms used in this automatic process may be, the discrimination
+scores between benign and malignant tissues are impressive, and, as stated by the authors, this
+method might be used by pathologists to increase consensus between them, and also to train
+young pathologists. I would however require that visual examples of poorly vs. finely
+differentiated cells in the tissues under study be presented to the reader to document such good
+discrimination and give hints to what discrimination consists of. In the same way, the actual
+values of the fractal dimension (visually, in average, approximately 1.7 for benign tissues vs. 1.3
+for malignant tissues) are not even considered in the text. Of course, discrimination is the goal of
+this article, but could the measured values be compared between them, on a sort of malignancy
+scale, and could they be compared (visually) with the fractal dimensions of fractal mathematical
+objects such as the Koch snowflake? In particular the Cesaro fractal (consult wikipedia), with box-
+counting dimension approximately 1.78, is close to filling the area it outlines, which is certainly
+not the case of the Koch snowflake, with dimension 1.26. These two examples are close by their
+dimensions to the averages in the clouds presented on Fig. 3.
+In summary, I recommend that this manuscript be accepted after minor adjunctions, that I would
+like to see before final acceptance.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+In this manuscript, the authors provide a method to classify tumors based on fractal dimension
+extracted from pathological images. The authors address an interesting topic, which could
+potentially help pathologists to classify patients based on slides taken from cancer patients. Some
+of my comments are the following:
+1. The flow is missing in the introduction section. It is important to discuss the need to
+computationally evaluate the pathological slides in detail to classify tumors as benign or
+malignant?
+2. The total number of images in Tables1, 2 does not match for benign tumors.
+3. Tables are not referenced in the main manuscript.
+4. It is not clear as to why the authors chose SVM and not logistic regression model to
+classify binary responses (benign vs. malignant), if only one feature is used for the classification?
+5. Does the algorithm account for the tumor stroma which forms a major component in the
+tissue?
+6. Can the classifier assign a classification label to the images as stroma-enriched or stroma-
+poor?
+7. How did the authors account for image artifacts (for instance, color batch effects)?
+8. The authors mentioned that, “It is clear that with just fractal dimension as the sole
+feature, the best hope for diagnostic application is through examination of 40X slides. A possible
+explanation is that as one increases the magnification, it becomes more difficult to see higher-
+level features of the cell that are often indicative of cancer, like poor cell differentiation.”
+a. Is this because you have selected only one feature?
+b. Since the F1 score is high, does this imply that there are no batch effects or effects from
+the ECM in the tissue?
+9. The authors mention that, “However, our study found the opposite relationship, that
+higher values of fractal dimension tend to be associated with lower tumor malignancy.”
+a. This implies that the tissue is close to normal state. Can you validate this by testing your
+method on normal tissue image?
+8
+10. It would be nice to have figures on the classification for subtypes in benign and
+malignant separately.
+11. It is not clear on the limitations of the current methodology.
+In conclusion, this is an interesting work and the manuscript is suitable for publication once the
+authors address the aforementioned comments.
+Author's Response to Decision Letter for (RSOS-160558)
+See Appendix A.
+label_version_2
+RSOS-160558.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Jean Clairambault)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, the access to supporting data is clearly mentioned.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+The authors have taken my comments into account. The manuscript is now ready for publication.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+9
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, the data can be accessed from a public database of breast cancer pathological slides
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_6
+None
+label_end_comment
+Decision letter (RSOS-160558.R1)
+07-Nov-2016
+Dear Dr Tuszynski,
+I am pleased to inform you that your manuscript entitled "Automatic Prediction of Tumour
+Malignancy in Breast Cancer with Fractal Dimension" is now accepted for publication in Royal
+Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+10
+Reviewer(s)' Comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+None
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+The authors have taken my comments into account. The manuscript is now ready for publication.
+Appendix A
+FACULTY OF MEDICINE & DENTISTRY
+Department of Oncology
+Cross Cancer Institute, 11560 University Avenue
+Edmonton, Alberta, Canada T6G 1Z2
+Chair
+Alexander J.B. (Sandy) McEwan October 16, 2016
+Tel: 780.432.8320
+Fax: 780.432.8425
+sandy.mcewan@albertahealthservices.ca
+The Editors,
+Associate Chair, Graduate Studies
+Andrew Shaw
+Tel: 780.432.8930
+Royal Society Open Science
+Fax: 780.432.8425
+andrew.shaw@albertahealthservices.ca
+Re: Manuscript ID RSOS-160558
+Assistant Chair, Administration
+Cynthia Henderson
+Tel: 780.432.8576 Dear Editors,
+Fax: 780.432.8425
+cynthia.henderson@albertahealthservices.ca
+Thank you very much for providing us with referee reports regarding our
+Director, Experimental Oncology
+David Murray
+submission entitled:
+Tel: 780.432.8427
+Fax: 780.432.8428
+david.murray5@albertahealthservices.ca "Automatic Prediction of Tumour Malignancy in Breast Cancer with
+Fractal Dimension"
+Director, Medical Oncology
+Peter Venner
+Tel: 780.432.8756
+Fax: 780.432.8888
+by Alan Chan and Jack Tuszynski. We have made a substantial effort to
+peter.venner@albertahealthservices.ca address the issues raised by the referees and are now resubmitting the
+corrected paper for your reconsideration.
+Director, Medical Physics
+B. Gino Fallone
+Tel: 780.432.8750
+Fax: 780.432.8615
+Below we directly respond to all the comments made by the reviewers.
+gino.fallone@albertahealthservices.ca
+Acting Director, Oncologic Imaging Reviewer: 1 
+John Mercer
+Tel: 780.989.4311
+Fax: 780.432.8483
+john.mercer@albertahealthservices.ca This article deals with a proposed method of characterisation of 
+Director, Palliative Care Medicine
+tissues as benign or malignant by fractal analysis of 2D histological 
+Robin Fainsinger
+Tel: 780.735.7727
+images. It firstly presents the box-­-counting, or Hausdorff, dimension 
+Fax: 780.735.7302
+robin.fainsinger@albertahealthservices.ca in a classical algorithmic manner. The illustration chosen (the Koch 
+snowflake) it is clearly relevant to their study, as it concerns a 
+Director, Radiation Oncology
+Matthew Parliament mathematical object that is the limit in the 2D space of a 1D object, i.e., 
+Tel: 780.432.8749
+Fax: 780.432.8380
+matthew.parliament@albertahealthservices.ca
+something that will necessarily have fractal dimension between 1 and 
+2. This point of view is certainly relevant in the case of contours of
+Director, Surgical Oncology
+Todd McMullen domains, such as the coast of Cornwall, or the border of a tumour (as
+Tel: 780.432.8337
+Fax: 780.432.8333 studied, e.g., by Antonio Bru et al. in
+todd.mcmullen2@albertahealthservices.ca
+http://dx.doi.org/10.1016/S0006-­-3495(03)74715-­-8 … note,
+interestingly, that their measurements of fractal dimension could not
+be used to discriminate between tumoral and non tumoral tissues) by the same box-­-counting 
+algorithm used by the authors of the present manuscript. In all these cases it assumes starting 
+from a 1D structure. 
+ 
+In the present case, the authors start from points (pixels, that by definition represent points in 2D) 
+and apparently also design 1D structures ("edge detection") to calculate a box-­-counting 
+dimension. But what do these pixels represent and what edge detection consist of in their case? 
+How far are hematoxylin (basophilic) an eosin (eosinophilic) concentrations relevant to help 
+design 1D structures and give account of a tissue characterisation, from the point of view of its 
+possible malignancy? They are certainly relevant when analysed by trained pathologists, but in 
+the case of an automated analysis, this is less clear. There may exist hidden choices in the blind 
+algorithms of the software used; in this case, they should be made explicit in the manuscript. 
+ 
+Our reply: We have commented on some of these choices in the manuscript although we think 
+there is substantial freedom in the choice of computational methods. Since we used the images 
+from a publicly available data base and had no influence on the creation of these images, we can’t 
+answer some of the questions related to the methodology used in pathological slide acquisition. 
+ 
+The authors then vary the magnification of the images, from 40X to 400X, and conclude that high 
+resolution are not discriminant between benign and malignant images, whereas low resolution 
+images are. It is clear indeed that when the focus dives into very tiny details, higher level 
+structures are inevitably lost. What are these higher level structures is not stated, the authors only 
+writing that poor differentiation in cancer should explain such good discrimination scores 
+between benign and malignant tissues. I do not know what a support vector machine is, but 
+classical linear discriminant analysis between clouds of points, using Mahalanobis distance, would 
+certainly provide an automated discrimination algorithm without using "cutoff by hand" to design 
+a best discriminant value of fractal dimension. That discrimination between subtypes is poor is 
+not surprising, as it usually requires the eye of a trained pathologist, and scores relying on 
+measurements finer than the raw box-­-counting dimension seem necessary to achieve it. 
+ 
+Our reply: We have added several comments based on the referee’s suggestion. 
+ 
+Whatever the blackbox algorithms used in this automatic process may be, the discrimination 
+scores between benign and malignant tissues are impressive, and, as stated by the authors, this 
+method might be used by pathologists to increase consensus between them, and also to train 
+young pathologists. I would however require that visual examples of poorly vs. finely 
+differentiated cells in the tissues under study be presented to the reader to document such good 
+discrimination and give hints to what discrimination consists of. In the same way, the actual values 
+of the fractal dimension (visually, in average, approximately 1.7 for benign tissues vs. 1.3 for 
+malignant tissues) are not even considered in the text. Of course, discrimination is the goal of this 
+article, but could the measured values be compared between them, on a sort of malignancy scale, 
+and could they be compared (visually) with the fractal dimensions of fractal mathematical objects 
+such as the Koch snowflake? In particular the Cesaro fractal (consult wikipedia), with box-­-
+counting dimension approximately 1.78, is close to filling the area it outlines, which is certainly 
+not the case of the Koch snowflake, with dimension 1.26. These two examples are close by their 
+dimensions to the averages in the clouds presented on Fig. 3. 
+ 
+Our reply: We have mentioned other geometrical fractals as conceptual examples, including the 
+Cesaro fractal. We thank the reviewer for the valuable suggestions made. 
+ 
+In summary, I recommend that this manuscript be accepted after minor adjunctions, that I would 
+like to see before final acceptance. 
+ 
+Our reply: We appreciate the referee’s positive comments and we hope that the changes made in 
+order to address these issues are satisfactory. 
+ 
+Reviewer: 2 
+ 
+In this manuscript, the authors provide a method to classify tumors based on fractal dimension 
+extracted from pathological images. The authors address an interesting topic, which could 
+potentially help pathologists to classify patients based on slides taken from cancer patients. Some 
+of my comments are the following: 
+1. The flow is missing in the introduction section. It is important to discuss the need to 
+computationally evaluate the pathological slides in detail to classify tumors as benign or 
+malignant? 
+ 
+Our reply: We have improved the flow and added several sentences regarding the motivation for 
+this work. 
+ 
+2. The total number of images in Tables1, 2 does not match for benign tumors. 
+ 
+Our reply: We have corrected several typos. 
+ 
+3. Tables are not referenced in the main manuscript. 
+ 
+Our reply: We have referenced the tables in the corrected manuscript. 
+ 
+4. It is not clear as to why the authors chose SVM and not logistic regression model to classify 
+binary responses (benign vs. malignant), if only one feature is used for the classification? 
+ 
+Our reply: This is a valid comment, the use of SVM was somewhat arbitrary and also forward-­-
+looking since in the future we anticipate to use this method in conjunction with more features in 
+order to better discriminate between the various malignant and benign subtypes. 
+ 
+5. Does the algorithm account for the tumor stroma which forms a major component in the 
+tissue? 
+ 
+Our reply: We have not included any specific characteristics intended to account for the tumor 
+stroma at this time. Future refinements will hopefully be more detailed. 
+ 
+6. Can the classifier assign a classification label to the images as stroma-­-enriched or stroma-­-
+poor? 
+ 
+Our reply: This is in principle possible but we have not pursued this aspect in the present paper. 
+Again, this is a valid issue that we plan to address in a future publication. 
+ 
+7. How did the authors account for image artifacts (for instance, color batch effects)? 
+ 
+Our reply: Since all images came from a single source with a high quality and a high level of 
+consistency, we have not found a need to correct for image artifacts. It was our objective to base 
+our analysis on a well-­-curated and high quality data set. 
+ 
+8. The authors mentioned that, “It is clear that with just fractal dimension as the sole feature, 
+the best hope for diagnostic application is through examination of 40X slides. A possible 
+explanation is that as one increases the magnification, it becomes more difficult to see higher-­-level 
+features of the cell that are often indicative of cancer, like poor cell differentiation.” 
+a. Is this because you have selected only one feature? 
+Our reply: We believe so. We also commented on this aspect in our corrected manuscript. 
+ 
+b. Since the F1 score is high, does this imply that there are no batch effects or effects from the 
+ECM in the tissue? 
+Our reply: This again what appears to be the case. In order to address some of these issues in 
+greater detail one should examine image quality across different data bases. This merits a separate 
+publication. 
+ 
+9. The authors mention that, “However, our study found the opposite relationship, that higher 
+values of fractal dimension tend to be associated with lower tumor malignancy.” 
+a. This implies that the tissue is close to normal state. Can you validate this by testing your 
+method on normal tissue image? 
+Our reply: Unfortunately, there were no normal tissue slides contained in the data base we used 
+in this study. This is a valid point that we’d like to investigate in a future study. 
+ 
+10. It would be nice to have figures on the classification for subtypes in benign and malignant 
+separately. 
+Our reply: We have added a figure with 8 panels corresponding to the subtypes. We thank the 
+reviewer for this valuable suggestion. 
+ 
+11. It is not clear on the limitations of the current methodology. 
+Our reply: We have added a paragraph discussing these limitations in the last section of the 
+revised paper. 
+ 
+In conclusion, this is an interesting work and the manuscript is suitable for publication once the 
+authors address the aforementioned comments. 
+ 
+Our reply: We thank the reviewer for the many useful suggestions. We hope our corrections 
+properly address the issues we could possibly deal with at this time. Some aspects are beyond our 
+control as they deal with the data base that was created without our input. 
+Sincerely, 
+ 
+ 
+ 
+Jack A. Tuszynski, Ph.D., D.Sc. 
+Allard Research Chair 
+Professor of Physics
+University of Alberta 
+Division of Experimental Oncology email: jackt@ualberta.ca 
+Room 3336, Cross Cancer Institute Fax: (780) 432-­-8892 
+11560 University Avenue Voice: (780) 432-­-8906 
+Edmonton, AB T6G 1Z2, Canada cell: (780) 964-­-4517 
+Society Open

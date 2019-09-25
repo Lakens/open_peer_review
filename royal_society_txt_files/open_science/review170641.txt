@@ -1,0 +1,1060 @@
+1
+A framework for the identification of long-term social avoidance in
+longitudinal datasets
+Kasha Strickland, Alexis Levengood, Vivienne Foroughirad, Janet Mann, Ewa Krzyszczyk and
+Celine H. Frère
+Article citation details
+R. Soc. open sci. 4: 170641.
+http://dx.doi.org/10.1098/rsos.170641
+Review timeline
+Original submission: 12 April 2017 Note: Reports are unedited and appear as
+1st revised submission: 9 June 2017 submitted by the referee. The review history
+2nd revised submission: 30 June 2017 appears in chronological order.
+Final acceptance: 30 June 2017
+Review History
+label_version_1
+RSOS-170332.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+No
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+2
+Comments to the Author(s)
+label_comment_1
+This manuscript suggests a general framework to identify social avoidance in animal social networks. It is
+based on an existing R package, and the authors suggest, in general, that building null spatial models can
+account for the locations of individuals and help researchers determine if animals that were not seen
+together, or seen only a few times, do so by chance or due to active avoidance of each other. Potentially,
+this is an interesting and timely contribution, because most work in this field has focused on social
+preference, usually ignoring the issue of avoidance. Nevertheless, I am not fully convinced that the current
+work fully addresses this gap. Below I provide some general and more focused comments.
+General:
+One issue that is not addressed in the current framework is that home range does not only influence social
+interactions, but may also be influenced by them. For example, if you analyze the spatial activity of a
+married couple, you might find that their home ranges significantly overlap. However, this overlap is
+actually a result of their decision to live together. Therefore, not every social association should be assessed
+while controlling for spatial activity. It would be useful to address this complexity and suggest alternative
+routes of analysis.
+A more step-by-step description of the simulation model is required for readers to understand how it is
+implemented. The current explanations of the simulation are rather cumbersome and hard to follow. A
+diagram could be helpful.
+Since VI is being used quite extensively, a more comprehensive explanation of its calculation and utility
+would be helpful.
+I could not find the data on Dryad
+Detailed:
+L 25-28: This sentence makes an unnecessary comparison between the two species, that I believe is not the
+purpose of this study. No one would be surprised that different results come from these very different
+species.
+L 100: How is the distance threshold determined?
+L 94: When describing the general framework, it is better to begin with a description of the framework
+instead of referring to a package that would probably be unfamiliar to most readers. The technical details
+of the implementation can come later.
+L 121: The section about UD does not actually explain what is it and how it is used in this framework. The
+minimum should be to cite a relevant paper.
+L 154-155: The half-weight index (HWI) is suggested as a general applicable measure. However, this index
+was developed to account for some biases in collecting data that can be study-specific. Why aren’t other
+measures, such as the simple-ratio index, not applicable?
+L171-173: Indeed it is a common and recommended practice to remove individuals that were not observed
+enough times. Why, then, to remove them only at a later stage of the analysis? These individuals should be
+removed beforehand.
+L 244: The sentence mentions a number of sightings but the numbers look like area sizes - please clarify.
+L 247-249: This sentence is a bit unclear. How was accuracy measured to determine the minimum number?
+Table 1: This table needs reformatting to keep the rows intact. Currently it is very confusing.
+Table 2: Row names could be helpful to understand this table.
+Fig.1: The text is too small and almost unreadable. Also, it looks like dragons stabilize at 20, not 25.
+3
+Box 1: Why should random social avoidance be considered as avoidance? If individuals do not actively
+avoid each other, I would say that avoidance is absent.
+L 365: Did you mean Carter et al.?
+label_author_2
+Review form: Reviewer 2 (Samuel Ellis)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+Reviewer:
+Samuel Ellis
+University of Exeter, UK
+The manuscript ‘A framework for the identification of long-term social avoidance in longitudinal datasets’
+presents and tests a method for robustly characterising the social avoidance in studies of animal sociality.
+The study is a useful contribution to an interesting and under-studied topic, it is generally well-written and
+well-presented.
+My background is in social structure and social preferences, and presumably someone with my
+background is the intended audience of this study. Most of my comments are highlighting places where I
+where I was unclear and required clarification- in the hope that this will help guide the authors when
+redrafting the manuscript to make it clear to a general readership. My major and minor comments are
+presented below.
+Major comments
+Defining avoidance: Given that the study address ‘social avoidance’ I feel it is imperative for the authors to
+definitively and unambiguously define it. Social avoidance is defined piecemeal at various points through
+the introduction, but mostly in terms of what it is not (lines 38-39), measurement (lines 47-57) or examples
+(lines 63-67). I think a clear statement of definition would greatly increase the clarity of the manuscript. Of
+particular importance is to differentiate between ‘social avoidance’ and simply lack of social preference-
+which is not the same as the difference between avoidance and random association (lines 78+).
+Alternative explanations: The authors do not discuss possible alternative, non-social, explanations for
+individual’s appearing to avoid each other. In particular, individuals may have different resource
+requirements based on, for example, age, sex, reproductive state or resource competition. This could result
+in individuals foraging in different areas at different times, for example, for entirely non-social reasons.
+Though clearly truly social avoidance is likely to occur (for the reasons outlined in lines 47-49) it is
+important to be able to differ ate this from other alternative explanations. I feel it is worth the author’s
+discuss this consideration in the manuscript.
+4
+Description of the method: In places I found the description of the methods was unclear and required prior
+knowledge that might not be common to the general readership of Royal Society Open Science. Specific
+example are pointed out in the minor comments below. But in particular I found the dirst paragraphs of
+‘general framework’ unclear. I found myself reading the description of the Digiroo package to understand
+what the null model is and how it is usually implemented. The authors highlight that the ‘null association
+model has been previously described elsewhere’ (line 111), but I feel this is insufficient as the rest of the
+manuscript discusses and tests the implementation of this null model, it is critical for readers to understand
+exactly what is being discussed.
+Minor comments
+Line 99. Define home range
+Line 100. Define utilisation distribution
+Line 121-128. As above what is a utilisation distribution and how is it calculated?
+Line 148. Degree is a dangerous word to use in the context of sociability as it is often usual as a measure of
+centrality. (number of associates)
+Line 156-165. I am unclear the justification for not simply using the same distance that individuals are
+grouped together in the real data cannot also be used for the null distribution.
+Line 178. I recommended the authors clearly define how the p value was calculated as per the
+recommendation in this paper (Ruxton and Neuhäuser 2013).
+Line 198-200. Could individuals observed in close association therefore not be acting aggressively- and
+therefore individuals in close association (and therefore by these methods with a high social preference or
+tolerance) not actually be acting aggressively.
+Line 209- How accurate is this GPS? Given its importance in calculating UD and therefore the null
+associations? Especially as for the dragons the smallest territory sizes are only 5m2.
+Line 216- which species is being studied here, indo-pacific or common?
+Line 307- 116 of how many?
+Line 313- og how many?
+Line 343-360. Not only p value but also some measure of effect size is usual in statistical analysis. Is there a
+way to quantify the ‘strength’ of social avoidance?
+Line 403. What is an ‘open social network’?
+Figure 1. The y axis of these graphs is the only place HR is used as acronym for home range. Personally I
+feel it isn’t very necessary to introduce an acronym here, but if if is used it should be defined in the legend.
+label_end_comment
+Decision letter (RSOS-170332)
+26-May-2017
+Dear Ms Strickland:
+Manuscript ID RSOS-170332 entitled "A framework for the identification of long-term social avoidance in
+longitudinal datasets" which you submitted to Royal Society Open Science, has been reviewed. The
+comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form. However, a
+new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that your
+resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your manuscript.
+Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login to your
+Author Center. Click on "Manuscripts with Decisions," and then click on "Create a Resubmission" located
+next to the manuscript number. Then, follow the steps for resubmitting your manuscript.
+5
+Your resubmitted manuscript should be submitted by 23-Nov-2017. If you are unable to submit by this
+date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of
+Kevin Padian, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Comments to the Author:
+label_comment_3
+Dear Dr. Strickland,
+I have now received comments from two expert reviewers. Both reviewers agreed that the intent of the
+study to explore social avoidance was interesting and a valuable contribution to the literature. However
+each raise several major concerns. The primary issues raised include: 1) there are alternative explanations
+that you should consider (each reviewer mentioned different examples of this), 2) the presentation of your
+methods and model were very difficult to follow and should be discussed more deliberately in a step-by-
+step fashion to make it more accessible to a general audience. A refocusing of your paper will greatly
+improve the readability and accessibility. At this time, unfortunately, my recommendation is to reject your
+manuscript but allow for resubmission after you have considered and addressed these and the other
+concerns that the reviewers raised.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+This manuscript suggests a general framework to identify social avoidance in animal social networks. It is
+based on an existing R package, and the authors suggest, in general, that building null spatial models can
+account for the locations of individuals and help researchers determine if animals that were not seen
+together, or seen only a few times, do so by chance or due to active avoidance of each other. Potentially,
+this is an interesting and timely contribution, because most work in this field has focused on social
+preference, usually ignoring the issue of avoidance. Nevertheless, I am not fully convinced that the current
+work fully addresses this gap. Below I provide some general and more focused comments.
+General:
+One issue that is not addressed in the current framework is that home range does not only influence social
+interactions, but may also be influenced by them. For example, if you analyze the spatial activity of a
+married couple, you might find that their home ranges significantly overlap. However, this overlap is
+actually a result of their decision to live together. Therefore, not every social association should be assessed
+while controlling for spatial activity. It would be useful to address this complexity and suggest alternative
+routes of analysis.
+A more step-by-step description of the simulation model is required for readers to understand how it is
+implemented. The current explanations of the simulation are rather cumbersome and hard to follow. A
+diagram could be helpful.
+Since VI is being used quite extensively, a more comprehensive explanation of its calculation and utility
+would be helpful.
+6
+I could not find the data on Dryad
+Detailed:
+L 25-28: This sentence makes an unnecessary comparison between the two species, that I believe is not the
+purpose of this study. No one would be surprised that different results come from these very different
+species.
+L 100: How is the distance threshold determined?
+L 94: When describing the general framework, it is better to begin with a description of the framework
+instead of referring to a package that would probably be unfamiliar to most readers. The technical details
+of the implementation can come later.
+L 121: The section about UD does not actually explain what is it and how it is used in this framework. The
+minimum should be to cite a relevant paper.
+L 154-155: The half-weight index (HWI) is suggested as a general applicable measure. However, this index
+was developed to account for some biases in collecting data that can be study-specific. Why aren’t other
+measures, such as the simple-ratio index, not applicable?
+L171-173: Indeed it is a common and recommended practice to remove individuals that were not observed
+enough times. Why, then, to remove them only at a later stage of the analysis? These individuals should be
+removed beforehand.
+L 244: The sentence mentions a number of sightings but the numbers look like area sizes - please clarify.
+L 247-249: This sentence is a bit unclear. How was accuracy measured to determine the minimum number?
+Table 1: This table needs reformatting to keep the rows intact. Currently it is very confusing.
+Table 2: Row names could be helpful to understand this table.
+Fig.1: The text is too small and almost unreadable. Also, it looks like dragons stabilize at 20, not 25.
+Box 1: Why should random social avoidance be considered as avoidance? If individuals do not actively
+avoid each other, I would say that avoidance is absent.
+L 365: Did you mean Carter et al.?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+Reviewer:
+Samuel Ellis
+University of Exeter, UK
+The manuscript ‘A framework for the identification of long-term social avoidance in longitudinal datasets’
+presents and tests a method for robustly characterising the social avoidance in studies of animal sociality.
+The study is a useful contribution to an interesting and under-studied topic, it is generally well-written and
+well-presented.
+My background is in social structure and social preferences, and presumably someone with my
+background is the intended audience of this study. Most of my comments are highlighting places where I
+where I was unclear and required clarification- in the hope that this will help guide the authors when
+redrafting the manuscript to make it clear to a general readership. My major and minor comments are
+presented below.
+Major comments
+Defining avoidance: Given that the study address ‘social avoidance’ I feel it is imperative for the authors to
+definitively and unambiguously define it. Social avoidance is defined piecemeal at various points through
+the introduction, but mostly in terms of what it is not (lines 38-39), measurement (lines 47-57) or examples
+7
+(lines 63-67). I think a clear statement of definition would greatly increase the clarity of the manuscript. Of
+particular importance is to differentiate between ‘social avoidance’ and simply lack of social preference-
+which is not the same as the difference between avoidance and random association (lines 78+).
+Alternative explanations: The authors do not discuss possible alternative, non-social, explanations for
+individual’s appearing to avoid each other. In particular, individuals may have different resource
+requirements based on, for example, age, sex, reproductive state or resource competition. This could result
+in individuals foraging in different areas at different times, for example, for entirely non-social reasons.
+Though clearly truly social avoidance is likely to occur (for the reasons outlined in lines 47-49) it is
+important to be able to differ ate this from other alternative explanations. I feel it is worth the author’s
+discuss this consideration in the manuscript.
+Description of the method: In places I found the description of the methods was unclear and required prior
+knowledge that might not be common to the general readership of Royal Society Open Science. Specific
+example are pointed out in the minor comments below. But in particular I found the dirst paragraphs of
+‘general framework’ unclear. I found myself reading the description of the Digiroo package to understand
+what the null model is and how it is usually implemented. The authors highlight that the ‘null association
+model has been previously described elsewhere’ (line 111), but I feel this is insufficient as the rest of the
+manuscript discusses and tests the implementation of this null model, it is critical for readers to understand
+exactly what is being discussed.
+Minor comments
+Line 99. Define home range
+Line 100. Define utilisation distribution
+Line 121-128. As above what is a utilisation distribution and how is it calculated?
+Line 148. Degree is a dangerous word to use in the context of sociability as it is often usual as a measure of
+centrality. (number of associates)
+Line 156-165. I am unclear the justification for not simply using the same distance that individuals are
+grouped together in the real data cannot also be used for the null distribution.
+Line 178. I recommended the authors clearly define how the p value was calculated as per the
+recommendation in this paper (Ruxton and Neuhäuser 2013).
+Line 198-200. Could individuals observed in close association therefore not be acting aggressively- and
+therefore individuals in close association (and therefore by these methods with a high social preference or
+tolerance) not actually be acting aggressively.
+Line 209- How accurate is this GPS? Given its importance in calculating UD and therefore the null
+associations? Especially as for the dragons the smallest territory sizes are only 5m2.
+Line 216- which species is being studied here, indo-pacific or common?
+Line 307- 116 of how many?
+Line 313- og how many?
+Line 343-360. Not only p value but also some measure of effect size is usual in statistical analysis. Is there a
+way to quantify the ‘strength’ of social avoidance?
+Line 403. What is an ‘open social network’?
+Figure 1. The y axis of these graphs is the only place HR is used as acronym for home range. Personally I
+feel it isn’t very necessary to introduce an acronym here, but if if is used it should be defined in the legend.
+Author's Response to Decision Letter for (RSOS-170332)
+See Appendix A.
+label_version_2
+RSOS-170641.R0 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+8
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_6
+I previously served as reviewer #1 of the first submission. I feel that the manuscript improved
+considerably, but still needs to address a few points:
+As a methods paper, the chances of other researchers adopting this framework will be much higher if the
+authors share the code of their analysis, especially because this method includes multiple stages.
+L 85-87: To emphasize the novelty of the current study it will be helpful to elaborate more about those
+previous cited papers about social avoidance. What was different in their approach from the current one?
+L 169: I did not understand the need to increase these measures. Please explain why it is needed.
+Fig 2: My previous comment that the number of sightings needed is 20 and not 25 was not addressed.
+L 353: How could the full home range require a smaller value than the core home range? It doesn’t make
+sense.
+L 486: I still could not access the data on dryad.
+Fig A1: What do the colors depict?
+label_author_4
+Review form: Reviewer 2 (Samuel Ellis)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+9
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_7
+I was happy to see this interesting manuscript again. The authors have responded positively to my
+previous comments and I feel the manuscript is much improved. I found the new figure (figure 1)
+particularly useful. My remaining comments are all minor.
+Line 43-44. Slightly confusing, I initially read the ‘not’ as also applying to the ‘likely to leave groups’. I
+suggest rewording for clarity.
+Line 51-52. I think segregation due to differing resources requirements is also important to mention here.
+Line 52. This paper (Carter et al. 2016) might provide a useful reference for avoidance by dominance
+hierarchy.
+Line 86. As the authors point out later Whitehead and James (ref 28) do include space, as the current
+sentence is structured it implies that they do not.
+Line 100 Acronym UD should be introduced here.
+Line 129. Here ‘Utilisation’ is spelt with a z here, elsewhere with an s. (though I have not checked the full
+document)
+Line 176. ‘gprox’ is not defined in the manuscript.
+line 224-226. Word missing here ‘without ever seen associating’.
+Line 230-232. This is very unclear. So ‘all individuals’ within this distance react aggressively but some
+don’t?
+Line 300-301. Which average and what is the error?
+References: References need to be checked. I spotted some mistakes. Especially italisation of species name.
+Dryad: The dryad link still did not work for me
+Carter AJ, Tico MT, Cowlishaw G (2016) Sequential phenotypic constraints on social information use in
+wild baboons. Elife 5:1–21.
+label_end_comment
+Decision letter (RSOS-170641)
+23-Jun-2017
+Dear Ms Strickland
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-170641 entitled "A
+framework for the identification of long-term social avoidance in longitudinal datasets" has been accepted
+for publication in Royal Society Open Science subject to minor revision in accordance with the referee
+suggestions. Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor revisions to
+your manuscript. Therefore, I invite you to respond to the comments and revise your manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received, including the
+name of the committee that granted approval. For human studies please also detail whether informed
+consent was obtained. For field studies on animals please include details of all permissions, licences
+and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as supplementary
+information or preferably in a suitable permanent repository. The data accessibility section should state
+where the article's supporting data can be accessed. This section should also include details, where possible
+10
+of where to access other relevant research materials such as statistical tools, protocols, software etc can be
+accessed. If the data has been deposited in an external repository this section should list the database,
+accession number and link to the DOI for all data from the article that has been made publicly available.
+Data sets that have been deposited in an external repository and have a DOI should also be appropriately
+cited in the manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify your
+current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-170641
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no competing
+interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions section
+which individually lists the specific contribution of each author. The list of Authors should meet all of the
+following criteria; 1) substantial contributions to conception and design, or acquisition of data, or analysis
+and interpretation of data; 2) drafting the article or revising it critically for important intellectual content;
+and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence alignments,
+participated in the design of the study and drafted the manuscript; CD carried out the statistical analyses;
+EF collected field data; GH conceived of the study, designed the study, coordinated the study and helped
+draft the manuscript. All authors gave final approval for publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We have
+included a screenshot example of the end statements for reference. If you feel that a given heading is not
+relevant to your paper, please nevertheless include the heading and explicitly state that it is not relevant to
+your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit the
+revised version of your manuscript within 7 days (i.e. by the 02-Jul-2017). If you do not think you will be
+able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your Author Centre,
+where you will find your manuscript title listed under "Manuscripts with Decisions". Under "Actions,"
+click on "Create a Revision." You will be unable to make your revisions on the originally submitted version
+of the manuscript. Instead, revise your manuscript and upload a new version through your Author
+Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this to document
+any changes you make to the original manuscript. In order to expedite the processing of the revised
+manuscript, please be as specific as possible in your response to the referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions) and figure
+captions. Do not upload a PDF as your "Main Document".
+11
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format should be
+produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please ensure you
+have entered correct contact details (email, institution and telephone) in your user account
+4) Included the raw data to support the claims made in your paper. You can either include your data as
+electronic supplementary material or upload to a repository and include the relevant doi within your
+manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final form. Note
+that the Royal Society will neither edit nor typeset supplementary material and it will be hosted as
+provided. Please ensure that the supplementary material includes the paper details where possible
+(authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on the online
+figshare repository (https://figshare.com). The heading and legend provided for each supplementary file
+during the submission process will be used to create the figshare page, so please ensure these are accurate
+and informative so that your files can be found in searches. Files on figshare will be made available
+approximately one week before the accompanying article so that the supplementary material can be
+attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look forward to
+receiving your revision. If you have any questions at all, please do not hesitate to get in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Comments to the Author:
+label_comment_8
+Dear Dr. Strickland,
+I have now received comments from two reviewers that previously reviewed your manuscript. Although
+both had minor editorial issues and could not access your data on Dryad, they were also both satisfied with
+your revision. Please ensure your data are uploaded to Dryad (or conform to the journal's access to data
+policy), and please address the minor edits suggested. Otherwise I want to congratulate you on a very nice
+paper.
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_9
+I previously served as reviewer #1 of the first submission. I feel that the manuscript improved
+considerably, but still needs to address a few points:
+As a methods paper, the chances of other researchers adopting this framework will be much higher if the
+authors share the code of their analysis, especially because this method includes multiple stages.
+L 85-87: To emphasize the novelty of the current study it will be helpful to elaborate more about those
+previous cited papers about social avoidance. What was different in their approach from the current one?
+L 169: I did not understand the need to increase these measures. Please explain why it is needed.
+12
+Fig 2: My previous comment that the number of sightings needed is 20 and not 25 was not addressed.
+L 353: How could the full home range require a smaller value than the core home range? It doesn’t make
+sense.
+L 486: I still could not access the data on dryad.
+Fig A1: What do the colors depict?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_10
+I was happy to see this interesting manuscript again. The authors have responded positively to my
+previous comments and I feel the manuscript is much improved. I found the new figure (figure 1)
+particularly useful. My remaining comments are all minor.
+Line 43-44. Slightly confusing, I initially read the ‘not’ as also applying to the ‘likely to leave groups’. I
+suggest rewording for clarity.
+Line 51-52. I think segregation due to differing resources requirements is also important to mention here.
+Line 52. This paper (Carter et al. 2016) might provide a useful reference for avoidance by dominance
+hierarchy.
+Line 86. As the authors point out later Whitehead and James (ref 28) do include space, as the current
+sentence is structured it implies that they do not.
+Line 100 Acronym UD should be introduced here.
+Line 129. Here ‘Utilisation’ is spelt with a z here, elsewhere with an s. (though I have not checked the full
+document)
+Line 176. ‘gprox’ is not defined in the manuscript.
+line 224-226. Word missing here ‘without ever seen associating’.
+Line 230-232. This is very unclear. So ‘all individuals’ within this distance react aggressively but some
+don’t?
+Line 300-301. Which average and what is the error?
+References: References need to be checked. I spotted some mistakes. Especially italisation of species name.
+Dryad: The dryad link still did not work for me
+Carter AJ, Tico MT, Cowlishaw G (2016) Sequential phenotypic constraints on social information use in
+wild baboons. Elife 5:1–21.
+Author's Response to Decision Letter for (RSOS-170641)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-170641.R1)
+30-Jun-2017
+Dear Ms Strickland,
+I am pleased to inform you that your manuscript entitled "A framework for the identification of long-term
+social avoidance in longitudinal datasets" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial office
+(openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if you are likely to
+13
+be away from e-mail contact. Due to rapid publication and an extremely tight schedule, if comments are
+not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model (http://bit.ly/cpFAQ). Your
+article will be published straight into the next open issue and this will be the final version of the paper. As
+such, it can be cited immediately by other researchers. As the issue version of your paper will be the only
+version to be published I would advise you to check your proofs thoroughly as changes cannot be made
+once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your paper to
+selected colleagues. If you wish to take advantage of this, please reply to this email with the name and
+email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued contributions to
+the Journal.
+Best wishes,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+Appendix A
+Dear Editor,
+Thank you very much for your helpful comments, and those of both reviewers. We have now
+addressed all comments. Please find below the details of how each of the comments were
+addressed and where in the revised manuscript such changes can be found.
+Kind regards,
+Kasha Strickland
+___________________________________________________________________________
+Editor’s comments:
+Comment 1: there are alternative explanations that you should consider (each reviewer
+mentioned different examples of this),
+Response: This comment has been addressed. We have now incorporated within the
+discussion of the revised ms the alternative explanations noted by both reviewers.
+Please see revised ms lines 425 – 441:
+“In agreement with Best et al. (1), we found that the most reliable way to optimise the null
+model was to alter the grouping distance proxy used within the model to ensure the null
+model matched the observed level of sociability. In both species, this resulted in a grouping
+distance proxy larger than is used in the observed data. This indicates, as expected, that
+individuals do not move randomly. For example, the distribution of resources influences how
+individuals move within their home range. Similarly, an individual’s movement may also be
+influenced by the distribution of conspecifics; in particular, individuals’ spatial distribution
+may not only influence social interactions, but may also, in part, be determined by them.
+Disentangling whether the formation of social relationships is caused by overlapping spatial
+distributions, or overlapping distributions are caused by social relationships would be
+extremely challenging. Some might argue that social relationships should therefore be
+assessed without controlling for spatial activity (e.g. using the Manly-Bejder permutations
+implemented in SOCPROG software (2, 3)). However, in dolphins, for instance, social
+preferences have been shown to exist in spite of very little spatial overlap (4, 5). Moreover,
+the confounded effects of spatial distribution and social relationships would not affect the
+identification of
+s given that these are identified as pairs of individuals which do not associate despite sharing
+significant portions of their home range.”
+And lines 464 – 471:
+“The causality of the social avoidances identified here is likely diverse. For instance, it may
+be that some avoidances are caused by the need to avoid conflict (e.g. avoidance of large of
+aggressive individuals). Alternatively, some avoidances may be driven by groups of
+individuals (e.g. ages of sexes) using space and/or resources at different times. Even so, the
+study of avoidance has hitherto been unexplored, and in using this framework to identify
+social avoidances, future research can focus on exploring the biology, and causality, of the
+avoidances found here.”
+Comment 2: the presentation of your methods and model were very difficult to follow and
+should be discussed more deliberately in a step-by-step fashion to make it more accessible to
+a general audience.
+Response: This comment has been addressed. Following the advice of both reviewers,
+we have re-written the explanation of the model at the beginning of the General
+framework section so that it is presented in a more step-by-step fashion. We have also
+included a diagram to help explain the step-by-step protocol (see figure 1).
+Furthermore, we have clarified the methods at points as per either of the reviewers’
+comments. Please see specific comments below.
+Please see lines 98 – 119
+“The null association model used here produces expected social associations between dyads
+which result from random use of space use (Fig 1). The model does so by randomising
+individuals’ spatial positions within their home ranges (the area in which individuals live),
+using either home range contours or utilisation distributions. Random points are then
+generated according to individuals UD (supplementary figure A1), as well as the probability
+of being sighted, and random pairwise associations are extracted based on proximity between
+random spatial positions (see figure 1 and section iv. for how to identify this threshold).
+Spatial proximity between animals is a well-accepted method of estimating pairwise
+associations in studies of social species where interactions are infrequent and/or difficult to
+observe (6, 7). With both the observed and the randomly generated social groupings, the
+strength of the pairwise associations can then be estimated and compared using an
+appropriate association index (e.g. simple ratio index, twice-weight index, social affinity
+index). Here, we used the half-weight index (HWI) because it is the most suitable index for
+both systems (see 8). HWI is calculated using the following formula:
+HWI = Nab/0.5(Na + Nb)
+where Nab is the number of times individuals a and b were seen associated, and Na and Nb are
+the number of times each individual was seen in total (8). Applying this model iteratively
+allows us to generate a random probability distribution against which the observed value can
+be statistically compared. In other words, a P value for each dyad is calculated as the
+proportion of times the random association index was smaller (or greater for preferences)
+than the observed. Avoidances can therefore be defined as instances where 95% (or more) of
+random HWIs were greater than the observed HWI.”
+Please also see figure 1.
+Figure 1. Diagram describing the steps involved with the simulations. The example, based on
+two individuals, illustrates the steps and the parameters that are important to consider. HWI
+refers to association index half-weight index calculated as HWI = Nab/0.5(Na + Nb) where Nab
+is the number of times individuals a and b were seen associated, and Na and Nb are the
+number of times each individual was seen in total.
+Reviewer: 1
+R1, comment 1: One issue that is not addressed in the current framework is that home range
+does not only influence social interactions, but may also be influenced by them. For example,
+if you analyze the spatial activity of a married couple, you might find that their home ranges
+significantly overlap. However, this overlap is actually a result of their decision to live
+together. Therefore, not every social association should be assessed while controlling for
+spatial activity. It would be useful to address this complexity and suggest alternative routes of
+analysis.
+Response: This comment has been addressed.
+Please see revised ms lines 425 – 441:
+“In agreement with Best et al. (1), we found that the most reliable way to optimise the null
+model was to alter the grouping distance proxy used within the model to ensure the null
+model matched the observed level of sociability. In both species, this resulted in a grouping
+distance proxy larger than is used in the observed data. This indicates, as expected, that
+individuals do not move randomly. For example, the distribution of resources influences how
+individuals move within their home range. Similarly, an individual’s movement may also be
+influenced by the distribution of conspecifics; in particular, individuals’ spatial distribution
+may not only influence social interactions, but may also, in part, be determined by them.
+Disentangling whether the formation of social relationships is caused by overlapping spatial
+distributions, or overlapping distributions are caused by social relationships would be
+extremely challenging. Some might argue that social relationships should therefore be
+assessed without controlling for spatial activity (e.g. using the Manly-Bejder permutations
+implemented in SOCPROG software (2, 3)). Nonetheless, the confounded effects of spatial
+distribution and social relationships would not affect the identification of social avoidances
+given that these are identified as pairs of individuals which do not associate despite sharing
+significant portions of their home range.”
+R1, comment 2: A more step-by-step description of the simulation model is required for
+readers to understand how it is implemented. The current explanations of the simulation are
+rather cumbersome and hard to follow. A diagram could be helpful.
+Response: This comment has been addressed. Please refer to editor’s comment 2.
+R1, comment 3: Since VI is being used quite extensively, a more comprehensive explanation
+of its calculation and utility would be helpful.
+Response: This comment has been addressed. Please see lines 274 - 276:
+“VI is a commonly used index of pairwise home range overlap. It measures the amount of
+overlap between two UDs and calculates a value between 0 (no overlap) and 1 (complete
+overlap).”
+R1, comment 4: I could not find the data on Dryad
+Response: This comment is addressed. Data should now be available at the following
+doi:
+doi:10.5061/dryad.71bm0
+Detailed:
+R1, comment 5: L 25-28: This sentence makes an unnecessary comparison between the two
+species, that I believe is not the purpose of this study. No one would be surprised that
+different results come from these very different species.
+Response: This comment has been addressed. Please see line 26.
+“Using this model allowed us to identify the presence of social avoidances in both species.”
+R1, comment 6: L 100: How is the distance threshold determined?
+Response: This comment has been addressed. Please see lines 104 and fig 1.
+“random pairwise associations are extracted based on proximity between random spatial
+positions (see figure 1 and section iv. for how to identify this threshold).”
+R1, comment 7: L 94: When describing the general framework, it is better to begin with a
+description of the framework instead of referring to a package that would probably be
+unfamiliar to most readers. The technical details of the implementation can come later.
+Response: This comment has been addressed. Please refer to response to editor’s
+comment 2.
+R1, comment 8: L 121: The section about UD does not actually explain what is it and how it
+is used in this framework. The minimum should be to cite a relevant paper.
+Response: This comment has been addressed. Please see lines 134 - 136
+“UDs are home ranges that describe the frequency distribution of an individual’s location
+data (37), estimating an individual’s probability of occurrence within an area across a grid of
+the study sites coordinates.”
+R1, comment 9: L 154-155: The half-weight index (HWI) is suggested as a general
+applicable measure. However, this index was developed to account for some biases in
+collecting data that can be study-specific. Why aren’t other measures, such as the simple-ratio
+index, not applicable?
+Response: This comment has been addressed. Please see lines 110 - 113
+“strength of the pairwise associations can then be estimated and compared using an
+appropriate association index for the study species (e.g. simple ratio index, twice-weight
+index, social affinity index). Here, we used the half-weight index (HWI) because it is the
+most suitable index for both systems”
+R1, comment 10: L171-173: Indeed it is a common and recommended practice to remove
+individuals that were not observed enough times. Why, then, to remove them only at a later
+stage of the analysis? These individuals should be removed beforehand.
+Response: This comment has been addressed. Please see lines 187 – 199.
+“When building the null model, we subset the data to include individuals with enough
+sightings to accurately estimate their home range. However, in most cases, to obtain reliable
+assignment of relationships (e.g. avoid – random – prefer), more sightings will be needed
+than to gain accurate home range estimations. First, we subsetted the data to include only
+individuals that had enough sightings to accurately estimate their UD (see section i.). Second,
+for post-hoc analysis we selected only individuals which had the minimum number of
+sightings required to classify pairwise relationships (e.g. avoidance – random/neutral –
+preference) accurately. We selected individuals for identification of avoidance (and
+preference) post-hoc because in the null model it is important to retain as many individuals as
+possible in order to optimise the null accurately (i.e. to match observed sociability).
+Nonetheless, selecting individuals with enough social data post-simulations results in
+confident identification of pairwise relationships.”
+R1, comment 11: L 244: The sentence mentions a number of sightings but the numbers look
+like area sizes - please clarify.
+Response: This comment has been addressed. Please see lines 281
+“(dragons from 5 to 40 sightings; dolphins from 20 to 70 sightings).”
+R1, comment 12: L 247-249: This sentence is a bit unclear. How was accuracy measured to
+determine the minimum number?
+Response: This comment has been addressed. Please see lines 284 – 286.
+“However, in order to be confident that we have measured home ranges accurately, we
+identified the minimum number of sightings required at which the size of the home range
+area stabilises (i.e. stop increasing) (Fig 2).”
+R1, comment 13: Table 1: This table needs reformatting to keep the rows intact. Currently it
+is very confusing.
+Response: This comment has been addressed. We have reformatted table so that it is
+clearer for the reader. Please see table 1.
+Table 1. Optimising the null model to match the average sociability of the population.
+Dragons Dolphins
+gprox (m) Full Core gprox (m) Full Core
+Observed 0.0028 0.0020 Observed 0.0604 0.0525
+1 0.0001 0.0001 600 0.0145 0.0120
+2 0.0003 0.0004 700 0.0214 0.0181
+3 0.0007 0.0010 800 0.0307 0.0233
+4 0.0012 0.0018 900 0.0416 0.0316
+5 0.0018 0.0030 1000 0.0543 0.0397
+6 0.0028 0.0047 1100 0.0672 0.0488
+7 0.0041 0.0067 1200 0.0836 0.0576
+8 0.0057 0.0090 1300 0.0956 0.0658
+9 0.0075 0.0115 1400 0.1071 0.0717
+This table shows the average half weight association index (HWI) for the observed dataset, and from random iterations. Random iterations use
+increasing pairwise geographic proximity as a proxy for social associations (gprox). The gprox which matches the observed value was then used
+in the final iterations (shown in bold).
+R1, comment 14: Table 2: Row names could be helpful to understand this table.
+Response: This comment has been addressed. We have reformatted this table for clarity. Please see Table 2.
+Table 2. Correlations of association classification rates.
+Number of sightings per individual Correlation (r2) to full dataset
+Dragons 10 0.859
+15 0.887
+20 0.903
+25 0.930
+30 0.943
+35 0.942
+40 0.964
+Dolphins 45 0.732
+50 0.760
+55 0.801
+60 0.839
+65 0.865
+70 0.895
+75 0.897
+80 0.908
+85 0.910
+90 0.928
+95 0.917
+100 0.927
+Correlation (spearmans) between the classification of associations (preference – random – avoidance) at different sightings numbers with those
+generated from the full dataset. Sightings were randomly sampled from the same individuals.
+R1, comment 15: Fig.1: The text is too small and almost unreadable. Also, it looks like dragons stabilize at 20, not 25.
+Response: This comment has been addressed. Please see figure 2.
+R1, comment 16: Box 1: Why should random social avoidance be considered as avoidance? If individuals do not actively avoid each other, I
+would say that avoidance is absent.
+Response: This comment has been addressed. We agree with the reviewer and have removed this from the box as it does not represent a
+type of avoidance behaviour. Please see box 1.
+Type of avoidance Definition
+Spatial avoidance Individuals avoid sharing any space with each other
+Individuals immediately withdraw from interacting (either
+Short-term social avoidance socially or aggressively) with another individual. The
+individuals may interact at a later stage.
+Individuals avoid each other consistently over a long period
+Long-term social avoidance (spatio-temporal avoidance) of time. Despite sharing significant portion of space, they
+either do not associate, or associate very little.
+R1, comment 17: L 365: Did you mean Carter et al.?
+Response: This comment has been addressed. Please see line 405
+initially presented by Carter et al.
+Reviewer: 2
+Major comments
+R2, comment 1: Defining avoidance: Given that the study address ‘social avoidance’ I feel it
+is imperative for the authors to definitively and unambiguously define it. Social avoidance is
+defined piecemeal at various points through the introduction, but mostly in terms of what it is
+not (lines 38-39), measurement (lines 47-57) or examples (lines 63-67). I think a clear
+statement of definition would greatly increase the clarity of the manuscript. Of particular
+importance is to differentiate between ‘social avoidance’ and simply lack of social
+preference- which is not the same as the difference between avoidance and random
+association (lines 78+).
+Response: This comment has been addressed. We have provided a definition in first
+paragraph making a specific distinction between social avoidance and lack of social
+preference.
+Please see lines 39 – 45
+“Here, we define social avoidance by the relative absence of association between individuals
+that overlap geospatially. This differs from a lack of social preference in that, here,
+individuals do not seek each other out, but might show mutual tolerance and occasionally
+associate (e.g. as a by-product of other relationships). In social avoidance, we would predict
+that individuals would not join, or be likely to leave groups, containing individuals they
+avoid. Social avoidance may be one-sided or reciprocated, but with the same effect.”
+R2, comment 2: Alternative explanations: The authors do not discuss possible alternative,
+non-social, explanations for individual’s appearing to avoid each other. In particular,
+individuals may have different resource requirements based on, for example, age, sex,
+reproductive state or resource competition. This could result in individuals foraging in
+different areas at different times, for example, for entirely non-social reasons. Though clearly
+truly social avoidance is likely to occur (for the reasons outlined in lines 47-49) it is
+important to be able to differ ate this from other alternative explanations. I feel it is worth the
+author’s discuss this consideration in the manuscript.
+Response: This comment has been addressed. Please see lines 464 - 471
+“The causality of the social avoidances identified here is likely diverse. For instance, it may
+be that some avoidances are caused by the need to avoid conflict (e.g. avoidance of large of
+aggressive individuals). Alternatively, some avoidances may be driven by groups of
+individuals (e.g. ages of sexes) using space and/or resources at different times. Even so, the
+study of avoidance has hitherto been unexplored, and in using this framework to identify
+social avoidances, future research can focus on exploring the biology, and causality, of the
+avoidances found here.”
+R2, comment 3: Description of the method: In places I found the description of the methods
+was unclear and required prior knowledge that might not be common to the general
+readership of Royal Society Open Science. Specific example are pointed out in the minor
+comments below. But in particular I found the first paragraphs of ‘general framework’
+unclear. I found myself reading the description of the Digiroo package to understand what the
+null model is and how it is usually implemented. The authors highlight that the ‘null
+association model has been previously described elsewhere’ (line 111), but I feel this is
+insufficient as the rest of the manuscript discusses and tests the implementation of this null
+model, it is critical for readers to understand exactly what is being discussed.
+Response: This comment has been addressed. Please refer to editor comment 2.
+Minor comments
+R2, comment 4: Line 99. Define home range.
+Response: This comment has been addressed. Please see line 100.
+“home ranges (the area in which individuals live),”
+R2, comment 5: Line 100. Define utilisation distribution
+Response: This comment has been addressed. Please see lines 134
+“UDs are home ranges that describe the frequency distribution of an individual’s location
+data”
+R2, comment 6: Line 121-128. As above what is a utilisation distribution and how is it
+calculated?
+Response: This comment has been addressed. Please see lines 136
+“estimating an individual’s probability of occurrence within an area across a grid of the study
+sites coordinates”
+R2, comment 7: Line 148. Degree is a dangerous word to use in the context of sociability as it
+is often usual as a measure of centrality. (number of associates)
+Response: This comment has been addressed. Please see lines 160 – 161 and throughout
+revised manuscript.
+“(e.g. sociability of the population),”
+R2, comment 8: Line 156-165. I am unclear the justification for not simply using the same
+distance that individuals are grouped together in the real data cannot also be used for the null
+distribution.
+Response: This comment has been addressed. Please see lines 177 - 179
+“This will, in most instances, result in a larger gprox than is used in the observed data. This is
+because in most instances using the same distance will result in under estimating the
+sociability of the population.”
+and also 425 - 441 in discussion.
+“In agreement with Best et al. (1), we found that the most reliable way to optimise the null
+model was to alter the grouping distance proxy used within the model to ensure the null
+model matched the observed level of sociability. In both species, this resulted in a grouping
+distance proxy larger than is used in the observed data. This indicates, as expected, that
+individuals do not move randomly. For example, the distribution of resources influences how
+individuals move within their home range. Similarly, an individual’s movement may also be
+influenced by the distribution of conspecifics; in particular, individuals’ spatial distribution
+may not only influence social interactions, but may also, in part, be determined by them.
+Disentangling whether the formation of social relationships is caused by overlapping spatial
+distributions, or overlapping distributions are caused by social relationships would be
+extremely challenging. Some might argue that social relationships should therefore be
+assessed without controlling for spatial activity (e.g. using the Manly-Bejder permutations
+implemented in SOCPROG software (2, 3)). However, in dolphins, for instance, social
+preferences have been shown to exist in spite of very little spatial overlap (4, 5). Moreover,
+the confounded effects of spatial distribution and social relationships would not affect the
+identification of social avoidances given that these are identified as pairs of individuals which
+do not associate despite sharing significant portions of their home range.”
+R2, comment 9: Line 178. I recommended the authors clearly define how the p value was
+calculated as per the recommendation in this paper (Ruxton and Neuhäuser 2013).
+Response: This comment has been addressed. Please see lines 204
+“P = <U+2211>Bj = 1 ( xj = X ) / B”
+R2, comment 10: Line 198-200. Could individuals observed in close association therefore not
+be acting aggressively- and therefore individuals in close association (and therefore by these
+methods with a high social preference or tolerance) not actually be acting aggressively.
+Response: This comment has been addressed. Please see lines 234.
+“Data are, however, filtered to remove those instances where aggressiveness is observed to
+ensure that close social proximity reflects social tolerance.”
+R2, comment 11: Line 209- How accurate is this GPS? Given its importance in calculating
+UD and therefore the null associations? Especially as for the dragons the smallest territory
+sizes are only 5m2.
+Response: This comment has been addressed. Please see lines 244
+“accurate to 3m”
+R2, comment 12: Line 216- which species is being studied here, indo-pacific or common?
+Response: This comment has been addressed. Please see throughout revised manuscript
+“Bottlenose dolphins (Tursiops cf aduncus).”
+R2, comment 13: Line 307- 116 of how many?
+Response: This comment has been addressed. Please see lines 334.
+“116 individuals (of 335)”
+R2, comment 14: Line 313- of how many?
+Response: This comment has been addressed. Please see lines 351.
+“76 individuals (of 738)”
+R2, comment 15: Line 343-360. Not only p value but also some measure of effect size is
+usual in statistical analysis. Is there a way to quantify the ‘strength’ of social avoidance?
+Response: This comment has been addressed. Please see lines 212 – 215
+“The strength of pairwise avoidances may be assessed by using a measure of pairwise home
+range overlap. For example, a pair of individuals that avoid each other and share 100% of
+their home ranges could be seen to be a stronger social avoidance than in instances where a
+pair share 30% of their home ranges.”
+R2, comment 16: Line 403. What is an ‘open social network’?
+Response: This comment has been addressed. Please see lines 459.
+“(where affiliative interactions extend beyond the individuals social group to members of
+other groups)”
+R2, comment 17: Figure 1. The y axis of these graphs is the only place HR is used as
+acronym for home range. Personally I feel it isn’t very necessary to introduce an acronym
+here, but if if is used it should be defined in the legend.
+Response: This comment has been addressed. Please see Figure 2
+1. Best EC, Dwyer RG, Seddon JM, Goldizen AW. Associations are more strongly correlated with space use than kinship in female eastern grey
+kangaroos. Animal Behaviour. 2014;89:1-10.
+2. Bejder L, Fletcher D, Bräger S. A method for testing association patterns of social animals. Animal Behaviour. 1998;56(3):719-25.
+3. Whitehead H. SOCPROG programs: analysing animal social structures. Behav Ecol Sociobiol. 2009;63(5):765-78.
+4. Sargeant BL, Wirsing AJ, Heithaus MR, Mann J. Can environmental heterogeneity explain individual foraging variation in wild bottlenose dolphins
+(Tursiops sp.)? Behav Ecol Sociobiol. 2007;61(5):679-88.
+5. Tsai YJJ, Mann J. Dispersal, philopatry, and the role of fission-fusion dynamics in bottlenose dolphins. Marine Mammal Science. 2013;29(2):261-79.
+6. Whitehead H, Dufault S. Techniques for Analyzing Vertebrate Social Structure Using Identified Individuals: Review. Advances in the Study of
+Behavior. 1999;28:33.
+7. Franks DW, Ruxton GD, James R. Sampling animal association networks with the gambit of the group. Behav Ecol Sociobiol. 2010;64(3):493-503.
+8. Cairns SJ, Schwager SJ. A comparison of association indices. Animal Behaviour. 1987;35(5):1454-69.
+Appendix B
+Dear Editor,
+Thank you for the helpful feedback from both reviewers. Please find below our responses to
+the reviewers comments.
+Sincerely,
+Kasha Strickland
+Reviewer 1
+R1 Comment 1: As a methods paper, the chances of other researchers adopting this
+framework will be much higher if the authors share the code of their analysis, especially
+because this method includes multiple stages.
+Response: This comment has been addressed. All code has been shared at Dryad. Please
+use temporary link http://datadryad.org/review?doi=doi:10.5061/dryad.tn36j Following
+publication, the following link will be made available:
+http://dx.doi.org/10.5061/dryad.tn36j
+R1 Comment 2. L 85-87: To emphasize the novelty of the current study it will be helpful to
+elaborate more about those previous cited papers about social avoidance. What was different
+in their approach from the current one?
+Response: This comment has been addressed. Please see lines 85 - 90.
+“Other authors have offered ways to measure social avoidances (e.g. 28, 29), such as by
+randomising the membership of groups, or by using pairwise spatial overlap measures as a
+predictor of associations. However, we propose that the use of a spatially explicit null model
+is most appropriate. This is because by accounting for individuals’ observed space use and
+spatial heterogeneity, this method allows for more robust predictions of random association
+patterns (27).”
+R1 Comment 3. L 169: I did not understand the need to increase these measures. Please
+explain why it is needed.
+Response: This comment has been addressed. Please see lines 170 – 175.
+“Animals do not move randomly. As such, when simulations move animals randomly within
+their home range (as in the null model), the number of social associations will be greatly
+reduced. As a result, to optimise the null model to retain the sociability of the population, we
+must manipulate certain parameters of the observed data. This can be done in a number of
+ways, but we focused on two major options: increasing the distance proxy used for social
+associations, or increasing the number of individuals sighted per random sampling period.@
+R1 Comment 4. Fig 2: My previous comment that the number of sightings needed is 20 and
+not 25 was not addressed.
+Response: This comment has been addressed. Please see lines 292 – 293.
+“Although estimates at 20 and 25 sightings were comparable, we selected 25 sightings as a
+conservative estimate in order to increase the accuracy of home range measurements.”
+R1 Comment 5. L 353: How could the full home range require a smaller value than the core
+home range? It doesn’t make sense.
+Response: This comment has been addressed. Please see lines 433 – 438.
+“In dolphins, this distance was slightly larger at the core range than at the full range. This
+may be because there are fewer social associations within dolphins’ core ranges in
+comparison to their full, thus to obtain comparable levels of associations in the null model the
+distance must be increased. Alternatively, it may be that there is less overlap between
+dolphins’ core home ranges. This would also result in a greater distance proxy required to
+group individuals in the null model.”
+R1 Comment 6. L 486: I still could not access the data on dryad.
+Response: This comment has been addressed. Data has been made available at Dryad.
+Please use temporary link http://datadryad.org/review?doi=doi:10.5061/dryad.tn36j
+Following publication, the following link will be made available:
+http://dx.doi.org/10.5061/dryad.tn36j. Please see data availability section:
+“Data availability. Data and R code is available from the Dryad Digital Repository:
+http://dx.doi.org/10.5061/dryad.tn36j. Data and R code for the dolphin project can also be
+found at https://github.com/vjf2/digidolph.”
+R1 Comment 7. Fig A1: What do the colours depict?
+Response: This comment has been addressed. Please see revised figure caption for fig
+A1.
+“Fig A1. Randomised points created by digiroo2, overlaid on utilisation distributions, for two
+individual dolphins. Colour gradient represents the probability distribution of the individual
+being sighted at different coordinates.”
+Reviewer: 2
+R2 comment 1. Line 43-44. Slightly confusing, I initially read the ‘not’ as also applying to
+the ‘likely to leave groups’. I suggest rewording for clarity.
+Response. This comment has been addressed. Please see lines 44.
+“. In social avoidance, we would predict that individuals would be likely either to leave or not
+join groups containing individuals that they avoid.
+R2 comment 2. Line 51-52. I think segregation due to differing resources requirements is
+also important to mention here.
+Response. We appreciate this comment from the reviewer, and have carefully
+considered the suggestion. However, line 51 discusses the types of avoidance rather that
+what factors may influence them. We do, however, discuss these factors in the
+discussion. As such, no changes were made.
+R2 comment 3. Line 52. This paper (Carter et al. 2016) might provide a useful reference for
+avoidance by dominance hierarchy.
+Response. This comment has been addressed. We have incorporated the suggested
+reference into the revised manuscript. Please see lines 53.
+“To date, such avoidance behaviour has most frequently been studied in the context of
+inbreeding avoidance [11], sex segregation [12], avoidance of diseased conspecifics [13, 14]
+and dominance hierarchies [15].”
+R2 comment 4. Line 86. As the authors point out later Whitehead and James (ref 28) do
+include space, as the current sentence is structured it implies that they do not.
+Response: This comment has been addressed. Please see lines 85 - 89.
+“Other authors have offered ways to measure social avoidances (e.g. 28, 29), such as by
+randomising the membership of groups, or by using pairwise spatial overlap measures as a
+predictor of associations. However, we propose that the use of a spatially explicit null model
+is most appropriate. This is because by accounting for individuals’ observed space use and
+spatial heterogeneity, this method allows for more robust predictions of random association
+patterns (27).”
+R2 comment 5. Line 100 Acronym UD should be introduced here.
+Response: This comment has been addressed. Please see lines 103.
+“The model does so by randomising individuals’ spatial positions within their home ranges
+(the area in which individuals live), using either home range contours or utilisation
+distributions (UD).”
+R2 comment 6. Line 129. Here ‘Utilisation’ is spelt with a z here, elsewhere with an s.
+(though I have not checked the full document)
+Response: This comment has been addressed. We have corrected spelling throughout
+the manuscript to read “utilization”.
+R2 comment 7. Line 176. ‘gprox’ is not defined in the manuscript.
+Response: This comment has been addressed. Please see lines 180.
+“Therefore, we suggest that to achieve comparable HWI’s, the distance at which individuals
+are grouped together (gprox) should be adjusted.”
+R2 comment 8. line 224-226. Word missing here ‘without ever seen associating’.
+Response: This comment has been addressed. Please see lines 229.
+“their home range without ever being seen to associate”
+R2 comment 9: Line 230-232. This is very unclear. So ‘all individuals’ within this distance
+react aggressively but some don’t?
+Response: This comment has been addressed. Please see lines 234 - 236.
+“Third, our observations have shown that individuals which do not tolerate each other will
+react aggressively to one another within this distance.”
+R2 comment 10: Line 300-301. Which average and what is the error?
+Response: This comment has been addressed. Please see lines 304 - 307.
+“during which an average of 54 unique individuals (± 12 individuals) and 17 pairs (± 12
+pairs) were sighted per survey.”
+R2 comment 11. References need to be checked. I spotted some mistakes. Especially
+italisation of species name.
+Response: This comment has been addressed. All references have been checked and
+corrected.
+R2 comment 12. Dryad: The dryad link still did not work for me
+Response: This comment has been addressed. Data has been made available at Dryad.
+Please use temporary link http://datadryad.org/review?doi=doi:10.5061/dryad.tn36j
+Following publication, the following link will be made available:
+http://dx.doi.org/10.5061/dryad.tn36j. Please see data availability section:
+“Data availability. Data and R code is available from the Dryad Digital Repository:
+http://dx.doi.org/10.5061/dryad.tn36j. Data and R code for the dolphin project can also be
+found at https://github.com/vjf2/digidolph.”
+Society Open

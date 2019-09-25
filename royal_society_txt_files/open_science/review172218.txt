@@ -1,0 +1,972 @@
+Repeatable aversion across threat types is linked with life-
+history traits but is dependent on how aversion is measured
+Gabrielle L. Davidson, Michael S. Reichert, Jodie M. S. Crane, William O'Shea and John L.
+Quinn
+Article citation details
+R. Soc. open sci. 5: 172218.
+http://dx.doi.org/10.1098/rsos.172218
+Review timeline
+Original submission: 1 August 2017 Note: Reports are unedited and appear as
+1st revised submission: 14 December 2017 submitted by the referee. The review history
+2nd revised submission: 19 January 2018 appears in chronological order.
+Final acceptance: 23 January 2018
+Review History
+label_version_1
+RSOS-171034.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (David F. Westneat)
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Reject
+Comments to the Author(s)
+label_comment_1
+This MS reports a study of the responses of parent great tits to aversive stimuli presented on their
+nests and relates the responses to several metrics of fitness. There is general interest in studies
+assessing among-individual variance in behavioral tendencies, and the fitness consequences of
+such variation. This study adds some new data to the mix, but in my view is limited in several
+key ways.
+A major concern I have with the paper are the statistics. Three main dependent variables were
+used in the study: 1) a latency measure (time delay from start of trial to when the focal bird
+reentered the box), 2) inspection time, and 3) number of fledglings. All three were analyzed
+appropriately with a mixed model structure, but the authors used a negative binomial
+distribution as the link function. In the case of the repeatability analyses, a Poisson distribution
+was used as the link function.
+My statistical concerns fall into two types. One is that some potentially interesting aspects of the
+data could have been analyzed more completely using the mixed model structure. If I understood
+the sampling correctly, most pairs were measured twice, once with each model. Some of these
+were measured a third time, half with a repeat of the novel object and one a control with no
+object. So, most pairs then got 3 measures, and a few pairs only had the control set-up. Why not
+do a full mixed model with all the treatments and data, and calculate repeatability from this?
+Instead it seems you did repeatabilities on various subsets of the data. Nothing wrong with this
+but it is a bit limiting. Using all the data at once is robust to the fact that some pairs only had 1
+measure taken (a few controls). I took the liberty of running a simple version of this in SAS for the
+latency to enter, logged (see comments below). First the overall repeatability analysis showing
+that box (presumably female) ID explains 46% of variance over the whole experiment (my
+apologies for the formating):
+Covariance Parameter Estimates
+Cov Parm Subject Estimate Standard
+Error Z Value Pr > Z
+Intercept box 0.09629 0.03340 2.88 0.0020
+Residual 0.1134 0.02138 5.30 <.0001
+Adding in the treatment and order of treatments just to check (without all the other covariates,
+which would need to be included) shows that both objects are greater than control but eyes are
+much greater than both controls and plain object:
+Covariance Parameter Estimates
+Cov Parm Subject Estimate Standard
+Error Z Value Pr > Z
+Intercept box 0.1008 0.03431 2.94 0.0017
+Residual 0.1046 0.02065 5.07 <.0001
+Solution for Fixed Effects
+Effect RecodeT order Estimate Standard Error
+Intercept 2.7338 0.1281
+RecodeT Aobject 0.1006 0.1196
+RecodeT Beyes 0.2716 0.1172
+RecodeT Control 0 .
+order 1 0.04374 0.09332
+3
+order 2 0.008327 0.09287
+order 3 0 .
+Type 3 Tests of Fixed Effects
+Effect Num DF Den DF F Value Pr > F
+RecodeT 2 66.1 4.07 0.0215
+order 2 57.8 0.15 0.8626
+I would note as well that this approach would allow you to use BLUP values from the mixed
+model in the fitness analyses instead of means (lines 236-237). Both means and BLUPs have bias
+issues, but generally means are worse.
+Second and more fundamentally, none of the response variables measured is distributed as a
+negative binomial. By definition, a negative binomial is a series of yes/no events in which you are
+counting up the number of one outcome before the other outcome occurs. Each event is
+independent, such as would occur if you counted the number of non-ones you rolled on a six-side
+die until you got a 1. Latency and inspection time are almost certainly not a negative binomial. I
+suppose one could argue that if you assume the bird makes a decision to return or not every
+second, then you have counted up the number of “no” decisions before the first “yes”. But these
+are clearly not independent, as the probability of a bird returning in the first second is much,
+much lower than in the 1000th sec. This applies to both time variables. Number of fledglings is
+also neither a Poisson nor a negative binomial, for the same reason. They are not an accumulation
+of “yes” outcomes from a set of independent events, despite being count data. So, it is my opinion
+the negative binomial is the incorrect link function to use for all of these.
+That said, I’m sure these data pose a problem because they are skewed. However, time data in
+particular are always a bit dicey, but we have to make do. One possibility is to do survival
+analysis, but I do not think the survival analysis stats can extract some of what you’d like to. That
+would work for the treatment differences, but probably not repeatability. I personally would
+have used a log (as I did above) or square root transform on the time data and then parametric
+stats. Because time is not really a count variable arising from a binomial or Poisson process, this
+would not have the issues that transforming true count data does. It is possible that the transform
+would not make the residuals perfectly fit a normal distribution, but I bet they’d be close.
+I’m not sure why the repeatability analyses use a Poisson distribution instead. They should be the
+same as all other analyses of that variable.
+Fledgling success is another matter. Possibly there are a large number of 0s, and then a smear of
+other values. No way to make that normal. You could leave it as a Poisson, but it would be
+worthwhile discussing in more detail the issues with that. A rank correlation test or
+randomization test might actually be best. The later can be fairly easily done in R by taking your
+observed data and randomly associating behavior with fledglings, calculating a correlation
+coefficient, doing it 10,000 times, and ask where the observed correlation is in the distribution of
+randomized ones. This would retain the observed distributions of the data, whatever they really
+are.
+I also have some comments on terminology/interpretation:
+1. I would think of the two objects you used in the experiment as both being novel objects. You
+seem to conclude that because great tits have seen sparrowhawk eyes before, that object is not
+novel. However, great tits have surely seen white, brown, and black colors before, and while they
+probably haven’t seen legos, they have seen plastic bits and sticks of roughly similar size and
+shape. It seems a save assertion to say that all objects an individual encounters are slightly novel
+(even their nest box probably is slightly different looking each time they visit), and no object is
+completely novel. I guess I would just consider both of these novel because they suddenly appear
+on top of the box where nothing was before. The hawk mimic you could predict might be more
+4
+threatening because of the eyes, but almost certainly you can’t assume the birds recognize this as
+a hawk.
+2. Repeatabilities are only as useful as the data set used to calculate them. In this case, you have
+separate measures taken a few days apart. Thus, the repeatability is appropriately interpreted as
+indicating between-individual differences evident within a nest attempt. Yet, you use the fitness
+analysis to suggest that selection on personality is occurring (lines 370-373). This is probably an
+over-interpretation. It is intriguing that there is a link between risky behavior and reproductive
+success in the same breeding attempt, but it seems there could be lots of confounds, such as time
+of year, other environmental conditions on the territory, etc. I would urge caution in making this
+claim.
+3. Line 344-352: I do not think the evidence is strong enough to suggest that the two models
+measure different things. While the statistical results differ, this conclusion depends on
+interpreting several cases of one significant result compared one non-significant result as
+showing a significant different. This is not the case. Lack of significance does not mean there is no
+effect. In the case of repeatabilities, I’m sure that the standard errors of the estimates overlap
+considerably, and so they ought to be considered the same—one happens to be over the threshold
+for significance and one is a bit below the threshold, but they are generally pretty similar.
+In summary, I think this study collects some useful data, but the analysis and the interpretations
+need to be refined considerably so that a reader can fully appreciate the patterns in the measured
+responses.
+David F. Westneat
+label_author_2
+Review form: Reviewer 2 (Øyvind Øverli)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The paper by Davidson et al addresses the adaptive significance of risk aversion in the context of
+personality theory. Pace of life theory vs state-dependent theory is discussed as an underlying
+framework to explain individual variation in risk aversion, but it is not entirely clear if this study
+5
+is intended as an explicit test of these two explanatory models? If so, more information on
+individual physiological and metabolic states vs traits would probably have been required, data
+that would be hard to obtain without the application of more invasive methods and/or long term
+monitoring of individual developmental trajectories. The paper still tells an important story on
+how (in the same study population and setting) behavior can be repeatable and linked to fitness
+traits for some behavioral measures, but not for others.
+I have one major issue that I’d like to see clarified, then only minor comments.
+Unless I misunderstand the study design (always a possibility), two behavioral variables are
+registered:
+1) Latency to enter the nest box again, after disturbance, and
+2) Inspection time, time spent at the nest site after returning but before entering.
+Correct? In summary the results indicate that test conditions (if the female had to be flushed for
+the nest or just left) and habituation across successive trials was significant factors for inspection
+time, whereas individual repeatability and links with reproductive success and body condition
+were significant for latency to enter. These are interesting results, and demonstrate how some
+behaviors are more affected by specific experimental conditions, and some depend more on
+individual condition (and hence perhaps therefore are more repeatable). But I struggle with how
+the authors sometimes refer to “time to return” and sometimes “time to enter”. Time to enter
+would be composed of time to return plus time to inspect before entering. Would it not then be
+better to report three variables: Time to return to site, inspection time, and time to enter? Would
+such an approach change the conclusions? Obviously, if inspection time is zero return time and
+entering time would be the same, which may muddle the analysis. But give this a thought, and at
+least not refer consecutively to “return time” and “time to enter”.
+Minor comments: Ln 118: “Adults were caught at the nest at day 10 post-hatching to tag
+individuals and collect biometrics.” State already here, specifically what biometrics were
+registered.
+At the end of section 2.3.1., provide final n for the different groups.
+Statistics: It is stated that birds that did not return to the nest during the trial period were given
+an upper latency of 2400 seconds (i.e. 40 minutes). This obviously skews the data distribution,
+and the authors justly apply a log-link function. But at least the Tukey post hoc test also assumes
+homogeneity of variance between groups, was this assured?
+label_end_comment
+Decision letter (RSOS-171034)
+14-Sep-2017
+Dear Dr Davidson:
+Manuscript ID RSOS-171034 entitled "The evolutionary potential of aversion to novel objects and
+predator eye stimuli depends on how aversion is measured" which you submitted to Royal
+Society Open Science, has been reviewed. The comments from reviewers are included at the
+bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+6
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 14-Mar-2018. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of
+Kevin Padian, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+I have now received reviewers from two experts in the field. Both have raised important concerns
+regarding the statistics, though reviewer 1 raised several very important and rather specific issues
+for which he provided a thorough discussion. Although reviewer 1 provided a lot of feedback
+regarding your statistical approach/methods, it is important that this feedback does not
+overshadow the other (perhaps more important) issues he raises: that interpretations of your data
+and the context of the measures you collected are potentially problematic, and your
+interpretations require either more justification or care in how they are characterized. Reviewer 2
+also had some questions regarding your interpretations. The scope of these data may also be a bit
+narrow given the specific contexts that were tested. A careful and cautious discussion of your
+results both in terms of how the data are analyzed, presented, interpreted and then ultimately
+discussed is necessary for this paper. Unfortunately your paper is not appropriate for publication
+in its current form. However both reviewers felt that the study had some important merit. For
+this reason, I recommend that the paper is rejected, but I also recommend the opportunity to re-
+submit it, should you feel you can address these issues sufficiently.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This MS reports a study of the responses of parent great tits to aversive stimuli presented on their
+nests and relates the responses to several metrics of fitness. There is general interest in studies
+assessing among-individual variance in behavioral tendencies, and the fitness consequences of
+such variation. This study adds some new data to the mix, but in my view is limited in several
+key ways.
+A major concern I have with the paper are the statistics. Three main dependent variables were
+used in the study: 1) a latency measure (time delay from start of trial to when the focal bird
+7
+reentered the box), 2) inspection time, and 3) number of fledglings. All three were analyzed
+appropriately with a mixed model structure, but the authors used a negative binomial
+distribution as the link function. In the case of the repeatability analyses, a Poisson distribution
+was used as the link function.
+My statistical concerns fall into two types. One is that some potentially interesting aspects of the
+data could have been analyzed more completely using the mixed model structure. If I understood
+the sampling correctly, most pairs were measured twice, once with each model. Some of these
+were measured a third time, half with a repeat of the novel object and one a control with no
+object. So, most pairs then got 3 measures, and a few pairs only had the control set-up. Why not
+do a full mixed model with all the treatments and data, and calculate repeatability from this?
+Instead it seems you did repeatabilities on various subsets of the data. Nothing wrong with this
+but it is a bit limiting. Using all the data at once is robust to the fact that some pairs only had 1
+measure taken (a few controls). I took the liberty of running a simple version of this in SAS for the
+latency to enter, logged (see comments below). First the overall repeatability analysis showing
+that box (presumably female) ID explains 46% of variance over the whole experiment (my
+apologies for the formating):
+Covariance Parameter Estimates
+Cov Parm Subject Estimate Standard
+Error Z Value Pr > Z
+Intercept box 0.09629 0.03340 2.88 0.0020
+Residual 0.1134 0.02138 5.30 <.0001
+Adding in the treatment and order of treatments just to check (without all the other covariates,
+which would need to be included) shows that both objects are greater than control but eyes are
+much greater than both controls and plain object:
+Covariance Parameter Estimates
+Cov Parm Subject Estimate Standard
+Error Z Value Pr > Z
+Intercept box 0.1008 0.03431 2.94 0.0017
+Residual 0.1046 0.02065 5.07 <.0001
+Solution for Fixed Effects
+Effect RecodeT order Estimate Standard Error
+Intercept 2.7338 0.1281
+RecodeT Aobject 0.1006 0.1196
+RecodeT Beyes 0.2716 0.1172
+RecodeT Control 0 .
+order 1 0.04374 0.09332
+order 2 0.008327 0.09287
+order 3 0 .
+Type 3 Tests of Fixed Effects
+Effect Num DF Den DF F Value Pr > F
+RecodeT 2 66.1 4.07 0.0215
+order 2 57.8 0.15 0.8626
+I would note as well that this approach would allow you to use BLUP values from the mixed
+model in the fitness analyses instead of means (lines 236-237). Both means and BLUPs have bias
+issues, but generally means are worse.
+Second and more fundamentally, none of the response variables measured is distributed as a
+negative binomial. By definition, a negative binomial is a series of yes/no events in which you are
+counting up the number of one outcome before the other outcome occurs. Each event is
+independent, such as would occur if you counted the number of non-ones you rolled on a six-side
+8
+die until you got a 1. Latency and inspection time are almost certainly not a negative binomial. I
+suppose one could argue that if you assume the bird makes a decision to return or not every
+second, then you have counted up the number of “no” decisions before the first “yes”. But these
+are clearly not independent, as the probability of a bird returning in the first second is much,
+much lower than in the 1000th sec. This applies to both time variables. Number of fledglings is
+also neither a Poisson nor a negative binomial, for the same reason. They are not an accumulation
+of “yes” outcomes from a set of independent events, despite being count data. So, it is my opinion
+the negative binomial is the incorrect link function to use for all of these.
+That said, I’m sure these data pose a problem because they are skewed. However, time data in
+particular are always a bit dicey, but we have to make do. One possibility is to do survival
+analysis, but I do not think the survival analysis stats can extract some of what you’d like to. That
+would work for the treatment differences, but probably not repeatability. I personally would
+have used a log (as I did above) or square root transform on the time data and then parametric
+stats. Because time is not really a count variable arising from a binomial or Poisson process, this
+would not have the issues that transforming true count data does. It is possible that the transform
+would not make the residuals perfectly fit a normal distribution, but I bet they’d be close.
+I’m not sure why the repeatability analyses use a Poisson distribution instead. They should be the
+same as all other analyses of that variable.
+Fledgling success is another matter. Possibly there are a large number of 0s, and then a smear of
+other values. No way to make that normal. You could leave it as a Poisson, but it would be
+worthwhile discussing in more detail the issues with that. A rank correlation test or
+randomization test might actually be best. The later can be fairly easily done in R by taking your
+observed data and randomly associating behavior with fledglings, calculating a correlation
+coefficient, doing it 10,000 times, and ask where the observed correlation is in the distribution of
+randomized ones. This would retain the observed distributions of the data, whatever they really
+are.
+I also have some comments on terminology/interpretation:
+1. I would think of the two objects you used in the experiment as both being novel objects. You
+seem to conclude that because great tits have seen sparrowhawk eyes before, that object is not
+novel. However, great tits have surely seen white, brown, and black colors before, and while they
+probably haven’t seen legos, they have seen plastic bits and sticks of roughly similar size and
+shape. It seems a save assertion to say that all objects an individual encounters are slightly novel
+(even their nest box probably is slightly different looking each time they visit), and no object is
+completely novel. I guess I would just consider both of these novel because they suddenly appear
+on top of the box where nothing was before. The hawk mimic you could predict might be more
+threatening because of the eyes, but almost certainly you can’t assume the birds recognize this as
+a hawk.
+2. Repeatabilities are only as useful as the data set used to calculate them. In this case, you have
+separate measures taken a few days apart. Thus, the repeatability is appropriately interpreted as
+indicating between-individual differences evident within a nest attempt. Yet, you use the fitness
+analysis to suggest that selection on personality is occurring (lines 370-373). This is probably an
+over-interpretation. It is intriguing that there is a link between risky behavior and reproductive
+success in the same breeding attempt, but it seems there could be lots of confounds, such as time
+of year, other environmental conditions on the territory, etc. I would urge caution in making this
+claim.
+3. Line 344-352: I do not think the evidence is strong enough to suggest that the two models
+measure different things. While the statistical results differ, this conclusion depends on
+interpreting several cases of one significant result compared one non-significant result as
+showing a significant different. This is not the case. Lack of significance does not mean there is no
+effect. In the case of repeatabilities, I’m sure that the standard errors of the estimates overlap
+9
+considerably, and so they ought to be considered the same—one happens to be over the threshold
+for significance and one is a bit below the threshold, but they are generally pretty similar.
+In summary, I think this study collects some useful data, but the analysis and the interpretations
+need to be refined considerably so that a reader can fully appreciate the patterns in the measured
+responses.
+David F. Westneat
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The paper by Davidson et al addresses the adaptive significance of risk aversion in the context of
+personality theory. Pace of life theory vs state-dependent theory is discussed as an underlying
+framework to explain individual variation in risk aversion, but it is not entirely clear if this study
+is intended as an explicit test of these two explanatory models? If so, more information on
+individual physiological and metabolic states vs traits would probably have been required, data
+that would be hard to obtain without the application of more invasive methods and/or long term
+monitoring of individual developmental trajectories. The paper still tells an important story on
+how (in the same study population and setting) behavior can be repeatable and linked to fitness
+traits for some behavioral measures, but not for others.
+I have one major issue that I’d like to see clarified, then only minor comments.
+Unless I misunderstand the study design (always a possibility), two behavioral variables are
+registered:
+1) Latency to enter the nest box again, after disturbance, and
+2) Inspection time, time spent at the nest site after returning but before entering.
+Correct? In summary the results indicate that test conditions (if the female had to be flushed for
+the nest or just left) and habituation across successive trials was significant factors for inspection
+time, whereas individual repeatability and links with reproductive success and body condition
+were significant for latency to enter. These are interesting results, and demonstrate how some
+behaviors are more affected by specific experimental conditions, and some depend more on
+individual condition (and hence perhaps therefore are more repeatable). But I struggle with how
+the authors sometimes refer to “time to return” and sometimes “time to enter”. Time to enter
+would be composed of time to return plus time to inspect before entering. Would it not then be
+better to report three variables: Time to return to site, inspection time, and time to enter? Would
+such an approach change the conclusions? Obviously, if inspection time is zero return time and
+entering time would be the same, which may muddle the analysis. But give this a thought, and at
+least not refer consecutively to “return time” and “time to enter”.
+Minor comments: Ln 118: “Adults were caught at the nest at day 10 post-hatching to tag
+individuals and collect biometrics.” State already here, specifically what biometrics were
+registered.
+At the end of section 2.3.1., provide final n for the different groups.
+Statistics: It is stated that birds that did not return to the nest during the trial period were given
+an upper latency of 2400 seconds (i.e. 40 minutes). This obviously skews the data distribution,
+and the authors justly apply a log-link function. But at least the Tukey post hoc test also assumes
+homogeneity of variance between groups, was this assured?
+Author's Response to Decision Letter for (RSOS-171034)
+See Appendix A.
+10
+label_version_2
+RSOS-172218.R0 (Revision)
+label_author_3
+Review form: Reviewer 1 (David F. Westneat)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+This revised MS on the responses of parent great tits to presentations of novel objects on their
+nests is much improved from the earlier submission. The results appear to have been fairly robust
+to the shift in statistical approaches, but the current approach seems quite reasonable.
+Line 72 and elsewhere: Differences are BETWEEN, variance is AMONG.
+Line 101: Change “which” to “that”.
+Line 196: The phrase “so they were normally distributed” is not necessary since a normal
+distribution is not necessary before analysis. Later on you note that the residuals were normally
+distributed, so that would be sufficient.
+Line 214: Explain why you used adjusted repeatability. I think use of adjusted repeatability in
+measures of personality is usually misleading. You are subtracting out some (but not all) forms of
+plasticity by doing this and thus artificially inflating repeatability. The only reason to do it would
+be if some bias exists in the dataset and you want to extend the repeatability to a broader
+population. Adjusted repeatabilities are also not comparable across studies since most studies
+don’t duplicate fixed factors exactly. At the least, I recommend providing the unadjusted
+repeatability (from a model with just random effects and no fixed effects) as well.
+Line 284: Do you mean “r” here, since this is a correlation? I usually interpret Beta as a slope.
+Discussion: The surprising lack of correlation between the two behavioral measures that seem
+like they should be linked has been found in some other contexts. I would immodestly direct
+your attention to Moldoff & Westneat (2016, Behavioral Ecology) as one example where response
+11
+to novelty was measured with two latencies that occurred in sequence, but were unexpectedly
+poorly correlated at multiple levels. We had a (feeble) explanation, but since you focus on this,
+maybe you will have some better ideas?
+Line 384 (section): It may be worth mentioning the possibility that the link (albeit somewhat
+weak) between latency to enter and number of fledglings might be reversed. If females with
+larger broods at the time of the measurements of behavior value the brood more, they may be
+more eager to enter. You test for an effect of clutch size, but what about brood size just before the
+trials?
+Table 1. I think these model results would be more informative if they included the variance
+components (random effects plus residual) as well.
+-Dave Westneat
+label_end_comment
+Decision letter (RSOS-172218)
+28-Dec-2017
+Dear Dr Davidson
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-172218 entitled
+"Repeatable aversion across threat types is linked with life history traits but is dependent on how
+aversion is measured" has been accepted for publication in Royal Society Open Science subject to
+minor revision in accordance with the referee suggestions. Please find the referees' comments at
+the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-172218
+12
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 06-Jan-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+13
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Alexander Ophir (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Alexander Ophir):
+Associate Editor
+Comments to the Author:
+label_comment_6
+Dear Dr Davidson,
+Below you will find the comments from a reviewer who has evaluated your original and revised
+submissions. As you will see, they have listed several minor points that should be very easily
+14
+addressed. Contingent on these adjustments, I am pleased to suggest that your manuscript
+should be provisionally accepted for publication in RSOS.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+This revised MS on the responses of parent great tits to presentations of novel objects on their
+nests is much improved from the earlier submission. The results appear to have been fairly robust
+to the shift in statistical approaches, but the current approach seems quite reasonable.
+Line 72 and elsewhere: Differences are BETWEEN, variance is AMONG.
+Line 101: Change “which” to “that”.
+Line 196: The phrase “so they were normally distributed” is not necessary since a normal
+distribution is not necessary before analysis. Later on you note that the residuals were normally
+distributed, so that would be sufficient.
+Line 214: Explain why you used adjusted repeatability. I think use of adjusted repeatability in
+measures of personality is usually misleading. You are subtracting out some (but not all) forms of
+plasticity by doing this and thus artificially inflating repeatability. The only reason to do it would
+be if some bias exists in the dataset and you want to extend the repeatability to a broader
+population. Adjusted repeatabilities are also not comparable across studies since most studies
+don’t duplicate fixed factors exactly. At the least, I recommend providing the unadjusted
+repeatability (from a model with just random effects and no fixed effects) as well.
+Line 284: Do you mean “r” here, since this is a correlation? I usually interpret Beta as a slope.
+Discussion: The surprising lack of correlation between the two behavioral measures that seem
+like they should be linked has been found in some other contexts. I would immodestly direct
+your attention to Moldoff & Westneat (2016, Behavioral Ecology) as one example where response
+to novelty was measured with two latencies that occurred in sequence, but were unexpectedly
+poorly correlated at multiple levels. We had a (feeble) explanation, but since you focus on this,
+maybe you will have some better ideas?
+Line 384 (section): It may be worth mentioning the possibility that the link (albeit somewhat
+weak) between latency to enter and number of fledglings might be reversed. If females with
+larger broods at the time of the measurements of behavior value the brood more, they may be
+more eager to enter. You test for an effect of clutch size, but what about brood size just before the
+trials?
+Table 1. I think these model results would be more informative if they included the variance
+components (random effects plus residual) as well.
+-Dave Westneat
+Author's Response to Decision Letter for (RSOS-172218)
+See Appendix B.
+15
+label_end_comment
+Decision letter (RSOS-172218.R1)
+23-Jan-2018
+Dear Dr Davidson,
+I am pleased to inform you that your manuscript entitled "Repeatable aversion across threat types
+is linked with life history traits but is dependent on how aversion is measured" is now accepted
+for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Appendix A
+Reply to the Editor’s and the Referees’ comments:
+We thank both the Referees and the Editor for their constructive comments. We state each comment
+made by the Referees and Editor in plain font, and our responses to them in italics.
+Associate Editor Comments to Author:
+I have now received reviewers from two experts in the field. Both have raised important concerns
+regarding the statistics, though reviewer 1 raised several very important and rather specific issues for
+which he provided a thorough discussion. Although reviewer 1 provided a lot of feedback regarding
+your statistical approach/methods, it is important that this feedback does not overshadow the other
+(perhaps more important) issues he raises: that interpretations of your data and the context of the
+measures you collected are potentially problematic, and your interpretations require either more
+justification or care in how they are characterized. Reviewer 2 also had some questions regarding your
+interpretations. The scope of these data may also be a bit narrow given the specific contexts that were
+tested. A careful and cautious discussion of your results both in terms of how the data are analyzed,
+presented, interpreted and then ultimately discussed is necessary for this paper. Unfortunately your
+paper is not appropriate for publication in its current form. However both reviewers felt that the study
+had some important merit. For this reason, I recommend that the paper is rejected, but I also
+recommend the opportunity to re-submit it, should you feel you can address these issues sufficiently.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+This MS reports a study of the responses of parent great tits to aversive stimuli presented on their
+nests and relates the responses to several metrics of fitness. There is general interest in studies
+assessing among-individual variance in behavioral tendencies, and the fitness consequences of such
+variation. This study adds some new data to the mix, but in my view is limited in several key ways.
+A major concern I have with the paper are the statistics. Three main dependent variables were used in
+the study: 1) a latency measure (time delay from start of trial to when the focal bird reentered the
+box), 2) inspection time, and 3) number of fledglings. All three were analyzed appropriately with a
+mixed model structure, but the authors used a negative binomial distribution as the link function. In
+the case of the repeatability analyses, a Poisson distribution was used as the link function.
+My statistical concerns fall into two types. One is that some potentially interesting aspects of the data
+could have been analyzed more completely using the mixed model structure. If I understood the
+sampling correctly, most pairs were measured twice, once with each model. Some of these were
+measured a third time, half with a repeat of the novel object and one a control with no object. So,
+most pairs then got 3 measures, and a few pairs only had the control set-up. Why not do a full mixed
+model with all the treatments and data, and calculate repeatability from this? Instead it seems you did
+repeatabilities on various subsets of the data. Nothing wrong with this but it is a bit limiting. Using all
+the data at once is robust to the fact that some pairs only had 1 measure taken (a few controls). I took
+the liberty of running a simple version of this in SAS for the latency to enter, logged (see comments
+below). First the overall repeatability analysis showing that box (presumably female) ID explains 46%
+of variance over the whole experiment (my apologies for the formating):
+Covariance Parameter Estimates
+Cov Parm Subject Estimate Standard
+Error Z Value Pr > Z
+Intercept box 0.09629 0.03340 2.88 0.0020
+Residual 0.1134 0.02138 5.30 <.0001
+1)
+Adding in the treatment and order of treatments just to check (without all the other
+covariates, which would need to be included) shows that both objects are greater than control
+but eyes are much greater than both controls and plain object:
+Covariance Parameter Estimates
+Cov Parm Subject Estimate Standard
+Error Z Value Pr > Z
+Intercept box 0.1008 0.03431 2.94 0.0017
+Residual 0.1046 0.02065 5.07 <.0001
+Solution for Fixed Effects
+Effect RecodeT order Estimate Standard Error
+Intercept 2.7338 0.1281
+RecodeT Aobject 0.1006 0.1196
+RecodeT Beyes 0.2716 0.1172
+RecodeT Control 0 .
+order 1 0.04374 0.09332
+order 2 0.008327 0.09287
+order 3 0.
+Type 3 Tests of Fixed Effects
+Effect Num DF Den DF F Value Pr > F
+RecodeT 2 66.1 4.07 0.0215
+order 2 57.8 0.15 0.8626
+I would note as well that this approach would allow you to use BLUP values from the mixed
+model in the fitness analyses instead of means (lines 236-237). Both means and BLUPs have
+bias issues, but generally means are worse.
+Second and more fundamentally, none of the response variables measured is distributed as a
+negative binomial. By definition, a negative binomial is a series of yes/no events in which you
+are counting up the number of one outcome before the other outcome occurs. Each event is
+independent, such as would occur if you counted the number of non-ones you rolled on a six-
+side die until you got a 1. Latency and inspection time are almost certainly not a negative
+binomial. I suppose one could argue that if you assume the bird makes a decision to return or
+not every second, then you have counted up the number of “no” decisions before the first
+“yes”. But these are clearly not independent, as the probability of a bird returning in the first
+second is much, much lower than in the 1000th sec. This applies to both time variables.
+Number of fledglings is also neither a Poisson nor a negative binomial, for the same reason.
+They are not an accumulation of “yes” outcomes from a set of independent events, despite
+being count data. So, it is my opinion the negative binomial is the incorrect link function to
+use for all of these.
+That said, I’m sure these data pose a problem because they are skewed. However, time data in
+particular are always a bit dicey, but we have to make do. One possibility is to do survival
+analysis, but I do not think the survival analysis stats can extract some of what you’d like to.
+That would work for the treatment differences, but probably not repeatability. I personally
+would have used a log (as I did above) or square root transform on the time data and then
+parametric stats. Because time is not really a count variable arising from a binomial or Poisson
+process, this would not have the issues that transforming true count data does. It is possible
+that the transform would not make the residuals perfectly fit a normal distribution, but I bet
+they’d be close.
+I’m not sure why the repeatability analyses use a Poisson distribution instead. They should be
+the same as all other analyses of that variable.
+Fledgling success is another matter. Possibly there are a large number of 0s, and then a smear
+of other values. No way to make that normal. You could leave it as a Poisson, but it would be
+worthwhile discussing in more detail the issues with that. A rank correlation test or
+randomization test might actually be best. The later can be fairly easily done in R by taking
+your observed data and randomly associating behavior with fledglings, calculating a
+correlation coefficient, doing it 10,000 times, and ask where the observed correlation is in the
+distribution of randomized ones. This would retain the observed distributions of the data,
+whatever they really are.
+Thank you for having a close look at our statistics and for your valuable advice. We will address each
+issue separately.
+1) Data distribution: We appreciate that for this particular count data, as time goes by, the
+probability that a bird will come back is not consistent/independent. We have now log-
+transformed our data. The fit of the model as viewed by QQ plots and residual variance plots are
+marginally better fits than the negative binomials. We also now include all data points (i.e. the
+second object presentation for the subset of birds). We also appreciate the time you took to have
+a look at the data and run an analysis yourself, however, there is a significant interaction term
+(flush*treatment) which was not included in your analysis and so therefore we cannot draw from
+the main effect you found for treatment only. So overall, our results are generally the same as
+our original submission using the log-transformation. Our post-hoc Tukey test on the
+interactions shows there is no difference between eyes and objects within flush treatments.
+However, the object when the female was not flushed compared to the eyes when the female
+was flushed is now significantly different. We discuss this result in lines 318-321 “.
+2) Repeatabilities: We originally used a poisson model that dealt with overdispersion by including
+individual level random effects because we used the rptR function, which does not offer negative
+binomials. We appreciate these are different ways of modelling the data and that instead we
+should be consistent. We have now calculated repeatabilities manually from the glmm model
+outputs from above, by dividing the variance of the ID term by the sum of the variance of the ID,
+residual and the other random term (i.e. site). We also now include all data points and no longer
+use subsets of data for multiple analyses. Inspection time is marginally significant at 0.05.
+3) Analysis of fitness against aversion score: We had considered the different options for analysing
+this data and we thought that using a mean score would be appropriate for latency to Enter
+given the results had no significant co-variables between objects and eyes. However, we
+appreciate that using means can introduce error. We avoided the use of BLUPs because they
+have recently come under a lot of scrutiny for similar reasons (e.g. Hadfield et al 2010). An
+alternative approach is a multivariate analysis; however, these analyses are data hungry and not
+suited to our data because of our sample size and the need to control for significant fixed effects,
+which would reduce power even further. We have now chosen to use an analysis that we have
+used in previous published papers to extract individual values (e.g. Quinn et al 2009). Latency to
+enter and inspection time were extracted from a GLM (with individual as a fixed effect) by
+adding the parameter for that individual to the constant which gives an estimate with respect to
+the fixed effects. We appreciate that this method can also introduce bias; therefore, we highlight
+in the manuscript the limitations of this approach and our reasoning for not performing a
+multivariate analysis given the low sample size. Incidentally, we ran both methods (BLUPS and
+our method presented in the ms) to see if one was less conservative than the other, but both
+method obtained similar results. As you have pointed out, a negative binomial may not be
+appropriate for our analysis because of the distribution. We now run the data in a glmm with a
+gaussian distribution because body condition is normally distributed, and although fledgling
+numbers is not perfectly normally distributed, it does come close, aside from the zeros. When we
+look at the model fit between the negative binomial, poisson and gaussian, the data best fits the
+gaussian, and so we have chosen to report the results from this analysis. As a consequence, our
+previously significant effect for latency to enter on fitness is now a trend, but we obtain the same
+results for body condition.
+I also have some comments on terminology/interpretation:
+1. I would think of the two objects you used in the experiment as both being novel objects.
+You seem to conclude that because great tits have seen sparrowhawk eyes before, that object
+is not novel. However, great tits have surely seen white, brown, and black colors before, and
+while they probably haven’t seen legos, they have seen plastic bits and sticks of roughly
+similar size and shape. It seems a save assertion to say that all objects an individual
+encounters are slightly novel (even their nest box probably is slightly different looking each
+time they visit), and no object is completely novel. I guess I would just consider both of these
+novel because they suddenly appear on top of the box where nothing was before. The hawk
+mimic you could predict might be more threatening because of the eyes, but almost certainly
+you can’t assume the birds recognize this as a hawk.
+We completely agree with your interpretation, and had included in the discussion that the two
+stimuli may have both been perceived as novel (lines 334-336), but we now include a further
+sentence to make sure that this interpretation is more explicit. Indeed, our intention was to
+provide two stimuli that may differ in context as there is a substantial amount of literature in
+support of the interpretation that eye shapes elicit anti-predator responses in birds, including
+great tits. Nevertheless, we do appreciate that the eyes may not be perceived as a predator, and
+that there is an ongoing debate surrounding this.
+2. Repeatabilities are only as useful as the data set used to calculate them. In this case, you
+have separate measures taken a few days apart. Thus, the repeatability is appropriately
+interpreted as indicating between-individual differences evident within a nest attempt. Yet,
+you use the fitness analysis to suggest that selection on personality is occurring (lines 370-
+373). This is probably an over-interpretation. It is intriguing that there is a link between risky
+behavior and reproductive success in the same breeding attempt, but it seems there could be
+lots of confounds, such as time of year, other environmental conditions on the territory, etc. I
+would urge caution in making this claim.
+We have re-written this paragraph and have been more conservative in our interpretations with
+regards to adaptive potential of aversion, particularly given our results now indicate a non-
+significant trend (P < 0.1) between fledgling number and latency to enter. We have also edited
+our manuscript title to reflect this.
+3. Line 344-352: I do not think the evidence is strong enough to suggest that the two
+models measure different things. While the statistical results differ, this conclusion depends
+on interpreting several cases of one significant result compared one non-significant result as
+showing a significant different. This is not the case. Lack of significance does not mean there
+is no effect. In the case of repeatabilities, I’m sure that the standard errors of the estimates
+overlap considerably, and so they ought to be considered the same—one happens to be over
+the threshold for significance and one is a bit below the threshold, but they are generally
+pretty similar.
+We have re-written this paragraph and have been more conservative in our interpretations. We
+hope that our more reserved summary of these differences is more appropriate and does not
+suggest that we are interpreting differences in significance as significant differences. However,
+we do think it is important to discuss the results found for both behaviours, namely that the two
+behaviours did not correlate and that inspection time appears to be sensitive to external
+variables, and that, unlike latency to enter, there is no relationship between body condition and
+fledgling number. As such, we have now included graphs of the results for inspection time and
+body condition and inspection time and fledgling number to illustrate these differences. Our
+intention was to highlight how our study fits in with the literature discussing the need to
+validate behavioural measures to be certain we are testing what we think we are testing (cf.
+Alecia Carter’s animal behaviour paper on how not to measure boldness, and her Biological
+Reviews paper on ‘what are behavioural ecologists measuring?’).
+In summary, I think this study collects some useful data, but the analysis and the
+interpretations need to be refined considerably so that a reader can fully appreciate the
+patterns in the measured responses.
+David F. Westneat
+Thank you for your helpful comments.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_9
+The paper by Davidson et al addresses the adaptive significance of risk aversion in the context
+of personality theory. Pace of life theory vs state-dependent theory is discussed as an
+underlying framework to explain individual variation in risk aversion, but it is not entirely clear
+if this study is intended as an explicit test of these two explanatory models? If so, more
+information on individual physiological and metabolic states vs traits would probably have
+been required, data that would be hard to obtain without the application of more invasive
+methods and/or long term monitoring of individual developmental trajectories.
+Thank you for your helpful comments. Our intention was to introduce different theories as to
+why traits like body condition and fledgling number may be linked with personality, but not a
+test against these two theories, particularly given that they may not be mutually exclusive. We
+have reworked some of our introduction so that it does not imply we plan to explicitly test this
+theory, and we have substantially rewritten (and cut down) our discussion on pace of life for a
+less rich interpretation and so this should address the issue of lacking more data on metabolic
+rate and other physiological traits as you suggest. Moreover, we include these limitations that
+you rightly point out in this discussion (lines 383-385)
+The paper still tells an important story on how (in the same study population and setting)
+behavior can be repeatable and linked to fitness traits for some behavioral measures, but not
+for others.
+I have one major issue that I’d like to see clarified, then only minor comments.
+Unless I misunderstand the study design (always a possibility), two behavioral variables are
+registered:
+1) Latency to enter the nest box again, after disturbance, and
+2) Inspection time, time spent at the nest site after returning but before entering.
+Correct? In summary the results indicate that test conditions (if the female had to be flushed
+for the nest or just left) and habituation across successive trials was significant factors for
+inspection time, whereas individual repeatability and links with reproductive success and body
+condition were significant for latency to enter. These are interesting results, and demonstrate
+how some behaviors are more affected by specific experimental conditions, and some depend
+more on individual condition (and hence perhaps therefore are more repeatable). But I
+struggle with how the authors sometimes refer to “time to return” and sometimes “time to
+enter”. Time to enter would be composed of time to return plus time to inspect before
+entering. Would it not then be better to report three variables: Time to return to site,
+inspection time, and time to enter? Would such an approach change the conclusions?
+Obviously, if inspection time is zero return time and entering time would be the same, which
+may muddle the analysis. But give this a thought, and at least not refer consecutively to
+“return time” and “time to enter”.
+Thank you for pointing this out – we had used the term “return” synonymously with “enter”,
+which is confusing, and we should have always referred to entering the nest box. To clarify, the
+two behavioural measures are as follows:
+Latency to enter: time taken to enter the nest box from the start of the trial
+Inspection time: total time spent perched on the nest entrance hole and looking in and outside
+of the nest.
+We have now replaced any mention of “return” with “enter”.
+It is not possible to measure a return time to the site area per se as the video camera recorded a
+small area around the nest box only, so it is feasible that birds were in proximity, but not at the
+nest. This would be an interesting variable to measure if a second camera had a wider angle, for
+instance. Indeed, not knowing when birds were away or present in the site introduces some noise
+to the data, but it should not systematically bias our results.
+Minor comments: Ln 118: “Adults were caught at the nest at day 10 post-hatching to tag
+individuals and collect biometrics.” State already here, specifically what biometrics were
+registered.
+This has been added : “including wing length and body weight”
+At the end of section 2.3.1., provide final n for the different groups.
+Statistics: It is stated that birds that did not return to the nest during the trial period were
+given an upper latency of 2400 seconds (i.e. 40 minutes). This obviously skews the data
+distribution, and the authors justly apply a log-link function. But at least the Tukey post hoc
+test also assumes homogeneity of variance between groups, was this assured?
+We have now log-transformed the data so they fit a normal distribution following the advice of
+reviewer 1. We checked homogeneity of variance and normality of residuals. We include this
+detail in the methods, line 210-211
+Appendix B
+Many thanks to the Referee and the Editor for their constructive comments and for accepting our paper
+for publication subject to minor revisions. We have copied the referee's comments below with our
+responses.
+Comments to the Author(s)
+label_comment_10
+This revised MS on the responses of parent great tits to presentations of novel objects on their nests is
+much improved from the earlier submission. The results appear to have been fairly robust to the shift in
+statistical approaches, but the current approach seems quite reasonable.
+Line 72 and elsewhere: Differences are BETWEEN, variance is AMONG.
+Thank you, this has been changed throughout the manuscript
+Line 101: Change “which” to “that”.
+This has been changed
+Line 196: The phrase “so they were normally distributed” is not necessary since a normal distribution is
+not necessary before analysis. Later on you note that the residuals were normally distributed, so that
+would be sufficient.
+This has been omitted
+Line 214: Explain why you used adjusted repeatability. I think use of adjusted repeatability in measures
+of personality is usually misleading. You are subtracting out some (but not all) forms of plasticity by
+doing this and thus artificially inflating repeatability. The only reason to do it would be if some bias
+exists in the dataset and you want to extend the repeatability to a broader population. Adjusted
+repeatabilities are also not comparable across studies since most studies don’t duplicate fixed factors
+exactly. At the least, I recommend providing the unadjusted repeatability (from a model with just
+random effects and no fixed effects) as well.
+We now explain the rationale behind using adjusted repeatability as a means to control for significant
+fixed effects that may influence individual behaviour. We now report both adjusted and non-adjusted
+repeatability.
+Line 284: Do you mean “r” here, since this is a correlation? I usually interpret Beta as a slope.
+We have now removed this and report the z and p value which reflects the result outputs we provide in
+the table.
+Discussion: The surprising lack of correlation between the two behavioral measures that seem like they
+should be linked has been found in some other contexts. I would immodestly direct your attention to
+Moldoff & Westneat (2016, Behavioral Ecology) as one example where response to novelty was
+measured with two latencies that occurred in sequence, but were unexpectedly poorly correlated at
+multiple levels. We had a (feeble) explanation, but since you focus on this, maybe you will have some
+better ideas?
+Thank you for bringing this paper to our attention which is very relevant to our own findings. The
+domain-specific versus domain-general hypothesis seems like a logical interpretation and so we cite it
+here.
+Line 384 (section): It may be worth mentioning the possibility that the link (albeit somewhat weak)
+between latency to enter and number of fledglings might be reversed. If females with larger broods at
+the time of the measurements of behavior value the brood more, they may be more eager to enter. You
+test for an effect of clutch size, but what about brood size just before the trials?
+We agree, this is an important point which we touched on in our methods (i.e. clutch size may influence
+motivation), but we did not expand on this in our discussion. We have now included this interpretation in
+lines 400-402. The test trials were performed only during egg incubation, so clutch size reflects the
+number of potential offspring at the time the trials were performed.
+Table 1. I think these model results would be more informative if they included the variance components
+(random effects plus residual) as well.
+This has now been included
+Society Open

@@ -1,0 +1,1247 @@
+Evidence of sexual dimorphism in skeletal morphology of a
+gonochoric reef coral
+P. C. González-Espinosa, D. A. Paz-García, H. Reyes-Bonilla, R. A. Cabral-Tena and
+E. F. Balart
+Article citation details
+R. Soc. open sci. 5: 171843.
+http://dx.doi.org/10.1098/rsos.171843
+Review timeline
+Original submission: 9 November 2017 Note: Reports are unedited and appear as
+1st revised submission: 19 January 2018 submitted by the referee. The review history
+2nd revised submission: 21 February 2018 appears in chronological order.
+3rd revised submission: 13 April 2018
+Final acceptance: 16 April 2018
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-171843.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Comments to the authors,
+Gonzalez-Espinosa examined differences in skeletal morphology among individuals of different
+sexes in the coral Porites panamensis. The authors present a very tidy account of the supporting
+literature, gaps in understanding and the ramifications of their findings, making for a quick and
+informative read. The sampling design, so far as I can tell appears sound, but the statistical
+analysis of the data is severely lacking in detail and rigour. Accordingly, the recommendations
+that follow will centre on this aspect of the work as it is difficult to assess overall impact when the
+analysis are not appropriate for the data collected.
+If I am not mistaken, the authors collected fragments of individual corals from three locations,
+each coral was then sexed and eleven traits measured on each fragment. The way the authors
+have tackled the data analysis is to break the dataset down to the most minimal form – analysis of
+sex specific differences for single traits at single sites. Unfortunately, by ignoring the fact that the
+11 traits were measured on the same individual they ignored the repeated measures component
+of their study and are guilty of pseudoreplication. Furthermore, in the analysis where they
+pooled the data for all three sites the differences among sexes became were non-significant (lines
+106-107). Finding significant differences among sexes when sites were separated vs when sites
+were pooled suggests one of two things to me 1) the differences among sexes the authors report
+are not real or 2) sites were not properly accounted for in the analysis of the pooled data. Overall,
+what I would recommend is that the authors fit a linear mixed effects model to ALL of their data
+where: Sex (fixed effect, with 2 levels), trait (fixed effect, with 11 levels) and Site (random effect,
+with 3 levels) are crossed and individual is fitted as a nested random effect with random
+intercepts for each trait. From this model they would then be able to make robust inferences
+about their data while avoiding pseudoreplication and the need for 33 different analyses (one
+analysis for each site by trait combination). A significant Sex × Trait interaction would support
+their hypothesis that some traits differ among the sexes.
+Another downfall of the current analyses is that the environmental variables are treated as
+independent when they are almost certainly correlated – again leading to problems with
+pseudoreplication because they presume they have more variables than they actually have. One
+possible solution would be to calculate principal component (PC) scores for the environmental
+variables and include these PC scores as a covariate in the above analysis.
+Information on how fit these models is widely available for the statistics package lme4 in R.
+Minor recommendations
+Line 36: delete “marine invertebrates” there are many marine invertebrates where sexual
+dimorphism has been examined to death e.g. fiddler crabs
+Line 45: insert “often” between “are” and “considered”
+Methods: in table 1 or in a separate table, include the numbers of male and female corals collected
+for each site.
+Lines 93-95: what is meant by different spatial extent? Did you have sites within locations? If not,
+you have one spatial extent defined by your three sites….
+Lines 167-172: revise, this makes very little sense to me and there are a number of grammatical
+mistakes.
+Figure 3: In a box and whisker you display medians and quantiles, yet your analyses test for
+3
+differences in means given their standard errors. If you are going to test for differences in means
+then plot the means and the standard errors! Delete and start again.
+label_author_2
+Review form: Reviewer 2 (Carden Wallace)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Comments to authors RSOS-171843 :
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionizing
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+Comments to authors RSOS-171843
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionising
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+4
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+Comments to authors RSOS-171843
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionising
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+Introduction Comments to authors RSOS-171843
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionising
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+Introduction
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42:: Change “of” to “to “.
+Line 42 change “cope” to “copes”
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+5
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42 Change “of” to “to “.
+Line 42 change “cope” to “copes”
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+Introduction
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42 Change “of” to “to “.
+Line 42 change “cope” to “copes”
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+6
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+Introduction
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42 Change “of” to “to “.
+Line 42 change “cope” to “copes”
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+label_end_comment
+Decision letter (RSOS-171843.R0)
+20-Dec-2017
+Dear Mr Gonzalez-Espinosa,
+The editors assigned to your paper ("Evidence of sexual dimorphism in skeletal morphology of a
+gonochoric reef coral") have now received comments from reviewers. We would like you to
+revise your paper in accordance with the referee and Associate Editor suggestions which can be
+found below (not including confidential reports to the Editor). Please note this decision does not
+guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Jan-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+7
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171843
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+8
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Comments to the authors,
+Gonzalez-Espinosa examined differences in skeletal morphology among individuals of different
+sexes in the coral Porites panamensis. The authors present a very tidy account of the supporting
+literature, gaps in understanding and the ramifications of their findings, making for a quick and
+informative read. The sampling design, so far as I can tell appears sound, but the statistical
+9
+analysis of the data is severely lacking in detail and rigour. Accordingly, the recommendations
+that follow will centre on this aspect of the work as it is difficult to assess overall impact when the
+analysis are not appropriate for the data collected.
+If I am not mistaken, the authors collected fragments of individual corals from three locations,
+each coral was then sexed and eleven traits measured on each fragment. The way the authors
+have tackled the data analysis is to break the dataset down to the most minimal form – analysis of
+sex specific differences for single traits at single sites. Unfortunately, by ignoring the fact that the
+11 traits were measured on the same individual they ignored the repeated measures component
+of their study and are guilty of pseudoreplication. Furthermore, in the analysis where they
+pooled the data for all three sites the differences among sexes became were non-significant (lines
+106-107). Finding significant differences among sexes when sites were separated vs when sites
+were pooled suggests one of two things to me 1) the differences among sexes the authors report
+are not real or 2) sites were not properly accounted for in the analysis of the pooled data. Overall,
+what I would recommend is that the authors fit a linear mixed effects model to ALL of their data
+where: Sex (fixed effect, with 2 levels), trait (fixed effect, with 11 levels) and Site (random effect,
+with 3 levels) are crossed and individual is fitted as a nested random effect with random
+intercepts for each trait. From this model they would then be able to make robust inferences
+about their data while avoiding pseudoreplication and the need for 33 different analyses (one
+analysis for each site by trait combination). A significant Sex × Trait interaction would support
+their hypothesis that some traits differ among the sexes.
+Another downfall of the current analyses is that the environmental variables are treated as
+independent when they are almost certainly correlated – again leading to problems with
+pseudoreplication because they presume they have more variables than they actually have. One
+possible solution would be to calculate principal component (PC) scores for the environmental
+variables and include these PC scores as a covariate in the above analysis.
+Information on how fit these models is widely available for the statistics package lme4 in R.
+Minor recommendations
+Line 36: delete “marine invertebrates” there are many marine invertebrates where sexual
+dimorphism has been examined to death e.g. fiddler crabs
+Line 45: insert “often” between “are” and “considered”
+Methods: in table 1 or in a separate table, include the numbers of male and female corals collected
+for each site.
+Lines 93-95: what is meant by different spatial extent? Did you have sites within locations? If not,
+you have one spatial extent defined by your three sites….
+Lines 167-172: revise, this makes very little sense to me and there are a number of grammatical
+mistakes.
+Figure 3: In a box and whisker you display medians and quantiles, yet your analyses test for
+differences in means given their standard errors. If you are going to test for differences in means
+then plot the means and the standard errors! Delete and start again.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Comments to authors RSOS-171843 :
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionizing
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+10
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+Comments to authors RSOS-171843
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionising
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+Comments to authors RSOS-171843
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionising
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+IntroductionComments to authors RSOS-171843
+Your ms addresses the rarely examined topic of whether or not sexual dimorphism is ever
+expressed in the coral skeleton and you are correct in proposing that if it were, this could be of
+value in interpreting fossil populations (however you need to be clear that the finding only
+occurred in one of three locations). This is timely in relation to the integrative taxonomy
+approaches (genetics, micromorphology and microstructure) that are currently revolutionising
+our understanding of phylogeny and nomenclature of coral taxa. Your exploration of the
+requirements for accommodating the large developing larvae in gonochoric coral polyps is also
+very interesting and relevant. The location of your work, in the eastern Pacific and along a
+gradation from tropical to high latitude marginal reefs, adds to the interest. I feel you could
+expand your references a little to indicate how your findings relate to the broader literature on
+reef corals in marginal locations. I have indicated this, and a few small picky things, below
+Introduction
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42:: Change “of” to “to “.
+Line 42 change “cope” to “copes”
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+11
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42 Change “of” to “to “.
+Line 42 change “cope” to “copes”
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+Introduction
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42 Change “of” to “to “.
+Line 42 change “cope” to “copes”
+12
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+Introduction
+Lines 34 “little is known…etc” While this is certainly true, it would be worth citing one or two
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000 (molluscs), Evans
+and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+Line 42 Change “of” to “to “.
+Line 42 change “cope” to “copes”
+Material and methods
+Line 67 add (“see Figure 2”) after the bracket.
+Figure 2 : You could help the reader with this figure. Try rotating the top image 90 degrees
+clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral direction and
+listing the initials of the characters either alphabetically or in order from top to bottom.
+Results
+Lines 106-7 There’s something missing from this sentence – maybe it’s an “and” after the
+brackets?
+Discussion
+Paragraph starting line 146 - this discussion highlights a dramatic difference between brooding vs
+broadcasting species, namely the need to accommodate large developing larvae in female polyps.
+In relation to this, it refers to the environmentally marginal nature of the northerly vs southern
+locations in your study. I feel you miss the opportunity to go a little further and refer to the
+potential for population genetics studies to reveal cryptic lineages in similar geographic
+gradients, e.g. around the Kuroshio current at similar latitudes in the NW Pacific (Suzuki et al.
+Coral Reefs 2016) which indicate low genetic variability and possible development of cryptic
+species.
+Line 122 – Take out “in” from “least in three”. After “traits” add something like “in one of three
+populations”.
+13
+Author's Response to Decision Letter for (RSOS-171843.R0)
+See Appendix A.
+label_version_2
+RSOS-171843.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_3
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_5
+Comments to the authors
+The authors have made a significant effort to implement a more appropriate set of analyses for
+their data. However, while they have been able to account for some of my concerns they have still
+failed to account for the pseudoreplication introduced by not accounting for having multiple
+measures of corallite morphology from the same individual. Most importantly, given the results
+presented, there is no proof that there are relevant differences in corallite morphology among the
+sexes, calling into question the entire premise of the study. Nevertheless, given the numbers of
+samples presented in Table I (new addition to the manuscript) I would recommend reducing the
+paper to focus only on the results for Bahia de la Paz and removing any reference to spatial or
+environmental differences. Perhaps if the data were limited to the only site with proper
+replication, the authors may find (while properly accounting for repeated measures in a
+multivariate model) a significant difference among the sexes, and the premise of the study can
+remain intact. Alternatively, I am sorry, but I don’t see how the data could support the author’s
+primary conclusions.
+Response to the comments in the author’s response letter:
+Regarding with the linear model suggested from the package lme4, we would like to clarify that it was not
+possible to fit a linear mixed effects model to all of the data as suggested, where: Sex (fixed effect, with 2
+14
+levels), trait (fixed effect, with 11 levels) and Site (random effect, with 3 levels) are crossed and individual is
+fitted as a nested random effect with random intercepts for each trait. This is because in the linear mixed
+effects model “trait” cannot be the response variable and the fixed effect with 11 levels at the same time as
+each “trait” has each own numeric value and different scale, and it cannot be combined with its categorical
+“trait” name.
+This is not true – repeated measures analyses are a routine procedure, and lme4 is more than
+capable of dealing with these designs. I would not have recommended it had I not known, from
+personal experience, that it is possible or that there are many tutorials on the subject.
+Furthermore, with 10 measurements of each trait for each individual (Line 70-71: “11 traits were
+measured in 10 corallites selected haphazardly per fragment”) there is more than sufficient
+replication. The authors comment “and different scale” regarding their traits is very true, nice
+catch – the data need to be centred and scaled before including them in a linear mixed effects
+model or MANOVA.
+Instead, we applied a MANOVA test to account for differences in “sex” + “site” vs “traits”, a significate
+p-value would support the result of non-significative sexual dimorphism when data is pooled.
+I suspect they mean a non-significant p-value for the fixed effect of sex would support the result
+of non-significant sexual dimorphism.
+The discriminant analysis performed in this study is a useful follow-up procedure to MANOVA.
+LDA and MANOVA are so closely related that it is redundant to include both – delete either the
+MANOVA or the LDA.
+Importantly, I agree the MANOVA is a more appropriate analysis than the original univariate
+models, but it does not account for repeated measures and therefore the results are still
+confounded by pseudoreplication: the 10 corallites measured on each individual are being treated
+as though they are random sample from the population, which is not true, as they are measures
+from the same individual.
+A quick solution would be to include only one randomly sampled (use a random number
+generator!) corallite from each individual or to include only the mean corallite values for each
+individual in the current MANOVA framework. If the authors choose to use either of these quick
+and dirty fixes, I would recommend they make explicit statements acknowledging that they have
+ignored within individual variation in corallite morphology. Alternatively, they should use a
+linear mixed effects model or a mixed effects MANOVA (which do exist!) with individual
+included as a random effect.
+Comments regarding the content of the new manuscript:
+Line 106-109 A MANOVA test showed significant differences among sites + sex vs traits (Table III), so
+that, a discriminate analysis was performed separately by site, finding, in this case, sexual dimorphism
+(Wilks' Lambda 0.635 approx. F(11,51)=2.665, p= 0.008844) at Bahía de La Paz only.
+I am sorry but this is not true. The significant difference indicated in Table III is for the fixed
+effect of site, indicating there is spatial variation in corallite morphology, nowhere does it indicate
+that there is any evidence of sexual dimorphism. Nonetheless, if the authors chose to limit their
+dataset and inference to only Bahia de la Paz then, given they properly account for repeated
+measures, they may have evidence for sexual dimorphism given the result indicated above.
+Lines 95-97 A Welch´s t-test was used to assess statistical differences between individual traits among
+sexes. If the data for a trait was not normally distributed, a Mann-Whitney-Wilcoxon Test was applied.
+If the MANOVA indicated that there was no significant difference among the sexes in corallite
+morphology then it not appropriate to continue breaking the dataset down and fishing for p-
+values! Moreover, and again, without properly accounting for repeated measures the per trait per
+site analyses are pseudoreplicated.
+15
+label_end_comment
+Decision letter (RSOS-171843.R1)
+26-Jan-2018
+Dear Mr Gonzalez-Espinosa:
+Manuscript ID RSOS-171843.R1 entitled "Evidence of sexual dimorphism in skeletal morphology
+of a gonochoric reef coral" which you submitted to Royal Society Open Science, has been
+reviewed. The comments of the reviewer(s) are included at the bottom of this letter.
+Please submit a copy of your revised paper within three weeks (i.e. by the 18-Feb-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance. We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+16
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+17
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+Comments to the authors
+The authors have made a significant effort to implement a more appropriate set of analyses for
+their data. However, while they have been able to account for some of my concerns they have still
+failed to account for the pseudoreplication introduced by not accounting for having multiple
+measures of corallite morphology from the same individual. Most importantly, given the results
+presented, there is no proof that there are relevant differences in corallite morphology among the
+sexes, calling into question the entire premise of the study. Nevertheless, given the numbers of
+samples presented in Table I (new addition to the manuscript) I would recommend reducing the
+paper to focus only on the results for Bahia de la Paz and removing any reference to spatial or
+environmental differences. Perhaps if the data were limited to the only site with proper
+replication, the authors may find (while properly accounting for repeated measures in a
+multivariate model) a significant difference among the sexes, and the premise of the study can
+remain intact. Alternatively, I am sorry, but I don’t see how the data could support the author’s
+primary conclusions.
+Response to the comments in the author’s response letter:
+Regarding with the linear model suggested from the package lme4, we would like to clarify that it was not
+possible to fit a linear mixed effects model to all of the data as suggested, where: Sex (fixed effect, with 2
+levels), trait (fixed effect, with 11 levels) and Site (random effect, with 3 levels) are crossed and individual is
+fitted as a nested random effect with random intercepts for each trait. This is because in the linear mixed
+effects model “trait” cannot be the response variable and the fixed effect with 11 levels at the same time as
+each “trait” has each own numeric value and different scale, and it cannot be combined with its categorical
+“trait” name.
+This is not true – repeated measures analyses are a routine procedure, and lme4 is more than
+capable of dealing with these designs. I would not have recommended it had I not known, from
+personal experience, that it is possible or that there are many tutorials on the subject.
+Furthermore, with 10 measurements of each trait for each individual (Line 70-71: “11 traits were
+measured in 10 corallites selected haphazardly per fragment”) there is more than sufficient
+replication. The authors comment “and different scale” regarding their traits is very true, nice
+catch – the data need to be centred and scaled before including them in a linear mixed effects
+model or MANOVA.
+Instead, we applied a MANOVA test to account for differences in “sex” + “site” vs “traits”, a significate
+p-value would support the result of non-significative sexual dimorphism when data is pooled.
+I suspect they mean a non-significant p-value for the fixed effect of sex would support the result
+of non-significant sexual dimorphism.
+The discriminant analysis performed in this study is a useful follow-up procedure to MANOVA.
+LDA and MANOVA are so closely related that it is redundant to include both – delete either the
+MANOVA or the LDA.
+Importantly, I agree the MANOVA is a more appropriate analysis than the original univariate
+models, but it does not account for repeated measures and therefore the results are still
+confounded by pseudoreplication: the 10 corallites measured on each individual are being treated
+as though they are random sample from the population, which is not true, as they are measures
+from the same individual.
+A quick solution would be to include only one randomly sampled (use a random number
+generator!) corallite from each individual or to include only the mean corallite values for each
+individual in the current MANOVA framework. If the authors choose to use either of these quick
+and dirty fixes, I would recommend they make explicit statements acknowledging that they have
+ignored within individual variation in corallite morphology. Alternatively, they should use a
+18
+linear mixed effects model or a mixed effects MANOVA (which do exist!) with individual
+included as a random effect.
+Comments regarding the content of the new manuscript:
+Line 106-109 A MANOVA test showed significant differences among sites + sex vs traits (Table III), so
+that, a discriminate analysis was performed separately by site, finding, in this case, sexual dimorphism
+(Wilks' Lambda 0.635 approx. F(11,51)=2.665, p= 0.008844) at Bahía de La Paz only.
+I am sorry but this is not true. The significant difference indicated in Table III is for the fixed
+effect of site, indicating there is spatial variation in corallite morphology, nowhere does it indicate
+that there is any evidence of sexual dimorphism. Nonetheless, if the authors chose to limit their
+dataset and inference to only Bahia de la Paz then, given they properly account for repeated
+measures, they may have evidence for sexual dimorphism given the result indicated above.
+Lines 95-97 A Welch´s t-test was used to assess statistical differences between individual traits among
+sexes. If the data for a trait was not normally distributed, a Mann-Whitney-Wilcoxon Test was applied.
+If the MANOVA indicated that there was no significant difference among the sexes in corallite
+morphology then it not appropriate to continue breaking the dataset down and fishing for p-
+values! Moreover, and again, without properly accounting for repeated measures the per trait per
+site analyses are pseudoreplicated.
+Author's Response to Decision Letter for (RSOS-171843.R1)
+See Appendix B.
+label_version_3
+RSOS-171843.R2 (Revision)
+label_author_4
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+19
+Comments to the Author(s)
+label_comment_7
+Comments to the authors,
+The authors have made a significant effort to improve their manuscript in accordance with
+previous recommendations though I have two remaining recommendations.
+1) The way the authors have incorporated the information on the morphology of corals at Bahia
+Concepcion and Bahia de Los Angeles as well as the environmental information is completely
+inappropriate and has the potential to mislead readers. They have attempted to hide these results
+in the discussion, presenting these data as quantitative analyses though they ignore the
+significant limitations outlined in previous submissions, by using the guise of “exploratory
+results”. Please delete lines 117 to 144 as well as tables III, IV and V these have no place in a
+discussion and instead include observational results as pers. obs. to reflect the fact that they are
+observations and not quantitative, albeit exploratory, results. Furthermore, the authors need to
+remove the panels in Figure 3 that show among site comparisons as well as the locations of the
+additional sites in Figure 4. Lines 146 to 165 are, in my opinion, the proper way to summarise
+observational results in a discussion, giving the broader context for the work without misleading
+the reader about the reliability of the data.
+2) If the authors are going to continue to ignore within individual variation by analysing on the
+trait means, then they need to show the magnitude of the within individual trait variation relative
+to the among sex trait variation. Particularly, if they wish to make statements about using
+corallite diameter, corallite density and the number of neighbouring corallites as a diagnostic
+measurement in the field (Lines 102-105). I still strongly recommend that the authors repeat their
+analyses with a single randomly chosen corallite from each fragment, rather than using trait
+means as the samples this more accurately reflects natural levels of trait variation instead of
+variation in the trait mean.
+label_end_comment
+Decision letter (RSOS-171843.R2)
+14-Mar-2018
+Dear Mr Gonzalez-Espinosa:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171843.R2
+entitled "Evidence of sexual dimorphism in skeletal morphology of a gonochoric reef coral" has
+been accepted for publication in Royal Society Open Science subject to minor revision in
+accordance with the referee suggestions. Please find the referees' comments at the end of this
+email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+20
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171843.R2
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 23-Mar-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+21
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+22
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+Comments to the authors,
+The authors have made a significant effort to improve their manuscript in accordance with
+previous recommendations though I have two remaining recommendations.
+1) The way the authors have incorporated the information on the morphology of corals at Bahia
+Concepcion and Bahia de Los Angeles as well as the environmental information is completely
+inappropriate and has the potential to mislead readers. They have attempted to hide these results
+in the discussion, presenting these data as quantitative analyses though they ignore the
+significant limitations outlined in previous submissions, by using the guise of “exploratory
+results”. Please delete lines 117 to 144 as well as tables III, IV and V these have no place in a
+discussion and instead include observational results as pers. obs. to reflect the fact that they are
+observations and not quantitative, albeit exploratory, results. Furthermore, the authors need to
+remove the panels in Figure 3 that show among site comparisons as well as the locations of the
+additional sites in Figure 4. Lines 146 to 165 are, in my opinion, the proper way to summarise
+observational results in a discussion, giving the broader context for the work without misleading
+the reader about the reliability of the data.
+2) If the authors are going to continue to ignore within individual variation by analysing on the
+trait means, then they need to show the magnitude of the within individual trait variation relative
+to the among sex trait variation. Particularly, if they wish to make statements about using
+corallite diameter, corallite density and the number of neighbouring corallites as a diagnostic
+measurement in the field (Lines 102-105). I still strongly recommend that the authors repeat their
+analyses with a single randomly chosen corallite from each fragment, rather than using trait
+means as the samples this more accurately reflects natural levels of trait variation instead of
+variation in the trait mean.
+Author's Response to Decision Letter for (RSOS-171843.R2)
+See Appendix C.
+label_end_comment
+Decision letter (RSOS-171843.R3)
+16-Apr-2018
+Dear Mr Gonzalez-Espinosa,
+I am pleased to inform you that your manuscript entitled "Evidence of sexual dimorphism in
+23
+skeletal morphology of a gonochoric reef coral" is now accepted for publication in Royal Society
+Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+pendix A
+January 19th, 2018
+fessor Jeremy Sanders
+tor-in-Chief
+yal Society Open Science Journal
+bject: Referee comments reply,
+s with great interest that we resubmit the research paper titled “Evidence of sexual
+orphism in the skeletal morphology of a gonochoric reef coral” for potential publication
+he journal Royal Society Open Science. We read carefully both of the reviewer’s
+mments, and the appropriate corrections were made as follow:
+spond to Referee #1
+jor review:
+ank you very much for your comments; we carefully read all of them and appreciate
+r suggestions. We made the corresponding corrections as follow:
+nding significant differences among sexes when sites were separated vs when sites
+re pooled suggests one of two things to me 1) the differences among sexes the authors
+ort are not real or 2) sites were not properly accounted for in the analysis of the pooled
+a. Overall, what I would recommend is that the authors fit a linear mixed effects model
+ALL of their data where: Sex (fixed effect, with 2 levels), trait (fixed effect, with 11 levels)
+d Site (random effect, with 3 levels) are crossed and individual is fitted as a nested
+dom effect with random intercepts for each trait. From this model they would then be
+e to make robust inferences about their data while avoiding pseudoreplication and the
+ed for 33 different analyses (one analysis for each site by trait combination). A
+nificant Sex × Trait interaction would support their hypothesis that some traits differ
+ong the sexes”.
+garding with the linear model suggested from the package lme4, we would like to clarify
+t it was not possible to fit a linear mixed effects model to all of the data as suggested,
+ere: Sex (fixed effect, with 2 levels), trait (fixed effect, with 11 levels) and Site (random
+ect, with 3 levels) are crossed and individual is fitted as a nested random effect with
+dom intercepts for each trait. This is because in the linear mixed effects model “trait”
+not be the response variable and the fixed effect with 11 levels at the same time as
+h “trait” has each own numeric value and different scale, and it cannot be combined
+h its categorical “trait” name. Instead, we applied a MANOVA test to account for
+erences in “sex” + “site” vs “traits”, a significate p-value would support the result of
+n-significative sexual dimorphism when data is pooled. The discriminant analysis
+formed in this study is a useful follow-up procedure to MANOVA.
+ally, we included the PCA scores for the environmental variables as a covariate in
+previous analysis.
+or recommendations:
+made the suggested changes and will be included in the manuscript as follows:
+e 36: delete “marine invertebrates” there are many marine invertebrates where sexual
+orphism has been examined to death e.g. fiddler crabs
+added (not deleted) “marine invertebrates” examples and cites where sexual
+orphism has been examined.
+e 45: inserte “often” between “are” and “considered”
+inserted “often” between “are” and “considered”.
+thods: in table 1 or in a separate table, include the numbers of male and female
+als collected for each site.
+included the numbers of male and female corals collected for each site in a
+arate table.
+es 93-95: what is meant by different spatial extent? Did you have sites within
+ations? If not, you have one spatial extent defined by your three sites….
+corrected and clarified that we have one spatial extent (Gulf of California) defined by
+ee sites (BLA, BCO and BLA).
+es 167-172: revise, this makes very little sense to me and there are a number of
+mmatical mistakes.
+revised and changed these lines.
+ure 3: In a box and whisker you display medians and quantiles, yet your analyses
+t for
+erences in means given their standard errors. If you are going to test for differences
+means then plot the means and the standard errors! Delete and start again.
+run a function in R that calculates the mean, SD and SEM, and forced that the boxplot
+m ggplot R package displayed them instead of quantiles, and medians. The whiskers
+resent the “SD”, the box the “SEM” and the horizontal line inside the box is the “mean”.
+spond to Referee # 2
+appreciate so much your valuable comments, we read carefully all of them and
+de the adequate corrections as follow:
+oduction
+es 34 “little is known…etc” While this is certainly true, it would be worth citing one or
+papers on other marine invertebrates, (e.g. Son and Hughes J. Moll. Stud. 2000
+olluscs), Evans and Sherman Biol. Bull. 2013 (echinoderms), to indicate the scope.
+added the cites suggested and one extra (Levitan DR. 2005 Integr. Comp. Biol).
+e 42:: Change “of” to “to “.
+changed “of” to “to”
+e 42 change “cope” to “copes”
+added the “s” to cope
+terial and methods
+e 67 add (“see Figure 2”) after the bracket.
+added “see Figure 2” after the bracket.
+ure 2 : You could help the reader with this figure. Try rotating the top image 90
+grees clockwise so that the dorsal and ventral septa are positioned in a dorsal-ventral
+ection and listing the initials of the characters either alphabetically or in order from top
+bottom.
+rotate the top image 90 degrees to dorsal-ventral position, we also modified the
+tion, listing the traits alphabetically, and matched with table II traits description.
+sults
+es 106-7 There’s something missing from this sentence – maybe it’s an “and” after
+brackets?
+changed the order for presenting the results to make them clearer.
+cussion
+ragraph starting line 146 - this discussion highlights a dramatic difference between
+oding vs broadcasting species, namely the need to accommodate large developing
+ae in female polyps. In relation to this, it refers to the environmentally marginal
+ure of the northerly vs southern locations in your study. I feel you miss the
+portunity to go a little further and refer to the potential for population genetics studies
+eveal cryptic lineages in similar geographic gradients, e.g. around the Kuroshio
+rent at similar latitudes in the NW Pacific (Suzuki et al. Coral Reefs 2016) which
+icate low genetic variability and possible development of cryptic species”.
+extended this part of the discussion stressing out the possibility of presence of cryptic
+cies in the northern sites and that could be the reason to consider for the non-
+nificance findings.
+e 122 – Take out “in” from “least in three”. After “traits” add something like “in one of
+ee populations”.
+took out “in” from “least in three”, and added “ in one out of three sites” after “traits”.
+pendix B
+bruary 21st, 2018
+fessor Jeremy Sanders
+tor-in-Chief
+yal Society Open Science Journal
+bject: Referee comments reply,
+are submitting the research paper titled “Evidence of sexual dimorphism in the
+letal morphology of a gonochoric reef coral” for potential publication in the journal
+yal Society Open Science. We read minutely the reviewer’s comments, and the
+propriate corrections were made as follow:
+spond to Referee
+appreciate so much your comments; we carefully read all of them and followed your
+gestions. We made the corresponding corrections as follow:
+ould recommend reducing the paper to focus only on the results for Bahia de la Paz
+d removing any reference to spatial or environmental differences. Perhaps if the data
+re limited to the only site with proper replication, the authors may find (while properly
+ounting for repeated measures in a multivariate model) a significant difference among
+sexes, and the premise of the study can remain intact.”.
+decided to follow the suggestions of the reviewer to focus only on Bahia de La Paz
+ce is the site with more samples available and in fact, the study began there. The other
+sites (BCO and BLA) and any environmental measurement were sent to discussion
+d mentioned as an exploratory analysis only in order to avoid any cause/effect
+tements in the results.
+rthermore, with 10 measurements of each trait for each individual (Line 70-71: “11
+ts were measured in 10 corallites selected haphazardly per fragment”), there is more
+n sufficient replication”
+arify this part in the manuscript. Since the beginning of the research and to avoid
+udoreplication we averaged the measurement of each trait as follow: from each coral
+ony we selected 10 corallites haphazardly, from each corallite we measured 11
+erent traits, each trait measurement was then averaged. For example, from a single
+ony (PpamH1) and a single trait (diameter; D1) we have 10 measurements if we had
+d this raw measurement we had commit pseudoreplication, but we averaged them
+d therefore we only have a single averaged value for colony´s 1 diameter, we repeated
+for each colony and for the next independent 10 traits. Thus, at the end we have a
+le like this:
+le ID Site Site Sex Sex CS D1 D2 LD LL LV NC TH WD WL WV
+H1 BLP BLP_F Female 1222.875 1118.001 64.33333 247.55 301.7405 319.4805 6 159.4461 113.6277 119.5826 102.7296
+H2 BLP BLP_F Female 1011.839 1109.398 75.33333 189.7913 286.1498 364.9077 6 184.9388 97.80324 120.7494 102.2937
+H3 BLP BLP_F Female 1085.371 1054.495 74.66667 250.2754 387.1441 428.0693 6 66.41091 126.0365 135.4473 121.5685
+H4 BLP BLP_F Female 1060.158 1098.332 69.33333 297.4868 420.2748 405.6034 6 135.6033 135.0998 144.1777 134.6794
+H5 BLP BLP_F Female 1012.782 1024.835 91.66667 277.5899 424.5464 394.2765 6 111.0258 143.8128 138.9866 143.0345
+M17 BLP BLP_M Male 1072.059 1045.549 84.33333 234.8 363.6639 413.3427 6 128.7061 137.7097 133.8168 153.0723
+M18 BLP BLP_M Male 1033.882 1028.047 78.33333 204.387 370.2655 372.3615 6 118.2093 184.3635 154.6683 158.9744
+M19 BLP BLP_M Male 1149.214 1053.077 106 244.1954 416.0483 442.4279 6 178.4619 105.5994 118.975 108.4622
+M20 BLP BLP_M Male 950.7497 792.7169 92.66667 204.8323 319.3227 311.3611 6 109.9379 82.45653 109.1584 117.1824
+M21 BLP BLP_M Male 952.6374 954.039 77.33333 180.3447 337.3387 336.9361 6 85.30682 120.2833 128.0237 139.5071
+he MANOVA indicated that there was no significant difference between the sexes in
+allite morphology then it not appropriate to continue breaking the dataset down
+d fishing for p-values!”
+e main aim of the study is to find differences between sexes in any of the traits or using
+et of them, so we applied a discriminant analysis to determine if were possible to
+arate sexes, this multivariate analysis is combined with univariate analysis to verify
+h trait separately and it is a routine followed in other studies with similar approach;
+ssify groups (López-Pérez 2013 Coral Reefs 32:867–878; López-Pérez 2012 Bull. of
+er. Paleon no.383; López-Pérez et al. 2003 Ciencias Marinas 29(4B): 677–691). The
+pose of this study has been to specify the minimum number of traits that could
+sonably classify the organism into the right sex group.
+cause we found a significant value in La Paz performing the discriminant analysis
+ich is a powerful test to accomplish the aim of the study), we then extended the
+alysis (multivariate and univariate) adding the two northern sites, unfortunately, with a
+uced number of samples. Interestingly we did not find differences and that was no
+prise at all, the sites are completely different (environmentally) and are considered, in
+t, out of the “normal” range of distribution for corals. The colonies are smaller in size
+the corallites seem bigger. This (differences in sites) was confirmed with the MANOVA
+t suggested in the previous review.
+is is not true – repeated measures analyses are a routine procedure, and lme4 is more
+n capable of dealing with these designs”.
+lowing your recommendation, we ran a “Lmer” test by taking Sex (2 levels), trait (11
+els) and sites (3 levels) as a random effect. We tried centring and scaling the values
+each trait to perform this model. I asked for help at the UBC statistics department and
+er discussion and explaining the aims of the study a p-value greater than 0.05 was
+mputed, this was expected as all the traits and sites were taken into account (and
+eral traits did not show differences between sexes if analysed separately) finding more
+propriate the use of discriminant analysis to accomplish our goal. On the other hand,
+ning a test on a single trait value a p-value is significant. The figure shows the lmer ()
+t using diameter values as an example.
+us, to clarify we reduced the paper focusing only on the results for Bahia de la Paz (as
+ommended) and leaving open the possibility and the need to extend and direct the
+dies to other sites inside the Gulf of California. The tests performed are discriminant
+alysis and univariate “t” test.
+dro González.
+pendix C
+rch 27th, 2018
+fessor Jeremy Sanders
+tor-in-Chief
+yal Society Open Science Journal
+bject: Referee comments reply,
+are submitting the updated research paper titled “Evidence of sexual dimorphism in
+skeletal morphology of a gonochoric reef coral” for potential publication in the journal
+yal Society Open Science. We read the reviewer’s comments, and the appropriate and
+uired corrections were made to the manuscript. Now, we address directly the concerns
+d comments of the referee as follow:
+sponse to Referee reports
+st, we appreciate so much your comments; we followed your suggestions and made
+corresponding corrections as follow:
+ease delete lines 117 to 144 as well as tables III, IV and V these have no place in a
+cussion and instead include observational results as pers. obs. to reflect the fact that
+y are observations and not quantitative, albeit exploratory, results. Furthermore, the
+hors need to remove the panels in Figure 3 that show among site comparisons as
+ll as the locations of the additional sites in Figure 4.”
+deleted the lines 117 to 144 as well as tables III, IV and V. We followed the reviewer´s
+gestion to include observational results as pers. obs.
+also removed the panels in figure 3 that included all the sites; now it is included only
+hía de La Paz.
+ure 4 was deleted and a new figure was created to display the only site of study.
+he authors are going to continue to ignore within individual variation by analysing on
+trait means, then they need to show the magnitude of the within-individual trait
+iation relative to the among sex trait variation.”
+clarified it in the text and we also annexed relevant cites (14-17). They explain that
+ause of the high plasticity and corallite variation on Porites and other scleractinian
+als, morphometric studies have been carried out using colony means of traits to
+racterize the morphological variation of the coral. This is the most recommended
+cess when modular organisms are analysed.
+show the magnitude of the within-individual trait variation relative to that among sex
+t variation we included the coralite’s measurements descriptive chart.
+till strongly recommend that the authors repeat their analyses with a single randomly
+sen corallite from each fragment, rather than using trait means as the samples this
+re accurately reflects natural levels of trait variation instead of variation in the trait
+ans.”
+test the differences in methods, we repeated the analysis using a single random
+allite from each fragment. Following this method, the results were similar to using “trait
+ans”. However, we considered that the significative results using a “single” trait means
+ld be just product of chance and should not be considered as proof of morphological
+iation of the coral. Instead, we decided to display the results using the colony´s “mean”
+trait.
+cerely
+Society Open

@@ -1,0 +1,364 @@
+A method for estimating Hill function-based dynamic
+models of gene regulatory networks
+Faizan Ehsan Elahi and Ammar Hasan
+Article citation details
+R. Soc. open sci. 5: 171226.
+http://dx.doi.org/10.1098/rsos.171226
+Review timeline
+Original submission: 28 August 2017 Note: Reports are unedited and appear as
+Revised submission: 22 December 2017 submitted by the referee. The review history
+Final acceptance: 25 January 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-171226.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Thomas Ouldridge)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+Elahi and Hasan present a new method for parameter estimation in the modelling of GRNs with
+Hill functions. Overall, the approach seems to be valid and potentially useful. I am therefore
+generally in favour of proceeding towards publication.
+There are, however, several points that should be addressed before I am fully satisfied.
+1. The Journal has a requirement that all code is made available. Clearly, implementing the fitting
+algorithm involves a substantial program (which may even be useful to readers). This is not,
+however, made available.
+2. The language, whilst understandable, is awkward in places and should be edited.
+(a) Articles "the" and "a" are not used in a natural way, and are often missing (eg. the sentence
+beginning with "Large" at the top of p2 should start "The large").
+(b) The authors frequently use "whereas" in an awkward way, after a full stop that separates the
+two features being compared.
+(c) "the and" on p6 should just be "the".
+3. I recommend that the authors take some more time to explain how a beta-spline basis system
+can be applied, both in general and in the specific case here. In particular, the authors don't
+discuss the order of the spine used. Similarly, they simply state that 100 knots are used, without
+explaining the meaning of "knot" or how this number was chosen, and how it might relate to the
+number of available data points.
+4. Similarly, the authors might discuss how they chose the parameter lambda (to which all
+lambda_i are apparently set).
+5. There are some notational issues around eq. 2.6.
+(a) What is the subscript s? Shouldn't this be N?
+(b) why does \dot{phi} have a subscript i in eq. 2.6?
+(c) why is c_i not c_i^T in the second term in eq. 2.6?
+(d) is it wise to use t as both a continuous and a discrete variable in the same equation?
+6. In several tables and graphs, data is presented without units. The text is also to small on the
+axes of the graphs in Fig. 5.
+7. I strongly recommend that the authors make their captions more descriptive. Someone
+glancing at a table or figure should be able to understand the context and conclusion that they
+should draw without having to dig to deeply into the text. "Comparison of steady state values"
+tells us almost nothing!
+8. How fast is the convergence of the proposed method? Are there any benchmarks to which it
+could be compared?
+3
+Thomas Ouldridge, Imperial College London
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+Please add a discussion turning around the computational cost of the proposed algorithm, and
+from the analysis of the cost, compare your proposal with some well-known existing algorithms.
+label_end_comment
+Decision letter (RSOS-171226)
+06-Dec-2017
+Dear Dr Hasan,
+The editors assigned to your paper ("A method for estimating Hill Function Based Dynamic
+Models of Gene Regulatory Networks") have now received comments from reviewers.
+Both reviewers find the work of interest, but they both raise substantive issues that will need
+careful consideration. These comments include making available any new code, and it will be
+important to address this point as well. We would like you to revise your paper in accordance
+with the referee and Associate Editor suggestions which can be found below (not including
+confidential reports to the Editor). Please note this decision does not guarantee eventual
+acceptance.
+4
+Please submit a copy of your revised paper within three weeks (i.e. by the 29-Dec-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171226
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+5
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Jose Carrillo (Associate Editor) and Steve Brown (Subject Editor)
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Elahi and Hasan present a new method for parameter estimation in the modelling of GRNs with
+Hill functions. Overall, the approach seems to be valid and potentially useful. I am therefore
+generally in favour of proceeding towards publication.
+6
+There are, however, several points that should be addressed before I am fully satisfied.
+1. The Journal has a requirement that all code is made available. Clearly, implementing the fitting
+algorithm involves a substantial program (which may even be useful to readers). This is not,
+however, made available.
+2. The language, whilst understandable, is awkward in places and should be edited.
+(a) Articles "the" and "a" are not used in a natural way, and are often missing (eg. the sentence
+beginning with "Large" at the top of p2 should start "The large").
+(b) The authors frequently use "whereas" in an awkward way, after a full stop that separates the
+two features being compared.
+(c) "the and" on p6 should just be "the".
+3. I recommend that the authors take some more time to explain how a beta-spline basis system
+can be applied, both in general and in the specific case here. In particular, the authors don't
+discuss the order of the spine used. Similarly, they simply state that 100 knots are used, without
+explaining the meaning of "knot" or how this number was chosen, and how it might relate to the
+number of available data points.
+4. Similarly, the authors might discuss how they chose the parameter lambda (to which all
+lambda_i are apparently set).
+5. There are some notational issues around eq. 2.6.
+(a) What is the subscript s? Shouldn't this be N?
+(b) why does \dot{phi} have a subscript i in eq. 2.6?
+(c) why is c_i not c_i^T in the second term in eq. 2.6?
+(d) is it wise to use t as both a continuous and a discrete variable in the same equation?
+6. In several tables and graphs, data is presented without units. The text is also to small on the
+axes of the graphs in Fig. 5.
+7. I strongly recommend that the authors make their captions more descriptive. Someone
+glancing at a table or figure should be able to understand the context and conclusion that they
+should draw without having to dig to deeply into the text. "Comparison of steady state values"
+tells us almost nothing!
+8. How fast is the convergence of the proposed method? Are there any benchmarks to which it
+could be compared?
+Thomas Ouldridge, Imperial College London
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+Please add a discussion turning around the computational cost of the proposed algorithm, and
+from the analysis of the cost, compare your proposal with some well-known existing algorithms.
+7
+Author's Response to Decision Letter for (RSOS-171226)
+See Appendix A.
+label_version_2
+RSOS-171226.R1 (Revision)
+label_author_3
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+None.
+label_end_comment
+Decision letter (RSOS-171226.R1)
+25-Jan-2018
+Dear Dr Hasan,
+I am pleased to inform you that your manuscript entitled "A method for estimating Hill Function
+Based Dynamic Models of Gene Regulatory Networks" is now accepted for publication in Royal
+Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+8
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Jose Carrillo (Associate Editor) and Steve Brown (Subject Editor)
+openscience@royalsociety.org
+ppendix A
+Author’s response to reviewer comments
+e are extremely grateful to reviewer for their time and insightful comments. We have considered each
+comment and amended our manuscript accordingly. Our detailed response is as follows
+iewer: 1
+mments to the Author(s)
+hi and Hasan present a new method for parameter estimation in the modelling of GRNs with
+functions. Overall, the approach seems to be valid and potentially useful. I am therefore
+erally in favour of proceeding towards publication.
+re are, however, several points that should be addressed before I am fully satisfied.
+he Journal has a requirement that all code is made available. Clearly, implementing the fitting
+orithm involves a substantial program (which may even be useful to readers). This is not,
+ever, made available.
+hor’s Response: The code has been made available on Dryad Digital Repository and reference in the
+uscript.
+he language, whilst understandable, is awkward in places and should be edited.
+Articles "the" and "a" are not used in a natural way, and are often missing (eg. the sentence
+inning with "Large" at the top of p2 should start "The large").
+The authors frequently use "whereas" in an awkward way, after a full stop that separates the
+features being compared.
+"the and" on p6 should just be "the".
+hor’s Response: The above mentioned issues have been resolved. The revised manuscript has also
+n proof read to improve the writing.
+recommend that the authors take some more time to explain how a beta-spline basis system
+be applied, both in general and in the specific case here. In particular, the authors don't
+cuss the order of the spine used. Similarly, they simply state that 100 knots are used, without
+laining the meaning of "knot" or how this number was chosen, and how it might relate to the
+mber of available data points.
+hor’s Response: In the first paragraph of Section 2(b) the reason to use beta splines in GPM has
+n mentioned. A reference is also given that extensively covers the beta-splines.
+ara 2 of Section 4(b), the order is now mentioned. It is also elaborated that the choice of knots
+ends on the required smoothness of spline functions.
+imilarly, the authors might discuss how they chose the parameter lambda (to which all
+bda_i are apparently set).
+hor’s Response: All the \lambda_i are chosen as 150. The mistake has been corrected in Section
+. \lamba_i are weighting factors. In most of the research problems, the choice of such weighting
+ors is somewhat subjective. In this paper the \lamba_i depends on how much weight is given to the
+terms in equation 2.6.
+here are some notational issues around eq. 2.6.
+What is the subscript s? Shouldn't this be N?
+why does \dot{phi} have a subscript i in eq. 2.6?
+why is c_i not c_i^T in the second term in eq. 2.6?
+is it wise to use t as both a continuous and a discrete variable in the same equation?
+hor’s Response: Thank you for identifying the mistakes in the equation. They have been corrected.
+variable t is used as a continuous variable because derivatives are involved in the equation.
+ever, the experimental data is available only for some discrete values of time. Therefore, in eq. 2.6,
+summation is over some discrete values of t.
+n several tables and graphs, data is presented without units. The text is also to small on the
+s of the graphs in Fig. 5.
+hor’s Response: We have included the units in figures and table. The text size in Fig. 5 has also
+n increased.
+strongly recommend that the authors make their captions more descriptive. Someone glancing
+table or figure should be able to understand the context and conclusion that they should draw
+hout having to dig to deeply into the text. "Comparison of steady state values" tells us almost
+hing!
+hor’s Response: Complied.
+ow fast is the convergence of the proposed method? Are there any benchmarks to which it
+ld be compared?
+hor’s Response: The algorithm converges in 4 iterations of the loop shown in Fig. 3 in the
+nuscript. The details have now been included Section 4(b). We haven’t compared the result with any
+chmarks as our focus is on the accuracy of estimated model.
+iewer: 2
+mments to the Author(s)
+ase add a discussion turning around the computational cost of the proposed algorithm, and
+m the analysis of the cost, compare your proposal with some well-known existing algorithms
+hor’s Response: We agree that computational cost is one of the considerations for any new
+rithm, especially if the algorithm is online or executed in real-time. However, the estimation of models
+RNs is usually done offline. Therefore, we have omitted a detailed analysis of computational
+plexity and focused on the accuracy of the estimated model, which is of more significance.
+ection 4(b) of the revised manuscript we have included the number of iterations that the algorithm
+s to converge and the total execution time of the algorithm in MATLAB.
+Society Open

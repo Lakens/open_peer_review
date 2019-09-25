@@ -1,0 +1,723 @@
+Competition between sympatric wolf taxa: an example
+involving African and Ethiopian wolves
+Tariku Mekonnen Gutema, Anagaw Atickem, Afework Bekele, Claudio Sillero-Zubiri,
+Mohammed Kasso, Diress Tsegaye, Vivek V. Venkataraman, Peter J. Fashing, Dietmar
+Zinner and Nils C. Stenseth
+Article citation details
+R. Soc. open sci. 5: 172207.
+http://dx.doi.org/10.1098/rsos.172207
+Review timeline
+Original submission: 17 January 2018 Note: Reports are unedited and appear as
+1st revised submission: 18 February 2018 submitted by the referee. The review history
+2nd revised submission: 21 March 2018 appears in chronological order.
+Final acceptance: 22 March 2018
+Review History
+label_version_1
+RSOS-172207.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This is an interesting and well written paper with good data on the outcome of interactions
+between African wolves and Ethiopian wolves. I find the basic results interesting and important,
+and with some relatively simple revisions I think that this would be a valuable contribution to
+our understanding of these species. The number of individuals sampled is rather small, but for
+these species that is an almost unavoidable problem. I do think that the inferences might be
+tempered slightly by consideration that the results are perhaps somewhat dependent on the
+configuration of a relatively small number of individual home ranges, but that does not alter my
+positive view of the paper as a whole.
+My suggestions are as follows:
+1. A suggestion about the decision to fit two models to these interactions, one for AW and one for
+EW.
+With only two species involved, a win for one species is necessarily a loss for the other, so the
+dependent variable is identical for both analyses, just recoded to flip the 1/0 coding for wins and
+losses. If all the independent variables were truly independent, the effect of site (core vs. buffer)
+would produce the same coefficient, standard error and Wald test for the two analyses, but with
+the sign reversed. This is not the case (as shown in Table 1: aside, I assume that these coefficients
+and standard errors are on the log-odds scale, but this should be stated explicitly). The reported
+difference between the species in the effect of site suggests that collinearity between group size
+and site is affecting the inferences. Given the strength of the site effect as shown in Figure 1, I
+doubt this issue has any important effect on the primary inferences about competitive differences
+in the core and buffer, but it might have an appreciable effect on the inferences about group size.
+To help resolve this, I would suggest running a single model with the existing terms (site and
+group size), but adding terms for species and the interaction between site and species (which
+would replicate the intent of the two models fit in the present manuscript) and an interaction
+term for group size and site. Comparing the site x species interaction effects to the current model,
+while controlling for any site x group size interaction, might help to resolve why the effect of site
+is not the same for the two species as it logically should be with two levels for species and two
+levels for site.
+2. A comment on the distribution of locations, particularly for AW.
+Figure 1 shows two very obvious clusters of AW locations, i.e., there appears to be something at
+work beyond just ‘buffer’ in determining the distribution. This should be discussed. Are those
+locations with resource patches? (The next comment is related.)
+3. A comment on the number of individuals observed and the implicit assumption that each
+interaction is an independent event.
+The degrees of freedom for error in the test for site effects implicitly assumes that each
+interaction between AW and EW was an independent event, but these data represent repeated
+samples from a small number of individuals, and thus it is likely that pseudo-replication causes
+the P-values to be too small. To avoid pseudo-replication, the model should include a random
+effect of identity (of EW-AW pairs, if a single model is fit as suggested above). It also seems
+plausible that these individuals have a history of interaction and know one another individually.
+At a minimum, the manuscript could discuss the issue that the configuration of a relatively small
+number of individual home ranges could affect inferences about the core-buffer effect on AW-EW
+interactions (if individual identity was not recorded for these interactions).
+3
+4. It seems expected that group size would have a stronger effect on the probability of winning
+for AW, because they are smaller. Perhaps note that this is a general pattern for interactions
+among carnivores. E.g., prior studies show that the outcome of competitive interactions between
+wild dogs and spotted hyenas [or other packs of wild dogs] depends on group size [and
+particularly on the relative sizes of the groups in an interaction]).
+5. Please report the means and standard errors with the z test on line 179 for the data on
+abundance of mole rats in the buffer and core. Failure to detect a difference can be due to a small
+effect size or due to imprecise estimates, so readers will want to see the effect size and precision
+in the main text.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+In this paper, interactions between Ethiopian and African wolves are analyzed. In the context of
+the diets of these species, the authors consider the nature of the interactions and relationships
+between their outcomes and body size, group size, and habitat. I believe that this paper makes a
+valuable contribution to the study of these species and their interactions. In addition, the work
+has significant relevance to the conservation of Ethiopian wolves – a critically endangered
+species. I have listed minor comments below:
+- It seems like the last cited reference in the paper is [18]. If they are not currently cited,
+references [19-22] should either be removed or cited appropriately.
+- Some of the model output is a bit sparse. For example, p-values could be added to the results in
+Table 4. Although less important, random effect information could optionally be included as
+well. (Things like the estimate/p-value associated with the random effect variance parameter
+and the estimated effect sizes for each of the trapping locations.)
+- Perhaps I’ve missed something, but the decision to model fraction of won encounters separately
+4
+for African and Ethiopian wolves (as shown in Table 1) seems a little peculiar. If (members of)
+one species won an encounter, then the other most have lost it. So, why not fit a single model
+with AW wins versus EW wins as the binary response? Sizes of both groups could be included
+as covariates. Anyway, a brief explanation of the rationale behind the modeling approach could
+be of interest to some readers.
+- The authors may wish to consider noting the statistical software used to fit, at least, the mixed
+model(s). For example, something like “the ‘glmer’ function in the ‘lme4’ R package.” This could
+make the results easier to replicate since there are a number of ways to fit generalized linear
+mixed models. Alternatively, the authors could provide relevant code, if applicable.
+- In Table S2, it might be better to label “Mole rat pressene” as “Core area” (like in Table 4), if
+appropriate. The caption could then be used to make it clear that the model is for the likelihood
+of mole rat presence (i.e. “presence” is coded as 1 and “absence” as 0).
+- Line 90 (I refer to the inner line numbers): Not sure "both" is needed. Also, “Conservation”
+should probably be “Conservation Area”
+- Line 91: “with estimated of 21” should be something like “with an estimated 21”
+- Line 131: “1181 traps” should be something like “1181 traps in core area”
+- Line 145: “were selected randomly checked” perhaps should be something like “were randomly
+selected to be”
+- Lines 146-148: “abundance” should probably be “abundances,” “linear” should be “linear
+mixed” for clarity, “which” should be “with.” Also, here, it appears that there is just a single
+model and response variable, so these terms should not be plural. If multiple models were fit for
+this part, this could be made clearer.
+label_end_comment
+Decision letter (RSOS-172207)
+09-Feb-2018
+Dear Dr Stenseth,
+The editors assigned to your paper ("Competition between sympatric wolf taxa: an example
+involving African and Ethiopian Wolves") have now received comments from reviewers. We
+would like you to revise your paper in accordance with the referee and Associate Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 04-Mar-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+5
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-172207
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+6
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Claudia Wascher (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments (Dr Claudia Wascher):
+The presented paper investigates competition between the Ethiopian wolf and the African wolf in
+central Ethiopia. Both reviewers find the study potentially interesting, but raise a number of
+concerns which need to be addressed carefully prior to publication.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This is an interesting and well written paper with good data on the outcome of interactions
+between African wolves and Ethiopian wolves. I find the basic results interesting and important,
+and with some relatively simple revisions I think that this would be a valuable contribution to
+our understanding of these species. The number of individuals sampled is rather small, but for
+these species that is an almost unavoidable problem. I do think that the inferences might be
+tempered slightly by consideration that the results are perhaps somewhat dependent on the
+7
+configuration of a relatively small number of individual home ranges, but that does not alter my
+positive view of the paper as a whole.
+My suggestions are as follows:
+1. A suggestion about the decision to fit two models to these interactions, one for AW and one for
+EW.
+With only two species involved, a win for one species is necessarily a loss for the other, so the
+dependent variable is identical for both analyses, just recoded to flip the 1/0 coding for wins and
+losses. If all the independent variables were truly independent, the effect of site (core vs. buffer)
+would produce the same coefficient, standard error and Wald test for the two analyses, but with
+the sign reversed. This is not the case (as shown in Table 1: aside, I assume that these coefficients
+and standard errors are on the log-odds scale, but this should be stated explicitly). The reported
+difference between the species in the effect of site suggests that collinearity between group size
+and site is affecting the inferences. Given the strength of the site effect as shown in Figure 1, I
+doubt this issue has any important effect on the primary inferences about competitive differences
+in the core and buffer, but it might have an appreciable effect on the inferences about group size.
+To help resolve this, I would suggest running a single model with the existing terms (site and
+group size), but adding terms for species and the interaction between site and species (which
+would replicate the intent of the two models fit in the present manuscript) and an interaction
+term for group size and site. Comparing the site x species interaction effects to the current model,
+while controlling for any site x group size interaction, might help to resolve why the effect of site
+is not the same for the two species as it logically should be with two levels for species and two
+levels for site.
+2. A comment on the distribution of locations, particularly for AW.
+Figure 1 shows two very obvious clusters of AW locations, i.e., there appears to be something at
+work beyond just ‘buffer’ in determining the distribution. This should be discussed. Are those
+locations with resource patches? (The next comment is related.)
+3. A comment on the number of individuals observed and the implicit assumption that each
+interaction is an independent event.
+The degrees of freedom for error in the test for site effects implicitly assumes that each
+interaction between AW and EW was an independent event, but these data represent repeated
+samples from a small number of individuals, and thus it is likely that pseudo-replication causes
+the P-values to be too small. To avoid pseudo-replication, the model should include a random
+effect of identity (of EW-AW pairs, if a single model is fit as suggested above). It also seems
+plausible that these individuals have a history of interaction and know one another individually.
+At a minimum, the manuscript could discuss the issue that the configuration of a relatively small
+number of individual home ranges could affect inferences about the core-buffer effect on AW-EW
+interactions (if individual identity was not recorded for these interactions).
+4. It seems expected that group size would have a stronger effect on the probability of winning
+for AW, because they are smaller. Perhaps note that this is a general pattern for interactions
+among carnivores. E.g., prior studies show that the outcome of competitive interactions between
+wild dogs and spotted hyenas [or other packs of wild dogs] depends on group size [and
+particularly on the relative sizes of the groups in an interaction]).
+5. Please report the means and standard errors with the z test on line 179 for the data on
+abundance of mole rats in the buffer and core. Failure to detect a difference can be due to a small
+effect size or due to imprecise estimates, so readers will want to see the effect size and precision
+in the main text.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+In this paper, interactions between Ethiopian and African wolves are analyzed. In the context of
+the diets of these species, the authors consider the nature of the interactions and relationships
+8
+between their outcomes and body size, group size, and habitat. I believe that this paper makes a
+valuable contribution to the study of these species and their interactions. In addition, the work
+has significant relevance to the conservation of Ethiopian wolves – a critically endangered
+species. I have listed minor comments below:
+- It seems like the last cited reference in the paper is [18]. If they are not currently cited,
+references [19-22] should either be removed or cited appropriately.
+- Some of the model output is a bit sparse. For example, p-values could be added to the results in
+Table 4. Although less important, random effect information could optionally be included as
+well. (Things like the estimate/p-value associated with the random effect variance parameter
+and the estimated effect sizes for each of the trapping locations.)
+- Perhaps I’ve missed something, but the decision to model fraction of won encounters separately
+for African and Ethiopian wolves (as shown in Table 1) seems a little peculiar. If (members of)
+one species won an encounter, then the other most have lost it. So, why not fit a single model
+with AW wins versus EW wins as the binary response? Sizes of both groups could be included
+as covariates. Anyway, a brief explanation of the rationale behind the modeling approach could
+be of interest to some readers.
+- The authors may wish to consider noting the statistical software used to fit, at least, the mixed
+model(s). For example, something like “the ‘glmer’ function in the ‘lme4’ R package.” This could
+make the results easier to replicate since there are a number of ways to fit generalized linear
+mixed models. Alternatively, the authors could provide relevant code, if applicable.
+- In Table S2, it might be better to label “Mole rat pressene” as “Core area” (like in Table 4), if
+appropriate. The caption could then be used to make it clear that the model is for the likelihood
+of mole rat presence (i.e. “presence” is coded as 1 and “absence” as 0).
+- Line 90 (I refer to the inner line numbers): Not sure "both" is needed. Also, “Conservation”
+should probably be “Conservation Area”
+- Line 91: “with estimated of 21” should be something like “with an estimated 21”
+- Line 131: “1181 traps” should be something like “1181 traps in core area”
+- Line 145: “were selected randomly checked” perhaps should be something like “were randomly
+selected to be”
+- Lines 146-148: “abundance” should probably be “abundances,” “linear” should be “linear
+mixed” for clarity, “which” should be “with.” Also, here, it appears that there is just a single
+model and response variable, so these terms should not be plural. If multiple models were fit for
+this part, this could be made clearer.
+Author's Response to Decision Letter for (RSOS-172207)
+See Appendix A.
+9
+label_version_2
+RSOS-172207.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+As before, I find this paper interesting and useful, and the primary inference convincing.
+However, I am concerned that confusion about the appropriate glm remains a problem. The
+response letter states that (fitting a single model for both species, as suggested) the interaction
+between species and site was not a significant effect on the outcome of competition, and thus it
+was dropped from the model. It seems obvious from Figure 3 that this statement is not correct.
+Indeed, the primary inference of the paper is that site affects which species wins.
+The coefficients reported in Table 1 also do not make sense for a single model fit to both species.
+There would not be separate intercepts; the effect of species would be a single coefficient
+describing the difference in mean winning rate for one species relative to the other, and the effect
+of interest would be the coefficient for the interaction between species and site.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+10
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_6
+I am satisfied with the authors' responses to my comments and do not have any further concerns
+about the manuscript.
+label_end_comment
+Decision letter (RSOS-172207.R1)
+19-Mar-2018
+Dear Dr Stenseth:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-172207.R1
+entitled "Competition between sympatric wolf taxa: an example involving African and Ethiopian
+Wolves" has been accepted for publication in Royal Society Open Science subject to minor
+revision in accordance with the referee suggestions. Please find the referees' comments at the end
+of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+11
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-172207.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 28-Mar-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+12
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Claudia Wascher (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Claudia Wascher):
+Associate Editor: 1
+Comments to the Author:
+label_comment_7
+The revised manuscript of a study investigating competition between Ethiopian and African
+wolves in central Ethiopia provides a high-quality contribution in the field of life sciences. The
+13
+reviewers are satisfied with how the authors dealt with their previous comments and recommend
+the manuscript for publication. One concern regarding the statistical analysis remains and needs
+to be addressed prior to further consideration for publication.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+As before, I find this paper interesting and useful, and the primary inference convincing.
+However, I am concerned that confusion about the appropriate glm remains a problem. The
+response letter states that (fitting a single model for both species, as suggested) the interaction
+between species and site was not a significant effect on the outcome of competition, and thus it
+was dropped from the model. It seems obvious from Figure 3 that this statement is not correct.
+Indeed, the primary inference of the paper is that site affects which species wins.
+The coefficients reported in Table 1 also do not make sense for a single model fit to both species.
+There would not be separate intercepts; the effect of species would be a single coefficient
+describing the difference in mean winning rate for one species relative to the other, and the effect
+of interest would be the coefficient for the interaction between species and site.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_9
+I am satisfied with the authors' responses to my comments and do not have any further concerns
+about the manuscript.
+Author's Response to Decision Letter for (RSOS-172207.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-172207.R2)
+22-Mar-2018
+Dear Dr Stenseth,
+I am pleased to inform you that your manuscript entitled "Competition between sympatric wolf
+taxa: an example involving African and Ethiopian Wolves" is now accepted for publication in
+Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+14
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Appendix A
+Dear Reviewers, we found the comments very constructive and help us to improve the manuscript. We
+have tried to adequately address all the comments. Please find the details of the changes we have made
+below, and updated version of the manuscript submitted.
+Reviewer: 1
+Comments to the Author(s)
+label_comment_10
+This is an interesting and well written paper with good data on the outcome of interactions between
+African wolves and Ethiopian wolves. I find the basic results interesting and important, and with some
+relatively simple revisions I think that this would be a valuable contribution to our understanding of
+these species. The number of individuals sampled is rather small, but for these species that is an almost
+unavoidable problem. I do think that the inferences might be tempered slightly by consideration that the
+results are perhaps somewhat dependent on the configuration of a relatively small number of individual
+home ranges, but that does not alter my positive view of the paper as a whole.
+My suggestions are as follows:
+1. A suggestion about the decision to fit two models to these interactions, one for AW and one for EW.
+With only two species involved, a win for one species is necessarily a loss for the other, so the
+dependent variable is identical for both analyses, just recoded to flip the 1/0 coding for wins and losses.
+If all the independent variables were truly independent, the effect of site (core vs. buffer) would produce
+the same coefficient, standard error and Wald test for the two analyses, but with the sign reversed. This
+is not the case (as shown in Table 1: aside, I assume that these coefficients and standard errors are on
+the log-odds scale, but this should be stated explicitly). The reported difference between the species in
+the effect of site suggests that collinearity between group size and site is affecting the inferences. Given
+the strength of the site effect as shown in Figure 1, I doubt this issue has any important effect on the
+primary inferences about competitive differences in the core and buffer, but it might have an appreciable
+effect on the inferences about group size.
+To help resolve this, I would suggest running a single model with the existing terms (site and group
+size), but adding terms for species and the interaction between site and species (which would replicate
+the intent of the two models fit in the present manuscript) and an interaction term for group size and
+site. Comparing the site x species interaction effects to the current model, while controlling for any site x
+group size interaction, might help to resolve why the effect of site is not the same for the two species as
+it logically should be with two levels for species and two levels for site.
+Our reply: We thank the reviewer for this suggestion and have incorporated a new single analysis in the
+new version of our manuscript (see methods and results; Table 1) in which the probability of the African
+wolf or Ethiopian wolf winning the encounter was used as the response variable. We note that the
+interaction between site and species appeared was not significant, so we excluded it from the analysis.
+2. A comment on the distribution of locations, particularly for AW.
+Figure 1 shows two very obvious clusters of AW locations, i.e., there appears to be something at work
+beyond just ‘buffer’ in determining the distribution. This should be discussed. Are those locations with
+resource patches? (The next comment is related.)
+Our reply: We assumed that the reviewer is referencing figure 2 here. This is simply because our
+collared animals are from two packs lived together in these particular corners. Between these two
+populations, there were two other groups with individuals of 4 and 5 individuals respectively between
+these populations during the time we collared African wolves. We collared two individuals, one from each
+of the groups (AW530, AW600, See Figure below). Unfortunately both of them died shortly. One was
+killed by the locals and we recovered the collar. The second individual was simply disappeared. We
+believe the local killed the animal and destroy the collar. In the first case, we got the collar from one of
+the local’s house, and the local people already learned we could easily track the collar, and it is likely
+that they break the collar.
+Figure African wolf individual sightings (Here we can not paste the figure unfortunately)
+3. A comment on the number of individuals observed and the implicit assumption that each interaction is
+an independent event.
+The degrees of freedom for error in the test for site effects implicitly assumes that each interaction
+between AW and EW was an independent event, but these data represent repeated samples from a
+small number of individuals, and thus it is likely that pseudo-replication causes the P-values to be too
+small. To avoid pseudo-replication, the model should include a random effect of identity (of EW-AW
+pairs, if a single model is fit as suggested above). It also seems plausible that these individuals have a
+history of interaction and know one another individually. At a minimum, the manuscript could discuss
+the issue that the configuration of a relatively small number of individual home ranges could affect
+inferences about the core-buffer effect on AW-EW interactions (if individual identity was not recorded for
+these interactions).
+Our reply: We strongly agree with this comment. African wolf are naturally in small numbers and
+individual identification for those involved in all observed interaction was also difficult. We have now
+make this clear in the method section that we do not individually identify animals involved in the
+interaction on line 114: “We were unable to determine the identity of individual wolves. Given the low
+population sizes of both EWs and AWs and the fact that both species exhibit territoriality, it is virtually
+certain that repeated sampling of the same individuals occurred.” While there are methodologies that
+might allow us to determine the influence the potential effects of repeated sampling on the results (for
+example, Venkataraman et al 2015 J Mammal used a resampling approach to account for
+pseudoreplication on a behavioral study of the Ethiopian wolf), the strength of the territoriality effects in
+this study suggest that the results would not change.
+4. It seems expected that group size would have a stronger effect on the probability of winning for AW,
+because they are smaller. Perhaps note that this is a general pattern for interactions among carnivores.
+E.g., prior studies show that the outcome of competitive interactions between wild dogs and spotted
+hyenas [or other packs of wild dogs] depends on group size [and particularly on the relative sizes of the
+groups in an interaction]).
+Our reply: This is true, and we have now mentioned the importance of group size on carnivore
+interspecific competition in the Discussion, line 193 and 194.
+5. Please report the means and standard errors with the z test on line 179 for the data on abundance of
+mole rats in the buffer and core. Failure to detect a difference can be due to a small effect size or due to
+imprecise estimates, so readers will want to see the effect size and precision in the main text.
+Our reply: We have now included the mean, sd and number of plots assessed for mole rat holes in each
+of the localities on line 180 and 181.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_11
+In this paper, interactions between Ethiopian and African wolves are analyzed. In the context of the
+diets of these species, the authors consider the nature of the interactions and relationships between
+their outcomes and body size, group size, and habitat. I believe that this paper makes a valuable
+contribution to the study of these species and their interactions. In addition, the work has significant
+relevance to the conservation of Ethiopian wolves – a critically endangered species. I have listed minor
+comments below:
+- It seems like the last cited reference in the paper is [18]. If they are not currently cited, references
+[19-22] should either be removed or cited appropriately.
+Our reply: We have cited the references.
+- Some of the model output is a bit sparse. For example, p-values could be added to the results in Table
+4. Although less important, random effect information could optionally be included as well. (Things like
+the estimate/p-value associated with the random effect variance parameter and the estimated effect
+sizes for each of the trapping locations.)
+Our reply: We have now included the P values where appropriate, see table 4.
+- Perhaps I’ve missed something, but the decision to model fraction of won encounters separately for
+African and Ethiopian wolves (as shown in Table 1) seems a little peculiar. If (members of) one species
+won an encounter, then the other most have lost it. So, why not fit a single model with AW wins versus
+EW wins as the binary response? Sizes of both groups could be included as covariates. Anyway, a brief
+explanation of the rationale behind the modeling approach could be of interest to some readers.
+Our reply: We fully agreed with this comment, and we have now performed a single analysis in which
+the probability of a victory by the Ethiopian wolf or African wolf is modeled as the response variable, see
+table 1.
+- The authors may wish to consider noting the statistical software used to fit, at least, the mixed
+model(s). For example, something like “the ‘glmer’ function in the ‘lme4’ R package.” This could make
+the results easier to replicate since there are a number of ways to fit generalized linear mixed models.
+Alternatively, the authors could provide relevant code, if applicable.
+Our reply: We now mentioned the function we used in the analysis as follow
+- Shannon’s Diversity indices (H) of rodent species between the core and buffer zones were compared by
+fitting a generalized linear mixed effects model using the lmer function in the lme4 package.
+- We used binomial logistic regression to analyse the outcome of winning the agonistic interaction
+(response variable: won vs. lost) in relation to the two sites (categorical explanatory variable: buffer vs.
+core) separately for AW and EW using the glm function.
+- In Table S2, it might be better to label “Mole rat presence” as “Core area” (like in Table 4), if
+appropriate. The caption could then be used to make it clear that the model is for the likelihood of mole
+rat presence (i.e. “presence” is coded as 1 and “absence” as 0).
+Our reply: We have now made the changes as recommended
+- Line 90 (I refer to the inner line numbers): Not sure "both" is needed. Also, “Conservation” should
+probably be “Conservation Area”
+Our reply: We have now made the changes as recommended
+- Line 91: “with estimated of 21” should be something like “with an estimated 21”
+Our reply: We have now made the changes
+- Line 131: “1181 traps” should be something like “1181 traps in core area”
+Our reply: We have now made the changes as recommended
+- Line 145: “were selected randomly checked” perhaps should be something like “were randomly
+selected to be”
+Our reply: We have now made the changes as recommended
+- Lines 146-148: “abundance” should probably be “abundances,” “linear” should be “linear mixed” for
+clarity, “which” should be “with.” Also, here, it appears that there is just a single model and response
+variable, so these terms should not be plural. If multiple models were fit for this part, this could be
+made clearer.
+Our reply: We have now made the changes as recommend
+Appendix B
+Dear Editor,
+Thank you very much for the good news and for forwarding the reviewers’ comments. The problem
+raised by reviewer 1 arises, because by mistake, we uploaded the old version of the respective table and
+not our revised version. we have now corrected our mistake in the revised version.
+Reply for comment by Reviewer 1
+Thank you for pointing again to this problem, and that is right. As you clearly demonstrated, site is most
+important factor that determine the outcome of the AW-EW interactions (shown in table 1 and fig 3). We
+followed your constructive comment of single analysis of the Ethiopian wolf-African wolf interaction
+outcomes in relation to habitat and group size in our previous revision as well. Unfortunately however
+we did not upload a revised version of Table 1. We have now included the updated version of the
+analysis (see table 1).
+Society Open

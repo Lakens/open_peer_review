@@ -1,0 +1,1117 @@
+Bayesian model evidence as a practical alternative to
+deviance information criterion
+C. M. Pooley and G. Marion
+Article citation details
+R. Soc. open sci. 5: 171519.
+http://dx.doi.org/10.1098/rsos.171519
+Review timeline
+Original submission: 5 October 2017 Note: Reports are unedited and appear as
+1st revised submission: 22 December 2017 submitted by the referee. The review history
+2nd revised submission: 30 January 2018 appears in chronological order.
+3rd revised submission: 12 February 2018
+Final acceptance: 13 February 2018
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-171519.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This paper compares stepping stone algorithms to DIC for model selection and claims that the
+stepping stone algorithms are superior. The main form of comparison is to compare runtimes to
+achieve a given accuracy in approximating model evidence (or so I understood, although this
+could be made more explicit). The issues I have with this paper stem mainly from the lack of
+transparency in the description of particular parts of the algorithms which are essential to the
+comparisons. I commend the authors for providing neatly written code which was easy to
+compile and run. My comments follow.
+1. In Section 4, the authors rely extensively on the notion of the effective sample size, or
+alternatively the number of iterations taken to produce an independent sample. It is well known
+that this quantity can be computed in many different ways, and can be noisy. Geyer (1992) is a
+main reference for this. Also the way in which it is computed can have drastic impact on the
+conclusions of comparisons of MCMC algorithms. See for example the discussion in the
+Appendix of Hoffman and Gelman (2011). I think the authors can say more here than 'the
+distributions ... are problem dependent'. How does this impact the strength of the argument the
+authors are making on the relative computational costs?
+2. Following on from this point, the material in appendix E was difficult to follow in parts. Please
+justify after (E2) why making the approximation log(1+x) ~ x is valid here- i.e. argue in orders of
+magnitude for when p is a pdf and a pmf term. There is a typo in (E4). The argument the authors
+were making in (E5) was a little difficult to follow, and I'd suggest using notation consistent with
+the remainder of the text.
+3. The adapting scheme in Appendix B, would look better if you drew on the theory behind
+adaptive Monte Carlo (eg Andrieu and Thoms, 2008). It is essentially what you are doing, but will
+provide a better justification and will allow you to adjust the proposal to target a particular
+acceptance rate. This should help in the presentation.
+4. Equation (D1) has a typo (theta-theta)
+5. Although it is said otherwise in the text, Figure 2 really does give the impression that the DIC is
+supposed to be approximating the analytical curve and as a result is performing poorly. I find
+this figure misleading, and think you should find a better way to represent what you are trying to
+say.
+6. I found the experiments in Section 5.1 and 5.2 poorly explained. For example, the true model is
+not even stated and it is not possible to deduce what it should be from the text. When you speak
+of a "varying number of regressors" (4th paragraph, pg 18), you don't say which of the models the
+MCMC is being run for. There will be J distinct models with J_sel=1, J choose 2 distinct with
+J_sel=2 etc. This needs to be carefully rewritten. It was not possible to evaluate the study for
+correctness based on the presentation in my opinion. The "details of MCMC" provided in
+appendix H only described the proposal mechanism! Similar comments can be made about
+Section 5.2. All experiments should be made more explicit, either in the text or appendix.
+Andrieu, C. and Thoms, J. (2008). A tutorial on adaptive MCMC. Statistics and Computing, vol
+18, 343-373.
+3
+Geyer, C. (1992). Practical Markov Chain Monte Carlo. Statistical Science, vol 7, 473-483.
+Hoffman, M. D. and Gelman, A. (2011). The No-U-Turn Sampler: Adaptively Setting Path
+Lengths in Hamiltonian Monte Carlo. arXiv:1111.4246
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The paper is concerned with Bayesian model choice. In particular, the authors are concerned with
+comparing via a simulation study for three different modelling scenario (linear regression,
+random effects models and infectious disease models) the steppingstone sampling method
+(which offers a way to estimate the marginal likelihood) and the Deviance Information Criterion
+(DIC). The former (SS) is one of the recently developed methods for calculating a model's
+evidence whilst the latter (DIC) has been widely used in the statistical literature.
+In brief, I believe the paper is worthy of publication because is concerned with an important topic
+but I am afraid not in its current format for the reasons I explain below. My view is that the
+authors should substantially revise before considered for publication.
+1. First of all, the title suggests that using the marginal likelihood gives better results than using
+DIC. Actually, that is known anyway, in the sense that in a probabilistic sense and within a
+Bayesian framework when comparing models, what one wants is the posterior model
+probabilities which in turn will enable one to calculate the Bayes factors. On the other hand, as it
+is stated in the Introduction of the paper as an approximate method to do model selection.
+Therefore, when one comparing something that is approximate versus its exact analogue, there is
+no question as to which one will be better. Instead, one question that might be of interest is how
+good the approximate method is.
+4
+2. Generally, I did not find the paper particularly well written. It feels like that it was put together
+quickly with not much care.
+i) For example, I would have expected a bit more detail as to how the Steppingstone sampling
+algorithm works. Having read Section 2 of the paper I am not clear as what the algorithm is doing
+and what are the challenges for example when being implemented.
+ii) There are some terms that are used in the text that are not so standard. For example
+- the term "observation probability" (top of pg 5, and just before 3.2) is rather unusual as opposed
+to the observed data likelihood.
+- Also, in Section 3 it says "how well the model predicts" the data as opposed to "how well the
+model fits the data"?
+- in the Introduction the term "multi-model Bayesian inference" is also unsual/non-standard.
+Why not use say something like "Bayesian Model Choice"?
+- In the paragraph just before Section 2, it suggests that methods such as annealed importance
+sampling, and the steppingstone algorithm can estimate exactly the marginal likelihood, while
+thermodynamic integration is some sort of approximate method. I don't think that it is true in the
+sense that all three are exact in a Monte Carlo sense.
+iii) With regards to the examples presented, I find the ones one linear regression not to be a
+representative one for the reason that methods in which the model evidence is computed, are
+suited when there is only a handful of models in hand to compare. In a linear regression with J
+covariates the number of possible models is massive and it is not practical to compute the
+evidence for each model. Reversible jump is much more suited for this case or even using BIC as
+an approximation to Bayes Factors (see 'bicglm' in R for example)
+The example on the epidemic model is much more interesting because, one often has to choose
+between a handful of models and it is a problem which involves missing data and it is not
+obvious which version of DIC to use.
+My suggestion would be to to focus on the epidemic model example as well as the mixed effect
+examples (similar to the paper by Friel and Pettit on Power posteriors (aka thermodynamic
+integration).
+3. A major aspect of the paper is that computing the evidence is not more computationally
+intensive than computing the DIC. At first glance, it is not obvious why this is the case. I think the
+authors should explain a bit more clearly how the computational cost is computed.
+label_end_comment
+Decision letter (RSOS-171519)
+01-Dec-2017
+Dear Professor Pooley,
+The editors assigned to your paper ("Superiority of Bayesian model selection using evidence
+instead of deviance information criterion") have now received comments from reviewers. We
+5
+would like you to revise your paper in accordance with the referee and Associate Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 24-Dec-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171519
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+6
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Len Thomas (Associate Editor) and Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments:
+Thanks for your submission. It seems clear from my reading and the reviewers' comments that
+this manuscript has the potential to make an insightful paper. However, both reviewers made
+substantive comments about the exposition, and you need to address these before the manuscript
+can be accepted. Please address each point made by both reviewers in detail, and also focus on
+7
+overall clarity of exposition. If you disagree with any of the points (e.g., the suggestion by one
+reviewer that some terms are non-standard) then please back up your rebuttal with references or
+other evidence to support your argument. I look forward to seeing the revision.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This paper compares stepping stone algorithms to DIC for model selection and claims that the
+stepping stone algorithms are superior. The main form of comparison is to compare runtimes to
+achieve a given accuracy in approximating model evidence (or so I understood, although this
+could be made more explicit). The issues I have with this paper stem mainly from the lack of
+transparency in the description of particular parts of the algorithms which are essential to the
+comparisons. I commend the authors for providing neatly written code which was easy to
+compile and run. My comments follow.
+1. In Section 4, the authors rely extensively on the notion of the effective sample size, or
+alternatively the number of iterations taken to produce an independent sample. It is well known
+that this quantity can be computed in many different ways, and can be noisy. Geyer (1992) is a
+main reference for this. Also the way in which it is computed can have drastic impact on the
+conclusions of comparisons of MCMC algorithms. See for example the discussion in the
+Appendix of Hoffman and Gelman (2011). I think the authors can say more here than 'the
+distributions ... are problem dependent'. How does this impact the strength of the argument the
+authors are making on the relative computational costs?
+2. Following on from this point, the material in appendix E was difficult to follow in parts. Please
+justify after (E2) why making the approximation log(1+x) ~ x is valid here- i.e. argue in orders of
+magnitude for when p is a pdf and a pmf term. There is a typo in (E4). The argument the authors
+were making in (E5) was a little difficult to follow, and I'd suggest using notation consistent with
+the remainder of the text.
+3. The adapting scheme in Appendix B, would look better if you drew on the theory behind
+adaptive Monte Carlo (eg Andrieu and Thoms, 2008). It is essentially what you are doing, but will
+provide a better justification and will allow you to adjust the proposal to target a particular
+acceptance rate. This should help in the presentation.
+4. Equation (D1) has a typo (theta-theta)
+5. Although it is said otherwise in the text, Figure 2 really does give the impression that the DIC is
+supposed to be approximating the analytical curve and as a result is performing poorly. I find
+this figure misleading, and think you should find a better way to represent what you are trying to
+say.
+6. I found the experiments in Section 5.1 and 5.2 poorly explained. For example, the true model is
+not even stated and it is not possible to deduce what it should be from the text. When you speak
+of a "varying number of regressors" (4th paragraph, pg 18), you don't say which of the models the
+MCMC is being run for. There will be J distinct models with J_sel=1, J choose 2 distinct with
+J_sel=2 etc. This needs to be carefully rewritten. It was not possible to evaluate the study for
+correctness based on the presentation in my opinion. The "details of MCMC" provided in
+8
+appendix H only described the proposal mechanism! Similar comments can be made about
+Section 5.2. All experiments should be made more explicit, either in the text or appendix.
+Andrieu, C. and Thoms, J. (2008). A tutorial on adaptive MCMC. Statistics and Computing, vol
+18, 343-373.
+Geyer, C. (1992). Practical Markov Chain Monte Carlo. Statistical Science, vol 7, 473-483.
+Hoffman, M. D. and Gelman, A. (2011). The No-U-Turn Sampler: Adaptively Setting Path
+Lengths in Hamiltonian Monte Carlo. arXiv:1111.4246
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The paper is concerned with Bayesian model choice. In particular, the authors are concerned with
+comparing via a simulation study for three different modelling scenario (linear regression,
+random effects models and infectious disease models) the steppingstone sampling method
+(which offers a way to estimate the marginal likelihood) and the Deviance Information Criterion
+(DIC). The former (SS) is one of the recently developed methods for calculating a model's
+evidence whilst the latter (DIC) has been widely used in the statistical literature.
+In brief, I believe the paper is worthy of publication because is concerned with an important topic
+but I am afraid not in its current format for the reasons I explain below. My view is that the
+authors should substantially revise before considered for publication.
+1. First of all, the title suggests that using the marginal likelihood gives better results than using
+DIC. Actually, that is known anyway, in the sense that in a probabilistic sense and within a
+Bayesian framework when comparing models, what one wants is the posterior model
+probabilities which in turn will enable one to calculate the Bayes factors. On the other hand, as it
+is stated in the Introduction of the paper as an approximate method to do model selection.
+Therefore, when one comparing something that is approximate versus its exact analogue, there is
+no question as to which one will be better. Instead, one question that might be of interest is how
+good the approximate method is.
+2. Generally, I did not find the paper particularly well written. It feels like that it was put together
+quickly with not much care.
+i) For example, I would have expected a bit more detail as to how the Steppingstone sampling
+algorithm works. Having read Section 2 of the paper I am not clear as what the algorithm is doing
+and what are the challenges for example when being implemented.
+ii) There are some terms that are used in the text that are not so standard. For example
+- the term "observation probability" (top of pg 5, and just before 3.2) is rather unusual as opposed
+to the observed data likelihood.
+- Also, in Section 3 it says "how well the model predicts" the data as opposed to "how well the
+model fits the data"?
+- in the Introduction the term "multi-model Bayesian inference" is also unsual/non-standard.
+Why not use say something like "Bayesian Model Choice"?
+9
+- In the paragraph just before Section 2, it suggests that methods such as annealed importance
+sampling, and the steppingstone algorithm can estimate exactly the marginal likelihood, while
+thermodynamic integration is some sort of approximate method. I don't think that it is true in the
+sense that all three are exact in a Monte Carlo sense.
+iii) With regards to the examples presented, I find the ones one linear regression not to be a
+representative one for the reason that methods in which the model evidence is computed, are
+suited when there is only a handful of models in hand to compare. In a linear regression with J
+covariates the number of possible models is massive and it is not practical to compute the
+evidence for each model. Reversible jump is much more suited for this case or even using BIC as
+an approximation to Bayes Factors (see 'bicglm' in R for example)
+The example on the epidemic model is much more interesting because, one often has to choose
+between a handful of models and it is a problem which involves missing data and it is not
+obvious which version of DIC to use.
+My suggestion would be to to focus on the epidemic model example as well as the mixed effect
+examples (similar to the paper by Friel and Pettit on Power posteriors (aka thermodynamic
+integration).
+3. A major aspect of the paper is that computing the evidence is not more computationally
+intensive than computing the DIC. At first glance, it is not obvious why this is the case. I think the
+authors should explain a bit more clearly how the computational cost is computed.
+Author's Response to Decision Letter for (RSOS-171519)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-171519.R1)
+22-Jan-2018
+Dear Professor Pooley:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171519.R1
+entitled "Bayesian model evidence as a practical alternative to deviance information criterion" has
+been accepted for publication in Royal Society Open Science subject to minor revision in
+accordance with the editor's suggestions attached.
+The editors have recommended publication, but also suggest some minor revisions to your
+manuscript. Therefore, I invite you to respond to the comments and revise your manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+10
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171519.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+11
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 31-Jan-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+12
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Len Thomas (Associate Editor) and Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Professor Len Thomas):
+See attached.
+Author's Response to Decision Letter for (RSOS-171519.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-171519.R2)
+06-Feb-2018
+Dear Professor Pooley:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171519.R2
+entitled "Bayesian model evidence as a practical alternative to deviance information criterion" has
+been accepted for publication in Royal Society Open Science subject to minor revision in
+accordance with the referee suggestions. Please find the Editors' comments at the end of this
+email.
+Please note that you must respond fully to the Editors' comment in your revision.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+13
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171519.R2
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 15-Feb-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+14
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Len Thomas (Associate Editor) and Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+15
+Associate Editor Comments to Author (Professor Len Thomas):
+Associate Editor
+Comments to the Author:
+label_comment_5
+Thanks for your fast re-submission, and for agreeing with my substantial points. Thanks also for
+the correction re WBIC (I was indeed thinking of WAIC). I actually do not agree with your point
+that one would expect DIC to select the data generating model if this model is of low dimension;
+however I am prepared to recommend acceptance and let the readers judge. On the other hand, I
+must insist on one change to the abstract: you persist in using the term "capability", but at least
+you define it; you also use the word "reliable" but do not define it; I therefore ask you to change
+the word "reliable" to "capable".
+Author's Response to Decision Letter for (RSOS-171519.R2)
+The following changes have been made to remove any references to "reliability":
+1) In the abstract the following sentence has been used:
+"Whilst DIC was found to correctly identify the true model when applied to linear regression
+models, it led to incorrect model choice in the other two cases."
+2) At the bottom of page 13, the sentence has been altered:
+"In fact all four DIC measures incorrectly identify the true model under at least one scenario."
+label_end_comment
+Decision letter (RSOS-171519.R3)
+13-Feb-2018
+Dear Professor Pooley,
+I am pleased to inform you that your manuscript entitled "Bayesian model evidence as a practical
+alternative to deviance information criterion" is now accepted for publication in Royal Society
+Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+16
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Appendix A
+We thank the reviewers for their insightful comments and help in improving our paper. Below we
+outline the changes that have been made to address the reviewers’ comments:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+This paper compares stepping stone algorithms to DIC for model selection and claims that the
+stepping stone algorithms are superior. The main form of comparison is to compare runtimes to
+achieve a given accuracy in approximating model evidence (or so I understood, although this could
+be made more explicit).
+To make it clearer that DIC is a different measure to model evidence the following sentence has
+been changed in the abstract:
+“In contrast, the widely used deviance information criterion (DIC), a different measure that balances
+model accuracy against complexity, is commonly considered a much faster alternative.”
+Furthermore, the main aims of the paper are now clarified in the abstract:
+“This paper compares both the capability (i.e. ability to select the true model) and speed (i.e. CPU
+time to achieve a given accuracy) of DIC with model evidence calculated using steppingstone
+sampling. Three important model classes are considered: linear regression models, mixed models,
+and compartmental models widely used in epidemiology. Whilst DIC was found to be reliable when
+applied to linear regression models, it led to incorrect model choice in the other two cases. On the
+other hand, model evidence led to correct model choice in all cases considered. Importantly, and
+perhaps surprisingly, DIC and model evidence were found to run at similar computational speeds, a
+result reinforced by analytically derived expressions.”
+The issues I have with this paper stem mainly from the lack of transparency in the description of
+particular parts of the algorithms which are essential to the comparisons. I commend the authors
+for providing neatly written code which was easy to compile and run. My comments follow.
+1. In Section 4, the authors rely extensively on the notion of the effective sample size, or
+alternatively the number of iterations taken to produce an independent sample. It is well known
+that this quantity can be computed in many different ways, and can be noisy. Geyer (1992) is a
+main reference for this. Also the way in which it is computed can have drastic impact on the
+conclusions of comparisons of MCMC algorithms. See for example the discussion in the Appendix of
+Hoffman and Gelman (2011).
+It is important to note that whilst section 4 (which is an analytical treatment of the problem) relies
+on effective sample size, the numerical comparison of computational times does not. This
+clarification has been made in the text by adding the following paragraph in section 5.1:
+“Next, we investigate the speed with which the various model selection measures can be estimated.
+This is achieved by running a large number (100) of independent runs of a given inference algorithm
+(either DIC or SS), and then calculating the CPU time after which the standard deviation in the model
+selection measure across runs falls below a certain critical value (which is taken to be 0.2). Further
+details of this procedure are given in ESM Appendix I.”
+Coming back to the point about effective sample size in section 4, nowhere in the paper is it actually
+calculated, so the problems mentioned by the referee do not arise. However, for completeness we
+now include in Appendix F a description of how it would be calculated in practice (at least for the
+most commonly used approach). Furthermore, Appendix E now explicitly shows how the definition
+for the effective sample size is derived.
+I think the authors can say more here than 'the distributions ... are problem dependent'. How does
+this impact the strength of the argument the authors are making on the relative computational
+costs?
+In the text we have brought out the most notable feature of the expression for SS in Eq.(18), namely
+that the results is independent of the number of chains:
+“The distributions for <U+F073> k and nk are problem dependent, thus making it difficult to definitively say
+cor
+which approach is the fastest, however the above expressions do enable a broad comparison. One
+key point to mention is that the computational efficiency for SS in Eq.(18) is independent of K for
+large K (if K is doubled then the temperature separation is approximately halved and these
+contributions cancel out)1. This result is surprising, and goes some way to explain why despite the
+fact that SS uses K=50 chains in this study it is comparable in speed to DIC which uses just a single
+chain K=1.”
+2. Following on from this point, the material in appendix E was difficult to follow in parts. Please
+justify after (E2) why making the approximation log(1+x) ~ x is valid here- i.e. argue in orders of
+magnitude for when p is a pdf and a pmf term. There is a typo in (E4). The argument the authors
+were making in (E5) was a little difficult to follow, and I'd suggest using notation consistent with
+the remainder of the text.
+Appendix E has largely been rewritten to show a more straightforward derivation of the analytical
+results.
+3. The adapting scheme in Appendix B, would look better if you drew on the theory behind
+adaptive Monte Carlo (eg Andrieu and Thoms, 2008). It is essentially what you are doing, but will
+provide a better justification and will allow you to adjust the proposal to target a particular
+acceptance rate. This should help in the presentation.
+It is certainly true to say that there are clear parallels with adaptive MCMC. However, in contrast to
+adaptive MCMC, here we do not change proposal distributions after the burn-in time. Thus, strictly
+speaking, what we implement is a tuning procedure. This was considered to be the best approach
+for this particular paper, as it avoids unnecessary issues related to the violation of detailed balance.
+We have added the following sentence to Appendix B:
+1
+So an algorithm which uses K=100 chains is no slower than one which uses K=50 chains. This remains true for
+larger and larger K until burning-in such a substantial number of chains becomes problematic.
+“Motivated by adaptive MCMC, a robust heuristic method for optimising <U+03BB>k,j within the burn-in
+period is as follows (note, after burn-in the proposal distributions are fixed to ensure that detailed
+balance is strictly satisfied).”
+4. Equation (D1) has a typo (theta-theta)
+Thank you for pointing this out. It has been corrected.
+5. Although it is said otherwise in the text, Figure 2 really does give the impression that the DIC is
+supposed to be approximating the analytical curve and as a result is performing poorly. I find this
+figure misleading, and think you should find a better way to represent what you are trying to say.
+Figure 2 has now been split up to avoid this confusion. Furthermore, the following sentences have
+been added to the text:
+“Figure 2 illustrates notable differences between DIC and evidence-based measures. It is important
+to emphasise that these differences do not arise from DIC inaccurately approximating the evidence.
+Rather, the two approaches are simply different measures arising from contrasting philosophies:”
+6. I found the experiments in Section 5.1 and 5.2 poorly explained. For example, the true model is
+not even stated and it is not possible to deduce what it should be from the text. When you speak of
+a "varying number of regressors" (4th paragraph, pg 18), you don't say which of the models the
+MCMC is being run for. There will be J distinct models with J_sel=1, J choose 2 distinct with J_sel=2
+etc. This needs to be carefully rewritten. It was not possible to evaluate the study for correctness
+based on the presentation in my opinion.
+The reviewer is correct in stating that we do not consider all possible models (this of course would
+usually become impractical when Jsel is large). The idea behind the figures which have Jsel on the x-
+axis was simply to cut across a range of possible models to visually show how well the various
+algorithms perform. We believe this is of value, and have therefore focused on improving the text.
+The following description has been added to section 5.1 to incorporate the reviewer’s comments
+and also clarify what we have done and why:
+“In terms of model selection, one of the key difficulties faced by the scientist is determining which
+regressors are genuine (i.e. actually affect the observations) and which are not. Specifically, suppose
+data are available from J’ potential regressors, where J’ is greater than (or equal to) the true
+number of regressors J. We denote <U+03BA> as a J’ dimensional vector that specifies a particular model,
+such that <U+03BA>j=1 if the model contains regressor j and <U+03BA>j=0 otherwise. Thus, in total 2J’ possible
+models exist. If J’ is small then it may be practical to calculate model selection measures for each
+possibility, but as J’ increases the number of potential models can become vast. In this case two
+approaches can be taken: 1) in a Bayesian setting model selection MCMC [25] can be used to
+generate posterior samples for the vector <U+03BA> [25] and 2) stepwise methods [26] which minimise the
+model selection measure by accepting or rejecting successive changes to the model (see ESM
+Appendices G and H for details).
+The focus of this paper, however, is not to get into the details of how model selection is actually
+achieved using these two approaches. Rather, a question of more fundamental importance is
+addressed: Is the model selection measure actually minimised at (or near to) the true model? We
+address this question by considering a simple toy example. Here J’=10 regressors are assumed to
+exist (elements of the design matrix Xrj for j=2…J’ are set to 0 or 1 with equal probability). The first 5
+of these regressors are assumed to actually influence the trait and the last five have no influence (i.e.
+the true model is represented by <U+03BA>j=1 for j=1…5 and <U+03BA>j=0 for j=6…10). R=100 measurements are
+simulated from the true model by means of Eq.(19) assuming J=J’, ßj=0.5 for j=1…5, ßj=0 for j=6…10,
+and residual variance is taken to be <U+03B7>2=1.
+Next we consider a subset of potential models which are characterised by the number of regressors
+Jsel they contain and defined such that <U+03BA>j=1 for j=Jsel and <U+03BA>j=0 for j>Jsel (note here that Jsel=5
+represents the true model). The priors for ßj are taken to be uniform between -2 and 2, and for <U+03B7>2
+uniform between 0.1 and 2 (these bounds ensure the prior is proper and sufficiently diffuse to have
+a negligible effect on the posterior distribution as compared to using an infinite flat prior2). Figure
+3(a) shows the various model selection measures as a function of Jsel (details of the MCMC
+implementation are provided in ESM Appendix J). The results using model evidence are shown by
+the solid red line. Those models with Jsel < 5 are missing certain factors that help to explain the data,
+so naturally they are not expected to be as good (i.e. there is less evidence supporting them so -
+2log(P(y)) is higher). Those models with Jsel > 5 contain extra model parameters not expected to
+provide any new information (as they were not used in generating the data). Consequently the solid
+curve has a long term upward trajectory towards the right of Fig. 3(a). The minimum lies at Jsel =5,
+indicating that model evidence had successfully identified the true model.”
+Furthermore, two new Appendices G and H have been added to explain model selection techniques
+when a large number of models are considered.
+The "details of MCMC" provided in appendix H only described the proposal mechanism! Similar
+comments can be made about Section 5.2. All experiments should be made more explicit, either in
+the text or appendix.
+The following additional description has been added to Appendix J (which provides MCMC details for
+the linear regression model):
+“In the case of DIC, updates are sequentially performed on the posterior chain and the proposals are
+accepted with the usual Metropolis-Hastings probability
+<U+F0EF> P( y | <U+F071> p , x p )<U+F070> ( x p | <U+F071> p )<U+F070> (<U+F071> p ) j p<U+F0AE>i <U+F0FC>
+<U+F0EC> <U+F0EF>
+<U+F0ED> ,1<U+F0FD> , ( 1)
+<U+F0EF> P( y | <U+F071>i , xi )<U+F070> ( xi | <U+F071>i )<U+F070> (<U+F071>i ) ji<U+F0AE> p <U+F0FE>
+<U+F0EE> <U+F0EF>
+where <U+F071>i , xi are the current model parameters and latent variables and <U+F071> p , x p are the proposed set.
+In the case of SS each chain k is updated sequentially, but this time proposals are accepted with a
+modified Metropolis-Hastings probability
+2
+Note, a conjugate prior (instead of this flat prior) is often used to rapidly increase the speed at which the
+model evidence can be calculated. Since this paper is focused on the generic performance of DIC and model
+evidence measures we do not make use of this mathematical “trick”.
+<U+F066>k
+<U+F0EF><U+F0E6> P( y | <U+F071> p , x p ) <U+F0F6> <U+F070> ( x p | <U+F071> p )<U+F070> (<U+F071> p ) j p<U+F0AE>i <U+F0FC>
+<U+F0EC> <U+F0EF>
+<U+F0ED><U+F0E7> k <U+F0F7>
+,1<U+F0FD> , ( 2)
+P( y | <U+F071>i , xi ) <U+F0F8> <U+F070> ( xi | <U+F071>i )<U+F070> (<U+F071>i ) ji<U+F0AE> p <U+F0EF>
+<U+F0EE><U+F0E8>
+<U+F0EF> <U+F0FE>
+which incorporates the chain’s inverse temperature <U+03D5>k.
+To generate the results in the paper 2×103 burn-in updates followed by N=105 sampling updates
+were used.”
+Similar additions have been made to the Appendixes describing the MCMC approaches for mixed
+models and compartmental models.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+The paper is concerned with Bayesian model choice. In particular, the authors are concerned with
+comparing via a simulation study for three different modelling scenario (linear regression, random
+effects models and infectious disease models) the steppingstone sampling method (which offers a
+way to estimate the marginal likelihood) and the Deviance Information Criterion (DIC). The former
+(SS) is one of the recently developed methods for calculating a model's evidence whilst the latter
+(DIC) has been widely used in the statistical literature.
+In brief, I believe the paper is worthy of publication because is concerned with an important topic
+but I am afraid not in its current format for the reasons I explain below. My view is that the
+authors should substantially revise before considered for publication.
+1. First of all, the title suggests that using the marginal likelihood gives better results than using
+DIC. Actually, that is known anyway, in the sense that in a probabilistic sense and within a
+Bayesian framework when comparing models, what one wants is the posterior model probabilities
+which in turn will enable one to calculate the Bayes factors. On the other hand, as it is stated in the
+Introduction of the paper as an approximate method to do model selection. Therefore, when one
+comparing something that is approximate versus its exact analogue, there is no question as to
+which one will be better. Instead, one question that might be of interest is how good the
+approximate method is.
+In fact DIC is not an approximate method for calculating model evidence, a point we have tried to
+clarify by making changes to the abstract:
+“In contrast, the widely used deviance information criterion (DIC), a different measure that balances
+model accuracy against complexity, is commonly considered a much faster alternative.”
+and in section 3.3:
+“Figure 2 illustrates notable differences between DIC and evidence-based measures. It is important
+to emphasise that these differences do not arise from DIC inaccurately approximating the evidence.
+Rather, the two approaches are simply different measures arising from contrasting philosophies: “
+Taking on board the comments from the reviewer, we have renamed the paper to more accurately
+reflect its content:
+“Bayesian model evidence as a practical alternative to deviance information criterion”
+2. Generally, I did not find the paper particularly well written. It feels like that it was put together
+quickly with not much care.
+We believe the changes below (along with other small modifications to improve the readability)
+have improved the paper.
+In particular the main aims of the paper are now clarified in the abstract:
+“This paper compares both the capability (i.e. ability to select the true model) and speed (i.e. CPU
+time to achieve a given accuracy) of DIC with model evidence calculated using steppingstone
+sampling. Three important model classes are considered: linear regression models, mixed models,
+and compartmental models widely used in epidemiology. Whilst DIC was found to be reliable when
+applied to linear regression models, it led to incorrect model choice in the other two cases. On the
+other hand, model evidence led to correct model choice in all cases considered. Importantly, and
+perhaps surprisingly, DIC and model evidence were found to run at similar computational speeds, a
+result reinforced by analytically derived expressions.”
+Appendix E has largely been rewritten to show a more straightforward derivation of the analytical
+results, along with the addition of Appendices G and H, a new theory section in Appendix A, and
+more detail on MCMC implantation in Appendices J, L and N.
+i) For example, I would have expected a bit more detail as to how the Steppingstone sampling
+algorithm works. Having read Section 2 of the paper I am not clear as what the algorithm is doing
+and what are the challenges for example when being implemented.
+More detain has now been added to section 2:
+“As with any MCMC, each of these chains undergoes changes as a result of proposals that are either
+accepted or rejected. These proposals can take a variety of forms (e.g. random walk [1], Gibbs
+sampling [21], Metropolis-adjusted Langevin algorithm [22] etc..) and must be selected such that the
+MCMC chain can, in principle at least, explore the entirety of parameter and latent variable space. A
+key difference between SS and ordinary MCMC is that the proposals for each chain k use a
+Metropolis-Hastings acceptance probability modified by the chain’s inverse temperature <U+03D5>k : “
+Furthermore, a new section in Appendix A has been added to provide a theoretical justification for
+the expression in Eq.(6).
+ii) There are some terms that are used in the text that are not so standard. For example
+- the term "observation probability" (top of pg 5, and just before 3.2) is rather unusual as opposed
+to the observed data likelihood.
+We have changed "observation probability" to “observed data likelihood”.
+- Also, in Section 3 it says "how well the model predicts" the data as opposed to "how well the
+model fits the data"?
+This has been corrected.
+- in the Introduction the term "multi-model Bayesian inference" is also unsual/non-standard. Why
+not use say something like "Bayesian Model Choice"?
+This has been changed.
+- In the paragraph just before Section 2, it suggests that methods such as annealed importance
+sampling, and the steppingstone algorithm can estimate exactly the marginal likelihood, while
+thermodynamic integration is some sort of approximate method. I don't think that it is true in the
+sense that all three are exact in a Monte Carlo sense.
+Thermodynamic integration techniques all involve replacing an integral with some sort of numerical
+approximation (e.g. the trapezoidal rule). For example, see Friel and Pettitt [1]. This error is on top of
+the usual Monte Carlo sampling error and results in bias (regardless of how many samples are
+taken).
+iii) With regards to the examples presented, I find the ones one linear regression not to be a
+representative one for the reason that methods in which the model evidence is computed, are
+suited when there is only a handful of models in hand to compare. In a linear regression with J
+covariates the number of possible models is massive and it is not practical to compute the evidence
+for each model. Reversible jump is much more suited for this case or even using BIC as an
+approximation to Bayes Factors (see 'bicglm' in R for example)
+The description of the linear regression model in section 5.1 has been substantially revised:
+“In terms of model selection, one of the key difficulties faced by the scientist is determining which
+regressors are genuine (i.e. actually affect the observations) and which are not. Specifically, suppose
+data are available from J’ potential regressors, where J’ is greater than (or equal to) the true
+number of regressors J. We denote <U+03BA> as a J’ dimensional vector that specifies a particular model,
+such that <U+03BA>j=1 if the model contains regressor j and <U+03BA>j=0 otherwise. Thus, in total 2J’ possible
+models exist. If J’ is small then it may be practical to calculate model selection measures for each
+possibility, but as J’ increases the number of potential models can become vast. In this case two
+approaches can be taken: 1) in a Bayesian setting model selection MCMC [25] can be used to
+generate posterior samples for the vector <U+03BA> [25] and 2) stepwise methods [26] which minimise the
+model selection measure by accepting or rejecting successive changes to the model (see ESM
+Appendices G and H for details).
+The focus of this paper, however, is not to get into the details of how model selection is actually
+achieved using these two approaches. Rather, a question of more fundamental importance is
+addressed: Is the model selection measure actually minimised at (or near to) the true model? We
+address this question by considering a simple toy example. Here J’=10 regressors are assumed to
+exist (elements of the design matrix Xrj for j=2…J’ are set to 0 or 1 with equal probability). The first 5
+of these regressors are assumed to actually influence the trait and the last five have no influence (i.e.
+the true model is represented by <U+03BA>j=1 for j=1…5 and <U+03BA>j=0 for j=6…10). R=100 measurements are
+simulated from the true model by means of Eq.(19) assuming J=J’, ßj=0.5 for j=1…5, ßj=0 for j=6…10,
+and residual variance is taken to be <U+03B7>2=1.
+Next we consider a subset of potential models which are characterised by the number of regressors
+Jsel they contain and defined such that <U+03BA>j=1 for j=Jsel and <U+03BA>j=0 for j>Jsel (note here that Jsel=5
+represents the true model). The priors for ßj are taken to be uniform between -2 and 2, and for <U+03B7>2
+uniform between 0.1 and 2 (these bounds ensure the prior is proper and sufficiently diffuse to have
+a negligible effect on the posterior distribution as compared to using an infinite flat prior3). Figure
+3(a) shows the various model selection measures as a function of Jsel (details of the MCMC
+implementation are provided in ESM Appendix J). The results using model evidence are shown by
+the solid red line. Those models with Jsel < 5 are missing certain factors that help to explain the data,
+3
+Note, a conjugate prior (instead of this flat prior) is often used to rapidly increase the speed at which the
+model evidence can be calculated. Since this paper is focused on the generic performance of DIC and model
+evidence measures we do not make use of this mathematical “trick”.
+so naturally they are not expected to be as good (i.e. there is less evidence supporting them so -
+2log(P(y)) is higher). Those models with Jsel > 5 contain extra model parameters not expected to
+provide any new information (as they were not used in generating the data). Consequently the solid
+curve has a long term upward trajectory towards the right of Fig. 3(a). The minimum lies at Jsel =5,
+indicating that model evidence had successfully identified the true model.”
+Two new Appendices G and H have been incorporated to explain how large numbers of models can
+be dealt with effectively when model evidence is used in practice.
+The example on the epidemic model is much more interesting because, one often has to choose
+between a handful of models and it is a problem which involves missing data and it is not obvious
+which version of DIC to use.
+My suggestion would be to to focus on the epidemic model example as well as the mixed effect
+examples (similar to the paper by Friel and Pettit on Power posteriors (aka thermodynamic
+integration).
+Our feeling is that the paper benefits from also containing the linear regression model. In going from
+a linear to a mixed to a compartmental model there is a natural progression from posteriors which
+are well represented by multivariate normal distributions, to ones that aren’t. In conjunction with
+this we provide an example of when DIC performs well, and one in which it doesn’t perform well.
+Without the linear regression model the paper would no longer contain an example for which DIC
+works. We feel this would be unrepresentative and its inclusion makes for a more balanced paper.
+3. A major aspect of the paper is that computing the evidence is not more computationally
+intensive than computing the DIC. At first glance, it is not obvious why this is the case. I think the
+authors should explain a bit more clearly how the computational cost is computed.
+As mentioned above, additional text has been added into section 5.1 to clearly explain how the
+computational cost is calculated:
+“Next, we investigate the speed with which the various model selection measures can be estimated.
+This is achieved by running a large number (100) of independent runs of a given inference algorithm
+(either DIC or SS), and then calculating the CPU time after which the standard deviation in the model
+selection measure across runs falls below a certain critical value (which is taken to be 0.2). Further
+details of this procedure are given in ESM Appendix I.”
+A key insight in explaining why steppingstone sampling is not slower than the calculation of DIC
+comes from the analytical expressions shown in Eq.(18) where the number of updates needed to
+achieve a certain level of accuracy is independent on the number of chains used. This has been
+clarified in section 4 by adding the paragraph:
+“The distributions for <U+F073> k and nk are problem dependent, thus making it difficult to definitively say
+cor
+which approach is the fastest, however the above expressions do enable a broad comparison. One
+key point to mention is that the computational efficiency for SS in Eq.(18) is independent of K for
+large K (if K is doubled then the temperature separation is approximately halved and these
+contributions cancel out)4. This result is surprising, and goes some way to explain why despite the
+fact that SS uses K=50 chains in this study it is comparable in speed to DIC which uses just a single
+chain K=1.”
+[1] Friel, N. & Pettitt, A.N. 2008 Marginal Likelihood Estimation via Power Posteriors. Journal of
+the Royal Statistical Society. Series B (Statistical Methodology) 70, 589-607.
+4
+So an algorithm which uses K=100 chains is no slower than one which uses K=50 chains. This remains true for
+larger and larger K until burning-in such a substantial number of chains becomes problematic.
+Appendix B
+Firstly, we would like to thank the editor for going through the paper so carefully and
+providing many useful comments. We have address these as described below.
+label_version_2
+RSOS-171519.R1 “Bayesian model evidence as a practical
+alternative to deviance information criterion."
+AE: Len Thomas, University of St. Andrews.
+Substantive comments
+1. The authors have done a good job of responding to author's comments and sug-
+gestions. They have not made every change suggested (e.g., the linear regression
+example is still prominent) but justify themselves well. I therefore elected not to
+send the paper back out for review.
+2. One substantive issue remaining, however, is the basis for comparison of DIC and
+model evidence (via the SS algorithm) as model selection methods. The authors
+have added text to clarify that DIC and model evidence are different measures
+arising from contrasting philosophies", however they persist in using selection of
+the true model as a measure of the \capability" of the approaches. As they are
+no doubt aware, and as is explicit in the original DIC paper (Spiegelhalter et al.
+2002) and the follow-up (Spiegelhalter et al. 2014), DIC is not attempting to find
+the true model, rather it is attempting to find the model that can produce the best
+prediction of future, unobserved data in a world where the \true model" (i.e., true
+data generating process) is very high dimensional. One example comes from page
+3 of the latter paper, under section 4 (regarding common criticisms of DIC): \Lack
+of consistency: the lack of consistency concerns many critics, but the stated aim of
+DIC is in optimizing short-term predictions of a particular type, and not in trying
+to identify the `true' model: except in rare and stylized circumstances, we contend
+that such an entity is an unattainable ideal."
+In order for the manuscript to be acceptable, the authors should alter their text
+so that it is clear what the goals of the different measures are, and that it is clear
+that DIC is not failing by not finding the true model. Terms such as “capability",
+“reliable" and “unreliable" should not be used in the context of DIC not finding
+the true model. The authors should then either (1) make it clear that they are
+only testing one aspect of model selection (finding the true model when truth is low
+dimensional) and that one does not expect DIC to perform well on this measure,
+or (2) add consideration of performance in selecting a model that produces good
+short-term predictions in situations where the “true model" is high dimensional.
+We are grateful to the editor for raising these very interesting points that we hadn’t
+addressed. To do so we have added the following paragraph at the end of section 3.3:
+“Furthermore, it should be stressed that the stated aim of DIC is not to find the “true ” model, but
+rather to accurately predict future datasets in a world in which the true data generating is, in fact,
+very high dimensional (and effectively unobtainable) [6,7]. Nevertheless, this paper contends that in
+situations in which the true model is low dimensional and exactly know (as it is for the simulated
+datasets in section 5) it should be expected that DIC does a reasonable job of selecting the true
+model, since simulation of the observed data from the true model intuitively seems more plausibl e
+than from an incorrect one. Therefore, this paper uses model selection, rather than prediction
+accuracy (or any other measure of model fit, such as posterior predictive assessment [25]), as a
+means of comparing DIC and model evidence, but concedes that this is not an entirely fair
+comparison.”
+and the following sentence in the conclusion:
+“Whilst DIC has not been developed with model selection in mind (rather it is concerned with
+prediction accuracy of future datasets), this lack of consistency between measures (in some cases
+suggesting completely the wrong model), is of great concern.”
+3. There is still not enough information in the “Results" section for readers to recreate
+what was done - something that is at the heart of the Open Science philosophy.
+For example, I believe that the number of replicate simulations of data generation
+(possibly just one), the sample size of observations and the true parameter values are
+not given for the linear regression example. There is missing information also in the
+other examples. All relevant information must be given; it would also be helpful to
+supply relevant code for all examples, as was done for the linear regression example.
+1
+This information was placed into the Appendices (e.g. information about replicates and
+sample size was in Appendix I). For clarity, this has now been also added to the main text:
+“To generate the results in the paper 2×103 burn-in updates were followed by N=105 sampling
+updates in the case of SS and N=106 sampling updates in the case of DIC.”
+and
+“To remove stochastic noise, the procedure is replicated over four data sets with the CPU times
+being averaged (further details are given in ESM Appendix I).”
+The parameter values are now also mentioned in the legends in various places.
+Furthermore, the code for the mixed and epidemiological models has now been incorporated
+into the supplementary material.
+Minor and editorial comments
+1. Page 3, line 16 (line numbers taken from the margin of the pdf). SS is only a
+practical
+alternative to RJMCMC when the number of models to choose among is small, or
+when a shortcut like sequential model selection is employed, which can then easily
+miss the “best" model. This issue needs a small mention here, at the outset.
+The following sentence has been added:
+“At least “practical” when the number of models to choose among is relatively small, or when
+techniques such as sequential model selection are employed, which can miss the “best" model.”
+2. Page 5, line 5. “Firstly" does not need capitalized.
+This has been corrected.
+3. Page 8. Section 5 \Results" contains methods as well as results; I suggest it be
+renamed something like \Assessment using benchmark models."
+This has been changed.
+4. Page 9, linear regression example. This only includes main effects; if model choice
+included high order interactions then sequential selection would be further
+complicated (and hence RJMCMC might be preferred over SS). This should be
+mentioned somewhere, here or in the discussion.
+The following sentence has been added:
+“It is worth noting that these stepwise methods are complicated when higher order, i.e. non-linear,
+interactions in the explanatory variables are included, and under these circumstances RJMCMC may
+become the method of choice.”
+5. Page 9, last paragraph. This is an example of where it is implicit the DIC should
+perform well in selecting the true model.
+The following sentence has been added
+“Note, this is an example in which it is implicit that DIC should perform well.”
+6. Page 10, footnote 9. Remove “rapidly"?
+This has been corrected.
+7. Page 12, first two lines. It is difficult from the figure to determine the numerical
+difference in model selection measures ( can these be added in a table, in an
+Appendix)?
+A table has been placed into Appendix O and referred to from Fig. 4.
+8. Page 12, line 41. Acronyms like SEIR need defining.
+The following sentence has been added:
+“Individuals in the population are classified according to their disease status: S represents
+susceptible, E is exposed, I is infectious and R is recovered. The acronyms used to refer to the models
+in Fig. 5 correspond to which of these classifications the model contains (so, in order, these models
+are SI, SEI, SIR and SEIR, respectively).”
+9. Page 14, last paragraph of Discussion ”computational" should be
+“computationally"
+This has been corrected.
+10. Page 14, last paragraph of Discussion. WBIC is, like DIC, a parsimony-based
+measure, so suggesting it as an alternative to SS seems incongruous to me. At the
+least, the goal of this measure should be mentioned.
+WBIC is expected to converge on the model evidence in the asymptotic limit. Perhaps what
+is being referred to is WAIC? Nevertheless, we have tried to improve what was written in the
+conclusion:
+“One promising possibility is the widely applicable Bayesian information criterion (WBIC) [34]. This
+calculates the mean in the log of the observation probability at a specially chosen inverse
+temperature <U+03D5>* = 1/log(n), where n is the sample size. It has been shown that whilst WBIC
+converges on the model evidence in the asymptotically limit [34], i.e. as n<U+2192> 8, it can also produce
+biased results for small sample sizes and when priors are not very informative [35].”
+11. Figure 1 legend. y-axis in (a) is described in the text (p4 line 14) as the average log
+of the observed data likelihood, where here it is described as the distribution in the
+log of the observed data likelihood. Please clarify the legend (and say what kind of
+average). Also, what are the dashed lines bracketing the solid line? Lastly, note that
+here and in several other places in the legends, there is a font issue with a sans-serif
+font slipping into the text in places.
+The legend has been altered:
+“Shows a typical example of how the posterior distribution in the log of the observed data likelihood
+varies as a function of inverse temperature <U+03D5>. This distribution is represented by a mean (solid line)
+and 95% confidence intervals (denoted by the dotted lines).”
+As well as the text in the paper:
+“Fig. 1(a) shows the variation in the mean of the log of the observed data likelihood”
+Font errors have also been corrected.
+12. Appendices. Dashed boxes appear above many symbols in equations (e.g., 1st P
+in A1, wk in A1, 1st P in A8, _ and _ in F1 and F2, etc. Please, when you re-
+submit, submit the appendices in pdf form and check that all equations are correctly
+formatted.
+This has been done.
+13. Appendix E. Neff is used here in equations before it is defined (in Appendix F) {
+please ensure a suitable forward reference is added the first time Neff is used.
+This has been done.
+14. Appendix F. I didn't understand equation F5 (should the > be <)?
+This equation is correct. The autocorrelation F0 starts at one and as t is increased so Ft
+decreases. If Eq. (F5) stated F<U+F074> <U+F03E> 0 , this would imply that we should only use t up until the
+point at which the autocorrelation function becomes negative. The actual condition in Eq.(F5)
+is slightly more complicated. This is down to a curious quirk of autocorrelation functions
+generated from MCMC: in the limit of large sample size the sum of adjacent autocorrelation
+values is guaranteed to be positive (but individual values themselves are not). This has now
+been clarified in the text.
+Society Open

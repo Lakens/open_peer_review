@@ -1,0 +1,612 @@
+Interactive numerals
+Harold Thimbleby and Paul Cairns
+Article citation details
+R. Soc. open sci. 4: 160903.
+http://dx.doi.org/10.1098/rsos.160903
+Review timeline
+Original submission: 9 November 2016 Note: Reports are unedited and appear as
+1st revised submission: 2 March 2017 submitted by the referee. The review history
+2nd revised submission: 21 March 2017 appears in chronological order.
+Final acceptance: 22 March 2017
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-160903.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This paper covers "interactive numerals", the authors' coinage to describe numerals as
+experienced in interactive systems. It is pleasing to read, and covers an important topic.
+However, there are several issues with the work’s presentation and scope: it is not sufficiently
+precise about its core term, and it fails to give adequate consideration to related work.
+In short, I can’t recommend publication without a major rework, which
+• Clearly and crisply defines interactive numerals;
+• Delineates the anatomy of interactive numerals
+• Considers more fully the surrounding literature and numeric input situations. A better
+connection to the HCI literature in particular would reinforce the value of this contribution.
+• Offers a stronger sense of what could be done, beyond saying that programming is hard.
+Further details follow.
+Firstly, the authors do not clearly delineate what an interactive numeral is. This leads to several
+glosses that make their case difficult to understand, as the boundaries are not clearly defined.
+Interactive numerals seem to at times consist of i) a means of displaying a numeral; ii) a means of
+entering a numeral; iii) the underlying computational number representation system; iv) a
+language for carrying out computations over numbers; v) tools for storing and recalling numbers
+from memory. Without having clarity over the boundaries and scope of interactive numerals, it
+is hard to make a clean argument in the rest of the paper.
+Much of the text is concerned with Apple’s calculators, which are not particularly intended as
+serious tools. The argument that Apple has the best programmers in the world does not really
+hold much water here – whether or not that is true, if there was no strong focus on making the
+calculators high quality, it is just as likely that they are someone’s pet project. With calculators in
+general, there are many approaches taken to ameliorate some of the issues here. This includes
+ones where the current set of operations is shown, and calculators that use reverse Polish notation
+(RPN) to combine numbers. RPN calculators have a different profile of potential user error, but
+are often preferred by engineers and scientists as they give greater clarity about the current state.
+The example of the bank accounts is especially troubling. Bank accounts are absolutely not
+numbers. They are identifiers that happen to be composed of numeric digits, and any
+programmer who treats them as numbers has made an error – for example, storing a bank
+account number in an integer column in a database will, almost inevitably, lead to hard to fix
+bugs in the future. Additionally, exactly the same errors would occur with a letter based
+identifier that did not have clear internal boundaries. As a supporting aside, my online banking
+forcibly breaks card numbers into sets of 4 digits, and adds interactive elements to this form that
+cause multiple repeated problems for people used to tabbing between entry fields. They also
+silently discard any key-presses which would add a 5th digit to the final field.
+Put together, this means that it is hard to understand whether interactive numerals should be
+“the number box on simple calculators” or “anything where people type numbers and symbols”,
+whether this characteristic is lost if the current set of operations is still displayed (e.g. “1 + 5”). Is
+the R REPL an interactive numeral? An Excel cell? Or the Excel cell along with the shared entry
+field at the top? The time display on my cooker? (Which, co-incidentally suffers from issues fully
+in line with the ones you raise). There are also differing degrees of interactivity and state in these
+numerals. The web forms shown may have front end validation, but they will then typically
+transmit a final number (or at least a string hoping to become a number) to be processed
+elsewhere. This has a different set of affordances and issues to the display on a calculator which
+includes a certain set of state and programmatic capability. It would be helpful to make sense of
+some of these distinctions.
+3
+Some closely related domains are omitted, which for a solid treatment of interactive numerals
+should be considered.
+• Possibly the most glaring omission is the spreadsheet, which is central to many business
+practices, and has been the technology behind many numerically driven failures. Surely the cells
+in a spreadsheet count as particularly powerful and evolved interactive numerals, and one can
+see the steps taken to make them work as such – separating input and display, maintaining
+formulae rather than just the current state, reporting a variety of errors etc. If not, we need a
+much crisper scope for interactive numerals to explain why these are not them.
+• When moving to some of the web based examples in particular, huge effort has been put
+into the validation of user entered data: any reasonably grown up web framework will have
+libraries both front end and client side for validation of numbers among other data types, which
+can give immediate and exact feedback about incorrect entries. This may or may not fall under
+the domain of premature semantics – typically, the semantics are given, and the user is prevented
+from entering invalid data. This also extends to complex data – for example, when entering VISA
+credit card numbers (although they are not really numbers), invalid strings are often reported
+immediately before the data is sent to the server.
+• In the case of entering simple numbers, there is a huge variety of techniques used, from
+dials and sliders to number boxes. These are noted, but as they are a commonly used response to
+some of the issues discussed here. As an example, the “number boxes” used in the Max/MSP
+programming language look like simple number displays, but have rich user input methods
+around modifying and storing numeric data, while preventing non-numbers from being entered.
+The introduction of premature semantics is interesting, but needs more work. The discussion of
+number entry (p.8, l6) is at odds with previous statements. Entering ‘0 . . 5’ would, on most
+calculators, produce 0.5 (p.3, l31). At a guess, this is what the user probably intended. It is
+interpreted as a number – in what way has it processed it incorrectly? This seems more like a case
+of semantics being used to correctly discard impossible user input, or at least a reasonable
+interpretation of unclear input. Some validation systems would show some kind of error when
+the second point was entered, but apart from that, how should things be improved? In the second
+example (p.8, l12) it is not clear to which NaN you are referring. If it is the work in (p.3, l48), then
+this seems to hinge on the semantics of [delete] and the [±] key as much as anything else. Starting
+with 0 in a calculator clearly causes issues, but many calculating systems do not do this. The
+discussion of the ‘creative’ use of 999 in number entry fields goes some way towards explicating
+things, but it feels rather like pushing the problem around – who is in the best position to decide
+what to do about missing data? Is this really premature semantics, or an incomplete semantics
+which should really include an explicit “no data” state (as implemented in e.g. the R
+programming language, whose semantics includes both a lack of data and a calculation which
+resulted in no number being produced.). This question has an overlap with the interactive
+numerals used to enter the data, but it is only partial.
+Finally, I have never counted references before, but the level of self citation in this particular piece
+seems somewhat excessive – by my count 19 of the 29 references are self citations. Of the
+remainder, most are relatively general, and only a couple deal with the issue of correctly entering
+data into numeric systems. I find it hard to believe that no-one else has carried out significant
+work here. It is also difficult to understand what this paper adds relative to the authors’ existing
+work. If the intention here is to sum up work on interactive numerals, then they need to be more
+clearly defined and situated. The abstract states that interactive numerals are introduced here –
+are they different from the “interactive numbers” of the authors’ previous work?
+Some specific points:
+• P.10,l10 – surely displaying NaN is showing that an error has occurred – in what way is
+it ignoring error?
+• P.12,l51 – there may be some more recent literature about multi-keystroke characters
+given both the adoption of Unicode and more recently the rise of Emoji as a form of
+communication.
+4
+label_author_2
+Review form: Reviewer 2 (Sally Jo Cunningham)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept as is
+Comments to the Author(s)
+label_comment_2
+This paper really hits the nail on the head; I had idly wondered over the years why I find it so
+difficult to use simple calculators, and this work not only clearly identifies the issues involved,
+but also points to a principled way forwards. Excellent research!
+I found just a couple of unclear or oddly worded sentences that should be tidied up:
+• "...and do not notice these errors nearly about 4% of the time."
+• "A patient’s age is certainly a number, but interactively there is a point before the number is
+correct, but the premature semantics required a number regardless."
+• "Many systems, because the display is assumed must always display a number, display a
+numeral even before anything has been entered..."
+• "Many calculators provide buttons to use a memory, but..." ("a memory" implies that the
+calculators can have several memory registers, but then the rest of the paragraph reads as though
+there is only one register available)
+label_end_comment
+Decision letter (RSOS-160903)
+08-Feb-2017
+Dear Professor Thimbleby,
+The editors assigned to your paper ("Interactive numerals") have now received comments from
+reviewers. We would like you to revise your paper in accordance with the referee and Associate
+Editor suggestions which can be found below (not including confidential reports to the Editor).
+Please note this decision does not guarantee eventual acceptance.
+5
+Please submit a copy of your revised paper within three weeks (i.e. by the 03-Mar-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160903
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+6
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor's comments:
+An interesting set of observations - while you limit yourself to the UI questions associated with
+numerals, I wonder if erroneous input in other areas (e.g. passwords) is related, and if so how?
+The paper makes novel contributions but also needs to address the comments made in the longer
+review, which are somewhat more significant than minor revision would allow for.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This paper covers "interactive numerals", the authors' coinage to describe numerals as
+experienced in interactive systems. It is pleasing to read, and covers an important topic.
+However, there are several issues with the work’s presentation and scope: it is not sufficiently
+precise about its core term, and it fails to give adequate consideration to related work.
+In short, I can’t recommend publication without a major rework, which
+• Clearly and crisply defines interactive numerals;
+• Delineates the anatomy of interactive numerals
+• Considers more fully the surrounding literature and numeric input situations. A better
+connection to the HCI literature in particular would reinforce the value of this contribution.
+• Offers a stronger sense of what could be done, beyond saying that programming is hard.
+Further details follow.
+Firstly, the authors do not clearly delineate what an interactive numeral is. This leads to several
+glosses that make their case difficult to understand, as the boundaries are not clearly defined.
+7
+Interactive numerals seem to at times consist of i) a means of displaying a numeral; ii) a means of
+entering a numeral; iii) the underlying computational number representation system; iv) a
+language for carrying out computations over numbers; v) tools for storing and recalling numbers
+from memory. Without having clarity over the boundaries and scope of interactive numerals, it
+is hard to make a clean argument in the rest of the paper.
+Much of the text is concerned with Apple’s calculators, which are not particularly intended as
+serious tools. The argument that Apple has the best programmers in the world does not really
+hold much water here – whether or not that is true, if there was no strong focus on making the
+calculators high quality, it is just as likely that they are someone’s pet project. With calculators in
+general, there are many approaches taken to ameliorate some of the issues here. This includes
+ones where the current set of operations is shown, and calculators that use reverse Polish notation
+(RPN) to combine numbers. RPN calculators have a different profile of potential user error, but
+are often preferred by engineers and scientists as they give greater clarity about the current state.
+The example of the bank accounts is especially troubling. Bank accounts are absolutely not
+numbers. They are identifiers that happen to be composed of numeric digits, and any
+programmer who treats them as numbers has made an error – for example, storing a bank
+account number in an integer column in a database will, almost inevitably, lead to hard to fix
+bugs in the future. Additionally, exactly the same errors would occur with a letter based
+identifier that did not have clear internal boundaries. As a supporting aside, my online banking
+forcibly breaks card numbers into sets of 4 digits, and adds interactive elements to this form that
+cause multiple repeated problems for people used to tabbing between entry fields. They also
+silently discard any key-presses which would add a 5th digit to the final field.
+Put together, this means that it is hard to understand whether interactive numerals should be
+“the number box on simple calculators” or “anything where people type numbers and symbols”,
+whether this characteristic is lost if the current set of operations is still displayed (e.g. “1 + 5”). Is
+the R REPL an interactive numeral? An Excel cell? Or the Excel cell along with the shared entry
+field at the top? The time display on my cooker? (Which, co-incidentally suffers from issues fully
+in line with the ones you raise). There are also differing degrees of interactivity and state in these
+numerals. The web forms shown may have front end validation, but they will then typically
+transmit a final number (or at least a string hoping to become a number) to be processed
+elsewhere. This has a different set of affordances and issues to the display on a calculator which
+includes a certain set of state and programmatic capability. It would be helpful to make sense of
+some of these distinctions.
+Some closely related domains are omitted, which for a solid treatment of interactive numerals
+should be considered.
+• Possibly the most glaring omission is the spreadsheet, which is central to many business
+practices, and has been the technology behind many numerically driven failures. Surely the cells
+in a spreadsheet count as particularly powerful and evolved interactive numerals, and one can
+see the steps taken to make them work as such – separating input and display, maintaining
+formulae rather than just the current state, reporting a variety of errors etc. If not, we need a
+much crisper scope for interactive numerals to explain why these are not them.
+• When moving to some of the web based examples in particular, huge effort has been put
+into the validation of user entered data: any reasonably grown up web framework will have
+libraries both front end and client side for validation of numbers among other data types, which
+can give immediate and exact feedback about incorrect entries. This may or may not fall under
+the domain of premature semantics – typically, the semantics are given, and the user is prevented
+from entering invalid data. This also extends to complex data – for example, when entering VISA
+credit card numbers (although they are not really numbers), invalid strings are often reported
+immediately before the data is sent to the server.
+• In the case of entering simple numbers, there is a huge variety of techniques used, from
+dials and sliders to number boxes. These are noted, but as they are a commonly used response to
+some of the issues discussed here. As an example, the “number boxes” used in the Max/MSP
+8
+programming language look like simple number displays, but have rich user input methods
+around modifying and storing numeric data, while preventing non-numbers from being entered.
+The introduction of premature semantics is interesting, but needs more work. The discussion of
+number entry (p.8, l6) is at odds with previous statements. Entering ‘0 . . 5’ would, on most
+calculators, produce 0.5 (p.3, l31). At a guess, this is what the user probably intended. It is
+interpreted as a number – in what way has it processed it incorrectly? This seems more like a case
+of semantics being used to correctly discard impossible user input, or at least a reasonable
+interpretation of unclear input. Some validation systems would show some kind of error when
+the second point was entered, but apart from that, how should things be improved? In the second
+example (p.8, l12) it is not clear to which NaN you are referring. If it is the work in (p.3, l48), then
+this seems to hinge on the semantics of [delete] and the [±] key as much as anything else. Starting
+with 0 in a calculator clearly causes issues, but many calculating systems do not do this. The
+discussion of the ‘creative’ use of 999 in number entry fields goes some way towards explicating
+things, but it feels rather like pushing the problem around – who is in the best position to decide
+what to do about missing data? Is this really premature semantics, or an incomplete semantics
+which should really include an explicit “no data” state (as implemented in e.g. the R
+programming language, whose semantics includes both a lack of data and a calculation which
+resulted in no number being produced.). This question has an overlap with the interactive
+numerals used to enter the data, but it is only partial.
+Finally, I have never counted references before, but the level of self citation in this particular piece
+seems somewhat excessive – by my count 19 of the 29 references are self citations. Of the
+remainder, most are relatively general, and only a couple deal with the issue of correctly entering
+data into numeric systems. I find it hard to believe that no-one else has carried out significant
+work here. It is also difficult to understand what this paper adds relative to the authors’ existing
+work. If the intention here is to sum up work on interactive numerals, then they need to be more
+clearly defined and situated. The abstract states that interactive numerals are introduced here –
+are they different from the “interactive numbers” of the authors’ previous work?
+Some specific points:
+• P.10,l10 – surely displaying NaN is showing that an error has occurred – in what way is
+it ignoring error?
+• P.12,l51 – there may be some more recent literature about multi-keystroke characters
+given both the adoption of Unicode and more recently the rise of Emoji as a form of
+communication.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+This paper really hits the nail on the head; I had idly wondered over the years why I find it so
+difficult to use simple calculators, and this work not only clearly identifies the issues involved,
+but also points to a principled way forwards. Excellent research!
+I found just a couple of unclear or oddly worded sentences that should be tidied up:
+• "...and do not notice these errors nearly about 4% of the time."
+• "A patient’s age is certainly a number, but interactively there is a point before the number is
+correct, but the premature semantics required a number regardless."
+• "Many systems, because the display is assumed must always display a number, display a
+numeral even before anything has been entered..."
+9
+• "Many calculators provide buttons to use a memory, but..." ("a memory" implies that the
+calculators can have several memory registers, but then the rest of the paragraph reads as though
+there is only one register available)
+Author's Response to Decision Letter for (RSOS-160903)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-160903.R1)
+08-Mar-2017
+Dear Professor Thimbleby:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160903.R1
+entitled "Interactive numerals" has been accepted for publication in Royal Society Open Science
+subject to minor revision in accordance with the referee suggestions. Please find the referees'
+comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160903.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+10
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 17-Mar-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+11
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Comments to the Author:
+label_comment_5
+I'm pretty happy with this now - i still think there's rather a lot of self citing - there is other
+literature on the general problem of erroneous input in other forms, and there are at least 2 ways
+to mitigate it (e.g. allow only the relevant strongly type-checked input at the right moment, and
+use confirmation of the input by displaying it back in a different form - most banking apps do
+this now - many webform libraries/SDKs also have provision for doing this). Also, you may
+want to consider what happens in systems with arbitrary precision arithmetic (one of the
+underlying ways of avoiding, or necessitating avoidance of early-binding of numeric input
+semantics)
+I'd be interested also in comments on other erroneous systems which have gone the other way -
+e..g predictive text input systems (including search bar auto-complete)....
+Otherwise, I think you have addressed the key reviewer comments, and I than you for the care in
+defining the problem carefully in sections 3 a-e - that strengthens the contribution significantly, I
+believe.
+I'm assuming there are some ethical considerations!
+Author's Response to Decision Letter for (RSOS-160903.R1)
+Thanks for your new comments, which have inspired some clarifications and minor additions.
+We have tightened up our discussion of types and added a bit on forms. We did mention
+arbitrary precision, but we've now made it a bit clearer.
+12
+We added a few more useful references to help address the self-citation problem you identified.
+We've added the ethical considerations - thanks for spotting that oversight!
+label_end_comment
+Decision letter (RSOS-160903.R2)
+22-Mar-2017
+Dear Professor Thimbleby,
+I am pleased to inform you that your manuscript entitled "Interactive numerals" is now accepted
+for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+response to the referees. (Changing the colours back to black will be trivial.) As a consequence, the
+Conclusions have also been significantly revised though not necessarily to address to specific feedback.
+Minor corrections, such as correcting typos, have been made throughout and these are not specially
+indicated. Thanks to the referees and editor for their helpful comments!
+Associate Editor's comments:
+> An interesting set of observations --- while you limit yourself to the UI questions associated with
+numerals, I wonder if erroneous input in other areas (e.g. passwords) is related, and if so how?
+We have now defined 'quasi-numerals' (p4) to clearly address and circumscribe this concern. This
+definition fits into our new section of definitions, which again we found useful to add. Thanks.
+Reviewer: 2
+> This paper really hits the nail on the head; I had idly wondered over the years why I find it so difficult
+to use simple calculators, and this work not only clearly identifies the issues involved, but also points to
+a principled way forwards. Excellent research!
+We noticed the very different perspectives of the two reviewers. We have therefore added some
+highlighted paragraphs (marked with ! marks) that discuss perspectives on the research, for example
+discussing the problems that equating numerals and numbers (which is otherwise often innocuous) raise
+in computer systems.
+Thanks for the suggested detailed corrections. All have been made.
+Reviewer: 1
+> it is not sufficiently precise about its core term
+We have added a new section 3, p3, that defines terms precisely. We think readers will find this helpful.
+This also led us to realise that one section of analysis was more about feature interaction on calculators
+than interactive numerals. We therefore deleted that section.
+> and it fails to give adequate consideration to related work ... Considers more fully the surrounding
+literature and numeric input situations. A better connection to the HCI literature in particular would
+reinforce the value of this contribution.
+> Finally, I have never counted references before, but the level of self citation in this particular piece
+seems somewhat excessive - by my count 19 of the 29 references are self citations. Of the remainder,
+most are relatively general, and only a couple deal with the issue of correctly entering data into numeric
+systems. I find it hard to believe that no-one else has carried out significant work here.
+We acknowledge there that there is limited research in this area of HCI, and we now point this out on
+page 11.
+We have given some thought to inserting a Related Work section (or similar) but interactive numerals
+are really at a level of interaction below any existing HCI research, other than our own, and they are
+tangential to the typical concerns of other fields. Such a section might show our readers that we know
+the area of HCI, the study of errors in interaction and the like, but we think it would add little in terms of
+elucidating the substance of the paper.
+> Offers a stronger sense of what could be done, beyond saying that programming is hard.
+The new section 3 precisely defining interactive numerals makes it clear that an interactive numeral
+need not be equated to its value and also the semantic structures that are needed. These function as a
+high-level specification for improving future interactive systems. We have highlighted this as a key step
+towards engineering suitable solutions in our conclusions.
+> Much of the text is concerned with Apple's calculators, which are not particularly intended as serious
+tools.
+There is general anecdotal evidence from our own research and that of colleagues that calculators on
+mobiles are used as convenient tools in medicine. We have given a recently reported example which
+resulted in two near-fatalities. Whether intended as serious tools or not, they are being used as such.
+> This includes ones where the current set of operations is shown, and calculators that use reverse
+Polish notation (RPN) to combine numbers. RPN calculators have a different profile of potential user
+error, but are often preferred by engineers and scientists as they give greater clarity about the current
+state.
+We have a new discussion on RPN on p6, and argue against the relevance of this view for addressing
+interactive numerals.
+> The example of the bank accounts is especially troubling.
+With our clear definitions, bank accounts are considered quasi-numerals (p5), and this tidies up the
+discussion.
+> Possibly the most glaring omission is the spreadsheet,
+Now discussed as part of the definitions section on p6.
+> When moving to some of the web based examples in particular,
+We think our new definitions (p3, section 3) improve the insights on this and many related topics; but
+we feel there is insufficient space in the paper to explore the wide range of applications/areas, since it
+would confuse applications for the underlying principles.
+> In the case of entering simple numbers, there is a huge variety of techniques used, from dials and
+sliders to number boxes.
+Discussed on p6 to help scope the goals of papers.
+> Entering `0 . . 5' would, on most calculators, produce 0.5 (p.3, l31). At a guess, this is what the user
+probably intended. It is interpreted as a number - in what way has it processed it incorrectly? This
+seems more like a case of semantics being used to correctly discard impossible user input, or at least a
+reasonable interpretation of unclear input.
+Now explained fully (p6-7). In some cases, 0..5 may be what the user intended. In some case it may
+not. It is impossible to know. But not representing what the user *did*, which is a matter of fact, will
+definitely lead to problems whenever the assumption is wrong.
+> It is also difficult to understand what this paper adds relative to the authors' existing work.
+We point out top of p3 that our previous work had not clarified the semantics of interactive numerals the
+way we have done here. References to our previous work also make clear the distinction between the
+problems of interactive numerals and the errors that we were addressing.
+> P.10,l10 - surely displaying NaN is showing that an error has occurred --- in what way is it ignoring
+error?
+Explained on p12. We have clarified as follows: NaN is an internal value representation that means
+nothing to non-technical users - clearly, displaying it to general users is a fault in the calculator itself: it
+has ignored an error, and its number representation code has failed to display it as either a number or
+as an error message.
+> P.12,l51 - there may be some more recent literature about multi-keystroke characters given both the
+adoption of Unicode and more recently the rise of Emoji as a form of communication.
+This would extend our concern for interactive numerals into new territory which we highlight in point (v)
+of our conclusions. As the reviewer points out, it is potentially quite problematic just like interactive
+numerals but we felt it is beyond the scope for our current concerns because of the huge difference in
+---
+We have opted for and are happy with 'open peer review' but think the referees and editor may not
+think this is sufficiently helpful on this occasion. Please ask them.
+Society Open

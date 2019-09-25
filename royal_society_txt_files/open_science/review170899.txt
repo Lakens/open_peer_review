@@ -1,0 +1,1189 @@
+Still slow, but even steadier: an update on the evolution of
+turtle cranial disparity interpolating shapes along branches
+Christian Foth, Eduardo Ascarrunz and Walter G. Joyce
+Article citation details
+R. Soc. open sci. 4: 170899.
+http://dx.doi.org/10.1098/rsos.170899
+Review timeline
+Original submission: 13 July 2017 Note: Reports are unedited and appear as
+Revised submission: 26 October 2017 submitted by the referee. The review history
+Final acceptance: 26 October 2017 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-170899.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This paper marks an attempt to establish the pattern of morphological diversity (disparity) in
+turtles over the past c. 200 million years (a laudable aim) as well as ascertain the major driving
+forces behind this pattern (climate, extinction, biogeography). Specifically the authors attempt to
+establish whether an apparent depression in disparity in the past 20 million years can be removed
+by applying a phylogenetic "correction" to their data (based on work by Friedman 2009 and
+Wilberg 2017, both cited by the authors). The manuscript is arguably presented primarily as an
+addendum to Foth and Joyce (2016, also already cited by the authors), however as a reviewer I
+will treat it as any paper should be, i.e., a stand alone publication. This is important as I feel that
+the work commits a number of errors, some of which are novel to the current manuscript, but
+others of which are carried over from the original work (and hence could - and hence should - be
+corrected or amended here). I provide both major and minor comments that I hope the authors
+can use to improve their manuscript below.
+My major issues with the paper can be summarised in the following eight points:
+1) The authors do not establish a specific hypothesis to test (simple correlations with a single
+climate proxy are applied, but are shown to be essentially a poor explanation for their data) and
+yet conclude (without evidence) both that extinction is not, and biogeography is, a major driving
+factor in their evolution. Hypotheses should be established at the outset and numerical means by
+which they can be tested (or falsified) explained and any subsequent results explicitly shown,
+whether through tables or graphs. Reference to the previous paper (Foth and Joyce 2016) is
+insufficient as they have established a novel time series and hence their results have substantially
+altered (additionally this should serve as a stand alone publication, see above).
+2) Crucially the authors do not establish that their metric really captures the signal
+(morphological diversity) they are looking for. I.e., I believe that they are actually primarily
+measuring phylogenetic disparity over time - Figure 1a shows that phylogenetic interpolation
+dominates their data, not empirical morphological observations and a likely expectation of
+phylogenetic interpolations is an artifactually smoother curve: exactly what they find (Figure 1b
+and 1c, solid lines exhibit lower volatility than dashed). However, the authors do not properly
+explore this interpretation.
+3) The authors appear to be misapply the method (Friedman 2009) that they are using. I.e., they
+appear to be including both terminal node (observation data) with both interpolated internal
+node *and* branch data. This is not the intention of the Friedman method (see his Figure 1). (NB: I
+am inferring this from Figure 1a as the authors offer insufficient explanation and no R code is
+provided.) In effect this means lineages will be double counted (i.e., a mid-branch value can be
+included with one or more end-branch values - terminal or internal nodes). This will lead to both
+greater dominance of phylogenetic interpolations over empirical observations (evident in Figure
+1a) - eyeballing the data shows this is well over 50% - and further exacerbate the problem above
+(i.e., an over-smoothed curve that really primarily represents phylogenetic disparity and not
+morphological diversity.
+4) The authors additionally misapply the method of Friedman (2009) by not applying both his
+"punctuated" *and* "gradual" approaches. They do not justify why they only chose to use the
+gradual approach. This is also an additional source of uncertainty they fail to characterise (see
+below).
+5) The authors critically fail to establish an expected pattern for their data by which it can be
+properly interpreted - currently they only briefly note that their data do not appear to fit a model
+of "early high" disparity. A crucial reference here is Foote (1996) on "Models of morphological
+3
+diversification" where he establishes a series of expectations for how disparity and taxonomic
+richness will change over time under a set of simple models. NB: the authors could easily
+compare their data to these models to help begin to interpret it correctly using the phylogenetic
+hypothesis (lineages through time) as their richness proxy. This would greatly aid placing the
+observed pattern on a sounder footing and should be considered as a potential explanation of
+their data quite different to both the (already weak) climate proxy (see above) or biogeography
+(never established with actual data in the present contribution).
+6) Extending this point further the authors could, and should, use their phylogenetic hypothesis
+to simulate morphology under simple models (e.g., Brownian Motion) and measure the resulting
+disparity patterns under the same protocols to more correctly establish an expected pattern of
+morphological diversity which they can compare their actual empirical data to.
+7) The authors also appear to misunderstand how sampling biases operate and potential shape
+their data. Specifically the paper focuses on a single short window where a depression in
+disparity is attributed solely to sampling bias. This is problematic as sampling bias can operate in
+both directions - high sampling can just as easily explain high disparity - and there are other
+points in their time series where the number of observations are just as low if not lower (Figure
+1a). However, it does not appear that a correlation between N observations and disparity exists
+(by eyeballing the data - NB: without the raw data I was unable to conduct analyses of my own).
+Furthermore, sampling issues should really be tackled using a subsampling approach (if this is
+the authors true aim) and not phylogenetic interpolation (which can simply introduce it's own
+biases - see comments above). Specifically I would urge the authors to explore techniques like
+that outlined in Kotric and Knoll (2015; Paleobiology, 41, 68-).
+8) Finally, the authors assume at every step of their protocol that their data is both precise and
+accurate, or to put it more simply there is an alarming lack of confidence intervals anywhere in
+their results. Specifically, they treat their phylogeny as perfectly known, they treat their tip ages
+as perfectly known, they treat all divergence times as perfectly known, they treat their ancestral
+reconstructions as perfectly known etc. All of these are more accurately treated as sources of error
+that should (and can be) easily modelled in their data and the resulting effects used to establish
+the robustness of their pattern. For example, a sample of phylogenetic hypotheses reflecting the
+uncertainty in their relationships could be used, tip ages could be randomly sampled from
+uniform distributions between their first and last appearance datum, divergence estimates could
+be sampled from the full distributions (not just the median), the uncertainty in ancestral
+reconstruction values could be reported instead of just the point estimate used, Without these
+steps it is impossible to know how robust the apparent pattern is and hence any interpretations of
+it are potentially seriously undermined.
+I list some other more minor suggestions below:
+- The authors should use K-Pg not K-T as it maintains parity in geologic time-scale "rank", i.e.,
+Period-Period.
+- "which quantifies morphological diversity as opposed to taxonomic diversity" This is
+misleading as both richness and disparity are biodiversity metrics, but only two of a much larger
+suite (e.g., evenness, functional diversity, phylogenetic diversity). I.e., the authors are
+characterising them as the only two options. Suggest rewording.
+- The authors do not establish why they are using 2D data and not 3D. If they have three separate
+views then xyz landmarks could be established without the need to choose a single view that
+captures the most variance (i.e., they could just capture *all* variance). On a similar note the
+authors should be careful to use cranial disparity throughout the manuscript as they cannot
+establish the pattern from postcranial disparity or indeed whole organism disparity with their
+data. Alternatively a sentence establishing that they only mean cranial disparity when using
+"disparity" later should be inserted at an early stage. This avoids the danger of over-interpreting a
+single portion of the skeleton as explaining the entire morphological diversity of the clade.
+- An additional sensitivity test the authors should consider is the effects on the disparity time
+4
+series by removing specific taxa. In other words, what effect do outliers have on the data? This
+can help them empirically get at the issue they raise themselves in the discussion - i.e.,
+morphologically diverse but incomplete specimens are already excluded and some taxon ranges
+are truncated based on additional analysis of the turtle fossil record. This approach could
+simulate empirically what kinds of effects this issue can be expected to have, greatly
+strengthening any conclusions made.
+- The notion that the authors approach "fully addresses the sampling issue" is obviously incorrect
+as it is patently impossible for any of us to ever achieve this! Suggest omitting.
+- "We furthermore restricted our analysis by excluding Eunontosaurus africanus (Late Permian)
+and Pappochelys rosinae (Middle Triassic) as both taxa fall far outside the time binning scheme
+relevant to true turtles (Testudinata)". At what stage in the analysis are these taxa excluded? I.e., I
+would strongly suggest they be included initially for two reasons: 1) they are key taxa for time-
+scaling the phylogenetic hypothesis, and 2) they are also likely to be key taxa for establishing
+accurate ancestral reconstructions. If not already I strongly encourage the authors to only omit
+the taxa *after* these two steps have been completed in their protocol.
+- "We finally recalibrated our supertree using the R package paleotree 2.7" The authors need to
+provide more information here. I assume by "recalibrated" they actually mean they time-scaled
+their phylogeny, and further that these branch-lengths (millions of years) are the ones used to
+perform the ancestral reconstructions. However, they should be more explicit on what functions
+were used as well as provide as supporting information or a Dryad upload their raw data and
+code (see below).
+- The authors use sum of variances as their disparity metric throughout, but many possible
+metrics exist. The authors should minimally explain this choice, and ideally establish that their
+pattern is robust to other (potentially just as valid) choices. For example, sum or product of
+ranges, product of variances, mean pairwise distance, hypercubic volume, hyperellipsoid volume
+etc.
+- The authors state that to "estimate the degree of significance of disparity differences between
+adjacent time bins, a shuffle test was conducted with 10,000 replicates" I have no idea what a
+"shuffle test" is, nor are these results visualised in the sole figure. Some explanation/visualisation
+would greatly aid understanding here.
+- The authors state that they "tested for a correlation between disparity and climate", but do not
+delineate how they solved the great difficulties in comparing time series that were constructed in
+such drastically different manners. For example, these need to be first placed within the same
+scheme (e.g., a single system of instantaneous time-slices/point estimates, a series of within-bin
+values, moving averages, parameter values from some complex function fitted to the data etc.)
+and other major issues need to be dealt with such as temporal autocorrelation, non-stationarity of
+time series, heteroscedacity of data etc. This is not a simple matter and the choices made will
+undoubtedly lead to different outcomes - potentially drastically so. There is no easy or clear
+answer here, but the authors should minimally fully explain the approach they used here.
+- The authors state that "this clade is not affected by the K/T extinction", but this should be
+interpreted in the context of some external frame of reference. For example, was there a major
+taxonomic richness loss here? Was the clade in question selectively effected by comparison to
+other turtle clades? Was there a loss of morphological outlier taxa? If the answers are all no then
+why would we expect any effect in disparity anyway?
+- Examination of the tree file provided shows that it is not fully resolved (bifurcating) as there are
+only 135 internal nodes and 144 terminal nodes (a fully resolved rooted tree would have N - 1
+internal nodes, i.e., 143). Assuming that these polytomies represent phylogenetic uncertainty the
+authors should address how treating soft polytomies as hard (as seems to be implied without
+further methodological details) might bias their results. (See also the major comment regarding
+unquantified uncertainties above.)
+- That Table S2 indicates no significant bin-to-bin changes (at an alpha of 0.05) in turtle disparity
+deserves far more comment than it currently receives. I strongly suspect this is the result of
+introducing phylogenetic bias into their data, smoothing out any volatility (see comments above),
+but if not then this is a remarkable outcome for a clade over such a long period. Why should
+turtles be able to maintain such apparently great morphological stability?
+- "Pan-cryptodires see a notable dip in disparity following the K/T extinction event, mostly likely
+5
+due to the loss of various often bizarre marine lineages (e.g., protostegids, sandowniids, etc.)"
+There should be no "likely" here as the authors have the data to know. Which is it?
+- "in particular testudinoids and chelydroids, that expanded into the habitats left vacated by more
+basal groups that went extinct" Are they also expanding into the same areas of the ordination
+space? Or are they new areas? If the latter are they still ecologically similar? What does this mean
+for interpreting the ordination space?
+- "Pan-pleurodire disparity suffers a similar loss during the late Paleogene, again probably due to
+the loss of marine adapted lineages at that time (e.g., bothremydids, stereogenyines, etc.)" Again,
+the authors have the data to make a definitive statement here, there should be no "probably".
+- "Interestingly, although pleurodires only represent about a quarter of all extant turtles [32], their
+sum of variance, a disparity measure that takes diversity into account, is greater than that of
+cryptodires" This is interesting. I would urge the authors to expand this point further. Was this a
+surprise? What can we tell from visual inspection of their crania? Are they also ecologically
+diverse? Functionally? Phylogenetically? If not what explains this pattern?
+- The authors state that "the Miocene dip in the cranial disparity curves of turtles we retrieved in
+our original study [6] turns out to be a gap in the fossil record rather than a natural event" It
+seems to me that this statement could be made without any statistical analysis, or explained by
+the absence of lineages known to be present due to their existence both before and after this time.
+I.e., what are the authors really doing here? (See major comments above.)
+- "the new analyse" should be "analysis".
+- The only supplementary data is a tree with branch-lengths. Where is the morphological data?
+What about the R code? The divergence estimates used? The tip ages used?
+- The figures could be improved substantially. For example, the authors could add a proper
+geologic time-scale to their x-axes in Figure 1 (for example, using the geoscale package in R).
+Similarly there is no visible asterisk on the plot to demarcate the Miocene dip as claimed in the
+caption. Major extinction events should also be delineated on the time series to highlight their
+effects (or their absence).
+- An additional figure showing the correlation data would also be helpful. Biogeographic data
+should also be shown visually as far as possible if this is truly considered the explanatory factor
+(but see major comments above).
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+6
+Comments to the Author(s)
+label_comment_2
+The paper is a short update on a previous study of morphological disparity as described from
+turtle cranial shape across lineages through time. The authors recognise a shortcoming in their
+previous paper and have used a recently proposed method to examine it. Specifically that there
+might be a sampling issue in their data influencing the estimated disparity curve. The solution is
+to use a method proposed by Wilberg (2017, Zool J Linn Soc) that builds upon a method by
+Brusatte et al. (2011 Paleobiology), whereby ancestral state reconstructions are made by squared-
+change parsimony, and those are included in the time bins in which the phylogenetic hypothesis
+predicts they would be found. The method is using this phylogenetic approach to boast sample
+sizes. Wilberg states that the method “acts to smooth the data by ‘filling in’ time periods with
+poor sampling.”
+I have no issues with the way the authors have implemented the test – although it puzzles me as
+to why only a subset of the variables were used and not the whole shape space, since the methods
+being used here do not have multivariate restrictions (but this is not relevant here as they are
+simply following their previously published study).
+My only concern is that branch length interpolations, and the ancestral state reconstructions they
+are based on, are simply weighted averages of the tip data; their morphology will always fall
+within the range of the tip data. Thus, it is no wonder that it in practice smooths out the curve
+from the original analysis. Does this really provide a better approach? I would like to see a short
+discussion of this added to the Discussion.
+Minor comments
+Line 90 – insignificant meaning not significant? Or insignificant as in small/minute – in which
+case it is redundant with small in the same sentence? Not significant should be used if it is being
+described with a significance value to avoid this ambiguity.
+Figure caption mentions an asterisk that is not visible in the figure
+White text on right side of figure is not very readable.
+label_author_3
+Review form: Reviewer 3 (Juliana Sterli)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+7
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+The manuscript “Still Slow, but even Steadier: An Update on the Evolution of Turtle Cranial
+Disparity Interpolating Shapes along Branches” by Foth, Ascarrunz and Joyce upgraded they
+recent study (Foth and Joyce 2016) about the cranial disparity of turtles through time using
+geometric morphometrics. In this upgrade, the authors used they original data (with some small
+modifications) from Foth and Joyce (2016) and analysed them applying new methodology
+developed by Wilberg (2017) and Friedman (2009). The new methodology developed by Wilberg
+(2017) and Friedman (2009) interpolates traits between ancestors and terminal taxa along the
+branches. The new analysis provided in this manuscript resulted in similar conclusions than the
+previous one (Foth and Joyce 2016) and provides support to their previous hypothesis that the
+Miocene dip Foth and Joyce (2016) found is indeed caused by sampling artifacts.
+The disparity analysis in turtles using geometric morphometrics is new in our field (Foth and
+Joyce, 2016; Foth et al. 2017) and the core of the studies has been developed by two of the authors
+present in this ms (Foth and Joyce). This ms adds one more step to this kind of studies. In my
+opinion it is publishable with minor revision after the authors make the suggested changes
+mentioned in the attached PDF and repeated below.
+Calibrated phylogeny: Page 4, lines 64-66 “The recalibration was undertaken by enforcing node
+estimates from median ages of molecular clock calibration for the origin of recent turtle clades
+[15–20]”. None of those phylogenies have broad taxon samples, they are at “family” level. In my
+opinion taking ages from different calibrated trees (using restricted taxon sampling and maybe
+different methodologies to calculate the ages) is not the most accurate methodology to calibrate
+their tree. I recommend, instead, gathering the ages of the nodes from one source. For example
+note that the paper by Pereira et al. (2017) has the biggest taxon sampling of extant turtles,
+recovers Crawford et al.'s topology with good supports and provides a molecular clock. In one
+paper you can find all the ages. If you compare the ages of the divergence between Cryptodira
+and Pleurodira in your supertree (212.3 Mya.) it is much older than the one proposed in Pereira et
+al. (2017), which is aroun 197 Mya. The same is true for Cryptodira and other clades. If the
+phylogeny is so important for the disparity analysis and this new methodology (Wilberg 2017
+and Friedman 2009) uses the branch lengths, I think the authors should pay more attention to
+that.
+Disparity of turtles driven by biogeographic factors: Page 9, lines 185-187 “the new analyse
+[analysis] still favours our original hypothesis that the disparity of turtles appears to be driven by
+biogeographic factors, not climate”. In my opinion the authors do not provide any evidence nor
+test this hypothesis. Consequently I suggest them to delete this from the conclusions. They also
+cited these factors in their previous paper (Foth and Joyce 2016), but they did not test it either. It
+is indeed an interesting hypothesis but the authors are not testing it. Instead the authors are
+testing the correlation between the climatic curve with the curve of disparity but they are not
+testing this hypothesis about the correlation of the disparity of turtles and the biogeographic
+factors. The rejection of one hypothesis does not mean that the other hypothesis "is favored". Can
+you test your new hypothesis? Otherwise your hypothesis about the correlation of the disparity
+with the biogegraphic factors remains untested...
+8
+label_end_comment
+Decision letter (RSOS-170899)
+31-Aug-2017
+Dear Dr Foth
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-170899 entitled
+"Still Slow, but even Steadier: An Update on the Evolution of Turtle Cranial Disparity
+Interpolating Shapes along Branches" has been accepted for publication in Royal Society Open
+Science subject to minor revision in accordance with the referee suggestions. Please find the
+referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-170899
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+9
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 09-Sep-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+10
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Jon Blundy
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+The authors should incorporate the R1 and R3 recommendations. Specially, the methodological
+corrections and suggestions of the first one, and the calibration section of R3 (Why do the authors
+not use Pereira et al. 2017 ?). Moreover, both reviewers criticized the following statement " the
+new analyse [analysis] still favours our original hypothesis that the disparity of turtles appears to
+be driven by biogeographic factors, not climate"(Page 9, lines 185-187). could the authors work
+on it?
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+This paper marks an attempt to establish the pattern of morphological diversity (disparity) in
+turtles over the past c. 200 million years (a laudable aim) as well as ascertain the major driving
+forces behind this pattern (climate, extinction, biogeography). Specifically the authors attempt to
+establish whether an apparent depression in disparity in the past 20 million years can be removed
+by applying a phylogenetic "correction" to their data (based on work by Friedman 2009 and
+Wilberg 2017, both cited by the authors). The manuscript is arguably presented primarily as an
+addendum to Foth and Joyce (2016, also already cited by the authors), however as a reviewer I
+will treat it as any paper should be, i.e., a stand alone publication. This is important as I feel that
+the work commits a number of errors, some of which are novel to the current manuscript, but
+others of which are carried over from the original work (and hence could - and hence should - be
+corrected or amended here). I provide both major and minor comments that I hope the authors
+can use to improve their manuscript below.
+My major issues with the paper can be summarised in the following eight points:
+1) The authors do not establish a specific hypothesis to test (simple correlations with a single
+climate proxy are applied, but are shown to be essentially a poor explanation for their data) and
+yet conclude (without evidence) both that extinction is not, and biogeography is, a major driving
+factor in their evolution. Hypotheses should be established at the outset and numerical means by
+which they can be tested (or falsified) explained and any subsequent results explicitly shown,
+whether through tables or graphs. Reference to the previous paper (Foth and Joyce 2016) is
+insufficient as they have established a novel time series and hence their results have substantially
+altered (additionally this should serve as a stand alone publication, see above).
+2) Crucially the authors do not establish that their metric really captures the signal
+(morphological diversity) they are looking for. I.e., I believe that they are actually primarily
+measuring phylogenetic disparity over time - Figure 1a shows that phylogenetic interpolation
+dominates their data, not empirical morphological observations and a likely expectation of
+11
+phylogenetic interpolations is an artifactually smoother curve: exactly what they find (Figure 1b
+and 1c, solid lines exhibit lower volatility than dashed). However, the authors do not properly
+explore this interpretation.
+3) The authors appear to be misapply the method (Friedman 2009) that they are using. I.e., they
+appear to be including both terminal node (observation data) with both interpolated internal
+node *and* branch data. This is not the intention of the Friedman method (see his Figure 1). (NB: I
+am inferring this from Figure 1a as the authors offer insufficient explanation and no R code is
+provided.) In effect this means lineages will be double counted (i.e., a mid-branch value can be
+included with one or more end-branch values - terminal or internal nodes). This will lead to both
+greater dominance of phylogenetic interpolations over empirical observations (evident in Figure
+1a) - eyeballing the data shows this is well over 50% - and further exacerbate the problem above
+(i.e., an over-smoothed curve that really primarily represents phylogenetic disparity and not
+morphological diversity.
+4) The authors additionally misapply the method of Friedman (2009) by not applying both his
+"punctuated" *and* "gradual" approaches. They do not justify why they only chose to use the
+gradual approach. This is also an additional source of uncertainty they fail to characterise (see
+below).
+5) The authors critically fail to establish an expected pattern for their data by which it can be
+properly interpreted - currently they only briefly note that their data do not appear to fit a model
+of "early high" disparity. A crucial reference here is Foote (1996) on "Models of morphological
+diversification" where he establishes a series of expectations for how disparity and taxonomic
+richness will change over time under a set of simple models. NB: the authors could easily
+compare their data to these models to help begin to interpret it correctly using the phylogenetic
+hypothesis (lineages through time) as their richness proxy. This would greatly aid placing the
+observed pattern on a sounder footing and should be considered as a potential explanation of
+their data quite different to both the (already weak) climate proxy (see above) or biogeography
+(never established with actual data in the present contribution).
+6) Extending this point further the authors could, and should, use their phylogenetic hypothesis
+to simulate morphology under simple models (e.g., Brownian Motion) and measure the resulting
+disparity patterns under the same protocols to more correctly establish an expected pattern of
+morphological diversity which they can compare their actual empirical data to.
+7) The authors also appear to misunderstand how sampling biases operate and potential shape
+their data. Specifically the paper focuses on a single short window where a depression in
+disparity is attributed solely to sampling bias. This is problematic as sampling bias can operate in
+both directions - high sampling can just as easily explain high disparity - and there are other
+points in their time series where the number of observations are just as low if not lower (Figure
+1a). However, it does not appear that a correlation between N observations and disparity exists
+(by eyeballing the data - NB: without the raw data I was unable to conduct analyses of my own).
+Furthermore, sampling issues should really be tackled using a subsampling approach (if this is
+the authors true aim) and not phylogenetic interpolation (which can simply introduce it's own
+biases - see comments above). Specifically I would urge the authors to explore techniques like
+that outlined in Kotric and Knoll (2015; Paleobiology, 41, 68-).
+8) Finally, the authors assume at every step of their protocol that their data is both precise and
+accurate, or to put it more simply there is an alarming lack of confidence intervals anywhere in
+their results. Specifically, they treat their phylogeny as perfectly known, they treat their tip ages
+as perfectly known, they treat all divergence times as perfectly known, they treat their ancestral
+reconstructions as perfectly known etc. All of these are more accurately treated as sources of error
+that should (and can be) easily modelled in their data and the resulting effects used to establish
+the robustness of their pattern. For example, a sample of phylogenetic hypotheses reflecting the
+uncertainty in their relationships could be used, tip ages could be randomly sampled from
+12
+uniform distributions between their first and last appearance datum, divergence estimates could
+be sampled from the full distributions (not just the median), the uncertainty in ancestral
+reconstruction values could be reported instead of just the point estimate used, Without these
+steps it is impossible to know how robust the apparent pattern is and hence any interpretations of
+it are potentially seriously undermined.
+I list some other more minor suggestions below:
+- The authors should use K-Pg not K-T as it maintains parity in geologic time-scale "rank", i.e.,
+Period-Period.
+- "which quantifies morphological diversity as opposed to taxonomic diversity" This is
+misleading as both richness and disparity are biodiversity metrics, but only two of a much larger
+suite (e.g., evenness, functional diversity, phylogenetic diversity). I.e., the authors are
+characterising them as the only two options. Suggest rewording.
+- The authors do not establish why they are using 2D data and not 3D. If they have three separate
+views then xyz landmarks could be established without the need to choose a single view that
+captures the most variance (i.e., they could just capture *all* variance). On a similar note the
+authors should be careful to use cranial disparity throughout the manuscript as they cannot
+establish the pattern from postcranial disparity or indeed whole organism disparity with their
+data. Alternatively a sentence establishing that they only mean cranial disparity when using
+"disparity" later should be inserted at an early stage. This avoids the danger of over-interpreting a
+single portion of the skeleton as explaining the entire morphological diversity of the clade.
+- An additional sensitivity test the authors should consider is the effects on the disparity time
+series by removing specific taxa. In other words, what effect do outliers have on the data? This
+can help them empirically get at the issue they raise themselves in the discussion - i.e.,
+morphologically diverse but incomplete specimens are already excluded and some taxon ranges
+are truncated based on additional analysis of the turtle fossil record. This approach could
+simulate empirically what kinds of effects this issue can be expected to have, greatly
+strengthening any conclusions made.
+- The notion that the authors approach "fully addresses the sampling issue" is obviously incorrect
+as it is patently impossible for any of us to ever achieve this! Suggest omitting.
+- "We furthermore restricted our analysis by excluding Eunontosaurus africanus (Late Permian)
+and Pappochelys rosinae (Middle Triassic) as both taxa fall far outside the time binning scheme
+relevant to true turtles (Testudinata)". At what stage in the analysis are these taxa excluded? I.e., I
+would strongly suggest they be included initially for two reasons: 1) they are key taxa for time-
+scaling the phylogenetic hypothesis, and 2) they are also likely to be key taxa for establishing
+accurate ancestral reconstructions. If not already I strongly encourage the authors to only omit
+the taxa *after* these two steps have been completed in their protocol.
+- "We finally recalibrated our supertree using the R package paleotree 2.7" The authors need to
+provide more information here. I assume by "recalibrated" they actually mean they time-scaled
+their phylogeny, and further that these branch-lengths (millions of years) are the ones used to
+perform the ancestral reconstructions. However, they should be more explicit on what functions
+were used as well as provide as supporting information or a Dryad upload their raw data and
+code (see below).
+- The authors use sum of variances as their disparity metric throughout, but many possible
+metrics exist. The authors should minimally explain this choice, and ideally establish that their
+pattern is robust to other (potentially just as valid) choices. For example, sum or product of
+ranges, product of variances, mean pairwise distance, hypercubic volume, hyperellipsoid volume
+etc.
+- The authors state that to "estimate the degree of significance of disparity differences between
+adjacent time bins, a shuffle test was conducted with 10,000 replicates" I have no idea what a
+"shuffle test" is, nor are these results visualised in the sole figure. Some explanation/visualisation
+would greatly aid understanding here.
+- The authors state that they "tested for a correlation between disparity and climate", but do not
+delineate how they solved the great difficulties in comparing time series that were constructed in
+such drastically different manners. For example, these need to be first placed within the same
+13
+scheme (e.g., a single system of instantaneous time-slices/point estimates, a series of within-bin
+values, moving averages, parameter values from some complex function fitted to the data etc.)
+and other major issues need to be dealt with such as temporal autocorrelation, non-stationarity of
+time series, heteroscedacity of data etc. This is not a simple matter and the choices made will
+undoubtedly lead to different outcomes - potentially drastically so. There is no easy or clear
+answer here, but the authors should minimally fully explain the approach they used here.
+- The authors state that "this clade is not affected by the K/T extinction", but this should be
+interpreted in the context of some external frame of reference. For example, was there a major
+taxonomic richness loss here? Was the clade in question selectively effected by comparison to
+other turtle clades? Was there a loss of morphological outlier taxa? If the answers are all no then
+why would we expect any effect in disparity anyway?
+- Examination of the tree file provided shows that it is not fully resolved (bifurcating) as there are
+only 135 internal nodes and 144 terminal nodes (a fully resolved rooted tree would have N - 1
+internal nodes, i.e., 143). Assuming that these polytomies represent phylogenetic uncertainty the
+authors should address how treating soft polytomies as hard (as seems to be implied without
+further methodological details) might bias their results. (See also the major comment regarding
+unquantified uncertainties above.)
+- That Table S2 indicates no significant bin-to-bin changes (at an alpha of 0.05) in turtle disparity
+deserves far more comment than it currently receives. I strongly suspect this is the result of
+introducing phylogenetic bias into their data, smoothing out any volatility (see comments above),
+but if not then this is a remarkable outcome for a clade over such a long period. Why should
+turtles be able to maintain such apparently great morphological stability?
+- "Pan-cryptodires see a notable dip in disparity following the K/T extinction event, mostly likely
+due to the loss of various often bizarre marine lineages (e.g., protostegids, sandowniids, etc.)"
+There should be no "likely" here as the authors have the data to know. Which is it?
+- "in particular testudinoids and chelydroids, that expanded into the habitats left vacated by more
+basal groups that went extinct" Are they also expanding into the same areas of the ordination
+space? Or are they new areas? If the latter are they still ecologically similar? What does this mean
+for interpreting the ordination space?
+- "Pan-pleurodire disparity suffers a similar loss during the late Paleogene, again probably due to
+the loss of marine adapted lineages at that time (e.g., bothremydids, stereogenyines, etc.)" Again,
+the authors have the data to make a definitive statement here, there should be no "probably".
+- "Interestingly, although pleurodires only represent about a quarter of all extant turtles [32], their
+sum of variance, a disparity measure that takes diversity into account, is greater than that of
+cryptodires" This is interesting. I would urge the authors to expand this point further. Was this a
+surprise? What can we tell from visual inspection of their crania? Are they also ecologically
+diverse? Functionally? Phylogenetically? If not what explains this pattern?
+- The authors state that "the Miocene dip in the cranial disparity curves of turtles we retrieved in
+our original study [6] turns out to be a gap in the fossil record rather than a natural event" It
+seems to me that this statement could be made without any statistical analysis, or explained by
+the absence of lineages known to be present due to their existence both before and after this time.
+I.e., what are the authors really doing here? (See major comments above.)
+- "the new analyse" should be "analysis".
+- The only supplementary data is a tree with branch-lengths. Where is the morphological data?
+What about the R code? The divergence estimates used? The tip ages used?
+- The figures could be improved substantially. For example, the authors could add a proper
+geologic time-scale to their x-axes in Figure 1 (for example, using the geoscale package in R).
+Similarly there is no visible asterisk on the plot to demarcate the Miocene dip as claimed in the
+caption. Major extinction events should also be delineated on the time series to highlight their
+effects (or their absence).
+- An additional figure showing the correlation data would also be helpful. Biogeographic data
+should also be shown visually as far as possible if this is truly considered the explanatory factor
+(but see major comments above).
+14
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+The paper is a short update on a previous study of morphological disparity as described from
+turtle cranial shape across lineages through time. The authors recognise a shortcoming in their
+previous paper and have used a recently proposed method to examine it. Specifically that there
+might be a sampling issue in their data influencing the estimated disparity curve. The solution is
+to use a method proposed by Wilberg (2017, Zool J Linn Soc) that builds upon a method by
+Brusatte et al. (2011 Paleobiology), whereby ancestral state reconstructions are made by squared-
+change parsimony, and those are included in the time bins in which the phylogenetic hypothesis
+predicts they would be found. The method is using this phylogenetic approach to boast sample
+sizes. Wilberg states that the method “acts to smooth the data by ‘filling in’ time periods with
+poor sampling.”
+I have no issues with the way the authors have implemented the test – although it puzzles me as
+to why only a subset of the variables were used and not the whole shape space, since the methods
+being used here do not have multivariate restrictions (but this is not relevant here as they are
+simply following their previously published study).
+My only concern is that branch length interpolations, and the ancestral state reconstructions they
+are based on, are simply weighted averages of the tip data; their morphology will always fall
+within the range of the tip data. Thus, it is no wonder that it in practice smooths out the curve
+from the original analysis. Does this really provide a better approach? I would like to see a short
+discussion of this added to the Discussion.
+Minor comments
+Line 90 – insignificant meaning not significant? Or insignificant as in small/minute – in which
+case it is redundant with small in the same sentence? Not significant should be used if it is being
+described with a significance value to avoid this ambiguity.
+Figure caption mentions an asterisk that is not visible in the figure
+White text on right side of figure is not very readable.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_6
+The manuscript “Still Slow, but even Steadier: An Update on the Evolution of Turtle Cranial
+Disparity Interpolating Shapes along Branches” by Foth, Ascarrunz and Joyce upgraded they
+recent study (Foth and Joyce 2016) about the cranial disparity of turtles through time using
+geometric morphometrics. In this upgrade, the authors used they original data (with some small
+modifications) from Foth and Joyce (2016) and analysed them applying new methodology
+developed by Wilberg (2017) and Friedman (2009). The new methodology developed by Wilberg
+(2017) and Friedman (2009) interpolates traits between ancestors and terminal taxa along the
+branches. The new analysis provided in this manuscript resulted in similar conclusions than the
+previous one (Foth and Joyce 2016) and provides support to their previous hypothesis that the
+Miocene dip Foth and Joyce (2016) found is indeed caused by sampling artifacts.
+The disparity analysis in turtles using geometric morphometrics is new in our field (Foth and
+Joyce, 2016; Foth et al. 2017) and the core of the studies has been developed by two of the authors
+present in this ms (Foth and Joyce). This ms adds one more step to this kind of studies. In my
+opinion it is publishable with minor revision after the authors make the suggested changes
+mentioned in the attached PDF and repeated below.
+Calibrated phylogeny: Page 4, lines 64-66 “The recalibration was undertaken by enforcing node
+estimates from median ages of molecular clock calibration for the origin of recent turtle clades
+[15–20]”. None of those phylogenies have broad taxon samples, they are at “family” level. In my
+15
+opinion taking ages from different calibrated trees (using restricted taxon sampling and maybe
+different methodologies to calculate the ages) is not the most accurate methodology to calibrate
+their tree. I recommend, instead, gathering the ages of the nodes from one source. For example
+note that the paper by Pereira et al. (2017) has the biggest taxon sampling of extant turtles,
+recovers Crawford et al.'s topology with good supports and provides a molecular clock. In one
+paper you can find all the ages. If you compare the ages of the divergence between Cryptodira
+and Pleurodira in your supertree (212.3 Mya.) it is much older than the one proposed in Pereira et
+al. (2017), which is aroun 197 Mya. The same is true for Cryptodira and other clades. If the
+phylogeny is so important for the disparity analysis and this new methodology (Wilberg 2017
+and Friedman 2009) uses the branch lengths, I think the authors should pay more attention to
+that.
+Disparity of turtles driven by biogeographic factors: Page 9, lines 185-187 “the new analyse
+[analysis] still favours our original hypothesis that the disparity of turtles appears to be driven by
+biogeographic factors, not climate”. In my opinion the authors do not provide any evidence nor
+test this hypothesis. Consequently I suggest them to delete this from the conclusions. They also
+cited these factors in their previous paper (Foth and Joyce 2016), but they did not test it either. It
+is indeed an interesting hypothesis but the authors are not testing it. Instead the authors are
+testing the correlation between the climatic curve with the curve of disparity but they are not
+testing this hypothesis about the correlation of the disparity of turtles and the biogeographic
+factors. The rejection of one hypothesis does not mean that the other hypothesis "is favored". Can
+you test your new hypothesis? Otherwise your hypothesis about the correlation of the disparity
+with the biogegraphic factors remains untested...
+Author's Response to Decision Letter for (RSOS-170899)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-170899.R1)
+26-Oct-2017
+Dear Dr Foth,
+I am pleased to inform you that your manuscript entitled "Still slow, but even steadier: An update
+on the evolution of turtle cranial disparity interpolating shapes along branches" is now accepted
+for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+16
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Appendix A
+Dear Prof Blundy,
+please find attached the revised version of the manuscript “Still slow, but even steadier: An
+update on the evolution of turtle cranial disparity interpolating shapes along branches“
+Manuscript ID RSOS-170899). We are grateful for the comments provided by the three
+eviewers and tried to implement all of their suggestions. This includes e.g. the additional
+analyses suggested by reviewer#1 and the inclusion of the molecular dating from Pereira et al.
+2017) (see reviewer#3). As you can see, the additional analyses did not change much of the
+outcome, but help to make our results much more robust in terms of uncertainties in fossil
+dating and phylogenetic relationships. All changes are marked in red. We further provided
+detailed responses to the reviewers, where it was necessary. Finally, we made all of our
+scripts and data public available now.
+We hope that the new version fulfills the standard for publication in RSOS.
+Yours sincerely,
+Christian Foth (on behalf of both authors)
+Associate Editor Comments to Author:
+The authors should incorporate the R1 and R3 recommendations. Specially, the
+methodological corrections and suggestions of the first one, and the calibration section of R3
+Why do the authors not use Pereira et al. 2017 ?). Moreover, both reviewers criticized the
+ollowing statement " the new analyse [analysis] still favours our original hypothesis that the
+disparity of turtles appears to be driven by biogeographic factors, not climate"(Page 9, lines
+185-187). Could the authors work on it?
+<U+F0B7> We have implemented all these suggestions (see below).
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+This paper marks an attempt to establish the pattern of morphological diversity (disparity) in
+urtles over the past c. 200 million years (a laudable aim) as well as ascertain the major
+driving forces behind this pattern (climate, extinction, biogeography). Specifically the authors
+attempt to establish whether an apparent depression in disparity in the past 20 million years
+can be removed by applying a phylogenetic "correction" to their data (based on work by
+Friedman 2009 and Wilberg 2017, both cited by the authors). The manuscript is arguably
+presented primarily as an addendum to Foth and Joyce (2016, also already cited by the
+authors), however as a reviewer I will treat it as any paper should be, i.e., a stand alone
+publication. This is important as I feel that the work commits a number of errors, some of
+which are novel to the current manuscript, but others of which are carried over from the
+original work (and hence could - and hence should – be corrected or amended here). I provide
+both major and minor comments that I hope the authors can use to improve their manuscript
+below.
+My major issues with the paper can be summarised in the following eight points:
+1) The authors do not establish a specific hypothesis to test (simple correlations with a single
+climate proxy are applied, but are shown to be essentially a poor explanation for their data)
+and yet conclude (without evidence) both that extinction is not, and biogeography is, a major
+driving factor in their evolution. Hypotheses should be established at the outset and numerical
+means by which they can be tested (or falsified) explained and any subsequent results
+explicitly shown, whether through tables or graphs. Reference to the previous paper (Foth and
+Joyce 2016) is insufficient as they have established a novel time series and hence their results
+have substantially altered (additionally this should serve as a stand alone publication, see
+above).
+<U+F0B7> Although the reviewer treats the manuscript as independent, he/she cannot
+negate the fact that this study represent an update of Foth & Joyce (2016), as
+mentioned in the Introduction. Because of the overlap in sampling and parts of
+the methodology we avoided unnecessary repetitions in Material and Methods,
+but also in the Discussion. However, as all reviewers pointed out that specific
+details should be mentioned and discussed, we are happy to include them into the
+text (see below).
+<U+F0B7> Concerning the hypotheses, we simply referred to our previous study, as this
+study investigates the same question, just with an extended set of methods.
+However, we specifically noted that we want to test, if the Miocene gap is a
+sampling artifact or not. It is not stated in form of a hypothesis, but the aim of
+the manuscript is clearly formulated.
+<U+F0B7> Finally, following the reviewer’s suggestion of numerical methods to evaluate the
+biogeographic hypothesis, we tested for the correlation between the number of
+turtle-populated isolated continental landmasses and the sum of variances.
+2) Crucially the authors do not establish that their metric really captures the signal
+morphological diversity) they are looking for. I.e., I believe that they are actually primarily
+measuring phylogenetic disparity over time - Figure 1a shows that phylogenetic interpolation
+dominates their data, not empirical morphological observations and a likely expectation of
+phylogenetic interpolations is an artifactually smoother curve: exactly what they find (Figure
+1b and 1c, solid lines exhibit lower volatility than dashed). However, the authors do not
+properly explore this interpretation.
+<U+F0B7> We agree with the reviewer that phylogenetic interpolation should be expected to
+have a smoothing effect. We now refer to this in the results and discussion. How
+the disparity curve looks when only terminal taxa are used, can be seen in the
+Suppl. Material of Foth & Joyce (2016). As the fossil record is rather poor,
+especially over a time period of 200 Myr, a phylogenetic interpolation is
+necessary to get any meaningful signal.
+3) The authors appear to be misapply the method (Friedman 2009) that they are using. I.e.,
+hey appear to be including both terminal node (observation data) with both interpolated
+nternal node *and* branch data. This is not the intention of the Friedman method (see his
+Figure 1). (NB: I am inferring this from Figure 1a as the authors offer insufficient explanation
+and no R code is provided.) In effect this means lineages will be double counted (i.e., a mid
+branch value can be included with one or more end-branch values - terminal or internal
+nodes). This will lead to both greater dominance of phylogenetic interpolations over empirical
+observations (evident in Figure 1a) - eyeballing the data shows this is well over 50% - and
+urther exacerbate the problem above (i.e., an over-smoothed curve that really primarily
+epresents phylogenetic disparity and not morphological diversity.
+<U+F0B7> To be clear, we are using specifically Friedman’s method for interpolating traits
+along branch lengths, not the whole methodology of Friedman (2009).
+<U+F0B7> Addressing the reviewer’s concern of double-counting, we now decided to restrict
+our sampling to branch-interpolated shape variables, only. Consequently, we no
+longer include direct observations of shape in the computation of the sum of
+variances. However, those observations will still have strong weight when their
+corresponding terminal branches are sampled. For instance, for the Recent bin in
+Foth and Joyce (2016) found a global sum of variances of 0.0455 including in
+their sample the values at the terminal nodes, but not the branches. In the
+present study, the corresponding median value of the sum of variances is 0.0431.
+<U+F0B7> As mentioned above, the smoothing effect of phylogenetic interpolation is now
+mentioned in the manuscript.
+<U+F0B7> Finally, we find it important to mentioned that we had estimated disparity
+through time only for terminal taxa in the Foth & Joyce (2016) and already
+compared with the curve, when hypothetical ancestors are included. The main
+courses of the curves were quite similar with both showing the Miocene gap.
+4) The authors additionally misapply the method of Friedman (2009) by not applying both his
+"punctuated" *and* "gradual" approaches. They do not justify why they only chose to use the
+gradual approach. This is also an additional source of uncertainty they fail to characterise (see
+below).
+<U+F0B7> As stated above, we are specifically using Friedman’s method for interpolating
+traits along branch lengths, not the whole methodology of Friedman (2009). We
+only focused on the gradual model, because the punctual model appears rather
+unrealistic under the current circumstances, as it assumes morphological changes
+only at speciation events. Having a complete fossil record covering all branching
+events in the history of clade, this might be the preferred approach. However, as
+our phylogeny is characterized by many long ghost lineages (e.g., for
+Meiolaniformes), using only one constant value over the entire branch length
+implies multiple evolutionary phases of stasis over long periods of time. Because
+ghost lineages are a result of sampling and do not corresponds the ‘true’
+evolution of a clade, we prefer to use the gradual model, although the linear
+interpolation of traits along branches might be a rather simple approach. A short
+statement was added to the text (see Material and Methods).
+5) The authors critically fail to establish an expected pattern for their data by which it can be
+properly interpreted – currently they only briefly note that their data do not appear to fit a
+model of "early high" disparity. A crucial reference here is Foote (1996) on "Models of
+morphological diversification" where he establishes a series of expectations for how disparity
+and taxonomic richness will change over time under a set of simple models. NB: the authors
+could easily compare their data to these models to help begin to interpret it correctly using the
+phylogenetic hypothesis (lineages through time) as their richness proxy. This would greatly
+aid placing the observed pattern on a sounder footing and should be considered as a potential
+explanation of their data quite different to both the (already weak) climate proxy (see above)
+or biogeography (never established with actual data in the present contribution).
+<U+F0B7> The delayed disparity peak was already discussed in Foth & Joyce (2016),
+indicating that morphological diversification is concordant with taxonomic
+diversification with no constraint on morphological evolution nor trends in
+morphological step size (see Wesley-Hunt 2005). However, we are grateful for the
+literature suggestion and add this to our discussion. Based on Foote’s (1996)
+simulations we can now hypothesize that until the Late Cretaceous morphological
+step size was constant with no temporal changes. During the Cenozoic the
+morphological steps are significantly reduced compared to the Mesozoic leading
+to a more or less constant disparity. As this pattern is evident for both the main
+clade and the subclade we can suggest that both lineages underwent a similar
+evolution. In contrast to this pattern, taxonomic diversity increase in a
+exponential pattern.
+<U+F0B7> The biogeographic correlation is now assessed with data.
+6) Extending this point further the authors could, and should, use their phylogenetic
+hypothesis to simulate morphology under simple models (e.g., Brownian Motion) and
+measure the resulting disparity patterns under the same protocols to more correctly establish
+an expected pattern of morphological diversity which they can compare their actual empirical
+data to.
+<U+F0B7> An in-depth examination of the behaviour of the methods with simulated data is
+beyond the scope of the current study. However, we repeated our main analysis
+excluding fossils, showing that the overall shape of the curve is dominated by the
+phylogeny and the observations of extant species. This should highlight to the
+reader the critical importance of the choice of method.
+7) The authors also appear to misunderstand how sampling biases operate and potential shape
+heir data. Specifically the paper focuses on a single short window where a depression in
+disparity is attributed solely to sampling bias. This is problematic as sampling bias can
+operate in both directions - high sampling can just as easily explain high disparity – and there
+are other points in their time series where the number of observations are just as low if not
+ower (Figure 1a). However, it does not appear that a correlation between N observations and
+disparity exists (by eyeballing the data – NB: without the raw data I was unable to conduct
+analyses of my own). Furthermore, sampling issues should really be tackled using a
+subsampling approach (if this is the authors true aim) and not phylogenetic interpolation
+which can simply introduce it's own biases - see comments above). Specifically I would urge
+he authors to explore techniques like that outlined in Kotric and Knoll (2015; Paleobiology,
+41, 68-).
+<U+F0B7> This criticism is again based on the reviewer’s decision to consider this
+manuscript to be an completely independent study and not as an update of Foth
+& Joyce (2016). In the original paper, we tested the correlation between sample
+size and disparity, finding no correlation. In current manuscript we also tested
+the correlation between median curve sum of variance and the number of
+branches per bin. We have extended the discussion on this problem.
+8) Finally, the authors assume at every step of their protocol that their data is both precise and
+accurate, or to put it more simply there is an alarming lack of confidence intervals anywhere
+n their results. Specifically, they treat their phylogeny as perfectly known, they treat their tip
+ages as perfectly known, they treat all divergence times as perfectly known, they treat their
+ancestral reconstructions as perfectly known etc. All of these are more accurately treated as
+sources of error that should (and can be) easily modelled in their data and the resulting effects
+used to establish the robustness of their pattern. For example, a sample of phylogenetic
+hypotheses reflecting the uncertainty in their relationships could be used, tip ages could be
+andomly sampled from uniform distributions between their first and last appearance datum,
+divergence estimates could be sampled from the full distributions (not just the median), the
+uncertainty in ancestral reconstruction values could be reported instead of just the point
+estimate used, Without these steps it is impossible to know how robust the apparent pattern is
+and hence any interpretations of it are potentially seriously undermined.
+<U+F0B7> We have now implemented all these suggestions.
+I list some other more minor suggestions below:
+The authors should use K-Pg not K-T as it maintains parity in geologic time-scale "rank",
+.e., Period-Period.
+<U+F0B7> The decision to split the Tertiary into the Paleogene and Neogene is not
+universally accepted and the International Stratigraphic Commission is currently
+discussing plans to reintroduce the Tertiary. We are therefore at liberty to use
+K/T.
+"which quantifies morphological diversity as opposed to taxonomic diversity" This is
+misleading as both richness and disparity are biodiversity metrics, but only two of a much
+arger suite (e.g., evenness, functional diversity, phylogenetic diversity). I.e., the authors are
+characterising them as the only two options. Suggest rewording.
+<U+F0B7> This was changed.
+The authors do not establish why they are using 2D data and not 3D. If they have three
+separate views then xyz landmarks could be established without the need to choose a single
+view that captures the most variance (i.e., they could just capture *all* variance). On a similar
+note the authors should be careful to use cranial disparity throughout the manuscript as they
+cannot establish the pattern from postcranial disparity or indeed whole organism disparity
+with their data. Alternatively a sentence establishing that they only mean cranial disparity
+when using "disparity" later should be inserted at an early stage. This avoids the danger of
+over-interpreting a single portion of the skeleton as explaining the entire morphological
+diversity of the clade.
+<U+F0B7> Our study focuses on 2D, because the amount of 3D scans available for extinct
+turtles is limited.
+<U+F0B7> If the reviewer meant to suggest that we combine the data of our 2D views to
+form 3D models, the problem of this approach is that the number of shared
+landmarks between the different views is low. Therefore, a 3D model would be
+obtained at the expense of the loss of a great amount of shape data.
+<U+F0B7> The term ‘disparity’ was changed to ‘cranial disparity’.
+An additional sensitivity test the authors should consider is the effects on the disparity time
+series by removing specific taxa. In other words, what effect do outliers have on the data?
+This can help them empirically get at the issue they raise themselves in the discussion - i.e.,
+morphologically diverse but incomplete specimens are already excluded and some taxon
+anges are truncated based on additional analysis of the turtle fossil record. This approach
+could simulate empirically what kinds of effects this issue can be expected to have, greatly
+strengthening any conclusions made.
+<U+F0B7> In a further study (Foth et al. 2017), we showed that the cranial morphospace of
+turtles is not really characterized by outliers. Therefore, we think that the
+concerns of the reviewer are unjustified. Furthermore, we removed specific taxa
+by analysing the disparity course of pan-pleurodires and pan-cryptodires.
+<U+F0B7> For the revised version, we also estimated the disparity from 1,000 trees, where
+all fossil taxa were excluded. Although the disparity is slightly lower, the main
+shape of the curve retains.
+The notion that the authors approach "fully addresses the sampling issue" is obviously
+ncorrect as it is patently impossible for any of us to ever achieve this! Suggest omitting.
+<U+F0B7> This was softened.
+"We furthermore restricted our analysis by excluding Eunontosaurus africanus (Late
+Permian) and Pappochelys rosinae (Middle Triassic) as both taxa fall far outside the time
+binning scheme relevant to true turtles (Testudinata)". At what stage in the analysis are these
+axa excluded? I.e., I would strongly suggest they be included initially for two reasons: 1)
+hey are key taxa for time-scaling the phylogenetic hypothesis, and 2) they are also likely to
+be key taxa for establishing accurate ancestral reconstructions. If not already I strongly
+encourage the authors to only omit the taxa *after* these two steps have been completed in
+heir protocol.
+<U+F0B7> We included these two taxa in our original paper for interest. However, the
+original reconstruction of Pappochelys was slightly erroneous, see Schoch and
+Sues (2017). The latter paper was published when this manuscript was already in
+review, and, in any case, any reconstruction of the skull of Pappochelys should be
+regarded as subject to much uncertainty, as it based on different specimens (also
+with different size ranges) in which the skull material is usually associated not
+articulated, and also affected by compression. (pers. comm. from Rainer Schoch
+to CF, 2017). Eunotosaurus was deleted based on its age as sampling is extremely
+poor across the Permian to Middle Triassic. Thus, we rather focus on
+Testudinata.
+"We finally recalibrated our supertree using the R package paleotree 2.7" The authors need
+o provide more information here. I assume by "recalibrated" they actually mean they time-
+scaled their phylogeny, and further that these branch-lengths (millions of years) are the ones
+used to perform the ancestral reconstructions. However, they should be more explicit on what
+unctions were used as well as provide as supporting information or a Dryad upload their raw
+data and code (see below).
+<U+F0B7> We added the function and the parameters used to the text.
+The authors use sum of variances as their disparity metric throughout, but many possible
+metrics exist. The authors should minimally explain this choice, and ideally establish that
+heir pattern is robust to other (potentially just as valid) choices. For example, sum or product
+of ranges, product of variances, mean pairwise distance, hypercubic volume, hyperellipsoid
+volume etc.
+<U+F0B7> Based on Butler et al. (2012) we choose Sum of Variance as disparity metric,
+because it is more robust regarding sample size differences and outliers. This was
+added to the text.
+The authors state that to "estimate the degree of significance of disparity differences
+between adjacent time bins, a shuffle test was conducted with 10,000 replicates" I have no
+dea what a "shuffle test" is, nor are these results visualised in the sole figure. Some
+explanation/ visualisation would greatly aid understanding here.
+<U+F0B7> The function of the test is briefly describe above. It swaps samples (PC scores of
+terminals, branches, or internal nodes) randomly between two subsequent bins
+by keeping the sample size constant.
+The authors state that they "tested for a correlation between disparity and climate", but do
+not delineate how they solved the great difficulties in comparing time series that were
+constructed in such drastically different manners. For example, these need to be first placed
+within the same scheme (e.g., a single system of instantaneous time-slices/point estimates, a
+series of within-bin values, moving averages, parameter values from some complex function
+itted to the data etc.) and other major issues need to be dealt with such as temporal
+autocorrelation, non-stationarity of time series, heteroscedacity of data etc. This is not a
+simple matter and the choices made will undoubtedly lead to different outcomes – potentially
+drastically so. There is no easy or clear answer here, but the authors should minimally fully
+explain the approach they used here.
+<U+F0B7> Based on Foth & Joyce 2016 we added a short description how the comparisons
+were applied in the supplementary material (see Text S1).
+The authors state that "this clade is not affected by the K/T extinction", but this should be
+nterpreted in the context of some external frame of reference. For example, was there a major
+axonomic richness loss here? Was the clade in question selectively effected by comparison to
+other turtle clades? Was there a loss of morphological outlier taxa? If the answers are all no
+hen why would we expect any effect in disparity anyway?
+<U+F0B7> We added a few sentences for clarification. The change of disparity course we see
+in the Cenozoic are probably related to a habitat loss due to cooling after the
+Eocene, the extinction of paracryptodires during the Eocene and the
+homogenization of turtles faunas due to a global conquest of pan-cryptodires (see
+Foth and Joyce 2016.).
+Examination of the tree file provided shows that it is not fully resolved (bifurcating) as there
+are only 135 internal nodes and 144 terminal nodes (a fully resolved rooted tree would have N
+1 internal nodes, i.e., 143). Assuming that these polytomies represent phylogenetic
+uncertainty the authors should address how treating soft polytomies as hard (as seems to be
+mplied without further methodological details) might bias their results. (See also the major
+comment regarding unquantified uncertainties above.)
+<U+F0B7> We corrected this in the new version of the manuscript.
+That Table S2 indicates no significant bin-to-bin changes (at an alpha of 0.05) in turtle
+disparity deserves far more comment than it currently receives. I strongly suspect this is the
+esult of introducing phylogenetic bias into their data, smoothing out any volatility (see
+comments above), but if not then this is a remarkable outcome for a clade over such a long
+period. Why should turtles be able to maintain such apparently great morphological stability?
+<U+F0B7> The absence of significance was already presented in Foth & Joyce (2016), where
+terminal and ancestral shapes were included, but also when only terminal taxa
+were analysed (leading to a reduced number of time bins due to smaller sample
+sizes per bin). Thus, it is not an artifact of the method, but seems to be an actual
+signal. We interpreted these small non-siginificant changes as an indicator for the
+slow and steady evolution of cranial disparity in turtles. A comment was added to
+the text.
+"Pan-cryptodires see a notable dip in disparity following the K/T extinction event, mostly
+ikely due to the loss of various often bizarre marine lineages (e.g., protostegids, sandowniids,
+etc.)" There should be no "likely" here as the authors have the data to know. Which is it?
+<U+F0B7> This was changed.
+"in particular testudinoids and chelydroids, that expanded into the habitats left vacated by
+more basal groups that went extinct" Are they also expanding into the same areas of the
+ordination space? Or are they new areas? If the latter are they still ecologically similar? What
+does this mean for interpreting the ordination space?
+<U+F0B7> In Foth et al. (2016) we could demonstrate that the different turtles clades have
+rather stable positions within the morphospace. Thus, even when turtles from
+different clades evolve similar ecological preferences they stay in their clade-
+specific morphospace so that do not observe much convergent evolution in shape.
+These changes in ecology result rather in an increase or decrease of the particular
+morphospace of the clade.
+"Pan-pleurodire disparity suffers a similar loss during the late Paleogene, again probably due
+o the loss of marine adapted lineages at that time (e.g., bothremydids, stereogenyines, etc.)"
+Again, the authors have the data to make a definitive statement here, there should be no
+"probably".
+<U+F0B7> This was changed.
+"Interestingly, although pleurodires only represent about a quarter of all extant turtles [32],
+heir sum of variance, a disparity measure that takes diversity into account, is greater than that
+of cryptodires" This is interesting. I would urge the authors to expand this point further. Was
+his a surprise? What can we tell from visual inspection of their crania? Are they also
+ecologically diverse? Functionally? Phylogenetically? If not what explains this pattern?
+<U+F0B7> The metric we use, the sum of variances, is dependent on sample size and
+therefore often retrieves results that at first seem counterintuitive. We see little
+point in expanding this point, as we have no immediate explanation for this
+observation.
+The authors state that "the Miocene dip in the cranial disparity curves of turtles we retrieved
+n our original study [6] turns out to be a gap in the fossil record rather than a natural event" It
+seems to me that this statement could be made without any statistical analysis, or explained by
+he absence of lineages known to be present due to their existence both before and after this
+ime. I.e., what are the authors really doing here? (See major comments above.)
+<U+F0B7> We performed a simple test in Foth & Joyce (2016) by adding actual species
+known from the Recent that ghost lineages jumped the Miocene to the Miocene
+sample, leading to a decrease of the gap. However, with help of the branch length
+interpolation we can demonstrate that this gap is an artifact on a much robust
+level, because the long ghost lineages indicate that these particular clades were
+present in the Miocene. However, in our view estimating morphological traits
+along branches is more sufficient than adding some random taxa as we did in the
+previous study.
+"the new analyse" should be "analysis".
+<U+F0B7> This was changed.
+The only supplementary data is a tree with branch-lengths. Where is the morphological data
+What about the R code? The divergence estimates used? The tip ages used?
+<U+F0B7> There is a pdf included providing all results (the reviewer has already cited it).
+Beside, sampling and geometric morphometric data are available in Foth &
+Joyce 2016 as stated in the text. As these data sets were not changed, we decided
+refer to the other paper, instead of uploading them again. The information
+regarding the time calibration were extended. We now provide the R scripts and
+the new data used in this study.
+The figures could be improved substantially. For example, the authors could add a proper
+geologic time-scale to their x-axes in Figure 1 (for example, using the geoscale package in R).
+Similarly there is no visible asterisk on the plot to demarcate the Miocene dip as claimed in
+he caption. Major extinction events should also be delineated on the time series to highlight
+heir effects (or their absence).
+<U+F0B7> The asterisk was added to the figure. Concerning the timescale, we prefer the
+current version, which marks the major periods and time in Myr (20 Myr
+interval). Subdividing the scale into smaller units (i.e., ages) as the reviewer
+suggests would make the figure more confusing, while not necessarily providing
+more information.
+An additional figure showing the correlation data would also be helpful. Biogeographic data
+should also be shown visually as far as possible if this is truly considered the explanatory
+actor (but see major comments above).
+<U+F0B7> The biogeographical model is shown in Joyce et al. (2016). As this is an update of
+a previous study, we do not see the point of going much into details.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_8
+The paper is a short update on a previous study of morphological disparity as described from
+urtle cranial shape across lineages through time. The authors recognise a shortcoming in their
+previous paper and have used a recently proposed method to examine it. Specifically that
+here might be a sampling issue in their data influencing the estimated disparity curve. The
+solution is to use a method proposed by Wilberg (2017, Zool J Linn Soc) that builds upon a
+method by Brusatte et al. (2011 Paleobiology), whereby ancestral state reconstructions are
+made by squared change parsimony, and those are included in the time bins in which the
+phylogenetic hypothesis predicts they would be found. The method is using this phylogenetic
+approach to boast sample sizes. Wilberg states that the method “acts to smooth the data by
+filling in’ time periods with poor sampling.”
+have no issues with the way the authors have implemented the test – although it puzzles me
+as to why only a subset of the variables were used and not the whole shape space, since the
+methods being used here do not have multivariate restrictions (but this is not relevant here as
+hey are simply following their previously published study).
+<U+F0B7> The number of variables was estimated with help of the Broken-Stick-Method,
+which obtained the most consistent results when compared to other stopping
+rules (see Jackson 1993). This was added to the text.
+My only concern is that branch length interpolations, and the ancestral state reconstructions
+hey are based on, are simply weighted averages of the tip data; their morphology will always
+all within the range of the tip data. Thus, it is no wonder that it in practice smooths out the
+curve from the original analysis. Does this really provide a better approach? I would like to
+see a short discussion of this added to the Discussion.
+<U+F0B7> This was added to the discussion (see also response to Reviewer 1).
+Minor comments
+Line 90 – insignificant meaning not significant? Or insignificant as in small/minute – in
+which case it is redundant with small in the same sentence? Not significant should be used if
+t is being described with a significance value to avoid this ambiguity.
+<U+F0B7> This was changed.
+Figure caption mentions an asterisk that is not visible in the figure
+<U+F0B7> This was changed.
+White text on right side of figure is not very readable.
+<U+F0B7> This was changed.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_9
+The manuscript “Still Slow, but even Steadier: An Update on the Evolution of Turtle Cranial
+Disparity Interpolating Shapes along Branches” by Foth, Ascarrunz and Joyce upgraded they
+ecent study (Foth and Joyce 2016) about the cranial disparity of turtles through time using
+geometric morphometrics. In this upgrade, the authors used they original data (with some
+small modifications) from Foth and Joyce (2016) and analysed them applying new
+methodology developed by Wilberg (2017) and Friedman (2009). The new methodology
+developed by Wilberg (2017) and Friedman (2009) interpolates traits between ancestors and
+erminal taxa along the branches. The new analysis provided in this manuscript resulted in
+similar conclusions than the previous one (Foth and Joyce 2016) and provides support to their
+previous hypothesis that the Miocene dip Foth and Joyce (2016) found is indeed caused by
+sampling artifacts. The disparity analysis in turtles using geometric morphometrics is new in
+our field (Foth and Joyce, 2016; Foth et al. 2017) and the core of the studies has been
+developed by two of the authors present in this ms (Foth and Joyce). This ms adds one more
+step to this kind of studies. In my opinion it is publishable with minor revision after the
+authors make the suggested changes mentioned in the attached PDF and repeated below.
+Calibrated phylogeny: Page 4, lines 64-66 “The recalibration was undertaken by enforcing
+node estimates from median ages of molecular clock calibration for the origin of recent turtle
+clades [15–20]”. None of those phylogenies have broad taxon samples, they are at “family”
+evel. In my opinion taking ages from different calibrated trees (using restricted taxon
+sampling and maybe different methodologies to calculate the ages) is not the most accurate
+methodology to calibrate their tree. I recommend, instead, gathering the ages of the nodes
+rom one source. For example note that the paper by Pereira et al. (2017) has the biggest taxon
+sampling of extant turtles, recovers Crawford et al.'s topology with good supports and
+provides a molecular clock. In one paper you can find all the ages. If you compare the ages of
+he divergence between Cryptodira and Pleurodira in your supertree (212.3 Mya.) it is much
+older than the one proposed in Pereira et al. (2017), which is aroun 197 Mya. The same is true
+or Cryptodira and other clades. If the phylogeny is so important for the disparity analysis and
+his new methodology (Wilberg 2017 and Friedman 2009) uses the branch lengths, I think the
+authors should pay more attention to that.
+<U+F0B7> This is a good point. We now use new ages estimates provided by Pereira et al.
+(2017).
+Disparity of turtles driven by biogeographic factors: Page 9, lines 185-187 “the new analyse
+analysis] still favours our original hypothesis that the disparity of turtles appears to be driven
+by biogeographic factors, not climate”. In my opinion the authors do not provide any evidence
+nor test this hypothesis. Consequently I suggest them to delete this from the conclusions.
+They also cited these factors in their previous paper (Foth and Joyce 2016), but they did not
+est it either. It is indeed an interesting hypothesis but the authors are not testing it. Instead the
+authors are testing the correlation between the climatic curve with the curve of disparity but
+hey are not testing this hypothesis about the correlation of the disparity of turtles and the
+biogeographic factors. The rejection of one hypothesis does not mean that the other
+hypothesis "is favored". Can you test your new hypothesis? Otherwise your hypothesis about
+he correlation of the disparity with the biogegraphic factors remains untested…
+<U+F0B7> We now test the biogeographic correlation (see replies to reviewer #1).
+Society Open

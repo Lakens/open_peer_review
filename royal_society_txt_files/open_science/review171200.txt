@@ -1,0 +1,913 @@
+A brittle star-like robot capable of immediately adapting to
+unexpected physical damage
+Takeshi Kano, Eiki Sato, Tatsuya Ono, Hitoshi Aonuma, Yoshiya Matsuzaka, and Akio
+Ishiguro
+Article citation details
+R. Soc. open sci. 4: 171200.
+http://dx.doi.org/10.1098/rsos.171200
+Review timeline
+Original submission: 22 August 2017 Note: Reports are unedited and appear as
+1st revised submission: 7 October 2017 submitted by the referee. The review history
+2nd revised submission: 7 November 2017 appears in chronological order.
+Final acceptance: 10 November 2017
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-171200.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Andrew Spence)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This is a good paper. The authors present data from Brittle stars moving with various limb
+ablations, use that to infer a putative control architecture, and then build and test a robot that is
+robust to similar ablations. From the ability of the robot with this control scheme to reproduce the
+animal behavior they offer this control scheme as a putative one for further testing in biology,
+and as a useful step in robotics, as the robot converges to locomotion after ablation faster than
+other methods.
+It's a nice demonstration of interesting principles - taking advantage of or depending on physical
+interaction, embodiment, to achieve an outcome where explicit neural (or electronic)
+communication could have been relied on. Elegant.
+In general the methods appear sound. There are a couple points of over-reach or strong
+assumption that should be qualified, unless they can be better supported. I am not enough of an
+expert on state of the art robotics to determine the veracity of the claim (P14 L50-55) that this is
+the first demonstration of physical interaction being key to damage response. I can't think of one
+now. While I think this system is neat and particularly suited to this topic, my intuition would be
+that there are other studies in robotics that recover from damage in ways that end up relying on
+physical interaction, and recover quickly, but don't focus on it.
+I do know that work by Aaron Johnson of the Koditschek Lab demonstrated (Johnson, A.M., G.C.
+Haynes, and D.E. Koditschek. Disturbance detection, identification, and recovery by gait
+transition in legged robots. in 2010 IEEE/RSJ International Conference on Intelligent Robots and
+Systems. 2010) rapid (~seconds) adaptation of gait to the loss of a leg in a six legged robot. It
+certainly didn't need many minutes of re-optimization. In this sense the choice of robots for
+comparison (Refs 5-15) may somewhat represent straw-men, in that they are studies that attempt
+full or lengthy re-optimizations, where this may not be necessary.
+But overall it is a novel, interesting study that is well carried out. The formalization of the
+embodied control law is well described and interesting.
+Comments:
+It's not clear in the introduction (p2 L28-L33) that this general statement about conventional
+robots refers to those in the previous citations, though this is clear the discussion. It shoudl be
+explicit which robots are referred to as being slow to adapt, via citations. Just another in text
+citation would help [e.g. 5-15]
+The claim that organisms must have simple control schemes because they adapt fast to damage
+doesn't really follow. P2, L39-48: I mean, even "simple" nervpus systems are pretty complex,
+nonlinear, coupled systems, right? They may end being simple, or they may end up being very
+complex. They just do a good job of recovering quickly and doing something useful.
+P5L20: I think the following means that this is the focus of the present manuscript?:
+However, adaptability to physical damages to the arms has not been discussed yet.
+The lack of ground contact experiment with the animals is clever and interesting.
+How is limb loss/damaged handled in eqns eg 4.7? does it need to be? What is the adjacent limb
+when one is lost? Or is the limb still there, just shorter?
+3
+P10L55 Why are noise terms critical to detecting the reaction force? So that the robot explores and
+"pushes" on the world, to generate a deviation between reference angle, and therefore detect the
+force? Elaboration would help here.
+Comparing figs 1c and d, the trimming of the limbs are quite significant. I understand this may
+be required to make tractable the analysis and robot with necessarily fewer degrees of freedom.
+But how different are the kinematics with a full limb? Is propulsion generated in a similar
+manner? Do the limbs fall into similar categories of function? E.g. is the control scheme higher
+likely a superset or subset of some poentially larger control scheme?
+label_author_2
+Review form: Reviewer 2 (Antoine Cully)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+In the paper entitled “A Bio-inspired Robot Capable of Immediately Adapting to Physical
+Damage”, the authors introduce a decentralized controller for a five-legged robot. This controller
+is inspired by the behaviour of ophiuroid (a five-legged creature) and enables immediate
+adaptation for robots after the loss of one or several legs.
+First, the paper starts with a behavioural study of the ophiuroids. In particular, the authors study
+their gate in their normal state, but also after the amputation of one or several legs. From this
+behavioural study, the authors formulated a mathematical model able to generate similar gaits.
+Finally, this paper shows the application of this decentralized controller on a physical robot and
+how this controller is robust to the loss of one of several legs.
+In general, the paper is very clear and seems to contain all the necessary details to reproduce the
+experiments. The experimental results demonstrate the high performance of the proposed
+controller in five of the seven test scenarios.
+My main comment about the paper is about its main claim and the way it is formulated. In the
+paper, the authors explain that their approach is considerably faster than conventional robots,
+whose adaptation time ranges from several tens of seconds to several minutes. (this sentence is
+present several times in the paper) The problem is that this sentence compares families of
+4
+approaches that have different objectives.
+At least, three families of algorithms for damage recovery can be defined:
+1) Diagnosis and contingency plans,
+2) Robust or fault tolerant controllers,
+3) Learning algorithms.
+It is difficult to compare approaches from different families and working on different robots,
+especially in terms of adaptation speed.
+For instance, it should be relatively easy to design a method from the first family to achieve, at
+least, the same adaptation speed as the method proposed in this paper: the method introduced in
+this paper to detect whether a force assists or impedes movements can be simplified and used as
+a quasi-instantaneous diagnostic approach. If no force is perceived, this likely means that the leg
+is damaged. Then the robot can switch to a predefined contingency plan designed to cope with
+the loss of specific legs.
+Similarly, we can argue that the objective of learning algorithm is not to enable immediate
+adaptation but to propose a generic approach able to solve the adaptation problem regardless of
+the type of robots. Indeed, it is expected that most of learning algorithm are robot-independent
+and can be applied on various robots. The cost of this propriety is the time required to learn a
+controller on an unknown (un-diagnosed) damaged robot. Conversely, transferring the controller
+presented in this paper to a different robot will require to re-do most of the studies and designs.
+Finally, it is expected that having fault-tolerant controllers is the fastest and most robust
+approach. However, the difficulty of this approach is that designing such controllers on complex
+robots (that can be damaged in many different ways) interacting with complex environment
+requires extremely important engineering and remains an open-challenge. This paper presents an
+interesting approach, based on bio-inspiration, to address this challenge with promising results.
+However, I would not be as optimistic as the authors regarding the possibility to scale up the
+proposed design principles. While having several distributed decentralized controllers is very
+efficient in the scenarios considered in this paper, such approach will become significantly more
+challenging as soon as the robot will have to maintain its balance. Indeed, to keep its balance the
+robot will need a specific coordination of its legs, which is difficult with decentralized controllers.
+For these different reasons, I strongly encourage the authors to revise the formulation of their
+claim and to provide more perspective to the readers.
+For the purpose of open-reviews, here are my details:
+Dr. Antoine Cully, Imperial College London.
+label_end_comment
+Decision letter (RSOS-171200)
+18-Sep-2017
+Dear Dr Kano
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171200 entitled
+"A Bio-inspired Robot Capable of Immediately Adapting to Physical Damage" has been accepted
+for publication in Royal Society Open Science subject to minor revision in accordance with the
+referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+5
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171200
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+6
+the revised version of your manuscript within 7 days (i.e. by the 27-Sep-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of R. Kerry Rowe
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+7
+Associate Editor Comments to Author:
+This paper presents an interesting study of Ophiuroid locomotion, including an experimental
+study of the behavioral response to limb loss and the development of a biologically inspired robot
+locomotion controller. The expert reviewers both agree that the paper is scientifically sound and
+makes a solid contribution to the literature. They raise some points for clarification within the text
+and suggest that the authors should consider reformulating some of the discussion around
+different approaches and algorithms for damage recovery. It seems that the authors should be
+able to address these concerns through minor revisions to the text, but please do provide a
+detailed point-by-point response to the referee comments.
+Additionally, I have some specific comments for presenting the work more clearly to a broad
+audience:
+Please consider including a reference to brittle star locomotion in the title, to more accurately
+reflect the content of the paper.
+The authors should also clarify early in the introduction whether or not both brittle stars and
+basket stars are included in the general comments about ophiuroid locomotion.
+It is my understanding that the authors have based their study on a single brittle star species.
+Perhaps it would be clearer to simply introduce the common name ‘Brittle Star’ in the title and
+introduction, and use it throughout the paper except where making a statement about shared
+features of all ophiuroids or the specific species of study animals used in the experiments.
+Figure 2a might be more effectively and concisely presented in a table.
+Finally, please ensure that all data supporting the main findings presented in the paper are made
+publicly available in line with the journals Open Data policies.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This is a good paper. The authors present data from Brittle stars moving with various limb
+ablations, use that to infer a putative control architecture, and then build and test a robot that is
+robust to similar ablations. From the ability of the robot with this control scheme to reproduce the
+animal behavior they offer this control scheme as a putative one for further testing in biology,
+and as a useful step in robotics, as the robot converges to locomotion after ablation faster than
+other methods.
+It's a nice demonstration of interesting principles - taking advantage of or depending on physical
+interaction, embodiment, to achieve an outcome where explicit neural (or electronic)
+communication could have been relied on. Elegant.
+In general the methods appear sound. There are a couple points of over-reach or strong
+assumption that should be qualified, unless they can be better supported. I am not enough of an
+expert on state of the art robotics to determine the veracity of the claim (P14 L50-55) that this is
+the first demonstration of physical interaction being key to damage response. I can't think of one
+now. While I think this system is neat and particularly suited to this topic, my intuition would be
+that there are other studies in robotics that recover from damage in ways that end up relying on
+physical interaction, and recover quickly, but don't focus on it.
+8
+I do know that work by Aaron Johnson of the Koditschek Lab demonstrated (Johnson, A.M., G.C.
+Haynes, and D.E. Koditschek. Disturbance detection, identification, and recovery by gait
+transition in legged robots. in 2010 IEEE/RSJ International Conference on Intelligent Robots and
+Systems. 2010) rapid (~seconds) adaptation of gait to the loss of a leg in a six legged robot. It
+certainly didn't need many minutes of re-optimization. In this sense the choice of robots for
+comparison (Refs 5-15) may somewhat represent straw-men, in that they are studies that attempt
+full or lengthy re-optimizations, where this may not be necessary.
+But overall it is a novel, interesting study that is well carried out. The formalization of the
+embodied control law is well described and interesting.
+Comments:
+It's not clear in the introduction (p2 L28-L33) that this general statement about conventional
+robots refers to those in the previous citations, though this is clear the discussion. It shoudl be
+explicit which robots are referred to as being slow to adapt, via citations. Just another in text
+citation would help [e.g. 5-15]
+The claim that organisms must have simple control schemes because they adapt fast to damage
+doesn't really follow. P2, L39-48: I mean, even "simple" nervpus systems are pretty complex,
+nonlinear, coupled systems, right? They may end being simple, or they may end up being very
+complex. They just do a good job of recovering quickly and doing something useful.
+P5L20: I think the following means that this is the focus of the present manuscript?:
+However, adaptability to physical damages to the arms has not been discussed yet.
+The lack of ground contact experiment with the animals is clever and interesting.
+How is limb loss/damaged handled in eqns eg 4.7? does it need to be? What is the adjacent limb
+when one is lost? Or is the limb still there, just shorter?
+P10L55 Why are noise terms critical to detecting the reaction force? So that the robot explores and
+"pushes" on the world, to generate a deviation between reference angle, and therefore detect the
+force? Elaboration would help here.
+Comparing figs 1c and d, the trimming of the limbs are quite significant. I understand this may
+be required to make tractable the analysis and robot with necessarily fewer degrees of freedom.
+But how different are the kinematics with a full limb? Is propulsion generated in a similar
+manner? Do the limbs fall into similar categories of function? E.g. is the control scheme higher
+likely a superset or subset of some poentially larger control scheme?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+In the paper entitled “A Bio-inspired Robot Capable of Immediately Adapting to Physical
+Damage”, the authors introduce a decentralized controller for a five-legged robot. This controller
+is inspired by the behaviour of ophiuroid (a five-legged creature) and enables immediate
+adaptation for robots after the loss of one or several legs.
+First, the paper starts with a behavioural study of the ophiuroids. In particular, the authors study
+their gate in their normal state, but also after the amputation of one or several legs. From this
+behavioural study, the authors formulated a mathematical model able to generate similar gaits.
+Finally, this paper shows the application of this decentralized controller on a physical robot and
+how this controller is robust to the loss of one of several legs.
+9
+In general, the paper is very clear and seems to contain all the necessary details to reproduce the
+experiments. The experimental results demonstrate the high performance of the proposed
+controller in five of the seven test scenarios.
+My main comment about the paper is about its main claim and the way it is formulated. In the
+paper, the authors explain that their approach is considerably faster than conventional robots,
+whose adaptation time ranges from several tens of seconds to several minutes. (this sentence is
+present several times in the paper) The problem is that this sentence compares families of
+approaches that have different objectives.
+At least, three families of algorithms for damage recovery can be defined:
+1) Diagnosis and contingency plans,
+2) Robust or fault tolerant controllers,
+3) Learning algorithms.
+It is difficult to compare approaches from different families and working on different robots,
+especially in terms of adaptation speed.
+For instance, it should be relatively easy to design a method from the first family to achieve, at
+least, the same adaptation speed as the method proposed in this paper: the method introduced in
+this paper to detect whether a force assists or impedes movements can be simplified and used as
+a quasi-instantaneous diagnostic approach. If no force is perceived, this likely means that the leg
+is damaged. Then the robot can switch to a predefined contingency plan designed to cope with
+the loss of specific legs.
+Similarly, we can argue that the objective of learning algorithm is not to enable immediate
+adaptation but to propose a generic approach able to solve the adaptation problem regardless of
+the type of robots. Indeed, it is expected that most of learning algorithm are robot-independent
+and can be applied on various robots. The cost of this propriety is the time required to learn a
+controller on an unknown (un-diagnosed) damaged robot. Conversely, transferring the controller
+presented in this paper to a different robot will require to re-do most of the studies and designs.
+Finally, it is expected that having fault-tolerant controllers is the fastest and most robust
+approach. However, the difficulty of this approach is that designing such controllers on complex
+robots (that can be damaged in many different ways) interacting with complex environment
+requires extremely important engineering and remains an open-challenge. This paper presents an
+interesting approach, based on bio-inspiration, to address this challenge with promising results.
+However, I would not be as optimistic as the authors regarding the possibility to scale up the
+proposed design principles. While having several distributed decentralized controllers is very
+efficient in the scenarios considered in this paper, such approach will become significantly more
+challenging as soon as the robot will have to maintain its balance. Indeed, to keep its balance the
+robot will need a specific coordination of its legs, which is difficult with decentralized controllers.
+For these different reasons, I strongly encourage the authors to revise the formulation of their
+claim and to provide more perspective to the readers.
+For the purpose of open-reviews, here are my details:
+Dr. Antoine Cully, Imperial College London.
+Author's Response to Decision Letter for (RSOS-171200)
+See Appendix A.
+10
+label_end_comment
+Decision letter (RSOS-171200.R1)
+17-Oct-2017
+Dear Dr Kano:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171200.R1
+entitled "A Brittle Star-like Robot Capable of Immediately Adapting to Unexpected Physical
+Damage" has been accepted for publication in Royal Society Open Science subject to minor
+revision in accordance with the editor's suggestions. Please find the editor's comments at the end
+of this email.
+The editors have recommended publication, but also suggest some minor revisions to your
+manuscript. Therefore, I invite you to respond to the comments and revise your manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171200.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+11
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 26-Oct-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+12
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of R. Kerry Rowe
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Thank you for the thoughtful and thorough responses to the concerns raised by the expert
+reviewers. The only remaining issue I see is that the data does not appear to be available from the
+supplementary files as stated within the manuscript. I see several videos, but not the
+corresponding raw data, for example, to support the quantitative comparisons shown in Figure 3.
+For the final version to be submitted for publication, please ensure that you provide the data in
+line with the journal's Open Data policies.
+Author's Response to Decision Letter for (RSOS-171200.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-171200.R2)
+10-Nov-2017
+Dear Dr Kano,
+I am pleased to inform you that your manuscript entitled "A Brittle Star-like Robot Capable of
+Immediately Adapting to Unexpected Physical Damage" is now accepted for publication in Royal
+Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+13
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+ppendix A
+urnal of the Royal Society Open Science
+anuscript ID: RSOS-171200
+tle: A Brittle Star-like Robot Capable of Immediately Adapting to Unexpected
+ysical Damage
+thors: Takeshi Kano, Eiki Sato, Tatsuya Ono, Hitoshi Aonuma, Yoshiya Mat-
+zaka, and Akio Ishiguro
+Thank you very much for many valuable comments concerning our manuscript. We have examined the
+ments thoroughly and have made corrections so that they meet with the approval. We are sending the
+ised manuscript of our paper.
+sponse to Associate Editor
+Comment 1 
+lease consider including a reference to brittle star locomotion in the title, to more accurately re<U+FB02>ect the
+ontent of the paper.
+
+sponse to comment 1:
+Thank you for the comment. The title was changed according to the comment (see <Change 1>).
+Comment 2 
+he authors should also clarify early in the introduction whether or not both brittle stars and basket stars
+re included in the general comments about ophiuroid locomotion.
+t is my understanding that the authors have based their study on a single brittle star species. Perhaps
+t would be clearer to simply introduce the common name ‘Brittle Star’ in the title and introduction, and
+se it throughout the paper except where making a statement about shared features of all ophiuroids or
+he speci<U+FB01>c species of study animals used in the experiments.
+
+sponse to comment 2:
+Thank you for the comment. This study focuses on the locomotion of brittle stars but not basket stars.
+us, we used the term ‘brittle star’ instead of ‘ophiuroid’ throughout the paper (see <Change 2>).
+Comment 3 
+igure 2a might be more e<U+FB00>ectively and concisely presented in a table.
+
+sponse to comment 3:
+Thank you for the comment. Figure 2(a) was presented in a table, according to the suggestion (see <Change
+).
+Comment 4 
+inally, please ensure that all data supporting the main <U+FB01>ndings presented in the paper are made publicly
+vailable in line with the journals Open Data policies.
+
+sponse to comment 4:
+All data are available in the supplementary material.
+sponse to Reviewer 1
+Comment 1 
+n general the methods appear sound. There are a couple points of over-reach or strong assumption that
+hould be quali<U+FB01>ed, unless they can be better supported. I am not enough of an expert on state of the art
+obotics to determine the veracity of the claim (P14 L50-55) that this is the <U+FB01>rst demonstration of physical
+nteraction being key to damage response. I can’t think of one now. While I think this system is neat and
+articularly suited to this topic, my intuition would be that there are other studies in robotics that recover
+rom damage in ways that end up relying on physical interaction, and recover quickly, but don’t focus on
+t.
+do know that work by Aaron Johnson of the Koditschek Lab demonstrated (Johnson, A.M., G.C. Haynes,
+nd D.E. Koditschek. Disturbance detection, identi<U+FB01>cation, and recovery by gait transition in legged robots.
+n 2010 IEEE/RSJ International Conference on Intelligent Robots and Systems. 2010) rapid (~ seconds)
+daptation of gait to the loss of a leg in a six legged robot. It certainly didn’t need many minutes of
+e-optimization. In this sense the choice of robots for comparison (Refs 5-15) may somewhat represent
+traw-men, in that they are studies that attempt full or lengthy re-optimizations, where this may not be
+ecessary.
+
+sponse to comments 1 (also related to Reviewer 2’s comment):
+Thank you for the comment. As the referee pointed out, quick damage response was achieved in the work
+Koditschek’s group. However, contingency plans when fault is detected are predetermined in their work.
+us, their method will fail when unexpected events occur.
+Methods based on diagnosis and contingency plans enable quick damage response, but they can work only
+en damage is “anticipated”. In contrast, learning and trial-and-error approaches enable adaptation to unex-
+ted physical damage, but they require considerable amounts of time. Our method is advantageous in that
+an “quickly” adapt to “unexpected” physical damage.
+The comparison between the previous and proposed methods was clari<U+FB01>ed in the revised manuscript (see
+Change 4> and < Change 5>). The term “unexpected” was added before the term “physical damage” in
+title and abstract to emphasize the advantage of this paper (see < Change 1> and < Change 6>). Aaron
+nson’s work was added to the reference (see < Change 7>).
+Moreover, we admit that the claim in P14 L50-55 was exaggerated. This part was changed to mild expression
+he revised manuscript (see < Change 8>).
+Comment 2 
+t’s not clear in the introduction (p2 L28-L33) that this general statement about conventional robots refers
+o those in the previous citations, though this is clear the discussion. It should be explicit which robots
+re referred to as being slow to adapt, via citations. Just another in text citation would help [e.g. 5-15]
+
+sponse to comments 2:
+Thank you for the comment. According to the suggestion, we added a text citation in the revised manuscript
+e < Change 4>).
+Comment 3 
+he claim that organisms must have simple control schemes because they adapt fast to damage doesn’t
+eally follow. P2, L39-48: I mean, even ‘simple’ nervous systems are pretty complex, nonlinear, coupled
+ystems, right? They may end being simple, or they may end up being very complex. They just do a good
+ob of recovering quickly and doing something useful.
+
+sponse to comment 3:
+Thank you for the comment. We admit that the term ‘simple’ was inappropriate. What we would like to
+in this sentence is that fast damage response can be achieved by small amount of calculation because even
+mitive living organisms whose computational resources are quite limited can immediately adapt to physical
+mage in real time. We revised the manuscript to clarify this (see < Change 4>).
+Comment 4 
+5L20: I think the following means that this is the focus of the present manuscript?: However, adaptability
+o physical damages to the arms has not been discussed yet.
+
+sponse to comment 4:
+Yes, you are right. Because it is obvious that the focus of the present manuscript has not been studied
+ore, this sentence is omitted in the revised manuscript (see < Change 9>).
+Comment 5 
+How is limb loss/damaged handled in eqns eg 4.7? does it need to be? What is the adjacent limb when
+ne is lost? Or is the limb still there, just shorter?
+
+sponse to comment 5:
+It is assumed in the proposed model that nervous system is not a<U+FB00>ected by physical damages to the arms.
+mely, the damaged arms are still there, just shorter. This point is clari<U+FB01>ed in the revised manuscript (see <
+ange 10>).
+Comment 6 
+10L55 Why are noise terms critical to detecting the reaction force? So that the robot explores and
+pushes” on the world, to generate a deviation between reference angle, and therefore detect the force?
+laboration would help here.
+
+sponse to comment 6:
+Yes, you are right. The robot cannot interact with the environment without noise. We revised the
+nuscript to clarify this point (see < Change 11>).
+Comment 7 
+omparing <U+FB01>gs 1c and d, the trimming of the limbs are quite signi<U+FB01>cant. I understand this may be required
+o make tractable the analysis and robot with necessarily fewer degrees of freedom. But how di<U+FB00>erent are
+he kinematics with a full limb? Is propulsion generated in a similar manner? Do the limbs fall into similar
+ategories of function? E.g. is the control scheme higher likely a superset or subset of some potentially
+arger control scheme?
+
+sponse to comment 7:
+Thank you for the comment. Subjects with full limbs move in a qualitatively similar manner as arm-
+mmed subjects, although quantitative evaluation is di<U+FB03>cult. Because we think that this point is important
+m biological perspective, the manuscript was revised (see < Change 12>). Further, movies of the subjects
+h full limbs were added as electronic supplementary material (see < Change 13>).
+sponse to Reviewer 2
+Comment 1 
+My main comment about the paper is about its main claim and the way it is formulated. In the paper,
+he authors explain that their approach is considerably faster than conventional robots, whose adaptation
+ime ranges from several tens of seconds to several minutes. (this sentence is present several times in the
+aper) The problem is that this sentence compares families of approaches that have di<U+FB00>erent objectives.
+t least, three families of algorithms for damage recovery can be de<U+FB01>ned:
+) Diagnosis and contingency plans,
+) Robust or fault tolerant controllers,
+) Learning algorithms.
+t is di<U+FB03>cult to compare approaches from di<U+FB00>erent families and working on di<U+FB00>erent robots, especially in
+erms of adaptation speed. For instance, it should be relatively easy to design a method from the <U+FB01>rst
+amily to achieve, at least, the same adaptation speed as the method proposed in this paper: the method
+ntroduced in this paper to detect whether a force assists or impedes movements can be simpli<U+FB01>ed and
+sed as a quasi-instantaneous diagnostic approach. If no force is perceived, this likely means that the leg
+s damaged. Then the robot can switch to a prede<U+FB01>ned contingency plan designed to cope with the loss of
+peci<U+FB01>c legs.
+imilarly, we can argue that the objective of learning algorithm is not to enable immediate adaptation but
+o propose a generic approach able to solve the adaptation problem regardless of the type of robots. Indeed,
+t is expected that most of learning algorithm are robot-independent and can be applied on various robots.
+he cost of this propriety is the time required to learn a controller on an unknown (un-diagnosed) damaged
+obot. Conversely, transferring the controller presented in this paper to a di<U+FB00>erent robot will require to
+e-do most of the studies and designs.
+inally, it is expected that having fault-tolerant controllers is the fastest and most robust approach. How-
+ver, the di<U+FB03>culty of this approach is that designing such controllers on complex robots (that can be
+amaged in many di<U+FB00>erent ways) interacting with complex environment requires extremely important
+ngineering and remains an open-challenge. This paper presents an interesting approach, based on bio-
+nspiration, to address this challenge with promising results. However, I would not be as optimistic as
+he authors regarding the possibility to scale up the proposed design principles. While having several dis-
+ributed decentralized controllers is very e<U+FB03>cient in the scenarios considered in this paper, such approach
+ill become signi<U+FB01>cantly more challenging as soon as the robot will have to maintain its balance. Indeed, to
+eep its balance the robot will need a speci<U+FB01>c coordination of its legs, which is di<U+FB03>cult with decentralized
+ontrollers.
+
+sponse to comment 1 (also related to comment 1 of Reviewer 1):
+Thank you for the comment. We agree that three families of algorithms for damage recovery should not
+compared just in terms of adaptation time. Methods based on 1) Diagnosis and contingency plans can
+ckly adapt to physical damage. Actually, quick damage response was achieved in the work by Koditschek’s
+up (see Response to comment 1 of Reviewer 1). However, these methods will fail when robots encounter
+xpected events. In contrast, methods based on 3) Learning algorithms enable adaptation to unexpected
+sical damage, but they require considerable amounts of time. We agree that our method is classi<U+FB01>ed into
+Robust or fault tolerant controllers, and it is advantageous in that it can “quickly” adapt to “unexpected”
+sical damage.
+The comparison between the previous and proposed methods was clari<U+FB01>ed in the revised manuscript (<
+ange 4> and < Change 5>). The term “unexpected” was added before the term “physical damage” in the
+e and abstract to emphasize the advantage of this paper (see < Change 1> and < Change 6>).
+As the referee pointed out, our method is not as universal as 3) Learning algorithms and cannot be applied
+robots that need to maintain their balance. However, we believe that our method has scope for generic
+lication to some extent as described in the second paragraph of the discussion section. The basic idea of our
+thod is not restricted to brittle star-like morphology, and it can probably be applied to other type of robots,
+, myriapod robots.
+The fact that the proposed method is not completely universal but still has a limitation is mentioned in the
+ised manuscript (< Change 14>).
+mmary of Changes
+hange 1>
+tle)
+evious version]
+A Bio-inspired Robot Capable of Immediately Adapting to Physical Damage
+evised version]
+A Brittle Star-like Robot Capable of Immediately Adapting to Unexpected Physical Damage
+hange 2>
+e term ‘brittle star’ instead of ‘ophiuroid’ was used throughout the paper.
+hange 3>
+ormation in <U+FB01>gure 2(a) was summarized in Table 1.
+gure 2)
+evious version]
+(a)! (b)!
+No.1! !! (! %! $$! #! camera!
+mirror! mirror!
+No.2! "! (! (! %! $&! water tank! side view!
+No.3! !! $!! $)! top view!
+No.4! #! "! 45°!
+No.5! )*! $$! #! !!
+ophiuroid!
+No.6! $%! $!!
+(c)!
+No.7! $&! &%! *! marker!
+No.8! &'! $$! $(! %!
+No.9! *!
+No.10! %!
+Robot! $$! $$! $$! $'! $'! $$!
+$'!
+ure 2: Behavioural experiments. (a) The order of experiments for each subject. X indicates the death of
+subject. The numbers on the bodies denote the numbers of trials performed. The number of trials for the
+ot experiments is stated in the last row. (b) Experimental setup. The motion of the subjects was monitored
+ng an overhead camera. A mirror was placed beside the subjects to simultaneously monitor their top and
+e views. (c) Markers on a real ophiuroid, which were used to calculate the indices.
+evised version]
+(a)! camera!
+mirror! mirror!
+water tank! side view!
+top view!
+45°!
+ophiuroid!
+(b)!
+marker!
+ure 2: Behavioural experiments. (a) Experimental setup. The motion of the subjects was monitored using
+overhead camera. A mirror was placed beside the subjects to simultaneously monitor their top and side
+ws. (b) Markers on a real brittle star, which were used to calculate the indices.
+able 1 in the revised manuscript)
+le 1. Number of trials for each subject and the robot. Symbols A-G correspond to those in <U+FB01>gure 1(d) and
+re 8(b).
+hange 4>
+rst paragraph in Section 1)
+evious version]
+Robots are now required to work in harsh environments inaccessible to humans such as disaster areas [1,2],
+ant planets [3], and deep oceans [4]. A major obstacle in this regard is that robots cannot cope with physical
+mage to their bodies. Hence, engineers have attempted to overcome this problem using several techniques such
+self-diagnosis [5-7], learning [8-14], and trial-and-error methods [15]. However, conventional robots require
+siderable amounts of time (several tens of seconds to several minutes) to respond to physical damage while
+urring high computational costs. In contrast, living organisms survive in harsh environments by coping with
+sical damage in real time. The key insight here is that even primitive creatures from amoeba to namatode
+ibit such adaptability by coordinating their body parts appropriately [16,17]. This fact indicates that the
+chanism to overcome damage via coordination of body parts in living organisms is quite simple, unlike the
+trol schemes used in conventional robots. Therefore, clarifying the core mechanism for resilient coordinated
+tion in living organisms could pave the way for developing robots that can immediately cope with physical
+mage.
+evised version]
+Robots are now required to work in harsh environments inaccessible to humans such as disaster areas [1,2],
+ant planets [3], and deep oceans [4]. A major obstacle in this regard is that robots cannot cope with physical
+mage to their bodies. One possible solution is to preprogram contingency plans for anticipated failure modes
+], yet this approach fails under unexpected events. Engineers have attempted to overcome this problem using
+eral techniques such as learning [9-15] and trial-and-error methods [16]. However, these methods [9-16] require
+siderable amounts of time (several tens of seconds to several minutes) to respond to unexpected physical
+mage while incurring high computational costs. In contrast, living organisms survive in harsh environments
+coping with unexpected physical damage in real time. The key insight here is that even primitive creatures
+m amoeba to namatode exhibit such adaptability by coordinating their body parts appropriately [17,18].
+s fact indicates that real-time response to unexpected physical damage can be achieved with small amount
+omputational costs, unlike the control schemes used in conventional robots [9-16]. Therefore, clarifying the
+e mechanism for resilient coordinated motion in living organisms could pave the way for developing robots
+t can immediately cope with unexpected physical damage.
+hange 5>
+rst paragraph in Section 6)
+evious version]
+We showed that our robot can adapt to physical damage within a few seconds; ...
+evised version]
+We showed that our robot can adapt to physical damage within a few seconds without any contingency
+n to anticipated failure modes;...
+hange 6>
+bstract)
+evious version]
+A major challenge in robotic design is enabling robots to immediately adapt to physical damage. However,
+ventional robots require considerable time (more than several tens of seconds) for adaptation because the
+cess entails high computational costs. To overcome this problem, we focus on an ophiuroid<U+2015>a primitive
+ature with expendable body parts. Ophiuroids, most of which have <U+FB01>ve <U+FB02>exible arms, occasionally lose
+e of them and promptly coordinate the remaining arms to escape from predators. We adopted a synthetic
+roach to elucidate the essential mechanism underlying this resilient locomotion. Speci<U+FB01>cally, based on
+avioural experiments involving ophiuroids whose arms were amputated in various ways, we inferred the
+entralized control mechanism that self-coordinates the arm motions by constructing a simple mathematical
+del. We implemented this mechanism in an ophiuroid-like robot and demonstrated that it adapts to physical
+mage within a few seconds by automatically coordinating its undamaged arms similar to ophiuroids. Through
+above-mentioned process, we found that physical interaction between arms plays an essential role for the
+lient inter-arm coordination of ophiuroids. This <U+FB01>nding will help develop resilient robots that can work in
+ospitable environments. Further, it provides insights into the essential mechanism of resilient coordinated
+tions characteristic of animal locomotion.
+evised version]
+A major challenge in robotic design is enabling robots to immediately adapt to unexpected physical dam-
+. However, conventional robots require considerable time (more than several tens of seconds) for adaptation
+ause the process entails high computational costs. To overcome this problem, we focus on a brittle star<U+2015>a
+mitive creature with expendable body parts. Brittle stars, most of which have <U+FB01>ve <U+FB02>exible arms, occasionally
+some of them and promptly coordinate the remaining arms to escape from predators. We adopted a syn-
+tic approach to elucidate the essential mechanism underlying this resilient locomotion. Speci<U+FB01>cally, based
+behavioural experiments involving brittle stars whose arms were amputated in various ways, we inferred the
+entralized control mechanism that self-coordinates the arm motions by constructing a simple mathemati-
+model. We implemented this mechanism in a brittle star-like robot and demonstrated that it adapts to
+xpected physical damage within a few seconds by automatically coordinating its undamaged arms similar
+brittle stars. Through the above-mentioned process, we found that physical interaction between arms plays
+essential role for the resilient inter-arm coordination of brittle stars. This <U+FB01>nding will help develop resilient
+ots that can work in inhospitable environments. Further, it provides insights into the essential mechanism
+esilient coordinated motions characteristic of animal locomotion.
+hange 7>
+eference added)
+Johnson AM, Haynes GC, Koditschek DE. 2010 Disturbance detection, identi<U+FB01>cation, and recovery by
+gait transition in legged robots. Proc. IEEE/RSJ Int. Conf. Intel. Rob. Sys. 5347–5353. (doi:
+10.1109/IROS.2010.5651061)
+hange 8>
+hird paragraph in Section 6)
+evious version]
+... The importance of physical interaction is also suggested in other works [28,29,34], yet to the best of
+knowledge, this is the <U+FB01>rst analysis to demonstrate that physical interaction plays an essential role for the
+rdination of body parts that enables quick damage response.
+evised version]
+... While the importance of physical interaction is suggested in other works [29,30,35], this study indicates
+t physical interaction can be also exploited for the coordination of body parts that enables quick damage
+ponse.
+hange 9>
+e last sentence in Section 2.3 was removed.
+hange 10>
+rst paragraph in Section 4)
+evious version]
+... This assumption is employed because our focus in this study is the inter-arm coordination mechanism
+r the direction of motion is determined.
+evised version]
+... This assumption is employed because our focus in this study is the inter-arm coordination mechanism
+r the direction of motion is determined. Moreover, it is assumed in our model that governing equations for
+trollers ((4.3)-(4.8) described below) do not change under any physical damage.
+hange 11>
+xth paragraph in Section 6)
+evious version]
+... are uniform random numbers in the range [-1,1] which vary with a <U+FB01>xed interval.
+evised version]
+... are uniform random numbers in the range [-1,1] which vary with a <U+FB01>xed interval. It should be noted that
+noise is essential because the robot cannot interact with the environment in the absence of noise.
+hange 12>
+xth paragraph in Section 3)
+evious version]
+... The locomotion velocity of the subjects with only one trimmed arm (con<U+FB01>guration G) was more than 50
+f that with <U+FB01>ve trimmed arms (con<U+FB01>guration A) (<U+FB01>gure 3(a)).
+evised version]
+... The locomotion velocity of the subjects with only one trimmed arm (con<U+FB01>guration G) was more than 50 %
+hat with <U+FB01>ve trimmed arms (con<U+FB01>guration A) (<U+FB01>gure 3(a)). We also observed the locomotion of brittle stars
+ing one or several long <U+FB02>exible arms, and found that they move in a similar manner as <U+FB01>gure 1(d), although
+motion was somewhat complex (electronic supplementary material, video S2).
+hange 13>
+vies of the subjects with full limbs were added as electronic supplementary material, Video S2.
+hange 14>
+cond paragraph in Section 6)
+evious version]
+We believe that the proposed control scheme is not limited to our ophiuroid-like robot in its application
+has scope for more generic application. ...
+evised version]
+We believe that the proposed control scheme is not limited to our brittle star-like robot in its application
+has scope for more generic application, although there still exists a limitation. ...
+pendix B
+urnal of the Royal Society Open Science
+anuscript ID: RSOS-171200.R1
+tle: A Brittle Star-like Robot Capable of Immediately Adapting to Unexpected
+ysical Damage
+thors: Takeshi Kano, Eiki Sato, Tatsuya Ono, Hitoshi Aonuma, Yoshiya Mat-
+zaka, and Akio Ishiguro
+Thank you very much for many valuable comments concerning our manuscript. We have examined the
+ments thoroughly and have made corrections so that they meet with the approval. We are sending the
+ised manuscript of our paper.
+sponse to Associate Editor
+Comment 1 
+hank you for the thoughtful and thorough responses to the concerns raised by the expert reviewers. The
+nly remaining issue I see is that the data does not appear to be available from the supplementary files
+s stated within the manuscript. I see several videos, but not the corresponding raw data, for example,
+o support the quantitative comparisons shown in Figure 3. For the final version to be submitted for
+ublication, please ensure that you provide the data in line with the journal’s Open Data policies.
+
+sponse to comment 1:
+Movies shown in 5:28-5:38 of video S1 are examples of the data used for the quantitative analysis shown
+Figure 3. In the revised manuscript, the corresponding time of video S1 was described when video S1 was
+rred.
+Further, with regard to the sentence “We found that the robot moved in a manner similar to a brittle star
+mediately after it was powered on” in the seventh paragraph of section 5, we noticed that the moment when
+robot was powered on is not shown in video S1. Hence, we added video S4 to show that the robot can
+rdinate its arms immediately after it is powered on. Thank you for the comment.
+he seventh paragraph of section 5)
+evious version]
+found that the robot moved in a manner similar to a brittle star immediately after it was powered on (figures
+) and (c) and electronic supplementary material, video S1).
+evised version]
+found that the robot moved in a manner similar to a brittle star immediately after it was powered on (figures
+) and (c) and electronic supplementary material, video S1, 5:27-5:38 and video S4).
+We also noticed that the number of trials for the robot experiment, configuration B is not 11 but 10. This
+or was corrected in the revised manuscript.
+The associate editor’s comment was helpful and gave us a better perspective of our work. We hope that the
+ised manuscript has made an improvement over the previous version.
+Society Open

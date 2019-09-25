@@ -1,0 +1,427 @@
+Pedestrian motion modelled by Fokker–Planck Nash games
+S. Roy, A. Borzì and A. Habbal
+Article citation details
+R. Soc. open sci. 4: 170648.
+http://dx.doi.org/10.1098/rsos.170648
+Review timeline
+Original submission: 9 June 2017 Note: Reports are unedited and appear as
+Revised submission: 1 August 2017 submitted by the referee. The review history
+Final acceptance: 16 August 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-170648.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Dante Kalise)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept as is
+Comments to the Author(s)
+label_comment_1
+In this paper, the authors introduce an optimal control/Nash game framework for pedestrian
+motion modeling. Starting from a microscale stochastic model, a multi-objective optimization
+problem is formulated, in which the agents aim at reaching a certain position while avoiding
+collisions between them. Then, a Fokker-Planck framework for the evolution of the PDF of the
+agents is proposed, and the optimization problem is cast for the macroscale model.
+For a two-agent system, the differential game consists of a cost penalizing the distance to the
+target, the control energy of each agent, and a coupling term penalizing collisions. The dynamical
+constraints are two decoupled FP equations. The simultaneous minimization of the costs
+introduces via the control variables acting on the drift.
+While the solution of the differential game is a Nash equilibrium, given the particular structure of
+the game, it can be characterized through first-order optimality conditions for a composite
+optimal control problem. This is also useful from a computational point of view, as the available
+machinery for PDE-constrained optimization can be used for the numerical approximation of the
+solution of the control problem. Numerical tests obtained by following this latter approach are
+qualitatively consistent with experimental results on related settings.
+Overall, the paper is well-written and follows a sound modeling approach. Concerning the
+solution of the differential game, resorting to an equivalent optimal control formulation is an
+adequate idea as it should open the possibility of addressing higher dimensional problems. As
+already mentioned, the computational findings are in according with experimental results
+reported in the literature, assessing the appropriateness of the proposed modeling framework.
+I recommend this article for publication.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+3
+Comments to the Author(s)
+label_comment_2
+The authors present an agent based method for pedestrian avoidance, which is based on an
+optimal control problem. They study the interactions of two agents, which try to minimize a
+given cost functional. The dynamics of the agents are governed by FP equations for the respective
+PDF functions. The optimal strategy determined by the respective Nash equilibrium. The authors
+discuss the existence of such minima and present numerical simulations to illustrate the
+dynamics.
+I find the manuscript quite interesting, but there are several issues which I think should be
+addressed before considering it for publication:
+1) The authors do not mention a later work by Hoogendorn and Bovy, in which they consider the
+dynamics of pedestrians in the presence of Brownian noise. I think it would be good to discuss
+the difference of their model to their approach in more detail.
+Hoogendorn, S. and Bovy, P.H.L., Pedestrian route choice and activity scheduling theory and
+models,Transportation Research B, 2004
+2) I don't believe that the two stochastic processes are independent, since the individuals are
+trying to avoid each other. Their dynamics are linked, and so are their PDF. Please discuss this
+issue in more detail.
+3) The authors do not discuss the role of the final time T - how does it influence the results. I
+suppose that it has to be sufficiently large to ensure that there exist controls which satisfy the
+upper and lower bound stated for u.
+4) What is T in all numerical simulations ? How does it influence the simulations ?
+5) What do you choose a PDF function which is quid 'wide-spread' ? (Equation 5.1) I suppose that
+the simulation results depend on this initial choice - how do they change if they are more
+concentrated ?
+6) I find the results of the first test case not very intuitive (Figure 3). I would expect that the
+individual moving from the left to the right, would rather step up than down (as shown in Figure
+3). Why does it go down ? I also don't see how this result is comparable to the experimental data
+(Figure 3e) - could you please clarify this issue.
+7) Test Case IV: I would expect that another solution should be the other way around - namely
+that player B moves faster and slows down afterwards. Did you observe this in your simulations
+as well ?
+8) You consider two rather 'extreme' values for rho in your simulations - 0.01 or 150/200. What
+happens in the case of intermediate values ?
+label_end_comment
+Decision letter (RSOS-170648)
+25-Jul-2017
+Dear Dr Roy,
+The editors assigned to your paper ("Pedestrian motion modeled by Fokker-Planck Nash
+games.") have now received comments from reviewers. We would like you to revise your paper
+in accordance with the referee and Associate Editor suggestions which can be found below (not
+4
+including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 17-Aug-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-170648
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+5
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Royal Society Open Science
+on behalf of Mark Chaplain
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+In this paper, the authors introduce an optimal control/Nash game framework for pedestrian
+motion modeling. Starting from a microscale stochastic model, a multi-objective optimization
+problem is formulated, in which the agents aim at reaching a certain position while avoiding
+collisions between them. Then, a Fokker-Planck framework for the evolution of the PDF of the
+agents is proposed, and the optimization problem is cast for the macroscale model.
+For a two-agent system, the differential game consists of a cost penalizing the distance to the
+target, the control energy of each agent, and a coupling term penalizing collisions. The dynamical
+constraints are two decoupled FP equations. The simultaneous minimization of the costs
+introduces via the control variables acting on the drift.
+While the solution of the differential game is a Nash equilibrium, given the particular structure of
+the game, it can be characterized through first-order optimality conditions for a composite
+optimal control problem. This is also useful from a computational point of view, as the available
+machinery for PDE-constrained optimization can be used for the numerical approximation of the
+solution of the control problem. Numerical tests obtained by following this latter approach are
+qualitatively consistent with experimental results on related settings.
+Overall, the paper is well-written and follows a sound modeling approach. Concerning the
+solution of the differential game, resorting to an equivalent optimal control formulation is an
+6
+adequate idea as it should open the possibility of addressing higher dimensional problems. As
+already mentioned, the computational findings are in according with experimental results
+reported in the literature, assessing the appropriateness of the proposed modeling framework.
+I recommend this article for publication.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The authors present an agent based method for pedestrian avoidance, which is based on an
+optimal control problem. They study the interactions of two agents, which try to minimize a
+given cost functional. The dynamics of the agents are governed by FP equations for the respective
+PDF functions. The optimal strategy determined by the respective Nash equilibrium. The authors
+discuss the existence of such minima and present numerical simulations to illustrate the
+dynamics.
+I find the manuscript quite interesting, but there are several issues which I think should be
+addressed before considering it for publication:
+1) The authors do not mention a later work by Hoogendorn and Bovy, in which they consider the
+dynamics of pedestrians in the presence of Brownian noise. I think it would be good to discuss
+the difference of their model to their approach in more detail.
+Hoogendorn, S. and Bovy, P.H.L., Pedestrian route choice and activity scheduling theory and
+models,Transportation Research B, 2004
+2) I don't believe that the two stochastic processes are independent, since the individuals are
+trying to avoid each other. Their dynamics are linked, and so are their PDF. Please discuss this
+issue in more detail.
+3) The authors do not discuss the role of the final time T - how does it influence the results. I
+suppose that it has to be sufficiently large to ensure that there exist controls which satisfy the
+upper and lower bound stated for u.
+4) What is T in all numerical simulations ? How does it influence the simulations ?
+5) What do you choose a PDF function which is quid 'wide-spread' ? (Equation 5.1) I suppose that
+the simulation results depend on this initial choice - how do they change if they are more
+concentrated ?
+6) I find the results of the first test case not very intuitive (Figure 3). I would expect that the
+individual moving from the left to the right, would rather step up than down (as shown in Figure
+3). Why does it go down ? I also don't see how this result is comparable to the experimental data
+(Figure 3e) - could you please clarify this issue.
+7) Test Case IV: I would expect that another solution should be the other way around - namely
+that player B moves faster and slows down afterwards. Did you observe this in your simulations
+as well ?
+8) You consider two rather 'extreme' values for rho in your simulations - 0.01 or 150/200. What
+happens in the case of intermediate values ?
+7
+Author's Response to Decision Letter for (RSOS-170648)
+See Appendix A.
+label_version_2
+RSOS-170648.R1 (Revision)
+label_author_3
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+I am fine with the revised version.
+label_end_comment
+Decision letter (RSOS-170648.R1)
+16-Aug-2017
+Dear Dr Roy,
+I am pleased to inform you that your manuscript entitled "Pedestrian motion modeled by Fokker-
+Planck Nash games." is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+8
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Reviewer(s)' Comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_6
+I am fine with the revised version.
+endix A
+RESPONSE TO
+THE REFEREES’ REPORTS FOR THE MANUSCRIPT
+EDESTRIAN MOTION MODELED BY FOKKER-PLANCK NASH GAMES”
+UTHORS: SOUVIK ROY, ALFIO BORZI` AND ABDERRAHMANE HABBAL.
+are very grateful to the Referees for many comments and suggestion that we have addressed
+revised version of the manuscript. Thanks to their remarks, we have improved the exposition
+work and the numerical discussion. In particular, in the revised version of the manuscript,
+ve added results of a new numerical experiment concerning the behaviour of the FP Nash
+rium controls when a shorter time horizon is considered.
+responses to the Referees’ comments are given below. (Italic – Referee’s comments, non-
+– Author’s response.)
+RESPONSES TO COMMENTS OF REFEREE 1
+thank very much Referee 1 for the very positive assessment of the manuscript.
+RESPONSES TO COMMENTS OF REFEREE 2
+are very grateful to Referee 2 for pointing out the earlier work
+gendorn, S. and Bovy, P.H.L., Pedestrian route choice and activity scheduling theory and
+s, Transportation Research Part B 28:169-190, 2004.
+were not aware of this very interesting reference that we have included in the revised version
+manuscript together with comments on pag. 2 and 4.
+further comments, in the following, we refer to the above paper of Hoogendorn and Bovy as
+nd to our manuscript as [M].
+M], we refer to [HB] and remark that, also in this reference, the dynamics of a pedestrian
+elled by a stochastic differential equation (SDE) where the control represents the drift (the
+y field). Further, in the revision we remark that also in [HB] the cost functional includes
+nt terms concerning, in particular, a benefit function.
+ever, the differences in the modelling and purpose between [HB] and [M] are considerable
+eir discussion in our manuscript would be beyond the scope of our work. Nevertheless, we
+like to address these differences in this response and thus address Remarks 1) and 2) of the
+e.
+RESPONSE TO THE REFEREES’ REPORTS
+The authors do not mention a later work by Hoogendorn and Bovy, in which they consider
+the dynamics of pedestrians in the presence of Brownian noise. I think it would be good to
+discuss the difference of their model to their approach in more detail.
+The first difference between the two settings is that in [HB] a single pedestrian is con-
+sidered, while in [M] at least two pedestrian enter in the formulation of the problem and
+each is modelled by an independent SDE with its own control function. Another difference
+concerning the structure of the SDEs in [HB] and [M] is that in the former reference the
+control function (v) represents the entire velocity field of the pedestrian, while in [M] the
+drift has a given velocity field (also denoted with v), which corresponds to the deterministic
+dynamics of the lone pedestrian, and a control field (u) that represents a deviation from
+the given velocity field to perform avoidance.
+Next, we address the most relevant differences concerning the cost functionals in [HB]
+and [M]. In relation to our last remark above, in [HB] the cost of the control, that is,
+the cost of the entire velocity field, is penalized in the L2 norm. On the other hand, in
+[M] only the avoidance strategy is penalized in the H 1 norm (guaranteeing a continuous
+control). This means that in the [M] framework, the pedestrian is free to (plan to) move
+as fast as desired while changes from the desired dynamics are sought that are as small
+and regular as possible. Another difference between the two functionals is regarding the
+interaction with other pedestrian: in [HB] a function describing the expected number of
+interactions with other pedestrian is introduced. This function may provide the position of
+other pedestrian at a given time. However, this corresponds to the presence of non-reacting
+pedestrian who do not try to avoid the pedestrian modelled by the SDE. On the contrary
+in [M], the dynamics of all pedestrian enter in the formulation of the problem and, thanks
+to the interaction functional, they are all aware of and solve the avoidance problem.
+Finally, notice that the presence of walls (and impenetrable obstacles) are modelled
+through reflecting boundary conditions for the FP equations. Further, the convex poten-
+tials discussed in [M] are similar in spirit to the benefit function <U+03B3> in [HB].
+I don’t believe that the two stochastic processes are independent, since the individuals are
+trying to avoid each other. Their dynamics are linked, and so are their PDF. Please discuss
+this issue in more detail.
+The structure of the SDEs in [M] clearly shows that these SDEs are not coupled. In fact,
+the random variable (position) of the pedestrian 1, denoted with X (1) , does not appear in
+the SDE of pedestrian 2, whose state is represented by the random variable X (2) . Vice-
+versa, X (2) does not appear in the SDE of pedestrian 1. Furthermore, the two pedestrian
+are subject to stochastically independent Brownian processes.
+The only place where a coupling could take place is through the control functions, as
+remarked by the Referee in 2). This would be certainly true in a HJB setting (as in [HB]) as
+the feedback controls would depend on the states of the processes, i.e. u = u(X (1) , X (2) , t).
+However, in our case the controls depend only on time (u = u(t)) and they result from
+solving an open-loop Fokker-Planck (FP) control problem. Indeed, the solution of our FP
+RESPONSE TO THE REFEREES’ REPORTS
+control problem, which includes an interaction functional, provides deterministic avoidance
+strategies that are robust since in the FP framework the ensemble of all possible trajec-
+tories is encoded in the probability density function. These control strategies can be (and
+are) used for all statistically independent Monte Carlo realizations of the processes.
+The authors do not discuss the role of the final time T - how does it influence the results.
+I suppose that it has to be sufficiently large to ensure that there exist controls which satisfy
+the upper and lower bound stated for u.
+We thank the Referee for making this point. It is certainly interesting to compare the
+avoidance mechanism for different time horizons. For this reason, in the revision we have
+added results of numerical experiments considering the Test Case II for a shorter time inter-
+val [0, T ] with T = 1. In this case, as expected, we find that in order to perform avoidance
+larger controls are required. In particular, we see that the control bounds become active.
+This is in contrast to the case when T = 5, where the controls stay well within the bounds.
+This difference is depicted in Figure 6 and discussed in the text.
+What is T in all numerical simulations ? How does it influence the simulations ?
+The value of T varies for the four test cases. Now, we explicitly specify the value of T
+in all the experiments. Its influence on the results of simulation is discussed above.
+What do you choose a PDF function which is quite ’wide-spread’ ? (Equation 5.1) I sup-
+pose that the simulation results depend on this initial choice - how do they change if they
+are more concentrated ?
+We have also performed experiments with broader, respectively narrower Gaussians. The
+results do not change qualitatively as the evolution of the means of the PDFs remain es-
+sentially the same.
+I find the results of the first test case not very intuitive (Figure 3). I would expect that
+the individual moving from the left to the right, would rather step up than down (as shown
+in Figure 3). Why does it go down ? I also don’t see how this result is comparable to the
+experimental data (Figure 3e) - could you please clarify this issue.
+Intuition is important in validating results of human behaviour and, in our context, we
+should keep in mind that avoidance takes place in a multitude of different ways.
+In fact, in the first test case, we may argue that the pedestrian moving from left to right
+would step down so as to stay clear of the other pedestrian. We believe that this solution
+and the one suggested by the Referee result from similar reasoning and in this sense they
+are comparable and consistent with the result of the real experiment.
+Moreover, notice that the non-uniqueness of the Nash equilibria allows different paths to
+be taken by the pedestrian to avoid each other. This is clearly remarked in the text after
+RESPONSE TO THE REFEREES’ REPORTS
+Lemma 4.2.
+Test Case IV: I would expect that another solution should be the other way around - namely
+that player B moves faster and slows down afterwards. Did you observe this in your simu-
+lations as well ?
+Yes, we agree. In fact, starting from a different initial guess for our numerical solution
+procedure, we obtain that the Player B moves faster and then slows down. Both results
+are possible due to the non-uniqueness of Nash equilibria.
+You consider two rather ’extreme’ values for rho in your simulations - 0.01 or 150/200.
+What happens in the case of intermediate values ?
+We have gathered experience with <U+03C1> ranging from 0.01 to 200, considering values like 0.1,
+5, 30, 50, 100. For values till 5, we observe collision whereas for higher values avoidance
+takes place. In our experiments, we choose these two extreme values to point out the two
+distinct cases of non-avoidance and avoidance.
+Society Open

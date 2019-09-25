@@ -1,0 +1,945 @@
+Chemical antipredator defence is linked to higher extinction
+risk
+Kevin Arbuckle
+Article citation details
+R. Soc. open sci. 3: 160681.
+http://dx.doi.org/10.1098/rsos.160681
+Review timeline
+Original submission: 18 February 2016 Note: Reports are unedited and appear as
+1st revised submission: 12 September 2016 submitted by the referee. The review history
+2nd revised submission: 28 October 2016 appears in chronological order.
+Final acceptance: 31 October 2016
+Review History
+label_version_1
+RSOS-160116.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Tim Caro)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+GENERAL
+The paper is ambivalent as to whether it is targeted at conservation biologists or those interested
+in the evolution of defenses. If the former it needs to consider other extinction drivers in a
+multifactorial model - something that Kevin may not want to do. If it going to be targeted at basic
+researchers, it needs a clearer link between past and current extinction drivers and for the reader
+to be told why is this interesting.
+SPECIFIC
+Abstract
+First sentence unclear - I would drop background rates stuff
+Intro
+Cut superflous first sentence.
+32-33 unclear.
+Para 34- 44 wordy and not very substantive, prune or omit.
+Para 45-60 is also superflous - just cut to the chase and start on line 57.
+Finishing the Intro, I am not convinced you need say anything at all about past background
+extinction rates. Just ask the Q - does chemical defenses handicap amphibians now. Perfectly
+reasonable Q.
+More generally we need to be made aware on logical grounds why chemical defenses should be
+associated with extinction in contemporary environments.
+Methods
+Justify the testing of body size and latitude on logical grounds.
+Results
+OK
+Discussion
+Lines 190-202 are pretty critical unfortunately because they help inform conservation managers of
+dangers to amphibian taxa. They will want to know this and it would have been nice to include
+such variables in a multifactorial model that included chemical defenses. Since extinction drivers
+are likely to be correlated, I think a multifactorial model is needed rather than examining one
+driver in isolation. This is my key worry with this paper.
+Lines 220- 234 - I dont see merit in linking psast and current extinction likelihoods. What am I
+missing here?
+Lines 245-265 should be condensed and presented in the Intro as well.
+Figure 1 - not needed
+3
+In conclusion, the target audience issue needs attention. After that it will fall into place.
+Tim Caro
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+I have read this paper carefully and with great interest. The author sets out to test the hypothesis
+that chemical defense predicts extant extinction risk in amphibians. Past work by the author has
+shown a link between these defenses and macroevolutionary patterns of extinction, and, given
+that amphibians are currently undergoing mass extinction, it is an interesting question for both
+conservationists and evolutionary biologists as to whether patterns of trait-dependent extinction
+are conserved across these timescales. The author indeed finds that the extant data matches the
+macroevolutionary patterns. As far as I know, this is one of just a few studies to find such a link.
+The paper is generally clear, concise, and well written, and I think will represent an important
+contribution to the literature. I do, however, have some methodological concerns that should be
+addressed before publication.
+First (and I begin with this point because it is key to my next point, which has practical relevance
+for the analyses), I disagree with the author that IUCN status is not an evolving trait and should
+not be treated as such (Line 123-125 and supplementary material). IUCN threat status is an
+ordinal, categorical status that reflects an underlying, continuous, unobservable ‘latent’ trait:
+extinction likelihood. Just as a phenotypic mean can evolve, a population’s extinction probability
+can evolve. Thus we expect IUCN threat status to evolve in manner similar to Sewall Wright’s
+threshold model of evolution, where expression of a discrete trait is determined by alleles at
+many loci. The fact that humans assign IUCN threat status is neither here nor there: humans also
+assign an arithmetic measurement scale every time we measure a species’ body length, or, for a
+categorical analogy, we may bin what is actually a continuous trait (e.g., chemical defense) into
+somewhat arbitrary categories.
+4
+The phylogenetic logistic regression used in one of the analyses indeed treats IUCN threat status
+in this way. The other models, however, do not. Although the Poisson regression used with the
+threat level may fit the data OK, it is not ‘correct’ in either the biological or statistical sense; the
+IUCN categories are not counts/sums of rare events (the author brings up a related reason why
+this model is inappropriate for the data in the discussion). An appropriate model for the ordinal
+status data would treat the response in a similar way to a logistic regression, but allow for
+multiple response levels and an order to transitions. Thus, a multinomial linear mixed model,
+with a cumulative probit or logit link function, is probably the most appropriate (statistically and
+biologically) approach to analyzing these data. This category of model can be fit, for example, in
+the MCMCglmm R package (and I believe there is an example of a multinomial model in the
+course notes), in SAS proc glimmix, and perhaps other software or R packages. Other papers that
+analyze IUCN categories in a comparative context have used this approach (e.g., Matthews et al
+2011 Proc B, Arregoita et al. 2013 Proc B, De Lisle & Rowe 2015 Proc B) and other authors have
+discussed multinomial models (e.g. Hadfield & Nakagawa 2010 JEB; see also refs in Matthews et
+al 2011 Proc B. for discussion of IUCN ranks). Further, figure 2 suggests that the ability of
+chemical defense to predict extinction risk may depend largely on the inclusion of extinct species,
+which are an extremely small subset of the data. Thus, a more convincing analysis than the one
+presented in this paper would involve fitting two multinomial phylogenetic mixed models; one
+with a 6 level response and one with 5 (i.e. excluding the extinct taxa, to confirm that the result
+does not depend entirely on them).
+The Pagel model also treats the evolution of IUCN threat inappropriately, as we don’t expect
+threshold traits to evolve under a Markovian process, because under the threshold model a
+lineage will be more likely to transition between character states right after a previous transition
+(because it is near the threshold; see, e.g., Revell 2014 Evolution). To the author’s credit, Pagel’s
+correlation model is frequently inappropriately applied to threshold traits, and the phylogenetic
+logistic regression presented in the paper is testing a similar hypothesis in a more appropriate
+way. A much more serious concern is that these Pagel models fail to accommodate situations in
+which there is no true phylogenetic replication (Maddison & FitzJohn 2015 Sys Bio). I think, that
+if the author wishes to present this Pagel analysis, the data should be at least be plotted on the
+tree and presented in the paper or supplementary material to insure that there are, indeed,
+multiple independent correlated transitions in the traits.
+Other/Minor comments:
+Line 116-117 It would be fairly easy to obtain latitude data for nearly all the species in your
+dataset (e.g., the range maps are on Amphibiaweb, and you can obtain approximate median
+latitude by opening them in google maps and just clicking on the approximate median; there is
+presumably enough error in these range maps that the exact median from GIS is probably
+overkill, plus Pyron and Wiens 2014 have published latitude data for many species). With
+complete latitude data, it would be possible to put chemical defense and latitude in the same
+regression model(s), and obtain standardized effect sizes. This could be a nice addition to this
+study- we know latitude is a strong predictor of extinction risk in this group, and if chemical
+defense had a similar effect size, this would be really cool, while I don’t think it would detract
+from the result if chemical defense had a weaker effect size than latitude. I think this is optional-
+it seems the correlation between these two predictors is indeed weak and probably not leading to
+a spurious association between defense and extinction risk, although adding latitude in the same
+model could add some insight.
+Line 159, 161: Degrees of freedom should be given for the LR tests
+5
+Line 163-168: This result implies that lineages with chemical defense should be, on average,
+younger than lineages that lack defense. Is this the case? (e.g., is there a difference in terminal
+edge lengths on the dated tree between the two groups?)
+Line 190-202: De Lisle & Rowe 2015 found that sexual size dimorphism is also an important
+predictor of current and past extinction risk in amphibians.
+Line 251-265: Could a fourth possibility be that chemical defense reflects the outcome of predator-
+prey arms races, such that heavily defended species are also subject to particularly intense
+predation? I also think that mentioning the different hypotheses in the introduction would
+strengthen this paper- I was left wondering “why?” until I got to this section.
+label_end_comment
+Decision letter (RSOS-160116)
+18-Mar-2016
+Dear Dr Arbuckle:
+Manuscript ID RSOS-160116 entitled "Chemical antipredator defence is linked to higher
+extinction risk" which you submitted to Royal Society Open Science, has been reviewed. The
+comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 15-Sep-2016. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+on behalf of
+Kevin Padian, Royal Society Open Science
+openscience@royalsociety.org
+6
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+GENERAL
+The paper is ambivalent as to whether it is targeted at conservation biologists or those interested
+in the evolution of defenses. If the former it needs to consider other extinction drivers in a
+multifactorial model - something that Kevin may not want to do. If it going to be targeted at basic
+researchers, it needs a clearer link between past and current extinction drivers and for the reader
+to be told why is this interesting.
+SPECIFIC
+Abstract
+First sentence unclear - I would drop background rates stuff
+Intro
+Cut superflous first sentence.
+32-33 unclear.
+Para 34- 44 wordy and not very substantive, prune or omit.
+Para 45-60 is also superflous - just cut to the chase and start on line 57.
+Finishing the Intro, I am not convinced you need say anything at all about past background
+extinction rates. Just ask the Q - does chemical defenses handicap amphibians now. Perfectly
+reasonable Q.
+More generally we need to be made aware on logical grounds why chemical defenses should be
+associated with extinction in contemporary environments.
+Methods
+Justify the testing of body size and latitude on logical grounds.
+Results
+OK
+Discussion
+Lines 190-202 are pretty critical unfortunately because they help inform conservation managers of
+dangers to amphibian taxa. They will want to know this and it would have been nice to include
+such variables in a multifactorial model that included chemical defenses. Since extinction drivers
+are likely to be correlated, I think a multifactorial model is needed rather than examining one
+driver in isolation. This is my key worry with this paper.
+Lines 220- 234 - I dont see merit in linking psast and current extinction likelihoods. What am I
+missing here?
+Lines 245-265 should be condensed and presented in the Intro as well.
+Figure 1 - not needed
+In conclusion, the target audience issue needs attention. After that it will fall into place.
+Tim Caro
+Reviewer: 2
+7
+Comments to the Author(s)
+label_comment_4
+I have read this paper carefully and with great interest. The author sets out to test the hypothesis
+that chemical defense predicts extant extinction risk in amphibians. Past work by the author has
+shown a link between these defenses and macroevolutionary patterns of extinction, and, given
+that amphibians are currently undergoing mass extinction, it is an interesting question for both
+conservationists and evolutionary biologists as to whether patterns of trait-dependent extinction
+are conserved across these timescales. The author indeed finds that the extant data matches the
+macroevolutionary patterns. As far as I know, this is one of just a few studies to find such a link.
+The paper is generally clear, concise, and well written, and I think will represent an important
+contribution to the literature. I do, however, have some methodological concerns that should be
+addressed before publication.
+First (and I begin with this point because it is key to my next point, which has practical relevance
+for the analyses), I disagree with the author that IUCN status is not an evolving trait and should
+not be treated as such (Line 123-125 and supplementary material). IUCN threat status is an
+ordinal, categorical status that reflects an underlying, continuous, unobservable ‘latent’ trait:
+extinction likelihood. Just as a phenotypic mean can evolve, a population’s extinction probability
+can evolve. Thus we expect IUCN threat status to evolve in manner similar to Sewall Wright’s
+threshold model of evolution, where expression of a discrete trait is determined by alleles at
+many loci. The fact that humans assign IUCN threat status is neither here nor there: humans also
+assign an arithmetic measurement scale every time we measure a species’ body length, or, for a
+categorical analogy, we may bin what is actually a continuous trait (e.g., chemical defense) into
+somewhat arbitrary categories.
+The phylogenetic logistic regression used in one of the analyses indeed treats IUCN threat status
+in this way. The other models, however, do not. Although the Poisson regression used with the
+threat level may fit the data OK, it is not ‘correct’ in either the biological or statistical sense; the
+IUCN categories are not counts/sums of rare events (the author brings up a related reason why
+this model is inappropriate for the data in the discussion). An appropriate model for the ordinal
+status data would treat the response in a similar way to a logistic regression, but allow for
+multiple response levels and an order to transitions. Thus, a multinomial linear mixed model,
+with a cumulative probit or logit link function, is probably the most appropriate (statistically and
+biologically) approach to analyzing these data. This category of model can be fit, for example, in
+the MCMCglmm R package (and I believe there is an example of a multinomial model in the
+course notes), in SAS proc glimmix, and perhaps other software or R packages. Other papers that
+analyze IUCN categories in a comparative context have used this approach (e.g., Matthews et al
+2011 Proc B, Arregoita et al. 2013 Proc B, De Lisle & Rowe 2015 Proc B) and other authors have
+discussed multinomial models (e.g. Hadfield & Nakagawa 2010 JEB; see also refs in Matthews et
+al 2011 Proc B. for discussion of IUCN ranks). Further, figure 2 suggests that the ability of
+chemical defense to predict extinction risk may depend largely on the inclusion of extinct species,
+which are an extremely small subset of the data. Thus, a more convincing analysis than the one
+presented in this paper would involve fitting two multinomial phylogenetic mixed models; one
+with a 6 level response and one with 5 (i.e. excluding the extinct taxa, to confirm that the result
+does not depend entirely on them).
+The Pagel model also treats the evolution of IUCN threat inappropriately, as we don’t expect
+threshold traits to evolve under a Markovian process, because under the threshold model a
+lineage will be more likely to transition between character states right after a previous transition
+(because it is near the threshold; see, e.g., Revell 2014 Evolution). To the author’s credit, Pagel’s
+correlation model is frequently inappropriately applied to threshold traits, and the phylogenetic
+logistic regression presented in the paper is testing a similar hypothesis in a more appropriate
+way. A much more serious concern is that these Pagel models fail to accommodate situations in
+8
+which there is no true phylogenetic replication (Maddison & FitzJohn 2015 Sys Bio). I think, that
+if the author wishes to present this Pagel analysis, the data should be at least be plotted on the
+tree and presented in the paper or supplementary material to insure that there are, indeed,
+multiple independent correlated transitions in the traits.
+Other/Minor comments:
+Line 116-117 It would be fairly easy to obtain latitude data for nearly all the species in your
+dataset (e.g., the range maps are on Amphibiaweb, and you can obtain approximate median
+latitude by opening them in google maps and just clicking on the approximate median; there is
+presumably enough error in these range maps that the exact median from GIS is probably
+overkill, plus Pyron and Wiens 2014 have published latitude data for many species). With
+complete latitude data, it would be possible to put chemical defense and latitude in the same
+regression model(s), and obtain standardized effect sizes. This could be a nice addition to this
+study- we know latitude is a strong predictor of extinction risk in this group, and if chemical
+defense had a similar effect size, this would be really cool, while I don’t think it would detract
+from the result if chemical defense had a weaker effect size than latitude. I think this is optional-
+it seems the correlation between these two predictors is indeed weak and probably not leading to
+a spurious association between defense and extinction risk, although adding latitude in the same
+model could add some insight.
+Line 159, 161: Degrees of freedom should be given for the LR tests
+Line 163-168: This result implies that lineages with chemical defense should be, on average,
+younger than lineages that lack defense. Is this the case? (e.g., is there a difference in terminal
+edge lengths on the dated tree between the two groups?)
+Line 190-202: De Lisle & Rowe 2015 found that sexual size dimorphism is also an important
+predictor of current and past extinction risk in amphibians.
+Line 251-265: Could a fourth possibility be that chemical defense reflects the outcome of predator-
+prey arms races, such that heavily defended species are also subject to particularly intense
+predation? I also think that mentioning the different hypotheses in the introduction would
+strengthen this paper- I was left wondering “why?” until I got to this section.
+Author's Response to Decision Letter for (RSOS-160116)
+See Appendix A.
+label_version_2
+RSOS-160681.R0 (Revision)
+label_author_3
+Review form: Reviewer 1 (Tim Caro)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+9
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Looks OK
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+What is lacking from this thorough analysis is the mechanism by which chemical defenses are
+associated with extinction risk. The author discusses these but then says they are beyond the
+scope of the paper. Is that really true? Surely some serious arguments can be made in favour or
+against each - this seems like a wasted opportunity to get to the bottom of this. It will make the
+paper more memorable.
+Second - yes lots of other correlates of extinction risk in amphibians - why were these not
+incorporated in the analyses - eg clutch size, life history traits? It seems a bit weak just saying
+"other stuff is important too but I am not going to attempt to include it". How much extra work
+would it actually be to throw is these documented variables in an analysis to assess relative
+importance for risk?
+Not what you want to hear, I know, but just trrying to make the paper stronger.
+Tim Caro
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+10
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_6
+Review of “Chemical antipredator defense is linked to higher extinction risk”
+I have read this paper for the second time. Arbuckle seems to have addressed all of my previous
+concerns, which were mostly statistical. My only comments on this revised version are some
+minor writing suggestions.
+I think the paragraph at line 73-82 should be moved before the paragraph at line 56-72. As it
+reads now chemical defense is introduced out of the blue after discussion of links between
+macroevolutionary patterns and extant conservation concerns.
+Line 228: Other factors such as?
+Line 255-256- I found this confusing. Maybe say they are independent data sets? The results of
+your work suggest that although the datasets are independent, extinction processes may not be
+across these two timescales since the same patterns are observed.
+Finally, It seems to me that the slow life history hypothesis doesn’t really fit, because how does it
+explain the elevated speciation rates at the macroevolutionary scale? If anything it seems that
+evolution of a slower life history would reduce speciation rates as generation times increase. It
+seems that the “marginal habitat” idea could carry weight if chemical defense somehow leads to
+rapid speciation into ephemeral adaptive zones. This would be consistent with the previous
+finding of elevated speciation rates in these lineages.
+label_end_comment
+Decision letter (RSOS-160681)
+19-Oct-2016
+Dear Dr Arbuckle
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-160681 entitled
+"Chemical antipredator defence is linked to higher extinction risk" has been accepted for
+publication in Royal Society Open Science subject to minor revision in accordance with the
+referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+11
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160681
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 28-Oct-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+12
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Andrew Dunn
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+What is lacking from this thorough analysis is the mechanism by which chemical defenses are
+associated with extinction risk. The author discusses these but then says they are beyond the
+scope of the paper. Is that really true? Surely some serious arguments can be made in favour or
+13
+against each - this seems like a wasted opportunity to get to the bottom of this. It will make the
+paper more memorable.
+Second - yes lots of other correlates of extinction risk in amphibians - why were these not
+incorporated in the analyses - eg clutch size, life history traits? It seems a bit weak just saying
+"other stuff is important too but I am not going to attempt to include it". How much extra work
+would it actually be to throw is these documented variables in an analysis to assess relative
+importance for risk?
+Not what you want to hear, I know, but just trrying to make the paper stronger.
+Tim Caro
+Reviewer: 2
+Comments to the Author(s)
+label_comment_8
+Review of “Chemical antipredator defense is linked to higher extinction risk”
+I have read this paper for the second time. Arbuckle seems to have addressed all of my previous
+concerns, which were mostly statistical. My only comments on this revised version are some
+minor writing suggestions.
+I think the paragraph at line 73-82 should be moved before the paragraph at line 56-72. As it
+reads now chemical defense is introduced out of the blue after discussion of links between
+macroevolutionary patterns and extant conservation concerns.
+Line 228: Other factors such as?
+Line 255-256- I found this confusing. Maybe say they are independent data sets? The results of
+your work suggest that although the datasets are independent, extinction processes may not be
+across these two timescales since the same patterns are observed.
+Finally, It seems to me that the slow life history hypothesis doesn’t really fit, because how does it
+explain the elevated speciation rates at the macroevolutionary scale? If anything it seems that
+evolution of a slower life history would reduce speciation rates as generation times increase. It
+seems that the “marginal habitat” idea could carry weight if chemical defense somehow leads to
+rapid speciation into ephemeral adaptive zones. This would be consistent with the previous
+finding of elevated speciation rates in these lineages.
+Author's Response to Decision Letter for (RSOS-160681)
+See Appendix B.
+14
+label_end_comment
+Decision letter (RSOS-160681.R1)
+31-Oct-2016
+Dear Dr Arbuckle,
+I am pleased to inform you that your manuscript entitled "Chemical antipredator defence is
+linked to higher extinction risk" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+pendix A
+Response to Reviewer Comments
+hank both reviewers for their encouraging, thoughtful and insightful comments on the
+nuscript. They have led to fairly wide changes to the manuscript (particularly with respect
+reviewer 2's methodological suggestions), and I hope I have satisfactorily addressed the
+ncerns of both reviewers. Where text from the manuscript is quoted, I have highlighted
+anges in bold unless the entire section is new.
+viewer comments in red. My response in blue.
+viewer 1 comments
+he paper is ambivalent as to whether it is targeted at conservation biologists or those
+erested in the evolution of defenses. If the former it needs to consider other extinction
+vers in a multifactorial model - something that Kevin may not want to do. If it going to be
+geted at basic researchers, it needs a clearer link between past and current extinction
+vers and for the reader to be told why is this interesting."
+anks for these suggestions, I can readily see how it may come across as not clearly
+nservation or evolutionary focussed. I suspect that part of this comes from the fact that,
+reviewer 2 highlights, the subject of the paper "is an interesting question for both
+nservationists and evolutionary biologists", which leaves me hesitant to reduce the focus
+either group too much. Nevertheless, I agree that such split-purposes can be difficult to
+egrate in a readable way and I have therefore added a slightly greater emphasis on the
+olutionary side. This is my main interest personally and I have tried to do this by
+ponding to another comment made both by yourself and reviewer 2. Specifically, I have
+ded more discussion of possible explanations in the introduction in a new paragraph and
+ed this to more tightly link past and current drivers of extinction. I hope this addresses the
+ky issue of balance between conservation and evolution in this paper to your satisfaction.
+bstract: First sentence unclear - I would drop background rates stuff"
+ne, the first sentence now reads as follows: "Many attributes of species may be linked to
+ntemporary extinction risk, though some such traits remain untested despite suggestions
+t they may be important".
+tro: Cut superflous first sentence."
+anks, the first sentence now reads as follows: "In relation to efforts in biological
+nservation, there is a growing expectation that decisions about allocation of limited
+ources (such as finances and personnel) have a firm evidence-base underlying them".
+tro: 32-33 unclear."
+worded as follows: "Moreover, attempts to predict the conservation status of data
+ficient species have suggested that a high proportion of these are likely to be threatened".
+tro: Para 34- 44 wordy and not very substantive, prune or omit."
+ave pruned this paragraph slightly to improve its conciseness, although I am hesitant to
+move too much of the content as I do think the majority of the text helps to set the context
+would also note that reviewer 2 seems to agree with this as they considered the paper
+ar and concise' in writing style).
+tro: Para 45-60 is also superflous - just cut to the chase and start on line 57."
+ave pruned this paragraph slightly, but I feel that it is necessary as an explanation as to
+y 1) it is worth testing for the effect of a trait based on results from macroevolutionary
+dies, and 2) why we may or may not expect studies of extinction risk on these two scales
+concur.
+nishing the Intro, I am not convinced you need say anything at all about past background
+inction rates. Just ask the Q - does chemical defenses handicap amphibians now.
+rfectly reasonable Q. More generally we need to be made aware on logical grounds why
+emical defenses should be associated with extinction in contemporary environments."
+anks for flagging this up, I agree that the introduction should give reasons why we might
+pect associations between chemical defence and extinction in the present day. I think I
+ve addressed this concurrently with addressing some of your other comments by moving
+mechanistic hypotheses for such a link to the introduction. In terms of the discussion of
+ckground extinction rates, part of the interest in this paper is in considering whether
+tterns of trait-dependent extinction are conserved across broad timescales, as also
+hlighted by reviewer 2, so I believe it is important to keep this in.
+ethods: Justify the testing of body size and latitude on logical grounds."
+ven that I could argue for confounding effects in either direction on logical grounds, or
+ernatively no such effects, in this case I think that the practical justification of 'previous
+rk have found a particularly important effect of these traits' is better suited for present
+rposes.
+scussion: Lines 190-202 are pretty critical unfortunately because they help inform
+nservation managers of dangers to amphibian taxa. They will want to know this and it
+uld have been nice to include such variables in a multifactorial model that included
+emical defenses. Since extinction drivers are likely to be correlated, I think a multifactorial
+del is needed rather than examining one driver in isolation. This is my key worry with this
+per."
+gree, however, when I included all traits considered in the paper as potential confounders
+hin the same model none of them were found to have an effect. This is despite latitude
+d size being consistently associated with extinction risk (in previous work and when I
+del them in unifactorial models in my dataset) and them having no detectable covariation
+h chemical defence. Overall this suggests that in the dataset available in the paper there
+simply not enough power to detect such effects when all included in the same model. In
+s vein I note that other previous work which have detected these relationships have used
+ger sample sizes that I was able to here as the overlap in species with data on chemical
+fence, latitude, and body size was limited and resulted in a much smaller sample size. In
+sence, this smaller sample size combined with increasing number of parameters in a
+ltifactorial model seems to be reducing the power to detect effects of any particular trait.
+vertheless, the lack of covariation between any of those traits and chemical defence
+ggests that the effect of this trait detected in the unifactorial model is not confounded by
+k of inclusion of latitude and body size, and therefore is an effect that is picked out when
+s present in a model as the sole predictor (as is the case with the other traits known to
+ve an effect). Although suboptimal, I hope the slightly increased emphasis on evolution
+her than practical conservation in the paper lessens the importance of this point and
+ains the interest of the association between defence and extinction risk in and of itself.
+scussion: Lines 220- 234 - I dont see merit in linking psast and current extinction
+lihoods. What am I missing here?"
+e additional discussion added to the introduction (in response to your first comment)
+pefully help address this.
+scussion: Lines 245-265 should be condensed and presented in the Intro as well."
+e my response to your first point above. I have split up this discussion to some extent
+tween the introduction and discussion so as to present the hypotheses in the introduction
+d use the discussion more to suggest how the results might influence the plausibility of
+ch one.
+gure 1 - not needed"
+ink that this figure more clearly shows the result from the model than simply presenting
+model output. This is not least by showing the back-transformed proportions rather than
+untransformed coefficients from the logistic regression. However, I have attempted to
+ther improve on this visualisation by adding standard error bars to the plot which were
+ssing from the original figure. I hope you agree that this is an improvement but that
+tting the result on an intuitive scale is worth presenting in additional to the model output
+ne.
+viewer 2 comments
+have read this paper carefully and with great interest. The author sets out to test the
+pothesis that chemical defense predicts extant extinction risk in amphibians. Past work by
+author has shown a link between these defenses and macroevolutionary patterns of
+inction, and, given that amphibians are currently undergoing mass extinction, it is an
+eresting question for both conservationists and evolutionary biologists as to whether
+tterns of trait-dependent extinction are conserved across these timescales. The author
+eed finds that the extant data matches the macroevolutionary patterns. As far as I know,
+s is one of just a few studies to find such a link. The paper is generally clear, concise, and
+ll written, and I think will represent an important contribution to the literature. I do,
+wever, have some methodological concerns that should be addressed before
+blication."
+ank you, I hope I’ve managed to address the concerns you had.
+rst (and I begin with this point because it is key to my next point, which has practical
+evance for the analyses), I disagree with the author that IUCN status is not an evolving
+it and should not be treated as such (Line 123-125 and supplementary material). IUCN
+eat status is an ordinal, categorical status that reflects an underlying, continuous,
+observable ‘latent’ trait: extinction likelihood. Just as a phenotypic mean can evolve, a
+pulation’s extinction probability can evolve. Thus we expect IUCN threat status to evolve
+manner similar to Sewall Wright’s threshold model of evolution, where expression of a
+crete trait is determined by alleles at many loci. The fact that humans assign IUCN threat
+tus is neither here nor there: humans also assign an arithmetic measurement scale every
+e we measure a species’ body length, or, for a categorical analogy, we may bin what is
+ually a continuous trait (e.g., chemical defense) into somewhat arbitrary categories."
+hough I agree that it can be considered as an evolving trait and analysed as such, I think
+re is still a distinction. The comparison to human-assigned arithmetic scales is not quite
+curate as whatever scale we measure, for example, body size on, body size itself is still
+intrinsic biological trait of the animal. In contrast, whereas Red List status (and extinction
+k more generally) is modulated to varying degrees by biological attributes, it is not an
+insic trait in itself. This same point has been made in the past in relation to other traits
+ich do not strictly evolve but which are tightly associated with other traits enough to be
+nsidered in an evolutionary framework, such as environment (e.g. Grandicolas et al.
+11. Cladistics 27:181 - 185).
+ave left this point in the text to acknowledge this distinction, but I have reworded the text
+the methods to hopefully make this clearer by replacing the vaguer wording of human
+ssification with intrinsic biology. The text now reads as follows: " I acknowledge that my
+xy of extinction risk, IUCN Red List status, is not an intrinsic biological trait and so
+es not, in a strict sense, evolve". That said, I should clarify here that my view is that
+hough such traits are a distinct type of trait compared to one which evolves in the strictest
+nse, they can indeed be treated as evolving with little issue. Having had many debates
+out this with other researchers, I felt it best to spend a bit of time explaining why this is
+case here as it is a contentious issue for some.
+he phylogenetic logistic regression used in one of the analyses indeed treats IUCN threat
+tus in this way. The other models, however, do not. Although the Poisson regression
+ed with the threat level may fit the data OK, it is not ‘correct’ in either the biological or
+tistical sense; the IUCN categories are not counts/sums of rare events (the author brings
+a related reason why this model is inappropriate for the data in the discussion). An
+propriate model for the ordinal status data would treat the response in a similar way to a
+istic regression, but allow for multiple response levels and an order to transitions. Thus,
+multinomial linear mixed model, with a cumulative probit or logit link function, is probably
+most appropriate (statistically and biologically) approach to analyzing these data. This
+egory of model can be fit, for example, in the MCMCglmm R package (and I believe
+re is an example of a multinomial model in the course notes), in SAS proc glimmix, and
+rhaps other software or R packages. Other papers that analyze IUCN categories in a
+mparative context have used this approach (e.g., Matthews et al 2011 Proc B, Arregoita
+al. 2013 Proc B, De Lisle & Rowe 2015 Proc B) and other authors have discussed
+ltinomial models (e.g. Hadfield & Nakagawa 2010 JEB; see also refs in Matthews et al
+11 Proc B. for discussion of IUCN ranks). Further, figure 2 suggests that the ability of
+emical defense to predict extinction risk may depend largely on the inclusion of extinct
+ecies, which are an extremely small subset of the data. Thus, a more convincing analysis
+n the one presented in this paper would involve fitting two multinomial phylogenetic
+xed models; one with a 6 level response and one with 5 (i.e. excluding the extinct taxa, to
+nfirm that the result does not depend entirely on them)."
+is is an excellent point and I thank you kindly for bringing it up. I have taken your
+ggestions and run the relevant analyses with ordinal pGLMMs instead of Poisson pGLMs.
+is failed to find an effect of chemical defence on the more fine-grained coding of threat
+tus (whether or not extinct species were included, which in any case were extremely few
+number), and so the text in the results and discussion has been updated accordingly.
+is could potentially be a power issue as an ordinal mixed model with a 5-6 category
+ponse variable (and the necessity to estimate parameters for thresholds between
+egories) is far more parameter-rich than a Poisson GLM. Alternatively, it is possible that
+re is no fine-grained relationship between defence and threat status: i.e. even if defence
+elated to the probability of being threatened, the degree of that threat may be controlled
+other factors (this is arguably more likely and considered as such in my updates to the
+t).
+he Pagel model also treats the evolution of IUCN threat inappropriately, as we don’t
+pect threshold traits to evolve under a Markovian process, because under the threshold
+del a lineage will be more likely to transition between character states right after a
+vious transition (because it is near the threshold; see, e.g., Revell 2014 Evolution). To
+author’s credit, Pagel’s correlation model is frequently inappropriately applied to
+eshold traits, and the phylogenetic logistic regression presented in the paper is testing a
+ilar hypothesis in a more appropriate way. A much more serious concern is that these
+gel models fail to accommodate situations in which there is no true phylogenetic
+lication (Maddison & FitzJohn 2015 Sys Bio). I think, that if the author wishes to present
+s Pagel analysis, the data should be at least be plotted on the tree and presented in the
+per or supplementary material to insure that there are, indeed, multiple independent
+related transitions in the traits."
+gree completely, hence my description and discussion of the Pagel model throughout the
+nuscript explicitly considers it tentative and used only to give some additional indication
+a particular (directional) hypothesis, despite the caveats. That said, I also agree that it is
+ll worth showing that there have been multiple independent transitions in the trait across
+tree. I have included ancestral state reconstructions to this end in Supplementary
+terial as Figure S1 and references this in the methods as follows: "Such models rely on
+ving multiple independent origins of the traits in question throughout the tree44, and this is
+case for the traits considered herein (Fig. S1)".
+ne 116-117 It would be fairly easy to obtain latitude data for nearly all the species in your
+taset (e.g., the range maps are on Amphibiaweb, and you can obtain approximate
+dian latitude by opening them in google maps and just clicking on the approximate
+dian; there is presumably enough error in these range maps that the exact median from
+S is probably overkill, plus Pyron and Wiens 2014 have published latitude data for many
+ecies). With complete latitude data, it would be possible to put chemical defense and
+tude in the same regression model(s), and obtain standardized effect sizes. This could
+a nice addition to this study- we know latitude is a strong predictor of extinction risk in
+s group, and if chemical defense had a similar effect size, this would be really cool, while I
+n’t think it would detract from the result if chemical defense had a weaker effect size than
+tude. I think this is optional- it seems the correlation between these two predictors is
+eed weak and probably not leading to a spurious association between defense and
+inction risk, although adding latitude in the same model could add some insight."
+ave not included this in the current revision since, as you point out, there is no detectable
+ationship between chemical defence and latitude and the time necessary to gather the
+ditional data on latitude (and other important traits like body size?) for all the species in
+dataset for which it is lacking would be difficult to put aside before the deadline. While
+latter would not be prohibitive if I thought there was a good chance of the results being
+anged as a consequence, given that isn't the case I have left it. Nevertheless, I can see
+t there could be a benefit to this so, although you left it as an optional suggestion, if you
+lly do feel it should be included I can address this in a future revision.
+ne 159, 161: Degrees of freedom should be given for the LR tests"
+ne, thanks.
+ne 163-168: This result implies that lineages with chemical defense should be, on
+erage, younger than lineages that lack defense. Is this the case? (e.g., is there a
+erence in terminal edge lengths on the dated tree between the two groups?)"
+is is a very interesting idea. I have included this in the manuscript with new text in
+thods, results, and discussion, and also as a density histogram of terminal edge lengths
+species with and without a chemical defence. I have noted that this is a little bit crude as
+est in that it will be partly dependent on sampling distributions etc., but that it should still
+d to some extent. In fact, it does in my dataset; I do indeed find an excess of chemically
+fended species compared to non-defended species in the most recent 15mya bins.
+ne 190-202: De Lisle & Rowe 2015 found that sexual size dimorphism is also an
+portant predictor of current and past extinction risk in amphibians."
+ry good point, I shouldn't have overlooked this given that it's the same reference that I
+tained the body size (and latitude) data from in the first place. I ran the same type of
+dels I used to check for a relationship between the potential confounding variables and
+emical defence with SSD as a predictor as well, and still found no association between
+t and defence. I have added this to the methods section as follows: "As sexual size
+orphism has also been found to predict extinction risk35, independently of body size, I
+o calculated an index of sexual size dimorphism as the size of the largest sex divided by
+t of the smallest to use in another model" and "Neither absolute latitude (P=0.611) nor
+dy size (male length, P=0.178; female length, P=0.148) or sexual size dimorphism
+=0.539) predicted the presence of chemical defence in this dataset, and are therefore not
+nsidered further for the purposes of this study".
+ne 251-265: Could a fourth possibility be that chemical defense reflects the outcome of
+dator-prey arms races, such that heavily defended species are also subject to
+rticularly intense predation? I also think that mentioning the different hypotheses in the
+oduction would strengthen this paper- I was left wondering “why?” until I got to this
+ction."
+cellent point, I have added in a brief discussion of this additional possibility (though the
+stence of such defences often reduces predation rates, even if high predation was the
+ver for their evolutionary origin). I have also split up this paragraph to present the
+potheses in the introduction and left the discussion more focussed on how the results
+y shed light on their relative plausibility.
+ally I would like to thank the reviewers and the editor once more for their time and
+mments. I firmly believe that their efforts have improved the manuscript greatly.
+vin Arbuckle
+pt. of Evolution, Ecology and Behaviour, University of Liverpool
+pt. of Biosciences, Swansea University
+Appendix B
+Response to Reviewer Comments
+I thank both reviewers for their sincere and fruitful efforts to improve the
+manuscript (and overall enthusiasm for the paper). I have tidied up the text
+with reference to Reviewer 2’s comments. In response to Reviewer 1’s astute
+and valid comments, I have attempted to explain my future plans in a little
+more detail to clarify why I feel his suggestions would be another paper but
+that, nevertheless, I think the current paper makes several points of its own. I
+would like to explicitly stress therefore that I agree with Reviewer 1 in what
+should be done, but I only disagree that it needs to be included as part of this
+manuscript. I hope I have been clear enough in this response that the
+reviewer understands my perspective, even if he still doesn’t necessarily
+entirely agree.
+Reviewer comments in red. My response in blue.
+Reviewer 1 comments
+"What is lacking from this thorough analysis is the mechanism by which
+chemical defenses are associated with extinction risk. The author discusses
+these but then says they are beyond the scope of the paper. Is that really
+true? Surely some serious arguments can be made in favour or against each
+- this seems like a wasted opportunity to get to the bottom of this. It will make
+the paper more memorable."
+I agree entirely that assessing the mechanisms behind the link between
+chemical defence and extinction is important. However, I still think that this is
+separate paper in itself. Doing this properly would involve a lot of additional
+data collection that would include variables selected to best represent each
+of the hypotheses (requiring careful thought for some hypotheses in
+particular), building of models to represent those hypotheses, and then
+evaluating the relative support for these. In my view this would readily qualify
+as a distinct (though related) question and project that would be suitable for a
+stand-alone publication. I have now included a bit more evaluation of the
+hypotheses in the discussion, primarily in relation to the marginal habitats
+and slow life-history hypotheses (see the text in my response to reviewer 2’s
+last comment below). However, I would emphasise that the current
+manuscript does make several distinct points on the consequences of
+antipredator defences for amphibians and the temporal stability of patterns of
+extinction, so I think the paper still makes an interesting contribution even if it
+leaves the mechanisms for a further study (in which I fully plan to incorporate
+the excellent suggestions you have provided in your reviews of the current
+manuscript).
+"Second - yes lots of other correlates of extinction risk in amphibians - why
+were these not incorporated in the analyses - eg clutch size, life history
+traits? It seems a bit weak just saying "other stuff is important too but I am
+not going to attempt to include it". How much extra work would it actually be
+to throw is these documented variables in an analysis to assess relative
+importance for risk?"
+As in my previous response, the reasons for this are two-fold. Firstly, enough
+variables have been associated with extinction in one study or another that
+including all of those would involve quite a lot of extra work. Given the aim of
+the present study is not to compare relative importance, but rather to test for
+a link, I can’t see that this extra work would provide enough of a payoff.
+Secondly, in part related to the number of extra variables but also to the
+decrease in number of species with data for all traits as the number of traits.
+This was evident even when taking into account the two particularly important
+traits currently in the manuscript as this reduced the sample size substantially
+(as detailed in my previous response), and it is therefore not feasible to
+include all possible traits and retain enough power to detect any effects
+reliably.
+Reviewer 2 comments
+"I have read this paper for the second time. Arbuckle seems to have
+addressed all of my previous concerns, which were mostly statistical. My only
+comments on this revised version are some minor writing suggestions.
+I think the paragraph at line 73-82 should be moved before the paragraph at
+line 56-72. As it reads now chemical defense is introduced out of the blue
+after discussion of links between macroevolutionary patterns and extant
+conservation concerns."
+Done, and I agree, it definitely reads better that way round.
+"Line 228: Other factors such as?"
+Although difficult to say and likely something that varies case by case, I have
+added this parenthetical statement as an example: “(including the intensity of
+the drivers of declines such as habitat degradation)”.
+"Line 255-256- I found this confusing. Maybe say they are independent data
+sets? The results of your work suggest that although the datasets are
+independent, extinction processes may not be across these two timescales
+since the same patterns are observed."
+Thanks for pointing this out – it reads OK to me but this is most likely
+because I know what I mean. I can see how it is a little ambiguous and could
+be confusing so I’ve replaced “Data for contemporary….” with ‘The datasets
+used for contemporary…’ to make the difference clear.
+"Finally, It seems to me that the slow life history hypothesis doesn’t really fit,
+because how does it explain the elevated speciation rates at the
+macroevolutionary scale? If anything it seems that evolution of a slower life
+history would reduce speciation rates as generation times increase. It seems
+that the “marginal habitat” idea could carry weight if chemical defense
+somehow leads to rapid speciation into ephemeral adaptive zones. This
+would be consistent with the previous finding of elevated speciation rates in
+these lineages."
+A very interesting perspective, I have added a bit more favourable
+consideration of the marginal habitats hypothesis to incorporate those ideas.
+I have also added that caveat to the discussion of the slow-life history
+hypothesis, though I would also say that it is possible that different processes
+explain variation in speciation vs extinction rates (though I agree they are
+likely to be related in the way you suggest) and that differences in selection
+can counteract slower rates of mutation accumulation in some cases (e.g.
+see Buschiazzo et al.’s 2012 conifer paper), so I don’t think slow life-history is
+necessarily precluded as an explanation for patterns of extinction. The
+paragraph now reads as follows (with new text in bold):-
+“There is a remaining uncertainty as to the mechanistic underpinnings of the
+influence of chemical defences on the probability of extinction, but the current
+results shed additional light on the plausibility of the potential mechanisms
+highlighted in the introduction. The ‘costly chemical’ and ‘marginal habitats’
+hypotheses are perhaps poorer explanations for increased extinction risk at
+both evolutionary and contemporary scales. Reduced competition after
+population declines should increase the resources available to individuals
+and therefore ease the energetic trade-offs at the heart of the costly chemical
+hypothesis. Similarly, the marginal habitats hypothesis relies on the intrinsic
+vulnerability of low carrying capacity environments, but a substantial decline
+in the population should again allow a relatively fast recovery until the
+carrying capacity is once again reached, due to reduced competition 40, all
+else being equal. Nevertheless, the marginal habitats hypothesis would
+also explain the higher speciation rates of chemically-defended
+amphibians30 if the move to such habitats is also associated with new
+ecological opportunities or often simply leads to allopatric speciation.
+Although different factors may influence speciation vs extinction rates,
+the marginal habitats hypothesis is the only one that could
+simultaneously explain both and so may provide a highly plausible
+explanation for the results here. The ‘slow life-history’ hypothesis predicts
+that chemical defence should lead to the evolution of slower life histories as a
+result of reduced extrinsic mortality41. Because such traits are also
+characterised by a slow rate of population growth 17, this is potentially a
+prime candidate mechanism for a temporally stable relationship between
+chemical defence and increased extinction risk in the face of many different
+threats. However, one problem for this hypothesis is that slow life-
+histories may also lead to slower speciation rates in many
+circumstances due to longer generation times, but speciation rates
+were found to be higher in chemically-defended amphibians30.”
+Finally I would like to thank the reviewers once more for these few additional
+comments, as a result the manuscript is now that bit more polished and
+hopefully ready for publication.
+Kevin Arbuckle
+Dept. of Biosciences, Swansea University
+Dept. of Evolution, Ecology and Behaviour, University of Liverpool
+Society Open

@@ -1,0 +1,1408 @@
+The role of geospatial hotspots in the spatial spread of
+tuberculosis in rural Ethiopia: a mathematical model
+Debebe Shaweno, James M. Trauer, Justin T. Denholm and Emma S. McBryde
+Article citation details
+R. Soc. open sci. 5: 180887.
+http://dx.doi.org/10.1098/rsos.180887
+Review timeline
+Original submission: 8 June 2018 Note: Reports are unedited and appear as
+1st revised submission: 26 July 2018 submitted by the referee. The review history
+2nd revised submission: 20 August 2018 appears in chronological order.
+Final acceptance: 22 August 2018
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-180887.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+I have reviewed this manuscript from the perspective of a mathematical epidemiologist who has
+experience in infectious disease modelling, but is not an expert in the field of Tuberculosis (TB).
+In the manuscript, the authors develop spatially coupled models to estimate the geographical
+spread of TB from hotspots to distant regions in rural Ethiopia. The findings suggest that TB in
+rural settings in Ethiopia is primarily driven by local transmission, rather than spillover from
+hotspot regions.
+This is an interesting article and the underlying methodological approach appears sound.
+However, I have concerns over the presentation of sections of the manuscript from which
+misunderstanding may arise if left unaddressed.
+Major points
+There are three main issues. The first is the absence of information surrounding the form of
+deviance information criterion (DIC) that was used in the study. There are a couple of
+calculations in common usage for the effective number of parameters of the model term, one of
+the elements the DIC is comprised of. These are described by: (i) Spiegelhalter, Best, Carlin & van
+der Linde. (2002) Bayesian measures of model complexity and fit in Journal of the Royal
+Statistical Society, Series B 64(4): 583-639; (ii) Gelmin, Carlin, Stern & Rubin (2004) Bayesian Data
+Analysis: Second Edition. Texts in Statistical Science. It would therefore be difficult to replicate
+this analysis as described. Explicitly stating the DIC calculation (perhaps as a text section within
+the supplementary material) would aid study reproducibility. Supporting references should also
+be added.
+There is also no information on how the reader should interpret the differences in DIC values.
+The interpretation of DIC results may be augmented by including a short description on what
+differences in DIC are considered notable.
+The second issue involves choice of notation. In particular, I found distinguishing the differences
+in meaning of ß<sub>i</sub> and ß<sub>ij</sub> troublesome. The description of the beta in
+the WAIFW matrix is not provided at that point. Apologies if I have misunderstood, as using text
+from the results (Parameter estimation subsection) I surmise ß<sub>i</sub> denotes mean
+effective contact rates in region type i. In short, the intra-region effective contact rate. Please
+present this information prior to referencing Figure 1. I recommend a greater differentiation in
+notation to be made. One alternative would be adding a hat or tilde accent to the
+ß<sub>ij</sub> term.
+Additionally, there are examples of inconsistent use of notation that need to be rectified. In Figure
+1, Model D and text surrounding it the notation used for the three coupling proportions is <U+03C1>, p
+and <U+03B9>? But in Table 2 and Supplementary Material Figure 5, the coupling parameters listed for
+model D are <U+03C1><sub>HA</sub>, <U+03C1><sub>AR</sub>, <U+03C1><sub>HR</sub>. Please switch notation
+used in Figure 1 to match the remainder of the manuscript.
+Third, though the response given to previous reviewer comments are mostly adequate, on more
+than one occasion the authors have not integrated the response text into the manuscript. For
+3
+example, to fully address the comment made by Reviewer 2, Comment 8 (What fraction of
+diseased individuals were assumed to be infectious?), the response needs to be incorporated into
+the main text and the parameter value for fraction of active TB compartment assumed to be
+infectious added to Table 1. Other instances are outlined in the specific comments.
+Please find below line-by-line comments which I think would help enhance the quality and
+clarity of the manuscript.
+Specific comments
+Introduction
+Page 1, lines 1-2: “Tuberculosis (TB) is now the world’s leading infectious killer…” To provide
+additional context, what is the magnitude of cases on a global scale? What is the typical TB
+caseload and mortality due to TB in Ethiopia?
+Page 2, line 2: In the final sentence of the introduction, revise “from hotspots a remote region of
+Ethiopia”.
+Introduction can motivate the study more by highlighting use of such frameworks in studies of
+other diseases (such as measles).
+Methods
+Top of page 6: Define N<sub>j</sub>. and please state that the force of infection calculation uses
+a frequency-dependent transmission assumption.
+Page 6, Paragraph 1, Line 2: Amend “makes within individuals” to “makes with individuals”
+Page 6, Paragraph 2, Line 4: Write “M.tb” in full
+Page 7: In the system of ODES, dS<sub>i</sub>/dt equation, I suspect the second term is
+missing a S<sub>i</sub> in the numerator. Across all ODE equations readability could be
+somewhat enhanced by using the <U+03BB><sub>i</sub> notation denoting the force of infection.
+Pages 6-8: What does the p in Figure 2 and the system of ODEs denote?
+Page 8 (Model fitting): From the viewpoint of a reader interested in the model fitting procedure,
+providing the equation for the likelihood calculation as a supplementary item would be
+appreciated.
+Page 8 (Model fitting): Prior distributions, explicitly state the bounds employed for the uniform
+priors in the main text.
+Page 8 (Model fitting): Was any thinning of the MCMC samples performed?
+Page 8, Line 17 (Model fitting): Reword “as a burn-ins”.
+Page 9 (Parameterisation): Case detection rates are presented in two different formats (proportion
+and percentage). Given use of proportions in Table 1 for this parameter, to maintain consistency
+alter 60% to 0.60.
+Could the authors expand on the software used to perform the analysis? What was the MATLAB
+version number, and were any additional libraries used to carry out the analysis?
+4
+Results
+Page 11, Paragraph 1: On writing style, the authors may want to consider avoiding sentences that
+give no information other than directing the reader to a figure. For example, may remove the
+sentence “Figure 2 in the Supplementary material…” and add (Supplementary material, Figure 2)
+at the end of the paragraph.
+Page 11, Paragraph 2: Related to the previous point, the authors may consider rephrasing this
+passage along the lines of “Our model could capably reproduce the notification rates that were
+previously used to estimate the set of model parameters (Figure 3).”
+Page 11, Paragraph 2: The argument for the simulated results having reasonable correspondence
+with observed data can be strengthened by reporting in the main text the Kolmogorov-Smirnov
+test results given to Reviewer 2, Comment 18.
+Page 12, “Simulation of the impact of improving case detection in hotspots on the neighbouring
+regions” subsection: The opening couple of sentences from this section of the results seem like
+they should be in the methods to establish the premise of the simulation study. It was not clear to
+me this was a question being addressed until the results.
+Pages 12-13, “Simulation of the impact of improving case detection in hotspots on the
+neighbouring regions” subsection: The quantities displayed in the text relate solely to when the
+case detection rate was set at its baseline value. This section would benefit from reporting the
+quantities of interest for a sample of the alternatively tested case detection rates.
+Discussion
+Page 16, Paragraph 1, Line 5: I was unclear on what the DOTS programme acronym stood for.
+Please clarify what this means to people who don’t know about the scheme.
+Page 16, Paragraph 3, Line 5: Authors state the study considers drug-sensitive TB only. This is an
+important assumption. It would benefit the manuscript by it being acknowledged earlier in the
+piece, for example within the methods when introducing the model formulation.
+Tables and Figures
+Table 1: Typo in caption “* in hotpots”; Parameters column is missing symbolic descriptors for
+relapse & protection against infection from latency.
+Figure 2: Apologies if I have misunderstood, but I am not convinced the rates attached to
+infection flows are correct in their present form across all models. Please clarify the writing, or
+consider amending flows to incorporate the force of infection term <U+03BB><sub>i</sub> and make
+clear those parameters that are region dependent. In the caption, consider restating the
+compartment definitions to assist understanding of the model structure.
+Figure 3: Please add labels to y-axes
+.
+Supp. Material. Figure 1: High-High, Low-Low etc descriptions were unclear to me. Would like
+to see an explanation of these terms in the caption.
+Supp. Material. Figure 2: Would add value to the figure by stating the fitted parametric
+distribution parameter values within the caption. Can then remove the fitted gamma distribution
+parameter values from the main text.
+5
+To demonstrate convergence of the MCMC fitting procedure, please add the sample trace plots
+given in response to Reviewer 2, Comment 11 as a supplementary figure.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Please see review attached (Appendix A).
+label_author_3
+Review form: Reviewer 3 (Benn Sartorius)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+6
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+Many thanks for your detailed responses to my comments.
+I have no further comments.
+label_end_comment
+Decision letter (RSOS-180887.R0)
+12-Jul-2018
+Dear Mr Adewo,
+The editors assigned to your paper ("The role of geospatial hotspots in the spatial spread of
+tuberculosis in rural Ethiopia: A mathematical modelling") have now received comments from
+reviewers. We would like you to revise your paper in accordance with the referee and Associate
+Editor suggestions which can be found below (not including confidential reports to the Editor).
+Please note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper before 04-Aug-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If we do not hear from you within this time then it
+will be assumed that the paper has been withdrawn. In exceptional circumstances, extensions
+may be possible if agreed with the Editorial Office in advance. We do not allow multiple rounds
+of revision so we urge you to make every effort to fully address all of the comments at this stage.
+If deemed necessary by the Editors, your manuscript will be sent back to one or more of the
+original reviewers for assessment. If the original reviewers are not available, we may invite new
+reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+7
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180887
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+8
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Anotida Madzvamuse (Associate Editor) and Prof. Kevin Padian (Subject
+Editor)
+openscience@royalsociety.org
+Associate Editor's comments (Professor Anotida Madzvamuse):
+Associate Editor: 1
+Comments to the Author:
+label_comment_4
+I recommend major revisions in accordance with the reviewers' comments.
+Associate Editor: 2
+Comments to the Author:
+label_comment_5
+There are issues about the definitions of spatial models versus compartmentalised models. Spatial
+models would imply the use of partial differential equations as a model for describing the
+physical problem. This is not the case here, instead it is a compartmental model. Due to lack of
+detailed information about the modelling framework, it is difficult to gauge the premises on
+which the modelling was constructed. I therefore recommend further peer reviewing of the
+manuscript. It is not clear (i) if the models were considered in dimensional or non-dimenstional,
+(ii) there is a lack of mathematical analysis and (iii) how the model equations where solved
+computationally.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+I have reviewed this manuscript from the perspective of a mathematical epidemiologist who has
+experience in infectious disease modelling, but is not an expert in the field of Tuberculosis (TB).
+In the manuscript, the authors develop spatially coupled models to estimate the geographical
+spread of TB from hotspots to distant regions in rural Ethiopia. The findings suggest that TB in
+rural settings in Ethiopia is primarily driven by local transmission, rather than spillover from
+hotspot regions.
+This is an interesting article and the underlying methodological approach appears sound.
+However, I have concerns over the presentation of sections of the manuscript from which
+misunderstanding may arise if left unaddressed.
+Major points
+There are three main issues. The first is the absence of information surrounding the form of
+deviance information criterion (DIC) that was used in the study. There are a couple of
+9
+calculations in common usage for the effective number of parameters of the model term, one of
+the elements the DIC is comprised of. These are described by: (i) Spiegelhalter, Best, Carlin & van
+der Linde. (2002) Bayesian measures of model complexity and fit in Journal of the Royal
+Statistical Society, Series B 64(4): 583-639; (ii) Gelmin, Carlin, Stern & Rubin (2004) Bayesian Data
+Analysis: Second Edition. Texts in Statistical Science. It would therefore be difficult to replicate
+this analysis as described. Explicitly stating the DIC calculation (perhaps as a text section within
+the supplementary material) would aid study reproducibility. Supporting references should also
+be added.
+There is also no information on how the reader should interpret the differences in DIC values.
+The interpretation of DIC results may be augmented by including a short description on what
+differences in DIC are considered notable.
+The second issue involves choice of notation. In particular, I found distinguishing the differences
+in meaning of ß<sub>i</sub> and ß<sub>ij</sub> troublesome. The description of the beta in
+the WAIFW matrix is not provided at that point. Apologies if I have misunderstood, as using text
+from the results (Parameter estimation subsection) I surmise ß<sub>i</sub> denotes mean
+effective contact rates in region type i. In short, the intra-region effective contact rate. Please
+present this information prior to referencing Figure 1. I recommend a greater differentiation in
+notation to be made. One alternative would be adding a hat or tilde accent to the
+ß<sub>ij</sub> term.
+Additionally, there are examples of inconsistent use of notation that need to be rectified. In Figure
+1, Model D and text surrounding it the notation used for the three coupling proportions is <U+03C1>, p
+and <U+03B9>? But in Table 2 and Supplementary Material Figure 5, the coupling parameters listed for
+model D are <U+03C1><sub>HA</sub>, <U+03C1><sub>AR</sub>, <U+03C1><sub>HR</sub>. Please switch notation
+used in Figure 1 to match the remainder of the manuscript.
+Third, though the response given to previous reviewer comments are mostly adequate, on more
+than one occasion the authors have not integrated the response text into the manuscript. For
+example, to fully address the comment made by Reviewer 2, Comment 8 (What fraction of
+diseased individuals were assumed to be infectious?), the response needs to be incorporated into
+the main text and the parameter value for fraction of active TB compartment assumed to be
+infectious added to Table 1. Other instances are outlined in the specific comments.
+Please find below line-by-line comments which I think would help enhance the quality and
+clarity of the manuscript.
+Specific comments
+Introduction
+Page 1, lines 1-2: “Tuberculosis (TB) is now the world’s leading infectious killer…” To provide
+additional context, what is the magnitude of cases on a global scale? What is the typical TB
+caseload and mortality due to TB in Ethiopia?
+Page 2, line 2: In the final sentence of the introduction, revise “from hotspots a remote region of
+Ethiopia”.
+Introduction can motivate the study more by highlighting use of such frameworks in studies of
+other diseases (such as measles).
+10
+Methods
+Top of page 6: Define N<sub>j</sub>. and please state that the force of infection calculation uses
+a frequency-dependent transmission assumption.
+Page 6, Paragraph 1, Line 2: Amend “makes within individuals” to “makes with individuals”
+Page 6, Paragraph 2, Line 4: Write “M.tb” in full
+Page 7: In the system of ODES, dS<sub>i</sub>/dt equation, I suspect the second term is
+missing a S<sub>i</sub> in the numerator. Across all ODE equations readability could be
+somewhat enhanced by using the <U+03BB><sub>i</sub> notation denoting the force of infection.
+Pages 6-8: What does the p in Figure 2 and the system of ODEs denote?
+Page 8 (Model fitting): From the viewpoint of a reader interested in the model fitting procedure,
+providing the equation for the likelihood calculation as a supplementary item would be
+appreciated.
+Page 8 (Model fitting): Prior distributions, explicitly state the bounds employed for the uniform
+priors in the main text.
+Page 8 (Model fitting): Was any thinning of the MCMC samples performed?
+Page 8, Line 17 (Model fitting): Reword “as a burn-ins”.
+Page 9 (Parameterisation): Case detection rates are presented in two different formats (proportion
+and percentage). Given use of proportions in Table 1 for this parameter, to maintain consistency
+alter 60% to 0.60.
+Could the authors expand on the software used to perform the analysis? What was the MATLAB
+version number, and were any additional libraries used to carry out the analysis?
+Results
+Page 11, Paragraph 1: On writing style, the authors may want to consider avoiding sentences that
+give no information other than directing the reader to a figure. For example, may remove the
+sentence “Figure 2 in the Supplementary material…” and add (Supplementary material, Figure 2)
+at the end of the paragraph.
+Page 11, Paragraph 2: Related to the previous point, the authors may consider rephrasing this
+passage along the lines of “Our model could capably reproduce the notification rates that were
+previously used to estimate the set of model parameters (Figure 3).”
+Page 11, Paragraph 2: The argument for the simulated results having reasonable correspondence
+with observed data can be strengthened by reporting in the main text the Kolmogorov-Smirnov
+test results given to Reviewer 2, Comment 18.
+Page 12, “Simulation of the impact of improving case detection in hotspots on the neighbouring
+regions” subsection: The opening couple of sentences from this section of the results seem like
+they should be in the methods to establish the premise of the simulation study. It was not clear to
+me this was a question being addressed until the results.
+Pages 12-13, “Simulation of the impact of improving case detection in hotspots on the
+11
+neighbouring regions” subsection: The quantities displayed in the text relate solely to when the
+case detection rate was set at its baseline value. This section would benefit from reporting the
+quantities of interest for a sample of the alternatively tested case detection rates.
+Discussion
+Page 16, Paragraph 1, Line 5: I was unclear on what the DOTS programme acronym stood for.
+Please clarify what this means to people who don’t know about the scheme.
+Page 16, Paragraph 3, Line 5: Authors state the study considers drug-sensitive TB only. This is an
+important assumption. It would benefit the manuscript by it being acknowledged earlier in the
+piece, for example within the methods when introducing the model formulation.
+Tables and Figures
+Table 1: Typo in caption “* in hotpots”; Parameters column is missing symbolic descriptors for
+relapse & protection against infection from latency.
+Figure 2: Apologies if I have misunderstood, but I am not convinced the rates attached to
+infection flows are correct in their present form across all models. Please clarify the writing, or
+consider amending flows to incorporate the force of infection term <U+03BB><sub>i</sub> and make
+clear those parameters that are region dependent. In the caption, consider restating the
+compartment definitions to assist understanding of the model structure.
+Figure 3: Please add labels to y-axes
+.
+Supp. Material. Figure 1: High-High, Low-Low etc descriptions were unclear to me. Would like
+to see an explanation of these terms in the caption.
+Supp. Material. Figure 2: Would add value to the figure by stating the fitted parametric
+distribution parameter values within the caption. Can then remove the fitted gamma distribution
+parameter values from the main text.
+To demonstrate convergence of the MCMC fitting procedure, please add the sample trace plots
+given in response to Reviewer 2, Comment 11 as a supplementary figure.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+Please see review attached
+Author's Response to Decision Letter for (RSOS-180887.R0)
+See Appendix B.
+12
+label_version_2
+RSOS-180887.R1 (Revision)
+label_author_4
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_8
+Please see review attached (Appendix C).
+label_end_comment
+Decision letter (RSOS-180887.R1)
+15-Aug-2018
+Dear Mr Adewo:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-180887.R1
+entitled "The role of geospatial hotspots in the spatial spread of tuberculosis in rural Ethiopia: A
+mathematical modelling" has been accepted for publication in Royal Society Open Science subject
+to minor revision in accordance with the referee suggestions. Please find the referees' comments
+at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+13
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180887.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 24-Aug-2018. Please note that the revision
+14
+deadline will expire at 00.00am on this date. If you do not think you will be able to meet this date
+please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Anotida Madzvamuse (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+15
+Associate Editor Comments to Author (Professor Anotida Madzvamuse):
+I strongly encourage the authors to address the remaining comments from the reviewer and
+resubmit. The resubmission should be accompanied by a detailed point-by-point rebuttal or
+address of the reviewer's comments. The reviewer's comments are in the pdf attached.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_9
+Please see review attached
+Author's Response to Decision Letter for (RSOS-180887.R1)
+See Appendix D.
+label_end_comment
+Decision letter (RSOS-180887.R2)
+22-Aug-2018
+Dear Mr Adewo,
+I am pleased to inform you that your manuscript entitled "The role of geospatial hotspots in the
+spatial spread of tuberculosis in rural Ethiopia: A mathematical model" is now accepted for
+publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+16
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Anotida Madzvamuse (Associate Editor) and Professor Kevin Padian
+(Subject Editor)
+openscience@royalsociety.org
+Appendix A
+Referee report on a manuscript RSOS-180887, “The role of
+geospatial hotspots in the spatial spread of tuberculosis in rural
+Ethiopia: A mathematical modelling” by D. Shaweno, J.M.
+Trauer, J.T. Denholm, E.S. McBryde
+This paper has developed and analysed a multi-patch model for the spatio-temporal dy-
+namics of tuberculosis in remote regions of rural Ethiopia. The authors propose a model that
+includes two types of latent compartments, and explore different types of mixing between
+individuals, as represented by WAIFW matrices. Using available case-notification data, the
+authors then proceed to identify the best fit for parameters, and explore correlations between
+them. Overall, the paper is very interesting, and I am happy to recommend publication, pro-
+vided the authors address the following minor issues.
+1) At the top of p. 5, please mention explicitly in the text which type of coupling corresponds
+to which matrix in Fig. 1, as currently Figs. 1B and C are not independently mentioned or
+discussed.
+2) p. 5, l. 36 , the authors mentioned “the terms ßij ”, but in the matrices there are only ß1 ,
+ß2 , and ß3 . Perhaps, the authors meant that the full matrices in Fig. 1 represent ßij , but
+this then has to be explicitly stated to avoid ambiguity.
+3) p. 6, l. 8, when introducing ßij , is it really just the number of contacts? I mean, shouldnt
+it also include the per-contact probability of transmission, as otherwise, the model assumes
+that every single contact results in the transmission of infection, which is hardly realistic?
+4) p. 6, l. 35, the authors say that susceptible individuals are replenished by births, which,
+presumably, is represented by the parameter p in the model. Some comment should be made
+about why this term is taken as a constant rather than a constant multiplying the total pop-
+ulation, and also its value of this parameter is not provided in any of the simulations, so it
+is not clear how it was chosen or estimated.
+Also, there is a clash in notation: the same letter p is used in the model to denote the
+influx of new susceptibles, and in matrix D in Fig. 1 to denote a coupling proportion.
+5) p. 7, parameter p in Fig. 2 and in the model is not defined, and it should be properly
+introduced.
+6) p. 8, l. 7, in <U+03BB>ij , I guess the second index should be y in agreement with what the authors
+discuss in l. 16.
+7) p. 8, l. 33, what is L in L<U+03B8>?
+8) p. 8, ll. 45-47, please be consistent with CDR and write either 0.65 and 0.6, or 65% and
+60%.
+9) p. 10, it is not clear how could model C perform better than D if model D also includes
+C as a particular case for the choice of parameters i = <U+03C1>2 and p = <U+03C1>. The authors should
+1
+provide an clear explanation of why this is the case.
+10) p. 11, I dont understand what is shown by blue lines in Fig. 3: the authors say that the
+dashed blue lines represent “observed notification rates over five years”, but since these are
+all vertical lines of equal height, it is not at all clear what they actually represent, or how
+they fit against the simulated notification rates. The authors should comment on this.
+I also have two small suggestions:
+p. 4, l. 5: please change “hotspots a remote” to hotspots to a remote”
+p. 12, l. 53, change “a unit of 5 into “multiples of 5%”.
+2
+Appendix B
+The following document contains our responses to the issues raised by associate
+editors and reviewers. Please find our responses embedded in the following text
+after each reviewer’s comments.
+Associate Editor: 1
+Comments to the Author:
+label_comment_10
+I recommend major revisions in accordance with the reviewers' comments.
+Authors response: We have provided a point by point response to all the
+comments below.
+Associate Editor: 2
+Comments to the Author:
+label_comment_11
+There are issues about the definitions of spatial models versus compartmentalised
+models. Spatial models would imply the use of partial differential equations as a
+model for describing the physical problem. This is not the case here, instead it is a
+compartmental model. Due to lack of detailed information about the modelling
+framework, it is difficult to gauge the premises on which the modelling was
+constructed. I therefore recommend further peer reviewing of the manuscript. It is
+not clear (i) if the models were considered in dimensional or non-dimenstional, (ii)
+there is a lack of mathematical analysis and (iii) how the model equations where
+solved computationally.
+Authors response:
+Population-level spatially structured models can fall into either metapopulation
+models (spatial patch models) or spatially continuous models which assume the
+population is continuously distributed across space rather than distributed into
+discrete subpopulations. The latter group of models are modelled using partial
+differential equations, while the former are modelled using ordinary differential
+equations. The modelling framework used in this study falls into the
+metapopulation model where the underlying population is divided into three
+spatial groups (based on disease burden) which are allowed to interact using
+coupling terms which we denoted using a matrix often referred to as “WAIFW”.
+While spatial models aim to capture the spread of infection across space,
+compartments capture the progression of disease in individuals. In order to fully
+capture the rate at which infection progresses in space, it is essential to describe its
+progression in individuals, which is essentially done using compartmental a
+framework (1).
+1
+(i) if the models were considered in dimensional or non-dimenstional
+In this analysis, space is considered discrete and divided into three spatial
+subgroups rather than continuous and so solved with ODEs rather than partial
+differential equations. This approach is widely used to deal with spatial mixing in
+infectious disease modelling (1). The discrete spatial variable is one dimension in
+the model, the state of infectiousness is another and time is the third dimension.
+(ii) there is a lack of mathematical analysis and
+The details of mathematical (numerical) analysis and the codes used are
+available from the Dryad Digital Repository (2).
+(iii) how the model equations where solved computationally
+Authors response: The system of ordinary differential equation was solved using
+Runge-Kutta algorithm (accessed using an inbuilt ODE solver called ode45 in
+Matlab). This information is now provided in the main manuscript, beneath the
+system of ODEs.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_12
+I have reviewed this manuscript from the perspective of a mathematical
+epidemiologist who has experience in infectious disease modelling, but is not an
+expert in the field of Tuberculosis (TB). In the manuscript, the authors develop
+spatially coupled models to estimate the geographical spread of TB from hotspots
+to distant regions in rural Ethiopia. The findings suggest that TB in rural settings in
+Ethiopia is primarily driven by local transmission, rather than spillover from
+hotspot regions.
+. This is an interesting article and the underlying methodological approach appears
+sound. However, I have concerns over the presentation of sections of the
+manuscript from which misunderstanding may arise if left unaddressed.
+Authors response: We thank the reviewer for the positive remarks
+Major points
+1. There are three main issues. The first is the absence of information surrounding
+the form of deviance information criterion (DIC) that was used in the study. There
+are a couple of calculations in common usage for the effective number of
+parameters of the model term, one of the elements the DIC is comprised of. These
+are described by: (i) Spiegelhalter, Best, Carlin & van der Linde. (2002) Bayesian
+2
+measures of model complexity and fit in Journal of the Royal Statistical Society,
+Series B 64(4): 583-639; (ii) Gelmin, Carlin, Stern & Rubin (2004) Bayesian Data
+Analysis: Second Edition. Texts in Statistical Science. It would therefore be difficult
+to replicate this analysis as described. Explicitly stating the DIC calculation
+(perhaps as a text section within the supplementary material) would aid study
+reproducibility. Supporting references should also be added. There is also no
+information on how the reader should interpret the differences in DIC values. The
+interpretation of DIC results may be augmented by including a short description on
+what differences in DIC are considered notable
+Authors response: In this study, we computed deviance information
+criteria as follows based on an approach presented in Spiegelhalter et al.
+(2002).
+Deviance is defined as -2 times the log-likelihood and can be written as:
+D (y, <U+03B8>) = -2log p (y/ <U+03B8>) …………………………………………..(3)
+Having defined deviance in this way, deviance information criteria (DIC) can
+be computed as follows:
+DIC = <U+0001D437>¯ + PD ……………………………………………………………. [2]
+Where, <U+0001D437> ¯ is the expected posterior value of deviance (-2 times the average
+of the log- likelihood ratios) and PD is the effective number of parameters in
+the model, which is calculated as the difference between the posterior mean
+of the deviance and the deviance at the posterior means of the parameters
+(likelihood ratio evaluated at the average of the parameters) of interest.
+Adding PD to the posterior mean deviance (<U+0001D437> ¯ ) gives a deviance information
+criteria for comparing models (4).
+Models with the minimum DIC estimates indicate models with a better fit,
+although there is no universal agreement on the magnitude of the difference
+between different DIC values to constitute a meaningful difference. A
+general rule of thumb suggests that differences of more than 10 might
+definitely rule out the model with the higher DIC, differences between 5 and
+10 are substantial (5).
+3
+The information is provided in the supplementary material, page 1 and we
+also included our approach briefly into the main text as (Methods section,
+Model fitting subsection, paragraph 2, lines 18-22)
+“We calculated DIC as the sum of the expected posterior value of deviance (-
+2 times the average of the log- likelihood ratios) and the effective number of
+parameters in the model, described as the difference between the posterior
+mean of the deviance and the deviance at the posterior means of the
+parameters (likelihood ratio evaluated at the average of the parameters) of
+interest (4)”.
+2. The second issue involves choice of notation. In particular, I found
+distinguishing the differences in meaning of ß<sub>i</sub> and
+ß<sub>ij</sub> troublesome. The description of the beta in the WAIFW
+matrix is not provided at that point. Apologies if I have misunderstood, as
+using text from the results (Parameter estimation subsection) I surmise
+ß<sub>i</sub> denotes mean effective contact rates in region type i. In
+short, the intra-region effective contact rate. Please present this
+information prior to referencing Figure 1. I recommend a greater
+differentiation in notation to be made. One alternative would be adding a
+hat or tilde accent to the ß<sub>ij</sub> term.
+Authors response: we have now provided a description of ßij in sufficient
+detail as follows (Methods section, Model assumptions on spatial coupling
+subsection, paragraph 1):
+“The dynamics of TB were assumed to be identical in the three patches,
+except for the transmission parameter, which we calibrated on the basis of
+notification rates in each region. To capture transmission from a hotspot
+region to the other two regions and vice versa, we developed a cross-
+coupled metapopulation model by defining contact matrices referred to as
+4
+WAIFW (“who acquires infection from whom”) matrices that represent the
+strength of interaction within and between regions (6) as:
+ß11 ß12 ß13
+[ß21 ß22 ß23 ]
+ß31 ß32 ß33
+where the diagonal elements, ßii (ß11, ß22 and ß33) of the WAIFW matrix
+represent the average per capita effective contact rates per year that an
+individual in region i makes with individuals in region i, while the off-
+diagonal elements (ßij) represent the average per capita effective contact
+rates per year that an individual in region j makes with individuals in region
+i. The degree of coupling between patches is assumed to be smaller than the
+degree of interaction within patches, such that the values of the off-diagonal
+elements are found by multiplying the appropriate within-group
+transmission parameter by the appropriate coupling proportion according
+to the following four different scenarios considered regarding coupling
+between regions”.
+We have also corrected inconsistences in the use of subscripts in the manuscript
+(table 2) and the supplementary material (Figures 5 and 6)
+A B C
+D
+ß11 0 0 ß11 <U+03C1>ß22 <U+03C1>2 ß22 ß11 <U+03C1>ß22 <U+03C1>2 ß33
+[ 0 ß22 0 ] [ <U+03C1>ß11 ß22 <U+03C1>ß22 ] [ <U+03C1>ß11 ß22 <U+03C1>ß33 ]
+0 0 ß33 <U+03C1>2 ß11 <U+03C1>ß22 ß22 <U+03C1>2 ß11 <U+03C1>ß22 ß33
+ß11 <U+03C1>ß22 <U+03B9>ß33
+[<U+03C1>ß11 ß22 pß33 ]
+<U+03B9>ß11 pß22 ß33
+Figure 1. Structure of WAIFW coupling matrices: (A) Uncoupled model; (B) Coupled
+two transmission parameter model; (C) Coupled three transmission parameter
+model; (D) Fully flexible model.
+5
+3. Reviewers comments: Additionally, there are examples of inconsistent use of
+notation that need to be rectified. In Figure 1, Model D and text surrounding it the
+notation used for the three coupling proportions is <U+03C1>, p and <U+03B9>? But in Table 2 and
+Supplementary Material Figure 5, the coupling parameters listed for model D are
+<U+03C1><sub>HA <U+03C1><sub>AR</sub>, <U+03C1><sub>HR</sub>. Please switch notation used in Figure
+1 to match the remainder of the manuscript.
+Authors response: We thank the review for noticing this inconsistency. We have
+now revised the notations used in table 1 and figures 5 and 6 (in the supplementary
+material) to match figure 1 (in the manuscript).
+4. Reviewers comments: Third, though the response given to previous reviewer
+comments are mostly adequate, on more than one occasion the authors have not
+integrated the response text into the manuscript. For example, to fully address the
+comment made by Reviewer 2, Comment 8 (What fraction of diseased individuals
+were assumed to be infectious?), the response needs to be incorporated into the
+main text and the parameter value for fraction of active TB compartment assumed
+to be infectious added to Table 1. Other instances are outlined in the specific
+comments.
+Authors response: The fraction of TB considered infectious is included in page 7
+the methods section, paragraph 1, last lines 13-15 as follows:
+“In the model, only a fraction of diseased individuals comprising all
+smear-positive and 22% of smear-negative TB patients is considered
+infectious in line with a previous report that 17-22% of smear-
+negative TB cases are infectious (7)”
+Please find below line-by-line comments which I think would help enhance the
+quality and clarity of the manuscript.
+Specific comments
+Introduction
+5. Page 1, lines 1-2: “Tuberculosis (TB) is now the world’s leading infectious killer…”
+To provide additional context, what is the magnitude of cases on a global scale?
+What is the typical TB caseload and mortality due to TB in Ethiopia?
+Authors response: We have now included the case load and mortality both at the
+global scale and Ethiopia to make the context very clear as follows: (Introduction
+section, paragraph 1, lines 1-2)
+6
+“Tuberculosis (TB) is now the world’s leading infectious killer with an
+estimated 10.4 million cases and 1.7 million deaths in 2016. In the same
+year, TB caused 182,000 cases and 30,000 deaths in Ethiopia leaving the
+country among the list of the top 30 TB high burden countries (8)”.
+6. Page 2, line 2: In the final sentence of the introduction, revise “from hotspots a
+remote region of Ethiopia”.
+Authors response: we have incorporated revised the sentence as follows.
+“In this study, we aim to understand the geographic spread of TB from
+hotspots to regions located at different distances in a remote region of
+Ethiopia”.
+7. Introduction can motivate the study more by highlighting use of such
+frameworks in studies of other diseases (such as measles).
+Authors response: We have now incorporated the wider application of the study
+framework we used in this study as follows (Introduction section, paragraph 3,
+lines 4-6)
+“Although considerable advancements in the methods used to
+investigate the spatial diffusion of infectious diseases such as measles
+has been made in the last decades (9-11), only few modelling studies
+were able to apply such methods in the investigation of spatial
+transmission of TB by incorporating spatial structure”
+Methods
+8. Top of page 6: Define N<sub>j</sub>. and please state that the force of infection
+calculation uses a frequency-dependent transmission assumption.
+Authors response: We have inserted the description of Nj along with the
+description of other terms as follows:
+“Ij and Nj refer to the number of infectious TB cases and total
+population in spatial group j,……”
+Similarly, we have stated that the force of infection is based on frequency-
+dependent assumption (Methods section, page 6, lines 2-4) as follows:
+“The force of infection on the ith group, <U+03BB>i assumes a frequency-
+dependent transmission and is therefore a weighted sum of
+infectious TB prevalence in the different spatial groups”.
+7
+9. Page 6, Paragraph 1, Line 2: Amend “makes within individuals” to “makes with
+individuals”
+Authors response: Amended as suggested.
+10. Page 6, Paragraph 2, Line 4: Write “<i>M.tb</i>” in full
+Authors response: Amended as suggested.
+11. Page 7: In the system of ODES, dS<sub>i</sub>/dt equation, I suspect the second
+term is missing a S<sub>i</sub> in the numerator. Across all ODE equations
+readability could be somewhat enhanced by using the <U+03BB><sub>i</sub> notation
+denoting the force of infection.
+Authors response: Thank you for noticing the missing term, Si, which we have
+included now. In addition, to enhance the readability we have replaced the whole
+expression for the force of infection in the system of ODE with <U+0001D706><U+0001D456> . (Please see ODE
+in the methods section, page 7-8)
+12. Pages 6-8: What does the p in Figure 2 and the system of ODEs denote?
+Authors response: p in figure 2 and the ODEs denotes the partial protection
+conferred by previous infection with tuberculosis. For clarity, we have placed the
+symbol ‘p’ in table 1.
+13. Page 8 (Model fitting): From the viewpoint of a reader interested in the model
+fitting procedure, providing the equation for the likelihood calculation as a
+supplementary item would be appreciated.
+Authors response: In this analysis we used Poisson likelihood in the model fitting
+as follows:
+3 5
+<U+0001D706><U+0001D458> <U+0001D452> -<U+0001D706>
+<U+0001D43F><U+0001D456><U+0001D458><U+0001D452><U+0001D459><U+0001D456>h<U+0001D45C><U+0001D45C><U+0001D451> = <U+220F> <U+220F>
+<U+0001D458>!
+<U+0001D456>=1 <U+0001D457>=1
+The subscript i takes values from 1 to 3 to index each spatial patch, and the
+subscript j takes values from 1 to 5 to index years. <U+03BA> refers to the observed
+notification and <U+03BB> represents the expected Poison mean which is the model
+estimated notification. This information is provided in the supplementary
+material
+14. Page 8 (Model fitting): Prior distributions, explicitly state the bounds employed
+for the uniform priors in the main text.
+8
+Authors response: We have incorporated the information about the priors
+and their bounds in the main text (Methods section, model fitting
+subsection, paragraph 2, line 9-10) as:
+“…. assigning a uniform prior distribution between 0 and 1 for all
+proportions and all rates for which plausible values were < 1(for the
+parameter set)”.
+15. Page 8 (Model fitting): Was any thinning of the MCMC samples performed?
+Authors response: We did not use thinning.
+16. Page 8, Line 17 (Model fitting): Reword “as a burn-ins”.
+Authors response: We have now reworded as “a burn-in “
+17. Page 9 (Parameterisation): Case detection rates are presented in two different
+formats (proportion and percentage). Given use of proportions in Table 1 for this
+parameter, to maintain consistency alter 60% to 0.60.
+Authors response: Amended as suggested.
+18. Could the authors expand on the software used to perform the analysis? What
+was the MATLAB version number, and were any additional libraries used to carry
+out the analysis?
+Authors response: Information regarding the MATLAB version and other libraries
+used in this analysis is given below and the same information is also provided in the
+main text (Model fitting subsection, paragraph 2, line 9).
+The model was coded in MATLAB- R2015b (The MathWorks, 2015) and some
+of the plots were produced using ggplot2 library in R version 3.3.1.
+Results
+19. Page 11, Paragraph 1: On writing style, the authors may want to consider
+avoiding sentences that give no information other than directing the reader to a
+figure. For example, may remove the sentence “Figure 2 in the Supplementary
+material…” and add (Supplementary material, Figure 2) at the end of the paragraph.
+Authors response: Suggested modifications have been made – see paragraph
+beneath table 2.
+20. Page 11, Paragraph 2: Related to the previous point, the authors may consider
+rephrasing this passage along the lines of “Our model could capably reproduce the
+notification rates that were previously used to estimate the set of model
+parameters (Figure 3).”
+9
+Authors response: Suggested modifications have been made – see paragraph 2
+beneath table 2
+21. Page 11, Paragraph 2: The argument for the simulated results having reasonable
+correspondence with observed data can be strengthened by reporting in the main
+text the Kolmogorov-Smirnov test results given to Reviewer 2, Comment 18.
+Authors response: The reported suggestions have been incorporated into the
+main text (paragraph 2 underneath table 2) as:
+“We also tested if both the observed and simulated data came from the same
+underlying distribution using Kolmogrorov-Smirnov test. The test indicated
+that both the observed data and the simulated data came from the same
+underlying distribution for all the three patches (Hotspots: D=0.36, p-
+value=0.54, Adjacent region: D=0.54, p-value=0.11, Remote region: D=0.31, p-
+value=0.71)”.
+22. Page 12, “Simulation of the impact of improving case detection in hotspots on
+the neighbouring regions” subsection: The opening couple of sentences from this
+section of the results seem like they should be in the methods to establish the
+premise of the simulation study. It was not clear to me this was a question being
+addressed until the results.
+Authors response: We agree with the reviewer that we introduced “simulation”
+late in the results section. Now we have provided that information in the methods
+section, Simulation of the impact of interventions in hotspots on the spatial spread
+of TB” subsection as follows:
+Simulation of the impact of interventions in hotspots on the
+spatial spread of TB
+To estimate the extent to which hotspots contributed to TB
+transmission in the two non-hotspot regions, we first ran the model
+to equilibrium using the best fitting parameters values. We
+subsequently modified the case detection rate only in the hotspots
+from 65% (baseline value) using increments of 5% to understand the
+effect this might have on the burden of TB in the two non-hotspot
+regions.
+23. Pages 12-13, “Simulation of the impact of improving case detection in hotspots
+on the neighbouring regions” subsection: The quantities displayed in the text relate
+solely to when the case detection rate was set at its baseline value. This section
+would benefit from reporting the quantities of interest for a sample of the
+alternatively tested case detection rates.
+10
+Authors response: we have incorporated the suggested changes as (Results
+section, Simulation of the impact of improving case detection in hotspots on
+the neighbouring regions subsection, paragraph 1):
+“…. the proportion of TB infection in an adjacent region due to mixing with
+hotspots was about 76% (95 % CrI: 52%, 92%,); and was 2.5% (95 %CrI: 0.7%,
+3.2%) in the remote regions in the first five years at a baseline case detection
+rate in hotspots (Figure 5). That is, out of 771 (95% CrI: 258, 1736) secondary
+infections in the adjacent region, 593 (95% CrI: 237, 904) were generated due
+to mixing with hotspots. As a result, improving CDR in the hotspot regions
+has significant impact on the neighbouring region. For instance, the
+proportion of infections in the adjacent regions due to mixing with hotspot
+regions drops by 10% down to 65% (95% CrI: 37%, 86%) when case detection
+rate in the hotspot regions goes from 65 percent (the baseline) to 70 percent.
+Similarly, when case detection rate goes from 65 percent to 95 percent, the
+proportion of infections in the adjacent regions due to mixing with hotspot
+regions drops down to 16% (95% CrI: 7%, 39%). However, the effect of the
+same intervention is only marginal in the remote regions. (Figure 5).
+Discussion
+24. Page 16, Paragraph 1, Line 5: I was unclear on what the DOTS programme
+acronym stood for. Please clarify what this means to people who don’t know about
+the scheme.
+Authors response: The abbreviation is expanded for clarity in Discussion section,
+paragraph 6, line 7 as “directly observed treatment short course (DOTS)”
+25. Page 16, Paragraph 3, Line 5: Authors state the study considers drug-sensitive
+TB only. This is an important assumption. It would benefit the manuscript by it
+being acknowledged earlier in the piece, for example within the methods when
+introducing the model formulation.
+Authors response: we have mentioned this information in the methods section in
+the revised text (Methods section, page 7, paragraph 2, line 15) as:
+“The dynamic transmission model only captures drug-susceptible
+TB”.
+Tables and Figures
+26. Table 1: Typo in caption “* in hotpots”; Parameters column is missing symbolic
+11
+descriptors for relapse & protection against infection from latency.
+Authors response: The missing letter “s” is now inserted to make the word
+“hotspots” and the missing symbolic descriptors of the two listed parameters
+inserted (please see table 1)
+27. Figure 2: Apologies if I have misunderstood, but I am not convinced the rates
+attached to infection flows are correct in their present form across all models.
+Please clarify the writing, or consider amending flows to incorporate the force of
+infection term <U+03BB><sub>i</sub> and make clear those parameters that are region
+dependent. In the caption, consider restating the compartment definitions to assist
+understanding of the model structure.
+Authors response: We agree with the reviewer that the flows do not clearly show
+region dependence of some parameters. Now we have made revisions to the
+notations including the force of infection by adding subscripts where appropriate
+(see figure 2).
+28. Figure 3: Please add labels to y-axes
+Authors response: We have included label on y axis in figure 3
+Supp. Material. Figure 1: High-High, Low-Low etc descriptions were unclear to me.
+Would like to see an explanation of these terms in the caption.
+Authors response: we have now added additional descriptions to clarify these
+concepts (Supplementary material, page 1) as:
+“Figure 1: Spatial distribution of TB in Sheka Zone, 2010-2014. Panel A shows the
+spatial clustering according to local moran’s I, where High-High (also called
+hotspot) indicates that high incidence regions are next to high incidence regions.
+Similarly, Low-Low indicates that areas with significantly lower diseases burden are
+neighbouring regions with significantly low values. High-Low or low high clusters
+indicate spatial outliers where high incidence regions are next to low incidence
+regions. Panel B shows the spatial metapopulation structure used in this analysis
+(red-hotspot region, orange-adjacent region and grey-remote region)”
+29. Supp. Material. Figure 2: Would add value to the figure by stating the fitted
+parametric distribution parameter values within the caption. Can then remove the
+fitted gamma distribution parameter values from the main text.
+Authors response: we have moved the fitted parameter values for the
+distributions from the main text to figure 2 in the supplementary material.
+12
+To demonstrate convergence of the MCMC fitting procedure, please add the sample
+trace plots given in response to Reviewer 2, Comment 11 as a supplementary figure.
+Authors response: We have provided the sample trace plots as a supplementary
+figure (figure 7).
+Reviewer: 2
+This paper has developed and analysed a multi-patch model for the spatiotemporal
+dynamics of tuberculosis in remote regions of rural Ethiopia. The authors propose a
+model that includes two types of latent compartments, and explore different types
+of mixing between individuals, as represented by WAIFW matrices. Using available
+case-notification data, the authors then proceed to identify the best fit for
+parameters, and explore correlations between them. Overall, the paper is very
+interesting, and I am happy to recommend publication, provided the authors
+address the following minor issues.
+Authors response: We thank the reviewer for the positive comments
+1). At the top of p. 5, please mention explicitly in the text which type of coupling
+corresponds to which matrix in Fig. 1, as currently Figs. 1B and C are not
+independently mentioned or discussed.
+Authors response: We have now cited (Figure 1, Models B and C) in our
+description of the models in the main text as (Methods section, Model
+assumptions on spatial coupling subsection, paragraph 2, lines 5-6)
+“Next, we introduced coupling between regions with a single mixing
+parameter, such that neighbouring regions (i.e. hotspot with adjacent and
+adjacent with remote) have equal mixing and non-neighbouring regions mix
+to a lesser degree (i.e. hotspot with remote)(Figure 1, Models B and C)”.
+2) p. 5, 1. 36, the authors mentioned “the terms ßij", but in the matrices,
+there are only ß1, ß2, and ß3. Perhaps, the authors meant that the full
+matrices in Fig. 1 represent ßij, but this then has to be explicitly stated to
+avoid ambiguity.
+Authors response: As the reviewer pointed out, all the elements in the
+matrices of figure 1 represent ßij. However, the matrices we provided were a
+bit confusing and now we have rewritten the matrices clearly and provided
+detailed description to clarify the confusion. (Please see our response to the
+1st reviewer’s comment 2 above and the main text (Methods section, Model
+assumptions on spatial coupling subsection, paragraph 1)
+13
+3) p. 6, l. 8, when introducing ßij, is it really just the number of contacts? I
+mean, shouldn’t it also include the per-contact probability of transmission,
+as otherwise, the model assumes that every single contact results in the
+transmission of infection, which is hardly realistic?
+Authors response: The Bij terms in the matrices are the per capita effective
+contact rates – i.e. contacts that would result in transmission were they to
+occur between an S and an I, and so are not just the number of contacts
+made.
+This is now clarified in the manuscript, (Model assumptions on spatial
+coupling subsection paragraph 1, lines 7-11)
+“……where the diagonal elements, ßii (ß11, ß22 and ß33) of the WAIFW matrix
+represent the average per-capita effective contact rates per year that an
+individual in region i makes with individuals in region i, while the off-
+diagonal elements (ßij) represent the average per-capita effective contact
+rates per year that an individual in region j makes with individuals in region
+i. An effective contact is one that results in transmission of an infection
+provided one of the contact pair is infectious and the other susceptible”.
+4) p. 6, l. 35, the authors say that susceptible individuals are replenished by
+births, which, presumably, is represented by the parameter p in the model.
+Some comment should be made about why this term is taken as a constant
+rather than a constant multiplying the total population, and also its value of
+this parameter is not provided in any of the simulations, so it is not clear
+how it was chosen or estimated.
+Also, there is a clash in notation: the same letter _ is used in the model to
+denote the
+influx of new susceptible, and in matrix D in Fig. 1 to denote a coupling
+proportion.
+Authors response: Apologies for insufficient description there. The p parameter,
+now defined as <U+03C8> to avoid the clash in notations, was multiplied by total population
+of each patch. In this model to keep the population constant, births were replaced
+by the total number of deaths from each compartment as follows: <U+03C8>i =
+14
+<U+0001D707>(<U+0001D446><U+0001D456> + <U+0001D438><U+0001D456> + <U+0001D43F><U+0001D456> + <U+0001D445><U+0001D456> ) + <U+0001D707><U+0001D451> <U+0001D43C><U+0001D456> . We have now provided this description
+underneath the system of ODEs in the main text and model diagram (figure 2) for
+clarity (Please see revisions in the system of ODEs in the main text)
+5) p. 7, parameter p in Fig. 2 and in the model, is not defined, and it should be
+properly
+introduced.
+Authors response: “p is the relative risk of infection of a person exposed to TB
+who has previously been infected (assumed to take values between 0 and 1)”. We
+have now provided descriptions of this term in table 1 and in Figure 2.
+6) p. 8, l. 7, in <U+03BB>ij , I guess the second index should be y in agreement with
+what the authors discuss in l. 16.
+Authors response: Thank you for spotting that inconsistency. We have now
+replaced y by j to index a year.
+7) p. 8, l. 33, what is L in L<U+03B8>?
+Authors response: L refers to likelihood. To avoid confusion, we have provided the
+abbreviation along with the full description in the main text as (Model fitting
+subsection, paragraph 2, line 13):
+“Then the likelihood of the new candidate parameter set <U+03B8>* given the data
+written as L(<U+03B8>*) .......
+8) p. 8, ll. 45-47, please be consistent with CDR and write either 0.65 and 0.6, or 65%
+and
+60%.
+Authors response: We have now rewritten 60% as 0.60 for consistency. (Please see
+parameterisation subsection, paragraph 1, line 3)
+9) p. 10, it is not clear how could model C perform better than D if model D also
+includes
+C as a particular case for the choice of parameters <U+03B9> = <U+03C1>2 and p = <U+03C1>. The authors
+should
+provide and clear explanation of why this is the case.
+Authors response: The reviewer is correct in saying that model D is a
+generalisation of model C and should thus be at least as good a fit, hence the
+deviance of model D should be lower than the deviance of model C (which it is). The
+DIC however penalises model D with the addition of the parameters to the
+calculation. Hence DIC (like AIC) provides an indication of both goodness of fit and
+model parsimony, in an effort to find the best model in terms of these two traits.
+This has now been clarified in the manuscript…
+In the first results paragraph under model comparisons section we write
+15
+“DIC assesses different models in terms of their trade-off between goodness
+of fit and model parsimony (4)”.
+10) p. 11, I don’t understand what is shown by blue lines in Fig. 3: the authors say
+that the
+dashed blue lines represent “observed notification rates over five years", but since
+these are
+all vertical lines of equal height, it is not at all clear what they actually represent, or
+how
+they fit against the simulated notification rates. The authors should comment on
+this.
+Authors response: Yes, the blue vertical lines are the observed notification rates.
+Because we have only one notification rate per year, each vertical line represents
+the position of the value of notification rate in relation to the distribution of the
+simulated notification. As an observed notification rate per year has no frequency
+distribution, and is a scalar quantity, the height of the blue vertical line has no
+meaning.
+I also have two small suggestions:
+11). p. 4, l. 5: please change \hotspots a remote" to hotspots to a remote"
+Authors response: We have revised the section and the revised section reads as
+“In this study, we aim to understand the geographic spread of TB
+from hotspots to regions located at different distances in a remote
+region of Ethiopia”.
+12). p. 12, l. 53, change “a unit of 5 into multiples of 5%".
+Authors response: We have incorporated the suggestion. The revision can be
+found in the methods section, Simulation of the impact of interventions in hotspots
+on the spatial spread of TB subsection, paragraph 1, line 4) as
+“…. We subsequently modified the case detection rate only in the hotspots
+from 65% (baseline value) using increments of 5% to understand the effect
+this might have on the burden of TB in the two non-hotspot regions”
+References
+1. Sattenspiel L, Lloyd A. The geographic spread of infectious diseases: models
+and applications: Princeton University Press; 2009.
+2. Shaweno D, Trauer J, Denholm J, McBryde E. The role of geospatial hotspots
+in the spatial spread of tuberculosis in rural Ethiopia: A mathematical modelling.
+Dryad Digital Repository. https://doi.org/10.5061/dryad.fg3js19. 2018.
+3. Gelman A, Carlin JB, Stern HS, Rubin DB. Bayesian data analysis, 2nd edn.
+Texts in Statistical Science. Boca Raton, London, NewYork, Washington DC:
+Chapman & Hall, CRC; 2004.
+16
+4. Spiegelhalter DJ, Best NG, Carlin BP, Van Der Linde A. Bayesian measures of
+model complexity and fit. Journal of the Royal Statistical Society: Series B
+(Statistical Methodology). 2002;64(4):583-639.
+5. DIC: Deviance Information Criteria [cited 2018. Available from:
+https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-dic/.
+6. Vynnycky E, White R. An introduction to infectious disease modelling:
+Oxford University Press; 2010.
+7. Hernández-Garduño E, Cook V, Kunimoto D, Elwood RK, Black WA,
+FitzGerald JM. Transmission of tuberculosis from smear negative patients: a
+molecular epidemiology study. Thorax. 2004;59(4):286-90.
+http://dx.doi.org/10.1136/thx.2003.011759.
+8. World Health Organisation. Global tuberculosis report 2017. Switzerland,
+Geneva: World Health Organisation; 2017.
+9. Grenfell B. Cities and villages: infection hierarchies in a measles
+metapopulation. Ecology letters. 1998;1:68-70.
+10. Bolker B, Grenfell B. Space, persistence and dynamics of measles epidemics.
+Philos Trans R Soc Lond B Biol Sci. 1995;348(1325):309-20.
+http://dx.doi.org/10.1098/rstb.1995.0070.
+11. Grenfell B. Chance and chaos in measles dynamics. Journal of the Royal
+Statistical Society Series B (Methodological). 1992:383-98.
+17
+ppendix C
+mments to Author - RSOS-180887.R1
+s is a resubmission of a paper developing spatially coupled models to estimate the geographical
+ead of TB from hotspots to distant regions in rural Ethiopia. I appreciate the care the authors have
+en to address reviewer comments. For me, the manuscript is much clearer. Please find below line-by-
+comments detailing remaining minor concerns.
+thods
+e 5 (Parameter notation in Model D): The explanation surrounding Figure 1 has vastly improved. To
+her simplify notation, I would look to have all parameters surrounding connectivity use notation
+olving <U+0001D70C>. This was the intention of my related comment on this item in my initial review, and I
+logise to the authors if I did not convey the change I had in mind clearly. With that in mind, in Model
+would revert the use of <U+0001D70C>, <U+0001D70B>, <U+0001D70F> to the notation <U+0001D70C><U+0001D43B><U+0001D434> , <U+0001D70C><U+0001D434><U+0001D445> , <U+0001D70C><U+0001D43B><U+0001D445> that was previously used in Table 2 and
+plementary Material Figure 5.
+e 6 (Force of Infection equation): Below the equation, it is stated that <U+0001D43C><U+0001D457> refers to number of
+ctious TB cases (in spatial group <U+0001D457>). State <U+0001D43C> is also stated to denote individuals with active TB,
+ough only a fraction of them are infectious (if I have understood correctly?). To avoid confusion, I
+ommend restating the definition of <U+0001D43C><U+0001D457> as being the number of individuals with active TB in spatial
+up <U+0001D457>, and then including the fraction of infection cases term within the force of infection equation
+e next comment).
+es 7-8 (System of ODEs): The fraction of infection cases term (<U+0001D711>) is omitted from the equations.
+er add to each individual equation where required, or place into the force of infection term. If
+ing to the force of infection term, please also amend Figure 2 to reflect such a change.
+e 8 (System of ODEs): When stating the use of Runge-Kutta algorithm, add that the package that was
+d and the software to perform the numerical calculations were ode45 and Matlab, respectively.
+e 9 (Simulation of the impact of interventions, 2nd line): Thanks to the authors for adding this detail
+he methods. My understanding is this simulation work was done with the best fitting model, and so
+uld add “we first ran the best fitting model” in place of “we first ran the model”.
+e 9 (Simulation of the impact of interventions): The added text states the case detection rate (CDR)
+percentage. This conflicts with the Parameterisation subsection and Table 1, where CDR are given as
+portions. To maintain consistency, one set should be modified so reporting styles match.
+ults
+e 10 (Model comparison, opening sentence): The passage “DIC assess different models in terms of
+ir trade-off between goodness of fit and model parsimony” would be better placed at the point DIC is
+oduced in the methods. Please alter the positioning of this sentence.
+e 13 (Analysis of covariance of fitted model parameters posterior probability distributions): This
+agraph retains the notation <U+0001D6FD>1 , <U+0001D6FD>2 , <U+0001D6FD>3 . Please amend to <U+0001D6FD>11 , <U+0001D6FD>22 , <U+0001D6FD>33 for notation to agree with
+re 4.
+e 13 (Analysis of covariance of fitted model parameters posterior probability distributions): It is
+ed in the Parameter estimation subsection of the results that the focus of the rest of the results
+ion is on Model C. I assume this carries over all subsequent subsections in the results too. To erase
+doubt, consider reiterating that Model C is being studied at the beginning of the covariance
+ection, with a potential rephrasing to “We further assessed the behaviour of Model C by
+mining…”
+e 13 (simulation subsection): Within the newly added text, CDR are given as percentages. For
+sistency with the CDR description outlined in the methods (Parameterisation subsection), either alter
+roportions or amend the CDRs stated in the methods to percentages.
+plementary Material
+e 1, Deviance Information criteria section: Amend “approach presented in in Spiegelhalter”.
+es 1-2, Deviance Information criteria section: For full clarity, stating PD mathematically would benefit
+explanation of the DIC measure.
+re 2: <U+0001D6FC>, <U+0001D6FD> are not defined in the figure caption. The figure would be enhanced by providing
+tional information in the caption on the parameter being analysed in each panel, with the type of
+ributions that were fitted to each of the posterior distributions.
+re 5: <U+0001D6FD> subscripts to be updated
+puts from the candidate models, Figures 4-7: Though not required, these figures are currently not
+renced. There may be an appropriate point in the main text to direct the reader to view these
+res. For example, within the Results-Parameter estimation subsection. Possible text addition:
+e results of this model are the focus of the rest of this Results section (for outputs from other
+didate models, see Supplementary material, Figures 4-7)”
+Appendix D
+The following document contains our responses to the issues raised by
+associate editors and reviewers. Please find our responses embedded in the
+following text after each reviewer’s comments.
+Reviewers comments
+Methods
+Page 5 (Parameter notation in Model D): The explanation surrounding Figure 1 has
+vastly improved. To further simplify notation, I would look to have all parameters
+surrounding connectivity use notation involving <U+0001D70C>. This was the intention of my
+related comment on this item in my initial review, and I apologise to the authors if I
+did not convey the change I had in mind clearly. With that in mind, in Model D I
+would revert the use of <U+0001D70C>, <U+0001D70B>, <U+0001D70F> to the notation <U+0001D70C><U+0001D43B><U+0001D434>, <U+0001D70C><U+0001D434><U+0001D445>, <U+0001D70C><U+0001D43B><U+0001D445> that was previously
+used in Table 2 and Supplementary Material Figure 5.
+Authors response: We have revised figure 1, table 2 and Figure 5 in supplementary
+material.
+A B C D
+ß11 0 0 ß11 <U+03C1>ß22 <U+03C1>2 ß22 ß11 <U+03C1>ß22 <U+03C1>2 ß33
+[ 0 ß22 0 ] [ <U+03C1>ß11 ß22 <U+03C1>ß22 ] [ <U+03C1>ß11 ß22 <U+03C1>ß33 ]
+0 0 ß33 2
+<U+03C1> ß11 <U+03C1>ß22 ß22 <U+03C1>2 ß11 <U+03C1>ß22 ß33
+ß11 <U+03C1>HA ß22 <U+03C1>HR ß33
+[<U+03C1>HA ß11 ß22 <U+03C1>AR ß33 ]
+<U+03C1>HR ß11 <U+03C1>AR ß22 ß33
+Page 6 (Force of Infection equation): Below the equation, it is stated that <U+0001D43C><U+0001D457> refers to
+number of infectious TB cases (in spatial group <U+0001D457>). State <U+0001D43C> is also stated to denote
+individuals with active TB, although only a fraction of them are infectious (if I have
+understood correctly?). To avoid confusion, I recommend restating the definition
+of <U+0001D43C><U+0001D457> as being the number of individuals with active TB in spatial group <U+0001D457>, and then
+including the fraction of infection cases term within the force of infection equation
+(see next comment).
+Authors response: We thank the reviewer for noticing that. We have restated the
+phrase below the force of infection equation in page 6 as
+“Ij and Nj refer to the number of individuals with active TB and total population in
+spatial group j respectively”.
+We have also included the fraction of infectious cases(<U+03D5>) term into the force of
+infection equation and made similar changes to figure 2.
+Pages 7-8 (System of ODEs): The fraction of infection cases term (<U+0001D711>) is omitted from
+the equations. Either add to each individual equation where required, or place into
+the force of infection term. If adding to the force of infection term, please also
+amend Figure 2 to reflect such a change.
+Authors response: To simplify notations in the system of ODE, we have now
+included the fraction of infection cases term (<U+0001D711>) into the force of infection
+equation. Please see our response to the previous comment.
+Page 8 (System of ODEs): When stating the use of Runge-Kutta algorithm, add that
+the package that was used and the software to perform the numerical calculations
+were ode45 and Matlab, respectively.
+Authors response: We have now incorporated the suggested comments. The
+revision now reads (please see beneath system of ODEs)
+The numerical solutions were obtained using ode45 in Matlab 2015b.
+Page 9 (Simulation of the impact of interventions, 2nd line): Thanks to the authors
+for adding this detail to the methods. My understanding is this simulation work was
+done with the best fitting model, and so would add “we first ran the best fitting
+model” in place of “we first ran the model”.
+Authors response: suggested changes are undertaken. The section (Page 9
+(Simulation of the impact of interventions, 2nd line)) now reads
+“……we first ran the best candidate model to equilibrium….”
+Page 9 (Simulation of the impact of interventions): The added text states the case
+detection rate (CDR) as a percentage. This conflicts with the Parameterisation
+subsection and Table 1, where CDR are given as proportions. To maintain
+consistency, one set should be modified so reporting styles match.
+Authors response: To maintain consistency, we have reverted case detection rate
+(CDR) expressed as proportion in the parameterisation subsection (lines 2-3) and
+Table 1 back to percentages.
+Results
+Page 10 (Model comparison, opening sentence): The passage “DIC assess different
+models in terms of their trade-off between goodness of fit and model parsimony”
+would be better placed at the point DIC is introduced in the methods. Please alter
+the positioning of this sentence.
+Authors response: We have now moved the opening sentence into the methods
+section (Model fitting subsection, paragraph 2, line 18).
+Page 13 (Analysis of covariance of fitted model parameters posterior probability
+distributions): This paragraph retains the notation <U+0001D6FD>1, <U+0001D6FD>2, <U+0001D6FD>3. Please amend to <U+0001D6FD>11,
+<U+0001D6FD>22,33 for notation to agree with Figure 4.
+Authors response: we have amended as suggested so that the notation is
+consistent throughout the document
+Page 13 (Analysis of covariance of fitted model parameters posterior probability
+distributions): It is stated in the Parameter estimation subsection of the results that
+the focus of the rest of the results section is on Model C. I assume this carries over
+all subsequent subsections in the results too. To erase any doubt, consider
+reiterating that Model C is being studied at the beginning of the covariance
+subsection, with a potential rephrasing to “We further assessed the behaviour of
+Model C by examining…”
+Authors response: We have now rephrased the beginning of this subsection as
+suggested.
+Page 13 (simulation subsection): Within the newly added text, CDR are given as
+percentages. For consistency with the CDR description outlined in the methods
+(Parameterisation subsection), either alter to proportions or amend the CDRs stated
+in the methods to percentages.
+Authors response: We have reverted case detection proportions in the
+parameterisation subsection into percentages such that case detection in whole
+document is now expressed as percentages.
+Supplementary Material
+Page 1, Deviance Information criteria section: Amend “approach presented in in
+Spiegelhalter”.
+Authors response: amended as suggested
+Pages 1-2, Deviance Information criteria section: For full clarity, stating PD
+mathematically would benefit the explanation of the DIC measure.
+Authors response: We have included the mathematical expression for the PD term
+as follows. Please see supplementary material page 2 equations 3 and 4.
+<U+0001D443><U+0001D437> = E<U+0001D703>|<U+0001D466> [<U+0001D437>] - <U+0001D437>(<U+0001D438><U+0001D703>|<U+0001D466> [<U+0001D703>]) …………………………………… [3]
+= <U+0001D437>¯ - <U+0001D437>(<U+0001D703>¯ )………………………………………………….... [4]
+Figure 2: <U+0001D6FC>, <U+0001D6FD> are not defined in the figure caption. The figure would be enhanced
+by providing additional information in the caption on the parameter being
+analysed in each panel, with the type of distributions that were fitted to each of the
+posterior distributions.
+Authors response: We have provided the descriptions of a and ß terms in a
+caption of Figure 2. We have also provided the distribution from which the
+parameters are derived.
+Figure 5: <U+0001D6FD> subscripts to be updated
+Authors response: We have updated the subscripts of ßs in figure 5
+Outputs from the candidate models, Figures 4-7: Though not required, these figures
+are currently not referenced. There may be an appropriate point in the main text
+to direct the reader to view these figures. For example, within the Results-
+Parameter estimation subsection. Possible text addition:
+“The results of this model are the focus of the rest of this Results section (for
+outputs from other candidate models, see Supplementary material, Figures 4-7)”
+Authors response: The suggested phrased is inserted in the results section,
+Parameter estimation subsection, paragraph 1, lines 3-5.
+Society Open

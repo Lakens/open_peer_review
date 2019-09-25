@@ -1,0 +1,493 @@
+PPIMpred: a web server for high-throughput screening of
+small molecules targeting protein–protein interaction
+Tanmoy jana, Abhirupa Ghosh, Sukhen Das Mandal, Raja Banerjee and Sudipto Saha
+Article citation details
+R. Soc. open sci. 4: 160501.
+http://dx.doi.org/10.1098/rsos.160501
+Review timeline
+Original submission: 11 July 2016 Note: Reports are unedited and appear as
+1st revised submission: 13 January 2017 submitted by the referee. The review history
+2nd revised submission: 15 March 2017 appears in chronological order.
+Final acceptance: 20 March 2017
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-160501.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+1. The authors must showcase their benchmarks are robust and trust worthy. This can be done
+by:
+1a. The authors should analyze a randomized chemical structure space. Ie feed the SVM model
+compounds that do not exists or is likely unknown. This would give a very conservative
+assessment of performance.
+1b. The authors should ensure to reduce their chemical structure space based on redundancy. Ie
+similar structures should be removed in order to avoid the test set is biased and thus
+overassement of performance is the result.
+1c. The authors should ensure they keep part of their training set completely out of the training
+and strictly use it for evaluation of the SVM models.
+2. The authors should describe how their models are supported by known protein structures. Can
+they explain their predictions from a mechanistic point of view?
+3. The authors should compare directly with other methods using the same data for those cases
+they are available.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This paper describes an in silico method for screening of small molecules for targeting specific
+protein-protein interactions. The publication describes an associated website which appears
+3
+effective and relatively simple to use, according to the examples. I would like to make the
+following suggestions:
+1. The paper describes an in silico example validated by a second in silico method. However,
+many of the compounds in the training set are described in the ChEMBL database with associated
+IC50 data. For those compounds for which a valid SAR can be accessed, it would be interesting to
+see how this correlates with the order predicted by the algorithm of the effectiveness of these
+molecules as inhibitors of particular protein complexes.
+2. A number of specific PPIMs which have been clinically tested are described at the start of the
+manuscript. It may the value of this methodology clearer to the user if the results of these
+examples when run through the algorithm (Nutlin 3a (Mdm2/P53), ABT-263 (Bcl2/Bak), MI-269,
+and GX15-070 (c-Myc/Max) are described in full in the main manuscript.
+3 If users have interest in a different PPI target, it is not made clear how this can be integrated
+into the existing tool, if at all. Whilst it is clear the authors have selected only a limited number of
+examples to exemplify the methodology, the tool will be of limited use unless it can be extended
+to encompass other targets.
+Minor points
+4. "so we selected ten times
+of positive set from random small chemicals as a negative set." - this does not make sense, please
+rewrite.
+5. "Due to small number of positive set in c-Myc/Max," - suggest this is rewritten as "Due to the
+small size of the positive set in c-Myc/Max,
+The overall standard of written English needs some improvement.
+Minor points
+1.
+label_end_comment
+Decision letter (RSOS-160501)
+20-Dec-2016
+Dear Dr Saha,
+The editors assigned to your paper ("PPIMpred: A web server for high throughput screening of
+small molecules targeting Protein- Protein Interaction") have now received comments from
+reviewers. Overall, they are supportive of your work and we would like you to revise your paper
+in accordance with the referee and Associate Editor suggestions which can be found below (not
+including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Jan-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+4
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160501
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+5
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Royal Society Open Science
+on behalf of Katrin Rittinger
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+1. The authors must showcase their benchmarks are robust and trust worthy. This can be done
+by:
+1a. The authors should analyze a randomized chemical structure space. Ie feed the SVM model
+compounds that do not exists or is likely unknown. This would give a very conservative
+assessment of performance.
+1b. The authors should ensure to reduce their chemical structure space based on redundancy. Ie
+similar structures should be removed in order to avoid the test set is biased and thus
+overassement of performance is the result.
+1c. The authors should ensure they keep part of their training set completely out of the training
+and strictly use it for evaluation of the SVM models.
+2. The authors should describe how their models are supported by known protein structures. Can
+they explain their predictions from a mechanistic point of view?
+3. The authors should compare directly with other methods using the same data for those cases
+they are available.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+This paper describes an in silico method for screening of small molecules for targeting specific
+protein-protein interactions. The publication describes an associated website which appears
+effective and relatively simple to use, according to the examples. I would like to make the
+following suggestions:
+6
+1. The paper describes an in silico example validated by a second in silico method. However,
+many of the compounds in the training set are described in the ChEMBL database with associated
+IC50 data. For those compounds for which a valid SAR can be accessed, it would be interesting to
+see how this correlates with the order predicted by the algorithm of the effectiveness of these
+molecules as inhibitors of particular protein complexes.
+2. A number of specific PPIMs which have been clinically tested are described at the start of the
+manuscript. It may the value of this methodology clearer to the user if the results of these
+examples when run through the algorithm (Nutlin 3a (Mdm2/P53), ABT-263 (Bcl2/Bak), MI-269,
+and GX15-070 (c-Myc/Max) are described in full in the main manuscript.
+3 If users have interest in a different PPI target, it is not made clear how this can be integrated
+into the existing tool, if at all. Whilst it is clear the authors have selected only a limited number of
+examples to exemplify the methodology, the tool will be of limited use unless it can be extended
+to encompass other targets.
+Minor points
+4. "so we selected ten times
+of positive set from random small chemicals as a negative set." - this does not make sense, please
+rewrite.
+5. "Due to small number of positive set in c-Myc/Max," - suggest this is rewritten as "Due to the
+small size of the positive set in c-Myc/Max,
+The overall standard of written English needs some improvement.
+Author's Response to Decision Letter for (RSOS-160501)
+See Appendix A.
+label_version_2
+RSOS-160501.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+7
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+Ad 1a
+The authors still need to conduct the analysis asked for. Namely of a randomized chemical
+database. They should randomize the structures they input to the algorithm in order to get a
+baseline or background performance metric. They have not conducted a randomized trial, only
+repeated their analysis on a larger database.
+Ad 1b
+The authors should repeat their analysis at 90% and 80% cutoffs for chemical structure similarity
+and report their performance metrics at these levels. They currently only report at exclusion of
+compounds that are 100% identical.
+Once these points are performed successfully the study can be accepted for publication.
+label_end_comment
+Decision letter (RSOS-160501.R1)
+21-Feb-2017
+Dear Dr Saha:
+The revision of manuscript ID RSOS-160501.R1 entitled "PPIMpred: A web server for high
+throughput screening of small molecules targeting Protein- Protein Interaction" which you
+submitted to Royal Society Open Science, has now been reviewed by the original reviewer. The
+comments of the reviewer(s) are included at the bottom of this letter.
+While the reviewer acknowldeges that the revisions made have improved the manuscript, they
+feel that there are still two outstanding issues that need to be addressed to ensure that the data
+presented fully support the conclusions drawn.
+We therefore invite you to submit a copy of your revised paper within three weeks (i.e. by the 16-
+Mar-2017). If we do not hear from you within this time then it will be assumed that the paper has
+been withdrawn. In exceptional circumstances, extensions may be possible if agreed with the
+Editorial Office in advance. We do not allow multiple rounds of revision so we urge you to make
+every effort to fully address all of the comments at this stage. If deemed necessary by the Editors,
+your manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+8
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+9
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Katrin Rittinger
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+Ad 1a
+The authors still need to conduct the analysis asked for. Namely of a randomized chemical
+database. They should randomize the structures they input to the algorithm in order to get a
+baseline or background performance metric. They have not conducted a randomized trial, only
+repeated their analysis on a larger database.
+Ad 1b
+The authors should repeat their analysis at 90% and 80% cutoffs for chemical structure similarity
+and report their performance metrics at these levels. They currently only report at exclusion of
+compounds that are 100% identical.
+Once these points are performed successfully the study can be accepted for publication.
+Author's Response to Decision Letter for (RSOS-160501.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-160501.R2)
+20-Mar-2017
+Dear Dr Saha,
+I am pleased to inform you that your manuscript entitled "PPIMpred: A web server for high
+throughput screening of small molecules targeting Protein- Protein Interaction" is now accepted
+for publication in Royal Society Open Science.
+10
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+pendix A
+Response to the queries raised by the referees
+thank the reviewers for their careful assessment of the manuscript. We have done
+re work and revised manuscript as suggested by the reviewers. In the revised
+nuscript we have shown that predicted SVM scores matches reasonably well with IC50
+ues of known small chemical modulators of Mdm2/P53 and Bcl2/Bak in training sets.
+e prediction of the PPIMs to known protein structures were studied from structural point
+iew and it was observed the predicted small chemical modulators bind to same groove
+known protein structures of Mdm2 and Bcl2. In addition, we have shown that the
+dicted SVM scores also match well with the docking scores of known small chemical
+dulators against Mdm2/P53 and Bcl2/Bak complexes. All the associated figures and
+les were reported in supplementary information. As suggested, the SVM scores of
+wn clinically tested PPIMs of Mdm2/P53 and Bcl2/Bak were reported in the
+nuscript. We have used the structural clustering of positive small chemical protein-
+tein interaction modulator datasets of all the three complexes to make sure that no two
+micals have identical structures in training and testing sets.
+sponse to Comments from Reviewer 1
+mments to the Author(s)
+The authors must showcase their benchmarks are robust and trust worthy.
+s can be done by:
+The authors should analyze a randomized chemical structure space. Ie feed
+SVM model compounds that do not exists or is likely unknown. This would
+e a very conservative assessment of performance.
+sponse: We thank the reviewer for the critical comments and suggestions. We have
+ted the SVM models on large chemical dataset from National Cancer Institute
+abase as mentioned in pages 6 (line nos.1-4) and 12 (line nos. 1-23).
+The authors should ensure to reduce their chemical structure space based on
+undancy. Ie similar structures should be removed in order to avoid the test set
+biased and thus over assessment of performance is the result.
+sponse: We have performed structure clustering analysis on the positive datasets
+itive datasets of Mdm2/P53, Bcl2/Bak, and c-Myc/Max consisted of 250, 735 and 15
+all molecules respectively. We observed that no two chemicals were 100% identical
+ach positive datasets as mentioned in the revised version, page 5 (line nos. 6-8).
+The authors should ensure they keep part of their training set completely out
+the training and strictly use it for evaluation of the SVM models.
+sponse: We have used 20% of the positive datasets for three case studies as blind
+asets, which was not used in training (pages 5, line nos. 18-22. The performance of
+M on the blind dataset is reported in the revised version (page 11, line nos. 11-19).
+The authors should describe how their models are supported by known protein
+uctures. Can they explain their predictions from a mechanistic point of view?
+sponse: We have addressed this point in the revised version (page 11, line nos. 3-
+and included supplementary Figures S7 (a and b). By docking studies it was shown
+t the small chemicals with high SVM scores bind to the same groove of MDM2 and
+2 structures.
+The authors should compare directly with other methods using the same data
+those cases they are available.
+sponse: We have used 2P2I dataset (page 6 line no. 6) in our SVM models and the
+formance is reported in the revised version (13, line nos. 1-16)
+sponse to Comments from Reviewer 2
+mments to the Author(s)
+s paper describes an in silico method for screening of small molecules for
+geting specific protein-protein interactions. The publication describes an
+sociated website which appears effective and relatively simple to use, according
+the examples. I would like to make the following suggestions:
+The paper describes an in silico example validated by a second in silico method.
+wever, many of the compounds in the training set are described in the ChEMBL
+abase with associated IC50 data. For those compounds for which a valid SAR
+n be accessed, it would be interesting to see how this correlates with the order
+dicted by the algorithm of the effectiveness of these molecules as inhibitors of
+ticular protein complexes.
+sponse: We thank the reviewer for the comments which eventually helped us to
+engthen the manuscript scientifically. We have performed the analysis of IC50 value
+d SVM scores of known chemicals from training sets as reported in the revised
+sion (page 10 (lines 19-23) and Supplementary figures S5 (a,b).
+A number of specific PPIMs which have been clinically tested are described at
+start of the manuscript. It may the value of this methodology clearer to the user
+the results of these examples when run through the algorithm (Nutlin 3a
+dm2/P53), ABT-263 (Bcl2/Bak), MI-269, and GX15-070 (c-Myc/Max) are described
+ull in the main manuscript.
+sponse: We have added SVM scores of these known chemicals in page 14 (line no.
+22) of revised manuscript.
+users have interest in a different PPI target, it is not made clear how this can
+integrated into the existing tool, if at all. Whilst it is clear the authors have
+ected only a limited number of examples to exemplify the methodology, the
+l will be of limited use unless it can be extended to encompass other targets.
+sponse: We have added a section on selection of protein-protein interaction
+mplex used in our study in the revised version (Page 9, line nos. 10-15 and
+pplementary figures S2). For any machine learning techniques, adequate number of
+itive examples are required for training and testing.
+or points
+"so we selected ten times
+positive set from random small chemicals as a negative set." - this does not
+ke sense, please rewrite.
+sponse: Done
+Due to small number of positive set in c-Myc/Max," - suggest this is rewritten
+"Due to the small size of the positive set in c-Myc/Max,
+sponse: Done
+e overall standard of written English needs some improvement.
+sponse: We have asked a senior colleague to read and check the manuscript for
+mmatical errors.
+thank the reviewer for careful assessment of the manuscript. In the revised manuscript we have
+uded the randomized trial and have tested our proposed algorithm on non-redundant dataset at
+ctural similarity threshold values of 0.8 and 0.9 .
+ponse to Comments from Reviewer 1
+mments to the Author(s)
+1a
+authors still need to conduct the analysis asked for. Namely of a randomized chemical database.
+y should randomize the structures they input to the algorithm in order to get a baseline or
+kground performance metric. They have not conducted a randomized trial, only repeated their
+lysis on a larger database.
+ponse: We have performed randomized trials for Mdm2/P53 and Bcl2/Bak datasets as
+ntioned in page 9 (line nos. 4-8) and page 12 (line nos. 2-3). The AUC value for randomized
+asets were 0.55 and 0.52 for Mdm2/P53 and Bcl2/Bak respectively (Fig 1a, Fig 1b).
+1b
+authors should repeat their analysis at 90% and 80% cutoffs for chemical structure similarity
+report their performance metrics at these levels. They currently only report at exclusion of
+pounds that are 100% identical.
+ponse: We have performed the classification on 90% and 80% cuttoffs of chemical structural
+ilarity in Mdm2/P53 and Bcl2/Bak datasets as reported in revised version (Page 6, line nos. 1-7;
+e 11, line nos. 20-23; page 12, line nos. 1-5 and Figs 1a and 1b; Figs S5a and S5b).
+Society Open

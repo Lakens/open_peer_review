@@ -1,0 +1,694 @@
+Assessing the use of mobile phone data to describe
+recurrent mobility patterns in spatial epidemic models
+Cecilia Panigutti, Michele Tizzoni, Paolo Bajardi, Zbigniew Smoreda and Vittoria Colizza
+Article citation details
+R. Soc. open sci. 4: 160950.
+http://dx.doi.org/10.1098/rsos.160950
+Review timeline
+Original submission: 22 November 2016 Note: Reports are unedited and appear as
+Revised submission: 8 March 2017 submitted by the referee. The review history
+Final acceptance: 19 April 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-160950.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Andrea Rinaldo)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+As I wrote in my attached remarks (where very minor clarifications are suggested), this is an
+interesting and timely paper on a very hot topic where the expertise shown is quite remarkable.
+Kudos! (Appendix A.)
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The manuscript, “Assessing the use of mobile phone data to describe recurrent mobility patterns
+in spatial epidemic models,” by Panigutti et al. describes a simulation based assessment of the
+differences between influenza-like-illness outbreaks spreading on social networks derived from
+census workflow data and those derived from cell phone data. As the authors discuss, there is a
+large, and growing literature, and the costs/benefits associated with different kinds of mobility
+data for spatial epidemiology. However, there have been few more generalized studies focusing
+on how different networks arising from different data sets can lead to different outbreak
+dynamics. As a result, this paper is well timed. Nevertheless, the manuscript would benefit from
+an expanded discussion of the existing literature and analysis of the model results. I hope the
+following questions and suggestions will improve the manuscript:
+Introduction-
+1.) There are two additional papers I am familiar with on how mobile phone data are being
+leveraged outside of spatial epi.
+Martinez-Cesena, E. A., Mancarella, P., Ndiaye, M., & Schläpfer, M. (2015). Using mobile phone
+data for electricity infrastructure planning. arXiv preprint arXiv:1504.03899.
+3
+Schläpfer, M., Bettencourt, L. M., Grauwin, S., Raschke, M., Claxton, R., Smoreda, Z., ... & Ratti, C.
+(2014). The scaling of human interactions with city size. Journal of the Royal Society Interface,
+11(98), 20130789.
+2.) Line 26 - The authors state, "..which have been shown to perform poorly in some developing
+settings..." and cite two papers. My understanding of the first cited paper, 12 Wesolowski et al., is
+that there findings had more to do with a specific pattern of large-scale human movement, as
+opposed to just being an issue with a "developing country." If you agree, I would suggest
+modifying your description to better reflect their findings.
+Methods-
+1.) When performing the renormalization based on cell provider coverage, is it possible that other
+biases might be involved, which could effect network structure? For example, does the sample
+fraction vary by socioeconomic indicators at the commune or district level? Age distribution?
+etc.? Trying to analyze and/or correct for these may be beyond the scope of this analysis, but
+should at least be discussed as potential explanations for any differences found between census
+and cell-based networks.
+2.) For the model evaluation/selection piece, did you consider using alternative procedures such
+as regularization via something like lasso or ridge penalties and/or performing model selection
+based on the performance on held-out data, i.e. cross-validation?
+3.) For AIC model selection did you use forward or reverse model selection? See citation below
+for a review of potential issues associated with step-wise-like selection using AIC.
+Whittingham, M. J., Stephens, P. A., Bradbury, R. B., & Freckleton, R. P. (2006). Why do we still
+use stepwise modelling in ecology and behaviour?. Journal of animal ecology, 75(5), 1182-1189.
+4.) Did you consider comparing the resulting correlation matrix in disease prevalence across the
+simulated outbreaks to influenza surveillance data from France?
+Results-
+1.) line 203 - "splayed a highly variable similarity" is confusing. Do you mean the degree of
+similarity between outbreaks on the two networks, census and mobile phone, varied?
+2.) Regarding arrival times, did you compare the networks using the similarity in message
+passing centralities? At least on a tree, or locally tree-like parts of the graph, this would be an
+exact answer to risk differences.
+Karrer, B., & Newman, M. E. (2010). Message passing approach for general epidemic models.
+Physical Review E, 82(1), 016101.
+3.) What other properties varied by network? Outbreak size? The speed of spread? etc.?
+Discussion-
+1.) It would be helpful to expand on how some of the modeling assumptions, e.g., mass-action
+mixing within nodes and random censoring to normalize the population sizes, might bias our
+interpretation of the results.
+2.) How do your results compare to and advance beyond Tizzoni et al. 2014?
+Tizzoni, M., Bajardi, P., Decuyper, A., King, G. K. K., Schneider, C. M., Blondel, V., ... & Colizza,
+V. (2014). On the use of human mobility proxies for modeling epidemics. PLoS Comput Biol,
+10(7), e1003716.
+4
+3.) There is a vast literature on differences/similarities between census and mobile phone
+mobility patters. Are there lessons or findings from that literature that relate to your results? For
+example,
+Becker, R., Cáceres, R., Hanson, K., Isaacman, S., Loh, J. M., Martonosi, M., ... & Volinsky, C.
+(2013). Human mobility characterization from cellular network data. Communications of the
+ACM, 56(1), 74-82.
+4.) There are a few additional papers on mobility and disease, which should probably be
+discussed.
+Oliver, N., Matic, A., & Frias-Martinez, E. (2015). Mobile Network data for public health:
+opportunities and challenges. Frontiers in public health, 3.
+Perez-Saez, J., Mari, L., Bertuzzo, E., Casagrandi, R., Sokolow, S. H., De Leo, G. A., ... &
+Karambiri, H. (2015). A theoretical analysis of the geography of schistosomiasis in Burkina Faso
+highlights the roles of human mobility and water resources development in disease transmission.
+PLoS Negl Trop Dis, 9(10), e0004127.
+Wesolowski, A., O’Meara, W. P., Eagle, N., Tatem, A. J., & Buckee, C. O. (2015). Evaluating spatial
+interaction models for regional mobility in Sub-Saharan Africa. PLOS Comput Biol, 11(7),
+e1004267.
+Wesolowski, A., Buckee, C. O., Engø-Monsen, K., & Metcalf, C. J. E. (2016). Connecting mobility
+to infectious diseases: the promise and limits of mobile phone data. Journal of Infectious Diseases,
+214(suppl 4), S414-S420.
+Minor comment-
+1.) There are a number of typos throughout the manuscript, which should be corrected.
+label_end_comment
+Decision letter (RSOS-160950)
+13-Feb-2017
+Dear Dr Tizzoni,
+The editors assigned to your paper ("Assessing the use of mobile phone data to describe recurrent
+mobility patterns in spatial epidemic models") have now received comments from reviewers. We
+would like you to revise your paper in accordance with the referee and Associate Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 08-Mar-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+5
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160950
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+6
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+As I wrote in my attached remarks (where very minor clarifications are suggested), this is an
+interesting and timely paper on a very hot topic where the expertise shown is quite remarkable.
+Kudos!
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The manuscript, “Assessing the use of mobile phone data to describe recurrent mobility patterns
+in spatial epidemic models,” by Panigutti et al. describes a simulation based assessment of the
+differences between influenza-like-illness outbreaks spreading on social networks derived from
+census workflow data and those derived from cell phone data. As the authors discuss, there is a
+large, and growing literature, and the costs/benefits associated with different kinds of mobility
+data for spatial epidemiology. However, there have been few more generalized studies focusing
+on how different networks arising from different data sets can lead to different outbreak
+dynamics. As a result, this paper is well timed. Nevertheless, the manuscript would benefit from
+an expanded discussion of the existing literature and analysis of the model results. I hope the
+following questions and suggestions will improve the manuscript:
+Introduction-
+1.) There are two additional papers I am familiar with on how mobile phone data are being
+leveraged outside of spatial epi.
+Martinez-Cesena, E. A., Mancarella, P., Ndiaye, M., & Schläpfer, M. (2015). Using mobile phone
+data for electricity infrastructure planning. arXiv preprint arXiv:1504.03899.
+Schläpfer, M., Bettencourt, L. M., Grauwin, S., Raschke, M., Claxton, R., Smoreda, Z., ... & Ratti, C.
+(2014). The scaling of human interactions with city size. Journal of the Royal Society Interface,
+11(98), 20130789.
+7
+2.) Line 26 - The authors state, "..which have been shown to perform poorly in some developing
+settings..." and cite two papers. My understanding of the first cited paper, 12 Wesolowski et al., is
+that there findings had more to do with a specific pattern of large-scale human movement, as
+opposed to just being an issue with a "developing country." If you agree, I would suggest
+modifying your description to better reflect their findings.
+Methods-
+1.) When performing the renormalization based on cell provider coverage, is it possible that other
+biases might be involved, which could effect network structure? For example, does the sample
+fraction vary by socioeconomic indicators at the commune or district level? Age distribution?
+etc.? Trying to analyze and/or correct for these may be beyond the scope of this analysis, but
+should at least be discussed as potential explanations for any differences found between census
+and cell-based networks.
+2.) For the model evaluation/selection piece, did you consider using alternative procedures such
+as regularization via something like lasso or ridge penalties and/or performing model selection
+based on the performance on held-out data, i.e. cross-validation?
+3.) For AIC model selection did you use forward or reverse model selection? See citation below
+for a review of potential issues associated with step-wise-like selection using AIC.
+Whittingham, M. J., Stephens, P. A., Bradbury, R. B., & Freckleton, R. P. (2006). Why do we still
+use stepwise modelling in ecology and behaviour?. Journal of animal ecology, 75(5), 1182-1189.
+4.) Did you consider comparing the resulting correlation matrix in disease prevalence across the
+simulated outbreaks to influenza surveillance data from France?
+Results-
+1.) line 203 - "splayed a highly variable similarity" is confusing. Do you mean the degree of
+similarity between outbreaks on the two networks, census and mobile phone, varied?
+2.) Regarding arrival times, did you compare the networks using the similarity in message
+passing centralities? At least on a tree, or locally tree-like parts of the graph, this would be an
+exact answer to risk differences.
+Karrer, B., & Newman, M. E. (2010). Message passing approach for general epidemic models.
+Physical Review E, 82(1), 016101.
+3.) What other properties varied by network? Outbreak size? The speed of spread? etc.?
+Discussion-
+1.) It would be helpful to expand on how some of the modeling assumptions, e.g., mass-action
+mixing within nodes and random censoring to normalize the population sizes, might bias our
+interpretation of the results.
+2.) How do your results compare to and advance beyond Tizzoni et al. 2014?
+Tizzoni, M., Bajardi, P., Decuyper, A., King, G. K. K., Schneider, C. M., Blondel, V., ... & Colizza,
+V. (2014). On the use of human mobility proxies for modeling epidemics. PLoS Comput Biol,
+10(7), e1003716.
+3.) There is a vast literature on differences/similarities between census and mobile phone
+mobility patters. Are there lessons or findings from that literature that relate to your results? For
+example,
+8
+Becker, R., Cáceres, R., Hanson, K., Isaacman, S., Loh, J. M., Martonosi, M., ... & Volinsky, C.
+(2013). Human mobility characterization from cellular network data. Communications of the
+ACM, 56(1), 74-82.
+4.) There are a few additional papers on mobility and disease, which should probably be
+discussed.
+Oliver, N., Matic, A., & Frias-Martinez, E. (2015). Mobile Network data for public health:
+opportunities and challenges. Frontiers in public health, 3.
+Perez-Saez, J., Mari, L., Bertuzzo, E., Casagrandi, R., Sokolow, S. H., De Leo, G. A., ... &
+Karambiri, H. (2015). A theoretical analysis of the geography of schistosomiasis in Burkina Faso
+highlights the roles of human mobility and water resources development in disease transmission.
+PLoS Negl Trop Dis, 9(10), e0004127.
+Wesolowski, A., O’Meara, W. P., Eagle, N., Tatem, A. J., & Buckee, C. O. (2015). Evaluating spatial
+interaction models for regional mobility in Sub-Saharan Africa. PLOS Comput Biol, 11(7),
+e1004267.
+Wesolowski, A., Buckee, C. O., Engø-Monsen, K., & Metcalf, C. J. E. (2016). Connecting mobility
+to infectious diseases: the promise and limits of mobile phone data. Journal of Infectious Diseases,
+214(suppl 4), S414-S420.
+Minor comment-
+1.) There are a number of typos throughout the manuscript, which should be corrected.
+Author's Response to Decision Letter for (RSOS-160950)
+See Appendix B.
+label_version_2
+RSOS-160950.R1 (Revision)
+label_author_3
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+9
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+This is an important contribution and the authors did an excellent job with the revision.
+label_end_comment
+Decision letter (RSOS-160950.R1)
+19-Apr-2017
+Dear Dr Tizzoni,
+I am pleased to inform you that your manuscript entitled "Assessing the use of mobile phone
+data to describe recurrent mobility patterns in spatial epidemic models" is now accepted for
+publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Reviewer(s)' Comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_6
+This is an important contribution and the authors did an excellent job with the revision.
+Appendix A
+REVIEW
+Assessing the use of mobile phone data to describe recurrent mobility patterns in spatial epidemic models by
+Panigutti et al.
+The paper moves from the observation that the recent availability of large scale mobile call detail
+record data has substantially improved our ability to quantify human travel patterns recognizing
+he huge impact it possibly has for applications in epidemiology. The authors compare simulated
+outbreaks generated with a spatially structured epidemic model based on two different human
+mobility networks to test the impact of the specific mobility model on the disease spread. Their
+results, in particular those related to the similarity of simulated epidemics being significantly
+correlated to connectivity, traffic and population size of the seeding nodes, are significant in
+several respect and surely original. As the subject is of great importance, timely and super-
+nteresting and the paper is informative, well written and to the point, I recommend publication –
+perhaps pending minor revision as per the specific comments attached below.
+Detailed comments
+27 – (marginal to the issues dealt with here, but overall relevant) Ref 30 poses some problematic
+ssues with the application of the radiation model. The equation of the model, using the notation
+of the authors, reads
+Nij = TC/T * (popi * popj)/[(popi+sij)*(popi+popj+sij)]
+where Nij is the average flux between communities i and j, popi and popj the population sizes of
+communities i and j, and sij is the total population living in a circle of radius dij (the distance
+between i and j) centered at i, excluding the population of i and j. The fraction TC /T is
+nterpreted by the authors as ''the proportion of the population who travel'': a number between 0
+and 1. This is correct in the original application of Simini et al. (2012), where the model was used
+o predict the number of people living in i and working in j. In that case TC /T is the fraction of
+he population that works outside its county. However, in the present study, the authors use the
+model to predict the total number of trips between two districts during one year. In this case, the
+fraction TC /T is, by definition, the total number of trips originating from i during an entire year
+divided by the population of i. Therefore, in this application, TC /T can potentially be larger than
+1. Indeed, using the data provided as Supplementary Material, one notes that it is of the order of
+10. The calibrated value of TC /T reported by the authors is exactly 1, which corresponds to the
+upper limit of the range assumed by the authors. Letting this parameter beyond one, a much
+better fit can be achieved and the radiation model does not systematically underpredict real
+fluxes. Thus the authors draw conclusions and recommendations that are affected by the issue
+highlighted above and this should be taken into account while mentioning their results.
+128 and ff – do infected individuals engage in commuting nonetheless? Will you please clarify?
+138 – wouldn’t be the very concept of reproduction number R0 meaningless (or at least in need
+of some word of caution as R0>1 is neither necessary nor sufficient a condition for disease
+spread) in a context where the force of infection depends on mobility? (sensu Gatto et al., PNAS,
+109 (48), 19703–19708, 2012 for example)
+l 203-206 – Isn’t this obvious?
+l 278 – 279 – is this statement justified? (simple network statistics do not seem to include
+measures of actual fluxes which obviously correlate) (following lines fully justified, however, in
+my view)
+References – the text editor seems to have eliminated upper cases (which at times needs
+corrections like e.g. rwanda, great britain)
+pendix B
+r Editor,
+ase find enclosed the revised version of the manuscript “Assessing the use of mobile phone data to
+cribe recurrent mobility patterns in spatial epidemic models” by Panigutti et al.
+are grateful to the reviewers for their detailed and careful reports and we are glad that both
+iewers found our manuscript to be a timely and interesting study.
+mpted by the reviewers’ remarks, we extensively edited the manuscript to better clarify some of
+methodologies and assumptions, and to better discuss our results within the framework of related
+rature and previous works.
+enclose hereafter a detailed point-to-point answer to all remarks by the reviewers, explaining the
+responding changes made in the manuscript.
+h these changes, alongside with the other modifications we made in the paper to address all other
+arks by the reviewers, we believe that the manuscript is now substantially improved.
+thank you for your consideration and dare to hope that the manuscript can be now considered for
+lication.
+cerely,
+ilia Panigutti, Michele Tizzoni, Paolo Bajardi, Zbigniew Smoreda, Vittoria Colizza
+PLY TO REVIEWER 1
+thank the reviewer for considering our study timely and appropriate for the Royal Society Open
+nce. In the following, we report our reply to each remark made by the reviewer.
+27 – (marginal to the issues dealt with here, but overall relevant) Ref 30 poses some problematic
+es with the application of the radiation model. The equation of the model, using the notation of the
+hors, reads
+= TC/T * (popi * popj)/[(popi+sij)*(popi+popj+sij)]
+re Nij is the average flux between communities i and j, popi and popj the population sizes of
+munities i and j, and sij is the total population living in a circle of radius dij (the distance between i
+j) centered at i, excluding the population of i and j. The fraction TC /T is interpreted by the authors as
+e proportion of the population who travel'': a number between 0 and 1. This is correct in the original
+lication of Simini et al. (2012), where the model was used to predict the number of people living in i
+working in j. In that case TC /T is the fraction of the population that works outside its county.
+wever, in the present study, the authors use the model to predict the total number of trips between two
+ricts during one year. In this case, the fraction TC /T is, by definition, the total number of trips
+inating from i during an entire year divided by the population of i. Therefore, in this application, TC
+an potentially be larger than 1. Indeed, using the data provided as Supplementary Material, one notes
+t it is of the order of 10. The calibrated value of TC /T reported by the authors is exactly 1, which
+responds to the upper limit of the range assumed by the authors. Letting this parameter beyond one, a
+ch better fit can be achieved and the radiation model does not systematically underpredict real fluxes.
+s the authors draw conclusions and recommendations that are affected by the issue highlighted above
+this should be taken into account while mentioning their results.
+e understood correctly, the reviewer is pointing out a limitation of the methods used by the
+hors of Ref. 30 (Wesolowski et al. PLOS Comp Bio 2015) that could undermine their conclusions.
+understand the concerns of the reviewer, and we rephrased our sentence to take into account the
+itations of that study. We also modified our sentence to take into account the remarks of Reviewer
+new version of the sentence has now the form: “Finally, the limited generalizability of mobility
+dels [29] whose performance can significantly vary depending on the specific geographic setting
+modelling assumptions [12,30], and whose utility can be hindered in absence of good calibration
+a.”
+l 128 and ff – do infected individuals engage in commuting nonetheless? Will you please clarify?
+, infected individuals engage in commuting. For the sake of simplicity, we did not consider
+avioural changes induced by the infection in our model.
+better clarify our modelling approach, we added the following sentence at lines 124-125:
+fectious individuals are allowed to commute. For the sake of simplicity, we do not consider
+erent degrees of severity of clinical symptoms and potentially associated behavioural changes.”
+l 138 – wouldn’t be the very concept of reproduction number R0 meaningless (or at least in need of
+e word of caution as R0>1 is neither necessary nor sufficient a condition for disease spread) in a
+text where the force of infection depends on mobility? (sensu Gatto et al., PNAS, 109 (48), 19703–
+08, 2012 for example)
+thank the reviewer for suggesting us a relevant reference. Prompted by this comment, we clarified
+the basic reproductive number is defined in our model. Specifically, the basic reproductive
+mber is as the ratio between the transmissibility \beta and the recovery rate \mu.
+be more precise, we define R_0 as the local basic reproductive number, that is the reproductive
+mber of the infection in a single subpopulation of our system. The condition R_0>1 ensures that the
+demic will reach a finite proportion of individuals in a single patch, once the patch has been
+ched by the infection. This is not to be confused with the global reproductive number that defines
+epidemic threshold for the networked system. The local condition R_0>1 is in general necessary
+not sufficient for the epidemic to reach a finite proportion of the whole metapopulation network
+shown by Colizza et al. J. Theo Bio 2008). One important difference with respect to the suggested
+rence is that, in our case, the value of R_0 is fixed and constant over time for every patch of the
+tem, therefore R_0 is not allowed to go below threshold in some populations but not in others.
+ordingly, we expanded the description of our model at lines 114-118 of the revised manuscript.
+ll 203-206 – Isn’t this obvious?
+original sentence was unclear, as also pointed out by Reviewer 2. We rephrased it as follows: “The
+ree of similarity of the simulated epidemics, in terms of temporal and spatial unfolding, displayed a
+h variability across the two networks, census and mobile phone, depending on the nodes that were
+cted as a seed of the outbreak.”
+think that this result is not completely obvious, as, in principle, similarity between epidemics
+ting from the same seed in the two networks could have been constantly high (or low), for each
+d considered.
+ll 278 – 279 – is this statement justified? (simple network statistics do not seem to include measures
+ctual fluxes which obviously correlate) (following lines fully justified, however, in my view)
+actual fluxes of commuting can be represented as weights in a network description, and the main
+ult shown by Gutreau et al. (Ref 49) is that it is possible to approximate the average arrival time of
+infection in a networked metapopulation system based on weighted network statistics.
+clarified this point by modifying the statement as follows:
+] in agreement with the known fact that the arrival times distribution in a metapopulation model
+be simply estimated by measuring a certain weighted distance computed on a directed weighted
+ph”.
+References – the text editor seems to have eliminated upper cases (which at times needs corrections
+e.g. rwanda, great britain)
+have corrected all the missing upper cases.
+PLY TO REVIEWER 2
+thank the reviewer for carefully reading our manuscript and for her suggestions that helped us
+rove the manuscript. Hereafter, we answer to all the remarks point by point.
+There are two additional papers I am familiar with on how mobile phone data are being leveraged
+side of spatial epidemiology:
+rtinez-Cesena, E. A., Mancarella, P., Ndiaye, M., & Schläpfer, M. (2015). Using mobile phone data for
+tricity infrastructure planning. arXiv preprint arXiv:1504.03899.
+läpfer, M., Bettencourt, L. M., Grauwin, S., Raschke, M., Claxton, R., Smoreda, Z., ... & Ratti, C. (2014).
+scaling of human interactions with city size. Journal of the Royal Society Interface, 11(98), 20130789.
+thank the reviewer for pointing out two additional references related to mobile phones data usage.
+number of papers using mobile phone data has increased considerably in the last few years. For
+reason, we decided to focus explicitly on all papers dealing with mobile phone data usage for
+bility of epidemic purposes, and provide a comprehensive review for the reader to approach more
+erally the field (Ref. 1).
+Line 26 - The authors state, "..which have been shown to perform poorly in some developing
+ings..." and cite two papers. My understanding of the first cited paper, 12 Wesolowski et al., is that
+re findings had more to do with a specific pattern of large-scale human movement, as opposed to just
+ng an issue with a "developing country." If you agree, I would suggest modifying your description to
+er reflect their findings.
+modified our statement by removing the wording “developing settings”. The new version of the
+tence has now the form: “Finally, the limited generalizability of mobility models [29] whose
+formance can significantly vary depending on the specific geographic setting and modelling
+umptions [12,30], and whose utility can be hindered in absence of good calibration data.”
+When performing the renormalization based on cell provider coverage, is it possible that other biases
+ht be involved, which could effect network structure? For example, does the sample fraction vary by
+oeconomic indicators at the commune or district level? Age distribution? etc.? Trying to analyze
+/or correct for these may be beyond the scope of this analysis, but should at least be discussed as
+ential explanations for any differences found between census and cell-based networks.
+agree with the reviewer that our normalization procedure is very simple. In our previous work
+zoni et al. 2014), we already explored different normalization procedures, with no significant
+nges in the main results. Integration of socio-economic factors may improve accuracy, however it
+uld require a higher set of parameters or assumptions in the model. For this reason, we decided to
+us on a basic normalization. In addition, in our view the approach becomes more easily
+eralizable to other settings where socio-economic variables are not easily accessible.
+ng aware of the above issues, we added a sentence in the Discussion (lines 326-329):
+] Trying to correct for such socio-economic biases, by taking them into account in the
+malization procedure, could provide a potential explanation for the discrepancies observed
+ween epidemic outcomes on the two networks. On the other hand, it would also increase the
+mber of parameters or assumptions in the model. For this reason, we decided to focus on a basic
+malization, as it is also more easily generalizable to other settings where socio-economic variables
+not easily accessible.”
+For the model evaluation/selection piece, did you consider using alternative procedures such as
+ularization via something like lasso or ridge penalties and/or performing model selection based on
+performance on held-out data, i.e. cross-validation?
+the model selection we choose to rely on AIC comparison between models. As discussed in the
+t comment, our approach does not introduce biases as in a step-wise approach. Alternative
+roaches could have been chosen. We would like however to clarify that such analysis was not
+formed to make predictions (i.e. being able to predict what the responses are going to be to future
+ependent variables) but rather to grasp information from the system (i.e. how the underlying
+ural mechanism is associating the response variables to the independent variables). In such
+spective, our interest does not lie in learning a hidden function from the data that recreates
+comes that are observed (as such, we did not cross-validate the model), but in understanding
+ch features are mainly associated to the observed outcomes.
+s subtle difference is currently a major topic of discussion in the statistical/machine learning
+munity.
+For AIC model selection did you use forward or reverse model selection? See citation below for a
+ew of potential issues associated with step-wise-like selection using AIC.
+ittingham, M. J., Stephens, P. A., Bradbury, R. B., & Freckleton, R. P. (2006). Why do we still use stepwise
+delling in ecology and behaviour?. Journal of animal ecology, 75(5), 1182-1189.
+are aware of the limitations of a stepwise approach, and thus we evaluated all the possible
+binations (a total of 131,500) of the selected covariates independently, and compared them with
+AIC. Leveraging a stepwise approach would have led to a drastically lower number of fitted
+dels, but would have introduced the issues well described in the paper by Whittingham et al.
+clarified this point in the Methods section.
+Did you consider comparing the resulting correlation matrix in disease prevalence across the
+ulated outbreaks to influenza surveillance data from France?
+reviewer raises a very relevant point. We did not compare our simulation results to real influenza
+dence data, mainly because our aim is characterizing the similarities and discrepancies of
+ulated epidemic scenarios obtained from different mobility networks rather than assessing which
+bility proxy better explains the epidemic patterns observed by the national surveillance systems.
+do that, our approach would need a higher level of sophistication, integrating additional
+structure of the population, age of individuals, contact patterns, interventions, change of behaviour
+weekend vs. weekday movements, importations from neighbouring countries, weather conditions,
+many others. Different sets of approaches are generally developed for these aims, as they require
+igher realism than what is considered in our study. Here we decided to keep our approach fairly
+ple and to include only the basic ingredients that were the object of the analysis in order to achieve
+learer understanding and interpretation of results. Our findings could then be used for the
+elopment of higher realism models with the specific aim of reproducing historical epidemics.
+line 203 - "displayed a highly variable similarity" is confusing. Do you mean the degree of similarity
+ween outbreaks on the two networks, census and mobile phone, varied?
+mpted by the reviewer’s comment, and a similar comment by Reviewer 1, we reframed the
+tence as follow:
+e degree of similarity in terms of temporal and spatial unfolding of the simulated epidemics
+played a high variability across the two networks, census and mobile phone, depending on the
+es that were selected as a seed of the outbreak.”
+Regarding arrival times, did you compare the networks using the similarity in message passing
+tralities? At least on a tree, or locally tree-like parts of the graph, this would be an exact answer to
+differences.
+rer, B., & Newman, M. E. (2010). Message passing approach for general epidemic models. Physical
+iew E, 82(1), 016101.
+thank the reviewer for suggesting a relevant reference and methodology. We believe, however,
+t such method does not apply to our work for several reasons:
+- the suggested paper shows results on a contact network structure, while we consider a
+metapopulation network: the difference is not trivial as transmission between nodes is driven
+by mobility fluxes which are highly heterogeneous and is a function of the ongoing outbreak in
+each node of the network;
+- the suggested paper deals with non-constant recovery time and transmissibility (that is not
+our case), and the authors propose a method to investigate contact networks with tree-like
+structure: commuting network in France is very dense and cannot be considered as a tree-like
+structure.
+are not aware of studies with message-passage techniques applied to metapopulation networks
+t are not tree-like. For this reason, we measured arrival times based on simulated epidemics. It is
+rth noting that the distribution of arrival times in a metapopulation network can be approximated
+lytically by measuring a certain weighted distance computed on a directed weighted graph as
+wn in Gautreau et al. J. Theo. Bio. 2008, as we mention in the Discussion.
+What other properties varied by network? Outbreak size? The speed of spread? etc.?
+outbreak size did not vary significantly since it is mainly regulated by the value of the basic
+roductive number that has been kept constant in the different scenarios. The chosen value of R_0
+ulted in a global outbreak for each simulated scenario, that is, for every different seed, at least
+00 simulated outbreaks always reached the full network and all nodes of the system were infected
+he end of a simulation.
+arding the speed of spread, in Tizzoni et al. 2014 we have shown that the speed of spread is higher,
+h in terms of arrival times and peak times, when the mobility layer considered is extracted from
+bile phone data, due to a systematic overestimation of commuting fluxes by mobile phone data. For
+reason, we used the Spearman coefficient to compare the temporal unfolding, thus discounting the
+ady known differences in speed.
+en discussing the choice of Spearman coefficient, we added the following sentence to clarify this
+nt:
+is worth recalling that mobility networks extracted from mobile phone data systematically
+restimated the commuting fluxes with the considered normalization, therefore accelerating the
+ed of invasion of the disease (Tizzoni et al. 2014). To discount the systematic difference in arrival
+es due to such bias, we used a non-parametric measure to focus on the temporal ordering of the
+cted subpopulations.”
+0) It would be helpful to expand on how some of the modeling assumptions, e.g., mass-action mixing
+hin nodes and random censoring to normalize the population sizes, might bias our interpretation of
+results.
+also discussed after comment #6, we considered a rather simple modelling framework to highlight
+isolate the effects of the different mobility networks on the disease spread. We argue that more
+ned compartmental models or assumptions for population mixing within the patches would not
+ct our conclusions, as long as they would not alter the mobility fluxes in a heterogeneous way. Also
+erent mobility behaviours by age or by period of the year (e.g. during winter holidays) were shown
+to affect the epidemic outcome (Ewing et al, 2016; and some authors of this paper are currently
+forming a similar study applied to Belgium with the same conclusions).
+arly, our study represents a first step into further investigations where more realistic ingredients
+d to be considered. For example, further extensions would be necessary to model the spread of
+er diseases such as measles, cholera or polio, for which mobile phone data have been used in the
+rature.
+rall, our results can be considered applicable within the realm of rapidly disseminated directly
+nsmitted emerging diseases, like most flu strains and coronaviruses.
+added a sentence in the Discussion to highlight this point.
+1) How do your results compare to and advance beyond Tizzoni et al. 2014?
+zoni, M., Bajardi, P., Decuyper, A., King, G. K. K., Schneider, C. M., Blondel, V., ... & Colizza, V. (2014). On
+use of human mobility proxies for modeling epidemics. PLoS Comput Biol, 10(7), e1003716.
+izzoni et al. 2014, we performed a broad comparison of mobility proxies across different countries
+rtugal, Spain and France), mobility networks (census, mobile phone, radiation) and disease
+nsmissibility (three values of R_0 were explored). The main findings of the paper were:
+o phone data matches the commuting patterns reported by census well but tends to
+overestimate the number of commuters, leading to a faster diffusion of simulated epidemics;
+o the order of infection of newly infected locations is however well preserved;
+o the pattern of epidemic invasion is captured with higher accuracy by the radiation model for
+centrally seeded epidemics and by phone proxy for peripherally seeded epidemics.
+eraging on previous findings, the current paper focuses exclusively on the comparison mobile
+nes/census to perform an extensive investigation of the characteristics of the seeding node that
+t predict the epidemic similarity across networks.
+findings of the present paper suggest also additional questions that might be addressed in future
+rks: would it be possible to define a location-specific normalization schema of fluxes from mobile
+ne data able to correctly resemble the mobility network and providing a good agreement
+ependently from the seeding node? How does the variability in outcome similarity change for
+erent disease transmission or modelling approach? In general, here we have defined a benchmark
+hodology to perform studies aimed at comparing different disease modelling approaches on
+ctured metapopulation systems.
+2) There is a vast literature on differences/similarities between census and mobile phone mobility
+terns. Are there lessons or findings from that literature that relate to your results? For example,
+ker, R., Cáceres, R., Hanson, K., Isaacman, S., Loh, J. M., Martonosi, M., ... & Volinsky, C. (2013). Human
+bility characterization from cellular network data. Communications of the ACM, 56(1), 74-82.
+thank the reviewer for the suggested reference. As we now mention in the Introduction, although
+re is a vast literature on differences/similarities between census and mobile phone data, most of
+studies focus on structural features, while here we focus on a dynamical process unfolding on top
+hem, i.e. epidemic spreading.
+rall, there is a significant consensus on the fact that mobile phone data can well capture human
+bility at very high spatial and temporal resolution (see Deville et al. PNAS 2013), in agreement with
+sus data. Our work confirms this general view.
+wever, when it comes to application in epidemiology there are several open questions and
+llenges that relate to the interplay between movements and infectious disease dynamics, as clearly
+cribed by Wesolowski et al. Journal of Infectious Diseases 2016.
+believe that our work provides some novel insights to better understand the limits of using CDRs
+ived movements in large scale spatial epidemic models.
+3) There are a few additional papers on mobility and disease, which should probably be discussed.
+er, N., Matic, A., & Frias-Martinez, E. (2015). Mobile Network data for public health: opportunities and
+llenges. Frontiers in public health, 3.
+ez-Saez, J., Mari, L., Bertuzzo, E., Casagrandi, R., Sokolow, S. H., De Leo, G. A., ... & Karambiri, H. (2015).
+eoretical analysis of the geography of schistosomiasis in Burkina Faso highlights the roles of human
+bility and water resources development in disease transmission. PLoS Negl Trop Dis, 9(10), e0004127.
+solowski, A., O’Meara, W. P., Eagle, N., Tatem, A. J., & Buckee, C. O. (2015). Evaluating spatial
+raction models for regional mobility in Sub-Saharan Africa. PLOS Comput Biol, 11(7), e1004267.
+solowski, A., Buckee, C. O., Engø-Monsen, K., & Metcalf, C. J. E. (2016). Connecting mobility to infectious
+ases: the promise and limits of mobile phone data. Journal of Infectious Diseases, 214(suppl 4), S414-
+0.
+added the references to the manuscript.
+4) There are a number of typos throughout the manuscript, which should be corrected.
+carefully edited the manuscript to correct all errors and typos.
+Society Open

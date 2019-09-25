@@ -1,0 +1,893 @@
+Growth overshoot and seasonal size changes in the skulls
+of two weasel species
+Scott LaPoint, Lara Keicher, Martin Wikelski, Karol Zub and Dina K. N. Dechmann
+Article citation details
+R. Soc. open sci. 4: 160947.
+http://dx.doi.org/10.1098/rsos.160947
+Review timeline
+Original submission: 15 April 2016 Note: Reports are unedited and appear as
+1st revised submission: 22 November 2016 submitted by the referee. The review history
+2nd revised submission: 20 December 2016 appears in chronological order.
+Final acceptance: 21 December 2016
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-160265.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Review of “Growth overshoot and seasonal size changes in the skulls of two weasel species” by
+LaPoint et al.
+This MS is an analysis of ontogenetic and seasonal skull shape variation in weasels and stoats. It
+presents a very large dataset of three cranial measurements: Condylobasal length, braincase
+breadth, and braincase depth taken on 512 stoats and 847 weasels from three age classes. The
+analysis leads the authors to conclude that both species exhibit a “growth overshoot in both the
+absolute and standardized braincase depth” (p 4, lines 34-35) during ontogeny. And secondly,
+that both species experience “seasonally-driven, reversible changes in the BDs… suggesting that
+these species are able to modify the shape of their skulls after their sutures are fused and their
+skull is fully ossified.” (p4, lines 50-51).
+This paper is generally well written and the data set is extensive and the statistical approach is
+complex. There are several areas that I believe need further elucidation in order for the evidence
+presented to clearly support the conclusions.
+In support of the conclusion that braincase depth experiences a growth overshoot the authors
+present the following:
+a. Age is a significant factor which accounts for a large part of the variation in BD and that
+adults have a smaller standardized brain depth than juveniles. They then acknowledge that skull
+shape changes (including reduction of relative braincase depth) are a widely known phenomenon
+of ontogenetic growth patterns in mammals (page 4, lines 40-44). However, they claim that their
+study shows that there is only a slight effect from change in skull length (CBL) and that the
+majority of shape change is due to “braincase height rather than skull length, including an
+overshoot in absolute size of the skull and thus the brain.” (page 4, lines 44-46).
+First, it is unclear what the difference is between “skull length” and “absolute size of the skull”.
+Please clarify the difference between these two measurements. Also, where is the data on the
+absolute size of the skull?
+Second, the claim above rests upon there being little change in skull length over ontogeny.
+However, on page 4, lines 14-15 it is stated that juvenile weasels are significantly smaller than
+older age classes.
+Third, p-values are provided for female and male weasels showing that juveniles are sig smaller
+than subadults and adults but no other statistical tests are provided. I would like to see the
+following:
+1. Statistical tests comparing each age class for each skull measurement.
+2. Individual value plots with means and confidence intervals so that the measurements
+can be compared directly and clearly.
+3. The W statistic is for a nonparametric Wilcoxon test however the use of this test is not
+mentioned in the methods. Why was this used and not a more powerful parametric test? If the
+data is not normally distributed then a better alternative is a bootstrapped T-test which can easily
+be done in R.
+Fourth, even if there is a lot of change in braincase depth and little change in total skull length
+over ontogeny it is still not clear how this is a “growth overshoot” and not just a normal non-
+allometric developmental shape change. Please explain this clearly and in detail.
+The second conclusion is in regards to seasonal changes in braincase depth in these two species
+and specifically: “seasonally-driven, reversible changes in the BDs… suggesting that these species
+are able to modify the shape of their skulls after their sutures are fused and their skull is fully
+ossified.” (p4, lines 50-51).
+In support of this conclusion the authors present statistical models which analyze relative
+braincase depth (braincase depth/total skull length) as a function of Day of the Year (doy), age,
+sex, and location (origin). They find that doy explains a proportion of the variation in relative
+braincase depth and that relative braincase depth is higher from May – September. They also find
+that sex, location and age explain a proportion of the variation in relative braincase depth (table
+3
+2). In addition, they find that there is an interaction between doy and location (table S2 and figure
+3).
+From table S2 and figure 3 it can be seen that the pattern of variation in relative braincase depth
+over the year varies from location to location and none of the regions by themselves show as
+consistent a pattern as is found when pooling the data in figure 2. The authors acknowledge this
+in the caption to figure 3 “Generalized additive model predictions suggest that the presence,
+magnitude, and timing of the seasonal patterns varies between sexes, species, and geographic
+regions (shading indicates 95% Bayesian confidence intervals).” Therefore, in order to more
+soundly support the claim that this is a trait of both species and that it isn’t due to changes in
+local resources, an analysis within each location should be conducted separately.
+In addition, the claims of seasonal changes are made only for the adults however in all of the
+statistical models presented all age classes are included. If a separate analysis including only
+adults that looked at the effect of sex, origin and doy was done then please include it in the MS.
+Finally, I think that the evidence presented here is not very strong, there is a lot of scatter in the
+data (e.g. weasels from Poland on figure 3 (bottom right)). Please provide statistics to
+demonstrate how well the model fits for each location.
+Also, this is observational evidence based on museum specimens. What years are these
+specimens from? Has collection year been considered in the models?
+In figure S3 the raw data for braincase depth and total skull length are presented alongside
+relative braincase depth which is very helpful. Relative braincase depth can become reduced
+because either the numerator (braincase depth) becomes smaller or because the denominator
+(total skull length) becomes larger. Presenting both allows the reader to see which is happening
+more clearly. I would suggest including these plots for figures 2 and 3 as well.
+Also on Figure 2 please use different symbols to illustrate males and females – at least for the
+adults.
+label_author_2
+Review form: Reviewer 2 (Nick Milne)
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Growth overshoot and seasonal size changes in the skulls of two weasel species
+4
+The study examines developmental and seasonal changes in cranial dimensions in two species of
+weasel. I have answered no to two questions (is the manuscript scientifically sound in its present
+form? And Are the interpretations and conclusions justified by the results?) However I think my
+doubts can be overcome by fuller explanation of some of the issues expressed below.
+The results show that during development the cranial height (“brain case depth BD”) decreases
+from juvenile to subadult to adult. The methods state that the BD measurement excludes the
+sagittal crest which is only present in adults. Although brain case volume is correlated (R~0.7)
+with BD it does not necessarily follow that the brain volume decreases from juvenile to adult:
+Younger specimens may have extensive pneumatisation inflating the cranium, and this may
+reduce as the temporalis muscle and the sagittal crest develop fully. Are there broken specimens
+where the level of pneumatisation can be seen in the three age categories? Could you comment
+on the question of pneumatisation?
+The brain volume correlates (r~0.94) more strongly with coronal cross-sectional area (CSA =
+(BD/2)x(BB/2)xPi)). So its possible that cranial breadth (“brain case breadth BB”) is more closely
+related to brain volume than BD, but no data or discussion of BB is provided.
+The result also show seasonal changes in cranial height (BD) normalised for skull (condylobasal)
+length. Regardless of whether this is reflected in brain volume, it is a very interesting result.
+However the finding depends on the accuracy of data about the time of death of the specimens.
+The date of collection was recorded for each specimen, however I am not satisfied that the date of
+collection truly reflects the date of death. I feel that more discussion and explanation is required
+on this point. Were the specimens collected as skeletons in the wild or were the recently
+deceased weasels collected and skeletonised in the all the museums.
+If the seasonal variation is confirmed, I wonder if the changes observed actually relate to brain
+size variation or some other change in the cranium…
+On the whole I think this is an interesting study reporting a fascinating finding and as such is
+worthy of publication.
+label_end_comment
+Decision letter (RSOS-160265)
+26-May-2016
+Dear Dr LaPoint:
+Manuscript ID RSOS-160265 entitled "Growth overshoot and seasonal size changes in the skulls
+of two weasel species" which you submitted to Royal Society Open Science, has been reviewed.
+The comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+5
+Your resubmitted manuscript should be submitted by 23-Nov-2016. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+on behalf of
+Kevin Padian, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Monica Daley):
+Associate Editor: 1
+Comments to the Author:
+label_comment_3
+Two expert reviewers have evaluated your paper on morphometric analysis of skulls in stoats
+and weasels. While both reviewers praise the potential contribution of this paper to the field,
+they raise a number of specific concerns about the analysis and interpretation of the data, and
+question whether the conclusions can be fully supported by the data given the number of
+possible uncertainties and confounding variables. The reviewers provide specific constructive
+comments on how the authors may be able to address these concerns. Therefore, I would be
+happy to see resubmission of a revised version of this manuscript, along with a point-by-point
+response addressing the issues raised.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+Review of “Growth overshoot and seasonal size changes in the skulls of two weasel species” by
+LaPoint et al.
+This MS is an analysis of ontogenetic and seasonal skull shape variation in weasels and stoats. It
+presents a very large dataset of three cranial measurements: Condylobasal length, braincase
+breadth, and braincase depth taken on 512 stoats and 847 weasels from three age classes. The
+analysis leads the authors to conclude that both species exhibit a “growth overshoot in both the
+absolute and standardized braincase depth” (p 4, lines 34-35) during ontogeny. And secondly,
+that both species experience “seasonally-driven, reversible changes in the BDs… suggesting that
+these species are able to modify the shape of their skulls after their sutures are fused and their
+skull is fully ossified.” (p4, lines 50-51).
+This paper is generally well written and the data set is extensive and the statistical approach is
+complex. There are several areas that I believe need further elucidation in order for the evidence
+presented to clearly support the conclusions.
+In support of the conclusion that braincase depth experiences a growth overshoot the authors
+present the following:
+a. Age is a significant factor which accounts for a large part of the variation in BD and that
+adults have a smaller standardized brain depth than juveniles. They then acknowledge that skull
+shape changes (including reduction of relative braincase depth) are a widely known phenomenon
+of ontogenetic growth patterns in mammals (page 4, lines 40-44). However, they claim that their
+study shows that there is only a slight effect from change in skull length (CBL) and that the
+majority of shape change is due to “braincase height rather than skull length, including an
+overshoot in absolute size of the skull and thus the brain.” (page 4, lines 44-46).
+6
+First, it is unclear what the difference is between “skull length” and “absolute size of the skull”.
+Please clarify the difference between these two measurements. Also, where is the data on the
+absolute size of the skull?
+Second, the claim above rests upon there being little change in skull length over ontogeny.
+However, on page 4, lines 14-15 it is stated that juvenile weasels are significantly smaller than
+older age classes.
+Third, p-values are provided for female and male weasels showing that juveniles are sig smaller
+than subadults and adults but no other statistical tests are provided. I would like to see the
+following:
+1. Statistical tests comparing each age class for each skull measurement.
+2. Individual value plots with means and confidence intervals so that the measurements
+can be compared directly and clearly.
+3. The W statistic is for a nonparametric Wilcoxon test however the use of this test is not
+mentioned in the methods. Why was this used and not a more powerful parametric test? If the
+data is not normally distributed then a better alternative is a bootstrapped T-test which can easily
+be done in R.
+Fourth, even if there is a lot of change in braincase depth and little change in total skull length
+over ontogeny it is still not clear how this is a “growth overshoot” and not just a normal non-
+allometric developmental shape change. Please explain this clearly and in detail.
+The second conclusion is in regards to seasonal changes in braincase depth in these two species
+and specifically: “seasonally-driven, reversible changes in the BDs… suggesting that these species
+are able to modify the shape of their skulls after their sutures are fused and their skull is fully
+ossified.” (p4, lines 50-51).
+In support of this conclusion the authors present statistical models which analyze relative
+braincase depth (braincase depth/total skull length) as a function of Day of the Year (doy), age,
+sex, and location (origin). They find that doy explains a proportion of the variation in relative
+braincase depth and that relative braincase depth is higher from May – September. They also find
+that sex, location and age explain a proportion of the variation in relative braincase depth (table
+2). In addition, they find that there is an interaction between doy and location (table S2 and figure
+3).
+From table S2 and figure 3 it can be seen that the pattern of variation in relative braincase depth
+over the year varies from location to location and none of the regions by themselves show as
+consistent a pattern as is found when pooling the data in figure 2. The authors acknowledge this
+in the caption to figure 3 “Generalized additive model predictions suggest that the presence,
+magnitude, and timing of the seasonal patterns varies between sexes, species, and geographic
+regions (shading indicates 95% Bayesian confidence intervals).” Therefore, in order to more
+soundly support the claim that this is a trait of both species and that it isn’t due to changes in
+local resources, an analysis within each location should be conducted separately.
+In addition, the claims of seasonal changes are made only for the adults however in all of the
+statistical models presented all age classes are included. If a separate analysis including only
+adults that looked at the effect of sex, origin and doy was done then please include it in the MS.
+Finally, I think that the evidence presented here is not very strong, there is a lot of scatter in the
+data (e.g. weasels from Poland on figure 3 (bottom right)). Please provide statistics to
+demonstrate how well the model fits for each location.
+Also, this is observational evidence based on museum specimens. What years are these
+specimens from? Has collection year been considered in the models?
+In figure S3 the raw data for braincase depth and total skull length are presented alongside
+relative braincase depth which is very helpful. Relative braincase depth can become reduced
+because either the numerator (braincase depth) becomes smaller or because the denominator
+(total skull length) becomes larger. Presenting both allows the reader to see which is happening
+more clearly. I would suggest including these plots for figures 2 and 3 as well.
+Also on Figure 2 please use different symbols to illustrate males and females – at least for the
+adults.
+7
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+Growth overshoot and seasonal size changes in the skulls of
+two weasel species
+The study examines developmental and seasonal changes in cranial dimensions in two species of
+weasel. I have answered no to two questions (is the manuscript scientifically sound in its present
+form? And Are the interpretations and conclusions justified by the results?) However I think my
+doubts can be overcome by fuller explanation of some of the issues expressed below.
+The results show that during development the cranial height (“brain case depth BD”) decreases
+from juvenile to subadult to adult. The methods state that the BD measurement excludes the
+sagittal crest which is only present in adults. Although brain case volume is correlated (R~0.7)
+with BD it does not necessarily follow that the brain volume decreases from juvenile to adult:
+Younger specimens may have extensive pneumatisation inflating the cranium, and this may
+reduce as the temporalis muscle and the sagittal crest develop fully. Are there broken specimens
+where the level of pneumatisation can be seen in the three age categories? Could you comment
+on the question of pneumatisation?
+The brain volume correlates (r~0.94) more strongly with coronal cross-sectional area (CSA =
+(BD/2)x(BB/2)xPi)). So its possible that cranial breadth (“brain case breadth BB”) is more closely
+related to brain volume than BD, but no data or discussion of BB is provided.
+The result also show seasonal changes in cranial height (BD) normalised for skull (condylobasal)
+length. Regardless of whether this is reflected in brain volume, it is a very interesting result.
+However the finding depends on the accuracy of data about the time of death of the specimens.
+The date of collection was recorded for each specimen, however I am not satisfied that the date of
+collection truly reflects the date of death. I feel that more discussion and explanation is required
+on this point. Were the specimens collected as skeletons in the wild or were the recently
+deceased weasels collected and skeletonised in the all the museums.
+If the seasonal variation is confirmed, I wonder if the changes observed actually relate to brain
+size variation or some other change in the cranium…
+On the whole I think this is an interesting study reporting a fascinating finding and as such is
+worthy of publication.
+Author's Response to Decision Letter for (RSOS-160947)
+See Appendix A.
+label_version_2
+RSOS-160947.R0 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+8
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_6
+For the above questions regarding whether the data, code and materials I answered No because
+the code that was used was not provided. The data are available in the supplemental files. Please
+provide the R code too.
+For comments on the MS itself please see the attached pdf. (Appendix B)
+label_end_comment
+Decision letter (RSOS-160947)
+12-Dec-2016
+Dear Dr LaPoint
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-160947 entitled
+"Growth overshoot and seasonal size changes in the skulls of two weasel species" has been
+accepted for publication in Royal Society Open Science subject to minor revision in accordance
+with the referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+9
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160947
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 21-Dec-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+10
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+For the above questions regarding whether the data, code and materials I answered No because
+the code that was used was not provided. The data are available in the supplemental files. Please
+provide the R code too.
+For comments on the MS itself please see the attached pdf.
+Author's Response to Decision Letter for (RSOS-160947)
+See Appendix C.
+11
+label_end_comment
+Decision letter (RSOS-160947.R1)
+21-Dec-2016
+Dear Dr LaPoint,
+I am pleased to inform you that your manuscript entitled "Growth overshoot and seasonal size
+changes in the skulls of two weasel species" is now accepted for publication in Royal Society
+Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+pendix A
+May-2016
+r Dr LaPoint:
+nuscript ID RSOS-160265 entitled "Growth overshoot and seasonal size changes in the skulls of two
+sel species" which you submitted to Royal Society Open Science, has been reviewed. The comments
+m reviewers are included at the bottom of this letter.
+iew of the criticisms of the reviewers, the manuscript has been rejected in its current
+m. However, a new manuscript may be submitted which takes into consideration these comments.
+ase note that resubmitting your manuscript does not guarantee eventual acceptance, and that your
+ubmission will be subject to peer review before a decision is made.
+will be unable to make your revisions on the originally submitted version of your
+nuscript. Instead, revise your manuscript and upload the files via your author centre.
+e you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login to your
+hor Center. Click on "Manuscripts with Decisions," and then click on "Create a Resubmission"
+ted next to the manuscript number. Then, follow the steps for resubmitting your manuscript.
+r resubmitted manuscript should be submitted by 23-Nov-2016. If you are unable to submit by this
+e please contact the Editorial Office.
+look forward to receiving your resubmission.
+erely,
+tthew Allinson,
+orial Coordinator, Royal Society Open Science
+behalf of
+in Padian, Royal Society Open Science
+nscience@royalsociety.org
+ociate Editor Comments to Author (Dr Monica Daley):
+ociate Editor: 1
+ments to the Author:
+expert reviewers have evaluated your paper on morphometric analysis of skulls in stoats and
+sels. While both reviewers praise the potential contribution of this paper to the field, they raise a
+ber of specific concerns about the analysis and interpretation of the data, and question whether the
+clusions can be fully supported by the data given the number of possible uncertainties and
+founding variables. The reviewers provide specific constructive comments on how the authors may
+able to address these concerns. Therefore, I would be happy to see resubmission of a revised version
+his manuscript, along with a point-by-point response addressing the issues raised.
+Thank you for affording us the opportunity to address the comments, questions, and criticisms of the
+ewers and yourself. The reviewers provided numerous helpful suggestions that have greatly improved
+clarity and completeness of our manuscript. We carefully considered each point and have made
+erous changes to the manuscript, including 3 new tables, 2 new figures, and substituted a
+stantial part of our analyses with a more powerful bootstrapped t-test procedure. We did not
+ever edit two of our figures per a reviewer request as we believed that the changes would not
+rove clarity; see below for specifics. We identified some unclear/inconsistent wording (e.g.,
+rchanging use of ‘depth’ with ‘height’) and have corrected these throughout the manuscript. We also
+ed text on several instances for descriptions of newly presented methods and results, and to add
+her detail to ambiguous information.
+We have responded below to each point; all responses follow “***”. We have also included an
+ge in the .doc for a response to a question raised by reviewer 2 and we refer them to the uploaded
+oint_etal_response_to_reviewers.pdf.
+We have taken each of comment into consideration and adopted the vast majority. The
+rative, results, and conclusions of our manuscript has not changed despite the numerous changes.
+manuscript is however, now much clearer and improved. We thank the reviewers for the careful and
+ughtful reviews. They have greatly improved our manuscript and we hope the editor(s) see it worthy
+publication.
+Thank you for your time and energies.
+Scott LaPoint, on behalf of my coauthors.
+iewers' Comments to Author:
+iewer: 1
+ments to the Author(s)
+iew of “Growth overshoot and seasonal size changes in the skulls of two weasel species” by LaPoint
+l.
+MS is an analysis of ontogenetic and seasonal skull shape variation in weasels and stoats. It
+sents a very large dataset of three cranial measurements: Condylobasal length, braincase breadth,
+braincase depth taken on 512 stoats and 847 weasels from three age classes. The analysis leads the
+hors to conclude that both species exhibit a “growth overshoot in both the absolute and
+dardized braincase depth” (p 4, lines 34-35) during ontogeny. And secondly, that both species
+erience “seasonally-driven, reversible changes in the BDs… suggesting that these species are able to
+dify the shape of their skulls after their sutures are fused and their skull is fully ossified.” (p4, lines
+51).
+paper is generally well written and the data set is extensive and the statistical approach is complex.
+re are several areas that I believe need further elucidation in order for the evidence presented to
+rly support the conclusions.
+Thank you for the concise summary, compliments, and a thorough and thoughtful review of our
+nuscript.
+upport of the conclusion that braincase depth experiences a growth overshoot the authors present
+following:
+Before addressing the following specific comments, we remind readers that the growth overshoot is
+n absolute measure; i.e., juvenile braincases are absolutely deeper than any other age group,
+ardless of the skull length. It is important to keep this difference between absolute and relative (or
+ndardized) measures in mind when interpreting the growth overshoot results and discussion.
+Age is a significant factor which accounts for a large part of the variation in BD and that adults have
+maller standardized brain depth than juveniles. They then acknowledge that skull shape changes
+luding reduction of relative braincase depth) are a widely known phenomenon of ontogenetic
+wth patterns in mammals (page 4, lines 40-44). However, they claim that their study shows that
+re is only a slight effect from change in skull length (CBL) and that the majority of shape change is
+to “braincase height rather than skull length, including an overshoot in absolute size of the skull and
+s the brain.” (page 4, lines 44-46).
+t, it is unclear what the difference is between “skull length” and “absolute size of the skull”. Please
+ify the difference between these two measurements. Also, where is the data on the absolute size of
+skull?
+Thank you for identifying this ambiguity arising from our incorrect word choice. Where we chose
+solute size”, we should have used “absolute depth”. We have edited this sentence (page 4, lines 58-59
+larify and to add the emphasis on the absolute depth changes. Presenting data on the “absolute size”
+he skull would be beyond the purpose of and methods employed within this manuscript (e.g.,
+uiring geomorphometric methods). We believe our poor word choice implied that we measured
+e”, perhaps in a 3-dimensional or volumetric manner, when we did not. We do however, as many
+hors previously have, use condylobasal length as a proxy for body size for intra- and interspecific
+parisons.
+ond, the claim above rests upon there being little change in skull length over ontogeny. However, on
+e 4, lines 14-15 it is stated that juvenile weasels are significantly smaller than older age classes.
+Yes, juvenile weasels (but not stoats) do have significantly shorter skull lengths than the other age
+egories. We must now point out that, with the addition of the bootstrapped t-tests (as per the
+ewers request) it is possible that juvenile female Mustela erminea have significantly shorter skull
+ths than adults and also male subadult M. nivalis have significantly shorter skulls than adults, but
+se differences may have been obscured by the non-normal distribution of the raw data. Regardless,
+do not believe that the claim above “rests upon there being little change in skull length over
+ogeny” as this braincase depth data are in absolute metrics, not relative. Had these been
+ndardized or relative depths, then changes in skull length would affect these results. In fact, juveniles
+e significantly shorter skull lengths than other age classes (tables 1 and S3), thus their standardized
+ncase depths exhibit an even more distinguished growth overshoot, making their growth overshoot
+bsolute depth that much more remarkable. We’ve edited page 5 lines 24-30 to be clearer on these
+terns as well.
+d, p-values are provided for female and male weasels showing that juveniles are sig smaller than
+adults and adults but no other statistical tests are provided. I would like to see the following:
+Statistical tests comparing each age class for each skull measurement.
+See response to point 3 below.
+Individual value plots with means and confidence intervals so that the measurements can be
+pared directly and clearly.
+We have created Figure S3 showing frequency plots for condylobasal length, braincase breadth, and
+ncase depth, separated by species, for each age and sex category. We added vertical dashed lines
+wing the mean value for each category and metric. This allows readers to directly compare each
+egory both in distribution of the data and their means. We have also added braincase breadth means
+SEM) and variance information to Table 1. These two accommodations allow readers to directly see
+distributions of the data and calculate extra statistics (including CI) via Table 1. Other graphical
+resentations of these data (e.g., boxplots) were difficult to visualize since the confidence intervals
+und the means are much narrower than the variance of the data. We also take this opportunity to
+ind readers that the raw data are available for exploration with the manuscript.
+The W statistic is for a nonparametric Wilcoxon test however the use of this test is not mentioned
+he methods. Why was this used and not a more powerful parametric test? If the data is not normally
+ributed then a better alternative is a bootstrapped T-test which can easily be done in R.
+As per the reviewer’s suggestion, we executed a bootstrapping procedure. We wrote a small function
+irst produce a new distribution of possible skull metric measurements sampled from the observed
+h replacement), producing a normally distributed, new distribution of equal size to the observed for
+h group of interest; e.g., a new distribution of braincase depth for juvenile female Mustela nivalis and
+ew distribution of braincase depth for subadult female Mustela nivalis. We then performed a t-test
+ween these new sampled distributions. We repeated this entire process 5000 times per comparison,
+ampling and t-tests, tallying the number of times when the bootstrapped procedure produced t-
+es greater than or equal to the observed t-value (absolute value). The tally divided by 5000 is our p-
+e. We present these results in Table S3.
+To summarize the findings, our conclusions drawn via either our original Wilcoxon test or the
+tstrapping procedure do not change substantially. Although the bootstrapping procedure should be
+e robust against non-normally distributed data, our conclusions regarding ontogenetic braincase
+th changes imply that juveniles do exhibit the greatest absolute depths and these are not artifacts of
+nile condylobasal lengths also being greater than other age categories; in fact, they are significantly
+rter. We have modified Table 1 to show comparisons that are NOT significant (via superscript letters)
+ween age-sex groups.
+rth, even if there is a lot of change in braincase depth and little change in total skull length over
+ogeny it is still not clear how this is a “growth overshoot” and not just a normal non-allometric
+elopmental shape change. Please explain this clearly and in detail.
+First, the term “non-allometric” is not completely clear to us. With allometric meaning a rate of size
+nge that is not 1:1 (i.e., isometric; although isometric is in itself a form of allometry), we assume the
+ewers use of “non-allometric” here is to imply the lack of a relationship. Second, it’s also important to
+ember that we are not able to present a fully ontogenetic data set; to do so would require specimens
+ery young, newly born individuals, or repeated measurements from known-aged individuals over
+r lifetimes, however it’s reasonable to assume that these species are not larger in any dimension at
+h than the dimensions of the specimens we were able to measure. Thirdly, most cases of
+elopmental change are allometric, as allometry deals with relative measures. For example, relative
+rt size and brain size, relative to body size show nearly isometric and hypoallometric, respectively,
+tionships in humans. Such cases are common in nature, unlike the “normal non-allometric” claim of
+reviewer. However, what is very uncommon, even rare to our knowledge, is the hyperallometric
+tionship we find in weasel and stoat braincase depth relative to skull length. Rarer still is the absolute
+pattern in braincase depth, where the juveniles exhibit depths greater than at any other point in
+r lifetimes. This is literally an overshoot, a growth curve that peaks when individuals are juveniles,
+t never again reaches this depth or height. Other cases where braincase depth is absolutely greater
+e not been described to our knowledge, except in the red-toothed shrews (as discussed within the
+nuscript). Additionally, “developmental shape change” implies a relative relationship; i.e., “shape”
+uiring at least two dimensions. Again, for this section of our manuscript, we are not discussing
+tive changes or “shape” (which the reviewer is correctly acknowledging as “normal”), but rather
+nges in absolute dimensions. For illustration, human skulls undergo much shape change in the face
+skull, yet no human would have a skull height greater as a toddler than as an adult (i.e., the
+ivalent of what we see in the weasel and stoats).
+We appreciate the reviewer’s comments here. They are a reminder to us to be clear in our
+ing and motivated us to edit the manuscript to emphasize the clarifications we’ve made here in our
+onses. See page 5 lines 24-30. We hope our response has clarified matters.
+second conclusion is in regards to seasonal changes in braincase depth in these two species and
+cifically: “seasonally-driven, reversible changes in the BDs… suggesting that these species are able to
+dify the shape of their skulls after their sutures are fused and their skull is fully ossified.” (p4, lines
+51).
+upport of this conclusion the authors present statistical models which analyze relative braincase
+th (braincase depth/total skull length) as a function of Day of the Year (doy), age, sex, and location
+gin). They find that doy explains a proportion of the variation in relative braincase depth and that
+tive braincase depth is higher from May – September. They also find that sex, location and age
+lain a proportion of the variation in relative braincase depth (table 2). In addition, they find that
+re is an interaction between doy and location (table S2 and figure 3).
+m table S2 and figure 3 it can be seen that the pattern of variation in relative braincase depth over
+year varies from location to location and none of the regions by themselves show as consistent a
+tern as is found when pooling the data in figure 2. The authors acknowledge this in the caption to
+re 3 “Generalized additive model predictions suggest that the presence, magnitude, and timing of
+seasonal patterns varies between sexes, species, and geographic regions (shading indicates 95%
+esian confidence intervals).” Therefore, in order to more soundly support the claim that this is a trait
+oth species and that it isn’t due to changes in local resources, an analysis within each location should
+onducted separately.
+Thank you for the nice summary of our work. The reviewer is correct: the seasonal patterns we
+erve (i.e., the significance of day of the year in the GAM) do vary geographically. To explore this
+graphical variation, we used a subset of our total data set for which we could balance sample size
+h a small spatial extent; i.e., our “origins”. Unfortunately, finding sufficient sample sizes for each
+uping (e.g., only adults, only females, collected in Finland, with a roughly year-round date of
+ection) is tremendously difficult. We believe that a combination or interaction between low sample
+and/or insufficient spread in the day of collection for some sex-species-origin categories, e.g., male
+stela erminea from Belgium, is partly responsible for some of the differences in the presence and
+gnitude of the seasonal pattern between origins and greatly limited our abilities to explore these
+terns between spatially-explicit areas.
+The reviewer is also correct in that the GAM we ran on these spatially explicit subsets did differ
+m the optimal GAM that we ran on the global dataset (seen in Table 2) and we thank the reviewer for
+hlighting our omission. These analyses only included adults (since it was our intent to exclude age-
+ted patterns and to focus on the seasonal pattern) and we ran models for each sex separately (since
+sexes varied in the magnitude and shape of their response; Table S1). Removing these factors and
+ng a GAM per origin produced a final GAM with only a smooth-termed day of the year as a factor.
+s, the results shown graphically in Figure 3 are indeed produced by “an analysis within each location”
+equested by the reviewer. This was our approach after (a) the “origin” term in the full GAM was
+sent in each of the best global models and (b) we found that this GAM failed to find significant
+terns in each origin separately; i.e., implying that the origins varied in their response (table S2)
+It should be noted that despite removing all but one variable, the day of year still explained
+ificant non-linear patterns in BDs (see Tables S4 & S5). We have added to the manuscript to better
+cribe this process, since it was apparently unclear, but also desired. We also added sample sizes for
+h sex-origin factor in Table S5. We thank the reviewer for flagging this lack of clarity.
+ddition, the claims of seasonal changes are made only for the adults however in all of the statistical
+dels presented all age classes are included. If a separate analysis including only adults that looked at
+effect of sex, origin and doy was done then please include it in the MS.
+Yes, the reviewer is correct, after age was identified as having a strong influence on BDs, we
+uded juveniles and subadults from analyses for seasonal patterns to exclude potentially confounding,
+ogenetic influences and to better reveal seasonal patterns. We added a sentence at page 5, lines 6-8.
+created table S4 similar to Table 2 showing the GAM results.
+lly, I think that the evidence presented here is not very strong, there is a lot of scatter in the data
+. weasels from Poland on figure 3 (bottom right)). Please provide statistics to demonstrate how well
+model fits for each location.
+Our efforts to quantify potential seasonal changes in the braincase depths of these two species have
+d numerous challenges. We correctly expected the magnitude of these seasonal changes to be small,
+uiring a large sample size that would allow us to still identify these differences despite numerous
+founding factors. Despite these factors, (e.g., ontogenetic drivers, sex-based effects, species-level
+erences, day of collection, annual variability in climate, latitude effects, altitude effects, etc., most of
+ch we could directly control for), we are still able to find a significant non-linear pattern in BDs in both
+cies. We employed a statistical approach that is robust but also self-penalizing for increasing its noise
+rance for the pattern; i.e., had we allowed the GAM more freedom, e.g., increasing the number of
+ts, the GAM would have produced more significant results and could have found significant patterns
+re we did not report them.
+This manuscript is not the end of this story, but the first chapter. We have already begun
+eriments to directly measure these seasonal patterns on free-ranging individuals, using combinations
+olecular, field (repeated-x-rays of PIT-chipped individuals), and CT-scans to remove potentially
+founding variables and to present these patterns with potentially less scatter. We would also like to
+ind the reviewer that the referred to scatter is likely only 3 individuals, and yet the model was still
+ust against these individuals. Noise/Scatter yes, but far less than one might expect from samples
+ected during a century of varying climate and resource availability.
+We have created Table S5 where information for each origin-sex combination per species (row) is
+wn: sample size (n), standard error (SE), intercept, explained deviance (adjusted; R2), effective
+rees of freedom (edf), log-likelihood (log(L)), second-order AIC (AICc), and the significance level of the
+othed day of the year (p-value). We encourage readers to compare the lack of overlap between the
+er and upper extent of the Bayesian confidence intervals between seasons rather than searching for
+ificant p-values. We hope these efforts suffice to accommodate the reviewers and readers requests.
+, this is observational evidence based on museum specimens. What years are these specimens
+m? Has collection year been considered in the models?
+Yes, this is observational evidence by necessity. The dataset attached with this manuscript includes
+date of collection for each specimen, including the year. Despite the size of our dataset, we did not
+sider ‘year’ as a factor; the sample size per year, per sex, per age, per species, per origin is too small.
+onsider year directly in our analyses would require a minimum of 5 skulls for each of the 60 possible
+-sex-species-origin combinations, multiplied by the number of years of interest (in our case over 100),
+aning a data set of >30000 skulls. Ideally, one would have a long term data set of specimens collected
+m a single location, but we do not, nor does anyone else. Additionally, we suspect that the within year
+ation in temperature and/or resource availability is greater than that between years on a given
+ndar date.
+gure S3 the raw data for braincase depth and total skull length are presented alongside relative
+ncase depth which is very helpful. Relative braincase depth can become reduced because either the
+erator (braincase depth) becomes smaller or because the denominator (total skull length) becomes
+er. Presenting both allows the reader to see which is happening more clearly. I would suggest
+uding these plots for figures 2 and 3 as well.
+We thank the reviewer for their compliment on Figure S3. We made a similar effort for Figure 2, but
+e chosen not to publish it, for three reasons. One, duplicating the style of Figure S3 in Figure 2 would
+duplicate the presentation of results. Figure S3 already shows half of the results that would be in the
+sed Figure 2: condylobasal length, braincase depth, and relative braincase depth for adult female and
+es. Second, for the other age categories (juveniles and subadults), readers should refer to Table 1 and
+newly provided Figure S3 to visualize the distribution of condylobasal length, braincase depth, and
+ncase width data. Lastly, because the timing of the appearance of juvenile and subadult age classes
+rlap within the calendar year, it is very difficult to consistently display their 2-dimensional clustering
+in Figure 2) clearly and logically; i.e., instances with high overlap.
+We also explored similar ideas for Figure 3, but after several attempts we decided that an 18-
+elled figure (3 subplots per origin-species combination) became too difficult to interpret, especially
+n considering final publication sizes and constraints.
+If the editor(s) make a strong request for these modified figures and offer suggestions for
+matting, we will make efforts to accommodate.
+on Figure 2 please use different symbols to illustrate males and females – at least for the adults.
+We explored this request as well, but have chosen not to replace the version of Figure 2 originally
+mitted. There is too much overlap between male and female adults (as also suggested by the GAM
+dictions for both species), making the purpose of distinguishing between the sexes less meaningful.
+hope the reviewer appreciates our efforts and will except our original versions. Additionally, these
+e data are shown in Figure S3, where the sexes are distinguished separately.
+iewer: 2
+ments to the Author(s)
+wth overshoot and seasonal size changes in the skulls of two weasel species
+study examines developmental and seasonal changes in cranial dimensions in two species of
+sel. I have answered no to two questions (is the manuscript scientifically sound in its present
+m? And Are the interpretations and conclusions justified by the results?) However I think my doubts
+be overcome by fuller explanation of some of the issues expressed below.
+results show that during development the cranial height (“brain case depth BD”) decreases from
+nile to subadult to adult. The methods state that the
+measurement excludes the sagittal crest which is only
+sent in adults. Although brain case volume is correlated
+0.7) with BD it does not necessarily follow that the brain
+me decreases from juvenile to adult: Younger
+cimens may have extensive pneumatisation inflating the
+nium, and this may reduce as the temporalis muscle and
+sagittal crest develop fully. Are there broken
+cimens where the level of pneumatisation can be seen
+he three age categories? Could you comment on the
+stion of pneumatisation?
+brain volume correlates (r~0.94) more strongly with
+onal cross-sectional area (CSA = (BD/2)x(BB/2)xPi)). So
+ossible that cranial breadth (“brain case breadth BB”) is
+re closely related to brain volume than BD, but no data
+iscussion of BB is provided.
+We thank the reviewer for their careful review and thoughtful question. We agree with the reviewer
+t although braincase depth does correlate with braincase volume, correlation is a simple statistic and
+R value suggests that braincase depth (or better coronal CSA) could be used as a suitable proxy for
+n volume. We caution against over-interpreting this correlation to draw conclusions regarding brain
+me however. The reviewer is also correct again: coronal CSA of the braincase is highly correlated
+h braincase volume. We have no data to either refute nor support the reviewer’s suggestion that the
+ogenetic patterns in braincase depth are a result of pneumatisation. We are unaware of any
+ature on pneumatisation within these species. We did consult with Dr. Christian Dullin (University
+dical Center Goettingen and Elettra-Sincrotrone Trieste S.C.p.A. di Interesse Nazionale) who provided
+CT-scan images for Figure S1. Christian re-scanned each of the skulls shown in Figure S1 (albeit a
+ll fraction of our total dataset) to render the interface between bone and airspace (i.e., potential
+umatisation). His work revealed no signs of pneumatisation and further suggested that
+eumatisation cannot change the shape of the skull since the bone will be still not be flexible” (taken
+m email correspondence.
+See a sample image at right. Darker lines indicate higher incidence of air-bone interfaces, i.e.,
+estration or possible pneumatisation. Note that aside from changes within the auditory bullae and
+rum, there are no noticeable changes within the braincase. Please disregard the darkening in the
+ncase of the top skull: it is remnant brain material.
+Anecdotally, while handling >2000 specimens I did not see signs of pneumatisation within the
+ncase bones. Additionally and importantly, the parietal of these species is much thinner than the
+erved braincase depth changes, thus pneumatisation alone is an insufficient, but not exempt,
+lanation for the braincase depth changes. There are of course specimens in the visited collections
+h broken and/or fractured braincases, but we were not prepared to investigate pneumatisation. We
+e some evidence, but not presented here, from overlaying CT-scans of a juvenile and adult weasel
+l that the depth change is not occurring with the bone, but rather an expansion of the braincase as a
+le. We will further pursue our preliminary work with the CT-scans to explore and quantify our
+ervations with repeated measures on live animals, but still do not expect a significant influence of
+umatisation.
+We have now presented results from comparisons between the age-sex-species categories in
+ncase width (see the new modified Table 1) to accommodate this request.
+result also show seasonal changes in cranial height (BD) normalised for skull (condylobasal)
+th. Regardless of whether this is reflected in brain volume, it is a very interesting result. However
+finding depends on the accuracy of data about the time of death of the specimens. The date of
+ection was recorded for each specimen, however I am not satisfied that the date of collection truly
+ects the date of death. I feel that more discussion and explanation is required on this point. Were
+specimens collected as skeletons in the wild or were the recently deceased weasels collected and
+etonised in the all the museums.
+The reviewer raises a valid point touching on a major challenge for specimen-based research. Yes, in
+ny institutions there can be more than one date associated with a specimen: date of collection and
+e of preparation. Date of collection (which we used) marks the day when the animal was sacrificed
+natural historians, accidental take, etc.), whereas date of preparation implies the date when the
+mal was turned from a carcass to a specimen; i.e., a date after the date of collection. These two dates
+be confused and at times used interchangeably, unfortunately. We took every precaution (including
+sulting with collection managers and the original ledgers and “receipts” of collection managers who
+chased specimens from collectors and expeditions in the past) to be certain that the date we used
+ected the day the animal was killed. We’d also like to say that our final data set for this manuscript
+heavily scrutinized for any potential ambiguities; our initial data set included >2400 specimens, but
+analyzed data set includes exactly 1359 specimens, many excluded due to uncertainties in age class
+gnment, sex, and vague location and/or date information. Our justification for amassing such a large
+poral and spatial extent of specimens and the institutions responsible for collecting and maintaining
+m was to buffer our results from such potential sources of uncertainty.
+We added lines 14-15 page 3 to emphasize our attention to this potential ambiguity.
+e seasonal variation is confirmed, I wonder if the changes observed actually relate to brain size
+ation or some other change in the cranium…
+We wonder the same thing! Only one study (Apfelbach & Kruska 1979, cited within ms) looked at
+n size/volume in a Mustela species, but found no evidence of seasonal patterns. However, we argue
+t the seasonal patterns are a result of energetic and resource availability fluctuations; stressors that
+captive polecats, with constant food supplies and temperatures, of Apfelbach & Kruska did not need
+ope with. These authors also had very few samples and used body mass as a standardization metric
+ich can be sensitive to numerous events, including the timing of meals). We are currently preparing
+eral manuscripts from the results of repeated measures (via –x-rays), histological investigations, and
+scans from free-ranging shrews to better understand the seasonal patterns in brain volume.
+the whole I think this is an interesting study reporting a fascinating finding and as such is worthy of
+lication.
+We thank the reviewer for their comments and support and we hope our accommodations are
+reciated and sufficient.
+pendix B
+iew of “Growth overshoot and seasonal size changes in the skulls of
+weasel species”
+authors have done an excellent job of addressing many of the concerns that I had with the
+er. I think it is now ready to be published as long as some minor areas are addressed. My
+st important concern is in section 3.3. Here I would like to see the difference in BD described
+more detail. M. nivalis do not have as much BD difference between juveniles and adults as
+erminea. This should be pointed out, and within the text, the values for the percentage
+erence should be included: [(mean of juv – mean of adult)/mean of adult]*100 for each
+cies and sex (four values).
+ond, I would like to see boxplots or individual value plots included in a supplemental figure
+D by location for each species/sex/age and another for BD/CBL by location for each
+cies/sex/age. I’ve included two examples below (of course you should make yours more
+dable by using color and formatting them correctly – these are just quick sketches).
+comments/requests of reviewer one below, following the hashtags '###'
+Reviewer: 1
+Comments to the Author(s)
+label_comment_8
+For the above questions regarding whether the data, code and materials I answered No because the
+code that was used was not provided. The data are available in the supplemental files. Please provide
+the R code too. For comments on the MS itself please see the attached pdf.
+###R code for the bootstrapping procedure has been provided as Supplementary Material as
+Supplemental Code S1.
+The authors have done an excellent job of addressing many of the concerns that I had with the paper. I
+think it is now ready to be published as long as some minor areas are addressed.
+### Thank you again for the compliments and for another thorough review.
+My most important concern is in section 3.3. Here I would like to see the difference in BD described in
+more detail. M. nivalis do not have as much BD difference between juveniles and adults as M. erminea.
+This should be pointed out, and within the text, the values for the percentage difference should be
+included: [(mean of juv – mean of adult)/mean of adult]*100 for each species and sex (four values).
+### Please see page 5, lines 18-20.
+Braincase depth (calculated from raw data, but similar results are achieved via Table 1):
+M. nivalis, females = [(11.172540-9.933526)/9.933526]*100 = 12.47305
+M. nivalis, males = [(12.209130-11.377617)/11.377617]*100 = 7.308323
+M. erminea, females = [(14.315-12.259375)/12.259375]*100 = 16.76778
+M. erminea, males = [(15.871724-13.885795)/13.885795]*100 = 14.30187
+Second, I would like to see boxplots or individual value plots included in a supplemental figure of BD by
+location for each species/sex/age and another for BD/CBL by location for each species/sex/age. I’ve
+included two examples below (of course you should make yours more readable by using color and
+formatting them correctly – these are just quick sketches).
+### We have created figure S4, showing boxplots per sex, age, and origin grouping for both braincase
+depth and standardized braincase depth and refer to this figure in section 3.3.
+Society Open

@@ -1,0 +1,956 @@
+Morphology captures diet and locomotor types in rodents
+Luis D. Verde Arregoitia, Diana O. Fisher and Manuel Schweizer
+Article citation details
+R. Soc. open sci. 4: 160957.
+http://dx.doi.org/10.1098/rsos.160957
+Review timeline
+Original submission: 11 August 2016 Note: Reports are unedited and appear as
+1st revised submission: 24 November 2016 submitted by the referee. The review history
+2nd revised submission: 14 December 2016 appears in chronological order.
+Final acceptance: 15 December 2016
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-160589.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, the supplemental data and code is provided and is easily accessible.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This is a well-written and interesting manuscript that contributes to our knowledge of how
+functional traits link to locomotor and dietary ecologies. I particularly enjoyed the introduction
+that points out the utility of these types of analyses and the wealth of data waiting to be accessed
+in natural history collections.
+The analyses are appropriate and conclusions are scientifically sound; I mainly have minor
+comments in addition to one or two major points. Overall, this is a very good paper and I thank
+the authors for making their compilation of the rodent data and code available online to other
+researchers.
+Major comments
+First, although your sample is quite large, it is not quite ‘global’ in terms of geography and, likely,
+phylogeny (I fear you may be sampling only a few number of clades). The rodents in your sample
+are from Australia and its neighboring islands, the Baltic region, and Mesoamerica – this
+probably only includes a tiny bit of the overall rodent tree (> 2,000 spp.). It would be help to
+provide some indication of how broadly sampled the rodent family tree is (e.g., include sentences
+like “we sampled X/X rodent families, X%”). Or, preferably in addition to this, plot a phylogeny
+and indicate across it (with stars or another symbol) where the families you sampled fall along
+the tree. I don’t think this is any fatal flaw or detracts from your conclusions, but this issue should
+be discussed nonetheless (it is hinted to in the Conclusions).
+Second, although it seems to be that phylogenetic signal in these traits are low, it would be
+helpful to provide some measure of this with Pagel’s lambda or Blomberg’s K. In addition,
+perhaps you could also include a two-panel figure of the diet and locomotor categories
+distributed across the phylogeny of your 208 spp. This can be done with the contmap function in
+phytools. This would provide some visualization of how conserved these ecologies (vs the traits)
+are across the tree.
+Third, an alternative way of coding dietary data (instead of using categories) would be to
+ordinate the ‘MammalDIET’ dietary matrix of Kissling et al. (2014 Ecology and Evolution) using
+Principal Coordinates Analysis (PCoA) with Gower distance. This dietary matrix spans all extant
+mammals and ranks a variety of food items (e.g., seeds, fruit, roots) on a 0-3 scale based on the
+item’s importance in a species’ diet. You could simply regress the individual craniodental
+functional traits against the PCoA scores to explore which are highly correlated. This is just a
+suggestion and by no means a requirement – feel free to leave out.
+Minor comments
+pg 1, line 57: ‘is’ should be ‘are’ so that this sentence reads “…substrate use are commonly…”
+pg 2, line 30: ‘it’ is missing from this sentence “…of these regards, so [it] is not a matter…”
+pg 2, line 40: ‘downstream analyses’ is awkward, perhaps swap this out for another word/phrase
+pg 2, lines 47-49: this sentence mentions the various locomotor and dietary ecologies of rodents
+but then only lists the former. Add in a list of your dietary ecologies to this sentence.
+pg 3, line 36: delete the comma in “…morphology and ecology, in a quantitative…”
+pg 3, line 39: change ‘and’ to ‘while’ so this sentence reads “…strategies, while taking
+phylogenetic…”
+3
+pg 4, line 23: spell out W, HB, T, E, etc and all other abbreviations the first time they are used in
+the text of the manuscript even though they are given in tables
+pg 4, line 24: data recorded from specimen labels? Do specimen labels usually have these data on
+them?
+pg 5, line 33: change ‘arises’ to ‘arise’
+pg 12, line 52: The rodents in your sample are from Australia and its neighboring islands, the
+Baltic region, and Mesoamerica – isn’t this only three biogeographic realms (not four)?
+Figures and tables
+Figure 1: The caption for Figure 1 should reference Tables 2 and 3 since this is where a reader can
+find the definitions of these characters.
+Figure 2 and 3: Italicize genus names for the shape outlines on the x-axis (DF1)
+Table 3: I find the examples for each of your trait categories in Tables 2 and 3 to be very helpful.
+Why did you leave them out for Generalized Herbivore and Specialized Herbivore? Please
+include examples if you can.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+The authors make all of their data available freely, hosted on github. However perhaps figshare
+or dryad are more appropriate and longer lasting?
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+I have reviewed the manuscript entitled “Morphology captures diet and locomotor types in
+rodents”. This paper is about the relationship of whole body morphology (body shape, cranial
+and dental shape) with diet and locomotory mode using a comparative macroevolutionary
+approach in rodents. The authors find substantial homoplasy, where unrelated species with
+similar diets or locomotion types are characterised by similar morphology.
+4
+The authors whole-body approach is commendable given the wealth of literature on only specific
+body regions, and how important it is for our understanding of what influences morphological
+evolution – however see below the potential issues of size correction. The sampling is also worth
+praising since it works out to be about 10 specimens per species (208 species), which is great
+within-species sampling for this kind of study, and 208 species is certainly a huge amount of
+work. However, the authors note that there are 2200 species of rodent (page 2), and so it would be
+useful for the reader if a sentence was added to the methods indicating how these 208 spp.
+sampled represent the 2200 spp. diversity.
+I very much enjoyed the first paragraph of the discussion – this is exactly what the paper is all
+about! Rodent body plan is conserved and highly recognizable. Yet, there is rampant homoplasy
+and convergent evolution in regards to locomotion and diet impacting morphology. This isn’t
+played up enough! I suggest one additional figure: I and other readers would surely be interested
+to see the rodent morphospace as described by these data, presented using the
+phylomorphospace approach, where a phylogenetic tree is projected into a PCA biplot, so that
+one can see very easily the rampant homoplasy. The criss-crossing branches indicating shared
+morphology in unrelated taxa is the most visual way of presenting this result.
+Size correction: This is an often misused method in macroevolutionary studies. The authors chose
+to use residuals from a regression to deal with size variation in their data, which removes size
+and also allometric variation from the dataset, and leaves “non-allometric shape” information. A
+size-only correction alternative (keeping allometric variation) would be the log-shape ratio
+approach of Mosimann (1970 & 1979 key papers), which is easily implemented in R using the
+geometric mean of the data (see Claude 2013 Hystrix). These two are very different attitudes to
+size and shape in morphological evolution (See Klingenberg 2016 Dev Genes Evol). The MS as it
+stands ignores body size and focusses only on non-allometric morphological variation in relation
+to ecology. This is arguably fine, but limited. Body size and ecology is bound to be hugely
+correlated, since what size you are will influence what niches you can occupy. I suggest adding in
+analyses of HB alone (which was measured but not included) in regards to phylogenetic signal,
+diet and locomotion, since this is an important aspect of an animals’ morphology which is
+overlooked here. Then contrast those patterns with non-allometric variation and ecology to show
+how much diversity and homoplasy there is that has evolved other than by simple allometric
+scaling during speciation.
+Before examining the morphological changes associated with differences in diet/locomotor mode
+using a discriminant analysis approach, I would have expected the authors to show with a
+phylogenetic least squares analysis that these factors indeed correlate with morphology, and how
+much of the morphological variation they each explain (I suspect a lot). Especially since the
+authors state on line 50, page 10 that they are interested in the functional links between
+morphology and ecology, and the ecological relevance of these traits. With a multivariate dataset
+and treating the shape traits as a single matrix (shape being a multivariate trait), the PGLS can be
+done using the ‘procD.pgls’ function of geomorph R package, or the ‘compare.models’ function
+of phylocurve R package (see Adams 2014 Evolution; Goolsby 2016 Sys Biol). A trait by trait
+PGLS could also be done, but since these traits are likely to be correlated, this approach would
+not provide a full understanding of how morphology and ecology are evolutionarily correlated.
+Note that this MANOVA test is the statistical analysis normally permed alongside a canonical
+variates analysis, which is related to the DFA performed here.
+As a final point, I simply want to flag the awkward wording throughout the manuscript (MS)
+regarding “data”. The first line of the summary is the first of several instances where the paper
+seems to be focusing on data and data analysis, rather than what the data are and the analyses are
+actually being used for. E.g. “To understand the functional meaning of morphology, we need to
+link morphological and ecological datasets”. Again in the first line of the background “Linking
+morphological and ecological datasets is not trivial”. In fact, “link” is used 8 times in the MS. I
+would argue that macroevolutionary research isn’t about linking datasets, (what does that
+mean?), the strategy we are taking in these macroevolutionary studies is about testing statistical
+5
+correlations between morphological and ecological data, from which we can infer, but not imply,
+causation (adaptation). And also in the discussion, the very first section is a focus on character
+choice for the study, rather than what the results mean and the bigger picture. With this critique
+in mind I encourage the authors to reconsider the goal of the study and focus on what the
+analyses mean for the biology, rather than the analyses and datasets themselves.
+Minor comments
+Throughout – superfluous capitalization. Statistical procedures such as “discriminant analysis”
+and “principal components analysis”, measurements (e.g. “Angle of the Condylar Process”), and
+diet strategies (page 11, line 9) do not need to be capitalized.
+Page 1, line 29 – “relatedness relate” awkward; suggest “are associated with”
+Page 1 – What does this sentence mean? “We conclude that when ecological characters do not
+show strong phylogenetic patterns, we cannot predict ecological similarity adequately using only
+phylogenies”.
+Page 3 – The Background contains many small paragraphs of connected subject matter. Suggest
+combining the 2nd and 3rd last since they are both discussing previous work on rodent
+ecomorphology
+Page 4, line 22 – refer to table 1; also suggest spelling out measurement abbreviations in the
+brackets.
+Page 4, line 25 – “digital calipers”; should be plural
+Page 4, heading b – Title not strictly accurate: you are introducing the phylogenetic hypothesis, or
+phylogenetic tree, you used. You are not introducing the data that was used to make the
+phylogenetic trees.
+Page 5, heading d – Better to cite the R packages and the statistical analyses you did in the
+relevant sections of the methods, where you state why you did the analysis.
+Page 5, line 21 – It isn’t strictly necessary to cite a package for data table manipulation, only
+statistical analysis.
+Page 5, line 36 – The authors state that two variables were not included because they were too
+“correlated with body mass”. What was the cut off? And what happens if these are simply left in
+the analyses? I don’t think that being strongly correlated with body mass means uninformative,
+since certainly body mass will influence what ecology an animal lives in.
+The ACP is an angle, and the rest of the measurements are linear, which means these data are not
+strictly equivalent. Furthermore, was the ACP normally distributed to allow for PGLS size
+correction via the residuals approach? Do the authors expect an angle to vary with size? I suggest
+that this metric is reexamined separately to the linear measurements.
+Page 5, line 52 – “retaining” is not the correct word, since it suggests that PCA removes the
+between or within-group variation, which it does not; suggest “examining”
+Page 6, heading b – This is probably info that can be in the methods rather than results.
+Figure 1 caption – add “refer to Table 1 for measurement details”.
+Figure 2 & 3 captions – What is meant by “species treated as unknown”? I couldn’t see discussion
+of this in the text.
+Figure 3 – The number of different locomotor strategies here means there are many more axes
+separating the groups than are presented (unlike the diet, which is would have only one more
+axis in addition to those two presented). I suggest adding another biplot (in sup materials if
+there’s restricted space, else as a composite figure) with at least 2 more DF axes (DF3v4).
+6
+label_end_comment
+Decision letter (RSOS-160589)
+13-Oct-2016
+Dear Dr Verde Arregoitia:
+Manuscript ID RSOS-160589 entitled "Morphology captures diet and locomotor types in rodents"
+which you submitted to Royal Society Open Science, has been reviewed. The comments from
+reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 12-Apr-2017. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Associate Editor: 1
+Comments to the Author:
+label_comment_3
+I have received reviews from two experts who have provided some thoughtful and constructive
+commentary on your work. As you will see, the reviewers are mostly positive about the research
+question and approach, and they recommend that the paper should be considered for publication
+in RSOS following suitable revision to address specific points. However, both reviewers raise
+points that likely require further data analysis to address, along with associated text revisions. In
+particular, both reviewers request that the authors quantify the phylogenetic signal in the data
+and provide additional analysis and figures to support the main conclusions of the work.
+Reviewer 2 suggests that body size has not been adequately addressed with the current statistical
+approach, and suggests the addition of a separate analysis to address body size. Both reviewers
+request that the authors put their sampling of rodent species into context of the overall diversity
+and global distribution of rodents. Finally, Reviewer 2 suggests that the authors could better
+communicate the biological relevance of the findings by revising the text to focus less on the
+‘dataset’ and more on the broader ecological and evolutionary questions that the dataset have
+allowed the authors to address. If the authors feel that they are able to address these points, I
+would be happy to consider a resubmitted version of the manuscript.
+7
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+This is a well-written and interesting manuscript that contributes to our knowledge of how
+functional traits link to locomotor and dietary ecologies. I particularly enjoyed the introduction
+that points out the utility of these types of analyses and the wealth of data waiting to be accessed
+in natural history collections.
+The analyses are appropriate and conclusions are scientifically sound; I mainly have minor
+comments in addition to one or two major points. Overall, this is a very good paper and I thank
+the authors for making their compilation of the rodent data and code available online to other
+researchers.
+Major comments
+First, although your sample is quite large, it is not quite ‘global’ in terms of geography and, likely,
+phylogeny (I fear you may be sampling only a few number of clades). The rodents in your sample
+are from Australia and its neighboring islands, the Baltic region, and Mesoamerica – this
+probably only includes a tiny bit of the overall rodent tree (> 2,000 spp.). It would be help to
+provide some indication of how broadly sampled the rodent family tree is (e.g., include sentences
+like “we sampled X/X rodent families, X%”). Or, preferably in addition to this, plot a phylogeny
+and indicate across it (with stars or another symbol) where the families you sampled fall along
+the tree. I don’t think this is any fatal flaw or detracts from your conclusions, but this issue should
+be discussed nonetheless (it is hinted to in the Conclusions).
+Second, although it seems to be that phylogenetic signal in these traits are low, it would be
+helpful to provide some measure of this with Pagel’s lambda or Blomberg’s K. In addition,
+perhaps you could also include a two-panel figure of the diet and locomotor categories
+distributed across the phylogeny of your 208 spp. This can be done with the contmap function in
+phytools. This would provide some visualization of how conserved these ecologies (vs the traits)
+are across the tree.
+Third, an alternative way of coding dietary data (instead of using categories) would be to
+ordinate the ‘MammalDIET’ dietary matrix of Kissling et al. (2014 Ecology and Evolution) using
+Principal Coordinates Analysis (PCoA) with Gower distance. This dietary matrix spans all extant
+mammals and ranks a variety of food items (e.g., seeds, fruit, roots) on a 0-3 scale based on the
+item’s importance in a species’ diet. You could simply regress the individual craniodental
+functional traits against the PCoA scores to explore which are highly correlated. This is just a
+suggestion and by no means a requirement – feel free to leave out.
+Minor comments
+pg 1, line 57: ‘is’ should be ‘are’ so that this sentence reads “…substrate use are commonly…”
+pg 2, line 30: ‘it’ is missing from this sentence “…of these regards, so [it] is not a matter…”
+pg 2, line 40: ‘downstream analyses’ is awkward, perhaps swap this out for another word/phrase
+pg 2, lines 47-49: this sentence mentions the various locomotor and dietary ecologies of rodents
+but then only lists the former. Add in a list of your dietary ecologies to this sentence.
+pg 3, line 36: delete the comma in “…morphology and ecology, in a quantitative…”
+pg 3, line 39: change ‘and’ to ‘while’ so this sentence reads “…strategies, while taking
+phylogenetic…”
+8
+pg 4, line 23: spell out W, HB, T, E, etc and all other abbreviations the first time they are used in
+the text of the manuscript even though they are given in tables
+pg 4, line 24: data recorded from specimen labels? Do specimen labels usually have these data on
+them?
+pg 5, line 33: change ‘arises’ to ‘arise’
+pg 12, line 52: The rodents in your sample are from Australia and its neighboring islands, the
+Baltic region, and Mesoamerica – isn’t this only three biogeographic realms (not four)?
+Figures and tables
+Figure 1: The caption for Figure 1 should reference Tables 2 and 3 since this is where a reader can
+find the definitions of these characters.
+Figure 2 and 3: Italicize genus names for the shape outlines on the x-axis (DF1)
+Table 3: I find the examples for each of your trait categories in Tables 2 and 3 to be very helpful.
+Why did you leave them out for Generalized Herbivore and Specialized Herbivore? Please
+include examples if you can.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+I have reviewed the manuscript entitled “Morphology captures diet and locomotor types in
+rodents”. This paper is about the relationship of whole body morphology (body shape, cranial
+and dental shape) with diet and locomotory mode using a comparative macroevolutionary
+approach in rodents. The authors find substantial homoplasy, where unrelated species with
+similar diets or locomotion types are characterised by similar morphology.
+The authors whole-body approach is commendable given the wealth of literature on only specific
+body regions, and how important it is for our understanding of what influences morphological
+evolution – however see below the potential issues of size correction. The sampling is also worth
+praising since it works out to be about 10 specimens per species (208 species), which is great
+within-species sampling for this kind of study, and 208 species is certainly a huge amount of
+work. However, the authors note that there are 2200 species of rodent (page 2), and so it would be
+useful for the reader if a sentence was added to the methods indicating how these 208 spp.
+sampled represent the 2200 spp. diversity.
+I very much enjoyed the first paragraph of the discussion – this is exactly what the paper is all
+about! Rodent body plan is conserved and highly recognizable. Yet, there is rampant homoplasy
+and convergent evolution in regards to locomotion and diet impacting morphology. This isn’t
+played up enough! I suggest one additional figure: I and other readers would surely be interested
+to see the rodent morphospace as described by these data, presented using the
+phylomorphospace approach, where a phylogenetic tree is projected into a PCA biplot, so that
+one can see very easily the rampant homoplasy. The criss-crossing branches indicating shared
+morphology in unrelated taxa is the most visual way of presenting this result.
+Size correction: This is an often misused method in macroevolutionary studies. The authors chose
+to use residuals from a regression to deal with size variation in their data, which removes size
+and also allometric variation from the dataset, and leaves “non-allometric shape” information. A
+size-only correction alternative (keeping allometric variation) would be the log-shape ratio
+approach of Mosimann (1970 & 1979 key papers), which is easily implemented in R using the
+geometric mean of the data (see Claude 2013 Hystrix). These two are very different attitudes to
+size and shape in morphological evolution (See Klingenberg 2016 Dev Genes Evol). The MS as it
+9
+stands ignores body size and focusses only on non-allometric morphological variation in relation
+to ecology. This is arguably fine, but limited. Body size and ecology is bound to be hugely
+correlated, since what size you are will influence what niches you can occupy. I suggest adding in
+analyses of HB alone (which was measured but not included) in regards to phylogenetic signal,
+diet and locomotion, since this is an important aspect of an animals’ morphology which is
+overlooked here. Then contrast those patterns with non-allometric variation and ecology to show
+how much diversity and homoplasy there is that has evolved other than by simple allometric
+scaling during speciation.
+Before examining the morphological changes associated with differences in diet/locomotor mode
+using a discriminant analysis approach, I would have expected the authors to show with a
+phylogenetic least squares analysis that these factors indeed correlate with morphology, and how
+much of the morphological variation they each explain (I suspect a lot). Especially since the
+authors state on line 50, page 10 that they are interested in the functional links between
+morphology and ecology, and the ecological relevance of these traits. With a multivariate dataset
+and treating the shape traits as a single matrix (shape being a multivariate trait), the PGLS can be
+done using the ‘procD.pgls’ function of geomorph R package, or the ‘compare.models’ function
+of phylocurve R package (see Adams 2014 Evolution; Goolsby 2016 Sys Biol). A trait by trait
+PGLS could also be done, but since these traits are likely to be correlated, this approach would
+not provide a full understanding of how morphology and ecology are evolutionarily correlated.
+Note that this MANOVA test is the statistical analysis normally permed alongside a canonical
+variates analysis, which is related to the DFA performed here.
+As a final point, I simply want to flag the awkward wording throughout the manuscript (MS)
+regarding “data”. The first line of the summary is the first of several instances where the paper
+seems to be focusing on data and data analysis, rather than what the data are and the analyses are
+actually being used for. E.g. “To understand the functional meaning of morphology, we need to
+link morphological and ecological datasets”. Again in the first line of the background “Linking
+morphological and ecological datasets is not trivial”. In fact, “link” is used 8 times in the MS. I
+would argue that macroevolutionary research isn’t about linking datasets, (what does that
+mean?), the strategy we are taking in these macroevolutionary studies is about testing statistical
+correlations between morphological and ecological data, from which we can infer, but not imply,
+causation (adaptation). And also in the discussion, the very first section is a focus on character
+choice for the study, rather than what the results mean and the bigger picture. With this critique
+in mind I encourage the authors to reconsider the goal of the study and focus on what the
+analyses mean for the biology, rather than the analyses and datasets themselves.
+Minor comments
+Throughout – superfluous capitalization. Statistical procedures such as “discriminant analysis”
+and “principal components analysis”, measurements (e.g. “Angle of the Condylar Process”), and
+diet strategies (page 11, line 9) do not need to be capitalized.
+Page 1, line 29 – “relatedness relate” awkward; suggest “are associated with”
+Page 1 – What does this sentence mean? “We conclude that when ecological characters do not
+show strong phylogenetic patterns, we cannot predict ecological similarity adequately using only
+phylogenies”.
+Page 3 – The Background contains many small paragraphs of connected subject matter. Suggest
+combining the 2nd and 3rd last since they are both discussing previous work on rodent
+ecomorphology
+Page 4, line 22 – refer to table 1; also suggest spelling out measurement abbreviations in the
+brackets.
+Page 4, line 25 – “digital calipers”; should be plural
+Page 4, heading b – Title not strictly accurate: you are introducing the phylogenetic hypothesis, or
+phylogenetic tree, you used. You are not introducing the data that was used to make the
+phylogenetic trees.
+10
+Page 5, heading d – Better to cite the R packages and the statistical analyses you did in the
+relevant sections of the methods, where you state why you did the analysis.
+Page 5, line 21 – It isn’t strictly necessary to cite a package for data table manipulation, only
+statistical analysis.
+Page 5, line 36 – The authors state that two variables were not included because they were too
+“correlated with body mass”. What was the cut off? And what happens if these are simply left in
+the analyses? I don’t think that being strongly correlated with body mass means uninformative,
+since certainly body mass will influence what ecology an animal lives in.
+The ACP is an angle, and the rest of the measurements are linear, which means these data are not
+strictly equivalent. Furthermore, was the ACP normally distributed to allow for PGLS size
+correction via the residuals approach? Do the authors expect an angle to vary with size? I suggest
+that this metric is reexamined separately to the linear measurements.
+Page 5, line 52 – “retaining” is not the correct word, since it suggests that PCA removes the
+between or within-group variation, which it does not; suggest “examining”
+Page 6, heading b – This is probably info that can be in the methods rather than results.
+Figure 1 caption – add “refer to Table 1 for measurement details”.
+Figure 2 & 3 captions – What is meant by “species treated as unknown”? I couldn’t see discussion
+of this in the text.
+Figure 3 – The number of different locomotor strategies here means there are many more axes
+separating the groups than are presented (unlike the diet, which is would have only one more
+axis in addition to those two presented). I suggest adding another biplot (in sup materials if
+there’s restricted space, else as a composite figure) with at least 2 more DF axes (DF3v4).
+Author's Response to Decision Letter for (RSOS-160589)
+See Appendix A.
+label_version_2
+RSOS-160957.R0 (Revision)
+label_author_3
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+11
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_6
+I have reviewed the revised manuscript and I am pleased to see the new analyses implemented -
+they have added much to the overall story. I am satisfied with the changes the authors have made
+to my comments, and their improvements overall. I have no further concerns. It has been a
+pleasure to review this paper.
+label_end_comment
+Decision letter (RSOS-160957)
+12-Dec-2016
+Dear Dr Verde Arregoitia
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-160957 entitled
+"Morphology captures diet and locomotor types in rodents" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160957
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+12
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 21-Dec-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+13
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+Associate Editor Comments to Author:
+Associate Editor
+Comments to the Author:
+label_comment_7
+Thank you for thoroughly and constructively addressing the comments raised by the reviewers. I
+am happy to accept the paper for publication in RSOS.
+Comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_8
+I have reviewed the revised manuscript and I am pleased to see the new analyses implemented -
+they have added much to the overall story. I am satisfied with the changes the authors have made
+to my comments, and their improvements overall. I have no further concerns. It has been a
+pleasure to review this paper.
+label_end_comment
+Decision letter (RSOS-160957.R1)
+15-Dec-2016
+Dear Dr Verde Arregoitia,
+I am pleased to inform you that your manuscript entitled "Morphology captures diet and
+locomotor types in rodents" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+14
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Manuscript ID RSOS-160589 "Morphology captures diet and locomotor types in rodents"
+Associate Editor Comments to Author:
+Comments to the Author:
+label_comment_9
+I have received reviews from two experts who have provided some thoughtful and constructive
+commentary on your work. As you will see, the reviewers are mostly positive about the research
+question and approach, and they recommend that the paper should be considered for publication in
+label_version_3
+RSOS following suitable revision to address specific points. However, both reviewers raise points that
+likely require further data analysis to address, along with associated text revisions. In particular, both
+reviewers request that the authors quantify the phylogenetic signal in the data and provide additional
+analysis and figures to support the main conclusions of the work. Reviewer 2 suggests that body size
+has not been adequately addressed with the current statistical approach, and suggests the addition of
+a separate analysis to address body size. Both reviewers request that the authors put their sampling
+of rodent species into context of the overall diversity and global distribution of rodents. Finally,
+Reviewer 2 suggests that the authors could better communicate the biological relevance of the
+findings by revising the text to focus less on the ‘dataset’ and more on the broader ecological and
+evolutionary questions that the dataset have allowed the authors to address. If the authors feel that
+they are able to address these points, I would be happy to consider a resubmitted version of the
+manuscript.
+We appreciate the opportunity to submit a new version of the manuscript. We have addressed the
+major issues brought up by all three reviewers, and consider that their input significantly improved
+our manuscript. The major issues were: potential problems with size correction, measurement of
+phylogenetic signal, the phylogenetic context of our sample, the wording of our eco-evolutionary
+interpretations, and the affine nature of the morphospace produced by discriminant analyses.
+Our responses to the reviewer suggestions follow below (marked with “R >” and highlighted with a
+different color for easier reading).
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_10
+This is a well-written and interesting manuscript that contributes to our knowledge of how functional
+traits link to locomotor and dietary ecologies. I particularly enjoyed the introduction that points out
+the utility of these types of analyses and the wealth of data waiting to be accessed in natural history
+collections.
+The analyses are appropriate and conclusions are scientifically sound; I mainly have minor comments
+in addition to one or two major points. Overall, this is a very good paper and I thank the authors for
+making their compilation of the rodent data and code available online to other researchers.
+Major comments
+First, although your sample is quite large, it is not quite ‘global’ in terms of geography and, likely,
+phylogeny (I fear you may be sampling only a few number of clades). The rodents in your sample are
+from Australia and its neighboring islands, the Baltic region, and Mesoamerica – this probably only
+includes a tiny bit of the overall rodent tree (> 2,000 spp.). It would be help to provide some
+indication of how broadly sampled the rodent family tree is (e.g., include sentences like “we sampled
+X/X rodent families, X%”). Or, preferably in addition to this, plot a phylogeny and indicate across it
+any fatal flaw or detracts from your conclusions, but this issue should be discussed nonetheless (it is
+hinted to in the Conclusions).
+R > We have examined the whole text and made sure that we did not imply that our sample is global.
+The biogeographic representation is also better explained in the new manuscript (introduction and
+subsection (a) of the methods section). Additionally, we added a figure of the rodent phylogeny
+highlighting the species included in the sample and the families that they belong to (Fig 2) as well as a
+supplementary table with the number of species examined for each family (Table S1). Our sampling
+covers a good part of the phylogenetic diversity of the Rodentia, although species sampling is clearly
+more extensive in certain families.
+Second, although it seems to be that phylogenetic signal in these traits are low, it would be helpful to
+provide some measure of this with Pagel’s lambda or Blomberg’s K. In addition, perhaps you could
+also include a two-panel figure of the diet and locomotor categories distributed across the phylogeny
+of your 208 spp. This can be done with the contmap function in phytools. This would provide some
+visualization of how conserved these ecologies (vs the traits) are across the tree.
+R > We now calculate and report the appropriate metrics of phylogenetic signal for body size,
+morphology, and ecological categories (methods subsection (h) and Table 4). We also added a figure
+(Fig S1) showing the distribution of ecological habits (diet types and locomotor modes) across the
+phylogeny.
+Third, an alternative way of coding dietary data (instead of using categories) would be to ordinate the
+‘MammalDIET’ dietary matrix of Kissling et al. (2014 Ecology and Evolution) using Principal
+Coordinates Analysis (PCoA) with Gower distance. This dietary matrix spans all extant mammals and
+ranks a variety of food items (e.g., seeds, fruit, roots) on a 0-3 scale based on the item’s importance in
+a species’ diet. You could simply regress the individual craniodental functional traits against the PCoA
+scores to explore which are highly correlated. This is just a suggestion and by no means a requirement
+– feel free to leave out.
+R > In the process of constructing the diet database, we matched the diet columns from the
+MammalDIET database with our list of species and in some cases derived our dietary classification
+from this source. While the suggested regression would be informative, the level of genus-level
+extrapolation in this data source was very high (diet data for 60% of the species in our sample was
+extrapolated from a congener), and the data gaps non-random. Under such uncertainty, we prefer to
+use our diet categories and assign classes using primary data.
+Minor comments
+pg 1, line 57: ‘is’ should be ‘are’ so that this sentence reads “…substrate use are commonly…”
+R > We reworded sentence to emphasize that we refer to variation, keeping the singular form ‘is’.
+pg 2, line 30: ‘it’ is missing from this sentence “…of these regards, so [it] is not a matter…”
+R > We adopted this suggestion.
+pg 2, line 40: ‘downstream analyses’ is awkward, perhaps swap this out for another word/phrase
+with “to address other ecological questions” and adding some examples.
+pg 2, lines 47-49: this sentence mentions the various locomotor and dietary ecologies of rodents but
+then only lists the former. Add in a list of your dietary ecologies to this sentence.
+R > We agree with this suggestion and have added examples of feeding types.
+pg 3, line 36: delete the comma in “…morphology and ecology, in a quantitative…”
+R > We have adopted this suggestion.
+pg 3, line 39: change ‘and’ to ‘while’ so this sentence reads “…strategies, while taking phylogenetic…”
+R > We rewrote the sentence accordingly.
+pg 4, line 23: spell out W, HB, T, E, etc and all other abbreviations the first time they are used in the
+text of the manuscript even though they are given in tables
+R > We agree with this suggestion and have expanded all the abbreviations in the paragraph.
+pg 4, line 24: data recorded from specimen labels? Do specimen labels usually have these data on
+them?
+R > Specimen labels indeed often contain this information, although in some cases the head and body
+length is not recorded, with total length reported instead.
+pg 5, line 33: change ‘arises’ to ‘arise’
+R > We reworded the sentence, replacing arise with occur.
+pg 12, line 52: The rodents in your sample are from Australia and its neighboring islands, the Baltic
+region, and Mesoamerica – isn’t this only three biogeographic realms (not four)?
+R > Our sample includes several Nesomyne rodents from Madagascar and some Eastern African birch
+mice. We amended subsection (a) of the methods to mention this fourth biogeographic realm.
+Figures and tables
+Figure 1: The caption for Figure 1 should reference Tables 2 and 3 since this is where a reader can find
+the definitions of these characters.
+R > The caption now points readers to Table 1, where each measurement is described in detail.
+Figure 2 and 3: Italicize genus names for the shape outlines on the x-axis (DF1)
+R > The new morphospace figure does not have shape outlines because we now plotted an nMDS
+space with different loadings that do not necessarily correspond to those of the flexible discriminant
+analysis. We preferred to keep the focus on the ecologically-relevant FDA results.
+Table 3: I find the examples for each of your trait categories in Tables 2 and 3 to be very helpful. Why
+if you can.
+R > We are thankful for this suggestion, and we added examples for the herbivorous categories.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_11
+I have reviewed the manuscript entitled “Morphology captures diet and locomotor types in rodents”.
+This paper is about the relationship of whole body morphology (body shape, cranial and dental shape)
+with diet and locomotory mode using a comparative macroevolutionary approach in rodents. The
+authors find substantial homoplasy, where unrelated species with similar diets or locomotion types
+are characterised by similar morphology.
+The authors whole-body approach is commendable given the wealth of literature on only specific
+body regions, and how important it is for our understanding of what influences morphological
+evolution – however see below the potential issues of size correction. The sampling is also worth
+praising since it works out to be about 10 specimens per species (208 species), which is great within-
+species sampling for this kind of study, and 208 species is certainly a huge amount of work. However,
+the authors note that there are 2200 species of rodent (page 2), and so it would be useful for the
+reader if a sentence was added to the methods indicating how these 208 spp. sampled represent the
+2200 spp. diversity.
+R > The sample has been put in context, with a new figure (figure 2) and supplementary table (table
+S1), as well as edits to the text to explain our representation of rodent diversity and how we think that
+we broadly covered the phylogenetic diversity of rodents although species-level sampling might be
+somewhat biased.
+I very much enjoyed the first paragraph of the discussion – this is exactly what the paper is all about!
+Rodent body plan is conserved and highly recognizable. Yet, there is rampant homoplasy and
+convergent evolution in regards to locomotion and diet impacting morphology. This isn’t played up
+enough! I suggest one additional figure: I and other readers would surely be interested to see the
+rodent morphospace as described by these data, presented using the phylomorphospace approach,
+where a phylogenetic tree is projected into a PCA biplot, so that one can see very easily the rampant
+homoplasy. The criss-crossing branches indicating shared morphology in unrelated taxa is the most
+visual way of presenting this result.
+R > We agree that phylomorphospace or traitgram approaches are probably the best ways to visualize
+homoplasy and convergence. However, with the number of species (plus nodes and branches) in our
+sample the amount of visual clutter obscured any interpretable patterns despite our attempts to
+‘declutter’ the figure with custom plotting parameters. We reworded several paragraphs of the
+discussion to put more emphasis on the widespread convergence despite the conserved rodent body
+plan.
+Size correction: This is an often misused method in macroevolutionary studies. The authors chose to
+use residuals from a regression to deal with size variation in their data, which removes size and also
+allometric variation from the dataset, and leaves “non-allometric shape” information. A size-only
+correction alternative (keeping allometric variation) would be the log-shape ratio approach of
+Mosimann (1970 & 1979 key papers), which is easily implemented in R using the geometric mean of
+morphological evolution (See Klingenberg 2016 Dev Genes Evol). The MS as it stands ignores body
+size and focusses only on non-allometric morphological variation in relation to ecology. This is
+arguably fine, but limited. Body size and ecology is bound to be hugely correlated, since what size you
+are will influence what niches you can occupy. I suggest adding in analyses of HB alone (which was
+measured but not included) in regards to phylogenetic signal, diet and locomotion, since this is an
+important aspect of an animals’ morphology which is overlooked here. Then contrast those patterns
+with non-allometric variation and ecology to show how much diversity and homoplasy there is that
+has evolved other than by simple allometric scaling during speciation.
+R> We appreciate the suggestion of testing body size in regards to phylogenetic signal, diet and
+locomotion. We added these additional analyses, and testing for differences in body size (body mass
+and condylobasal length, excluding head-body length because in some specimens HB was calculated
+indirectly from total length and tail length) among species with different ecologies was extremely
+helpful in minimizing the risk of overlooking the known macroecological relationships between body
+size and ecological habits. Within our sample, diet types and locomotion modes are not exclusive to
+particular sizes, so we proceed with our residuals approach, keeping in mind that there is no ideal or
+unbiased solution for size correction.
+Before examining the morphological changes associated with differences in diet/locomotor mode
+using a discriminant analysis approach, I would have expected the authors to show with a
+phylogenetic least squares analysis that these factors indeed correlate with morphology, and how
+much of the morphological variation they each explain (I suspect a lot). Especially since the authors
+state on line 50, page 10 that they are interested in the functional links between morphology and
+ecology, and the ecological relevance of these traits. With a multivariate dataset and treating the
+shape traits as a single matrix (shape being a multivariate trait), the PGLS can be done using the
+‘procD.pgls’ function of geomorph R package, or the ‘compare.models’ function of phylocurve R
+package (see Adams 2014 Evolution; Goolsby 2016 Sys Biol). A trait by trait PGLS could also be done,
+but since these traits are likely to be correlated, this approach would not provide a full understanding
+of how morphology and ecology are evolutionarily correlated. Note that this MANOVA test is the
+statistical analysis normally permed alongside a canonical variates analysis, which is related to the
+DFA performed here.
+R > We appreciate this suggestion and now include a MANOVA (using Procrustes distance PGLS) that
+supported our findings, and a short caution of how CVAs are very useful, but they are also prone to
+finding groups where there aren’t any. The corresponding section now reads as follows:
+“Before using discriminant analyses to examine the morphological changes associated with
+differences in diet and locomotion, we used phylogenetic multivariate analyses of variance across the
+set of trees (phylogenetic MANOVAs) to first test whether or not we had significantly different
+ecological groups. To fit the models, we used a Procrustes distance PGLS (procD.pgls function in the
+geomorph package) on the size-corrected data. This test is designed to take a matrix of morphological
+variables as a response while including the phylogeny in the error term.”
+As a final point, I simply want to flag the awkward wording throughout the manuscript (MS) regarding
+“data”. The first line of the summary is the first of several instances where the paper seems to be
+focusing on data and data analysis, rather than what the data are and the analyses are actually being
+used for. E.g. “To understand the functional meaning of morphology, we need to link morphological
+and ecological datasets”. Again in the first line of the background “Linking morphological and
+ecological datasets is not trivial”. In fact, “link” is used 8 times in the MS. I would argue that
+taking in these macroevolutionary studies is about testing statistical correlations between
+morphological and ecological data, from which we can infer, but not imply, causation (adaptation).
+And also in the discussion, the very first section is a focus on character choice for the study, rather
+than what the results mean and the bigger picture. With this critique in mind I encourage the authors
+to reconsider the goal of the study and focus on what the analyses mean for the biology, rather than
+the analyses and datasets themselves.
+R > Considering these comments, we have changed the wording in 7 of the 8 instances in which ‘link’
+was previously used, and all instances of ‘dataset’ are strictly methods-related in this new manuscript.
+We made changes to the abstract, introduction, and discussion to focus more on the biology and less
+on the data analysis. We kept the paragraph discussing character choices, but it is now within a wider
+discussion of the ecological meaning of morphological features (we renamed the subsection as well).
+Minor comments
+Throughout – superfluous capitalization. Statistical procedures such as “discriminant analysis” and
+“principal components analysis”, measurements (e.g. “Angle of the Condylar Process”), and diet
+strategies (page 11, line 9) do not need to be capitalized.
+R > We removed all (13) instances of superfluous capitalization.
+Page 1, line 29 – “relatedness relate” awkward; suggest “are associated with”
+R > We thank the reviewer pointing this out and have adopted this suggestion.
+Page 1 – What does this sentence mean? “We conclude that when ecological characters do not show
+strong phylogenetic patterns, we cannot predict ecological similarity adequately using only
+phylogenies”.
+R> We reworded this sentence to: “…when ecological characters do not show strong phylogenetic
+patterns, we cannot simply assume that close relatives are ecologically similar”.
+Page 3 – The Background contains many small paragraphs of connected subject matter. Suggest
+combining the 2nd and 3rd last since they are both discussing previous work on rodent
+ecomorphology
+R > We adopted this suggestion.
+Page 4, line 22 – refer to table 1; also suggest spelling out measurement abbreviations in the
+brackets.
+R > We adopted this suggestion, making sure that there are no unexplained abbreviations throughout
+the text.
+Page 4, line 25 – “digital calipers”; should be plural
+R> Done
+phylogenetic tree, you used. You are not introducing the data that was used to make the phylogenetic
+trees.
+R > We thank the reviewer for spotting this inconsistency. We replaced “phylogenetic data” with
+“phylogenetic trees”.
+Page 5, heading d – Better to cite the R packages and the statistical analyses you did in the relevant
+sections of the methods, where you state why you did the analysis.
+R > We have adopted this suggestion.
+Page 5, line 21 – It isn’t strictly necessary to cite a package for data table manipulation, only statistical
+analysis.
+R > It may not be customary to cite packages for table manipulation, but we argue that at least in the
+case of dplyr, such packages are extremely helpful and a prerequisite for many statistical analyses. All
+the scripts we’ve made available depend on the speed and clarity in the data processing and
+manipulation workflows made possible by this particular package, so we believe that this reference
+could be helpful for many readers/researchers who may want to replicate our tests or do similar
+analyses.
+Page 5, line 36 – The authors state that two variables were not included because they were too
+“correlated with body mass”. What was the cut off? And what happens if these are simply left in the
+analyses? I don’t think that being strongly correlated with body mass means uninformative, since
+certainly body mass will influence what ecology an animal lives in.
+R > We removed this line to avoid confusion. These two measurements were collected as candidate
+proxies for body size; they were not among the purported ecologically-relevant traits, but we now
+describe how these were incorporated into the size correction process and in the tests for differences
+in body size among species with different diets and locomotion modes. The corresponding parts now
+read as follows:
+Methods subsection (e) – first paragraph:
+“Out of three highly correlated (non-central correlations > 0.95) candidate proxies of body size (body
+mass, condylobasal length and head-body length), we selected body mass as a measure of overall
+body dimension because we considered it a suitable whole-body descriptor that has known
+relationships with species’ ecology.”
+The ACP is an angle, and the rest of the measurements are linear, which means these data are not
+strictly equivalent. Furthermore, was the ACP normally distributed to allow for PGLS size correction
+via the residuals approach? Do the authors expect an angle to vary with size? I suggest that this
+metric is reexamined separately to the linear measurements.
+R > ACP values were normally distributed, and we did not expect the angle to vary with size so ACP
+values were only log transformed without any size correction. This was only made clear in the R
+scripts but not in the main text. We have amended this issue in the Size Correction subsections and
+with the changes in our ordination approach.
+Page 5, line 52 – “retaining” is not the correct word, since it suggests that PCA removes the between
+or within-group variation, which it does not; suggest “examining”
+R > We have adopted this suggestion and replaced “retaining” with “examining”.
+Page 6, heading b – This is probably info that can be in the methods rather than results.
+R > Because this subsection has been expanded with the results for further tests of phylogenetic
+signal, we kept this information (itself a result of testing for phylogenetic signal) here.
+Figure 1 caption – add “refer to Table 1 for measurement details”.
+R > Done
+Figure 2 & 3 captions – What is meant by “species treated as unknown”? I couldn’t see discussion of
+this in the text.
+R > We now mention the workflow for species for which we could not assign ecological categories
+confidently using primary data (Methods subsection (c)). The corresponding part now reads as
+follows:
+“Species for which we could not confidently assign ecological categories were classified as unknown
+(U), and their diet and locomotion were predicted using morphology using the predictive framework
+that is built into discriminant analyses.”
+Figure 3 – The number of different locomotor strategies here means there are many more axes
+separating the groups than are presented (unlike the diet, which is would have only one more axis in
+addition to those two presented). I suggest adding another biplot (in sup materials if there’s restricted
+space, else as a composite figure) with at least 2 more DF axes (DF3v4).
+R > We now visualize the morphospace using nonmetric MDS axes, in which our chosen
+implementation collapsed the high-dimensional morphological data into a Euclidean 2d space
+iteratively. If required, we may still include biplots for the first four discriminant functions from the
+FDAs in the Appendix.
+Reviewer 3
+This study uses a small collection of linear morphometric measurements, i.e., lengths and depths, plus
+one angular measurement to examine the relationship between morphology and both locomotory
+and dietary ecology. Aside from the use of a phylogenetically-informed discriminant analysis, the
+methods (and data) are traditional in the sense that they were widely used through the 1990's, if not
+now. One reason why they are not widely used is that this approach to measurement results in
+variables that are highly correlated with size, and size is correlated with diet. Removing the effect of
+size removes important information about adaptations to functionally challenging diets, and the
+method used to remove the effect of size presumes that a single-slope regression model fits the data.
+However, allometric relationships to both overall size and among the measurements may depend on
+diet if only because species that eat small seeds do not need a large gape, but small-bodied species
+that eat large foods for their size do, and some of those also eat mechanically challenging foods, so
+the trade-off between bite-forces and gape will be most consequential for them.
+R> Following the suggestions of Reviewer #2, we have addressed the issues related to size correction
+brought up here (see above). We recognize the importance of the fine-scale associations between
+food size, gape, bite mechanics, and body size, but were severely limited by the availability of data on
+diet preferences.
+particularly informative about morphology because they omit most of the information about bite-
+forces at incisors and molars.
+Another general problem with the study design is that diverse dietary specializations are lumped
+within a single class. The classification scheme for diets is, no doubt, useful for analyzes of food webs
+but it is only incidentally relevant to biomechanics. A main result of this study is the distinctness of
+specialized herbivores but they are mainly arvicolines, so it is not surprising that the the angle of the
+condylar process, has exceptional discriminatory power for distinguishing "specialized herbivores."
+Arvicolines have an exceptionally odd orientation of their mandibular tooth rows relative to their
+mandibular processes. Other specialized herbivores do not resemble them but they were not
+classified as specialized herbivores (e.g., specialized grazers that have adaptations to resist torque,
+and hard-nut specialists that have adaptations to generate powerful forces at their incisors).
+Insectivores are also classified as that, without distinguishing species that specialize on colonial
+insects ("ant-eaters", for example), that tend to have adaptations for their elongated tongues,
+including slender mandibles, elongated rostra and, in many cases, elongated condylar processes and
+those that eat larger, softer insects, including butterflies.
+R> We agree that our classification of diet types may lump separate specialized preferences into
+single categories. Less than 9% of our 208 species had reliable and detailed information on preferred
+food types, so we chose a broad but coherent categorization scheme that would at least reflect the
+accessibility and digestibility of different food sources. The issues with arvicolines are addressed
+below.
+I am struck by the lack of disparity shown in Figure 2 but that might be an artifact of the method (or
+the data). It would be useful to see a morphospace that is interpretable as such, i.e., the distances
+between the points indicate the morphological distinctness of the species. If that too shows very little
+disparity, that would suggest that the measurements fail to capture what differs among these species.
+That space, however, would not be Euclidean and therefore the distances between the points could
+be misleading. The space is non-Euclidean because the data contain an angle as well as the linear
+measurements, and those classes of measurements are incommensurate. A non-metric approach
+might therefore be better than the one taken in this analysis. A (non-metric) phylomorphospace
+would make it easier to determine if the data understate the disparity of these species or if it is the
+lumping of ecologically disparate species within diet-classes that makes them look so uniform in
+Figure 2.
+R > We now complement the supervised discriminant function analyses with a nonmetric
+multidimensional scaling approach. We added a morphospace subsection to the methods and results,
+replaced figured 3 and 4 (now figure 3), and edited the discussion to reflect the nMDS approach. This
+ordination now shows a much more reasonable level of disparity, which helps us rule out the
+possibility that our chosen measurements failed to capture interspecific differences.
+One of the main conclusions of this study is that the measurements used in it provide a powerful set
+of characters for ecomorphological analysis. However, I question how effectively they could
+discriminate among diet classes were arvicolines omitted from the analysis or were other specialized
+herbivores classified as such.
+R > Excluding arvicolines from the FDA still led to good classification of Specialized Herbivores (under
+our definition), but this may be because of the overall distinctiveness of the remaining SH species
+(beaver, gophers, porcupine). In this case, better sampling would probably be very helpful to resolve
+this question. Also, specialized herbivores were only one of eleven ecological categories for which we
+discriminant function approach, we stand by our conclusion that our set of measurements provides a
+good set of accessible characters for large-scale, multispecies ecomorphological analyses. This
+distinction is now made explicit in subsection (b) of the discussion.
+The results also do not support the conclusion of widespread convergent evolution and parallelism in
+rodent feeding; because neither the hypothesis of convergence nor that of parallelism was tested.
+R > We edited the text to avoid overstating our results and using them as direct evidence for
+convergent evolution. Subsection (c) of the discussion now mentions that our data can be examined
+using existing methods that can identify cases of convergent evolution (for example: using the
+SURFACE method of Ingram & Mahler (2013)) and also measure its strength (with the Wheatsheaf
+index of Arbuckle et al. (2014)). Given the extensive exploratory analyses and simulations needed to
+use and interpret Ornstein Uhlenbeck models of trait evolution properly when testing convergence,
+we consider that such tests are best left for a separate paper.
+Society Open

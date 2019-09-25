@@ -1,0 +1,660 @@
+Lepidosaurian diversity in the Mesozoic–Palaeogene: the
+potential roles of sampling biases and environmental
+drivers
+Terri J. Cleary, Roger B. J. Benson, Susan E. Evans and Paul M. Barrett
+Article citation details
+R. Soc. open sci. 5: 171830.
+http://dx.doi.org/10.1098/rsos.171830
+Review timeline
+Original submission: 6 November 2017 Note: Reports are unedited and appear as
+Revised submission: 11 February 2018 submitted by the referee. The review history
+Final acceptance: 13 February 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-171830.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Jörg Fröbisch)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The manuscript RSOS-171830 represents a very timely and thorough assessment of lepidosaurian
+diversity through time. The manuscript is very well written and structured, with very few minor
+errors (see below) and is otherwise clearly presented, with adequate illustrations and
+scientifically sound. The subsampled results are not overwhelming, which is, however,
+acknowledged by the authors throughout the manuscript and caution is repeatedly raised with
+respect to the varying quality of data through time and geography. Nonetheless, the study
+provides very valuable insights into lepidosaurian diversity dynamics as well as apparent
+sampling biases in their fossil record. I only have a very minor suggestions for changes.
+Otherwise, I consider the manuscript essentially publishable as is. Hence, I strongly recommend
+publication of this study in Royal Society Open Science after minor changes.
+Line 86 additional references that could be cited here include: Fröbisch et al. 2014 or Brocklehurst
+et al. 2013
+Line 193 change to ‘slightly higher’
+Lines 401-403 With regards to the fossorial amphisbaenians (in these localities) I would suggest to
+more strongly emphasize the likelihood of a bias against their preservation rather than a genuine
+aspect of this low diversity
+Line 475 change to ‘taxa in Asia’, otherwise this could be misleading with regards to Asian taxa
+even outside of Asia, e.g. immigrating into Europe as part of the Grande Coupure
+Line 538 this should read ‚Although it is tempting’
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+3
+Comments to the Author(s)
+label_comment_2
+This paper concerns generating raw and sampling-corrected time series of genus richness in
+lepidosaurs (squamates plus rhynchocephalians) through a c. 230-m.y. sampling window and the
+potential drivers of this diversity in terms of land area, sampling, and environmental proxies.
+Lepidosaurs have long been overlooked with respect to these measures and the authors have
+done the larger community a great service in depostiing their data in the Paleobiology database.
+Although the key result - that richness is largely sampling-driven is a little disappinting the
+authors have done their job well and not fallen into the trap of over-interpreting their data. All
+statistical choices are, in my view, appropriate and sensibly interpreted. Consequently my
+comments on potential improvements are essentially minor. I will address these separately as
+general points first, and some line-by-line comments second.
+General comments:
+- The title could mention the sampling window in some way, e.g., instead of the vague "time", be
+more specific and say something like "a 230-m.y. window".
+- The introduction was, in my view, quite long and largely superfluous to the questions being
+dealt with. The authors may want to consider a shorter version that "gets to the point" quicker.
+- Although the onus is not on the authors to solve this problem as it plagues all such studies, my
+only real methodological concern was with the re-binning of proxy data. It seems potentially
+problematic to me to time average a proxy for, e.g., temperature, across bins of c. 9 million years
+in length. Could this not artefactually obliterate a genuine correlation?
+- I would have liked to see more on whether and why lepidosaurs seem to have a greater skew
+towards the Northern hemisphere than other tetrapod groups. This seemed like the most
+interesting part of the paper, especially as modern squamates are considered to largely be low-
+latitude and thus should suffer from the dispersal barriers of higher latitude clades, e.g., by way
+of contrast it seems fairly obvious why penguins have not made it across the equator to the
+Southern hemisphere.
+- Have the authors considered some subclade divisions to better explore their data? E.g., if lizards
+and snakes do opposite things could this not confound the signal when combining them? I.e., in a
+similar way to combining the continental data currently can to the global signal? (I realise sample
+sizes are a major issue here.)
+- Figures 1-3 would all benefit from adding a more comprehensive geologic timescale to the x-
+axis, e.g., using the geoscale package in R.
+- The authors make only very limited mention (L42) of phylogenetic expectations of lepidosaur
+diversity over time. It might help to address what molecular phylogenies predict about
+lepidosaur diversity and whether the fossil record is in disagreement or is simply too poorly
+sampled.
+- Additionally, would a comprehensive phylogeny of fossil lepidosaurs help? If so, what are the
+barriers to generating one?
+- I would modify Figure 3 as I found it hard to distinguish the points. Specifically I would: 1)
+represent the global tetrapod data with light grey circles only to "push" them into the
+background, 2) remove the black outline from the circles (as this makes them all look darker -
+Figure 4 doesn't have these and works better for it), and 3) use brighter, more strongly
+contrasting colours for the three points you wish to emphasise. I realise colourblindness is also a
+concern here bu there are multiple R packages to help select appropriate choices for this.
+Line-by-line comments:
+L39 - "most speciose class of tetrapods" Somewhat pedancti, but I don't think it is very useful to
+talk about diversity of classes, especially as this is only true because "Aves" are considered a
+separate class, making "Reptilia" under that definition paraphyletic.
+4
+L109-110 - "Data were filtered following download to remove trace fossils, marine taxa, and
+taxonomically indeterminate records, and to correct remaining time bin inconsistencies" Are all
+these modifications tallied somewhere? Ideally there should be a list of each change in an R/Perl
+script so that the steps can be reproduced.
+L166-167 - "which we interpolated into 0.1 Ma intervals" But your diversity data is in 9 m.y. bins?
+L182 - "version 3.2.2" This is slghtly out of date. Will the same tests work in the latest version?
+L250-252 - "It is clear that the vast majority of lepidosaur occurrences are from the Northern
+Hemisphere, and this appears to be a trend for tetrapods as a whole" Sure, but is this realy
+unexpected given how much more continental landmasses are present in this hemisphere, both
+now and historically? Our null here can't be equal hemispheric representation so it would be
+helpful to distinguish between how much can be attributed to availability of fossil record and
+how much to increased sampling of that record.
+L289-291 - "This means that apparently ‘global’ richness curves predominantly tell us about the
+number of continents that have been sampled of fossils in each interval, and should be
+approached with caution" This really just repeats a point from earlier in the manuscript.
+L295-296 - "This bias appears to be much more acute for lepidosaurs" WHy only appears? Can't
+this be captured numerically? E.g., by mean proportion of occurrences in a hemisphere?
+L296-297 - "sampling issues that might be specific to lepidosaurs (such as their small size and low
+recovery potential)" It is not clear to me why this should differ between hemispheres. Perhaps
+unpack this a bit more. Is this due to sampling methods, e.g., is sieveing of microfossil material
+more common in Northern hemisphere cuuntries?
+L308 - "are reduced to two genera (Gephyrosaurus and Clevosaurus)" Clevosaurus is (I think) by
+far the most speciose genus of Rhynchocephalian. Should this be considered? I.e., if we instead
+considered each species to represent a unique genus would this alone alter the pattern?
+L341-343 - "This is important to note, as 341 studies mentioning richness through time might be
+interpreting global patterns that are simply agglomerations of signals from different regions at
+different times, rather than consistent, genuine macroevolutionary patterns" Again, this really
+just repeats an earlier point.
+L349 - "error for each other" *of
+L350-351 - "higher taxonomic richness in the Campanian" Higher than...?
+L383-384 - "After the sampling gap in the early Paleocene, we reach a period of excellent
+sampling in both North America and Europe that reveals some interesting patterns" Do the
+authors believe there is a Pull of the Recent bias in here? E.g., are we better able to distinguish
+scrappy remains due to the assignment to living groups where the morphology is essentially
+known perfectly?
+L403-404 - "This differs from the findings of Mannion et al. [84] for crocodylians" Ok, but would
+we expect them to be the same? The ecologies seem like they would likely be quite different, no?
+L497 - "every explanatory variable besides in all" grammar.
+L538 - "Although is tempting" Grammar.
+label_end_comment
+Decision letter (RSOS-171830)
+24-Jan-2018
+Dear Miss Cleary
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171830 entitled
+"Lepidosaurian diversity through time: the potential roles of sampling biases and environmental
+drivers" has been accepted for publication in Royal Society Open Science subject to minor
+revision in accordance with the referee suggestions. Please find the referees' comments at the end
+of this email.
+5
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171830
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+6
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 02-Feb-2018). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees. We strongly recommend uploading two versions of your revised manuscript:
+1) Identifying all the changes that have been made (for instance, in coloured highlight, in bold
+text, or tracked changes);
+2) A 'clean' version of the new manuscript that incorporates the changes made, but does not
+highlight them.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document";
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format);
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account;
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript. Make sure it is clear in your data accessibility statement how the data
+can be accessed;
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://rs.figshare.com/). The heading and legend provided for
+each supplementary file during the submission process will be used to create the figshare page,
+so please ensure these are accurate and informative so that your files can be found in searches.
+Files on figshare will be made available approximately one week before the accompanying article
+so that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+7
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Julia Brenda Desojo (Associate Editor) and Jon Blundy (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+The manuscript RSOS-171830 represents a very timely and thorough assessment of lepidosaurian
+diversity through time. The manuscript is very well written and structured, with very few minor
+errors (see below) and is otherwise clearly presented, with adequate illustrations and
+scientifically sound. The subsampled results are not overwhelming, which is, however,
+acknowledged by the authors throughout the manuscript and caution is repeatedly raised with
+respect to the varying quality of data through time and geography. Nonetheless, the study
+provides very valuable insights into lepidosaurian diversity dynamics as well as apparent
+sampling biases in their fossil record. I only have a very minor suggestions for changes.
+Otherwise, I consider the manuscript essentially publishable as is. Hence, I strongly recommend
+publication of this study in Royal Society Open Science after minor changes.
+Line 86 additional references that could be cited here include: Fröbisch et al. 2014 or Brocklehurst
+et al. 2013
+Line 193 change to ‘slightly higher’
+Lines 401-403 With regards to the fossorial amphisbaenians (in these localities) I would suggest to
+more strongly emphasize the likelihood of a bias against their preservation rather than a genuine
+aspect of this low diversity
+Line 475 change to ‘taxa in Asia’, otherwise this could be misleading with regards to Asian taxa
+even outside of Asia, e.g. immigrating into Europe as part of the Grande Coupure
+Line 538 this should read ‚Although it is tempting’
+8
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+This paper concerns generating raw and sampling-corrected time series of genus richness in
+lepidosaurs (squamates plus rhynchocephalians) through a c. 230-m.y. sampling window and the
+potential drivers of this diversity in terms of land area, sampling, and environmental proxies.
+Lepidosaurs have long been overlooked with respect to these measures and the authors have
+done the larger community a great service in depostiing their data in the Paleobiology database.
+Although the key result - that richness is largely sampling-driven is a little disappinting the
+authors have done their job well and not fallen into the trap of over-interpreting their data. All
+statistical choices are, in my view, appropriate and sensibly interpreted. Consequently my
+comments on potential improvements are essentially minor. I will address these separately as
+general points first, and some line-by-line comments second.
+General comments:
+- The title could mention the sampling window in some way, e.g., instead of the vague "time", be
+more specific and say something like "a 230-m.y. window".
+- The introduction was, in my view, quite long and largely superfluous to the questions being
+dealt with. The authors may want to consider a shorter version that "gets to the point" quicker.
+- Although the onus is not on the authors to solve this problem as it plagues all such studies, my
+only real methodological concern was with the re-binning of proxy data. It seems potentially
+problematic to me to time average a proxy for, e.g., temperature, across bins of c. 9 million years
+in length. Could this not artefactually obliterate a genuine correlation?
+- I would have liked to see more on whether and why lepidosaurs seem to have a greater skew
+towards the Northern hemisphere than other tetrapod groups. This seemed like the most
+interesting part of the paper, especially as modern squamates are considered to largely be low-
+latitude and thus should suffer from the dispersal barriers of higher latitude clades, e.g., by way
+of contrast it seems fairly obvious why penguins have not made it across the equator to the
+Southern hemisphere.
+- Have the authors considered some subclade divisions to better explore their data? E.g., if lizards
+and snakes do opposite things could this not confound the signal when combining them? I.e., in a
+similar way to combining the continental data currently can to the global signal? (I realise sample
+sizes are a major issue here.)
+- Figures 1-3 would all benefit from adding a more comprehensive geologic timescale to the x-
+axis, e.g., using the geoscale package in R.
+- The authors make only very limited mention (L42) of phylogenetic expectations of lepidosaur
+diversity over time. It might help to address what molecular phylogenies predict about
+lepidosaur diversity and whether the fossil record is in disagreement or is simply too poorly
+sampled.
+- Additionally, would a comprehensive phylogeny of fossil lepidosaurs help? If so, what are the
+barriers to generating one?
+- I would modify Figure 3 as I found it hard to distinguish the points. Specifically I would: 1)
+represent the global tetrapod data with light grey circles only to "push" them into the
+background, 2) remove the black outline from the circles (as this makes them all look darker -
+Figure 4 doesn't have these and works better for it), and 3) use brighter, more strongly
+contrasting colours for the three points you wish to emphasise. I realise colourblindness is also a
+concern here bu there are multiple R packages to help select appropriate choices for this.
+Line-by-line comments:
+L39 - "most speciose class of tetrapods" Somewhat pedancti, but I don't think it is very useful to
+9
+talk about diversity of classes, especially as this is only true because "Aves" are considered a
+separate class, making "Reptilia" under that definition paraphyletic.
+L109-110 - "Data were filtered following download to remove trace fossils, marine taxa, and
+taxonomically indeterminate records, and to correct remaining time bin inconsistencies" Are all
+these modifications tallied somewhere? Ideally there should be a list of each change in an R/Perl
+script so that the steps can be reproduced.
+L166-167 - "which we interpolated into 0.1 Ma intervals" But your diversity data is in 9 m.y. bins?
+L182 - "version 3.2.2" This is slghtly out of date. Will the same tests work in the latest version?
+L250-252 - "It is clear that the vast majority of lepidosaur occurrences are from the Northern
+Hemisphere, and this appears to be a trend for tetrapods as a whole" Sure, but is this realy
+unexpected given how much more continental landmasses are present in this hemisphere, both
+now and historically? Our null here can't be equal hemispheric representation so it would be
+helpful to distinguish between how much can be attributed to availability of fossil record and
+how much to increased sampling of that record.
+L289-291 - "This means that apparently ‘global’ richness curves predominantly tell us about the
+number of continents that have been sampled of fossils in each interval, and should be
+approached with caution" This really just repeats a point from earlier in the manuscript.
+L295-296 - "This bias appears to be much more acute for lepidosaurs" WHy only appears? Can't
+this be captured numerically? E.g., by mean proportion of occurrences in a hemisphere?
+L296-297 - "sampling issues that might be specific to lepidosaurs (such as their small size and low
+recovery potential)" It is not clear to me why this should differ between hemispheres. Perhaps
+unpack this a bit more. Is this due to sampling methods, e.g., is sieveing of microfossil material
+more common in Northern hemisphere cuuntries?
+L308 - "are reduced to two genera (Gephyrosaurus and Clevosaurus)" Clevosaurus is (I think) by
+far the most speciose genus of Rhynchocephalian. Should this be considered? I.e., if we instead
+considered each species to represent a unique genus would this alone alter the pattern?
+L341-343 - "This is important to note, as 341 studies mentioning richness through time might be
+interpreting global patterns that are simply agglomerations of signals from different regions at
+different times, rather than consistent, genuine macroevolutionary patterns" Again, this really
+just repeats an earlier point.
+L349 - "error for each other" *of
+L350-351 - "higher taxonomic richness in the Campanian" Higher than...?
+L383-384 - "After the sampling gap in the early Paleocene, we reach a period of excellent
+sampling in both North America and Europe that reveals some interesting patterns" Do the
+authors believe there is a Pull of the Recent bias in here? E.g., are we better able to distinguish
+scrappy remains due to the assignment to living groups where the morphology is essentially
+known perfectly?
+L403-404 - "This differs from the findings of Mannion et al. [84] for crocodylians" Ok, but would
+we expect them to be the same? The ecologies seem like they would likely be quite different, no?
+L497 - "every explanatory variable besides in all" grammar.
+L538 - "Although is tempting" Grammar.
+Author's Response to Decision Letter for (RSOS-171830)
+See Appendix A.
+10
+label_end_comment
+Decision letter (RSOS-171830.R1)
+13-Feb-2018
+Dear Miss Cleary,
+I am pleased to inform you that your manuscript entitled "Lepidosaurian diversity in the
+Mesozoic–Paleogene: the potential roles of sampling biases and environmental drivers" is now
+accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Jon Blundy (Subject Editor)
+openscience@royalsociety.org
+Appendix A
+We thank the referees for their interest in our paper, and we are very pleased to hear that both of
+them found it interesting and requiring of only minor changes before publication. We have attempted
+to take into account all of their comments in our revisions, as outlined below.
+Reviewer 1
+Line 86 additional references that could be cited here include: Fröbisch et al. 2014 or Brocklehurst et
+al. 2013
+These references were chosen to refer specifically to those studies examining large groups of taxa (i.e.
+all terrestrial tetrapods), whereas the suggested references deal only with early synapsids (and we
+excluded many other taxon-specific diversity papers that could also have been cited here to avoid the
+need for excessive references). However, one of these papers was cited elsewhere in the article, and
+we have added Frobisch et al. (2014) into the references on line 93, where it is more appropriate.
+Line 193 change to ‘slightly higher’
+Done, thank you.
+Lines 401-403 With regards to the fossorial amphisbaenians (in these localities) I would suggest to
+more strongly emphasize the likelihood of a bias against their preservation rather than a genuine
+aspect of this low diversity
+Changed to “… suggesting a genuine absence (or very low diversity) at this time [35] or, more likely, a
+preservation bias against fossorial animals.”
+Line 475 change to ‘taxa in Asia’, otherwise this could be misleading with regards to Asian taxa even
+outside of Asia, e.g. immigrating into Europe as part of the Grande Coupure
+Done.
+Line 538 this should read ‚Although it is tempting’
+Thanks for catching this. Changed.
+Reviewer 2
+General comments:
+- The title could mention the sampling window in some way, e.g., instead of the vague "time", be more
+specific and say something like "a 230-m.y. window".
+Thank you for the suggestion. We have altered the title to “Lepidosaurian diversity in the Mesozoic–
+Paleogene: the potential roles of sampling biases and environmental drivers” to better communicate
+the time period covered by the study.
+- The introduction was, in my view, quite long and largely superfluous to the questions being dealt
+with. The authors may want to consider a shorter version that "gets to the point" quicker.
+We considered the benefits of a shorter “to the point” introduction, but felt that since lepidosaurs
+receive less attention than other tetrapod groups it would be pertinent to introduce the group
+properly and to set the scene for the study by summarising what has been done so far, so that readers
+do not have to sift through a multitude of other works in order to gain context for ours.
+- Although the onus is not on the authors to solve this problem as it plagues all such studies, my only
+real methodological concern was with the re-binning of proxy data. It seems potentially problematic
+to me to time average a proxy for, e.g., temperature, across bins of c. 9 million years in length. Could
+this not artefactually obliterate a genuine correlation?
+The referee is correct to note that re-binning the proxy data can create problems, but unfortunately
+given the methods used to compare proxies it’s impossible to compare two entirely different scales
+without numerous assumptions. We can still, however, detect long-term patterns/trends in these
+proxy data using averaged values through time, and given that the nature of the fossil record means
+we only have relatively large time intervals designated for each fossil find (i.e. we can rarely pinpoint
+fossil occurrence times below stage level) we are limited to working with the available record that we
+have. Moreover, the lepidosaur record is so poorly sampled that long-term trends are the only trends
+that we can examine with confidence.
+- I would have liked to see more on whether and why lepidosaurs seem to have a greater skew towards
+the Northern hemisphere than other tetrapod groups. This seemed like the most interesting part of
+the paper, especially as modern squamates are considered to largely be low-latitude and thus should
+suffer from the dispersal barriers of higher latitude clades, e.g., by way of contrast it seems fairly
+obvious why penguins have not made it across the equator to the Southern hemisphere.
+We agree with the referee that the geographic distribution of lepidosaurs through time is of interest,
+but this area lies outside of the main scope of this contribution and will form the basis for a separate
+paper that will delve more deeply into this aspect of lepidosaur history.
+- Have the authors considered some subclade divisions to better explore their data? E.g., if lizards and
+snakes do opposite things could this not confound the signal when combining them? I.e., in a similar
+way to combining the continental data currently can to the global signal? (I realise sample sizes are a
+major issue here.)
+Unfortunately, snakes are too poorly sampled to separate out from the group, and doing so results in
+only a few points being recovered at quorum level 0.4. The only sequential trend observed in snake
+diversity is across the Eocene–Oligocene boundary in Europe (Pg4–5), which shows a slight decrease.
+However, removing snakes from the lepidosaur dataset does allow us to recover some Paleogene bins
+that had previously dropped out of the analysis (likely due to making these bins better sampled by
+removing singleton snake taxa). We have added a paragraph from line 255 to reflect this:
+“To test sensitivity to taxonomic sampling, we separated the snake occurrences from the dataset and
+ran new analyses on these ‘snake-only’ and ‘other lepidosaur’ datasets. While snakes are too poorly
+sampled to produce meaningful results, with the exception of a slight drop across the Eocene–
+Oligocene boundary, their exclusion from the lepidosaur dataset causes a few points that had
+previously dropped out of analyses (Pg1 of North America and Pg3 of Europe) to be recovered (see
+supplementary figure S7). This is most likely due to a decrease in the number of singleton taxa that
+would have otherwise been included in these bins, thus raising the maximum quorum level that they
+could be sampled at, allowing us to recover a signal at quorum 0.4.”
+We have also mentioned that the Pg3 EU point is present when you remove snakes (added to line
+404). We reference supplementary figure S7, which is new, and shows richness through time for (a)
+lepidosaurs minus snakes, and (b) snakes alone.
+- Figures 1-3 would all benefit from adding a more comprehensive geologic timescale to the x-axis,
+e.g., using the geoscale package in R.
+We have altered the figures to better label the time bins used, which are explained in Table 1.
+- The authors make only very limited mention (L42) of phylogenetic expectations of lepidosaur
+diversity over time. It might help to address what molecular phylogenies predict about lepidosaur
+diversity and whether the fossil record is in disagreement or is simply too poorly sampled.
+An interesting point and we have added this paragraph at the end of the SQS results discussion in
+response:
+“It is important to note that many first occurrences of major lepidosaur taxa discussed above conflict
+wildly with the divergence dates derived from molecular phylogenies (e.g. [104,134,135]. These
+phylogenies, while disagreeing on smaller-scale details, propose that crown group squamates began
+to diversify as early as the Middle Jurassic [134], with amphisbaenians diversifying approximately 100
+Mya (mid-Cretaceous; [134]) or as early as 146 Mya (latest Jurassic; [104]). Snake phylogenies appear
+to provide better divergence estimates, with some studies placing their divergence date at
+approximately 125–130 Myr (Early Cretaceous; [104]), which is very close toalmost coincident with
+the earliest snake fossil finds. Total evidence dating [135], which attempts to reconcile molecular and
+morphological characters, comes closer to the divergence dates provided by the fossil record (e.g.
+diversification of Amphisbaenia at ~60 Myr), but still proposes large ghost lineages for other groups
+due to the lack of pre-Late Cretaceous material to calibrate these models. It is difficult to test these
+and other molecular-based estimates of diversification times and rates when the fossil record is so
+poor. So, at least for now, the origination times of major taxa remain unresolved.”
+- Additionally, would a comprehensive phylogeny of fossil lepidosaurs help? If so, what are the barriers
+to generating one?
+Yes, but sadly there is no comprehensive phylogeny of fossil lepidosaurs, as many fossils are simply
+too incomplete. There have been attempts to include some fossils in phylogenies, but the placement
+of these fossil taxa often varies. Additionally, molecular and morphological trees disagree greatly on
+the relationships of major squamate clades, so choosing a comprehensive phylogeny would be a
+matter of subjective choice as there is currently little consensus.
+- I would modify Figure 3 as I found it hard to distinguish the points. Specifically I would: 1) represent
+the global tetrapod data with light grey circles only to "push" them into the background, 2) remove
+the black outline from the circles (as this makes them all look darker - Figure 4 doesn't have these and
+works better for it), and 3) use brighter, more strongly contrasting colours for the three points you
+wish to emphasise. I realise colourblindness is also a concern here but there are multiple R packages
+to help select appropriate choices for this.
+We have altered the colour of the main points to be more easily distinguishable, and have changed
+the colour of the background points to be less prominent.
+Line-by-line comments:
+L39 - "most speciose class of tetrapods" Somewhat pedantic, but I don't think it is very useful to talk
+about diversity of classes, especially as this is only true because "Aves" are considered a separate class,
+making "Reptilia" under that definition paraphyletic.
+Thank you for pointing this out. We have removed this and reworded the sentence.
+L109-110 - "Data were filtered following download to remove trace fossils, marine taxa, and
+taxonomically indeterminate records, and to correct remaining time bin inconsistencies" Are all these
+modifications tallied somewhere? Ideally there should be a list of each change in an R/Perl script so
+that the steps can be reproduced.
+We have now included the script and the lists of taxon names used to filter the initial download.
+L166-167 - "which we interpolated into 0.1 Ma intervals" But your diversity data is in 9 m.y. bins?
+Apologies if this section was unclear. We meant that since the palaeotemperature data was in uneven
+intervals, we interpolated it into 0.1 Ma ones so we could then create the bin-length means needed
+for comparison with all other proxies. Have reworded to try and make this clearer:
+“For palaeotemperature we used sea surface <U+F064>18O records from [84] compiled by [85], which we
+interpolated into 0.1 Ma intervals for ease of subsequent aggregation (see supplementary
+information); more negative values indicate warmer temperatures, and vice versa. All proxy data was
+then aggregated into within-bin means to enable comparisons with richness data.”
+L182 - "version 3.2.2" This is slightly out of date. Will the same tests work in the latest version?
+Yes, the tests remain valid. We have updated the version number in the text to reflect this.
+L250-252 - "It is clear that the vast majority of lepidosaur occurrences are from the Northern
+Hemisphere, and this appears to be a trend for tetrapods as a whole" Sure, but is this really
+unexpected given how much more continental landmasses are present in this hemisphere, both now
+and historically? Our null here can't be equal hemispheric representation so it would be helpful to
+distinguish between how much can be attributed to availability of fossil record and how much to
+increased sampling of that record.
+This sentence was simply attempting to point out an observation that is common knowledge within
+the fossil reptile community, but which is not stated explicitly in the literature. Since this is the Results
+section we are simply stating what we see at face value. This distribution pattern is not unexpected,
+given the greater landmass in the Northern Hemisphere, but there is clearly an underlying problem
+with people preferentially sampling the Northern Hemisphere, especially in the earlier years of
+palaeontology.
+L289-291 - "This means that apparently ‘global’ richness curves predominantly tell us about the
+number of continents that have been sampled of fossils in each interval, and should be approached
+with caution" This really just repeats a point from earlier in the manuscript.
+This is an important point that we wanted to emphasise in the Discussion, and so felt repetition was
+necessary here, especially as many other workers in the field do not always explore their global data
+sets in this way.
+L295-296 - "This bias appears to be much more acute for lepidosaurs" Why only appears? Can't this
+be captured numerically? E.g., by mean proportion of occurrences in a hemisphere?
+This is an observation derived from the results presented in the figure, hence the “appears” modifier.
+As mentioned above, we will be discussing more about the latitudinal distribution aspects of the data
+in a separate paper. Capturing numerical data is difficult, because it is plagued by the same problems
+we have with richness data, which is that things are often too poorly sampled to tell.
+L296-297 - "sampling issues that might be specific to lepidosaurs (such as their small size and low
+recovery potential)" It is not clear to me why this should differ between hemispheres. Perhaps unpack
+this a bit more. Is this due to sampling methods, e.g., is sieving of microfossil material more common
+in Northern hemisphere countries?
+We are not suggesting that sampling methods differ between hemispheres but that 1) there are major
+differences in sampling effort between the two (see above) and that 2) there are sampling issues that
+disproportionally affect the recovery of small bodied taxa in comparison with other tetrapods (e.g.
+lack of specialist collecting techniques, such as sieving). The dearth of Southern Hemisphere lizard
+fossils especially is probably part genuine but exacerbated by sampling. There are certainly fewer
+localities in the southern continents that produce well-preserved microvertebrates and few of these
+have been analysed; those that have remain largely undescribed. There are also fewer lithographic
+limestone localities that have been comprehensively studied for terrestrial microvertebrates. For
+example, lizards are present in the Crato Formation, but few are well preserved and even fewer have
+been described. There are also microvertebrate sites with potential in several African countries, but
+collected material has not been described or potentially good sites are now dangerous to visit.
+L308 - "are reduced to two genera (Gephyrosaurus and Clevosaurus)" Clevosaurus is (I think) by far the
+most speciose genus of Rhynchocephalian. Should this be considered? I.e., if we instead considered
+each species to represent a unique genus would this alone alter the pattern?
+Clevosaurus is speciose, and we think it’s interesting because the result of becoming near-
+monogeneric reflects a loss of disparity that may reflect an important ecological change in
+rhynchocephalians. In addition, lepidosaurs are poorly sampled and often cannot be identified to
+species level, hence the choice of genus-level analyses to conserve data (there are many specimens
+under the designation “Clevosaurus sp.” that would be excluded otherwise).
+L341-343 - "This is important to note, as studies mentioning richness through time might be
+interpreting global patterns that are simply agglomerations of signals from different regions at
+different times, rather than consistent, genuine macroevolutionary patterns" Again, this really just
+repeats an earlier point.
+We have changed this section to read:
+“This is important to note since, as mentioned above, apparently “global” patterns are unreliable.”
+Again, we regard this as an important message to convey, hence the repetition.
+L349 - "error for each other" *of
+Changed, thank you.
+L350-351 - "higher taxonomic richness in the Campanian" Higher than...?
+… the Maastrichtian, which is mentioned in the previous sentence, but we have added “than in the
+Maastrichtian” to 351 as well for better clarification.
+L383-384 - "After the sampling gap in the early Paleocene, we reach a period of excellent sampling in
+both North America and Europe that reveals some interesting patterns" Do the authors believe there
+is a Pull of the Recent bias in here? E.g., are we better able to distinguish scrappy remains due to the
+assignment to living groups where the morphology is essentially known perfectly?
+This is the case to a certain extent, as there are many good later Paleogene microvertebrate sites in
+Europe and North America that yield lizard remains. Modern groups are clearly being sampled by this
+point, and are often recognisable based on our knowledge of living groups. But many fossils remain
+scrappy, even though occurrences increase, and so can prevent us from finding the identifying marks
+of modern taxa. Many genera have no living representatives, and this makes them more difficult to
+identify. Additionally, the pull of the recent effect of the larger availability of younger rock does not
+seem to apply here, as there are many more tetrapod-bearing formations in the late Eocene and
+Oligocene, but these numbers are comparable to the latest Cretaceous. The rest of the Paleocene has
+formation numbers comparable to the earlier Late Cretaceous.
+L403-404 - "This differs from the findings of Mannion et al. [84] for crocodylians" Ok, but would we
+expect them to be the same? The ecologies seem like they would likely be quite different, no?
+This was based on the fact that both groups are ectotherms and might share some responses to
+climatic change. Mesozoic and Paleogene crocs include terrestrial as well as amphibious forms and
+had a broader ecological range than their living representatives. The main difference would be average
+body size. However, the increased body size of crocs does not render them immune to the effects of
+temperature change (despite being large and living in thermally buffered environments, extant croc
+distribution is much more tightly controlled by MAT than that of squamates). Moreover, it seemed
+appropriate to compare results from different contemporary reptile groups to compare pattern.
+We added a line: “This contrasts with our prior expectation that key groups of endotherms would
+show similar patterns of change in genus richness, coordinated by environmental change.”
+L497 - "every explanatory variable besides in all" grammar.
+Thank you; missing word added and changed to: “every explanatory variable besides TBCs in all”.
+L538 - "Although is tempting" Grammar.
+Added “it” into the middle. Thanks.
+Society Open

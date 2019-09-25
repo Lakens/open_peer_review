@@ -1,0 +1,635 @@
+The reproducibility of research and the misinterpretation of
+p-values
+David Colquhoun
+Article citation details
+R. Soc. open sci. 4: 171085.
+http://dx.doi.org/10.1098/rsos.171085
+Review timeline
+Original submission: 7 August 2017 Note: Reports are unedited and appear as
+Revised submission: 26 October 2017 submitted by the referee. The review history
+Final acceptance: 1 November 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-171085.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Bhramar Mukherjee)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This is a nicely written paper very relevant at a time when we are debating use of P-values. I have
+some major points and some minor points
+Major Points:
+(1) The authors need to clarify what is the original contribution of the paper. As I was reading
+this paper, it seemed to me all the points made in this paper already exist in the literature and the
+author is putting them together in an integrated landscape. The author needs to clarify whether
+that is the goal of the paper or there are a couple of new points the author is trying to
+make/highlight that have not appeared in the literature. This could be the P-equal versus P-less
+than argument or just releasing R codes to calculate the prior, likelihood, posterior odds
+mapping, but this needs to be clarified what is new.
+(2) Reading some sections of the paper, I was confused whether the author is considering the
+issue of multiple testing versus testing a single hypothesis at P=0.05. The references to the
+Wacholder (2004) paper with False Positive Report Probability made me feel we are in the
+genomewide association study setting where the search is agnostic and over multiple hypotheses.
+It will be good if the paper clarifies at the onset that the conversation is about single hypotheses
+testing and relegate discussion of multiple testing, FDR to a separate section.
+(3) Replication studies: The role of replication studies is paramount in modern science even if we
+reduce the P-value threshold. This needs to be incorporated.
+(4) On page 4, equation (1) should be posterior odds. I found the use of the word odds ratio very
+confusing. Perhaps it is best to introduce some notations like in equation A8. Otherwise
+equations (1) and (2) seem vague.
+(5) In connection with the authors argument of P-equal versus less than, it will be great to discuss
+the choice of alternative and critical region, a point null versus a composite null. As Fisher had
+argued, do we need to think about a specific alternative?
+(6) What is the recommendation then, to use P=0.00045 to maintain a FPR of 5%. I would think
+this really depends on the study. The prior probability for null hypothesis being 0.1 may be
+reasonable in some studies but in agnostic searches this number will be much much smaller.
+Perhaps the authors can add another paragraph on this issue?
+label_author_2
+Review form: Reviewer 2 (David Grimes)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+3
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This work by Prof. Colquhoun is extremely timely, and the subject of paramount importance. As
+this has been up as a preprint for some time, I have read both this version and the prior revisions,
+and am pleased to see how the paper has evolved. As this is effectively a 7th revision, the vast
+majority of my points are relatively minor, and designed to make the paper slightly more
+accessible to a non-expert reader, as I firmly agree it is important that all scientists take home the
+central message of this work.
+(1) In the introduction, it would be worthwhile to clarify a subtle but important point -
+presumably, Prof Colquhoun is talking about the specific examples of an experiment being
+conducted without any clear mechanistic predictions (or priors) considered before the
+experiment. For example, experiments done under the guise of 'hypothesis generation' rather
+than 'hypothesis testing'. This is perfectly reasonable in biology and lab science, but may not
+translate directly to other sciences - for example, physics, where mechanistic theory is used to
+predict experimental outcome. I appreciate this is a subtle point, but it might be pertinent to
+explicitly clarify this.
+(2) "The most common (mis)interpretations are “the P value is the probability that your results
+occurred by chance”. Or “the P value is the probability that the null hypothesis is true”. Both of
+these are disastrously wrong [5]. The latter definition is
+obviously wrong because the P value is calculated on the premise that the null hypothesis is true,
+so it can’t possibly tell you about the truth of the null hypothesis."
+Very true, but I would suggest making the refutation of the former explictly clear too.
+(3) There appears to be a typo in the caption for figure 1 (strike out clear) - also, y1 isn't marked
+and should be.
+(4) Eq (1) is good and not intimidating to a general audience, but would it be worthwhile to
+include the 'classical' form of Baye's theorem and explain what it means?
+(5) As it stands, part 3 is confusing and should be reworded - partially this is the reliance on
+appendix A and prior work, but I think there are some things that require re-phrasing. The
+question has apparently been long discussed in statistical literature, so it would be appropriate to
+reference some previous discussions in the first paragraph - such as section 10 of the author's
+previous work.
+In fact, to grasp this section I had to go to the author's 2014 paper - to my mind, p= should be
+understood as a precisely defined value; the chances of a simulated t-test producing this result
+exactly might be rather low. However, in the 2014 paper, the p= is actually an envelope (between
+0.045 and 0.05 in the example) so that a p= interpretation actually means something very close to
+the arbitrary p cut off, whereas p < interpretation means values of p less than this. In essence, I
+assume Prof Colquhoun is defining p= as 'close to' the threshold, but this terminology is
+4
+confusing and it should be explicitly stated it is not a true equality in the classical sense. If I have
+misunderstood, I would appreciate clarification.
+(6) I quite like the discussion section, and would like to see it expanded. These of course are only
+suggestions, and can be employed (or ignored!) as the author sees fit. As the problem of
+reproducibility in science is at the heart of this work, it might be pertinent to expand on how this
+work should inform experimenters and policy makers. Some of this could be achieved by
+discussing the emerging field of meta-research, and certainly, this work qualifies as part of that.
+The work of John Ioannadis has been mentioned, but especially relevant might be the work of
+Smaldino and McElreath (http://rsos.royalsocietypublishing.org/content/3/9/160384) in this
+journal, which suggests our obsession with metrics can have a negative impact of research
+quality. A another recent pre-print that might be relevant is the work of Grimes, Bauch and
+Ioannadis (https://www.biorxiv.org/content/early/2017/05/17/139063) which makes similar
+arguments, and also shows by way of a simple model that fields with a a high-false positive rate
+tend to have lower reproducibility, and that rewarding scientists on publication metrics alone is
+detrimental to research quality.
+What would be really interesting is to expand upon how alternatives might be employed. The
+crux of this paper is that p value can be useful, IF correctly interpretted but alas it is frequently
+misunderstood or outright manipulated. Papers like this serve to improve statistical fluency, and
+that is in itself fantastic. But aside from this, what does the author think might help improve
+thing? or example, should we be more focused on effect size than p-value? This is certainly an
+argument put forward in some medical literature
+(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/).
+label_end_comment
+Decision letter (RSOS-171085)
+24-Oct-2017
+Dear Dr Colquhoun
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171085 entitled
+"The reproducibility of research and the misinterpretation of P values" has been accepted for
+publication in Royal Society Open Science subject to minor revision in accordance with the
+referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+5
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171085
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 02-Nov-2017). If you do not
+think you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+6
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Mark Chaplain
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This is a nicely written paper very relevant at a time when we are debating use of P-values. I have
+some major points and some minor points
+Major Points:
+1. The authors need to clarify what is the original contribution of the paper. As I was reading this
+paper, it seemed to me all the points made in this paper already exist in the literature and the
+author is putting them together in an integrated landscape. The author needs to clarify whether
+that is the goal of the paper or there are a couple of new points the author is trying to
+make/highlight that have not appeared in the literature. This could be the P-equal versus P-less
+7
+than argument or just releasing R codes to calculate the prior, likelihood, posterior odds
+mapping, but this needs to be clarified what is new.
+2. Reading some sections of the paper, I was confused whether the author is considering the issue
+of multiple testing versus testing a single hypothesis at P=0.05. The references to the Wacholder
+(2004) paper with False Positive Report Probability made me feel we are in the genomewide
+association study setting where the search is agnostic and over multiple hypotheses. It will be
+good if the paper clarifies at the onset that the conversation is about single hypotheses testing and
+relegate discussion of multiple testing, FDR to a separate section.
+(3)Replication studies: The role of replication studies is paramount in modern science even if we
+reduce the P-value threshold. This needs to be incorporated.
+(4) On page 4, equation (1) should be posterior odds. I found the use of the word odds ratio very
+confusing. Perhaps it is best to introduce some notations like in equation A8. Otherwise
+equations (1) and (2) seem vague.
+(5) In connection with the authors argument of P-equal versus less than, it will be great to discuss
+the choice of alternative and critical region, a point null versus a composite null. As Fisher had
+argued, do we need to think about a specific alternative?
+(6) What is the recommendation then, to use P=0.00045 to maintain a FPR of 5%. I would think
+this really depends on the study. The prior probability for null hypothesis being 0.1 may be
+reasonable in some studies but in agnostic searches this number will be much much smaller.
+Perhaps the authors can add another paragraph on this issue?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+This work by Prof. Colquhoun is extremely timely, and the subject of paramount importance. As
+this has been up as a preprint for some time, I have read both this version and the prior revisions,
+and am pleased to see how the paper has evolved. As this is effectively a 7th revision, the vast
+majority of my points are relatively minor, and designed to make the paper slightly more
+accessible to a non-expert reader, as I firmly agree it is important that all scientists take home the
+central message of this work.
+(1) In the introduction, it would be worthwhile to clarify a subtle but important point -
+presumably, Prof Colquhoun is talking about the specific examples of an experiment being
+conducted without any clear mechanistic predictions (or priors) considered before the
+experiment. For example, experiments done under the guise of 'hypothesis generation' rather
+than 'hypothesis testing'. This is perfectly reasonable in biology and lab science, but may not
+translate directly to other sciences - for example, physics, where mechanistic theory is used to
+predict experimental outcome. I appreciate this is a subtle point, but it might be pertinent to
+explicitly clarify this.
+(2) "The most common (mis)interpretations are “the P value is the probability that your results
+occurred by chance”. Or “the P value is the probability that the null hypothesis is true”. Both of
+these are disastrously wrong [5]. The latter definition is
+obviously wrong because the P value is calculated on the premise that the null hypothesis is true,
+so it can’t possibly tell you about the truth of the null hypothesis."
+Very true, but I would suggest making the refutation of the former explictly clear too.
+8
+(3) There appears to be a typo in the caption for figure 1 (strike out clear) - also, y1 isn't marked
+and should be.
+(4) Eq (1) is good and not intimidating to a general audience, but would it be worthwhile to
+include the 'classical' form of Baye's theorem and explain what it means?
+(5) As it stands, part 3 is confusing and should be reworded - partially this is the reliance on
+appendix A and prior work, but I think there are some things that require re-phrasing. The
+question has apparently been long discussed in statistical literature, so it would be appropriate to
+reference some previous discussions in the first paragraph - such as section 10 of the author's
+previous work.
+In fact, to grasp this section I had to go to the author's 2014 paper - to my mind, p= should be
+understood as a precisely defined value; the chances of a simulated t-test producing this result
+exactly might be rather low. However, in the 2014 paper, the p= is actually an envelope (between
+0.045 and 0.05 in the example) so that a p= interpretation actually means something very close to
+the arbitrary p cut off, whereas p < interpretation means values of p less than this. In essence, I
+assume Prof Colquhoun is defining p= as 'close to' the threshold, but this terminology is
+confusing and it should be explicitly stated it is not a true equality in the classical sense. If I have
+misunderstood, I would appreciate clarification.
+(6) I quite like the discussion section, and would like to see it expanded. These of course are only
+suggestions, and can be employed (or ignored!) as the author sees fit. As the problem of
+reproducibility in science is at the heart of this work, it might be pertinent to expand on how this
+work should inform experimenters and policy makers. Some of this could be achieved by
+discussing the emerging field of meta-research, and certainly, this work qualifies as part of that.
+The work of John Ioannadis has been mentioned, but especially relevant might be the work of
+Smaldino and McElreath (http://rsos.royalsocietypublishing.org/content/3/9/160384) in this
+journal, which suggests our obsession with metrics can have a negative impact of research
+quality. A another recent pre-print that might be relevant is the work of Grimes, Bauch and
+Ioannadis (https://www.biorxiv.org/content/early/2017/05/17/139063) which makes similar
+arguments, and also shows by way of a simple model that fields with a a high-false positive rate
+tend to have lower reproducibility, and that rewarding scientists on publication metrics alone is
+detrimental to research quality.
+What would be really interesting is to expand upon how alternatives might be employed. The
+crux of this paper is that p value can be useful, IF correctly interpretted but alas it is frequently
+misunderstood or outright manipulated. Papers like this serve to improve statistical fluency, and
+that is in itself fantastic. But aside from this, what does the author think might help improve
+thing? or example, should we be more focused on effect size than p-value? This is certainly an
+argument put forward in some medical literature
+(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/).
+Author's Response to Decision Letter for (RSOS-171085)
+See Appendix A.
+9
+label_end_comment
+Decision letter (RSOS-171085.R1)
+01-Nov-2017
+Dear Dr Colquhoun,
+I am pleased to inform you that your manuscript entitled "The reproducibility of research and the
+misinterpretation of P values" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+openscience@royalsociety.org
+Appendix A
+Response to teviewers
+Thanks to both reviewers for their comments, which have helped to clarify the paper
+(and for not insisting that I become a subjective Bayesian). My responses are
+indented, below.
+David Colquhoun
+Reviewer: 1
+Comments to the Author(s)
+label_comment_5
+This is a nicely written paper very relevant at a time when we are debating use of P-
+values. I have some major points and some minor points
+Major Points:
+1. The authors need to clarify what is the original contribution of the paper. As I was
+reading this paper, it seemed to me all the points made in this paper already exist in
+the literature and the author is putting them together in an integrated landscape. The
+author needs to clarify whether that is the goal of the paper or there are a couple of
+new points the author is trying to make/highlight that have not appeared in the
+literature. This could be the P-equal versus P-less than argument or just releasing R
+codes to calculate the prior, likelihood, posterior odds mapping, but this needs to be
+clarified what is new.
+What’s new? I’m not aware of any other paper that discusses and compares
+the p-equals and the p-less-than approach in such detail, or provides both R
+scripts and a web calculator to calculate both (the web calculator was written
+after the paper was submitted but it is described in the revised version and
+illustrated in Figs 4 and 6 of the revised version. Also, almost every other
+paper deals only with large samples, using the z statistic, whereas I use
+Student’s t statistic so results are relevant to the small samples that are
+common in lab research.
+2. Reading some sections of the paper, I was confused whether the author is
+considering the issue of multiple testing versus testing a single hypothesis at P=0.05.
+The references to the Wacholder (2004) paper with False Positive Report Probability
+made me feel we are in the genomewide association study setting where the search
+is agnostic and over multiple hypotheses. It will be good if the paper clarifies at the
+onset that the conversation is about single hypotheses testing and relegate
+discussion of multiple testing, FDR to a separate section.
+The question to be answered is stated (and emphasised in a box) right at the
+start of the paper. Multiple comparisons were mentioned at the end of
+Appendix A1. But for the sake of clarity, I have moved that to the introduction.
+I added this paragraph
+“The problem of multiple comparisons is often an important source of false discoveries, but
+isn’t discussed in this paper. It is worth noting that all the methods for correcting for multiple
+comparisons aim to correct the type 1 error only. The result is therefore a (corrected) P
+value, so it will still underestimate the false positive risk, for the reasons to be described.”
+I think that this, with the opening question, should make it clear that I’m not
+talking about multiple comparisons.
+(3) Replication studies: The role of replication studies is paramount in modern
+science even if we reduce the P-value threshold. This needs to be incorporated.
+This was stressed several times in the submitted version, in the conclusions
+(section 9)
+Marginal P values are fine as a signal to investigate further. In the end, the only
+solution is replication
+Calculation of the prior seems to me to be a better way than specifying an arbitrary
+prior in order to calculate an FPR. In the end, only replication will resolve arguments.
+(4) Always be aware that no method exists for rigorous inductive argument [5]. In
+practice, judgement, and especially replication, is always needed. There is no
+computer program that can automatically make a judgement for you.
+I have added to the abstract the following sentence, to make sure that this
+point is appreciated.
+“In the end, precise inductive inference is impossible and replication is the
+only way to be sure.”
+(4) On page 4, equation (1) should be posterior odds. I found the use of the word
+odds ratio very confusing. Perhaps it is best to introduce some notations like in
+equation A8. Otherwise equations (1) and (2) seem vague.
+Point taken. My aim was to keep the body of the paper as free of equations
+as humanly possible. Experience has shown that this increases the
+readership vastly. I have changed this section now to read as follows
+.” . . can be written thus.
+posterior odds ratio = likelihood ratio X prior odds (1)
+(see eq, A8 for a more precise definition), The word ‘prior’ signifies ‘before the
+experiment; and ‘posterior’ signifies after the experiment. So the likelihood ratio
+measures the evidence provided by the experiment. Often we shall prefer to speak of
+probabilities rather than odds. The probability that a hypothesis is true is related to
+the odds ratio in favour of the hypothesis being true, thus
+<U+0001D45C><U+0001D451><U+0001D451><U+0001D460>
+<U+0001D45D><U+0001D45F><U+0001D45C><U+0001D44F><U+0001D44E><U+0001D44F><U+0001D456><U+0001D459><U+0001D456><U+0001D461><U+0001D466> =
+<U+0001D45C><U+0001D451><U+0001D451><U+0001D460> + 1
+(2)
+For example, if the…”
+I hope this is a sufficiently good compromise.
+(5) In connection with the authors argument of P-equal versus less than, it will be
+great to discuss the choice of alternative and critical region, a point null versus a
+composite null. As Fisher had argued, do we need to think about a specific
+alternative?
+I’m puzzled by this comment because the alternative hypothesis is introduced
+at many points, and it is illustrated explicitly in Figure 1. In section 2. Here are
+some examples
+In order to calculate the false positive risk the null hypothesis is not enough. We
+need also an alternative hypothesis. This is needed because, as Berkson said in
+1942 [6]
+In section 4
+In order to calculate the FPR we need to postulate an alternative to the null
+hypothesis
+And later
+The likelihood of a hypothesis is not interpretable on its own: we can interpret only the
+relative likelihood of two hypotheses. This is called the likelihood ratio. In the example
+used here (and in ref [1]), the two hypotheses are the null hypothesis (the true
+difference between means is zero) and the alternative hypothesis (the true
+difference between means is one).
+In section 5
+and the probability of the observations under the alternative hypothesis is proportional
+to the ordinate labelled y1 in Figure 1.
+And
+If we observe P = 0.05, for which power = 0.78, as in Figure 1, the likelihood ratio for
+the alternative versus the null is 2.76 (see Table 1 and Appendix A2 for details)
+And
+If we observe P = 0.05, for which power = 0.78, as in Figure 1, the likelihood ratio for
+the alternative versus the null is 2.76 (see Table 1 and Appendix A2 for details)
+In appendix A1
+The null hypothesis is that the true effect size is zero and the alternative hypothesis is
+(for a two-sided test) that the true effect size is not zero
+and many more times
+(6) What is the recommendation then, to use P=0.00045 to maintain a FPR of 5%. I
+would think this really depends on the study. The prior probability for null hypothesis
+being 0.1 may be reasonable in some studies but in agnostic searches this number
+will be much much smaller. Perhaps the authors can add another paragraph on this
+issue?
+Well the p=0.00045 certainly serves as a warning against hubris. But the main
+purpose of the paper, as stated in the abstract, is to advocate the view
+It is recommended that the terms “significant” and “non-significant” should never be
+used. Rather, P values should be supplemented by specifying the prior probability
+that would be needed to produce a specified (e.g. 5%) false positive risk.
+I have added this to the introduction also, to make sure that it’s clear from the
+outset.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_6
+This work by Prof. Colquhoun is extremely timely, and the subject of paramount
+importance. As this has been up as a preprint for some time, I have read both this
+version and the prior revisions, and am pleased to see how the paper has evolved.
+As this is effectively a 7th revision, the vast majority of my points are relatively minor,
+and designed to make the paper slightly more accessible to a non-expert reader, as I
+firmly agree it is important that all scientists take home the central message of this
+work.
+(1) In the introduction, it would be worthwhile to clarify a subtle but important point -
+presumably, Prof Colquhoun is talking about the specific examples of an experiment
+being conducted without any clear mechanistic predictions (or priors) considered
+before the experiment. For example, experiments done under the guise of
+'hypothesis generation' rather than 'hypothesis testing'. This is perfectly reasonable
+in biology and lab science, but may not translate directly to other sciences - for
+example, physics, where mechanistic theory is used to predict experimental
+outcome. I appreciate this is a subtle point, but it might be pertinent to explicitly
+clarify this.
+This is an interesting point. The whole argument is conducted in terms of
+testing the difference between two independent means. The question of how
+much the results apply to P values obtained in other ways remains open.
+Since the p value is always defined in the same way, it will always be subject
+to the error of the transpaoed conditional, so I imagine that similar problems
+will occur with any P value whatsoever. However, I have not investigated
+other cases so it did not feel safe to mention this idea. I recall Jon
+Butterworth giving In the Guardian!) an accurate description of the transposed
+conditional when referring to the discovery of the Higgs boson.
+(2) "The most common (mis)interpretations are “the P value is the probability that
+your results occurred by chance”. Or “the P value is the probability that the null
+hypothesis is true”. Both of these are disastrously wrong [5]. The latter definition is
+obviously wrong because the P value is calculated on the premise that the null
+hypothesis is true, so it can’t possibly tell you about the truth of the null hypothesis."
+Very true, but I would suggest making the refutation of the former explictly clear too.
+Good point. I added
+The former is wrong because in order to calculate the probability that the result
+occurred by chance, we need the total number of positive tests, not only those that
+are found when the null hypothesis is true (see Figure 2 in ref [1]).
+This would be clearer of Fig 2 was included here, but there is a limit to the
+amount of self-plagiarism that I can do.
+(3) There appears to be a typo in the caption for figure 1 (strike out clear) - also, y1
+isn't marked and should be.
+Sorry, I can’t see a typo, and y1 is there.
+(4) Eq (1) is good and not intimidating to a general audience, but would it be
+worthwhile to include the 'classical' form of Baye's theorem and explain what it
+means?
+It was my aim to have an absolute minimum of equations in the body of the
+text. Experience has shown that this increases the readership enormously.
+But I have added some clarification, by referring to the full equation in the
+appendix, and by explaining prior and posterior.
+.” . . can be written thus.
+posterior odds ratio = likelihood ratio X prior odds (1)
+(see eq, A8 for a more precise definition), Then word prior signifies ‘before the
+experiment; and posterior signifies after the experiment. So the likelihood ratio
+measures the evidence provided by the experiment. Often we shall prefer to speak of
+probabilities rather than odds. The probability that a hypothesis is true is related to
+the odds ratio in favour of the hypothesis being true, thus
+(5) As it stands, part 3 is confusing and should be reworded - partially this is the
+reliance on appendix A and prior work, but I think there are some things that require
+re-phrasing. The question has apparently been long discussed in statistical literature,
+so it would be appropriate to reference some previous discussions in the first
+paragraph - such as section 10 of the author's previous work.
+In fact, to grasp this section I had to go to the author's 2014 paper - to my mind, p=
+should be understood as a precisely defined value; the chances of a simulated t-test
+producing this result exactly might be rather low. However, in the 2014 paper, the p=
+is actually an envelope (between 0.045 and 0.05 in the example) so that a p=
+interpretation actually means something very close to the arbitrary p cut off, whereas
+p < interpretation means values of p less than this. In essence, I assume Prof
+Colquhoun is defining p= as 'close to' the threshold, but this terminology is confusing
+and it should be explicitly stated it is not a true equality in the classical sense. If I
+have misunderstood, I would appreciate clarification.
+I have inserted ref 22 in the first paragraph, though actually the distinction is
+older, at least to Edwards, Lindman & Savage (1963). The problem is that the
+distinction is buried in mathematical jargon in these references, and it’s
+unlikely that most non-statisticians would appreciate the distinction by reading
+them. I was disappointed that the reviewer found this section hard because it
+was my aim to make it simpler than existing accounts. As you point out, the
+simulation approach makes the distinction obvious and this is described
+already towards the end of section 3, and in section 4. I have moved a
+reference to this approach to near the start of section 3, in the hope that this
+makes it easier to follow. This now reads
+This is an old, but often neglected question. . Although this discussion has gone on
+for decades in the statistical literature (eg ref [22]), it is unknown to most users. It
+was discussed in section 10 of ref [1]/
+In fact the R programs and the web calculator do the calculations for the
+exactly equal case. Of course the probability if observing a P value exactly
+equal to 0.05 (or whatever) is infinitesimally small (so for simulations a small
+interval must be used), but it’s proportional to the probability densities (y0 and
+y1 in Figure 1) and the proportionality constant cancels when the likelihood
+ratio is found. To clarify this I added, near the end of section 3.
+Although the distinction between the p-less-than case and the p-equals case is most
+easily understood by simulations, one aim of this paper is to supply code that
+calculates the p-equals case exactly (rather than the p-close-to case that is all that
+can be done by simulation), as explained in Appendix A2.
+(6) I quite like the discussion section, and would like to see it expanded. These of
+course are only suggestions, and can be employed (or ignored!) as the author sees
+fit. As the problem of reproducibility in science is at the heart of this work, it might be
+pertinent to expand on how this work should inform experimenters and policy
+makers. Some of this could be achieved by discussing the emerging field of meta-
+research, and certainly, this work qualifies as part of that. The work of John
+Ioannadis has been mentioned, but especially relevant might be the work of
+Smaldino and McElreath (http://rsos.royalsocietypublishing.org/content/3/9/160384)
+in this journal, which suggests our obsession with metrics can have a negative
+impact of research quality. A another recent pre-print that might be relevant is the
+work of Grimes, Bauch and Ioannadis
+(https://www.biorxiv.org/content/early/2017/05/17/139063) which makes similar
+arguments, and also shows by way of a simple model that fields with a a high-false
+positive rate tend to have lower reproducibility, and that rewarding scientists on
+publication metrics alone is detrimental to research quality.
+There has been a spate of such papers recently. I’ve said it endlessly myself.
+I added some references to the discussion (including Smaldino & McElreath).
+This paper addresses a very limited question: how do you interpret the result of a
+single unbiased test of significance. It makes no attempt to estimate the science-
+wide false positive rate. The increased awareness if the problem of reproducibility
+has led to many attempts to assess the scale of the problem. Since most of these
+papers use the p-less-than approach to calculate false positive risks, the problem
+may be even worse than they suggest. See, for example [9] [29] [30] [33] [42] [43].
+What would be really interesting is to expand upon how alternatives might be
+employed. The crux of this paper is that p value can be useful, IF correctly
+interpretted but alas it is frequently misunderstood or outright manipulated. Papers
+like this serve to improve statistical fluency, and that is in itself fantastic. But aside
+from this, what does the author think might help improve thing? or example, should
+we be more focused on effect size than p-value? This is certainly an argument put
+forward in some medical literature
+(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/).
+I had hoped that I’d made it clear what should be done, e.g in the abstract
+It is recommended that the terms “significant” and “non-significant” should never be
+used. Rather, P values should be supplemented by specifying the prior probability
+that would be needed to produce a specified (e.g. 5%) false positive risk. It may also
+be helpful to specify the minimum false positive risk associated with the observed P
+value.
+The same message is repeated throughout the paper. E.g. under conclusions
+So here is what I think should be done.
+(1) Continue to give P values and confidence intervals. These numbers should be
+given because they are familiar and easy to calculate, not because they are very
+helpful in preventing you from making a fool of yourself. They do not provide good
+evidence for or against the null hypothesis. Giving confidence intervals has the
+benefit of focussing attention on the effect size. But it must be made clear that there
+is not a 95% chance that the true value lies within the confidence limits you find.
+Confidence limits give the same sort of evidence against the null hypothesis as P
+values, i.e, not much.
+(2) I propose that the best way of indicating the strength of evidence provided by a
+single P value is to use the reverse Bayesian method (section 7). That is, calculate
+what prior probability would be needed to achieve a specified false positive risk (e,g.
+use calc-prior.R, or the web calculator [44])
+Society Open

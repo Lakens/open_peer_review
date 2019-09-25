@@ -1,0 +1,533 @@
+Efficient quantum circuits for dense circulant and circulant-
+like operators
+S. S. Zhou and J. B. Wang
+Article citation details
+R. Soc. open sci. 4: 160906.
+http://dx.doi.org/10.1098/rsos.160906
+Review timeline
+Original submission: 10 November 2016 Note: Reports are unedited and appear as
+Revised submission: 11 April 2017 submitted by the referee. The review history
+Final acceptance: 11 April 2017 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-160906.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The manuscript presents several results on quantum algorithms to simulate or solve systems of
+equations where the linear map involves circulant matrices, or circulant like matrices. The
+methods involves modifications of prior art for simulating sparse Hamiltonians or sparse systems
+of equations. Overall the presentation is clear with arguments supplemented with circuit
+diagrams and all references clearly cited in the appropriate manner. The main new result is that
+for particular structured systems, even dense Hamiltonians can be simulated in real time (or
+dense systems of equations). Generically this is not possible due to prior lower bound argument.
+The results herein could be useful to others working in quantum algorithms particular to those
+interesting in simulating physical systems with couplings that have translational invariance (but
+long range) so that methods to solve dense systems are needed. For these reasons I recommend
+for publication but after the following issues have been addressed.
+1. The number of Given’s rotations (unitary matrices that act non-trivially on two dimensional
+subspaces) needed to decompose an arbitrary Unitary in N dimensions scales like N^2 so I would
+state “fewer than N^2 two level unitary matrices.”
+2. In the statement of Lemma 1 it would help to include the upper index on j (i.e. the number of
+terms in the sum of the operator M). Just below it is assumed that the two registers have L qubits
+and this implies that the maximum number of terms in the sum M is 2^L, which must be the case
+for the chosen circulate unitary V.
+3. Below Theorem 2 it is stated “To take an extreme but illustrative example, when <U+039B>_k = 1, k <U+0338>=
+N/2 and <U+039B>_N/2=0 …”, does this illustrative example fit with the assumption that the sum of the
+c_j’s is 1 and they are all positive? It’s not clear to me that this would fit the assumptions.
+4. Above Fig. 2 “…elements are on odd-numbered sites…” should be “…elements on odd-
+numbered sites…”
+5. Authors should comment that throughout they assume that the target operators are natively
+expressed in an n qubit basis. Many of the results of Hamiltonian simulation carry over even
+when the dimension is not a power of two (because you can embed in a larger Hilbert space
+which is a power of 2) However, some of the transformations here may suffer under such an
+embedding, e.g. the permutation on the Hankel matrix to make it Toeplitz could be more
+complex than simply performing local bit flips.
+6. Sec. 4, paragraph 2. It is stated that there is a direct method to implement the diagonal unitary
+when the diagonal elements are known. The authors should comment that in general even
+implementing diagonal unitaries scales like O(N log N) (see e.g. Bullock and Markov, Quantum
+Information & Computation, vol 4, no 1, 027-047 (2004)).
+7. Sec. 5. The way this section is written it seems that the proof is just the HHL algorithm. It
+would help if the proof were explicit in where it uses the HHL algorithm and where things differ.
+E.g. in step 2, the operator U=e^{i 2 pi C} is not necessarily unitary since C is not necessarily
+Hermitian so there were be error in the simulation (as stated later in this section). Also in step 3
+the ancilla qubit state is missing and the output state is missing vector labels for the ancilla. There
+should be some more discussion about the nature of the controlled rotation in step 3. In HHL the
+complexity of the algorithm scales with the square of the matrix sparsity but in this application
+the authors are assuming even dense ciculant matrices can be implemented efficiently from the
+arguments in previous sections. There should be a discussion of this important point.
+3
+8. In the vibrational analysis application do we know that the oracle step (to create the uniform
+superposition state with elements from the circulant matrices) can be efficiently done? It seems
+that an efficient oracle requires some special structure in the coefficients c_j. It could be that for
+the cases where you have such special structure, then there are also efficient classical algorithms
+to solve this system. In any case I think the sentence “ If all three conditions are satisfied, we have
+an exponential speed-up compared to classical computation. “ should be softened or maybe a
+fourth condition added that the physical couplings have sufficient structure to allow for an
+efficient oracle construction.
+9. In the conclusions I recommend the authors spend some more time discussing the provisio that
+the simulation of dense circulant matrices only works if the oracle can be constructed efficiently.
+As the authors state in Sec. 2 this requires either access to QRAM with O(N) resources, or some
+special structure to the coefficients of the matrices. This is particularly important because the
+authors emphasize the application to science and engineering, and given that we will have a
+quantum computer no-one is also going to give us oracles, we will need to construct them.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This manuscript describes quantum algorithms for operations involving circulant matrices
+(multiplication, inverses, and Hamiltonian evolution). This is a nice addition to the literature on
+the subject, but there are some minor problems with the manuscript as given.
+First, it is a completely unnecessary assumption for the entries c_j to be non-negative. It is easy to
+allow for negative or complex entries, and the manuscript mentions this generalization below
+equation (4). But then in section 7 there is a lengthy discussion of the case of negative entries, as
+if that were a significant difficulty (and ignoring the fact that it had already been addressed).
+4
+Some other minor problems are:
+1) The second sentence of the Introduction is very strangely worded, particularly where it says
+that a quantum computer provides "the ultimate computational results". That does not make
+sense, because a quantum computer should provide the same computational results as a classical
+computer. The difference is that the quantum computer can (in some cases) provide the results
+more rapidly.
+2) The Introduction is inconsistent, because it discusses the problem of implementing linear
+operations, then gives as examples Shor's and Grover's algorithms. Those algorithms are to find
+the answer to a classically posed question, they are not to perform a specified linear operation.
+3) Lemma 1 is cited as being from reference [9], but does not appear there.
+4) Just below the statement of Lemma 1 it says that addition would require O(log^2(N))
+operations. That isn't right, the complexity of addition is proportional to log(N). This problem is
+also in Theorems 2 and 3.
+5) There is inconsistency in the notation on page 3. In the lemma, m is used for the number of
+qubits in the ancilla, M is used for the operation, W_j is used for the unitaries, and alpha_j for the
+weightings. Elsewhere in the page L is the number of qubits, C is the operation, V_j are the
+unitaries, and c_j are the weightings. If different notation is used from the Lemma, the
+differences in the notation should be explicitly stated.
+6) Below Theorem 2 it says that the complexity is inversely proportional to p, but it is inversely
+proportional to the square root of p.
+7) In the beginning of section 4 the first page is summarizing the procedure from reference [9].
+That needs to be made clear, because the way it is written makes it look like it is original to this
+manuscript.
+8) In equation (26) it only has n*Omega, but the second derivative would lead to a factor of the
+square of that.
+9) The English usage is poor in a few places:
+* Just below Theorem 2, "diagonalization form" should be "diagonal form".
+* In several places in the manuscript, the wording "equals to" is used where it should say "is equal
+to".
+* Towards the end of the proof of Theorem 3, the wording "numbers of one or two-qubit gates" is
+used. The words "numbers of" should not be there.
+label_end_comment
+Decision letter (RSOS-160906)
+30-Mar-2017
+Dear Professor Wang
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160906 entitled
+"Efficient quantum circuits for dense circulant and circulant-like operators" has been accepted for
+publication in Royal Society Open Science subject to minor revision in accordance with the
+referee suggestions. Please find the referees' comments at the end of this email.
+5
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160906
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+6
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 08-Apr-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Miles Padgett
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+7
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+The manuscript presents several results on quantum algorithms to simulate or solve systems of
+equations where the linear map involves circulant matrices, or circulant like matrices. The
+methods involves modifications of prior art for simulating sparse Hamiltonians or sparse systems
+of equations. Overall the presentation is clear with arguments supplemented with circuit
+diagrams and all references clearly cited in the appropriate manner. The main new result is that
+for particular structured systems, even dense Hamiltonians can be simulated in real time (or
+dense systems of equations). Generically this is not possible due to prior lower bound argument.
+The results herein could be useful to others working in quantum algorithms particular to those
+interesting in simulating physical systems with couplings that have translational invariance (but
+long range) so that methods to solve dense systems are needed. For these reasons I recommend
+for publication but after the following issues have been addressed.
+1. The number of Given’s rotations (unitary matrices that act non-trivially on two dimensional
+subspaces) needed to decompose an arbitrary Unitary in N dimensions scales like N^2 so I would
+state “fewer than N^2 two level unitary matrices.”
+2. In the statement of Lemma 1 it would help to include the upper index on j (i.e. the number of
+terms in the sum of the operator M). Just below it is assumed that the two registers have L qubits
+and this implies that the maximum number of terms in the sum M is 2^L, which must be the case
+for the chosen circulate unitary V.
+3. Below Theorem 2 it is stated “To take an extreme but illustrative example, when <U+039B>_k = 1, k <U+0338>=
+N/2 and <U+039B>_N/2=0 …”, does this illustrative example fit with the assumption that the sum of the
+c_j’s is 1 and they are all positive? It’s not clear to me that this would fit the assumptions.
+4. Above Fig. 2 “…elements are on odd-numbered sites…” should be “…elements on odd-
+numbered sites…”
+5. Authors should comment that throughout they assume that the target operators are natively
+expressed in an n qubit basis. Many of the results of Hamiltonian simulation carry over even
+when the dimension is not a power of two (because you can embed in a larger Hilbert space
+which is a power of 2) However, some of the transformations here may suffer under such an
+embedding, e.g. the permutation on the Hankel matrix to make it Toeplitz could be more
+complex than simply performing local bit flips.
+6. Sec. 4, paragraph 2. It is stated that there is a direct method to implement the diagonal unitary
+when the diagonal elements are known. The authors should comment that in general even
+implementing diagonal unitaries scales like O(N log N) (see e.g. Bullock and Markov, Quantum
+Information & Computation, vol 4, no 1, 027-047 (2004)).
+7. Sec. 5. The way this section is written it seems that the proof is just the HHL algorithm. It
+would help if the proof were explicit in where it uses the HHL algorithm and where things differ.
+E.g. in step 2, the operator U=e^{i 2 pi C} is not necessarily unitary since C is not necessarily
+Hermitian so there were be error in the simulation (as stated later in this section). Also in step 3
+the ancilla qubit state is missing and the output state is missing vector labels for the ancilla. There
+should be some more discussion about the nature of the controlled rotation in step 3. In HHL the
+complexity of the algorithm scales with the square of the matrix sparsity but in this application
+the authors are assuming even dense ciculant matrices can be implemented efficiently from the
+arguments in previous sections. There should be a discussion of this important point.
+8
+8. In the vibrational analysis application do we know that the oracle step (to create the uniform
+superposition state with elements from the circulant matrices) can be efficiently done? It seems
+that an efficient oracle requires some special structure in the coefficients c_j. It could be that for
+the cases where you have such special structure, then there are also efficient classical algorithms
+to solve this system. In any case I think the sentence “ If all three conditions are satisfied, we have
+an exponential speed-up compared to classical computation. “ should be softened or maybe a
+fourth condition added that the physical couplings have sufficient structure to allow for an
+efficient oracle construction.
+9. In the conclusions I recommend the authors spend some more time discussing the provisio that
+the simulation of dense circulant matrices only works if the oracle can be constructed efficiently.
+As the authors state in Sec. 2 this requires either access to QRAM with O(N) resources, or some
+special structure to the coefficients of the matrices. This is particularly important because the
+authors emphasize the application to science and engineering, and given that we will have a
+quantum computer no-one is also going to give us oracles, we will need to construct them.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+This manuscript describes quantum algorithms for operations involving circulant matrices
+(multiplication, inverses, and Hamiltonian evolution). This is a nice addition to the literature on
+the subject, but there are some minor problems with the manuscript as given.
+First, it is a completely unnecessary assumption for the entries c_j to be non-negative. It is easy to
+allow for negative or complex entries, and the manuscript mentions this generalization below
+equation (4). But then in section 7 there is a lengthy discussion of the case of negative entries, as
+if that were a significant difficulty (and ignoring the fact that it had already been addressed).
+Some other minor problems are:
+1) The second sentence of the Introduction is very strangely worded, particularly where it says
+that a quantum computer provides "the ultimate computational results". That does not make
+sense, because a quantum computer should provide the same computational results as a classical
+computer. The difference is that the quantum computer can (in some cases) provide the results
+more rapidly.
+2) The Introduction is inconsistent, because it discusses the problem of implementing linear
+operations, then gives as examples Shor's and Grover's algorithms. Those algorithms are to find
+the answer to a classically posed question, they are not to perform a specified linear operation.
+3) Lemma 1 is cited as being from reference [9], but does not appear there.
+4) Just below the statement of Lemma 1 it says that addition would require O(log^2(N))
+operations. That isn't right, the complexity of addition is proportional to log(N). This problem is
+also in Theorems 2 and 3.
+5) There is inconsistency in the notation on page 3. In the lemma, m is used for the number of
+qubits in the ancilla, M is used for the operation, W_j is used for the unitaries, and alpha_j for the
+weightings. Elsewhere in the page L is the number of qubits, C is the operation, V_j are the
+unitaries, and c_j are the weightings. If different notation is used from the Lemma, the
+differences in the notation should be explicitly stated.
+9
+6) Below Theorem 2 it says that the complexity is inversely proportional to p, but it is inversely
+proportional to the square root of p.
+7) In the beginning of section 4 the first page is summarizing the procedure from reference [9].
+That needs to be made clear, because the way it is written makes it look like it is original to this
+manuscript.
+8) In equation (26) it only has n*Omega, but the second derivative would lead to a factor of the
+square of that.
+9) The English usage is poor in a few places:
+* Just below Theorem 2, "diagonalization form" should be "diagonal form".
+* In several places in the manuscript, the wording "equals to" is used where it should say "is equal
+to".
+* Towards the end of the proof of Theorem 3, the wording "numbers of one or two-qubit gates" is
+used. The words "numbers of" should not be there.
+Author's Response to Decision Letter for (RSOS-160906)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-160906.R1)
+11-Apr-2017
+Dear Professor Wang,
+I am pleased to inform you that your manuscript entitled "Efficient quantum circuits for dense
+circulant and circulant-like operators" is now accepted for publication in Royal Society Open
+Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+10
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Appendix A
+Professor Jingbo Wang
+School of Physics
+The University of Western Australia
+35 Stirling Highway, Crawley WA 6009
+Email jingbo.wang@uwa.edu.au
+4 April 2017
+Article ID: RSOS-160906
+Title: Efficient quantum circuits for dense circulant and circulant-like operators
+Dear Editor,
+We would like to thank the referees for providing detailed comments and very constructive suggestions.
+We have revised the manuscript in light of their reviews. Listed below are specific changes we have
+made in response to the detailed points raised by the reviewers.
+Referee #1:
+• The number of Given’s rotations (unitary matrices that act non-trivially on two dimensional
+subspaces) needed to decompose an arbitrary Unitary in N dimensions scales like N^2 so I would
+state “fewer than N^2 two level unitary matrices.”
+The following sentence is added in the introduction: “In general, the number of two-level gates (i.e.
+unitary matrices acting non-trivially on two dimensional subspaces) needed to decompose an arbitrary
+unitary in $N$ dimensions scales as $O(N^2)$.”
+• In the statement of Lemma 1 it would help to include the upper index on j (i.e. the number of
+terms in the sum of the operator M). Just below it is assumed that the two registers have L qubits
+and this implies that the maximum number of terms in the sum M is 2^L, which must be the case
+for the chosen circulate unitary V.
+We have now included the upper index on j in Lemma 1, denoted as J. We also added some explanatory
+text in Section 1 and later in Section 4.
+• Below Theorem 2 it is stated “To take an extreme but illustrative example, when <U+039B>_k = 1, k <U+0338>= N/2
+and <U+039B>_N/2=0 …”, does this illustrative example fit with the assumption that the sum of the c_j’s
+is 1 and they are all positive? It’s not clear to me that this would fit the assumptions.
+We have used a different example where <U+039B>_k=cos(2pk/N), which fits the assumptions.
+• Above Fig. 2 “…elements are on odd-numbered sites…” should be “…elements on odd-
+numbered sites…”
+The sentence has been corrected.
+• Authors should comment that throughout they assume that the target operators are natively
+expressed in an n qubit basis. Many of the results of Hamiltonian simulation carry over even
+when the dimension is not a power of two (because you can embed in a larger Hilbert space
+which is a power of 2) However, some of the transformations here may suffer under such an
+embedding, e.g. the permutation on the Hankel matrix to make it Toeplitz could be more complex
+than simply performing local bit flips.
+We have added the following sentences on Page 3: “Unless stated otherwise, we assume that $N =
+2^{L}$, where $L$ is an integer. If $N$ is not a power of two, we will need to embed the system into a
+larger Hilbert space whose dimension is a power of two. On the other hand, it is also convenient to simply
+discretise practical problems using powers of two. … Note that when $N$ is not a power of two, it may
+take additional $O(\log N)$ ancillary qubits to implement the “mod N” operation in select(V), for
+example by first subtracting $N$ from $k-j$ and then using the sign qubit to control the “mod N”
+operation.”
+On Page 7, we added the following discussion on the Hankel matrix permutation: “Note that when $N$ is
+not a power of two, we need to be careful with the embedding when mapping a circulant matrix into a
+Hankel matrix. The subspace $\mathrm{span}\{\ket{0},\ldots, \ket{N-1}\}$ in the implementation of
+circulant matrices corresponds to the subspace $\mathrm{span}\{\ket{2^L-N},\ldots,\ket{2^L-1}\}$ in
+the implementation of Hankel matrices.”
+• Sec. 4, paragraph 2. It is stated that there is a direct method to implement the diagonal unitary
+when the diagonal elements are known. The authors should comment that in general even
+implementing diagonal unitaries scales like O(N log N) (see e.g. Bullock and Markov, Quantum
+Information & Computation, vol 4, no 1, 027-047 (2004)).
+We added the following sentence in Section 4, paragraph 2: “In general, implementing an arbitrary
+diagonal unitary requires up to $O(N \log N)$ one- or two-qubit gates \cite{bullock2003smaller}.”
+• Sec. 5. The way this section is written it seems that the proof is just the HHL algorithm. It would
+help if the proof were explicit in where it uses the HHL algorithm and where things differ. E.g. in
+step 2, the operator U=e^{i 2 pi C} is not necessarily unitary since C is not necessarily Hermitian
+so there were be error in the simulation (as stated later in this section).
+We added the following sentence: “The basic procedure is the same as the HHL algorithm
+~\cite{harrow2009}, except that $C$ is a dense circulant matrix rather than sparse as required by the
+HHL algorithm, which is summarised below.” In Section 5, we added the assumption that C is
+Hermitian; a discussion on the Hermiticity of $C$ is included in Section 4 (right before Theorem 3).
+• Also in step 3 the ancilla qubit state is missing and the output state is missing vector labels for
+the ancilla. There should be some more discussion about the nature of the controlled rotation in
+step 3. In HHL the complexity of the algorithm scales with the square of the matrix sparsity but in
+this application the authors are assuming even dense circulant matrices can be implemented
+efficiently from the arguments in previous sections. There should be a discussion of this important
+point.
+The missing ancillary qubit is now added and we also added a reference on the implementation of
+controlled rotations. As the end of Section 5, we added the following sentence: “For $s$-sparse
+Hamiltonians (with at most $s$ nonzero entries in any row or column), the HHL algorithm scales as
+$\tilde{O}(s^2 \kappa^2 \log N/\epsilon)$~\cite{harrow2009}. In this work we extended the HHL
+procedure to dense Hamiltonians with special structure and proved the scaling is independent of matrix
+sparsity. This simplification stems from the efficient implementation of $\mathrm{select}(V)$ which
+makes possible the decomposition of $C$ into $O(N)$ terms without introducing $O(N)$ into the
+computational complexity.”
+• In the vibrational analysis application do we know that the oracle step (to create the uniform
+superposition state with elements from the circulant matrices) can be efficiently done? It seems
+that an efficient oracle requires some special structure in the coefficients c_j. It could be that for
+the cases where you have such special structure, then there are also efficient classical algorithms
+to solve this system. In any case I think the sentence “ If all three conditions are satisfied, we
+have an exponential speed-up compared to classical computation. “ should be softened or maybe
+a fourth condition added that the physical couplings have sufficient structure to allow for an
+efficient oracle construction.
+We have included the efficient implementation of the oracle as the fourth condition on Page 15.
+• In the conclusions I recommend the authors spend some more time discussing the provisio that
+the simulation of dense circulant matrices only works if the oracle can be constructed efficiently.
+As the authors state in Sec. 2 this requires either access to QRAM with O(N) resources, or some
+special structure to the coefficients of the matrices. This is particularly important because the
+authors emphasize the application to science and engineering, and given that we will have a
+quantum computer no-one is also going to give us oracles, we will need to construct them.
+At the end of paragraph 1 in the conclusion, we commented that realizing the oracle is still an obstacle in
+the physical realization of our algorithm.
+Reviewer: 2
+• First, it is a completely unnecessary assumption for the entries c_j to be non-negative. It is easy
+to allow for negative or complex entries, and the manuscript mentions this generalization below
+equation (4). But then in section 7 there is a lengthy discussion of the case of negative entries, as
+if that were a significant difficulty (and ignoring the fact that it had already been addressed).
+We have removed the lengthy discussion on negative entries in Section 7.
+• The second sentence of the Introduction is very strangely worded, particularly where it says that
+a quantum computer provides "the ultimate computational results". That does not make sense,
+because a quantum computer should provide the same computational results as a classical
+computer. The difference is that the quantum computer can (in some cases) provide the results
+more rapidly.
+We have rewritten this paragraph.
+• The Introduction is inconsistent, because it discusses the problem of implementing linear
+operations, then gives as examples Shor's and Grover's algorithms. Those algorithms are to find
+the answer to a classically posed question, they are not to perform a specified linear operation.
+The inappropriate examples of Shor’s and Grover’s algorithms are removed.
+• Lemma 1 is cited as being from reference [9], but does not appear there.
+Lemma 1 appears on the second page of Ref [9] (now Ref [7]) from Eq. (7) – Eq. (10).
+• Just below the statement of Lemma 1 it says that addition would require O(log^2(N)) operations.
+That isn't right, the complexity of addition is proportional to log(N). This problem is also in
+Theorems 2 and 3.
+The problem is fixed in the statement below Lemma 1 and also in every theorem.
+• There is inconsistency in the notation on page 3. In the lemma, m is used for the number of
+qubits in the ancilla, M is used for the operation, W_j is used for the unitaries, and alpha_j for
+the weightings. Elsewhere in the page L is the number of qubits, C is the operation, V_j are the
+unitaries, and c_j are the weightings. If different notation is used from the Lemma, the
+differences in the notation should be explicitly stated.
+We have added the explanatory texts in Section 1 and Section 4: by taking M=C, a_j =c_j, W_j =V_j,
+J=2^L and m=L on Page 3 and By taking M = tildeU, aj = (t/r)k/k!cj1 ···cjk, Wj = W(k,j1,...,jk), J =
+KN^K and m = K+KL on Page 9 to clarify how Lemma 1 is applied in these two situation.
+• Below Theorem 2 it says that the complexity is inversely proportional to p, but it is inversely
+proportional to the square root of p.
+The statement is corrected.
+• In the beginning of section 4 the first page is summarizing the procedure from reference [9].
+That needs to be made clear, because the way it is written makes it look like it is original to this
+manuscript.
+We have rewritten the sentence as: “The basic procedure is the same as the HHL algorithm
+~\cite{harrow2009}, except that $C$ is a dense circulant matrix rather than sparse as required by the
+HHL algorithm, which is summarised below.”
+• In equation (26) it only has n*Omega, but the second derivative would lead to a factor of the
+square of that.
+• The English usage is poor in a few places:* Just below Theorem 2, "diagonalization form" should
+be "diagonal form".* In several places in the manuscript, the wording "equals to" is used where
+it should say "is equal to".* Towards the end of the proof of Theorem 3, the wording "numbers of
+one or two-qubit gates" is used. The words "numbers of" should not be there.
+These problems are now fixed.
+Yours Sincerely,
+Sisi Zhou
+Jingbo Wang
+Society Open

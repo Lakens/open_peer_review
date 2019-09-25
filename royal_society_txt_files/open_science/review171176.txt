@@ -1,0 +1,539 @@
+Simultaneous inpainting and denoising by directional global
+three-part decomposition: connecting variational and
+Fourier domain-based image processing
+D. H. Thai and C. Gottschlich
+Article citation details
+R. Soc. open sci. 5: 171176.
+http://dx.doi.org/10.1098/rsos.171176
+Review timeline
+Original submission: 31 August 2017 Note: Reports are unedited and appear as
+Revised submission: 15 May 2018 submitted by the referee. The review history
+Final acceptance: 20 June 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-171176.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Image inpainting and denoising are two classical and widely studied problems. Over the past
+two decades, various methods have been proposed to handle them using different tools such as
+variational analysis, PDE, Bayesian estimation, and sparse representation. The major challenge in
+inpainting is to restore the corrupted texture as accurate as possible. From the perspective of the
+calculus of variation, this manuscript presents a restoration model called DG3PD. However, the
+presented method for texture inpainting is a simple combination of several existing works, i.e.,
+morphological processing [36], texture synthesis [31], and nonlocal mean filtering [14]. Therefore,
+in my opinion, the contribution of this manuscript is marginal. In fact, one can obtain the
+competing results by subsequently applying nonlocal mean filtering (or BM3D) and texture
+synthesis to the corrupted images.
+The model is too complex so that it consists of nine constraint terms. Consequently, seven
+subproblems need to be solved in each ALM iteration, which can generally slow the convergence
+speed of the inpainting algorithm. The authors should discuss this issue. Another concern is that
+the test images are very few, and the results of the objective evaluation metrics, e.g., PSNR, SSIM,
+should also be given to completely evaluate the proposed method. Besides, the readability of the
+manuscript is not good. It requires some effort to understand because there are many
+unexplained notations and parameters, e.g., \mathcal{ C }, \textbf{g}, \textbf{D} in (1), H in
+figure 9. And a part of the equation is missed in page 24 (see line 43).
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+3
+Comments to the Author(s)
+label_comment_2
+The author’s have tackled a very challenging scientific problem in a very technical manner. They
+have made a tremendous effort to devise a problem for inverse denoising and inpainting
+problem. The proposed solution incorporates the image restoration from a large number of
+missing pixels, noisy pixels and from cartoon as well as textures regions. The overall presentation
+and graphical and technical aspect of the algorithm is up to the mark. Following are some of the
+questions which I think needs to be answered.
+· Since the author’s have employed a multistage image processing technique, I would like to
+ask have the author’s considered the time complexity issue of the implementation of the given
+algorithm. I suggest the author’s to comment upon it and compare it with other state-of-the-art
+technique.
+· Further, why have the author’s employed the non local means filter for denoising, where as
+there are other effective image denoising algorithms like SA-BM3D, LPG-PCA and BLS-GSM.
+Have the author’s optimised there results. Comment.
+· I would like to put forth that why have the author’s incorporated inpainting prior to
+denoising. What is the logic behind this idea? One approach could be denoising prior to
+inpainting. Please comment. Have you restored the image from noisy pixels which could degrade
+the quality of restored pixels? Please elaborate.
+· Lastly why are there only two techniques with which the method has been compared?
+Looking at the rigorous effort put in devising the algorithm it could have been presented as
+outperforming the state-of-the –art methods as well. Please comment.
+label_end_comment
+Decision letter (RSOS-171176.R0)
+19-Mar-2018
+Dear Dr Thai,
+The editors assigned to your paper ("Simultaneous Inpainting and Denoising by Directional
+Global Three-part Decomposition: Connecting Variational and Fourier Domain Based Image
+Processing") have now received comments from reviewers. We would like you to revise your
+paper in accordance with the referee and Associate Editor suggestions which can be found below
+(not including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 11-Apr-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+4
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171176
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+5
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+Image inpainting and denoising are two classical and widely studied problems. Over the past
+two decades, various methods have been proposed to handle them using different tools such as
+variational analysis, PDE, Bayesian estimation, and sparse representation. The major challenge in
+inpainting is to restore the corrupted texture as accurate as possible. From the perspective of the
+calculus of variation, this manuscript presents a restoration model called DG3PD. However, the
+presented method for texture inpainting is a simple combination of several existing works, i.e.,
+morphological processing [36], texture synthesis [31], and nonlocal mean filtering [14]. Therefore,
+in my opinion, the contribution of this manuscript is marginal. In fact, one can obtain the
+competing results by subsequently applying nonlocal mean filtering (or BM3D) and texture
+synthesis to the corrupted images.
+The model is too complex so that it consists of nine constraint terms. Consequently, seven
+subproblems need to be solved in each ALM iteration, which can generally slow the convergence
+speed of the inpainting algorithm. The authors should discuss this issue. Another concern is that
+the test images are very few, and the results of the objective evaluation metrics, e.g., PSNR, SSIM,
+6
+should also be given to completely evaluate the proposed method. Besides, the readability of the
+manuscript is not good. It requires some effort to understand because there are many
+unexplained notations and parameters, e.g., \mathcal{ C }, \textbf{g}, \textbf{D} in (1), H in
+figure 9. And a part of the equation is missed in page 24 (see line 43).
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The author’s have tackled a very challenging scientific problem in a very technical manner. They
+have made a tremendous effort to devise a problem for inverse denoising and inpainting
+problem. The proposed solution incorporates the image restoration from a large number of
+missing pixels, noisy pixels and from cartoon as well as textures regions. The overall presentation
+and graphical and technical aspect of the algorithm is up to the mark. Following are some of the
+questions which I think needs to be answered.
+· Since the author’s have employed a multistage image processing technique, I would like to
+ask have the author’s considered the time complexity issue of the implementation of the given
+algorithm. I suggest the author’s to comment upon it and compare it with other state-of-the-art
+technique.
+· Further, why have the author’s employed the non local means filter for denoising, where as
+there are other effective image denoising algorithms like SA-BM3D, LPG-PCA and BLS-GSM.
+Have the author’s optimised there results. Comment.
+· I would like to put forth that why have the author’s incorporated inpainting prior to
+denoising. What is the logic behind this idea? One approach could be denoising prior to
+inpainting. Please comment. Have you restored the image from noisy pixels which could degrade
+the quality of restored pixels? Please elaborate.
+· Lastly why are there only two techniques with which the method has been compared?
+Looking at the rigorous effort put in devising the algorithm it could have been presented as
+outperforming the state-of-the –art methods as well. Please comment.
+Author's Response to Decision Letter for (RSOS-171176.R0)
+See Appendix A.
+7
+label_version_2
+RSOS-171176.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+In the current manuscript, my comments are adequately addressed. It seems good enough to be
+accepted for publication.
+label_end_comment
+Decision letter (RSOS-171176.R1)
+20-Jun-2018
+Dear Dr Thai,
+I am pleased to inform you that your manuscript entitled "Simultaneous Inpainting and
+Denoising by Directional Global Three-part Decomposition: Connecting Variational and Fourier
+Domain Based Image Processing" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+8
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Thadcha Retneswaran
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof. Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+In the current manuscript, my comments are adequately addressed. It seems good enough to be
+accepted for publication.
+Appendix A
+Author Response to Reviews of:
+Simultaneous Inpainting and Denoising by Directional
+Global Three-part Decomposition: Connecting Variational
+and Fourier Domain Based Image Processing
+by Duy Hoang Thai and Carsten Gottschlich
+Royal Society Open Science
+Ms. Ref. No.: RSOS-171176
+Summary:
+We are very grateful to the reviewers for providing thoughtful and encouraging com-
+ments, especially thank to the Editor-in-Chief for a full consideration of our manuscript.
+Restoration of a noisy and textured image with a large number of missing pixels is a challeng-
+ing task in inverse problems and imaging. Due to an advantage of a sparse representation
+of a signal in different functional spaces, a calculus of variation and harmonic analysis are
+two fundamental tools to solve this imaging problem.
+Different from other approaches, we embed interpolation and image denoising in one
+algorithm which minimizes an overall objective function for image reconstruction. By a
+convex minimization problem, our optimal solution is obtained to simultaneously satisfy
+the two purposes. In particular, given a textured image corrupted by heavy noise with a
+large number of missing pixels, our idea is to decompose it into piecewise smooth image,
+texture part and noise. Then, inspired by [1, 2], a process of interpolation is done by an
+indicator function <U+03C7>cD on a measure of noise: C {<U+03C7>cD .× } `8 . Finally, all of the above
+ingredients are embedded into one objective function minimized by an alternating method.
+In general, there are some overall concerns from reviewers which we briefly summarize
+in three key points:
+• The proposed method is a combination of several existing works, i.e. morphological
+processing, texture synthesis, and nonlocal mean filtering.
+• The time complexity of the algorithm is high because the DG3PD inpainting model
+is complicated with three constraint terms.
+• the objective evaluation metrics, e.g., PSNR, SSIM, should be considered for a com-
+plete assessment of the proposed method.
+In the remainder of this response, we address these concerns directly and where ap-
+propriate, cite specific changes that have been made to the manuscript. In addition to
+the specific changes detailed below, we have very carefully reviewed our revised version of
+this work and have made some minor edits to wording and spelling to improve readability.
+Moreover, as suggested by the two reviewers, we compare our proposed model with Block-
+Matching and 3D filtering (BM3D) available at http://www.cs.tut.fi/~foi/GCF-BM3D/,
+please see pages 15-17 in our manuscript for a detailed explanation. We very much hope
+that with these revisions in addition to the detailed changes outlined below, our manuscript
+will now be appropriate for an acceptance.
+In order to support our responses to reviewers’ comments, we also cite some state-of-
+the-art articles in image denoising and inpainting:
+[1] C. Ballester, M. Bertalmio, V. Caselles, G. Sapiro, and J. Verdera. Filling- in by
+joint interpolation of vector fields and grey levels. IEEE Transactions on Image Processing,
+10(8):1200-1211, August 2001.
+[2] Mainberger M. et al. (2012) Optimising Spatial and Tonal Data for Homogeneous
+Diffusion Inpainting. In: Bruckstein A.M., ter Haar Romeny B.M., Bronstein A.M., Bron-
+stein M.M. (eds) Scale Space and Variational Methods in Computer Vision. SSVM 2011.
+Lecture Notes in Computer Science, vol 6667. Springer, Berlin, Heidelberg.
+[3] Y. Meyer. Oscillating Patterns in Image Processing and Nonlinear Evolution Equa-
+tions: The Fifteenth Dean Jacqueline B. Lewis Memorial Lectures. American Mathematical
+Society, Boston, MA, USA, 2001.
+[4] E. Candes and T. Tao. The Dantzig selector: Statistical estimation when p is much
+larger than n. The Annals of Statistics 35 (6): 2313-2351, 2007.
+[5] S. Boyd and J. Dattorro. Alternating Projections. Conference Proceedings.
+Reviewer 1:
+Comment 1: The reviewer expresses some challenges of textured image restoration: “Im-
+age inpainting and denoising are two classical and widely studied problems. Over the past
+two decades, various methods have been proposed to handle them using different tools such
+as variational analysis, PDE, Bayesian estimation, and sparse representation. The major
+challenge in inpainting is to restore the corrupted texture as accurate as possible. From
+the perspective of the calculus of variation, this manuscript presents a restoration model
+called DG3PD.” However, reviewer 1 raises some concerns about our approach as “a simple
+combination of several existing works, i.e., morphological processing [36], texture synthesis
+[31], and nonlocal mean filtering [14].” Furthermore, the reviewer suggests an alternative
+approach to tackle this image restoration by “subsequently applying nonlocal mean filtering
+(or BM3D) and texture synthesis to the corrupted images.”
+Author Response: Thank you very much for this valuable and important recommenda-
+tion.
+In order to address this comment, there is a need to define criteria for restoration of a
+textured, noisy image with a large number of missing pixels: “a restored image preserves
+sharp edges and contrast without (ringing or stair-case) artefacts while in interpolation.”
+Following a calculus of variation for simultaneously image inpainting and denoising in [1,
+2], we embed these criteria into one objective function whose minimizer compromises all
+norms simultaneously. Thus, this variational approach, e.g. [1, 2], is different from a simple
+combination of several steps (e.g. morphological processing, texture synthesis, nonlocal
+mean filtering, etc) separately. In the end, we have three image processing problems, namely
+denoising, inpainting and texture analysis, which need to be solved:
+• Handling image denoising problem by a calculus of variation is more advantage
+than other approaches, e.g. harmonic analysis, to preserve sharp edges and contrast
+while reducing artefacts, e.g. Gibbs (ringing) effect by harmonic analysis. However,
+variational approaches are equipped by a (non)-convex minimization problem solved
+by an alternating method.
+• Image inpainting with a very large number of missing pixels is a difficult task. In a
+literature, a calculus of variation is a powerful technique to tackle this image analysis.
+In general, an alternating method is applied to solve these optimization problems.
+• Texture analysis is very challenging because there is no definition for these repeated
+patterns in the Fourier or spatial domains. Together with a very large number of miss-
+ing pixels, restoration of a textured image is a tough field in mathematical imaging.
+Finally, our response to a review on “subsequently applying nonlocal mean filtering (or
+BM3D) and texture synthesis to the corrupted images” is that
+• the computational complexity of this suggested method is higher than our proposed
+DG3PD inpainting model, because it requires different loops of iteration to handle
+distinct image processing tasks, especially image inpainting and denoising; and,
+• due to all challenges in the three different processes: denoising, inpainting problems
+and especially texture analysis, a reviewer’s approach is difficult to define a good or-
+der for a combination of all steps to achieve a compromised solution for all criteria
+simultaneously. In particular, if we apply inpainting problem prior to image denoising,
+noise will be interpolated to homogeneous and textured regions. If we apply image
+denoising (e.g. BM3D) prior to texture synthesis, missing pixel in homogeneous re-
+gions cannot be interpolated. Thus, all steps should be done at one time by solving a
+convex minimization. Note that a nonlocal mean technique BM3D is mainly designed
+for image denoising, not image inpainting.
+Actually, our variational procedure for textured image restoration is similar to the
+method of alternating projections on (non)-convex minimization problem [5]. All crite-
+ria are modeled by several convex sets, the alternating method projects an initial value to
+several convex sets alternatively. Then, the whole procedure is repeated until a fixed point
+is achieved to satisfy all convex sets. In the end, we need only one loop of iteration to obtain
+this fixed point. Thus, our DG3PD inpainting model is not a simple combination of several
+works.
+Moreover, by mainly focusing on convex optimization problems applied to a textured
+image restoration, one of our main contributions is to uncover an important link between
+two well-known approaches in sparse signal processing, namely a calculus of variational and
+harmonic analysis in a Banach space. If we apply separate procedure as a reviewer’s sugges-
+tion, this link cannot be done. In particular, in a contrast to an open loop in a pyramidal
+decomposition (e.g. Laplacian pyramid, wavelet, curvelet, etc), the solution of DG3PD
+inpainting can be considered as a closed loop of the pyramid scheme with the true solution
+in the minimization problem. And this closed loop filter design by the calculus of variation
+will result in lowpass, highpass and bandpass filters which are “unique” for different images,
+see Figure 17 for the pyramid scheme of the DG3PD inpainting model.
+Comment 2: The reviewer raises a concern on model complexity as “The model is too
+complex so that it consists of nine constraint terms. Consequently, seven subproblems need
+to be solved in each ALM iteration, which can generally slow the convergence speed of the
+inpainting algorithm.” Moreover, the reviewer also notes that “the test images are very few,
+and the results of the objective evaluation metrics, e.g., PSNR, SSIM, should also be given
+to completely evaluate the proposed method.”
+Author Response: Thank you very much for this important comment.
+Regarding the issue of time complexity we admit openly that the proposed method
+is quite slow and not appropriate for real-time processing. However, we can imagine many
+“offline” image restoration application for which a high processing time is not a hinderance.
+Therefore, we confirm that the method is slow, but the complexity should be viewed as an
+advantage: the decomposition enables a separate treatment of cartoon and texture parts
+while other methods for image denoising and restoration do not allow such an adaptive
+handling of different parts.
+In particular, a calculus of variation is a powerful technique to find a compromised
+solution for all criteria by minimizing a convex function in a Banach space, i.e. under
+a minimization, all requirements are turned into several subproblems embedded in one
+loop to obtain a minimizer (or a fixed point). Of course, splitting method, one strategy
+to solve a convex minimization, results in more subproblems than three constraints in an
+original minimization (1) in our manuscript. The idea behind is based on a concept: due
+to sparseness, different signal is captured in different functional space, e.g.
+• piecewise smooth signal is “sparse” in a bounded variational space,
+• texture is well-captured by a directional G-norm [3],
+• noise is well-separated by a Dantzig-like selector in a curvelet domain [3, 4],
+• a key point for an interpolation of missing pixels is to embed an indicator function
+inside a measure of noise, and finally
+• all of the above criteria are quantified in a convex minimization which is minimized
+by an iterative method.
+For a concern on the objective evaluation metrics for test images, We note that
+our goal is to preserve sharp edges and contrast as well as to avoid artefacts (e.g. Gibbs or
+stair case effect) while interpolating a textured image corrupted by a very heavy noise and
+with a large number of missing pixels. However, in the end of the day, there is no existing
+metrics to evaluate required features, namely sharp edges and lost of contrast. Therefore,
+due to this very challenging interpolation problem, a visual comparison is better than other
+objective evaluation metrics, e.g. SNR, and some fundamental examples are performed to
+illustrate our concept in stead of several complicated images, e.g. Barbara or Lena image.
+Comment 3: Reviewer also comments on some notations in a manuscript: “the read-
+ability of the manuscript is not good. It requires some effort to understand because there
+are many unexplained notations and parameters, e.g., C, g, D in (1), H in figure 9. And a
+part of the equation is missed in page 24 (see line 43).”
+Author Response: Thank you very much for your valuable suggestions to improve the
+presentation of our manuscript. We corrected all of your suggestions in this current version.
+Reviewer 2:
+Comment 1:
+From the beginning, reviewer comments on a challenge of our study: “The author’s
+have tackled a very challenging scientific problem in a very technical manner. They have
+made a tremendous effort to devise a problem for inverse denoising and inpainting problem.
+The proposed solution incorporates the image restoration from a large number of missing
+pixels, noisy pixels and from cartoon as well as textures regions. The overall presentation
+and graphical and technical aspect of the algorithm is up to the mark. Following are some
+of the questions which I think needs to be answered.”
+Author Response: Thank you very much for your consideration and please see our
+responses in the following paragraphs.
+Comment 2: Reviewer also raises a question on the computational complexity: “Since
+the author’s have employed a multistage image processing technique, I would like to ask have
+the author’s considered the time complexity issue of the implementation of the given algo-
+rithm. I suggest the author’s to comment upon it and compare it with other state-of-the-art
+technique.”
+Author Response: Thank you very much for your good comment.
+Due to a property of a calculus of variation for image restoration, our proposed DG3PD
+inpainting is not a multistage image processing technique. A reason is that we turn all
+requirements for a textured image restoration into several constraints in a convex optimiza-
+tion in a Banach space. Then, an alternating method is applied to find a minimizer, called
+a fixed point, that compromises all criteria.
+Since the two reviewers share the same questions, we summarize our response to the
+second comment of reviewer 1 here: the proposed method is quite slow and not appropriate
+for real-time processing, but it is effective for many “offline” image restoration applications
+for which a high computational time is not problematic. However, this complexity can be
+viewed as an advantage of our approach, because a given image is decomposed into piece-
+wise smooth image, texture and noise parts; and, a procedure of the interpolation is applied
+simultaneously. This adaptive technique to handle different parts is a unique feature of our
+contribution which other methods for image restoration in a literature do not have.
+Comment 3: Similar to the first comment of reviewer 1 on a separable procedure, the re-
+viewer 2 also asks: “why have the author’s employed the non local means filter for denoising,
+where as there are other effective image denoising algorithms like SA-BM3D, LPG-PCA and
+BLS-GSM. Have the author’s optimised there results.”
+Author Response:
+As in a suggestion of reviewer 1, we compare our approach with a nonlocal mean ap-
+proach, namely BM3D, in terms of image denoising, please see Figure 8 on pages 17 in our
+manuscript. There are some limitations of BM3D:
+• for inpainting aspect, BM3D cannot interpolate mixing areas on homogeneous or
+textured regions, so missing regions are wrongly interpolated by BM3D; and,
+• for denoising aspect, denoised areas by BM3D are blurred without sharp edges, their
+contrast is also lost, and there are artifacts on homogeneous regions.
+We emphasize that we consider a very difficult problem and that existing algorithms like
+BM3D are designed to partially solve only a part of the problem.
+Comment 4: In the same vein with the first reviewer, reviewer 2 also raises questions:
+“why have the author’s incorporated inpainting prior to denoising. What is the logic behind
+this idea? One approach could be denoising prior to inpainting. Please comment. Have you
+restored the image from noisy pixels which could degrade the quality of restored pixels?”
+Author Response: Thank you very much for this important question.
+As in our response to the first reviewer, due to all criteria of this textured image restora-
+tion, we summarize two main limitations of the reviewers’ approach in the following:
+• computational complexity becomes much larger if we treat the problem separately,
+i.e. more separate loops of the iteration are needed to solve inpainting and denoising
+tasks by a calculus of variation as well as texture synthesis.
+• due to this challenging image processing problem, it is difficult to define an order of
+all steps. We can not obtain an optimal solution that compromises all requirements
+simultaneously. For our proposed variational approach, all criteria are embedded
+as several constraints in a convex minimization. Its fixed point is obtained by an
+alternating method with only one loop of the iteration.
+We note again that this variational approach is a standard procedure in image restoration,
+please see [1, 2].
+Comment 5: Finally, reviewer also raises a question on: “why are there only two tech-
+niques with which the method has been compared? Looking at the rigorous effort put in
+devising the algorithm it could have been presented as outperforming the state-of-the-art
+methods as well.”
+Author Response: Thank you very much for this valuable comment.
+We have decided not to claim an outperformance ofstate-of-the-art methods, because
+we considered a very challenging task of dealing with images that have
+1. a large percentage of missing pixels,
+2. the known pixels corrupted by heavy noise, and
+3. the images contain both cartoon and texture elements.
+And an important requirement is a restored image should preserve sharp edge and contrast
+without ringing or stair-case artifact.
+To the best of our knowledge, there are no established benchmarks or databases for this
+difficult problem and it is not fully clear which methods can be considered as state-of-the-art
+in this area.
+Society Open

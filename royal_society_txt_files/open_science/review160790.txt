@@ -1,0 +1,506 @@
+Control mechanisms for stochastic biochemical systems via
+computation of reachable sets
+Eszter Lakatos and Michael P. H. Stumpf
+Article citation details
+R. Soc. open sci. 4: 160790.
+http://dx.doi.org/10.1098/rsos.160790
+Review timeline
+Original submission: 15 May 2017 Note: Reports are unedited and appear as
+Revised submission: 6 July 2017 submitted by the referee. The review history
+Final acceptance: 21 July 2017 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-160790.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This paper describes a reachability analysis that can provide a set of bounds to the dynamic of a
+stochastic differential equation representing stochastic chemical kinetics. The approach uses a
+zono-type formulation that allows for uncertainty, say in the initial conditions of the rate
+constants, to be tracked. I think the ideas are interesting but the discussion, lack of care in the
+details and the rather poor discussion on the underlying stochastic model leaves a great deal to
+be desired.
+If the following substantial issues are addressed carefully and well then I would recommend
+publication, but I would have expected a much better effort from these two authors.
+Page 3, Linear Noise approximation
+This discussion assumes way too much from the reader who is unlikely to be not particularly
+familiar with some of the stochastic niceties.
+Explain the form of S and the propensity functions with a specific example.
+State that the W_j are independent
+Explain what is meant by W_j(a_j(\phi(t)))
+State whether (2.3) is Ito or Stratonovich form
+Discuss why this stochastic model is different from the Chemical Langevin equation that has
+square root terms.
+Reconsider the first equation on page 4 as vectors and a matrix are mixed. The system should be
+in vector form.
+Page 4 moment expansion approximations
+The second paragraph in this section is impenetrable and lacking important details.
+How are the consecutive Taylor series expansions used?
+What inaccuracies are introduced when applying moment closure?
+Please make this clearer, the authors must do better than this.
+Page 5 Reachable set computation
+Eqns (3.2, 3.3) – it is As
+The discussion on lines 27 to 35 and 41 to 52 is poor. The key idea is to write
+X(t+h)=x(t)+\int ……ie the Green function representation.
+I do not understand the discussion on bloating. Lines 36 to 40 are incomprehensible.
+Page 6, lines 9 to 22
+In describing U what happens if some of the initial conditions are close to the boundaries such as
+near 0?
+Page 7, Nonlinear systems
+What happens if there is a rapidly changing component (stiff chemistry)? Then it may not be
+appropriate to have a constant stepsize and the stepsize should adapt.
+Page 8,
+in the first example give the defining 5 ODEs.
+Give another study where there is uncertainty in all the parameters.
+Page 9, Bistable system
+The presentation of the model is poor and I had to go back to the original articles to find
+consistent values.
+State that the gamma are 1 and 2.
+State that there is no k_3 (you put k_3=k_2)
+3
+The parameters values are a vector of length 6 and the assigned values is a vector of length 7.
+Page 10, second paragraph
+I do not understand the comments about getting negative values. A well defined stochastic
+model would respect the appropriate boundary conditions. In other words if you do this
+properly you should not get negative values.!
+l-8 “not take”
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The reviewer confirms that the manuscript was updated based on reviewers’ comments. In the
+revised manuscript, the authors also included moment expansion method, which allows for the
+analysis of skewed non-Gaussian distributions. The technical presentation became clear, and the
+mathematical contents are correct.
+However, given the readership of the journal is a broader audience, the reviewer would
+recommend to further improve the application examples by discussing the relevance with real
+biological reactions. For example, the parameter values should include units and they should be
+justified especially for the first two examples. The unit of the horizontal axis in Fig. 2 should be
+clarified.
+label_end_comment
+Decision letter (RSOS-160790)
+16-Jun-2017
+Dear Dr Stumpf,
+The editors assigned to your paper ("Control mechanisms for stochastic biochemical systems via
+computation of reachable sets") have now received comments from reviewers. We would like
+4
+you to revise your paper in accordance with the referee and Associate Editor suggestions which
+can be found below (not including confidential reports to the Editor). Please note this decision
+does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 09-Jul-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160790
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+5
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Andrew Dunn
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This paper describes a reachability analysis that can provide a set of bounds to the dynamic of a
+stochastic differential equation representing stochastic chemical kinetics. The approach uses a
+zono-type formulation that allows for uncertainty, say in the initial conditions of the rate
+constants, to be tracked. I think the ideas are interesting but the discussion, lack of care in the
+details and the rather poor discussion on the underlying stochastic model leaves a great deal to
+be desired.
+If the following substantial issues are addressed carefully and well then I would recommend
+publication, but I would have expected a much better effort from these two authors.
+Page 3, Linear Noise approximation
+This discussion assumes way too much from the reader who is unlikely to be not particularly
+familiar with some of the stochastic niceties.
+Explain the form of S and the propensity functions with a specific example.
+State that the W_j are independent
+Explain what is meant by W_j(a_j(\phi(t)))
+State whether (2.3) is Ito or Stratonovich form
+6
+Discuss why this stochastic model is different from the Chemical Langevin equation that has
+square root terms.
+Reconsider the first equation on page 4 as vectors and a matrix are mixed. The system should be
+in vector form.
+Page 4 moment expansion approximations
+The second paragraph in this section is impenetrable and lacking important details.
+How are the consecutive Taylor series expansions used?
+What inaccuracies are introduced when applying moment closure?
+Please make this clearer, the authors must do better than this.
+Page 5 Reachable set computation
+Eqns (3.2, 3.3) – it is As
+The discussion on lines 27 to 35 and 41 to 52 is poor. The key idea is to write
+X(t+h)=x(t)+\int ……ie the Green function representation.
+I do not understand the discussion on bloating. Lines 36 to 40 are incomprehensible.
+Page 6, lines 9 to 22
+In describing U what happens if some of the initial conditions are close to the boundaries such as
+near 0?
+Page 7, Nonlinear systems
+What happens if there is a rapidly changing component (stiff chemistry)? Then it may not be
+appropriate to have a constant stepsize and the stepsize should adapt.
+Page 8,
+in the first example give the defining 5 ODEs.
+Give another study where there is uncertainty in all the parameters.
+Page 9, Bistable system
+The presentation of the model is poor and I had to go back to the original articles to find
+consistent values.
+State that the gamma are 1 and 2.
+State that there is no k_3 (you put k_3=k_2)
+The parameters values are a vector of length 6 and the assigned values is a vector of length 7.
+Page 10, second paragraph
+I do not understand the comments about getting negative values. A well defined stochastic
+model would respect the appropriate boundary conditions. In other words if you do this
+properly you should not get negative values.!
+l-8 “not take”
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The reviewer confirms that the manuscript was updated based on reviewers’ comments. In the
+revised manuscript, the authors also included moment expansion method, which allows for the
+analysis of skewed non-Gaussian distributions. The technical presentation became clear, and the
+mathematical contents are correct.
+However, given the readership of the journal is a broader audience, the reviewer would
+recommend to further improve the application examples by discussing the relevance with real
+biological reactions. For example, the parameter values should include units and they should be
+justified especially for the first two examples. The unit of the horizontal axis in Fig. 2 should be
+clarified.
+7
+Author's Response to Decision Letter for (RSOS-160790)
+See Appendix A.
+label_version_2
+RSOS-160790.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+There is one typo I leave it to the authors to fix on page 13 "discreet".The work may well be
+discreet but I suspect they do not mean that.I do not want to see the paper again
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+8
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_6
+My concerns are cleared in the current manuscript. I recommend for acceptance.
+label_end_comment
+Decision letter (RSOS-160790.R1)
+21-Jul-2017
+Dear Dr Stumpf,
+I am pleased to inform you that your manuscript entitled "Control mechanisms for stochastic
+biochemical systems via computation of reachable sets" is now accepted for publication in Royal
+Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+9
+Reviewer(s)' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+There is one typo I leave it to the authors to fix on page 13 "discreet".
+The work may well be discreet but I suspect they do not mean that.
+I do not want to see the paper again
+Reviewer: 2
+Comments to the Author(s)
+label_comment_8
+My concerns are cleared in the current manuscript. I recommend for acceptance.
+Appendix A
+Reviewer: 1
+Comments to the Author(s)
+label_comment_9
+This paper describes a reachability analysis that can provide a set of bounds to the
+dynamic of a stochastic differential equation representing stochastic chemical
+kinetics. The approach uses a zono-type formulation that allows for uncertainty, say
+in the initial conditions of the rate constants, to be tracked. I think the ideas are
+interesting but the discussion, lack of care in the details and the rather poor
+discussion on the underlying stochastic model leaves a great deal to be desired.
+If the following substantial issues are addressed carefully and well, then I
+would recommend publication, but I would have expected a much better effort from
+these two authors.
+While we are pleased that the referee has high expectations of our work, we, of
+course, hate to disappoint. We are therefore also thankful for them to point out
+possible improvements, and we hope that they will now agree that the manuscript
+has improved over the previous version. That said, we found the requests of this
+reviewer at times hard to meet, for they wanted simultaneously an easier
+presentation as well as more technical detail. Therefore, we have decided to keep
+the presentation in the manuscript as straightforward as possible, but have added
+more references and pointers to the relevant literature.
+Page 3, Linear Noise approximation
+This discussion assumes way too much from the reader who is unlikely to be not
+particularly familiar with some of the stochastic niceties.
+Explain the form of S and the propensity functions with a specific example.
+We amended the first paragraph of the section on Linear Noise Approximation to
+provide more introduction to stochastic model formalism. We have also added an
+example in the controlled stochastic gene expression case in section 4, where we
+present the steps of transforming a reaction network model into a stochastic system
+and a deterministic ODE set.
+State that the W_j are independent
+Explain what is meant by W_j(a_j(\phi(t)))
+State whether (2.3) is Ito or Stratonovich form
+The text describing Eq. (2.3) now includes the above information.
+Discuss why this stochastic model is different from the Chemical Langevin equation
+that has square root terms.
+The main point in our manuscript is to derive sets of ODEs to replace stochastic
+formalism (such as SDEs). This is relatively flexibly achieved in both LNA and MEA,
+and both can be applied to very general stochastic systems. We now emphasize this
+intention in the manuscript. Because of this reason, the SDE part in (2.3) is really
+only used for the derivation of (2.4), while in most application the CLE is used to
+derive trajectories of the system. Also, (2.3) only captures the “noise” dynamics in an
+approximate sense, whereas the CLE, of course, would capture the noise more
+comprehensively.
+Reconsider the first equation on page 4 as vectors and a matrix are mixed. The
+system should be in vector form.
+In the revised version, we introduce a vectorised form of the involved matrices to
+match the dimensions in the equation. We also give the equations in the first
+example to illustrate this formalism.
+Page 4 moment expansion approximations
+The second paragraph in this section is impenetrable and lacking important details.
+How are the consecutive Taylor series expansions used?
+What inaccuracies are introduced when applying moment closure?
+Please make this clearer, the authors must do better than this.
+Our intention with this section was to provide a second example of approximation
+methods that might be used in case the LNA is found inadequate for a system/ the
+user wants to explore multiple options. As we wish to keep the reachable set
+computation as the focus of this article, and a detailed derivation of the moment
+expansion algorithm has already been given in previous publications, we have
+decided to reduce the amount of detail in this section and only give a general
+overview of the main ideas behind the algorithm. We added a paragraph at the end
+of the section directing the reader to our prior articles and to our publicly available
+package implementing the method. We believe this automated implementation will
+be more beneficial to potential users.
+Page 5 Reachable set computation
+Eqns (3.2, 3.3) – it is As
+The equations are now corrected.
+The discussion on lines 27 to 35 and 41 to 52 is poor. The key idea is to write
+X(t+h)=x(t)+\int ……ie the Green function representation.
+I do not understand the discussion on bloating. Lines 36 to 40 are incomprehensible.
+We have now extended and restructured this section, and hope that in its revised
+form the logical steps discussed in it are comprehensible. We included Figure S2 in
+the supplementary material that illustrates the main steps of reachable set
+computational on a toy model.
+Page 6, lines 9 to 22
+In describing U what happens if some of the initial conditions are close to the
+boundaries such as near 0?
+The algorithm can be used with an arbitrary interval of u values, in theory even a
+range including negative values is handled correctly – in applications in electrical
+engineering where the input is an additive noise term centred at 0, this is exactly the
+case. For biologically relevant values, we show an example toy system with input
+values from the range [0, 100] in Figure S2, and our first example of Section 4 also
+allows the input to take 0.
+Page 7, Nonlinear systems
+What happens if there is a rapidly changing component (stiff chemistry)? Then it
+may not be appropriate to have a constant stepsize and the stepsize should adapt.
+The method proposed for linearization can be easily adapted for variable time-steps.
+Furthermore, the central trajectory (c_i) around which the system is linearized in
+each step can be computed with a higher-order method that offers adaptive stepsize
+(e.g. by ode45 in Matlab). This way one can obtain a series of central values and
+time-steps, based on which the first-order linearization is later executed.
+We have included a paragraph at the end of the section describing this possible
+extension to our proposed method.
+Page 8,
+in the first example give the defining 5 ODEs.
+We added this together with the derivation of the stochastic descriptors.
+Give another study where there is uncertainty in all the parameters.
+We included an additional figure in supplementary material (Figure S3), showing the
+reachable set obtained when (i) both degradation rates and (ii) all parameters have
+uncertainty, together with the previously obtained reachable sets. We found that
+degradation rates have a more profound effect on the overall extent of explorable
+space, which is know included in the main manuscript.
+Page 9, Bistable system
+The presentation of the model is poor and I had to go back to the original articles to
+find consistent values.
+State that the gamma are 1 and 2.
+State that there is no k_3 (you put k_3=k_2)
+The parameters values are a vector of length 6 and the assigned values is a vector of
+length 7.
+We thank the reviewer for the thorough review; we have fixed the indexing of the
+parameter values and their assignment in the revised manuscript.
+Page 10, second paragraph
+I do not understand the comments about getting negative values. A well defined
+stochastic model would respect the appropriate boundary conditions. In other
+words if you do this properly you should not get negative values.!
+As we address this issue in the discussion, obtaining a reachable set that includes
+negative values is due to the symmetric properties of zonotopes – only centrally
+symmetric shapes can be captured by this formalism, while the systems might not
+follow ‘symmetric dynamics’ at certain points. For example, in the case shown in Fig.
+3, the initial states N_0 = 0.45 and N_0 = 0.75 are both 0.15 units away from the
+initial state set centre, but they lead to final Nanog amounts of ~0.09 and ~15. The
+negative values are due to the symmetric counterpart of the change 0.75 <U+F0E0> 15.
+Furthermore, as the system under study at this point is an ODE set, negative values
+are not excluded by the numerical methods used, and we do not wish to restrict the
+system, as for some quantities (e.g. covariance of two species) they might actually be
+correct.
+We agree that avoiding such over-approximation would further improve the
+reachable set prediction, however, the zonotope formalism offers other advantages
+(especially in terms of computational speed) that still make this approach efficient to
+tackle even such complicated cases. As we discuss in the last section, the efficiency
+can be used to carry out a multi-step analysis once issues of bistability or other
+asymmetry have been identified. We believe that the present paper provides a
+useful tool to tackle the problem of reachability in stochastic systems, and we hope
+that it will serve as a stepping stone towards further improvements in this important
+area of research.
+l-8 “not take”
+Thank you, we corrected the typo.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_10
+The reviewer confirms that the manuscript was updated based on reviewers’
+comments. In the revised manuscript, the authors also included moment expansion
+method, which allows for the analysis of skewed non-Gaussian distributions. The
+technical presentation became clear, and the mathematical contents are correct.
+However, given the readership of the journal is a broader audience, the reviewer
+would recommend to further improve the application examples by discussing the
+relevance with real biological reactions. For example, the parameter values should
+include units and they should be justified especially for the first two examples.
+We have now included a discussion on the choice and the interpretation of the rate
+parameters used in our study. Our major aim in the first two examples was to study
+general schemes that can provide insight into numerous actual systems. Therefore,
+we use normalized parameter values that reflect general relationships better and
+might be scaled to match a specific biochemical network. We now give units for the
+rate parameters. We also provided additional details in the first example to explain
+how a set of biological reactions is translated into equations studied in reachability
+analysis.
+The unit of the horizontal axis in Fig. 2 should be clarified.
+We now added this information to the caption of Figure 2.
+Society Open

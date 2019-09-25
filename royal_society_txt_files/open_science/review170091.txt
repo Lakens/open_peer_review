@@ -1,0 +1,674 @@
+Optimal localization of diffusion sources in complex
+networks
+Zhao-Long Hu, Xiao Han, Ying-Cheng Lai and Wen-Xu Wang
+Article citation details
+R. Soc. open sci. 4: 170091.
+http://dx.doi.org/10.1098/rsos.170091
+Review timeline
+Original submission: 18 June 2016 Note: Reports are unedited and appear as
+1st revised submission: 8 February 2017 submitted by the referee. The review history
+2nd revised submission: 14 March 2017 appears in chronological order.
+Final acceptance: 14 March 2017
+Review History
+label_version_1
+RSOS-160393.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, it is clear from reading the paper where to access data. The supplementary material is
+appropriate and clearly written.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The paper "Optimal Localization of Diffusion Sources in Complex Networks" by Zhao-Long Hu
+et al. is a good contribution to the current research on inference problems in dynamical systems
+on networks. Their focus is source location in linear (diffusive) dynamical systems. In the main
+text, the Authors consider discrete-time dynamics, while a similar method for continuous-time
+dynamics is discussed in the supplementary material. The core of the method consists in a two-
+step process:
+1) use Kalman's observability theory to identify a minimal set of nodes (messengers) to observe in
+order to reconstruct the initial state of the system. This calculation is cumbersome, but the
+Authors propose an efficient (though approximated) algorithm that seems to work well in the
+cases under study. Still, identification of the initial state requires at least N observations.
+2) use compressed sensing to reduce this number to some M<N when the initial condition is
+sparse (few sources).
+The method is pretty general for linear dynamical systems and reasonably efficient (considering
+the two step process). The manuscript is well written and both methods and results are discussed
+in detail with clarifying examples. In summary, I recommend the paper for publication, after that
+the following points are addressed by the Authors, and the paper accordingly modified.
+1. The parameter beta seems to play no role in the source localization. The mathematical reason is
+clear from the explanation in the supplementary material, although I'm not sure it has no effect
+on the second step of the process, the compressed sensing analysis. A large beta will produce a
+much faster diffusion, therefore I wonder whether this affect the detection of t_0 by CS and the
+AUROC values. Please, add some result on this in the paper to verify that beta does not really
+play any role.
+2. If I understood correctly, the efficient algorithm based on Eq. 6 is useful to compute N_m but it
+is not applied in the identification of messenger nodes, where in sec. 2.5 the exact rank condition
+is employed. From this section, and from section 5.3) is however not clear the computational
+complexity of this part, i.e. the identification of messengers.
+3. Consider the same process, for which two or more different set of messengers are identified (as
+explained at the end of section 2.5), I expect that the different choices of messenger nodes have
+the same power in detecting the origin of the process (by CS). Is it possible to verify that from
+your results?
+4. For sparse initial conditions, a number M << N of observations is sufficient to correctly
+reconstruct the sources. Apart from results from theoretical works (Tao and Candes), is it possible
+to say something more on the scaling of M with N on random graphs?
+Do the computational result suggest some polynomial/logarithmic dependence in N? Is there an
+influence by beta on M?
+5. In the section 5.3 the computational complexity of the current method is compared with that of
+Belief and Inverse Propagation methods. However, these methods have been conceived for
+rather different inference problems. In particular, BP is applied to non-linear epidemic processes,
+with a single-time observation snapshot. On the other hand, it would be interesting to compare
+the results of the present method with those obtained using the ML estimator proposed by Pinto
+et al.
+Did you try to compare your method to any other method in the literature with which the same
+problem could be addressed?
+3
+7. I did not completely understand the continuous-time case discussed in the supplementary
+material. While I agree that the "observability" part is pretty much identical to the discrete case,
+when considering source localization the "exact" temporal location of t_0 seems much more
+difficult (if not impossible) for a continuous-time variable than for a discrete-time one. Please,
+could you discuss this aspect more in detail in the supplementary material?
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Data is not really needed here.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Reject
+Comments to the Author(s)
+label_comment_2
+The paper studies the observability a linear time-invariant dynamical system whose state and
+output equations are given (1) and (2). Such a system is observable if there exists a finite time T
+such that the output in the time interval [0, T] determines the initial state x(0) of the system. The
+necessary and sufficient condition for observability boils down to verify if the observability
+matrix of the system is of full rank. Clearly, if T is large enough, having all observations taken by
+one single "messenger node" per connected component of the graph is sufficient if T is large
+enough, as computed in Sec 5.2 when the matrix if of full rank. Given this linear model, the result
+is not counter-intuitive as claimed in Section 4. On the contrary, it is quite obvious from linear
+algebra and linear systems theory.
+However, the linear model given (1) and (2) is not an epidemic model. In the linear model given
+(1) and (2), the state variables x_i (whose meaning is not defined by the authors) can take any real
+value, whereas in an epidemic model, the state variables take a limited set of values, such as 0 for
+a healthy node and 1 for an infected node. They could represent at a larger scale the proportion of
+individuals that are healthy or recovered, but would remain confined in a finite interval. All
+epidemic models (e.g. SI, SIR, SIS) are strongly nonlinear, which makes the observability of the
+initial state much more complex. For the same reason, the comparison of the results in the paper
+with related work are flawed, because the models are completely different. The authors briefly
+allude to the misfit of a linear model for nonlinear diffusion processes in Sec S9 at end of the
+supplementary material. As the state variables take any real values, they could be negative,
+which the authors hope will not happen by imposing a condition (S35). But they do not prove
+that (S35) makes the states non negative (this condition appears flawed as well, as the right hand
+side of (S35) depends on i, whereas the left hand side \beta does not depend on i!). And even if
+4
+the states were only positive, the system would not model an epidemic (the state variable could
+still take any unbounded positive, real value).
+label_end_comment
+Decision letter (RSOS-160393)
+13-Jan-2017
+Dear Professor Wang:
+Manuscript ID RSOS-160393 entitled "Optimal Localization of Diffusion Sources in Complex
+Networks" which you submitted to Royal Society Open Science, has been reviewed. The
+comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 13-Jul-2017. If you are unable to submit by
+this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of
+Mark Chaplain
+Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Associate Editor: 1
+Comments to the Author:
+label_comment_3
+I agree with both reviewers that the model treated is a linear one whereas the motivation is
+epidemic modelling. There is a mismatch here. Reviewer 2 sees this as a fatal flaw. Reviewer 1
+does not. I think this discrepancy could be addressed by saying as a first step to locating sources
+of infection in epidemic models, this paper locates sources for a linear diffusion problem. Also it
+could be mentioned that epidemics may be treated as linear in the early stages if the network
+5
+connectivity is high, but as Reviewer 2 points out, one has to map discrete variables to continuous
+ones.
+I agree with Reviewer 2 that the sufficiency of a single messenger node is not counter-intuitive. So
+I think “counter-intuitive” has to be removed. Yet with noise (dynamic and measurement) it is
+not clear if the statement would still hold. The results seem to indicate that it does, at least in the
+regimes tested. One could presumably make counterexamples by observing miles away from the
+source and thereby failing to detect the source at all.
+Reviewer 1 identifies a number of places where improvement is desirable, and some of these are
+echoed by reviewer 2. I have one further comment: if the data comes from an initial condition of
+the stated form, then going back one step in time will produce a negative value somewhere. Why
+not use this as the test for t_0?
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+The paper "Optimal Localization of Diffusion Sources in Complex Networks" by Zhao-Long Hu
+et al. is a good contribution to the current research on inference problems in dynamical systems
+on networks. Their focus is source location in linear (diffusive) dynamical systems. In the main
+text, the Authors consider discrete-time dynamics, while a similar method for continuous-time
+dynamics is discussed in the supplementary material. The core of the method consists in a two-
+step process:
+1) use Kalman's observability theory to identify a minimal set of nodes (messengers) to observe in
+order to reconstruct the initial state of the system. This calculation is cumbersome, but the
+Authors propose an efficient (though approximated) algorithm that seems to work well in the
+cases under study. Still, identification of the initial state requires at least N observations.
+2) use compressed sensing to reduce this number to some M<N when the initial condition is
+sparse (few sources).
+The method is pretty general for linear dynamical systems and reasonably efficient (considering
+the two step process). The manuscript is well written and both methods and results are discussed
+in detail with clarifying examples. In summary, I recommend the paper for publication, after that
+the following points are addressed by the Authors, and the paper accordingly modified.
+1. The parameter beta seems to play no role in the source localization. The mathematical reason is
+clear from the explanation in the supplementary material, although I'm not sure it has no effect
+on the second step of the process, the compressed sensing analysis. A large beta will produce a
+much faster diffusion, therefore I wonder whether this affect the detection of t_0 by CS and the
+AUROC values. Please, add some result on this in the paper to verify that beta does not really
+play any role.
+2. If I understood correctly, the efficient algorithm based on Eq. 6 is useful to compute N_m but it
+is not applied in the identification of messenger nodes, where in sec. 2.5 the exact rank condition
+is employed. From this section, and from section 5.3) is however not clear the computational
+complexity of this part, i.e. the identification of messengers.
+3. Consider the same process, for which two or more different set of messengers are identified (as
+explained at the end of section 2.5), I expect that the different choices of messenger nodes have
+the same power in detecting the origin of the process (by CS). Is it possible to verify that from
+your results?
+6
+4. For sparse initial conditions, a number M << N of observations is sufficient to correctly
+reconstruct the sources. Apart from results from theoretical works (Tao and Candes), is it possible
+to say something more on the scaling of M with N on random graphs?
+Do the computational result suggest some polynomial/logarithmic dependence in N? Is there an
+influence by beta on M?
+5. In the section 5.3 the computational complexity of the current method is compared with that of
+Belief and Inverse Propagation methods. However, these methods have been conceived for
+rather different inference problems. In particular, BP is applied to non-linear epidemic processes,
+with a single-time observation snapshot. On the other hand, it would be interesting to compare
+the results of the present method with those obtained using the ML estimator proposed by Pinto
+et al.
+Did you try to compare your method to any other method in the literature with which the same
+problem could be addressed?
+7. I did not completely understand the continuous-time case discussed in the supplementary
+material. While I agree that the "observability" part is pretty much identical to the discrete case,
+when considering source localization the "exact" temporal location of t_0 seems much more
+difficult (if not impossible) for a continuous-time variable than for a discrete-time one. Please,
+could you discuss this aspect more in detail in the supplementary material?
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+The paper studies the observability a linear time-invariant dynamical system whose state and
+output equations are given (1) and (2). Such a system is observable if there exists a finite time T
+such that the output in the time interval [0, T] determines the initial state x(0) of the system. The
+necessary and sufficient condition for observability boils down to verify if the observability
+matrix of the system is of full rank. Clearly, if T is large enough, having all observations taken by
+one single "messenger node" per connected component of the graph is sufficient if T is large
+enough, as computed in Sec 5.2 when the matrix if of full rank. Given this linear model, the result
+is not counter-intuitive as claimed in Section 4. On the contrary, it is quite obvious from linear
+algebra and linear systems theory.
+However, the linear model given (1) and (2) is not an epidemic model. In the linear model given
+(1) and (2), the state variables x_i (whose meaning is not defined by the authors) can take any real
+value, whereas in an epidemic model, the state variables take a limited set of values, such as 0 for
+a healthy node and 1 for an infected node. They could represent at a larger scale the proportion of
+individuals that are healthy or recovered, but would remain confined in a finite interval. All
+epidemic models (e.g. SI, SIR, SIS) are strongly nonlinear, which makes the observability of the
+initial state much more complex. For the same reason, the comparison of the results in the paper
+with related work are flawed, because the models are completely different. The authors briefly
+allude to the misfit of a linear model for nonlinear diffusion processes in Sec S9 at end of the
+supplementary material. As the state variables take any real values, they could be negative,
+which the authors hope will not happen by imposing a condition (S35). But they do not prove
+that (S35) makes the states non negative (this condition appears flawed as well, as the right hand
+side of (S35) depends on i, whereas the left hand side \beta does not depend on i!). And even if
+the states were only positive, the system would not model an epidemic (the state variable could
+still take any unbounded positive, real value).
+Author's Response to Decision Letter for (RSOS-160393)
+See Appendix A.
+7
+label_end_comment
+Decision letter (RSOS-170091)
+08-Mar-2017
+Dear Professor Wang
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-170091 entitled
+"Optimal Localization of Diffusion Sources in Complex Networks" has been accepted for
+publication in Royal Society Open Science subject to minor revision in accordance with the
+editor's suggestions.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-170091
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+8
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 17-Mar-2017). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+9
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Mark Chaplain
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author :
+Comments to the Author:
+label_comment_6
+The only further thing I would suggest is that the authors add thanks to the reviewers (and the
+associate editor) for their helpful comments. In particular, I think the suggestion of the
+alternative method to determine t_0 is an important addition.
+label_end_comment
+Decision letter (RSOS-170091.R1)
+14-Mar-2017
+Dear Professor Wang,
+I am pleased to inform you that your manuscript entitled "Optimal Localization of Diffusion
+Sources in Complex Networks" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Response to the comments of Reviewer 1
+-----------------------------------------------------------------
+We would like to take the opportunity to thank the review for his/her time and effort
+in reviewing our paper. The reviewer stated that "The paper is a good contribution to
+the current research on inference problems in dynamical systems on networks. The
+method is pretty general for linear dynamical systems and reasonably efficient
+(considering the two step process). The manuscript is well written and both methods
+and results are discussed in detail with clarifying examples.” The reviewer
+recommend our paper for publication, while some comments should be addressed,
+including effect of diffusion parameter, computation complexity for identifying
+messenger nodes, relationship between data amount and network size, comparison
+with existent methods, how to infer initial time for continuous dynamics, and etc.. We
+have revised our manuscript to implement all the pertinent and insightful comments
+and suggestions. Presented below is a point-to-point response to all the comments and
+suggestions.
+Comment 1: The parameter beta seems to play no role in the source localization.
+The mathematical reason is clear from the explanation in the supplementary
+material, although I'm not sure it has no effect on the second step of the process,
+the compressed sensing analysis. A large beta will produce a much faster diffusion,
+therefore I wonder whether this affect the detection of t_0 by CS and the AUROC
+values. Please, add some result on this in the paper to verify that beta does not
+really play any role.
+Response: We thank for this valuable comment. The speculation that the value of ß
+will affect the accuracy of actual localization of sources is absolutely correct. As the
+referee mentioned, a larger value of ß will produce faster diffusion, such that affect
+the value of AUROC. We have obtained results for different values of ß and added
+description and explanations for the results, as shown in the Supplementary Material
+S10 and Fig. S7. Details in the revised Supplementary Material S10 are as follows:
+Comment 2: If I understood correctly, the efficient algorithm based on Eq. 6 is useful
+to compute N_m but it is not applied in the identification of messenger nodes,
+where in sec. 2.5 the exact rank condition is employed. From this section, and from
+identification of messengers.
+Response: We thank for this valuable comment. Indeed, the referee is correct that Eq.
+(6) is useful to compute Nm , but is not applied to identify messenger nodes. We have
+added the computational complexity of identifying messenger nodes via computing
+matrix rank. Please see Section 2.5 on page 10.
+The computation complexity of matrix rank as well as eigenvalues is O(N3 ) by SVD,
+and the one is O(N2.376 ) by LU decomposition, which have been added to the revised
+manuscript (below Eq. (6) on page 6). The computation complexity of elementary
+transformation is O(N2 (logN)2 ). Thus, the computation complexity of identification
+of messengers is approximately O(N2 (logN)2 ). The description of the computation
+complexity has been added to the revised manuscript (Section 2.5 on page 10).
+Comment 3: Consider the same process, for which two or more different set of
+messengers are identified (as explained at the end of section 2.5), I expect that the
+different choices of messenger nodes have the same power in detecting the origin of
+the process (by CS). Is it possible to verify that from your results?
+Response: We thank for this valuable comment. We have tested the results from
+using different choices of messenger nodes and found that different choices have little
+influence to the localization accuracy.
+Specifically, we have added the result of detecting sources by CS for different choices
+of messenger nodes in the revised Supplementary Materials S8, Fig. S4. From our
+framework of sources localization, in random weighted SF networks, any single
+messenger node can guarantee the network is observable. Without loss of generality,
+we choose a node, e.g., number 10, 20, 30, 40 and 50 to be the messenger,
+respectively. Figure S4 shows that different choices of messenger nodes produce
+similar accuracy in detecting the sources and the initial time t 0 . Detailed description
+can be seen in Supplementary Materials S8, as follows:
+Comment 4: For sparse initial conditions, a number M << N of observations is
+sufficient to correctly reconstruct the sources. Apart from results from theoretical
+works (Tao and Candes), is it possible to say something more on the scaling of M
+with N on random graphs? Do the computational result suggest some
+polynomial/logarithmic dependence in N? Is there an influence by beta on M?
+Response: We thank for this valuable comment. In the revised manuscript, we study
+the dependence of observations on the network size. Detailed description and results
+are shown in the revised Supplementary Materials S8 and Fig. S5, see below.
+In addition, from Fig. S8 and Fig. S9 in Supplementary Material, we can see that
+the diffusion parameter ß has little influence on M of sources localization.
+Comment 5: In the section 5.3 the computational complexity of the current method
+is compared with that of Belief and Inverse Propagation methods. However, these
+methods have been conceived for rather different inference problems. In particular,
+BP is applied to non-linear epidemic processes, with a single-time observation
+snapshot. On the other hand, it would be interesting to compare the results of the
+present method with those obtained using the ML estimator proposed by Pinto et al.
+Did you try to compare your method to any other method in the literature with
+which the same problem could be addressed?
+Response: We thank for this valuable comment. We agree with this comment. Indeed,
+the comparison of computation complexity between our method and the other works
+is not appropriate, because of the significant difference among them. Thus, in the
+revised manuscript, in section 5.3 in the main text, we have removed relevant
+sentences.
+We totally agree with the reviewer that it would be interesting to compare the
+results of the present method with those obtained using the ML estimator proposed by
+Pinto et al. However, it is still not easy to make an unbiased comparison. The
+diffusion dynamics, observation, the required number of messenger nodes and the
+number of to be localized sources are all different between Pinto et al.’s work and
+ours. Therefore, to avoid any possibly offensive remarks, it’s better for us to not make
+comparison with other existent methods.
+Comment 6: I did not completely understand the continuous-time case discussed in
+the supplementary material. While I agree that the "observability" part is pretty
+much identical to the discrete case, when considering source localization the "exact"
+temporal location of t_0 seems much more difficult (if not impossible) for a
+aspect more in detail in the supplementary material?
+Response: We thank for this valuable comment. Note that for discrete-time dynamics,
+we can accurately detect t 0 . For continuous-time dynamics, by setting a small time
+interval T, we can recover the state <U+0001D431>(t) at any time t, analogous to that of the
+discrete-time dynamics in section 5.2 in the main text. However, in this case, it is not
+able to infer the exact value of t 0 . Instead, a very narrow range t1 <U+2208> [t 0 - <U+03F5>, t 0 + <U+03F5>]
+can be inferred, where <U+03F5> is a very small positive number.
+Specifically, let t ini denote the initial observation time. Based on Eq. (S8), we have
+y(t ini ) C
+y(t ini + T) ßLT
+( ) = ( Ce ) <U+0001D431>(t ini ),
+<U+22EE> <U+22EE>
+y(t ini + (N - 1)T) Ce(N-1)ßLT
+y(t ini ) CeßLT
+y(t ini + T) 2ßLT
+( ) = ( Ce ) <U+0001D431>(t ini - T)
+<U+22EE> <U+22EE>
+y(t ini + (N - 1)T) CeNßLT
+<U+22EE>
+y(t ini ) '
+Ce(tini-t0)ßLT
+y(t ini + T) (1+t -t' )ßLT
+( ) = ( Ce ini 0 ) <U+0001D431>(t '0 ).
+<U+22EE> <U+22EE>
+y(t ini + (N - 1)T) '
+Ce(N-1+tini-t0 )ßLT
+We need to reconstruct a series of states, i.e., <U+0001D431>(t ini ), <U+0001D431>(t ini - T), <U+22EF> , <U+0001D431>(t '0 ) to ensure
+that the actual t 0 lies in between t ini and t '0 . Then we choose the sparsest state, say
+<U+0001D431>(t1 ), which is identified as the initial state and t1 is the initial time t 0 .
+A detailed discussion has been presented in the revised Supplementary Material S2.
+Summary: We again thank the reviewer for his/her valuable and insightful comments
+and suggestions, which greatly help us to improve our manuscript. We believe our
+revised manuscript becomes more scientifically sound and of interest to the readers of
+Royal Society Open Science. We hope our revised manuscript can be judged to have
+met the high standard of Royal Society Open Science. We again thank the reviewer
+for his/her time and effort in reviewing our manuscript and providing pertinent
+comments.
+Response to the comments of Reviewer 2
+---------------------------------------------------------
+We would like to take the opportunity to thank the reviewer for his/her time and effort
+in reviewing our manuscript. The reviewer raised some pertinent comments and
+suggestions about if a single messenger node is counter-intuitive, the mismatch of our
+motivation and the meaning of the dynamical model, inappropriate comparison of our
+results with related work, the missing of a proof for the bounds of node states. In the
+revised version, we have implemented all the pertinent and insightful comments and
+suggestions. Presented below is a point-to-point response to all the comments and
+suggestions.
+Comment 1: Given this linear model, the result is not counter-intuitive as claimed in
+Section 4. On the contrary, it is quite obvious from linear algebra and linear systems
+theory.
+Response: We thank for this valuable comment and we agree with this comment. In
+the revised manuscript, “counter-intuitive” has been removed.
+Comment 2: However, the linear model given (1) and (2) is not an epidemic model.
+In the linear model given (1) and (2), the state variables x_i (whose meaning is not
+defined by the authors) can take any real value, whereas in an epidemic model, the
+state variables take a limited set of values, such as 0 for a healthy node and 1 for an
+infected node. They could represent at a larger scale the proportion of individuals
+that are healthy or recovered, but would remain confined in a finite interval. All
+epidemic models (e.g. SI, SIR, SIS) are strongly nonlinear, which makes the
+observability of the initial state much more complex. For the same reason, the
+comparison of the results in the paper with related work are flawed, because the
+models are completely different. The authors briefly allude to the misfit of a linear
+model for nonlinear diffusion processes in Sec S9 at end of the supplementary
+material. As the state variables take any real values, they could be negative, which
+the authors hope will not happen by imposing a condition (S35). But they do not
+prove that (S35) makes the states non negative (this condition appears flawed as
+well, as the right hand side of (S35) depends on i, whereas the left hand side \beta
+does not depend on i!). And even if the states were only positive, the system would
+not model an epidemic (the state variable could still take any unbounded positive,
+real value).
+Response: We thank for the valuable comments. The model given in Eq. (1) is a
+linear model, which indeed differs from standard epidemic spreading models, which
+editor also suggested that epidemics may be treated as linear in the early stages if the
+network connectivity is high. We agree with the referee and the associate editor’s
+comments and suggestions. Thus, we removed the incorrect comparison with related
+work, solved the mismatch problem in the revised manuscript and supplementary
+materials and proved the bounds of node states for capturing density.
+In the revised manuscript, we have explained the physical meaning of variable xi
+below Eq. (1):
+“This equation constitutes a good approximation for different types of linear diffusion
+processes and the linearization of some nonlinear diffusion processes [25]. Variable
+xi (t) that denotes the state of node i at time t captures the fraction of infected
+individuals, the concentration of water or air pollutant and etc. at place i.”
+Besides, in the introduction, we have added some description about diffusion
+processes and the importance of source localization:
+“Dynamical processes taking place in complex networks are ubiquitous in natural and
+in technological systems [1], examples of which include disease or epidemic
+spreading in the human society [2, 3], virus invasion in computer and mobile phone
+networks [4, 5], behavior propagation in online social networks [6], and air or water
+pollution diffusion [7, 8]. Once an epidemic or environmental pollution emerges, it is
+often of great interest to be able to identify its source with-in the network accurately
+and quickly so that proper control strategies can be devised to contain or even to
+eliminate the spreading process.”
+Indeed, as pointed out by the referee, our model, with respect to the required
+conditions and methodology, is quite different from other related works, such that it is
+not appropriate to make a comparison. Therefore, in section 5.3 in the main text of the
+revised manuscript, the comparison of the computation complexity with other related
+works has been removed from the revised manuscript.
+The model used our manuscript indeed is a linear diffusion model, which differs
+from the standard epidemic model, such as SI, SIS, SIRS, and etc. However, as
+suggested by the associate editor, the diffusion model can still model many types of
+linear diffusion processes and the linearization or linear approximation of many
+nonlinear diffusion processes. For example, epidemics may be treated as linear in the
+early stages. In this regard, it is also inappropriate to make a comparison with other
+work considering the problem of source localization associated with SI, SIS or SIRS
+dynamics. Thus, we totally agree with the referee’s comment and removed relevant
+comparison.
+However, even for linear diffusion processes, as pointed out by the referee, it is
+required is that the state of every node should be confined in the range [0,1], such that
+the state of a node is able to represent the fraction of infected individuals, the
+diffusion, the value of the diffusion parameter should be constraint. We have derived
+a constraint condition of the diffusion parameter, as presented in the revised
+Supplementary Material S1:
+We have also stressed the confine of the value of \beta below Eq. (1) in the main
+text:
+Summary: We again thank the reviewer for his/her valuable and insightful comments
+and suggestions, which greatly help us to improve our manuscript. We believe our
+revised manuscript becomes more scientifically sound and of general interest to the
+readers of Royal Society Open Science. We hope the reviewer could reconsider our
+revised manuscript and it can be judged to have met the high standard of Royal
+Society Open Science. We again thank the reviewer for his/her time and effort in
+reviewing our manuscript and providing pertinent comments.
+Response to the comments of Associate Editor
+---------------------------------------------------------
+We would like to take the opportunity to thank the associate editor for his/her time
+and effort in reviewing our manuscript. The associate Editor considered the comments
+of both reviewers, and stated that “I agree with both reviewers that the model treated
+is a linear one whereas the motivation is epidemic modeling. There is a mismatch here.
+Reviewer 2 sees this as a fatal flaw. Reviewer 1 does not. I think this discrepancy
+could be addressed by saying as a first step to locating sources of infection in
+epidemic models; this paper locates sources for a linear diffusion problem. Also it
+could be mentioned that epidemics may be treated as linear in the early stages if the
+network connectivity is high”. The associate editor further raised some comments and
+suggestions, including the mapping from discrete variables to continuous ones,
+removing the statement “counter-intuitive”, noisy effect, and the possibility of
+inferring t_0 based on negative values. We have revised our manuscript to implement
+all the pertinent and insightful comments and suggestions. Presented below is a point-
+to-point response to all the comments and suggestions.
+Comment 1: I agree with both reviewers that the model treated is a linear one
+whereas the motivation is epidemic modeling. There is a mismatch here. Reviewer 2
+sees this as a fatal flaw. Reviewer 1 does not. I think this discrepancy could be
+addressed by saying as a first step to locating sources of infection in epidemic
+models, this paper locates sources for a linear diffusion problem. Also it could be
+mentioned that epidemics may be treated as linear in the early stages if the network
+connectivity is high, but as Reviewer 2 points out, one has to map discrete variables
+to continuous ones.
+Response: We thank for these valuable comments and suggestions. In the revised
+manuscript, we have mentioned that “epidemics may be treated as linear in the early
+stages if the network connectivity is high” below Eq. (1) in the revised manuscript.
+In the revised supplemental materials, we have also added formulas and description
+for dealing with continuous dynamics in the revised supplemental material S2:
+Comment 2: I agree with Reviewer 2 that the sufficiency of a single messenger node
+is not counter-intuitive. So I think “counter-intuitive” has to be removed. Yet with
+noise (dynamic and measurement) it is not clear if the statement would still hold.
+The results seem to indicate that it does, at least in the regimes tested. One could
+presumably make counterexamples by observing miles away from the source and
+thereby failing to detect the source at all.
+Response: We thank for the valuable comments and suggestions. In section 4 in the
+revised manuscript, the statement “counter-intuitive” has been removed.
+We totally agree with the associate editor that in the presence of strong noise, a
+single messenger may fail to accurately locate sources far away from the messenger
+node. Thus, we have confined our conclusion to the scenario of weak noise. As shown
+in Fig. 6(c-d) in the main text, when noise variance is not large, e.g., s = 0.5 ,
+AUROC exceeds 0.95, indicating an accurate localization based on a single
+messenger node indeed. We again thank the associate editor for this valuable and
+constructive comment.
+Comment 3: Reviewer 1 identifies a number of places where improvement is
+desirable, and some of these are echoed by reviewer 2. I have one further comment:
+if the data comes from an initial condition of the stated form, then going back one
+step in time will produce a negative value somewhere. Why not use this as the test
+for t_0?
+Response: We thank for this valuable and constructive suggestion. In the revised
+manuscript, we have included negative values as a second criterion for inferring t_0
+and provided an explanation for the feasibility of using negative values as a criterion.
+We have carefully considered the suggestion and believe that using negative values to
+infer initial time is very reasonable. In the revised manuscript, we have added a
+paragraph to introduce and explain the method in the last paragraph on page 12, see
+below:
+Again we thank the associate editor for this valuable and constructive suggestion.
+We have also full addressed the comments and suggestions raised by both referees.
+Summary: We again thank the associate editor for his/her valuable and insightful
+comments and suggestions, which greatly help us to improve our manuscript. We
+believe our revised manuscript becomes more scientifically sound and of general
+interest to the readers of Royal Society Open Science. We hope our revised
+manuscript can be judged to have met the high standard of Royal Society Open
+Science. We again thank the associate editor for his/her time and effort in reviewing
+our manuscript and providing pertinent comments.
+Society Open

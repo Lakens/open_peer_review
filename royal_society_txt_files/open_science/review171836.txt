@@ -1,0 +1,575 @@
+Quadrupedal locomotor simulation: producing more
+realistic gaits using dual-objective optimization
+William Irvin Sellers and Eishi Hirasaki
+Article citation details
+R. Soc. open sci. 5: 171836.
+http://dx.doi.org/10.1098/rsos.171836
+Review timeline
+Original submission: 7 November 2017 Note: Reports are unedited and appear as
+Revised submission: 30 January 2018 submitted by the referee. The review history
+Final acceptance: 1 February 2018 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-171836.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This manuscript investigates the dynamic mechanism of quadrupedal locomotion in
+chimpanzees using a musculoskeletal model. The authors achieved quadrupedal gait by forward
+dynamic simulations using the optimization with two criteria regarding stability and energy
+efficiency. They discuss about the roles of the two criteria based on the simulation results.
+This manuscript is concisely organized and easy to read. The modeling study with a
+sophisticated musculoskeletal model is useful to understand dynamic mechanism of chimpanzee
+locomotion. However, there are some issues.
+Major comments
+1. "stability" used in this manuscript seems invalid. Because animal walking is dynamic and
+periodic, stability generally means dynamic stability especially in modeling studies, which is
+mathematically defined, for example, using eigenvalues for perturbations and basin of attraction
+of state variable. However, the authors seem to use "stability" in a way that it explains the
+magnitude of lateral movements (for example, the gait becomes more "stable" as the lateral
+movement decreases). I think that the authors use "stability" as static stability because small
+lateral movements inhibit the center of mass from going out of the support polygon.
+Dynamic stability and static stability are different. The authors should clarify which stability the
+authors mean.
+2. The simulation results show that the relative phase between the ipsilateral limbs is about 0.2 or
+0.8 for no limit. This is close to pace gait, but there are 0.2 of the relative phase from 0 or 1.
+Therefore, each limb moves separately and the gait is walk. This gait is partly static, because duty
+factors are almost 0.5.
+In contrast, the lateral velocity limit resulted in almost 0.5 of the relative phase. This means that
+diagonal limbs move almost simultaneously and suggests trot gait. This gait is not static but
+dynamic, because duty factors remain almost 0.5. Therefore, the lateral velocity limit changed
+from static to dynamic gait. Related to the above comment, when the authors mean static stability
+for the lateral limit, this result is opposite.
+3. Dual-objective optimization. The optimization calculation seems to focus only on the cost of
+transport. The magnitude of lateral movement is just constraint condition in the optimization. I
+wonder if this is dual-objective optimization and why the authors did not use the linear
+combination of these two factors for the optimization criteria.
+4. The simulation results show that the limitation of the lateral movement increased the cost of
+transport. It is unclear what mechanism works for this trend.
+From the definition, the cost of transport depends on the forward locomotion distance. The
+limitation of the lateral movements allows the energy to be focused on the forward movement.
+Why this did not reduce the cost? As discussed in the discussion section, did lateral sway
+pendulum mechanism contribute to the low cost? (That is, lateral sway movement contributes to
+increase the forward velocity?) If the simulation results are valid, why chimpanzees do not use
+large lateral movements in locomotion?
+5. The simulation results are not well compared with measured data in chimpanzee locomotion.
+Comparison of locomotion factors, such as trunk movements, joint movements, forward and
+3
+lateral velocities, gait cycle duration, and duty factors, must be useful to evaluate the validity of
+the simulation.
+Specific comments
+L110
+Do chimpanzees perform lateral sequence gaits in some situations?
+L133
+Where are the platforms in Fig. 1?
+L146
+It is difficult to find what are shown in Fig. 2. The authors should clarify it.
+L156
+Figure numbers are not matched (throughout this manuscript).
+L156
+As used for the initial condition of the model, there are measured data of chimpanzees [30]. The
+simulation results, such as trunk movements and joint kinematics, should be compared with the
+measured data of chimpanzees. Without this, it is difficult to evaluate if the simulation results are
+valid.
+L167
+"the desired gait characteristics in terms of foot fall pattern" This is unclear. What kinds of
+quantitative parameters are used to determine if the results are "desired"?
+L179
+In addition to the trunk movement and joint kinematics, the simulation results, such as forward
+velocity and duty factors, shown in two figures (Figs. 5 and 6) should be compared with the
+measured data.
+L198
+Figures 6C, D show the relative phase of the hindlimb and forelimb of the left side. How about
+the relative phases between the left and right limbs? 0.5?
+L215
+"improve the match between the simulated gait and the experimentally recorded gait" It is
+unclear which data show this?
+L241
+"our results show very little effect of footfall sequence on any of the measured gait parameters"
+This is unclear. Figures 6C and D show a large difference of the footfall sequence between No
+limit and <0.1., which induces large differences in locomotion parameters, such as the lateral
+velocity.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+4
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The authors present the results of a simulation study using a chimpanzee musculoskeletal model.
+Based on the gait simulations and constraints used, they conclude that adding lateral stability as
+constraint has an important effect on the energetic costs of the simulated gait. In addition, adding
+stability as criterion also affects the footfall patterns (diagonal vs. lateral). The authors suggest
+caution for the use of single optimization goals in gait simulations.
+I think the paper is certainly valuable for publication in the Royal Society open Science because of
+the highly interesting data that is made available (chimp model, scripts, gait simulations). I think
+this will give the possibility to other researchers to continue on this route and further improve the
+model and the simulations, eventually reaching more realistic, and therefore meaningful,
+simulations of chimpanzee gait.
+Minor comments
+-punctuation of the text should be done more careful; readability will be enhanced if commas
+added to text.
+- a lot of links or references to figures were missing, probably due to conversion to pdf. Therefore
+I was not always able to consult the appropriate supplementary material or figure
+label_end_comment
+Decision letter (RSOS-171836)
+15-Jan-2018
+Dear Dr Sellers,
+The editors assigned to your paper ("Quadrupedal locomotor simulation: producing more
+realistic gaits using dual-objective optimisation") have now received comments from reviewers.
+We would like you to revise your paper in accordance with the referee and Associate Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 07-Feb-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+5
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171836
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+6
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Monica Daley (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments (Dr Monica Daley):
+Your manuscript on the simulation of chimpanzee locomotion has been reviewed by two experts.
+While they are positive overall about the contribution, they do raise a number of concerns about
+the presentation and interpretation of the model that require revisions. In particular, the authors
+should address Reviewer 1’s concerns about the nature of the stability criterion and whether the
+approach is truly ‘dual-objective’ or a static-stability-constrained single objective optimization.
+It would also help if the authors could provide a bit more detailed and critical discussion of the
+current simplifications and limitations of the model, and how the findings might differ if the
+model were made more realistic. For example, could you get a similarly better match between
+model and data by adding trunk flexibility to the model, rather than adding a stability constraint
+7
+to the simulations? If so, how should the field proceed in deciding how much and which features
+of biological realism are necessary and adequate to explain animal gait? A critical discussion of
+these issues would be useful.
+Please also note that many of the links within the pdf were corrupted, so please ensure that any
+revised submissions contain working links.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+This manuscript investigates the dynamic mechanism of quadrupedal locomotion in
+chimpanzees using a musculoskeletal model. The authors achieved quadrupedal gait by forward
+dynamic simulations using the optimization with two criteria regarding stability and energy
+efficiency. They discuss about the roles of the two criteria based on the simulation results.
+This manuscript is concisely organized and easy to read. The modeling study with a
+sophisticated musculoskeletal model is useful to understand dynamic mechanism of chimpanzee
+locomotion. However, there are some issues.
+Major comments
+1. "stability" used in this manuscript seems invalid. Because animal walking is dynamic and
+periodic, stability generally means dynamic stability especially in modeling studies, which is
+mathematically defined, for example, using eigenvalues for perturbations and basin of attraction
+of state variable. However, the authors seem to use "stability" in a way that it explains the
+magnitude of lateral movements (for example, the gait becomes more "stable" as the lateral
+movement decreases). I think that the authors use "stability" as static stability because small
+lateral movements inhibit the center of mass from going out of the support polygon.
+Dynamic stability and static stability are different. The authors should clarify which stability the
+authors mean.
+2. The simulation results show that the relative phase between the ipsilateral limbs is about 0.2 or
+0.8 for no limit. This is close to pace gait, but there are 0.2 of the relative phase from 0 or 1.
+Therefore, each limb moves separately and the gait is walk. This gait is partly static, because duty
+factors are almost 0.5.
+In contrast, the lateral velocity limit resulted in almost 0.5 of the relative phase. This means that
+diagonal limbs move almost simultaneously and suggests trot gait. This gait is not static but
+dynamic, because duty factors remain almost 0.5. Therefore, the lateral velocity limit changed
+from static to dynamic gait. Related to the above comment, when the authors mean static stability
+for the lateral limit, this result is opposite.
+3. Dual-objective optimization. The optimization calculation seems to focus only on the cost of
+transport. The magnitude of lateral movement is just constraint condition in the optimization. I
+wonder if this is dual-objective optimization and why the authors did not use the linear
+combination of these two factors for the optimization criteria.
+4. The simulation results show that the limitation of the lateral movement increased the cost of
+transport. It is unclear what mechanism works for this trend.
+8
+From the definition, the cost of transport depends on the forward locomotion distance. The
+limitation of the lateral movements allows the energy to be focused on the forward movement.
+Why this did not reduce the cost? As discussed in the discussion section, did lateral sway
+pendulum mechanism contribute to the low cost? (That is, lateral sway movement contributes to
+increase the forward velocity?) If the simulation results are valid, why chimpanzees do not use
+large lateral movements in locomotion?
+5. The simulation results are not well compared with measured data in chimpanzee locomotion.
+Comparison of locomotion factors, such as trunk movements, joint movements, forward and
+lateral velocities, gait cycle duration, and duty factors, must be useful to evaluate the validity of
+the simulation.
+Specific comments
+L110
+Do chimpanzees perform lateral sequence gaits in some situations?
+L133
+Where are the platforms in Fig. 1?
+L146
+It is difficult to find what are shown in Fig. 2. The authors should clarify it.
+L156
+Figure numbers are not matched (throughout this manuscript).
+L156
+As used for the initial condition of the model, there are measured data of chimpanzees [30]. The
+simulation results, such as trunk movements and joint kinematics, should be compared with the
+measured data of chimpanzees. Without this, it is difficult to evaluate if the simulation results are
+valid.
+L167
+"the desired gait characteristics in terms of foot fall pattern" This is unclear. What kinds of
+quantitative parameters are used to determine if the results are "desired"?
+L179
+In addition to the trunk movement and joint kinematics, the simulation results, such as forward
+velocity and duty factors, shown in two figures (Figs. 5 and 6) should be compared with the
+measured data.
+L198
+Figures 6C, D show the relative phase of the hindlimb and forelimb of the left side. How about
+the relative phases between the left and right limbs? 0.5?
+L215
+"improve the match between the simulated gait and the experimentally recorded gait" It is
+unclear which data show this?
+L241
+"our results show very little effect of footfall sequence on any of the measured gait parameters"
+This is unclear. Figures 6C and D show a large difference of the footfall sequence between No
+limit and <0.1., which induces large differences in locomotion parameters, such as the lateral
+velocity.
+9
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The authors present the results of a simulation study using a chimpanzee musculoskeletal model.
+Based on the gait simulations and constraints used, they conclude that adding lateral stability as
+constraint has an important effect on the energetic costs of the simulated gait. In addition, adding
+stability as criterion also affects the footfall patterns (diagonal vs. lateral). The authors suggest
+caution for the use of single optimization goals in gait simulations.
+I think the paper is certainly valuable for publication in the Royal Society open Science because of
+the highly interesting data that is made available (chimp model, scripts, gait simulations). I think
+this will give the possibility to other researchers to continue on this route and further improve the
+model and the simulations, eventually reaching more realistic, and therefore meaningful,
+simulations of chimpanzee gait.
+Minor comments
+-punctuation of the text should be done more careful; readability will be enhanced if commas
+added to text.
+- a lot of links or references to figures were missing, probably due to conversion to pdf. Therefore
+I was not always able to consult the appropriate supplementary material or figure
+Author's Response to Decision Letter for (RSOS-171836)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-171836.R1)
+01-Feb-2018
+Dear Dr Sellers,
+I am pleased to inform you that your manuscript entitled "Quadrupedal locomotor simulation:
+producing more realistic gaits using dual-objective optimisation" is now accepted for publication
+in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+10
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Monica Daley (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Monica Daley):
+Thank you for addressing the comments raised in the previous reviews. I'm happy to accept the
+paper for publication in RSOS. Note that the link to the DataDryad repository did not work for
+me, so please double-check this for the final version.
+pendix A
+ociate Editor's comments (Dr Monica Daley):
+ur manuscript on the simulation of chimpanzee locomotion has been reviewed by two experts.
+ile they are positive overall about the contribution, they do raise a number of concerns about
+presentation and interpretation of the model that require revisions. In particular, the authors
+uld address Reviewer 1’s concerns about the nature of the stability criterion and whether the
+roach is truly ‘dual-objective’ or a static-stability-constrained single objective optimization.
+have added quite a lot of extra material to address these points. We think this has considerably
+roved the manuscript.
+ould also help if the authors could provide a bit more detailed and critical discussion of the
+rent simplifications and limitations of the model, and how the findings might differ if the model
+e made more realistic. For example, could you get a similarly better match between model and
+a by adding trunk flexibility to the model, rather than adding a stability constraint to the
+ulations? If so, how should the field proceed in deciding how much and which features of
+ogical realism are necessary and adequate to explain animal gait? A critical discussion of these
+ues would be useful.
+have expanded the paragraph at the end of the discussion to talk in more general terms about
+future directions of such models and the various strengths and weaknesses and how they
+ld and should be explored.
+ase also note that many of the links within the pdf were corrupted, so please ensure that any
+ised submissions contain working links.
+mments to Author:
+viewers' Comments to Author:
+viewer: 1
+mments to the Author(s)
+s manuscript investigates the dynamic mechanism of quadrupedal locomotion in chimpanzees
+ng a musculoskeletal model. The authors achieved quadrupedal gait by forward dynamic
+ulations using the optimization with two criteria regarding stability and energy efficiency. They
+cuss about the roles of the two criteria based on the simulation results.
+s manuscript is concisely organized and easy to read. The modeling study with a sophisticated
+sculoskeletal model is useful to understand dynamic mechanism of chimpanzee locomotion.
+wever, there are some issues.
+jor comments
+"stability" used in this manuscript seems invalid. Because animal walking is dynamic and
+iodic, stability generally means dynamic stability especially in modeling studies, which is
+thematically defined, for example, using eigenvalues for perturbations and basin of attraction of
+e variable. However, the authors seem to use "stability" in a way that it explains the magnitude
+ateral movements (for example, the gait becomes more "stable" as the lateral movement
+reases). I think that the authors use "stability" as static stability because small lateral
+vements inhibit the center of mass from going out of the support polygon.
+namic stability and static stability are different. The authors should clarify which stability the
+hors mean.
+apologise for the confusion here. The referee is absolutely correct that the term ‘stability’ is
+biguous, and has a large number of different uses in the scientific literature. Certainly structural
+Lyapunov stability are commonly what is meant in the biomechanical literature, but in fact
+tmill (2002, 2005) is actually referring to what he calls ‘balance’, and what would probably be
+re generally called ‘lateral stability’. This is actually a very important point so we have added an
+itional paragraph to the introduction where we discuss the various differences between the
+s of the term ‘stability’ and make it much clearer what we are using the term to mean in this
+er (lateral stability).
+he simulation results show that the relative phase between the ipsilateral limbs is about 0.2 or
+for no limit. This is close to pace gait, but there are 0.2 of the relative phase from 0 or 1.
+refore, each limb moves separately and the gait is walk. This gait is partly static, because duty
+ors are almost 0.5.
+ontrast, the lateral velocity limit resulted in almost 0.5 of the relative phase. This means that
+gonal limbs move almost simultaneously and suggests trot gait. This gait is not static but
+amic, because duty factors remain almost 0.5. Therefore, the lateral velocity limit changed from
+ic to dynamic gait. Related to the above comment, when the authors mean static stability for
+lateral limit, this result is opposite.
+pointed out in the previous comment, we absolutely agree that if we were referring to static and
+amic stability then our explanation would be incorrect. However in terms of lateral stability, the
+of highly diagonal gaits reduces the rolling moments, and hence increases this measure of
+bility. We have changed all uses of the word ‘stability’ to specifically refer to the type of stability
+ng discussed to make this much clearer.
+Dual-objective optimization. The optimization calculation seems to focus only on the cost of
+sport. The magnitude of lateral movement is just constraint condition in the optimization. I
+nder if this is dual-objective optimization and why the authors did not use the linear combination
+hese two factors for the optimization criteria.
+imising (or searching) for solutions that can cope with multiple constraints is a very active
+earch area (Cui, 2017). We have in the past used approaches where we create a single metric
+a linear sum of various modelling parameters (in this case distance and energy (Sellers 2002))
+it simply does not always work as expected. The importance of modelling parameters is often
+y non-linear (so a particular parameter may have very little importance until it approaches a
+shold such as we found in our T. rex running model that evaluated skeletal loading (Sellers
+7)). GaitSym is actually extremely flexible in terms of generating fitness values but ultimately
+re are almost an infinite number of possibilities for how multi-objective optimisation can be
+ieved. We have added some extra sentences in the introduction where we discuss these issues.
+almost certainly the case that there are better ways of achieving these goals, but the approach
+wn does work which is primary goal of the paper.
+The simulation results show that the limitation of the lateral movement increased the cost of
+sport. It is unclear what mechanism works for this trend.
+m the definition, the cost of transport depends on the forward locomotion distance. The
+tation of the lateral movements allows the energy to be focused on the forward movement. Why
+did not reduce the cost? As discussed in the discussion section, did lateral sway pendulum
+chanism contribute to the low cost? (That is, lateral sway movement contributes to increase the
+ward velocity?) If the simulation results are valid, why chimpanzees do not use large lateral
+vements in locomotion?
+main conclusion of the paper is that chimpanzees (and probably most animals) are not
+imising the cost of locomotion, but have a complex set of goals and constraints that they need
+ccommodate such that cost of locomotion is traded off against some other desired outcome. I
+k at this stage we can only speculate what the mechanisms are that might control this, and an
+ra sentence has been put in the discussion to make this clear.
+The simulation results are not well compared with measured data in chimpanzee locomotion.
+mparison of locomotion factors, such as trunk movements, joint movements, forward and lateral
+ocities, gait cycle duration, and duty factors, must be useful to evaluate the validity of the
+ulation.
+have not done this simply because this sort of comparison is the main focus of the previous
+er we published modelling chimpanzee gait. Most of these parameters have been set in the
+del to match experimentally derived data (which for chimpanzees is highly variable, see
+Aout, 2004 })), and it is really only trunk movements, gait cycles, duty factors and phase angles
+t are allowed to vary. The values generated by the models are reported in figures 5 and 6 (along
+h the new experimental data in figures 3 and 4). We have added the {D'Aout, 2004} reference
+ng with a comment about the variability in kinematic data in chimpanzees.
+ecific comments
+0
+chimpanzees perform lateral sequence gaits in some situations?
+they do, but not very often and we do not have any usable kinematic data showing this. We
+e added a reference to this (Watson, 2011)
+3
+ere are the platforms in Fig. 1?
+y are the horizontal planks running between the 3 towers forming a triangle at each level. We
+e added extra text to explain this in the caption.
+6
+difficult to find what are shown in Fig. 2. The authors should clarify it.
+ra text has been added to make this clearer.
+6
+ure numbers are not matched (throughout this manuscript).
+ry about this. It was fine in the Word document but went wrong during the conversion to PDF
+we missed it. It should be fine now.
+6
+used for the initial condition of the model, there are measured data of chimpanzees [30]. The
+ulation results, such as trunk movements and joint kinematics, should be compared with the
+asured data of chimpanzees. Without this, it is difficult to evaluate if the simulation results are
+d.
+s is very difficult to do. We know from (D'Aout, 2004) that the kinematics in chimpanzees are
+ely variable but getting sufficient kinematic data to demonstrate where our simulation lies within
+range of variation would not be straightforward at all. My guess is that we would have to do
+e sort of PCA on the locomotor data and see where our simulations fall compared to the
+erimental data but we don’t have that amount of data needed to do that. It would be really
+thwhile though, I agree, although, ultimately, I think it would just show how variable chimpanzee
+is.
+7
+desired gait characteristics in terms of foot fall pattern" This is unclear. What kinds of
+ntitative parameters are used to determine if the results are "desired"?
+have rewritten to hopefully make it clear. What was ‘desired’ was either a lateral sequence gait
+a diagonal sequence gait, but the simulation is free to choose either. If we had just chosen the
+t 10 gaits overall we would not have had 5 in each category (even though we controlled the
+rting footfall sequence, in some cases the simulation changed spontaneously to a different
+tfall sequence).
+9
+addition to the trunk movement and joint kinematics, the simulation results, such as forward
+ocity and duty factors, shown in two figures (Figs. 5 and 6) should be compared with the
+asured data.
+ne.
+8
+ures 6C, D show the relative phase of the hindlimb and forelimb of the left side. How about the
+tive phases between the left and right limbs? 0.5?
+the gaits generated were symmetrical, so yes. The text has been changed to reflect this.
+5
+prove the match between the simulated gait and the experimentally recorded gait" It is unclear
+ch data show this?
+s is the match between the experimentally recorded lateral sway (in Figure 4). We have
+orded the text to make this clear. The other gait parameters are within the range of variation
+n experimentally.
+1
+r results show very little effect of footfall sequence on any of the measured gait parameters"
+s is unclear. Figures 6C and D show a large difference of the footfall sequence between No limit
+<0.1., which induces large differences in locomotion parameters, such as the lateral velocity.
+worded. This is effect of the starting footfall sequence (the diagonal or lateral bars). The various
+nges made to the model clearly have big effects in certain parameters.
+viewer: 2
+mments to the Author(s)
+authors present the results of a simulation study using a chimpanzee musculoskeletal model.
+ed on the gait simulations and constraints used, they conclude that adding lateral stability as
+straint has an important effect on the energetic costs of the simulated gait. In addition, adding
+bility as criterion also affects the footfall patterns (diagonal vs. lateral). The authors suggest
+tion for the use of single optimization goals in gait simulations.
+ink the paper is certainly valuable for publication in the Royal Society open Science because of
+highly interesting data that is made available (chimp model, scripts, gait simulations). I think
+will give the possibility to other researchers to continue on this route and further improve the
+del and the simulations, eventually reaching more realistic, and therefore meaningful,
+ulations of chimpanzee gait.
+or comments
+nctuation of the text should be done more careful; readability will be enhanced if commas
+ed to text.
+have gone through the text and hopefully inserted all the missing commas.
+lot of links or references to figures were missing, probably due to conversion to pdf. Therefore I
+s not always able to consult the appropriate supplementary material or figure.
+ologies again. Hopefully this is now fixed.
+Society Open

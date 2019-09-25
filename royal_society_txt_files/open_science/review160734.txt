@@ -1,0 +1,880 @@
+The power of associative learning and the ontogeny of
+optimal behaviour
+Magnus Enquist, Johan Lind and Stefano Ghirlanda
+Article citation details
+R. Soc. open sci. 3: 160734.
+http://dx.doi.org/10.1098/rsos.160734
+Review timeline
+Original submission: 23 September 2016 Note: Reports are unedited and appear as
+Revised submission: 3 November 2016 submitted by the referee. The review history
+Final acceptance: 3 November 2016 appears in chronological order.
+Review History
+label_version_1
+RSOS-160734.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Luis Dinis)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The authors present an appealing and sound theoretical framework to address several important
+questions that arise when studying animal behaviour and learning. They beautifully combine
+associative learning, conditioned reinforcement and chaining, three well established mechanisms
+on their own, to construct a model that can satisfactorily explain observations in a number of
+different natural learning environments. The article is well written, with abundance of
+meaningful examples that help the reader follow the discussion.
+I have nevertheless a few minor comments and suggestions that in my opinion are worth
+addressing.
+1) The exponential distribution (eq.2) used to select behaviours (transitions between states) is
+widely used in Statistical Physics. There, the parameter "beta" has the meaning of the (inverse of
+the) temperature of the system and nuS->B would work as energy of the state (with a minus sign,
+in fact). These rises a number of different interesting questions which are most probably out of
+the scope of the paper (behaviour optimization in a big space of possible behavior sequences is
+then akin to energy minimization in physical systems with many possible states with similar
+energy, like spin-glasses, etc...).
+However, there is one question that this analogy suggested to me that I think is pertinent and that
+the authors may want to address:
+As explained in the paper, beta controls exploration of different behaviour sequences. If beta is
+high, only the most highly valued behaviour is selected, which may avoid exploring further away
+from a local maximum and finding the global maximum in the space of possible behaviours. On
+the other hand, a very small beta favours exploration but avoids fixation of the optimal behaviour
+(even after the estimated values approach the true primary reinforcement value). From
+"simulated annealing", it is known that a fast way to find the optimal value is start with a small
+beta to allow global exploration, and then slowly rising beta to start evolving towards the optimal
+value.
+The possible variations of "beta" by genetic control are discussed in the paper. But is it possible
+that animals start childhood with a small beta and aging increases their beta value so that optimal
+behaviours tend to be conserved in adulthood? Is there experimental evidence of this? Maybe a
+sort comment about this could be added to the manuscript.
+2) I found the discussion about animals performing dynamic programming when learning
+(section 2.4) quite enlightening. I think it could be rounded off by pointing out that Bellman's
+equations or optimality principle is known in the field of dynamic programming to be able to
+find global maxima because it takes into account not only the immediate effect of an action but
+(through recurrence) also the possible future actions. In this way, in the model animals choose an
+action not (or not only) by its immediate primary reward but because of the possible value it is
+expected to gain in the future.
+The rest are some minor comments:
+3) Figure 2 right is not sufficiently discussed in the main text. A few more details about how the
+simulation is performed could benefit the discussion. Also, the "attempt" (which represents the
+"x" axis in the figure) is only explained in the caption of figure 1.
+3
+4) The meaning of the numbers inside the circles in Figure 1 and alike should be explicitly stated
+somewhere (maybe in figure 1 caption). After reading carefully I came to the conclusion that they
+are the uS values, but explicitly stating it would help the first time reader. Also in Figure 2
+caption it says c=-0.2, but in the figure itself it is written -c, which would be then positive. This is
+obviously a typo, isn't it?
+5) Equation 11 seems to have a typo on its left hand side. Should not the index X start running
+from S'' instead of S'?
+6) In 3.2 the reader should be reminded that the model discussed is still the one described in fig 1,
+to avoid confusion.
+The paper is certainly interesting and gives novel insights in the field. I recommend publication
+after these questions are addressed by the authors.
+----------------
+Luis Dinis
+Departamento de Fisica Atomica, Molecular y Nuclear
+Universidad Complutense de Madrid
+Madrid, Spain
+label_author_2
+Review form: Reviewer 2 (Aaron Clarke)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+The authors have made their code available at figshare.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Name: Aaron Clarke
+Affiliation: Bilkent Unviersity, Departments of Psychology and Neuroscience
+4
+Summary: The authors derive a chaining reinforcement learning model that is capable of learning
+state-action sequences leading to reward. The model is designed such that earlier, unrewarded
+states may acquire value by virtue of their predictive association with future rewarded states.
+While the model itself is similar to existing reinforcement learning models (e.g. Q-learning or
+Sarsa(<U+03BB>)) the authors make the valuable contribution of showing how easily the model explains
+a variety of data from animal learning studies, and show how it can lead to counter-intuitive
+results such as learning misbehaviours.
+Pros: The paper shows how a variety of results from animal learning research may be elegantly
+explained in a single, coherent framework.
+Cons: The model is not super novel and the paper spends a lot of time focusing on it and the
+subtle ways in which it differs from the Rescorla-Wagner model. It is not clear, for example, that a
+classical Sarsa(<U+03BB>) could not also produce the described learning behaviours.
+Comments:
+The argument in the paragraph starting on line 217 explains why an animal whose reward was
+stolen would get angry and why and animal who received more reward than they expected
+would not be angry, but it doesn’t explain why an animal who doesn’t get a reward may think
+that it simply got lost and would start looking for it. To explain this latter condition it would be
+necessary to have some kind of dichotomous behaviour for the case where dv was negative such
+that the plausibilities of the theft and loss hypotheses were weighted against each other to
+determine the appropriate response (anger or search respectively).
+Corrections:
+Table 2, second sentence: Change “refereed” to “referred”
+Line 503: Change “This can be accomplished in about that 1500 attempts …” to either “This can
+be accomplished in about 1500 attempts …” or “This can be accomplished in less than 1500
+attempts…”
+Line 510: Change “…requires to learn longer sequences…” to “…requires learning longer
+sequences …”
+Line 526: Delete “being”
+Line 646: Change “…underlying mechanisms …” to “…its underlying mechanisms…”
+Line 1051: Change “This tasks model the …” to “This task models the …”
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+5
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+I was blown away by this work. It offers a relatively simple formal framework that very neatly
+encapsulates existing insights about the role of learning in controlling ecologically relevant
+behaviour as well as offering novel understanding of the evolution of animal behaviour. I don't
+have anything to recommend re the MS - it is clearly written and should have (I hope) a profound
+impact on the field of behavioural biology.
+label_author_4
+Review form: Reviewer 4
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_4
+The ms identifies that reinforcement learning can produce near-optimal behaviour in a range of
+scenarios faced by different organisms. The paper is generally well written; the analysis is simple
+but sound.
+The technical elements of the paper are not really new; this paper could have been written 20
+years ago (cf. Sutton & Barto 1998). However, the paper does a reasonable job of highlighting the
+links between reinforcement learning and animal behaviour; in that respect, I enjoyed reading it,
+and it may encourage readers to learn more about reinforcement learning.
+I would have liked the paper to identify the effect of discounting, as this (e.g., linked with
+rewards disappearing with time in the environment, or an individual losing energy with time
+when not rewarded) arguably has important effects on real animal behaviour. In contrast with
+this, the model that has been presented brings the value of any sequence that always reaches the
+same end-point to the same value. However, as the ms is already quite long, it is unclear how
+6
+best to deal with the large & important topic of discounting, so perhaps it should be left as-is here
+(see smaller comment further below).
+Overall, I have wrestled with whether there is sufficient novelty in this paper for it to be
+published by this journal. It will teach reinforcement learners very little but may be cited by
+animal behaviourists who need a gentle introduction to the theory side of reinforcement learning.
+This is difficult for me to assess as the journal doesn't yet have an impact factor, but I imagine it
+would be suitable if the journal is intending to have an impact factor of about 4 or less.
+Relatively small remarks:
+Line 83 'We call our learning model "chaining" after Skinner who described ...' seems to suggest
+that you've introduced this term to the theory side from the empirical side, but the term has been
+used for a great many years on the theory side (including distinctions like forward-chaining and
+backward-chaining). Thus I suggest rewording the 'we call' part. Similarly, L.91, 'we show that
+chaining can optimize ...' could be misperceived by naive readers as meaning that it has not been
+shown before, whereas a huge amount of work in reinforcement learning has gone into showing
+that things are asymptotically optimal and/or convergent.
+The emphasis of the modelling in this ms is on state values, rather than action values. e.g., just
+after eqn (1), the ms identifies that in a deterministic environment, after some time, v_{S->B} will
+approach u_{S'}. This implies that the value of taking an action in a specific state depends purely
+on the next state. Although it is certainly possible to write the equations in that way, the intuitive
+'worth' of an action (e.g., 'eat nut') can be somewhat strained by this approach, as state _must_
+therefore take account of the internal state of the individual, even when considering only
+relatively short tasks. [In case this seems confusing, it's worth noting the contrasting case, where
+the worth of taking action B in state S has two components: the expected immediate reward
+associated with that action from that state, and the expected worth (and probability) associated
+with the next state, S'.] In general, I would have preferred the E(immediate reward) + E(future
+reward, associated with S') approach to be used, but I think this suggestion comes too late for this
+ms now after the work that has gone into the appendices etc. I mention it here just to encourage
+the authors to think more about this possible approach for future such manuscripts, especially as
+discounting is then trivial to introduce by multiplying expected future rewards by the
+discounting factor.
+Line 502: the real world doesn't require such a 'single sequence' though. e.g., the action sequence:
+nut on anvil, stone in hand, drop stone, stone in hand (etc for a while), bash anvil with stone,
+bash nut with stone, drop stone, pick up stone (etc), eat nut ... still achieves the final goal, just
+more slowly. Although the ms touches on this at points, it is this kind of relationship with
+discounting that makes me feel that the ms has missed a key point about real animal behaviour
+by assuming that 1) there is just one good end point to a sequence (rather than various small
+rewards at different points), and 2) animals return to the start after a missed action.
+Around lines 544, it was unclear to me what was motivating the use of a higher beta value (other
+than that it would generate such behaviour!), so there is a clear risk of shifting from regarding the
+RL approach as a normative perspective to a descriptive perspective. Somewhat similarly, lines
+220-222 suggest setting beta in terms of d_v; this case is nicely motivated in the text from a
+descriptive perspective (and somewhat better than the L.544 case when it comes to theory) but it's
+important to keep the distinctions between normative explanations and useful descriptive models
+clear.
+Minor points (by line number):
+37. behavior strategies -> behavioral strategies
+114. image -> imagine
+7
+119. S in -> S on
+191. pray -> prey
+200. add comma after 'relative'
+Caption of Figure 2: '2Right'
+283. Reword end of sentence.
+Table 1 caption: lenght -> length
+300-309: I found this confusing, as it seemed unclear what it was that was being 'entered' (e.g., the
+task, or a particular state), nor why anything would be entered 'from' a random state. I think that
+rewording 'enters from a random state' (L.300) to 'enters the task at a random state' or 'begins the
+task at a random state' (along with 'from' -> 'at' in lines 302, 304, 305) would have removed my
+confusion.
+324. result starting -> result in starting
+359. around -> in the vicinity
+392. courses of actions -> action sequences ?
+394-396. contains several commas already but arguably needs another after 'behaviors'. I suggest
+instead using parentheses, replacing 'sequences, perhaps only single behaviors could' with
+'sequences (perhaps only single behaviors) could'
+446. the italics don't particularly jump out; better to put some words (tree, fruit, etc) in boxes, like
+on p.22 (top of Fig 4).
+471. Also needs approximate sign in front of the 40^5, as the 40 is an approximation.
+503. cut 'than'
+510. requires to learn longer sequences, -> requires longer sequences to be learned,
+Figure 4: first two plots in this figure are difficult to tell the lines apart when printed in black &
+white.
+Also make the third plot line up vertically with the figures above (so Attempt number is the same
+at each position across the figure).
+526. cut 'being'
+Figure 5: make lines more easily identifiable when printed in b&w.
+703. either -> neither
+940-941. (Ref 108) italic symbols and rather than italics. Note that other latin names are not
+italicised at present (e.g., refs 21, 107)
+1003. is Euclidean -> is the Euclidean
+1051. tasks model -> task models
+1086. or -> and
+1114. only quadratic -> only yields quadratic
+label_author_5
+Review form: Reviewer 5 (Carlos Zednik)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+8
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_5
+Accept as is
+Comments to the Author(s)
+label_comment_5
+This paper concerns the possibility of acquiring a sophisticated behavioral repertoire on the basis
+of "mere" association processes. To this end, conditioned reinforcement is used to train an
+associative learning model to exhibit optimal behavior in a variety of tasks which have are
+traditionally thought to involve more "cognitive" mechanisms.
+Although this paper goes beyond my typical area of expertise, the model is very clearly
+presented, the tasks are well-chosen, and the results are convincing. Indeed, the number and
+kinds of tasks to which the model is applied makes for a very convincing case that associative
+learning suffices for a wide variety of optimal or near-optimal behavior. Of course, the results do
+not go beyond a proof of concept, but doing any more would go beyond the intended scope of
+this paper.
+Overall, I would be very happy to see this paper in print. It makes an important and clearly-
+stated contribution.
+label_end_comment
+Decision letter (RSOS-160734)
+01-Nov-2016
+Dear Dr Ghirlanda
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160734 entitled
+"The power of associative learning and the ontogeny of optimal behavior" has been accepted for
+publication in Royal Society Open Science subject to minor revision in accordance with the
+referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+9
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160734
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 10-Nov-2016). If you do not
+think you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+10
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_6
+The authors present an appealing and sound theoretical framework to address several important
+questions that arise when studying animal behaviour and learning. They beautifully combine
+associative learning, conditioned reinforcement and chaining, three well established mechanisms
+on their own, to construct a model that can satisfactorily explain observations in a number of
+different natural learning environments. The article is well written, with abundance of
+meaningful examples that help the reader follow the discussion.
+11
+I have nevertheless a few minor comments and suggestions that in my opinion are worth
+addressing.
+1) The exponential distribution (eq.2) used to select behaviours (transitions between states) is
+widely used in Statistical Physics. There, the parameter "beta" has the meaning of the (inverse of
+the) temperature of the system and nuS->B would work as energy of the state (with a minus sign,
+in fact). These rises a number of different interesting questions which are most probably out of
+the scope of the paper (behaviour optimization in a big space of possible behavior sequences is
+then akin to energy minimization in physical systems with many possible states with similar
+energy, like spin-glasses, etc...).
+However, there is one question that this analogy suggested to me that I think is pertinent and that
+the authors may want to address:
+As explained in the paper, beta controls exploration of different behaviour sequences. If beta is
+high, only the most highly valued behaviour is selected, which may avoid exploring further away
+from a local maximum and finding the global maximum in the space of possible behaviours. On
+the other hand, a very small beta favours exploration but avoids fixation of the optimal behaviour
+(even after the estimated values approach the true primary reinforcement value). From
+"simulated annealing", it is known that a fast way to find the optimal value is start with a small
+beta to allow global exploration, and then slowly rising beta to start evolving towards the optimal
+value.
+The possible variations of "beta" by genetic control are discussed in the paper. But is it possible
+that animals start childhood with a small beta and aging increases their beta value so that optimal
+behaviours tend to be conserved in adulthood? Is there experimental evidence of this? Maybe a
+sort comment about this could be added to the manuscript.
+2) I found the discussion about animals performing dynamic programming when learning
+(section 2.4) quite enlightening. I think it could be rounded off by pointing out that Bellman's
+equations or optimality principle is known in the field of dynamic programming to be able to
+find global maxima because it takes into account not only the immediate effect of an action but
+(through recurrence) also the possible future actions. In this way, in the model animals choose an
+action not (or not only) by its immediate primary reward but because of the possible value it is
+expected to gain in the future.
+The rest are some minor comments:
+3) Figure 2 right is not sufficiently discussed in the main text. A few more details about how the
+simulation is performed could benefit the discussion. Also, the "attempt" (which represents the
+"x" axis in the figure) is only explained in the caption of figure 1.
+4) The meaning of the numbers inside the circles in Figure 1 and alike should be explicitly stated
+somewhere (maybe in figure 1 caption). After reading carefully I came to the conclusion that they
+are the uS values, but explicitly stating it would help the first time reader. Also in Figure 2
+caption it says c=-0.2, but in the figure itself it is written -c, which would be then positive. This is
+obviously a typo, isn't it?
+5) Equation 11 seems to have a typo on its left hand side. Should not the index X start running
+from S'' instead of S'?
+6) In 3.2 the reader should be reminded that the model discussed is still the one described in fig 1,
+to avoid confusion.
+12
+The paper is certainly interesting and gives novel insights in the field. I recommend publication
+after these questions are addressed by the authors.
+----------------
+Luis Dinis
+Departamento de Fisica Atomica, Molecular y Nuclear
+Universidad Complutense de Madrid
+Madrid, Spain
+Reviewer: 2
+Comments to the Author(s)
+label_comment_7
+Name: Aaron Clarke
+Affiliation: Bilkent Unviersity, Departments of Psychology and Neuroscience
+Summary: The authors derive a chaining reinforcement learning model that is capable of learning
+state-action sequences leading to reward. The model is designed such that earlier, unrewarded
+states may acquire value by virtue of their predictive association with future rewarded states.
+While the model itself is similar to existing reinforcement learning models (e.g. Q-learning or
+Sarsa(<U+03BB>)) the authors make the valuable contribution of showing how easily the model explains
+a variety of data from animal learning studies, and show how it can lead to counter-intuitive
+results such as learning misbehaviours.
+Pros: The paper shows how a variety of results from animal learning research may be elegantly
+explained in a single, coherent framework.
+Cons: The model is not super novel and the paper spends a lot of time focusing on it and the
+subtle ways in which it differs from the Rescorla-Wagner model. It is not clear, for example, that a
+classical Sarsa(<U+03BB>) could not also produce the described learning behaviours.
+Comments:
+The argument in the paragraph starting on line 217 explains why an animal whose reward was
+stolen would get angry and why and animal who received more reward than they expected
+would not be angry, but it doesn’t explain why an animal who doesn’t get a reward may think
+that it simply got lost and would start looking for it. To explain this latter condition it would be
+necessary to have some kind of dichotomous behaviour for the case where dv was negative such
+that the plausibilities of the theft and loss hypotheses were weighted against each other to
+determine the appropriate response (anger or search respectively).
+Corrections:
+Table 2, second sentence: Change “refereed” to “referred”
+Line 503: Change “This can be accomplished in about that 1500 attempts …” to either “This can
+be accomplished in about 1500 attempts …” or “This can be accomplished in less than 1500
+attempts…”
+Line 510: Change “…requires to learn longer sequences…” to “…requires learning longer
+sequences …”
+Line 526: Delete “being”
+Line 646: Change “…underlying mechanisms …” to “…its underlying mechanisms…”
+Line 1051: Change “This tasks model the …” to “This task models the …”
+13
+Reviewer: 3
+Comments to the Author(s)
+label_comment_8
+I was blown away by this work. It offers a relatively simple formal framework that very neatly
+encapsulates existing insights about the role of learning in controlling ecologically relevant
+behaviour as well as offering novel understanding of the evolution of animal behaviour. I don't
+have anything to recommend re the MS - it is clearly written and should have (I hope) a profound
+impact on the field of behavioural biology.
+Reviewer: 4
+Comments to the Author(s)
+label_comment_9
+The ms identifies that reinforcement learning can produce near-optimal behaviour in a range of
+scenarios faced by different organisms. The paper is generally well written; the analysis is simple
+but sound.
+The technical elements of the paper are not really new; this paper could have been written 20
+years ago (cf. Sutton & Barto 1998). However, the paper does a reasonable job of highlighting the
+links between reinforcement learning and animal behaviour; in that respect, I enjoyed reading it,
+and it may encourage readers to learn more about reinforcement learning.
+I would have liked the paper to identify the effect of discounting, as this (e.g., linked with
+rewards disappearing with time in the environment, or an individual losing energy with time
+when not rewarded) arguably has important effects on real animal behaviour. In contrast with
+this, the model that has been presented brings the value of any sequence that always reaches the
+same end-point to the same value. However, as the ms is already quite long, it is unclear how
+best to deal with the large & important topic of discounting, so perhaps it should be left as-is here
+(see smaller comment further below).
+Overall, I have wrestled with whether there is sufficient novelty in this paper for it to be
+published by this journal. It will teach reinforcement learners very little but may be cited by
+animal behaviourists who need a gentle introduction to the theory side of reinforcement learning.
+This is difficult for me to assess as the journal doesn't yet have an impact factor, but I imagine it
+would be suitable if the journal is intending to have an impact factor of about 4 or less.
+Relatively small remarks:
+Line 83 'We call our learning model "chaining" after Skinner who described ...' seems to suggest
+that you've introduced this term to the theory side from the empirical side, but the term has been
+used for a great many years on the theory side (including distinctions like forward-chaining and
+backward-chaining). Thus I suggest rewording the 'we call' part. Similarly, L.91, 'we show that
+chaining can optimize ...' could be misperceived by naive readers as meaning that it has not been
+shown before, whereas a huge amount of work in reinforcement learning has gone into showing
+that things are asymptotically optimal and/or convergent.
+The emphasis of the modelling in this ms is on state values, rather than action values. e.g., just
+after eqn (1), the ms identifies that in a deterministic environment, after some time, v_{S->B} will
+approach u_{S'}. This implies that the value of taking an action in a specific state depends purely
+on the next state. Although it is certainly possible to write the equations in that way, the intuitive
+'worth' of an action (e.g., 'eat nut') can be somewhat strained by this approach, as state _must_
+therefore take account of the internal state of the individual, even when considering only
+relatively short tasks. [In case this seems confusing, it's worth noting the contrasting case, where
+the worth of taking action B in state S has two components: the expected immediate reward
+associated with that action from that state, and the expected worth (and probability) associated
+14
+with the next state, S'.] In general, I would have preferred the E(immediate reward) + E(future
+reward, associated with S') approach to be used, but I think this suggestion comes too late for this
+ms now after the work that has gone into the appendices etc. I mention it here just to encourage
+the authors to think more about this possible approach for future such manuscripts, especially as
+discounting is then trivial to introduce by multiplying expected future rewards by the
+discounting factor.
+Line 502: the real world doesn't require such a 'single sequence' though. e.g., the action sequence:
+nut on anvil, stone in hand, drop stone, stone in hand (etc for a while), bash anvil with stone,
+bash nut with stone, drop stone, pick up stone (etc), eat nut ... still achieves the final goal, just
+more slowly. Although the ms touches on this at points, it is this kind of relationship with
+discounting that makes me feel that the ms has missed a key point about real animal behaviour
+by assuming that 1) there is just one good end point to a sequence (rather than various small
+rewards at different points), and 2) animals return to the start after a missed action.
+Around lines 544, it was unclear to me what was motivating the use of a higher beta value (other
+than that it would generate such behaviour!), so there is a clear risk of shifting from regarding the
+RL approach as a normative perspective to a descriptive perspective. Somewhat similarly, lines
+220-222 suggest setting beta in terms of d_v; this case is nicely motivated in the text from a
+descriptive perspective (and somewhat better than the L.544 case when it comes to theory) but it's
+important to keep the distinctions between normative explanations and useful descriptive models
+clear.
+Minor points (by line number):
+37. behavior strategies -> behavioral strategies
+114. image -> imagine
+119. S in -> S on
+191. pray -> prey
+200. add comma after 'relative'
+Caption of Figure 2: '2Right'
+283. Reword end of sentence.
+Table 1 caption: lenght -> length
+300-309: I found this confusing, as it seemed unclear what it was that was being 'entered' (e.g., the
+task, or a particular state), nor why anything would be entered 'from' a random state. I think that
+rewording 'enters from a random state' (L.300) to 'enters the task at a random state' or 'begins the
+task at a random state' (along with 'from' -> 'at' in lines 302, 304, 305) would have removed my
+confusion.
+324. result starting -> result in starting
+359. around -> in the vicinity
+392. courses of actions -> action sequences ?
+394-396. contains several commas already but arguably needs another after 'behaviors'. I suggest
+instead using parentheses, replacing 'sequences, perhaps only single behaviors could' with
+'sequences (perhaps only single behaviors) could'
+446. the italics don't particularly jump out; better to put some words (tree, fruit, etc) in boxes, like
+on p.22 (top of Fig 4).
+471. Also needs approximate sign in front of the 40^5, as the 40 is an approximation.
+503. cut 'than'
+510. requires to learn longer sequences, -> requires longer sequences to be learned,
+Figure 4: first two plots in this figure are difficult to tell the lines apart when printed in black &
+white.
+Also make the third plot line up vertically with the figures above (so Attempt number is the same
+at each position across the figure).
+526. cut 'being'
+Figure 5: make lines more easily identifiable when printed in b&w.
+15
+703. either -> neither
+940-941. (Ref 108) italic symbols and rather than italics. Note that other latin names are not
+italicised at present (e.g., refs 21, 107)
+1003. is Euclidean -> is the Euclidean
+1051. tasks model -> task models
+1086. or -> and
+1114. only quadratic -> only yields quadratic
+Reviewer: 5
+Comments to the Author(s)
+label_comment_10
+This paper concerns the possibility of acquiring a sophisticated behavioral repertoire on the basis
+of "mere" association processes. To this end, conditioned reinforcement is used to train an
+associative learning model to exhibit optimal behavior in a variety of tasks which have are
+traditionally thought to involve more "cognitive" mechanisms.
+Although this paper goes beyond my typical area of expertise, the model is very clearly
+presented, the tasks are well-chosen, and the results are convincing. Indeed, the number and
+kinds of tasks to which the model is applied makes for a very convincing case that associative
+learning suffices for a wide variety of optimal or near-optimal behavior. Of course, the results do
+not go beyond a proof of concept, but doing any more would go beyond the intended scope of
+this paper.
+Overall, I would be very happy to see this paper in print. It makes an important and clearly-
+stated contribution.
+Author's Response to Decision Letter for (RSOS-160734)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-160734.R1)
+03-Nov-2016
+Dear Dr Ghirlanda,
+I am pleased to inform you that your manuscript entitled "The power of associative learning and
+the ontogeny of optimal behavior" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+16
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+Dear Editor,
+Thank you for giving us the opportunity to improve our manuscript following the Reviewers' comments.
+We hope that, with the revisions detailed below, the manuscript is now suitable for publication.
+Best,
+Magnus Enquist, Johan Lind, Stefano Ghirlanda
+Reviewer 1
+We thank the Reviewer for his positive remarks and the attention given to many details of our
+manuscript. We have been happy to address the following points:
+1) The exponential distribution (eq.2) used to select behaviours (transitions between states) is widely
+used in Statistical Physics…
+As the Reviewer points out, we do not have space to discuss the interesting connections between the
+exponential distribution as used in our paper and in statistical physics (we are aware of these
+connections as one of us has a statistical physics background). Nevertheless, we found the Reviewer's
+remark about the genetic control of \beta in relation to simulated annealing intriguing. We have added
+this remark to section 4 (third paragraph) and thanked the Reviewer in the Acknowledgments.
+2) I found the discussion about animals performing dynamic programming when learning (section 2.4)
+quite enlightening. I think it could be rounded off by pointing out that Bellman's equations or optimality
+principle is known in the field of dynamic programming to be able to find global maxima because it takes
+nto account not only the immediate effect of an action but (through recurrence) also the possible future
+actions. In this way, in the model animals choose an action not (or not only) by its immediate primary
+reward but because of the possible value it is expected to gain in the future.
+We thank the Reviewer for this remark. We have added a one-sentence summary of the Reviewer's
+paragraph to section 2.4, in the text that follows equation (12). We have tried to insert longer versions
+of this remark at various points in this section, but we were unable to preserve the flow of the argument
+without introducing an additional thread of thought. We hope our solution is acceptable.
+3) Figure 2 right is not sufficiently discussed in the main text. A few more details about how the
+simulation is performed could benefit the discussion. Also, the "attempt" (which represents the "x" axis
+n the figure) is only explained in the caption of figure 1.
+Thank you for pointing this out. We have discussed the simulation in the main text and clarified what
+“attempt” refers to in the figure legend.
+4) The meaning of the numbers inside the circles in Figure 1 and alike should be explicitly stated
+somewhere (maybe in figure 1 caption). After reading carefully I came to the conclusion that they are
+the uS values, but explicitly stating it would help the first time reader. Also in Figure 2 caption it says
+c=-0.2, but in the figure itself it is written -c, which would be then positive. This is obviously a typo, isn't
+t?
+Thank you for pointing out this omission. It is correct that values in circles represent u_{S} values. We
+have added this remark as suggested to the caption of Figure 1. We have also corrected the caption to
+Figure 2.
+5) Equation 11 seems to have a typo on its left hand side. Should not the index X start running from S''
+nstead of S'?
+The Reviewer is correct. We have fixed this typo.
+6) In 3.2 the reader should be reminded that the model discussed is still the one described in fig 1, to
+avoid confusion.
+Thank you for pointing this out. We have added a reminder at the start of the second paragraph of
+section 3.2.
+We thank Reviewer 2 for a thorough reading of our manuscript. The main comment that needs
+addressing is the following:
+"The model is not super novel and the paper spends a lot of time focusing on it and the subtle ways in
+which it differs from the Rescorla-Wagner model. It is not clear, for example, that a classical Sarsa(<U+03BB>)
+could not also produce the described learning behaviours."
+We agree that our model is not novel. Indeed, it is formally identical to a lesser known model called QV -
+earning, and it is related to a number of other reinforcement learning models. Our debt to similar work
+n reinforcement learning is acknowledged in the Introduction. The novelty of our work to apply the
+model to animal behavior, offering a coherent explanation of many learning phenomena. In this context,
+we find it appropriate to start from the Rescorla-Wagner model, because it is both well-known in the
+field and well supported empirically (for the most part). Furthermore, it lends itself easily to the addition
+of conditioned reinforcement, a concept that has ample empirical support from animal studies. A model
+such as Sarsa(\lambda) that only stores state-action values does not seem to map well onto the finding
+that stimuli alone (rather than stimulus-action pairs) can acquire conditioned value. It would be valuable
+to evaluate whether other reinforcement learning models can also account for the phenomena we
+consider, but this would take much more space than we have available.
+"The argument in the paragraph starting on line 217 explains why an animal whose reward was stolen
+would get angry and why and animal who received more reward than they expected would not be angry,
+but it doesn’t explain why an animal who doesn’t get a reward may think that it simply got lost and
+would start looking for it. To explain this latter condition it would be necessary to have some kind of
+dichotomous behaviour for the case where dv was negative such that the plausibilities of the theft and
+oss hypotheses were weighted against each other to determine the appropriate response (anger or
+search respectively)."
+This remark is correct. We have not pursued a unified model of all effects that may arise when
+expectations are violates. This is an very interesting topic and there are a number of theoretical
+possibilities. For example, the behavior adopted could depend both on expectation violation and external
+stimuli. If a competitor is in sight, aggressive behavior would ensue, if not, search behavior. We feel a
+complete treatment of this issue is beyond our present scope, and we are happy with just providing the
+example in the paper.
+Lastly, we thank the Reviewer for pointing out the following typos, which we have corrected:
+Table 2, second sentence: Change “refereed” to “referred”
+Line 503: Change “This can be accomplished in about that 1500 attempts …” to either “This can be
+accomplished in about 1500 attempts …” or “This can be accomplished in less than 1500 attempts…”
+Line 510: Change “…requires to learn longer sequences…” to “…requires learning longer sequences …”
+Line 526: Delete “being”
+Line 646: Change “…underlying mechanisms …” to “…its underlying mechanisms…”
+Line 1051: Change “This tasks model the …” to “This task models the …”
+Reviewer 3
+Reviewer 3 was extremely positive and requested no change. Thank you for reading our work.
+Reviewer 4
+Reviewer 4 is very positive and only has a few minor comments:
+"The technical elements of the paper are not really new; this paper could have been written 20 years
+ago (cf. Sutton & Barto 1998). However, the paper does a reasonable job of highlighting the links
+between reinforcement learning and animal behaviour; in that respect, I enjoyed reading it, and it may
+We thank the Reviewer for these remarks. As pointed out in our reply to Reviewer 2, we summarize in
+the Introduction the connection between our work and previous work in reinforcement learning. We also
+acknowledge that the exact same equations appear as QV-learning in the reinforcement learning
+iterature (where they do not appear to have gained much popularity).
+"I would have liked the paper to identify the effect of discounting, as this (e.g., linked with rewards
+disappearing with time in the environment, or an individual losing energy with time when not rewarded)
+arguably has important effects on real animal behaviour. In contrast with this, the model that has been
+presented brings the value of any sequence that always reaches the same end-point to the same value.
+However, as the ms is already quite long, it is unclear how best to deal with the large & important topic
+of discounting, so perhaps it should be left as-is here (see smaller comment further below)."
+We thank the reviewer for pointing out the important topic of discounting. Our example do include a
+form of discounting, although somewhat disguised. Namely, we assume that states in which primary
+reinforcement is unavailable have a slight negative value. While this is not mathematically equivalent to
+the multiplicative discounting used in reinforcement learning, it has a similar effect of penalizing longer
+sequences of actions. We feel that the topic of discounting is insufficiently studied in animal behavior,
+and for this reason we preferred not to dwell upon it. It will certainly be interesting to work more on it,
+as the Reviewer suggests.
+The Reviewer also raised a few minor points that we have addressed as follows:
+"Line 83 'We call our learning model "chaining" after Skinner who described ...' seems to suggest that
+you've introduced this term to the theory side from the empirical side, but the term has been used for a
+great many years on the theory side (including distinctions like forward-chaining and backward-
+chaining). Thus I suggest rewording the 'we call' part. Similarly, L.91, 'we show that chaining can
+optimize ...' could be misperceived by naive readers as meaning that it has not been shown before,
+whereas a huge amount of work in reinforcement learning has gone into showing that things are
+asymptotically optimal and/or convergent."
+We thank the Reviewer for these observations. The “we call” refers to the fact that we had to choose a
+name for our model. We could have called it QV-learning, as it is appears with this name in a handful of
+papers, but we thought it more appropriate to use a name that animal researchers would relate to. The
+term “chaining” in the rest of the paper refers to our model, which is the same as QV-learning. The “we
+show that chaining can optimize” may be a bit ambiguous, but it also refers to the fact that there is no
+analysis in the literature of the convergence of the specific model we call “chaining” (this has been
+confirmed to us by the author of QV-learning). Although we use standard techniques, the proof that
+“chaining” (QV-learning) converges in expectation in episodic tasks is novel.
+"The emphasis of the modelling in this ms is on state values, rather than action values. e.g., just after
+eqn (1), the ms identifies that in a deterministic environment, after some time, v_{S->B} will approach
+u_{S'}. This implies that the value of taking an action in a specific state depends purely on the next
+state. Although it is certainly possible to write the equations in that way, the intuitive 'worth' of an
+action (e.g., 'eat nut') can be somewhat strained by this approach, as state _must_ therefore take
+account of the internal state of the individual, even when considering only relatively short tasks. [In case
+this seems confusing, it's worth noting the contrasting case, where the worth of taking action B in state
+S has two components: the expected immediate reward associated with that action from that state, and
+the expected worth (and probability) associated with the next state, S'.] In general, I would have
+preferred the E(immediate reward) + E(future reward, associated with S') approach to be used, but I
+think this suggestion comes too late for this ms now after the work that has gone into the appendices
+etc. I mention it here just to encourage the authors to think more about this possible approach for
+future such manuscripts, especially as discounting is then trivial to introduce by multiplying expected
+future rewards by the discounting factor."
+We thank the Reviewer for these remarks. It is certainly possible to phrase the model in the way
+suggested, and this may well have some advantages over our formulation. We will definitely take into
+account these issues in the future, especially regarding the effect of internal motivations, which we have
+not touched upon in the present paper.
+"Line 502: the real world doesn't require such a 'single sequence' though. e.g., the action sequence: nut
+stone, drop stone, pick up stone (etc), eat nut ... still achieves the final goal, just more slowly. Although
+the ms touches on this at points, it is this kind of relationship with discounting that makes me feel that
+the ms has missed a key point about real animal behaviour by assuming that 1) there is just one good
+end point to a sequence (rather than various small rewards at different points), and 2) animals return to
+the start after a missed action."
+Thank you for these observations and a careful reading of this example. We use a single reward point to
+keep the discussion focused and the modeling manageable, and to impart some uniformity to the
+various examples discussed in the paper. We agree that in many real cases there will be a number of
+rewards. In the specific case discussed, however, we feel that eating the nut is naturally chosen as the
+single reward point of the sequence, after which the animal can try again.
+As remarked above, our setup does penalize longer sequences, because visits to intermediate states
+carry negative value (this is indicated, for example, at the top of Figure 4). Note also that, in this
+specific example, the animal does not invariably start from scratch after a mistake. The probability of
+going back to the start is 25%, as indicated in the legend to Figure 4.
+"Around lines 544, it was unclear to me what was motivating the use of a higher beta value (other than
+that it would generate such behaviour!), so there is a clear risk of shifting from regarding the RL
+approach as a normative perspective to a descriptive perspective. Somewhat similarly, lines 220-222
+suggest setting beta in terms of d_v; this case is nicely motivated in the text from a descriptive
+perspective (and somewhat better than the L.544 case when it comes to theory) but it's important to
+keep the distinctions between normative explanations and useful descriptive models clear."
+We thank the Reviewer for bringing this important point to our attention. We agree that normative and
+descriptive points of view should be kept separate. We also agree that the way we presented these
+modifications in \beta may appear purely descriptive. We do, however, have a normative argument in
+mind. Biasing choice of behavior will, in fact, reduce learning times provided the bias is in the right
+direction. We have assumed that genetic evolution can enact such biases and set their value to exploit
+knowledge about the world that is gathered across generations. We have clarified this point in the paper
+and we thank the Reviewer again for offering this remark. (Clearly, there is no normative reason for
+misbehavior: it is a by-product of having biased the learning system to do well in its natural
+environment, which leads to misbehavior in other environments.)
+The Reviewer also points out a few typos and suggested some language changes. We have corrected the
+typos and followed the suggestions, except as noted:
+37. behavior strategies -> behavioral strategies (Not changed: “behavior strategy” is accepted in the
+field)
+114. image -> imagine
+119. S in -> S on
+191. pray -> prey
+200. add comma after 'relative' (Not changed: we think our use is acceptable)
+Caption of Figure 2: '2Right'
+283. Reword end of sentence.
+Table 1 caption: lenght -> length
+300-309: I found this confusing, as it seemed unclear what it was that was being 'entered' (e.g., the
+task, or a particular state), nor why anything would be entered 'from' a random state. I think that
+rewording 'enters from a random state' (L.300) to 'enters the task at a random state' or 'begins the task
+at a random state' (along with 'from' -> 'at' in lines 302, 304, 305) would have removed my confusion.
+324. result starting -> result in starting
+392. courses of actions -> action sequences ?
+394-396. contains several commas already but arguably needs another after 'behaviors'. I suggest
+nstead using parentheses, replacing 'sequences, perhaps only single behaviors could' with 'sequences
+(perhaps only single behaviors) could'
+446. the italics don't particularly jump out; better to put some words (tree, fruit, etc) in boxes, like on
+p.22 (top of Fig 4). (Not changed: we will let the journal decide whether this is acceptable)
+471. Also needs approximate sign in front of the 40^5, as the 40 is an approximation.
+503. cut 'than'
+510. requires to learn longer sequences, -> requires longer sequences to be learned
+Figure 4: first two plots in this figure are difficult to tell the lines apart when printed in black & white.
+Also make the third plot line up vertically with the figures above (so Attempt number is the same at
+each position across the figure). (Not changed: the slight mismatch in position leaves room for the wider
+abels in the bottom panel; we will let the journal decide about color)
+526. cut 'being'
+Figure 5: make lines more easily identifiable when printed in b&w. (Not changed: we will let the journal
+decide about color)
+703. either -> neither
+940-941. (Ref 108) italic symbols and rather than italics. Note that other latin names are not italicised at
+present (e.g., refs 21, 107)
+1003. is Euclidean -> is the Euclidean
+1051. tasks model -> task models
+1086. or -> and
+1114. only quadratic -> only yields quadratic
+Reviewer 5
+Reviewer 5 is happy with the paper as it is and recommends publication without change. Thank you for
+reading our work.
+Society Open

@@ -1,0 +1,671 @@
+Characterizing the shape patterns of dimorphic yeast
+pseudohyphae
+Amelia Gontar, Murk J. Bottema, Benjamin J. Binder and Hayden Tronnolone
+Article citation details
+R. Soc. open sci. 5: 180820.
+http://dx.doi.org/10.1098/rsos.180820
+Review timeline
+Original submission: 24 May 2018 Note: Reports are unedited and appear as
+Revised submission: 14 August 2018 submitted by the referee. The review history
+Final acceptance: 13 September 2018 appears in chronological order.
+Review History
+label_version_1
+RSOS-180820.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Gabor Balazsi)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Reports © 2018 The Reviewers; Decision Letters © 2018 The Reviewers and Editors;
+Responses © 2018 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The goal of this manuscript is to develop a quantitative method for characterizing the shape of
+yeast colonies with pseudohyphal growth. The method is called “Clustered Shape Primitives”
+(CSP) and consists of k-means clustering shape primitive vectors measured around colony
+boundaries. The method is validated by analyzing binarized yeast colony images from a recent
+paper with 3 yeast strains exposed to different nutrient conditions. The new method can classify
+the yeast colonies by strain, by nutrient concentration, or by both.
+The method seems to be valid and useful. Therefore, I would like to recommend publication
+provided that the following comments are addressed:
+(1) Introduction: it would be worth adding “commonly known as” in the first sentence: “Yeasts
+are commonly known as single-celled fungi”. Research have actually indicated that yeasts exhibit
+multicellular behaviors.
+(2) In the PLoS Computational Biology paper (reference [7]) a few illustrative cases with random
+points in a disk or annulus or 4 symmetrically positioned squares are provided. Applying CSP to
+the same shapes would be useful.
+(3) While the method is validated by comparison with the measures in the earlier Binder et al.
+study applied to the same yeast colonies, it would also be useful to also apply some other metrics
+on the same colonies, such as P2A or colony boundary variance from Reference [10].
+(4) A possibly related point: The Discussion states that “The method proposed here does not
+include a matching step to identify points between shapes, and only local features are considered,
+rather than the overall shape. Consequently, other methods do not apply to the data set under
+consideration, and our method does not apply to standard data sets used in other shape studies.
+As such, rather than test the method against standard techniques or databases, we have
+compared the classification power of CSPs to that of the indices developed by Binder et al. [7].
+The CSPs generally provided greater discriminatory power than the spatial indices.” This
+statement is not completely clear. It should be clarified for the general reader.
+(5) It would be useful for the research community to upload a few images and the processing
+analysis code as examples.
+(6) k-means clustering is one approach to dimensionality reduction. Could other methods (such
+as PCA) be considered in the future?
+(7) Line 26: the number of bins (200) appears twice, which is probably a typo.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+3
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The manuscript by Gontar et al. presents a shape-based approach for quantification of yeast
+colonies. They present clustered shape primitives for characterizing individual colony shapes,
+and use spatial indices for comparison and for combined quantitative representation. All
+experimental results presented demonstrate very high accuracies, suggesting that the
+classification task is quite trivial and that the presented method successfully captures differences
+in the colonies under these experimental conditions.
+A few minor comments:
+-In 2 (d): "For each image that was left out, the single best feature for classifying that image was
+chosen by exhaustive search."
+This leaves me puzzled - in LOOCV one would expect that only the training samples are used for
+tuning the classifier parameters, in this case, for selecting the features. The sample that is left out
+is only used for testing the classifier accuracy. Could this part be clarified, what exactly was done
+then the single best feature was chosen by exhaustive search?
+-In results, "angle" could be more directly linked to the mathematical representation of the shape
+features.
+-How can angle of the distance direction be a major contributing factor in features discriminating
+the colonies, could the authors elaborate more on what this means?
+My main criticism is pointed to the experimental setup. The title suggests that the method is for
+characterizing shape patterns. Surely classification is one way of measuring the efficiency of the
+quantitative representation. But in this case, the experimental setup does not seem to provide
+much challenge - I really doubt that a shape-only approach would yield to such (almost) perfect
+classification accuracy when faced with more challenging colony types, e.g., cases where filament
+length is not the dominant pattern characterizing the colonies. Is this approach able to
+characterize such cases, and if not, why would this contribution be important as there are others
+where the shape, morphology and texture have been quantitatively characterized using a much
+wider panel of features?
+4
+label_end_comment
+Decision letter (RSOS-180820.R0)
+24-Jul-2018
+Dear Dr Tronnolone,
+The editors assigned to your paper ("Characterising the shape patterns of dimorphic yeast
+pseudohyphae") have now received comments from reviewers. We would like you to revise your
+paper in accordance with the referee and Associate Editor suggestions which can be found below
+(not including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper before 16-Aug-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If we do not hear from you within this time then it
+will be assumed that the paper has been withdrawn. In exceptional circumstances, extensions
+may be possible if agreed with the Editorial Office in advance. We do not allow multiple rounds
+of revision so we urge you to make every effort to fully address all of the comments at this stage.
+If deemed necessary by the Editors, your manuscript will be sent back to one or more of the
+original reviewers for assessment. If the original reviewers are not available, we may invite new
+reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+5
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180820
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Oliver Jensen (Associate Editor) and Prof. Mark Chaplain (Subject Editor)
+6
+openscience@royalsociety.org
+Associate Editor's comments (Dr Oliver Jensen):
+Please revise your paper, addressing carefully the comments made by both referees.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+The goal of this manuscript is to develop a quantitative method for characterizing the shape of
+yeast colonies with pseudohyphal growth. The method is called “Clustered Shape Primitives”
+(CSP) and consists of k-means clustering shape primitive vectors measured around colony
+boundaries. The method is validated by analyzing binarized yeast colony images from a recent
+paper with 3 yeast strains exposed to different nutrient conditions. The new method can classify
+the yeast colonies by strain, by nutrient concentration, or by both.
+The method seems to be valid and useful. Therefore, I would like to recommend publication
+provided that the following comments are addressed:
+(1) Introduction: it would be worth adding “commonly known as” in the first sentence: “Yeasts
+are commonly known as single-celled fungi”. Research have actually indicated that yeasts exhibit
+multicellular behaviors.
+(2) In the PLoS Computational Biology paper (reference [7]) a few illustrative cases with random
+points in a disk or annulus or 4 symmetrically positioned squares are provided. Applying CSP to
+the same shapes would be useful.
+(3) While the method is validated by comparison with the measures in the earlier Binder et al.
+study applied to the same yeast colonies, it would also be useful to also apply some other metrics
+on the same colonies, such as P2A or colony boundary variance from Reference [10].
+(4) A possibly related point: The Discussion states that “The method proposed here does not
+include a matching step to identify points between shapes, and only local features are considered,
+rather than the overall shape. Consequently, other methods do not apply to the data set under
+consideration, and our method does not apply to standard data sets used in other shape studies.
+As such, rather than test the method against standard techniques or databases, we have
+compared the classification power of CSPs to that of the indices developed by Binder et al. [7].
+The CSPs generally provided greater discriminatory power than the spatial indices.” This
+statement is not completely clear. It should be clarified for the general reader.
+(5) It would be useful for the research community to upload a few images and the processing
+analysis code as examples.
+(6) k-means clustering is one approach to dimensionality reduction. Could other methods (such
+as PCA) be considered in the future?
+(7) Line 26: the number of bins (200) appears twice, which is probably a typo.
+7
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+The manuscript by Gontar et al. presents a shape-based approach for quantification of yeast
+colonies. They present clustered shape primitives for characterizing individual colony shapes,
+and use spatial indices for comparison and for combined quantitative representation. All
+experimental results presented demonstrate very high accuracies, suggesting that the
+classification task is quite trivial and that the presented method successfully captures differences
+in the colonies under these experimental conditions.
+A few minor comments:
+-In 2 (d): "For each image that was left out, the single best feature for classifying that image was
+chosen by exhaustive search."
+This leaves me puzzled - in LOOCV one would expect that only the training samples are used for
+tuning the classifier parameters, in this case, for selecting the features. The sample that is left out
+is only used for testing the classifier accuracy. Could this part be clarified, what exactly was done
+then the single best feature was chosen by exhaustive search?
+-In results, "angle" could be more directly linked to the mathematical representation of the shape
+features.
+-How can angle of the distance direction be a major contributing factor in features discriminating
+the colonies, could the authors elaborate more on what this means?
+My main criticism is pointed to the experimental setup. The title suggests that the method is for
+characterizing shape patterns. Surely classification is one way of measuring the efficiency of the
+quantitative representation. But in this case, the experimental setup does not seem to provide
+much challenge - I really doubt that a shape-only approach would yield to such (almost) perfect
+classification accuracy when faced with more challenging colony types, e.g., cases where filament
+length is not the dominant pattern characterizing the colonies. Is this approach able to
+characterize such cases, and if not, why would this contribution be important as there are others
+where the shape, morphology and texture have been quantitatively characterized using a much
+wider panel of features?
+Author's Response to Decision Letter for (RSOS-180820.R0)
+See Appendices A & B.
+label_version_2
+RSOS-180820.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Gabor Balazsi)
+Is the manuscript scientifically sound in its present form?
+Yes
+8
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_5
+I would like to thank the Authors for addressing my comments. I would like to recommend
+acceptance for publication at this time.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_6
+The authors have addressed all comments appropriately.
+9
+label_end_comment
+Decision letter (RSOS-180820.R1)
+13-Sep-2018
+Dear Dr Tronnolone,
+I am pleased to inform you that your manuscript entitled "Characterising the shape patterns of
+dimorphic yeast pseudohyphae" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Oliver Jensen (Associate Editor) and Prof. Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+I would like to thank the Authors for addressing my comments. I would like to recommend
+acceptance for publication at this time.
+10
+Reviewer: 2
+Comments to the Author(s)
+label_comment_8
+The authors have addressed all comments appropriately.
+pendix A
+OS-180820
+Characterising the shape patterns of dimorphic yeast
+pseudohyphae
+melia Gontar1 , Murk J. Bottema1 , Benjamin J. Binder2 , and Hayden Tronnolone*2
+Flinders Mathematical Sciences Laboratory and Medical Device Research Institute, School of
+mputer Science, Engineering and Mathematics, Flinders University, GPO Box 2100, Adelaide SA
+5001, Australia
+2 School of Mathematical Sciences, University of Adelaide, Adelaide, SA 5005, Australia
+August 14, 2018
+esponse to Reviewer 1
+thank the reviewer for providing constructive comments on our work, and we have
+dressed the concerns raised as indicated below. Changes are highlighted in colour on the
+ised manuscript.
+goal of this manuscript is to develop a quantitative method for characterizing the shape of
+st colonies with pseudohyphal growth. The method is called “Clustered Shape Primitives”
+P) and consists of k-means clustering shape primitive vectors measured around colony
+ndaries. The method is validated by analyzing binarized yeast colony images from a recent
+er with 3 yeast strains exposed to different nutrient conditions. The new method can classify
+yeast colonies by strain, by nutrient concentration, or by both.
+method seems to be valid and useful. Therefore, I would like to recommend publication
+vided that the following comments are addressed:
+Introduction: it would be worth adding “commonly known as” in the first sentence: “Yeasts
+commonly known as single-celled fungi”. Research have actually indicated that yeasts
+ibit multicellular behaviors.
+have added this to the manuscript.
+In the PLoS Computational Biology paper (reference [7]) a few illustrative cases with random
+nts in a disk or annulus or 4 symmetrically positioned squares are provided. Applying CSP
+he same shapes would be useful.
+Corresponding author: hayden.tronnolone@adelaide.edu.au
+label_version_3
+RSOS-180820
+ure 1: The shape primitives for a square with sides of length three pixels (shaded cells),
+v thevborder highlighted
+wn in the centre of the image with v pixels). This shape
+v (darker v yields
+v
+ee unique shape primitives: (3, 2, 3, 3 2) (red), (3, 2 2, 3, 2 2) (blue), and (3, 3 2, 3, 2)
+low), illustrated in the corresponding diagrams.
+agree than some examples of this process would be useful to the reader. Because CSPs are
+mputed from pixels on the boundary of an object, it is not possible to apply the techniques
+esented here to points scattered randomly within a disk or annulus, as was done in reference
+It is possible to compute shape primitives for a square. Since the shape primitives found
+re represent the local shape, these would not depend on the location of the square within the
+main. Placing four squares in a pattern, as in reference 7, would thus give four sets of the
+me primitives. To illustrate this, we consider computing the shape primitives for a square
+th sides three pixels long, illustrated in figure 1. The boundary of this shape comprises
+ht pixels, so that only the central pixel is not included, and a shape primitive vwith Dv= 4
+computed
+v v for each of these.
+v This
+v produces three unique shape primitives (3, 2, 3, 3 2),
+2 2, 3, 2 2), and (3, 3 2, 3, 2), which together describe the local shape of the square and
+m the basis for the classification used here. We have included this example in section 2(b)
+the manuscript.
+While the method is validated by comparison with the measures in the earlier Binder et
+study applied to the same yeast colonies, it would also be useful to also apply some other
+trics on the same colonies, such as P2A or colony boundary variance from Reference [10].
+OS-180820
+would be possible to quantify the images using P2A, and all training, testing, and LOOCV
+periments were repeated. The augmented feature vector for image j was
+ 
+? P Ir I<U+03B8> IT
+hj = hj,1 , hj,2 , . . . , hj,M , , , , ,
+M PM M M M
+ere P is P2A, and PM is the maximum value of P2A across all yeast colony images considered
+the study. Dividing by PM ensures that 0 = P = 1, and dividing by M ensures that all
+tures are of the same magnitude. There was no need to repeat the feature analysis method
+cause this involved CSPs only. The results of this analysis are summarised here and given in
+l in the appendix to this response.
+r the training and testing experiments, the feature P/M PM was never chosen as a best
+ture. The values of D and K that result in the best classification result have not changed.
+r LOOCV, the feature P/M PM was chosen as a best feature more often than either the
+dial, angular, or angular pair-correlation indices. Although P2A appears to have some
+criminatory power, including this feature did not improve the classification results during
+OCV because, for each image that was left out, there was already a feature that had
+ssified it correctly.
+erall, incorporating P2A as a feature did not improve the classification. This can be
+plained, in part, by comparing P2A with the indices used in the paper, as shown in figure 2.
+hile P2A and the indices each measure different quantities, these all display the same
+alitative behaviour and are highly correlated. Because of this, and for the purposes of clarity,
+have not added the results including P2A to the manuscript. Instead, we have commented
+section 2(d) on how this quantity, and others, provide similar information to the spatial
+ices and do not improve the classification. We have included the results of this appendix as
+pplementary material.
+e boundary variance is computed from a polar representation of the boundary with the radius
+xpressed as a function of angle <U+03B8>. The boundary variance is defined to be the coefficient
+variation of r(<U+03B8>). To the best of our knowledge, r(<U+03B8>) is a function for the colonies from
+erence 10 because it takes a unique value of r for each value of <U+03B8>. In contrast, the colonies
+nsidered here are much more irregular in shape, so r(<U+03B8>) can take on multiple values for a
+en <U+03B8> and is thus not a function. It thus no longer makes sense to compute the coefficient of
+riation. The index I<U+03B8> taken from reference 7 is computed by sampling points from the colony,
+mputing the angle <U+03B8>, and computing a normalised count f<U+03B8> of these values. This effectively
+ovides a method for representing the boundary shape as a function of angle for a colony
+th an irregular boundary. The index I<U+03B8> taken from reference 7 is defined to be the sum
+coefficients from the Fourier transform of f<U+03B8> , which can be shown to be equivalent to the
+riance of f<U+03B8> . We thus believe that I<U+03B8> provides the same information as the boundary variation
+m reference 10. We have added a comment on this to section 2(c) of the manuscript.
+A possibly related point: The Discussion states that “The method proposed here does
+include a matching step to identify points between shapes, and only local features are
+sidered, rather than the overall shape. Consequently, other methods do not apply to the
+label_version_4
+RSOS-180820
+(a) P2A (b) Ir
+(c) I<U+03B8> (d) IT
+ure 2: P2A, Ir , I<U+03B8> and IT computed for the images used in this study. Each image is
+resented by a coloured dot, the mean over time is shown as a solid line, and the range for
+h strain in shaded in the same colour. The ranges of the indices Ir , I<U+03B8> and IT overlap. A
+ilar overlap is seen for P2A. P2A is highly correlated with the spatial indices.
+OS-180820
+a set under consideration, and our method does not apply to standard data sets used in other
+pe studies. As such, rather than test the method against standard techniques or databases,
+have compared the classification power of CSPs to that of the indices developed by Binder
+al. [7]. The CSPs generally provided greater discriminatory power than the spatial indices.”
+s statement is not completely clear. It should be clarified for the general reader.
+ter reviewing this paragraph, we have decided that this does not fit well with the discussion
+d, however reworded, will potentially cause confusion. We have decided to remove this
+ragraph.
+It would be useful for the research community to upload a few images and the processing
+lysis code as examples.
+e data sets and code used for this study are available online from Figshare Digital Repository
+i:10.4225/55/5b0605866669e) under a Creative Commons Attribution licence (CC BY 4.0).
+k-means clustering is one approach to dimensionality reduction. Could other methods (such
+PCA) be considered in the future?
+hile this is possible, there are two reasons for not recommending PCA. One reason is that
+means clustering is not used to reduce the dimension of the data in this paper. Here, the
+w measurements form shape primitives of dimension D corresponding to the number of
+ections in which local thickness is measured. K-means clustering serves to transform the
+ape primitive data nonlinearly into features (CSPs) that correspond to frequently occurring
+ape patterns. The dimension of the transformed data is K. Typical values are D = 4 and
+= 10, and so k-means clustering increases the dimension of the data. The other reason is
+at PCA is not optimal for feature selection prior to classification. PCA is useful for finding
+e direction (eigenvector) of greatest information content. By selecting a few eigenvectors
+rresponding to the largest eigenvalues, PCA may be used to reduce the dimensionality of
+ta while retaining the greatest information content. However, the direction of greatest
+ormation content is not necessarily the direction of optimal classification, as shown by the
+ificial example in figure 3. We have added a comment on this to the manuscript at the end
+section 2(b).
+Line 26: the number of bins (200) appears twice, which is probably a typo.
+e bin numbers correspond to the radial, angular and pair-correlation indices, respectively.
+have revised this sentence to make this clearer.
+label_version_5
+RSOS-180820
+ure 3: A scatter plot of data from two classes (‘o’ and ‘+’) in terms of two features (D = 2).
+each class there are four apparent clusters of combinations of features f1 and f2 . No standard
+ssifier will separate these two classes well based on features f1 and f2 . The orientation of
+first principal component is indicated by the bar labelled PC1. Classification based on
+jection onto PC1 gives the same performance as random assignment of class membership.
+plying k-means clustering separately to each class in the training step with K = 4 results in
+otal of eight CSPs for the full training set. The CSPs for the class labeled ‘+’ are (1, 1), (2,
+(3, 3) and (4, 6) and the CSPs for the class labeled ‘o’ are (1, 3), (2, 2), (3, 5) and (4, 4).
+ng these eight CSPs as features for classification will result in perfect classification of this
+ining data. This artificial (and contrived) example is meant for illustration purposes only
+does not reflect the actual data in this study.
+OS-180820
+Results Including P2A
+le numbers in this appendix match those in the manuscript.
+1 Classification by strain
+le 2: The mean and standard deviation (n = 30) as a function of the number of clusters K
+class and number of angles D chosen to compute the CSPs when classifying A7-50 and
+-50 by strain. The best classification accuracy was achieved with D = 4 and K = 10.
+K 4 angles 12 angles
+5 µ = 0.990, s = 0.031 µ = 0.910, s = 0.031
+10 µ = 0.997, s = 0.018 µ = 0.983, s = 0.038
+training and testing: D = 4, K = 5, none of the indices chosen. D = 4, K = 10, none of the
+ices chosen. D = 12, K = 5, none of the indices chosen. D = 12, K = 10, none of the indices
+sen.
+le 3: The accuracy score as a function of the number of clusters K per class and number of
+les D used to compute the CSPs when performing LOOCV for the classification of A7-50
+AR-50 by strain.
+K 4 angles 12 angles
+5 1.00 1.00
+10 1.00 1.00
+le 4: The number of times (out of 20 runs) each of the spatial indices was chosen as one of
+best features when classifying A7-50 and AR-50 by strain and performing LOOCV.
+Index P2A Ir I<U+03B8> IT
+Times chosen 10 0 6 8
+2 Classification by nutrient concentration
+training and testing: D = 4, K = 5, none of the indices chosen. D = 4, K = 10, none of the
+ices chosen. D = 12, K = 5, none of the indices chosen. D = 12, K = 10, none of the indices
+sen.
+label_version_6
+RSOS-180820
+le 5: The mean and standard deviation (n = 30) as a function of the number of clusters K
+class and number of angles D used to compute the CSPs when classifying A7-50 and A7-500
+nutrient concentration.
+K 4 angles 12 angles
+5 µ = 1.00, s = 0.00 µ = 1.00, s = 0.00
+10 µ = 1.00, s = 0.00 µ = 1.00, s = 0.00
+ble 6: The accuracy score obtained using LOOCV when classifying A7-50 and A7-500 by
+rient concentration, as a function of the number of clusters K per class and number of
+les D used to compute the CSPs.
+K 4 angles 12 angles
+5 1.00 1.00
+10 1.00 1.00
+le 7: The number of times (out of 19 runs) each of the spatial indices was chosen as one of
+best features for classification when performing LOOCV for the classification of A7-50 and
+500 by nutrient concentration.
+Index P2A Ir I<U+03B8> IT
+Times chosen 17 15 6 5
+OS-180820
+3 Classification by strain and nutrient concentration
+le 8: The mean and standard deviation (n = 30) of the classification accuracy as a function
+he number of clusters K per class and number of angles D used to compute the CSPs for the
+ee-group classification problem using A7-50, A7-500, AR-50. The best classification accuracy
+achieved using D = 12 and K = 10.
+K 4 angles 12 angles
+5 µ = 0.955, s = 0.058 µ = 0.912, s = 0.067
+10 µ = 0.917, s = 0.073 µ = 0.971, s = 0.036
+training and testing: D = 4, K = 5, none of the indices chosen. D = 4, K = 10, none of the
+ices chosen. D = 12, K = 5, none of the indices chosen. D = 12, K = 10, none of the indices
+sen.
+le 9: The accuracy score obtained using LOOCV for the three-group classification problem
+a function of the number of clusters K per class and number of angles D used to compute
+CSPs using A7-50, A7-500, and AR-50.
+K 4 angles 12 angles
+5 1.00 1.00
+10 1.00 1.00
+le 10: The number of times (out of 29 runs) each of the spatial indices was chosen as one
+he best features for classification, using LOOCV for the three-group classification problem
+ng A7-50, A7-500 and AR-50.
+Index P2A Ir I<U+03B8> IT
+Times chosen 15 6 1 2
+Appendix B
+OS-180820
+Characterising the shape patterns of dimorphic yeast
+pseudohyphae
+melia Gontar1 , Murk J. Bottema1 , Benjamin J. Binder2 , and Hayden Tronnolone*2
+1 Flinders Mathematical Sciences Laboratory and Medical Device Research Institute, School of
+mputer Science, Engineering and Mathematics, Flinders University, GPO Box 2100, Adelaide SA
+5001, Australia
+2 School of Mathematical Sciences, University of Adelaide, Adelaide, SA 5005, Australia
+August 8, 2018
+esponse to Reviewer #2
+e thank the reviewer for providing constructive comments on our work, and we have
+dressed the concerns raised as indicated below. Changes are highlighted in colour on the
+ised manuscript.
+e manuscript by Gontar et al. presents a shape-based approach for quantification of yeast
+onies. They present clustered shape primitives for characterizing individual colony shapes,
+use spatial indices for comparison and for combined quantitative representation. All experi-
+ntal results presented demonstrate very high accuracies, suggesting that the classification task
+uite trivial and that the presented method successfully captures differences in the colonies
+er these experimental conditions.
+ew minor comments:
+2 (d): “For each image that was left out, the single best feature for classifying that image was
+sen by exhaustive search.” This leaves me puzzled - in LOOCV one would expect that only
+training samples are used for tuning the classifier parameters, in this case, for selecting the
+tures. The sample that is left out is only used for testing the classifier accuracy. Could this
+t be clarified, what exactly was done then the single best feature was chosen by exhaustive
+rch?
+Corresponding author: hayden.tronnolone@adelaide.edu.au
+label_version_7
+RSOS-180820
+agree that this description requires clarification. Let S denote the number of images in a
+ta set. A single image was removed from the training data and set aside as the test image.
+e remaining S - 1 images were used to determine the single best feature for classification
+exhaustively testing each feature separately. The resulting classifier was used to classify
+e test image. This classification was either correct or incorrect. By repeating this process,
+luding the feature selection step, S times with each image taking a turn as the test image, a
+ssification result was obtained for each image. The accuracy was taken to be the proportion
+images classified correctly. The number of times each spatial index was chosen as the best
+ture was also recorded. We have revised the text of section 2(d) to reflect this.
+results, “angle” could be more directly linked to the mathematical representation of the
+pe features.
+have added a comment to section 2(b) discussing the meaning of the distribution of angles
+a shape primitive, and a new figure (figure 3) has been included to illustrate how distances
+measures at different angles. Additional information has been added throughout the results
+tion 3(a) (pages 7, 8, 10) to emphasise the connection between angles an the mathematical
+resentation of the shape features. We have also made some clarifications to last paragraph
+section 3, which discusses the angle.
+w can angle of the distance direction be a major contributing factor in features discriminating
+colonies, could the authors elaborate more on what this means?
+e distribution of line segments lengths within the object <U+2126> at various orientations fd ,
+= 1, 2, . . . d, allows discrimination between shapes. In the context of yeast colonies, if all the
+eudohyphae consist of straight radial spikes of the same length, then the distribution of line
+ment lengths would be a uniform function of fd . The distribution of line segment lengths at
+rious orientations, regardless of the frame of reference, provides a measure of the deviation
+m this model. In other words, it is not the orientation of a single line segment that matters,
+is the distribution of these that defines shape patterns. We have added a comment on this
+section 2(b).
+main criticism is pointed to the experimental setup. The title suggests that the method is
+characterizing shape patterns. Surely classification is one way of measuring the efficiency
+he quantitative representation. But in this case, the experimental setup does not seem to
+vide much challenge - I really doubt that a shape-only approach would yield to such (almost)
+fect classification accuracy when faced with more challenging colony types, e.g., cases where
+ment length is not the dominant pattern characterizing the colonies. Is this approach able
+characterize such cases, and if not, why would this contribution be important as there are
+ers where the shape, morphology and texture have been quantitatively characterized using a
+ch wider panel of features?
+OS-180820
+e reviewer is correct that there is no reason to use a shape only approach if full grey scale
+ormation is available. Yeast colony data is available as binary images, making it of interest
+develop methods to quantify such data (Binder, Sundstrom, Gardner, Jiranek and Oliver,
+15, reference 7 from the manuscript). This method would not supersede methods where
+ferent data is available. Although the method was tuned to the specific attributes of the
+ta motivating this study, there are many situations where shape only data is the natural
+ting. This is the case when analysing three-dimensional objects that are locally so irregular
+shape that standard geometric descriptions are not practical. An example is the trabecular
+ucture of cancellous bone (Martin and Bottema, 2015, reference 15 from the manuscript).
+have added a comment on this to the discussion section.
+eferences
+der, B. J., Sundstrom, J. F., Gardner, J. M., Jiranek, V. and Oliver, S. G. (2015), ‘Quantifying
+wo-dimensional filamentous and invasive growth spatial patterns in yeast colonies’, PLOS
+omputational Biology 11(2), e1004070.
+rtin, B. L. and Bottema, M. J. (2015), Textons for 3D binary data with applications to
+lassifying cancellous bone, in ‘Proceedings of the International Conference on Digital Image
+omputing: Techniques and Applications’, pp. 724–729.
+Society Open

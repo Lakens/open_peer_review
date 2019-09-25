@@ -1,0 +1,1182 @@
+Individual performance in team-based online games
+Anna Sapienza, Yilei Zeng, Alessandro Bessi, Kristina Lerman and Emilio Ferrara
+Article citation details
+R. Soc. open sci. 5: 180329.
+http://dx.doi.org/10.1098/rsos.180329
+Review timeline
+Original submission: 14 July 2017 Note: Reports are unedited and appear as
+1st revised submission: 2 March 2018 submitted by the referee. The review history
+2nd revised submission: 18 May 2018 appears in chronological order.
+Final acceptance: 22 May 2018
+Review History
+label_version_1
+RSOS-170904.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+© 2018 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+My concerns with this manuscript primarily relate to two factors that are not accounted for in the
+study: namely, the measurement of individual performance and the lack of accounting for solo-
+queue versus multi-queue game-play.
+In the revisions to this study, I would strongly encourage the authors to address these concerns.
+Depending on the time-frame of data collection, League allows for players to select their role
+prior to entering the game. If the authors could isolate their population to a single role (for
+example, Bot Lane Marksman), they could much more accurately assess individual performance.
+Additionally, the authors should isolate their population to only solo-queue players. This would
+eliminate the confounding variable of playing with friends.
+With these factors addressed, I would consider this manuscript much more scientifically sound,
+with methods that support their research questions and claims, and also a much more useful
+contribution to the standing literature.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Reject
+Comments to the Author(s)
+label_comment_2
+GENERAL
+Using log data, the authors present a paper that analyzes performance in a 5-v-5 multiplayer
+game over time. They suggest that individuals perform worse over the length of a play session,
+and longer-tenure players suffer from deterioration less than shorter-tenure players. Overall, I
+think the approach to the question is interesting, though the execution doesn't live up to the goals
+of the paper, and therefore it's hard to me to recommend publication of this paper. The
+contribution is relatively weak (especially compared to other literature that employs much more
+3
+detailed data and analyses), the literature and theory are missing a lot of substance, and in
+particular the core concept – performance – is poorly defined.
+- In general, the motivation for the paper seems weak, as there is a lot of work done on individual
+performance within teams. The authors need to absolutely look at management sciences and
+organizational communication, as individual and group performance has been studied
+extensively. Some core meta-analyses would be:
+Mathieu, J., Maynard, M. T., Rapp, T., & Gilson, L. (2008). Team Effectiveness 1997-2007: A
+Review of Recent Advancements and a Glimpse Into the Future. Journal of Management, 34(3),
+410–476. https://doi.org/10.1177/0149206308316061
+Sivunen, A., & Hakonen, M. (2011). Review of Virtual Environment Studies on Social and Group
+Phenomena. Small Group Research, 42(4), 405-457. https://doi.org/10.1177/1046496410388946
+Marrone, J. A. (2010). Team Boundary Spanning: A Multilevel Review of Past Research and
+Proposals for the Future. Journal of Management, 36(4), 911–940.
+https://doi.org/10.1177/0149206309353945
+Further, this is also a lot more work within the digital team formation realm (more on this below).
+- At the onset of the paper, there are various things I'm thinking about that will be important
+beyond play session: how often people have played in the past, how often people play with
+others that they know outside of the game (frequent in League of Legends, and past studied have
+shown this is a significant factor in individual and team performance), and especially
+role/character played in the game (which is also available from the League of Legends API).
+- The operationalization of "performance" is extremely weak. They use fraction of wins within
+session. First, that's confusing: it doesn't look within game, where individual performance likely
+matters most. But second, it assumes that individual performance is related to winning, which is
+not necessarily the case (any particular player could do good or bad, but the team could swing
+them toward a win or loss). Overall, the granularity of detailed definitions of performance like
+Kim et al. and Leavitt et al. are much more rigorous and dependable than the definition and
+operationalization utilized by the authors. They note that the data contained "the number of
+deaths, kills, earned gold, gold spent, etc. for each player in each match," so why not actually use
+these data as features for constructing a model of performance (and then take the additional step
+to do a hierarchical model that takes into account team and individual factors)? Given all the
+data, it's extremely disappointing the authors did not actually utilize such detailed traces.
+- I don't think the authors truly answer RQ3 or RQ4. Again, this mostly related to the poorly
+operationalized definition of performance. Especially for RQ4, the "why" might be framed better
+as a "how" -- but even then, the high-level of the analysis (looking at session dynamics rather than
+individual actions) misses the points and also a strong contribution.
+- Finally, this was submitted to the human-computer interaction disciplinary theme in this
+journal, yet I'm having a hard time taking away particular contributions to this field. What have
+we learned about theories about individual performance, group dynamics, or online multiplayer
+games? What are we taught that's new about sociotechnical systems? I'm not sure...
+Overall, I think the conceptual approach is interesting, and I haven't yet seen session-based
+analyses of performance, so there is a potential contribution. But the authors need to do a
+significant amount of work (and I think it's more than what's encapsulated in a "Major revision is
+needed" recommendation).
+4
+My recommendations to the authors would be:
+- Implement individual-level actions to actually measure performance, and situate this against all
+other teammates (and opponents) at a group level. Then see how this new definition of
+performance changes over time.
+- Integrate a much more robust theoretical framework and cite a much wider, diverse set of
+literature (particularly things that are clearly related but missing).
+- Consider a combination of traditional frequentist statistical analyses and machine learning, to
+truly get at the question of why and how much.
+-----
+Below, I've included some line-by-line comments as well:
+p. 2 ABSTRACT "Recent research focused on team performance and composition leaving
+unchecked the role of individual performance within teams." I am not bought into this
+motivation, as a lot of research HAS been done in this space.
+p. 3 "The data we study contains records of nearly half a million matches played by 1, 120 of the
+most active League of Legends players." How does studying the "most active" League of Legends
+players affect the generalizability of these findings? I assume that you would likely find better
+"individual performance improvements" with people who are not top-tier players. I think is
+perhaps a more severe limitation than the authors might anticipate. It seems though that the
+authors could control better for these differences...?
+p. 3 "We measure performance as the fraction of matches during the session won by the player's
+team..." How does this even approximate to "individual performance" when it's a team level
+variable?
+p. 3 "Players are usually assigned to a new team after each match" The authors need to be explicit
+about how often this is happening. At higher levels, it is actually relatively common for players to
+consistently play on sustained teams.
+p. 3 "the team to which a depleted player is assigned" I'm not sure what "depleted player" is
+supposed to mean here...
+p. 3 "While similar short-term performance deterioration was observed in the context of other
+online activities..." But are these activities actually comparable? I don't think so...
+p. 3 "Moreover, we find that deterioration is more pronounced for novices, rather than veteran
+players" But how is this assessed when the sample is from the top thousand players...?
+p. 4 "(c) Gaming Sessions" I'm a bit lost on the theoretical reasons for why game sessions would
+matter. This needs to be more explicit in the text, particularly drawing from theories of team
+performance.
+p. 5 "Surprisingly, there is no long term performance improvement with experience" I'm not sure
+why this is surprising, but I'm also unclear how the definition of performance alters the
+interpretation of this finding, as I think a better definition would result in more suitable evidence.
+p. 5 "Players are given Elo-like ratings... and these ratings are used to assemble teams of players
+with comparable skills." Yes, but is that the reason why they don't see an increase in
+performance? First, you might still expect performance to increase -- but again, it depends on
+5
+how you're defining performance. And second, without really understanding individual
+performance in the context of team performance (i.e., it's not that the individual is supposed to do
+the best, but that they're supposed to support the team to win), this point is relatively moot, as
+one player might need to "perform worse" in order for the team to do better. The authors also
+recognize this core tenet on p. 6 ("performance is measured by the team achieving its goal of
+winning the match").
+p. 6 "Player performance, measured by the fraction of matches the player's team won, degrades
+measurably over the source of a single session." I think this is actually a really interesting finding.
+However, the authors don't set important context, in that for situations with 4-5 games, the
+measure of performance INCREASES significantly and then decreases.
+p. 6-7 "On hypothesis could be that the matching algorithm..." I'm hesitant to make this critique,
+because it's difficult, but I do think that lack of information about the matching algorithm is a
+really big confound to this study. Without actually being able to see players' relative ELO scores
+across matches (as well as those scores of players within teams), it's hard to ascertain and then
+control for whether or not players are actually encountering harder teams. That might be OK
+methodologically, but for the conceptual arguments made in this paper, I cannot confidently say
+that the findings would accurately reflect individual performance in other situations...
+p. 7 "After ranking players by the number of matches played..." There are no summary statistics
+provided by the authors, so I have no idea the time period of games collected and how the time
+frame affects the calculation of games played. Further, and again, the selection of top-players may
+be skewing both the findings and interpretation here. I think the finding is interesting, but
+perhaps it does not reflect a true generalizable statement that the authors are aiming for...
+p. 7 A second point on the previous comment: the authors make no additional claim about the
+effect of the algorithm on the noted difference. What if, perhaps, players who played fewer games
+were matched into more difficult games, due to the lack of prior information about that player's
+skill? That could be an appropriate reason why we could see a decline in performance.
+p. 8 "We chose the following set of features to characterize player history" To me, these seem like
+basic choices, but it's completely unclear WHY these were chosen, i.e., there are no theoretical
+reasons underlying the choices nor any attempt at explaining why these might matter.
+p. 8 "In both prediction tasks..." The authors aren't clear on how much training and testing data
+was used.
+p. 9 "The importance of sunk time... rather than features of performance in predicting behavior
+suggests that people have a finite budget... for game play." Again, if the authors had
+implemented individual actions, I think this finding could be much more rigorous...
+p. 9 (a) Individual Performance / This section starts off without much context: why do the
+authors immediately jump into performance deterioration without any reflection on how
+individual performance relates to group performance?
+p. 10 "In particular, mental fatigue refers to..." I understand why the authors might want to
+include concepts related to mental fatigue, but the analyses they perform have no evidence
+measuring mental capacities and how that relates to performance. The inclusion of this literature
+in such depth (over many other relevant literatures) is somewhat strange.
+p. 10 (b) Team-based Online Games and Engagement / There is a lot of literature (e.g., from
+Williams, Shen, Ratan, etc.) on sociality in online games that should be included here.
+6
+p. 10 Shen et al. http://onlinelibrary.wiley.com/doi/10.1111/jcc4.12159/epdf do an excellent job
+of covering the concept and possible definitions of "performance" in online multiplayer games,
+operationalizing them very concisely (and the authors should pay close attention here to the
+theoretical work done around defining performance).
+p. 11 "We found only two studies that, similarly to our work, looked at individual performance..."
+I'm really thrown off by this sentence. Not only is there more work uncited in the literature, but
+previous papers in the last paragraph look at individual performance... The two papers cited in
+this paragraph seem to relate to gameplay time and player skills/levels, but if that's what the
+authors are going for as a comparison, it needs to be much more explicit (and also draw from the
+literature in this space, because a lot of it is missing).
+p. 11 "We also identified player features that best predict whether the player will quit the
+session." I'm still unsure why this matters. If the authors had used a frequentist method, I think
+we might be able to tease out more details around the importance of the variables, but given the
+few variables at hand, does it matter that we can predict? I walk away from this paper asking
+what the relative differences are between the importance of the variables, and especially how
+much the variables really matter (e.g., traditional effect sizes). Perhaps the authors should
+consider a combined regression + random forest approach to do this interpretive work.
+p. 11 "These findings are consistent with the hypothesis that players have a finite "budget" for
+playing, which they deplete with game play." I am really wary of this conclusion. If the authors
+had bothered to look at individual level factors of gameplay (e.g., attacks, kills, clicks) or
+communication factors, I would be much more willing to embrace a conclusion about depleted
+budget and mental capacities, but the conclusions are far too sweeping to be taken seriously
+based on the very basic analyses and findings from the paper.
+p. 12 "highlight the consequences of certain game design choices" I don't follow this conclusion.
+The authors talk about team composition balancing, but they don't actually analyze this in the
+paper nor find evidence related to it (they make a few assumptions about algorithmic team
+ranking, but that's as far as it goes).
+label_end_comment
+Decision letter (RSOS-170904.R0)
+25-Sep-2017
+Dear Dr Ferrara:
+Manuscript ID RSOS-170904 entitled "Individual Performance in Team-based Online Games"
+which you submitted to Royal Society Open Science, has been reviewed. The comments from
+reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+7
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 25-Mar-2018. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of
+Marta Kwiatkowska, Royal Society Open Science
+openscience@royalsociety.org
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_3
+My concerns with this manuscript primarily relate to two factors that are not accounted for in the
+study: namely, the measurement of individual performance and the lack of accounting for solo-
+queue versus multi-queue game-play.
+In the revisions to this study, I would strongly encourage the authors to address these concerns.
+Depending on the time-frame of data collection, League allows for players to select their role
+prior to entering the game. If the authors could isolate their population to a single role (for
+example, Bot Lane Marksman), they could much more accurately assess individual performance.
+Additionally, the authors should isolate their population to only solo-queue players. This would
+eliminate the confounding variable of playing with friends.
+With these factors addressed, I would consider this manuscript much more scientifically sound,
+with methods that support their research questions and claims, and also a much more useful
+contribution to the standing literature.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_4
+GENERAL
+Using log data, the authors present a paper that analyzes performance in a 5-v-5 multiplayer
+game over time. They suggest that individuals perform worse over the length of a play session,
+and longer-tenure players suffer from deterioration less than shorter-tenure players. Overall, I
+think the approach to the question is interesting, though the execution doesn't live up to the goals
+of the paper, and therefore it's hard to me to recommend publication of this paper. The
+contribution is relatively weak (especially compared to other literature that employs much more
+8
+detailed data and analyses), the literature and theory are missing a lot of substance, and in
+particular the core concept – performance – is poorly defined.
+- In general, the motivation for the paper seems weak, as there is a lot of work done on individual
+performance within teams. The authors need to absolutely look at management sciences and
+organizational communication, as individual and group performance has been studied
+extensively. Some core meta-analyses would be:
+Mathieu, J., Maynard, M. T., Rapp, T., & Gilson, L. (2008). Team Effectiveness 1997-2007: A
+Review of Recent Advancements and a Glimpse Into the Future. Journal of Management, 34(3),
+410–476. https://doi.org/10.1177/0149206308316061
+Sivunen, A., & Hakonen, M. (2011). Review of Virtual Environment Studies on Social and Group
+Phenomena. Small Group Research, 42(4), 405-457. https://doi.org/10.1177/1046496410388946
+Marrone, J. A. (2010). Team Boundary Spanning: A Multilevel Review of Past Research and
+Proposals for the Future. Journal of Management, 36(4), 911–940.
+https://doi.org/10.1177/0149206309353945
+Further, this is also a lot more work within the digital team formation realm (more on this below).
+- At the onset of the paper, there are various things I'm thinking about that will be important
+beyond play session: how often people have played in the past, how often people play with
+others that they know outside of the game (frequent in League of Legends, and past studied have
+shown this is a significant factor in individual and team performance), and especially
+role/character played in the game (which is also available from the League of Legends API).
+- The operationalization of "performance" is extremely weak. They use fraction of wins within
+session. First, that's confusing: it doesn't look within game, where individual performance likely
+matters most. But second, it assumes that individual performance is related to winning, which is
+not necessarily the case (any particular player could do good or bad, but the team could swing
+them toward a win or loss). Overall, the granularity of detailed definitions of performance like
+Kim et al. and Leavitt et al. are much more rigorous and dependable than the definition and
+operationalization utilized by the authors. They note that the data contained "the number of
+deaths, kills, earned gold, gold spent, etc. for each player in each match," so why not actually use
+these data as features for constructing a model of performance (and then take the additional step
+to do a hierarchical model that takes into account team and individual factors)? Given all the
+data, it's extremely disappointing the authors did not actually utilize such detailed traces.
+- I don't think the authors truly answer RQ3 or RQ4. Again, this mostly related to the poorly
+operationalized definition of performance. Especially for RQ4, the "why" might be framed better
+as a "how" -- but even then, the high-level of the analysis (looking at session dynamics rather than
+individual actions) misses the points and also a strong contribution.
+- Finally, this was submitted to the human-computer interaction disciplinary theme in this
+journal, yet I'm having a hard time taking away particular contributions to this field. What have
+we learned about theories about individual performance, group dynamics, or online multiplayer
+games? What are we taught that's new about sociotechnical systems? I'm not sure...
+Overall, I think the conceptual approach is interesting, and I haven't yet seen session-based
+analyses of performance, so there is a potential contribution. But the authors need to do a
+significant amount of work (and I think it's more than what's encapsulated in a "Major revision is
+needed" recommendation).
+9
+My recommendations to the authors would be:
+- Implement individual-level actions to actually measure performance, and situate this against all
+other teammates (and opponents) at a group level. Then see how this new definition of
+performance changes over time.
+- Integrate a much more robust theoretical framework and cite a much wider, diverse set of
+literature (particularly things that are clearly related but missing).
+- Consider a combination of traditional frequentist statistical analyses and machine learning, to
+truly get at the question of why and how much.
+-----
+Below, I've included some line-by-line comments as well:
+p. 2 ABSTRACT "Recent research focused on team performance and composition leaving
+unchecked the role of individual performance within teams." I am not bought into this
+motivation, as a lot of research HAS been done in this space.
+p. 3 "The data we study contains records of nearly half a million matches played by 1, 120 of the
+most active League of Legends players." How does studying the "most active" League of Legends
+players affect the generalizability of these findings? I assume that you would likely find better
+"individual performance improvements" with people who are not top-tier players. I think is
+perhaps a more severe limitation than the authors might anticipate. It seems though that the
+authors could control better for these differences...?
+p. 3 "We measure performance as the fraction of matches during the session won by the player's
+team..." How does this even approximate to "individual performance" when it's a team level
+variable?
+p. 3 "Players are usually assigned to a new team after each match" The authors need to be explicit
+about how often this is happening. At higher levels, it is actually relatively common for players to
+consistently play on sustained teams.
+p. 3 "the team to which a depleted player is assigned" I'm not sure what "depleted player" is
+supposed to mean here...
+p. 3 "While similar short-term performance deterioration was observed in the context of other
+online activities..." But are these activities actually comparable? I don't think so...
+p. 3 "Moreover, we find that deterioration is more pronounced for novices, rather than veteran
+players" But how is this assessed when the sample is from the top thousand players...?
+p. 4 "(c) Gaming Sessions" I'm a bit lost on the theoretical reasons for why game sessions would
+matter. This needs to be more explicit in the text, particularly drawing from theories of team
+performance.
+p. 5 "Surprisingly, there is no long term performance improvement with experience" I'm not sure
+why this is surprising, but I'm also unclear how the definition of performance alters the
+interpretation of this finding, as I think a better definition would result in more suitable evidence.
+p. 5 "Players are given Elo-like ratings... and these ratings are used to assemble teams of players
+with comparable skills." Yes, but is that the reason why they don't see an increase in
+performance? First, you might still expect performance to increase -- but again, it depends on
+10
+how you're defining performance. And second, without really understanding individual
+performance in the context of team performance (i.e., it's not that the individual is supposed to do
+the best, but that they're supposed to support the team to win), this point is relatively moot, as
+one player might need to "perform worse" in order for the team to do better. The authors also
+recognize this core tenet on p. 6 ("performance is measured by the team achieving its goal of
+winning the match").
+p. 6 "Player performance, measured by the fraction of matches the player's team won, degrades
+measurably over the source of a single session." I think this is actually a really interesting finding.
+However, the authors don't set important context, in that for situations with 4-5 games, the
+measure of performance INCREASES significantly and then decreases.
+p. 6-7 "On hypothesis could be that the matching algorithm..." I'm hesitant to make this critique,
+because it's difficult, but I do think that lack of information about the matching algorithm is a
+really big confound to this study. Without actually being able to see players' relative ELO scores
+across matches (as well as those scores of players within teams), it's hard to ascertain and then
+control for whether or not players are actually encountering harder teams. That might be OK
+methodologically, but for the conceptual arguments made in this paper, I cannot confidently say
+that the findings would accurately reflect individual performance in other situations...
+p. 7 "After ranking players by the number of matches played..." There are no summary statistics
+provided by the authors, so I have no idea the time period of games collected and how the time
+frame affects the calculation of games played. Further, and again, the selection of top-players may
+be skewing both the findings and interpretation here. I think the finding is interesting, but
+perhaps it does not reflect a true generalizable statement that the authors are aiming for...
+p. 7 A second point on the previous comment: the authors make no additional claim about the
+effect of the algorithm on the noted difference. What if, perhaps, players who played fewer games
+were matched into more difficult games, due to the lack of prior information about that player's
+skill? That could be an appropriate reason why we could see a decline in performance.
+p. 8 "We chose the following set of features to characterize player history" To me, these seem like
+basic choices, but it's completely unclear WHY these were chosen, i.e., there are no theoretical
+reasons underlying the choices nor any attempt at explaining why these might matter.
+p. 8 "In both prediction tasks..." The authors aren't clear on how much training and testing data
+was used.
+p. 9 "The importance of sunk time... rather than features of performance in predicting behavior
+suggests that people have a finite budget... for game play." Again, if the authors had
+implemented individual actions, I think this finding could be much more rigorous...
+p. 9 (a) Individual Performance / This section starts off without much context: why do the
+authors immediately jump into performance deterioration without any reflection on how
+individual performance relates to group performance?
+p. 10 "In particular, mental fatigue refers to..." I understand why the authors might want to
+include concepts related to mental fatigue, but the analyses they perform have no evidence
+measuring mental capacities and how that relates to performance. The inclusion of this literature
+in such depth (over many other relevant literatures) is somewhat strange.
+p. 10 (b) Team-based Online Games and Engagement / There is a lot of literature (e.g., from
+Williams, Shen, Ratan, etc.) on sociality in online games that should be included here.
+11
+p. 10 Shen et al. http://onlinelibrary.wiley.com/doi/10.1111/jcc4.12159/epdf do an excellent job
+of covering the concept and possible definitions of "performance" in online multiplayer games,
+operationalizing them very concisely (and the authors should pay close attention here to the
+theoretical work done around defining performance).
+p. 11 "We found only two studies that, similarly to our work, looked at individual performance..."
+I'm really thrown off by this sentence. Not only is there more work uncited in the literature, but
+previous papers in the last paragraph look at individual performance... The two papers cited in
+this paragraph seem to relate to gameplay time and player skills/levels, but if that's what the
+authors are going for as a comparison, it needs to be much more explicit (and also draw from the
+literature in this space, because a lot of it is missing).
+p. 11 "We also identified player features that best predict whether the player will quit the
+session." I'm still unsure why this matters. If the authors had used a frequentist method, I think
+we might be able to tease out more details around the importance of the variables, but given the
+few variables at hand, does it matter that we can predict? I walk away from this paper asking
+what the relative differences are between the importance of the variables, and especially how
+much the variables really matter (e.g., traditional effect sizes). Perhaps the authors should
+consider a combined regression + random forest approach to do this interpretive work.
+p. 11 "These findings are consistent with the hypothesis that players have a finite "budget" for
+playing, which they deplete with game play." I am really wary of this conclusion. If the authors
+had bothered to look at individual level factors of gameplay (e.g., attacks, kills, clicks) or
+communication factors, I would be much more willing to embrace a conclusion about depleted
+budget and mental capacities, but the conclusions are far too sweeping to be taken seriously
+based on the very basic analyses and findings from the paper.
+p. 12 "highlight the consequences of certain game design choices" I don't follow this conclusion.
+The authors talk about team composition balancing, but they don't actually analyze this in the
+paper nor find evidence related to it (they make a few assumptions about algorithmic team
+ranking, but that's as far as it goes).
+Author's Response to Decision Letter for (RSOS-170904.R0)
+See Appendix A.
+label_version_2
+RSOS-180329.R0
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+12
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_5
+The manuscript in its current form reflects significant improvements from its previous version.
+That said, I have a few minor comments:
+1. While the authors acknowledged my comment about role-choice in the revision, I stand by my
+comment that it is a confounding variable that cannot be ignored. It should, at the very least, be
+acknowledged as a limitation in the study.
+2. 1 Introduction: The authors use the acronym “LoL” without having defined it.
+3. 2 Data & Methods: The authors state “League of Legend” as opposed to “League of Legends.”
+4. RQ3 “What factors may explain performance declines?” is a very broad question to ask when
+only player experience is addressed. It would perhaps be more prudent to revise RQ3 to ask,
+“Does experience mitigate performance declines?”
+label_author_4
+Review form: Reviewer 3 (Stacie Petter)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+13
+Comments to the Author(s)
+label_comment_6
+Thank you for the opportunity to review this manuscript. I conduct research in the domain of
+online gaming in the context of information systems; therefore, I recognize that some of my
+comments are biased towards the manner and standards of research in my discipline. I will defer
+to the editor in regards to how much these suggestions should be addressed by the authors. Also,
+given that I was not a reviewer in the prior round for this manuscript, this also limits my ability
+in offering comments on the paper. Therefore, in my review, I will try to keep my comments
+within the scope of the suggested changes by the reviewers in the prior round. Reviewer 2
+expressed concerns with the motivation of the topic and the connection to theory. I have similar
+concerns with this revision.
+I found the topic and methods to explore the research questions to be quite interesting. I am
+pleased to see that the authors used only solo-queue matches. This is particularly important given
+the issues raised by the authors in the prior round. I also liked that the data set includes a wider
+range of individuals that play LoL.
+As I read this manuscript, it appears that the authors are implying that the results from this study
+are consistent with other team-based activities. The authors cite similar research related to
+StackExchange, Twitter, among others. However, it is not clear in the introduction and
+throughout the manuscript the types of ad hoc, team-based, repetitive tasks that the authors are
+referring to. I would caution the authors about trying to over-generalize the results, especially
+given the nature of the research questions.
+For example, in the first paragraph of the introduction, the authors begin by identify the need for
+teams. The second sentence mentions ad hoc teams. The remainder of the paragraph discusses
+the benefits of teams. However, these are benefits of teams, in general, and not necessarily ad hoc
+teams. Given this is a manuscript related to ad hoc teams, then it would be more appropriate to
+discuss the benefits of ad hoc teams (as opposed to teams in general).
+Then, the first paragraph on p. 2 discusses how individuals’ performance in teams (and team
+performance) can evolve over time. Lines 8-9 state “to assemble effective teams, we must first
+understand how individual and team performance change over the course of consecutive tasks.”
+It’s not clear from this statement if the goal is understanding how to assemble ad hoc teams
+(which seems appropriate given the scope of this study). Also, is the goal to understand how to
+assemble ad hoc teams in a certain type of environment (e.g., gaming, crowdsourcing,
+organizational)? The statement on p. 2 is quite broad, and tn he scope of the application of this
+research is not clear. I am a strong advocate that we can learn a lot from a gaming context and
+apply these lessons learned in other contexts; however, it needs to be clear to what contexts this
+research would apply.
+As a minor point, there is some content that seems redundant. The mention of performance
+deterioration on Reddit, Stack Exchange, and Twitter is mentioned on p 2 and p. 6 in a very
+similar way. This discussion about these related studies seems to be more applicable to include in
+the related work section as a means to demonstrate what is known and what is not known as it
+relates to these topics.
+In explaining the Results for RQ1 (p. 5), it is not immediately clear if this is data across sessions
+over time. What is the timeframe for “long term performance” in this study? How many matches
+and over what span of time? Some descriptive statistics could be useful to better explain this
+analysis.
+I struggled with understanding the results for RQ4 on pp. 8-10. I recognize this is in part with my
+unfamiliarity with the specific methods used in this study. I’m not sure how familiar all readers
+14
+are with these techniques. If there is a possibility that readers of this study are not familiar with
+these methods, then more explanation is needed regarding how to interpret the results.
+In the discussion of Related Work (in Section 4), some of the content does not seem particularly
+related as it is described. For example, is Marrone’s review of team boundary spanning relevant
+given these are ad hoc teams? I was also expecting in this section to see not just a summary of
+studies that are similar (e.g., Huang et al.’s study of Halo players), but also how this prior
+research relates to the current study and how the results of this study inform the related research
+in this area. It is most helpful when the discussion of related research positions how the current
+study is related to what is already known within a specific area and informs what is not known
+within a given domain.
+It is also important to ensure that the conclusion does not overgeneralize the results. The authors
+need to avoid overstating how the results relate to other contexts unless there is a specific reason
+to do so.
+label_end_comment
+Decision letter (RSOS-180329.R0)
+09-May-2018
+Dear Dr Ferrara
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-180329 entitled
+"Individual Performance in Team-based Online Games" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+15
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180329
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 18-May-2018). If you do not
+think you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+16
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Wen-Xu Wang (Associate Editor) and Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_7
+The manuscript in its current form reflects significant improvements from its previous version.
+That said, I have a few minor comments:
+17
+1. While the authors acknowledged my comment about role-choice in the revision, I stand by my
+comment that it is a confounding variable that cannot be ignored. It should, at the very least, be
+acknowledged as a limitation in the study.
+2. 1 Introduction: The authors use the acronym “LoL” without having defined it.
+3. 2 Data & Methods: The authors state “League of Legend” as opposed to “League of Legends.”
+4. RQ3 “What factors may explain performance declines?” is a very broad question to ask when
+only player experience is addressed. It would perhaps be more prudent to revise RQ3 to ask,
+“Does experience mitigate performance declines?”
+Reviewer: 3
+Comments to the Author(s)
+label_comment_8
+Thank you for the opportunity to review this manuscript. I conduct research in the domain of
+online gaming in the context of information systems; therefore, I recognize that some of my
+comments are biased towards the manner and standards of research in my discipline. I will defer
+to the editor in regards to how much these suggestions should be addressed by the authors. Also,
+given that I was not a reviewer in the prior round for this manuscript, this also limits my ability
+in offering comments on the paper. Therefore, in my review, I will try to keep my comments
+within the scope of the suggested changes by the reviewers in the prior round. Reviewer 2
+expressed concerns with the motivation of the topic and the connection to theory. I have similar
+concerns with this revision.
+I found the topic and methods to explore the research questions to be quite interesting. I am
+pleased to see that the authors used only solo-queue matches. This is particularly important given
+the issues raised by the authors in the prior round. I also liked that the data set includes a wider
+range of individuals that play LoL.
+As I read this manuscript, it appears that the authors are implying that the results from this study
+are consistent with other team-based activities. The authors cite similar research related to
+StackExchange, Twitter, among others. However, it is not clear in the introduction and
+throughout the manuscript the types of ad hoc, team-based, repetitive tasks that the authors are
+referring to. I would caution the authors about trying to over-generalize the results, especially
+given the nature of the research questions.
+For example, in the first paragraph of the introduction, the authors begin by identify the need for
+teams. The second sentence mentions ad hoc teams. The remainder of the paragraph discusses
+the benefits of teams. However, these are benefits of teams, in general, and not necessarily ad hoc
+teams. Given this is a manuscript related to ad hoc teams, then it would be more appropriate to
+discuss the benefits of ad hoc teams (as opposed to teams in general).
+Then, the first paragraph on p. 2 discusses how individuals’ performance in teams (and team
+performance) can evolve over time. Lines 8-9 state “to assemble effective teams, we must first
+understand how individual and team performance change over the course of consecutive tasks.”
+It’s not clear from this statement if the goal is understanding how to assemble ad hoc teams
+(which seems appropriate given the scope of this study). Also, is the goal to understand how to
+assemble ad hoc teams in a certain type of environment (e.g., gaming, crowdsourcing,
+organizational)? The statement on p. 2 is quite broad, and tn he scope of the application of this
+research is not clear. I am a strong advocate that we can learn a lot from a gaming context and
+apply these lessons learned in other contexts; however, it needs to be clear to what contexts this
+research would apply.
+As a minor point, there is some content that seems redundant. The mention of performance
+18
+deterioration on Reddit, Stack Exchange, and Twitter is mentioned on p 2 and p. 6 in a very
+similar way. This discussion about these related studies seems to be more applicable to include in
+the related work section as a means to demonstrate what is known and what is not known as it
+relates to these topics.
+In explaining the Results for RQ1 (p. 5), it is not immediately clear if this is data across sessions
+over time. What is the timeframe for “long term performance” in this study? How many matches
+and over what span of time? Some descriptive statistics could be useful to better explain this
+analysis.
+I struggled with understanding the results for RQ4 on pp. 8-10. I recognize this is in part with my
+unfamiliarity with the specific methods used in this study. I’m not sure how familiar all readers
+are with these techniques. If there is a possibility that readers of this study are not familiar with
+these methods, then more explanation is needed regarding how to interpret the results.
+In the discussion of Related Work (in Section 4), some of the content does not seem particularly
+related as it is described. For example, is Marrone’s review of team boundary spanning relevant
+given these are ad hoc teams? I was also expecting in this section to see not just a summary of
+studies that are similar (e.g., Huang et al.’s study of Halo players), but also how this prior
+research relates to the current study and how the results of this study inform the related research
+in this area. It is most helpful when the discussion of related research positions how the current
+study is related to what is already known within a specific area and informs what is not known
+within a given domain.
+It is also important to ensure that the conclusion does not overgeneralize the results. The authors
+need to avoid overstating how the results relate to other contexts unless there is a specific reason
+to do so.
+Author's Response to Decision Letter for (RSOS-180329.R0)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-180329.R1)
+22-May-2018
+Dear Dr Ferrara,
+I am pleased to inform you that your manuscript entitled "Individual Performance in Team-based
+Online Games" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+19
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication after 1 Jan 2018,
+you will be asked to pay the article processing charge, unless you request a waiver and this is
+approved by Royal Society Publishing. Manuscripts originally submitted prior to 1 Jan 2018 will
+not subject to a charge, even if they are accepted in 2018. You can find out more about the charges
+at http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Wen-Xu Wang (Associate Editor) and Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+pendix A
+Individual Performance in Team-based Online Games
+Anna Sapienza, Yilei Zeng, Alessandro Bessi, Kristina Lerman, Emilio Ferrara
+r Editor,
+We would like to thank you and the reviewers for the thorough reading of our manuscript and for taking the
+to provide many insightful comments and constructive suggestions, which helped in significantly improving the
+ity of our paper. We worked very hard to try address to the best of our abilities the many points highlighted by each
+ewer, by adding a substantial part of new data analysis in the revised manuscript. We provide a redlined version of
+manuscript highlighting all additions and new material. We had to be wary of manuscript length when addressing
+comments below, and we believe that the current manuscript provides a fair trade off between length and level of
+ils to satisfy referees’ feedback. Furthermore, the significant amount of work to carry out required two new
+uthors to take leadership on the paper, since the student who was the former first author had in the meanwhile
+uated and did not do any work for this revision (aside from acknowledging the final revised version of the work).
+he following, we provide justifications and answers to each of the reviewers’ comments. Original reviewers’
+ments are reported as bold text followed by our response.
+iewer: 1
+concerns with this manuscript primarily relate to two factors that are not accounted for in the study: namely,
+measurement of individual performance and the lack of accounting for solo-queue versus multi-queue
+e-play. In the revisions to this study, I would strongly encourage the authors to address these concerns.
+ending on the time-frame of data collection, League allows for players to select their role prior to entering
+game. If the authors could isolate their population to a single role (for example, Bot Lane Marksman), they
+ld much more accurately assess individual performance.
+1) The single role impersonated by players in League of Legends is indeed a key factor in the game, influencing
+the overall strategies of players. However, the study of performance in relation to the role is out of the scope
+of this paper, whose aim is to look at the overall performances of individual players along sessions of matches.
+Nevertheless, we considered this element of the game in a parallel work we developed on a different MOBA
+game (Dota2) with similar settings, and recently published, that we invite the referee to consult if interested:
+Sapienza, Anna, Hao Peng, and Emilio Ferrara. "Performance Dynamics and Success in Online
+Games." 2017 IEEE International Conference on Data Mining Workshops (ICDMW). IEEE, 2017.
+itionally, the authors should isolate their population to only solo-queue players. This would eliminate the
+founding variable of playing with friends. With these factors addressed, I would consider this manuscript
+h more scientifically sound, with methods that support their research questions and claims, and also a
+h more useful contribution to the standing literature.
+2) Thank you for this very insightful comment. As suggested, we have isolated our population and matches
+played to only solo-queue players, thus eliminating possible friends’ influences. Results are reported in the
+revised paper and are in line with the previous results obtained by the study of the overall population.
+iewer: 2
+eneral, the motivation for the paper seems weak, as there is a lot of work done on individual performance
+in teams. The authors need to absolutely look at management sciences and organizational communication,
+ndividual and group performance has been studied extensively.
+1) The motivation for our work is rooted in understanding how individual performance varies when sequences
+of tasks (i.e., matches, in the case of online games) are completed one after another (as in uninterrupted
+sessions). Moreover, our aim is to understand how performance of individuals change when the team they
+are working with is different from one task to the next. MOBA games are indeed a good fit for such research.
+We changed the text in the Introduction and Abstract to make our motivation clearer and pointed out to
+differences with management science literature.
+he onset of the paper, there are various things I'm thinking about that will be important beyond play session:
+often people have played in the past, how often people play with others that they know outside of the
+e (frequent in League of Legends, and past studied have shown this is a significant factor in individual
+team performance), and especially role/character played in the game (which is also available from the
+gue of Legends API).
+2) In our revised analysis, we incorporated descriptive statistics about our dataset, including number of matches
+and sessions per players, time played in matches and sessions per player, etc. (results are summarized by
+Tab.1 in the revised version of the paper). The other two points were previously addressed in our answers to
+Reviewer 1: in the reviewed manuscript we focus only on solo-queue matches (cf. answer 1.1), thus
+eliminating the possible influence of playing with friends; we tackled the problem of studying the influence of
+the role impersonated by players in a separated manuscript (cf. answer 1.2).
+operationalization of "performance" is extremely weak. They use fraction of wins within session. First,
+'s confusing: it doesn't look within game, where individual performance likely matters most. But second,
+sumes that individual performance is related to winning, which is not necessarily the case (any particular
+er could do good or bad, but the team could swing them toward a win or loss). Overall, the granularity of
+iled definitions of performance like Kim et al. and Leavitt et al. are much more rigorous and dependable
+n the definition and operationalization utilized by the authors. They note that the data contained "the
+ber of deaths, kills, earned gold, gold spent, etc. for each player in each match," so why not actually use
+e data as features for constructing a model of performance (and then take the additional step to do a
+archical model that takes into account team and individual factors)? Given all the data, it's extremely
+ppointing the authors did not actually utilize such detailed traces.
+3) Thanks for this valuable comment. We significantly revised the manuscript and added much new analysis in
+the revised version of the paper. To address this comment, we divided our analysis of performance in League
+of Legends in two main parts:
+a. Team-based performance, in which we consider the “fraction of win” in a session. This allow us to
+analyze a specific player (along consecutive matches) based on his/her team’s overall performance.
+b. Individual-based performance, in which (as suggested by this referee) we consider the number of
+actions, i.e., kills (k), assists (a), deaths (d) that players perform in subsequent matches of a session.
+In particular, we use the kill-death-assist score KDA=(k+a)/max(d,1) as a performance metric.
+on't think the authors truly answer RQ3 or RQ4. Again, this mostly related to the poorly operationalized
+nition of performance. Especially for RQ4, the "why" might be framed better as a "how" -- but even then,
+high-level of the analysis (looking at session dynamics rather than individual actions) misses the points
+also a strong contribution.
+4) In the revised manuscript, we reframed questions RQ3 and RQ4 and used the two different performance
+definitions (team-based and individual based) to answer these questions both from the session dynamics and
+individual actions perspective.
+ally, this was submitted to the human-computer interaction disciplinary theme in this journal, yet I'm having
+ard time taking away particular contributions to this field. What have we learned about theories about
+vidual performance, group dynamics, or online multiplayer games? What are we taught that's new about
+iotechnical systems? I'm not sure...
+5) When we submitted our work, the platform requested us to select a subject identifier out of a restricted set of
+options. Our work tackles questions related to computer-mediated interactions. HCI was in our opinion a good
+fit to the broader topic of our work. We remand to the Editor the decision of whether to add this contribution to
+the HCI disciplinary theme or not based on the editorial criteria defined in that regard.
+recommendations to the authors would be:
+1. Implement individual-level actions to actually measure performance, and situate this against all other
+teammates (and opponents) at a group level. Then see how this new definition of performance
+changes over time.
+2. Integrate a much more robust theoretical framework and cite a much wider, diverse set of literature
+(particularly things that are clearly related but missing).
+3. Consider a combination of traditional frequentist statistical analyses and machine learning, to truly
+get at the question of why and how much.
+6) Thanks for this revision blueprint, that we tried to follow to the best of our abilities. To recap:
+1. We implemented two different measures of performance: team-based, by using the fraction of win;
+individual-based, by using players’ actions during the matches in sessions.
+2. We revised our references and cite a wider set of papers relevant to our work, including those suggested
+by Reviewer 2.
+3. To better address the RQ4 of the manuscript we considered different settings for our prediction task, by
+using the previously introduced classification methods with different sets of features. We categorized the
+available features in three main groups: match metadata, players’ actions during the match, and
+performance measures.
+ow, I've included some line-by-line comments as well:
+ABSTRACT "Recent research focused on team performance and composition leaving unchecked the role
+ndividual performance within teams." I am not bought into this motivation, as a lot of research HAS been
+e in this space.
+7) Analogously to the first comment (2.1), we rephrased our motivation to make clearer that here we are focused
+on the evolution of players’ performance in sequential matches and in “temporary” teams.
+"The data we study contains records of nearly half a million matches played by 1, 120 of the most active
+gue of Legends players." How does studying the "most active" League of Legends players affect the
+eralizability of these findings? I assume that you would likely find better "individual performance
+rovements" with people who are not top-tier players. I think is perhaps a more severe limitation than the
+hors might anticipate. It seems though that the authors could control better for these differences...?
+8) We originally requested for the players in our dataset to have at least 100 matches recorded in their playing
+history to be able to follow their performance over time. Having at least 100 matches per player is a
+requirement that should not affect the generalizability of these findings as we have each player history from
+the beginning. However, we understand the possible implications that using this threshold could entail. Thus,
+we relaxed this requirement and used a lower threshold (10 matches): even with the lower threshold results
+are substantially unchanged, but at the same time the threshold ensures to have enough successive
+matches for the analysis of players’ performance during sessions. Players with less than 10 matches do not
+provide sufficient data and statistics to calculate sessions and are thus excluded from the analysis.
+"We measure performance as the fraction of matches during the session won by the player's team..."
+does this even approximate to "individual performance" when it's a team level variable?
+9) As in answers 2.3 and 2.6 we now have two measures of performance, win rate and KDA.
+"Players are usually assigned to a new team after each match" The authors need to be explicit about
+often this is happening. At higher levels, it is actually relatively common for players to consistently play
+ustained teams.
+10) In our new dataset, we selected only solo-queue matches to avoid the possible influence of playing with
+friends. We changed the sentence accordingly. However, we also checked for consistency how often a
+player is assigned to a new team after each match. It results that the 99% of the times (mean over players
+0.99, and standard deviation 0.0006) players actually change their teammates from one match to the other.
+"the team to which a depleted player is assigned" I'm not sure what "depleted player" is supposed to
+n here...
+11) We clarified the sentence in the revised paper.
+"While similar short-term performance deterioration was observed in the context of other online
+vities..." But are these activities actually comparable? I don't think so...
+12) We found this similarity particularly interesting. Even if the actual online platforms studied are different in
+terms of purposes and actions performed by online users, they show a similar performance deterioration
+pattern. We think that the results in the literature can be compared with our findings on the new individual-
+based performance measure. This measure (i.e. KDA) can be indeed interpreted as the quality of actions
+players perform during a match (similarly to other cases such as Stack Exchange in which the quality of
+answers is considered). The results fall in the broader area of study of online performance deterioration.
+"Moreover, we find that deterioration is more pronounced for novices, rather than veteran players" But
+is this assessed when the sample is from the top thousand players...?
+13) Our results are replicated even in light of the new selection of players after we lowered the threshold to 10
+matches, to avoid having exclusively top-experiences players in the game.
+"(c) Gaming Sessions" I'm a bit lost on the theoretical reasons for why game sessions would matter.
+needs to be more explicit in the text, particularly drawing from theories of team performance.
+14) In the revised version of the paper we explicitly clarify the focus on sessions. Our work was inspired by the
+broader area of studying performance deterioration; in the Related Work section, we report many studies
+that looked at the effect of prolonged usage sessions on individual’s performance as well as team
+performance in a variety of tasks and settings. We have provided further contextual references, however in
+the interest of space we cannot dive deep into the details of the literature without exceeding in paper length.
+"Surprisingly, there is no long-term performance improvement with experience" I'm not sure why this is
+prising, but I'm also unclear how the definition of performance alters the interpretation of this finding, as I
+k a better definition would result in more suitable evidence.
+15) We re-computed long-term performance by looking at both the measures introduced in the revised
+manuscript, namely win rate and KDA. Both measures revert to their mean: 0.5 for the fraction of wins and
+2.7 for the KDA. We added the new results in the revised manuscript and modified the text accordingly.
+"Players are given Elo-like ratings... and these ratings are used to assemble teams of players with
+parable skills." Yes, but is that the reason why they don't see an increase in performance? First, you
+ht still expect performance to increase -- but again, it depends on how you're defining performance. And
+ond, without really understanding individual performance in the context of team performance (i.e., it's not
+the individual is supposed to do the best, but that they're supposed to support the team to win), this
+t is relatively moot, as one player might need to "perform worse" in order for the team to do better. The
+hors also recognize this core tenet on p. 6 ("performance is measured by the team achieving its goal of
+ning the match").
+16) We believe that the intrinsic design of the game actually influences our measure of performance (related to
+the overall team). The matchmaking system is indeed designed to match players with comparable skill level
+to ensure each team of having a comparable chance of winning. This influence becomes clear when looking
+at the fraction of win match after match. However, in the revised version of the paper we also introduced the
+KDA performance measure and analyze it in comparison with previous results.
+"Player performance, measured by the fraction of matches the player's team won, degrades measurably
+r the source of a single session." I think this is actually a really interesting finding. However, the authors
+'t set important context, in that for situations with 4-5 games, the measure of performance INCREASES
+ificantly and then decreases.
+17) Thanks for this insight. We added a more detailed discussion about this finding in the paper.
+-7 "On hypothesis could be that the matching algorithm..." I'm hesitant to make this critique, because it's
+cult, but I do think that lack of information about the matching algorithm is a really big confound to this
+dy. Without actually being able to see players' relative ELO scores across matches (as well as those
+res of players within teams), it's hard to ascertain and then control for whether or not players are actually
+ountering harder teams. That might be OK methodologically, but for the conceptual arguments made in
+paper, I cannot confidently say that the findings would accurately reflect individual performance in other
+ations...
+18) We agree with the reviewer on the difficulty of assessing without shadow of doubt that the ELO score is the
+only factor that matters in this case. However, we think of it as one confounding factor that cannot be excluded.
+We changed the sentence to better explain the scenario: no matter if the player skill level increases or
+decreases, the opponents will be paired-up in a way to provide to both teams similar chances to win the match.
+This is true for both high level and low-level players, and we know for sure that this mechanism is in place in
+the matches we are studying: both empirical observation and official game documentation confirm that.
+"After ranking players by the number of matches played..." There are no summary statistics provided by
+authors, so I have no idea the time period of games collected and how the time frame affects the
+ulation of games played. Further, and again, the selection of top-players may be skewing both the
+ings and interpretation here. I think the finding is interesting, but perhaps it does not reflect a true
+eralizable statement that the authors are aiming for...
+19) For the sake of generalizability, we lowered our threshold and required players to have at least 10 matches
+in their history instead than 100. This allowed us to better include in the study low- and high-experience
+players. Results for both performance’s measures are consistent with the previously reported findings. We
+added in the revised paper a summary of statistics about the dataset, including the number of matches
+played on average, and the min and max number of matches.
+A second point on the previous comment: the authors make no additional claim about the effect of the
+rithm on the noted difference. What if, perhaps, players who played fewer games were matched into
+e difficult games, due to the lack of prior information about that player's skill? That could be an
+ropriate reason why we could see a decline in performance.
+20) This possibility should not be present in the revised paper as we selected only solo-queue matches that are
+all ranked matches in which players are matched on the basis of their rating score. Thus, even if we do not
+have access to the direct score of players we can assume that players are not matched into more difficult
+games.
+"We chose the following set of features to characterize player history" To me, these seem like basic
+ices, but it's completely unclear WHY these were chosen, i.e., there are no theoretical reasons underlying
+choices nor any attempt at explaining why these might matter.
+21) We changed our set of features to consider different aspects of the game and identify which of these
+features are the most meaningful for our prediction task. In particular, we defined three sets of features
+related to the match history, the players’ actions during the game, and the performance (both individual and
+team performance related features).
+"In both prediction tasks..." The authors aren't clear on how much training and testing data was used.
+22) We added the information about our training and testing sets in the paper.
+"The importance of sunk time... rather than features of performance in predicting behavior suggests that
+ple have a finite budget... for game play." Again, if the authors had implemented individual actions, I think
+finding could be much more rigorous...
+23) Please refer to the new results based on the individual-based measure of performance. The results are in
+line with what was previously observed for win rate. We take this chance to thank the referee for motivating
+us to provide this additional analysis that really made the paper stronger in our opinion.
+(a) Individual Performance / This section starts off without much context: why do the authors
+ediately jump into performance deterioration without any reflection on how individual performance
+tes to group performance?
+24) We improved our sub-section (c) related to both Individual and Team performance and modified sub-section
+(a) to be focused on the related work about performance depletion. We also changed the order of the sub-
+sections to improve the Related Work section flow: sub-section (c) and (a) were swapped.
+0 "In particular, mental fatigue refers to..." I understand why the authors might want to include concepts
+ted to mental fatigue, but the analyses they perform have no evidence measuring mental capacities and
+that relates to performance. The inclusion of this literature in such depth (over many other relevant
+atures) is somewhat strange.
+25) As we found that short term performances in League of Legends deteriorates similarly to other contexts
+(e.g., Reddit, Stack Exchange etc.), we considered important to include this part of the literature, which can
+provide some insights of the mechanisms at the basis of the performance deterioration we observed.
+However, we also improved our related work section, by adding other relevant works as suggested by the
+Reviewer.
+0 (b) Team-based Online Games and Engagement / There is a lot of literature (e.g., from Williams, Shen,
+an, etc.) on sociality in online games that should be included here.
+26) We included and discussed the suggested works in the related work section of the revised paper.
+0 Shen et al. http://onlinelibrary.wiley.com/doi/10.1111/jcc4.12159/epdf do an excellent job of covering the
+cept and possible definitions of "performance" in online multiplayer games, operationalizing them very
+cisely (and the authors should pay close attention here to the theoretical work done around defining
+ormance).
+27) In the work suggested by the reviewer, the performance is measured as the “speed of character
+advancement (leveling)”, where the author discards those observation in which players reach the level cap
+(70 for the game). However, we cannot make the same choice in our work, as we have no information about
+the time needed for each player to achieve a certain champion level. For this reason, we added a different
+measure of performance, which is still related to the individual actions performed during the game (KDA).
+Finally, we incorporated the highlighted work in the Related Work section.
+1 "We found only two studies that, similarly to our work, looked at individual performance..." I'm really
+wn off by this sentence. Not only is there more work uncited in the literature, but previous papers in the
+paragraph look at individual performance... The two papers cited in this paragraph seem to relate to
+eplay time and player skills/levels, but if that's what the authors are going for as a comparison, it needs
+e much more explicit (and also draw from the literature in this space, because a lot of it is missing).
+28) As answered in 2.24, we improved the Related Work section of the paper and added more studies that are
+relevant to our analysis. Thanks for pointing us to a promising direction of the literature.
+1 "We also identified player features that best predict whether the player will quit the session." I'm still
+ure why this matters. If the authors had used a frequentist method, I think we might be able to tease out
+e details around the importance of the variables, but given the few variables at hand, does it matter that
+can predict? I walk away from this paper asking what the relative differences are between the importance
+he variables, and especially how much the variables really matter (e.g., traditional effect sizes). Perhaps
+authors should consider a combined regression + random forest approach to do this interpretive work.
+29) In the revised version of the paper, we considered 3 different sets of features, to take into account different
+aspects of the game. This allowed us to better understand what are the features which are important for our
+prediction task.
+1 "These findings are consistent with the hypothesis that players have a finite "budget" for playing,
+ch they deplete with game play." I am really wary of this conclusion. If the authors had bothered to look at
+vidual level factors of gameplay (e.g., attacks, kills, clicks) or communication factors, I would be much
+e willing to embrace a conclusion about depleted budget and mental capacities, but the conclusions are
+oo sweeping to be taken seriously based on the very basic analyses and findings from the paper.
+30) By following the reviewer comment, we study the individual factors in the game by studying the KDA ratio.
+Our results are in line with those previously obtained. We discuss these implication in the revised paper.
+2 "highlight the consequences of certain game design choices" I don't follow this conclusion. The
+ors talk about team composition balancing, but they don't actually analyze this in the paper nor find
+ence related to it (they make a few assumptions about algorithmic team ranking, but that's as far as it
+s).
+31) In view of the above results, regarding the performance in terms of actions that players do during the game,
+we changed our Conclusion section.
+would like to thank again both referees for their invaluable feedback: we hope that this revision will satisfy them.
+t regards.
+authors
+pendix B
+Individual Performance in Team-based Online Games
+a Sapienza, Yilei Zeng, Alessandro Bessi, Kristina Lerman, Emilio Ferrara
+r Editor,
+We would like to thank you and the reviewers for accepting our manuscript for publication in
+al Society Open Science. We worked on the suggested revisions and we are confident that this re-
+sed version of the manuscript now addresses all the final comments provided by the referees. We
+vide a redlined version of our manuscript highlighting the new modifications and additions with respect
+he prior revision.
+he following, we provide justifications and answers to each of the reviewers’ comments. Original
+ewers’ comments are reported as bold text followed by our response.
+would like to thank you and the anonymous referees once again for your invaluable work and guidance.
+t Regards,
+Authors
+iewer 1
+1. While the authors acknowledged my comment about role-choice in the revision, I stand by
+my comment that it is a confounding variable that cannot be ignored. It should, at the very
+least, be acknowledged as a limitation in the study.
+We agree with the reviewer on the fact that the role might have an impact on players’
+performance and has to be acknowledged as a limitation. Thus, we added a discussion in the
+Conclusion section about the role and other factors affecting players’ performance which were out
+of the scope of this analysis.
+2. 1 Introduction: The authors use the acronym “LoL” without having defined it.
+2 Data & Methods: The authors state “League of Legend” as opposed to “League of
+Legends.”
+We thank the reviewer for noticing the absence of the definition as well as the typo in the name of
+League of Legends. We added the acronym in parenthesis both in the Abstract and in the
+Introduction at its first occurrence and corrected the typo.
+3. RQ3 “What factors may explain performance declines?” is a very broad question to ask
+when only player experience is addressed. It would perhaps be more prudent to revise
+RQ3 to ask, “Does experience mitigate performance declines?”
+We agree with the reviewer that it is more prudent not to generalize. Thus, we modified the RQ3
+question as suggested.
+iewer 3
+1. As I read this manuscript, it appears that the authors are implying that the results from
+this study are consistent with other team-based activities. The authors cite similar
+research related to StackExchange, Twitter, among others. However, it is not clear in the
+introduction and throughout the manuscript the types of ad hoc, team-based, repetitive
+tasks that the authors are referring to. I would caution the authors about trying to over-
+generalize the results, especially given the nature of the research questions.
+For example, in the first paragraph of the introduction, the authors begin by identify the
+need for teams. The second sentence mentions ad hoc teams. The remainder of the
+paragraph discusses the benefits of teams. However, these are benefits of teams, in
+general, and not necessarily ad hoc teams. Given this is a manuscript related to ad hoc
+teams, then it would be more appropriate to discuss the benefits of ad hoc teams (as
+opposed to teams in general).
+We worked on the Introduction and modified it accordingly to the reviewer’s comments. In
+particular, we focused on ad hoc teams and on our specific application: MOBA games. We
+reordered some of the paragraphs and added citations related to performance and benefits in this
+type of teams.
+2. Then, the first paragraph on p. 2 discusses how individuals’ performance in teams (and
+team performance) can evolve over time. Lines 8-9 state “to assemble effective teams, we
+must first understand how individual and team performance change over the course of
+consecutive tasks.” It’s not clear from this statement if the goal is understanding how to
+assemble ad hoc teams (which seems appropriate given the scope of this study). Also, is
+the goal to understand how to assemble ad hoc teams in a certain type of environment
+(e.g., gaming, crowdsourcing, organizational)? The statement on p. 2 is quite broad, and
+the scope of the application of this research is not clear. I am a strong advocate that we
+can learn a lot from a gaming context and apply these lessons learned in other contexts;
+however, it needs to be clear to what contexts this research would apply.
+The primary scope of the paper is to investigate individual performance in team-based online
+games. However, the analysis we conducted shed light on particular mechanisms and features
+that can be leveraged to assemble effective teams. We worked on the Introduction to make the
+scope of the work and in particular the application on online games clear.
+3. As a minor point, there is some content that seems redundant. The mention of
+performance deterioration on Reddit, Stack Exchange, and Twitter is mentioned on p 2 and
+p. 6 in a very similar way. This discussion about these related studies seems to be more
+applicable to include in the related work section as a means to demonstrate what is known
+and what is not known as it relates to these topics.
+We think that the relation with performance deterioration in other context is an important factor to
+highlight, not only because in the present paper we found similar patterns in individual
+performance, but also because we showed that similar mechanisms affect team performance. We
+agree about the redundancy; thus, we modified the paragraph in the Introduction and moved the
+other paragraph in the Related Work section to highlight similarities and differences of our
+findings with these previous works.
+4. In explaining the Results for RQ1 (p. 5), it is not immediately clear if this is data across
+sessions over time. What is the timeframe for “long term performance” in this study? How
+many matches and over what span of time? Some descriptive statistics could be useful to
+better explain this analysis.
+To answer RQ1 we considered the overall histories of players in our dataset. We thus define the
+long-term performance as the performance that players achieve (in terms of both fraction of wins
+and KDA ration) over their entire match history. We have descriptive statistics about the number
+of matches per player, number of session per player, etc. in Tab.1. To avoid confusion, we added
+a definition for long-term performance in the Result Section and modify Section 2.(b) in which we
+erroneously mentioned RQ1.
+5. I struggled with understanding the results for RQ4 on pp. 8-10. I recognize this is in part
+with my unfamiliarity with the specific methods used in this study. I’m not sure how
+familiar all readers are with these techniques. If there is a possibility that readers of this
+study are not familiar with these methods, then more explanation is needed regarding how
+to interpret the results.
+To make the results easier to understand to readers that are not familiar with the techniques used
+in the manuscript, we added a brief definition for each of the 6 measures we used to evaluate our
+models on the prediction tasks. Thanks for this valuable suggestion.
+6. In the discussion of Related Work (in Section 4), some of the content does not seem
+particularly related as it is described. For example, is Marrone’s review of team boundary
+spanning relevant given these are ad hoc teams? I was also expecting in this section to
+see not just a summary of studies that are similar (e.g., Huang et al.’s study of Halo
+players), but also how this prior research relates to the current study and how the results
+of this study inform the related research in this area. It is most helpful when the
+discussion of related research positions how the current study is related to what is
+already known within a specific area and informs what is not known within a given
+domain.
+We revised our Related Work section and removed Marrone’s review. We also added one last
+paragraph of discussion in each subsection (already present in subsection a) regarding how our
+work relate to the previous research in the different areas we identified: performance,
+engagement, and deterioration.
+7. It is also important to ensure that the conclusion does not overgeneralize the results. The
+authors need to avoid overstating how the results relate to other contexts unless there is a
+specific reason to do so.
+We changed the sentence in the Conclusion by mentioning the related results on performance
+deterioration. We however kept one of the final paragraphs in which we stress that we did not
+investigate the origins of depletion.
+Society Open

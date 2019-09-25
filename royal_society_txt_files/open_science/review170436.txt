@@ -1,0 +1,855 @@
+Accelerating adaptive inverse distance weighting
+interpolation algorithm on a graphics processing unit
+Gang Mei, Liangliang Xu and Nengxiong Xu
+Article citation details
+R. Soc. open sci. 4: 170436.
+http://dx.doi.org/10.1098/rsos.170436
+Review timeline
+Original submission: 30 April 2017 Note: Reports are unedited and appear as
+Revised submission: 23 July 2017 submitted by the referee. The review history
+Final acceptance: 21 August 2017 appears in chronological order.
+Review History
+label_version_1
+RSOS-170436.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2017 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+The paper reports using GPU to speed up AIDW interpolation. The research is interesting
+especially that GPU is become so popular and AIDW so too. Would suggest a few revisions
+before acceptance:
+1. The introduction and review should include proper citations, e.g., in the introduction,
+statement of the interpolation methods should be cited.
+2. How the memory arrangement would impact the results?
+3. Would a different GPU make a difference? e.g., bigger cache on GPU?
+4. When dividing data into tiles, would the results be the same, i.e., do we need buffer?
+5. The results section on comparing AIDW to other methods on GPU is more like a review piece
+and should not be included as results of this study.
+6. The following book has a comprehensive GPU and GIS process, and may be helpful in
+addressing these questions.
+Shi, X., Kindratenko, V. and Yang, C., 2013. Modern accelerator technologies for geographic
+information science. In Modern Accelerator Technologies for Geographic Information Science
+(pp. 3-6). Springer US.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+This paper presents research work on designing and implementing a parallel AIDW interpolation
+algorithm on GPU. The authors make some combinations of conditions, including GPU-
+accelerated mode (the naive version and the tiled version), data layouts (SoA and AoaS), and
+precision (single precsion and double precision). The experimental results show that the tiled
+3
+version using the layout SoA on single precision is recommended for solving the parallel AIDW
+problem. The research topic is interesting. However, the paper still need some improvement.
+(1) the authors must clarify the research problem more clearly. Is it necessary, urgent, serious or
+significant? What is the main point of this problem? What causes the problem?
+(2) the authors should propose and explain the solution also in the theoretical view. Do they
+design such a solution based on the data conditions, algorithm, and computing architecture?
+(3) the experiments can also be strengthened. such as using different versions of GPU.
+(4) pay attention to some typos, such as AoS and SoA?
+(5) please cite some more related references, such as "Parallel viewshed analysis on GPU using
+CUDA".
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Reject
+Comments to the Author(s)
+label_comment_3
+This paper proposes and implements a parallel adaptive IDW interpolation algorithm by utilizing
+GPU. Comments and suggestions to the authors:
+1) Why SoA is better than AoaS? I don’t agree that “the SoA layout can generally make full
+use of the memory bandwidth due to no data interleaving”. The data access of IDW interpolation
+are usually conducted point by point.
+2) From the NVidia website, the processing power of GT 730M between single precision
+and double precision is about 24:1. In this paper, “on single precision, the speedup is about 100 ~
+400”, and “on double precision, the speedup is only about 8”. What’s the reasons for the ratio
+difference? Why the speedup of single precision fluctuate too much? However, single precision is
+not enough for scientific computation, e.g. Kriging Interpolation.
+3) AIDW need to carry out k-nearest neighbor search all the time. How does the k-nearest
+neighbor search on the tile edge for the tiled method?
+4) In abstract, “the Structure of Arrays (SoA)” should be AoS
+5) All of the abbreviations, when mentioned for the first time, should be spelled out, e.g the
+tiled version and the CDP version, in P3L53.
+4
+label_end_comment
+Decision letter (RSOS-170436)
+14-Jun-2017
+Dear Professor Mei,
+The editors assigned to your paper ("Accelerating Adaptive IDW Interpolation Algorithm on a
+GPU") have now received comments from reviewers. We would like you to revise your paper in
+accordance with the referee and Associate Editor suggestions which can be found below (not
+including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 07-Jul-2017). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+5
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-170436
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+on behalf of Marta Kwiatkowska
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor's comments:
+Comments to the Author:
+label_comment_4
+Please revise the manuscript in line with the referees' recommendations.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_5
+The paper reports using GPU to speed up AIDW interpolation. The research is interesting
+especially that GPU is become so popular and AIDW so too. Would suggest a few revisions
+before acceptance:
+6
+1. The introduction and review should include proper citations, e.g., in the introduction,
+statement of the interpolation methods should be cited.
+2. How the memory arrangement would impact the results?
+3. Would a different GPU make a difference? e.g., bigger cache on GPU?
+4. When dividing data into tiles, would the results be the same, i.e., do we need buffer?
+5. The results section on comparing AIDW to other methods on GPU is more like a review piece
+and should not be included as results of this study.
+6. The following book has a comprehensive GPU and GIS process, and may be helpful in
+addressing these questions.
+Shi, X., Kindratenko, V. and Yang, C., 2013. Modern accelerator technologies for geographic
+information science. In Modern Accelerator Technologies for Geographic Information Science
+(pp. 3-6). Springer US.
+Reviewer: 2
+Comments to the Author(s)
+label_comment_6
+This paper presents research work on designing and implementing a parallel AIDW interpolation
+algorithm on GPU. The authors make some combinations of conditions, including GPU-
+accelerated mode (the naive version and the tiled version), data layouts (SoA and AoaS), and
+precision (single precsion and double precision). The experimental results show that the tiled
+version using the layout SoA on single precision is recommended for solving the parallel AIDW
+problem. The research topic is interesting. However, the paper still need some improvement.
+(1) the authors must clarify the research problem more clearly. Is it necessary, urgent, serious or
+significant? What is the main point of this problem? What causes the problem?
+(2) the authors should propose and explain the solution also in the theoretical view. Do they
+design such a solution based on the data conditions, algorithm, and computing architecture?
+(3) the experiments can also be strengthened. such as using different versions of GPU.
+(4) pay attention to some typos, such as AoS and SoA?
+(5) please cite some more related references, such as "Parallel viewshed analysis on GPU using
+CUDA".
+Reviewer: 3
+Comments to the Author(s)
+label_comment_7
+This paper proposes and implements a parallel adaptive IDW interpolation algorithm by utilizing
+GPU. Comments and suggestions to the authors:
+1) Why SoA is better than AoaS? I don’t agree that “the SoA layout can generally make full
+use of the memory bandwidth due to no data interleaving”. The data access of IDW interpolation
+are usually conducted point by point.
+2) From the NVidia website, the processing power of GT 730M between single precision
+and double precision is about 24:1. In this paper, “on single precision, the speedup is about 100 ~
+400”, and “on double precision, the speedup is only about 8”. What’s the reasons for the ratio
+difference? Why the speedup of single precision fluctuate too much? However, single precision is
+not enough for scientific computation, e.g. Kriging Interpolation.
+3) AIDW need to carry out k-nearest neighbor search all the time. How does the k-nearest
+neighbor search on the tile edge for the tiled method?
+4) In abstract, “the Structure of Arrays (SoA)” should be AoS
+5) All of the abbreviations, when mentioned for the first time, should be spelled out, e.g the
+tiled version and the CDP version, in P3L53.
+7
+Author's Response to Decision Letter for (RSOS-170436)
+See Appendix A.
+label_version_2
+RSOS-170436.R1 (Revision)
+label_author_4
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_8
+All my concerns are addressed properly.
+label_author_5
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+8
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_5
+Accept as is
+Comments to the Author(s)
+label_comment_9
+Polish the writing carefully.
+label_author_6
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_6
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_10
+Is it possible to share your proposed GPU-accelerated AIDW algorithm in an open-source
+repository, e.g. Github? I think code open-source would greatly support your paper
+contributions.
+label_end_comment
+Decision letter (RSOS-170436.R1)
+21-Aug-2017
+Dear Professor Mei,
+I am pleased to inform you that your manuscript entitled "Accelerating Adaptive IDW
+Interpolation Algorithm on a GPU" is now accepted for publication in Royal Society Open
+Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+9
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Alice Power
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Reviewer(s)' Comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_11
+Polish the writing carefully.
+Reviewer: 1
+Comments to the Author(s)
+label_comment_12
+all my concerns are addressed properly.
+Reviewer: 3
+Comments to the Author(s)
+label_comment_13
+Is it possible to share your proposed GPU-accelerated AIDW algorithm in an open-source
+repository, e.g. Github? I think code open-source would greatly support your paper
+contributions.
+Appendix A
+Cover Letter for Revised Submission
+uly 23, 2017
+Dear Editor and Reviewer,
+We would like to submit our research manuscript entitled “Accelerating Adaptive IDW
+nterpolation Algorithm on a GPU” for your consideration for publication in the journal
+Royal Society Open Science.
+We have made a point-by-point response to the reviewers’ comments and suggestions,
+ncluding a detailed description of any requested or suggested revisions.
+We have also carefully checked and corrected the writing format and errors to make our
+revised manuscript conform to the journal style.
+All the modifications and explanations in this revised version are listed in details in the
+ollowing “Responses to Reviewers' Comments”.
+We would deeply appreciate your consideration and reviewers’ helpful comments and
+suggestions.
+Yours Sincerely,
+Gang Mei, Ph.D
+Nengxiong Xu, Ph.D
+School of Engineering and Technology, China University of Geosciences, Beijing, China
+Email: gang.mei@cugb.edu.cn
+Responses to Reviewers' Comments
+Gang Mei
+China University of Geosciences, Beijing, China
+gang.mei@cugb.edu.cn
+Acknowledgement The authors are grateful to the anonymous reviewers for a careful checking of
+he details and for helpful comments that improved this paper.
+Responses to Reviewer #1:
+Comments to the Author(s)
+label_comment_14
+The paper reports using GPU to speed up AIDW interpolation. The research is interesting
+especially that GPU is become so popular and AIDW so too. Would suggest a few revisions
+before acceptance:
+1. The introduction and review should include proper citations, e.g., in the introduction,
+statement of the interpolation methods should be cited.
+2. How the memory arrangement would impact the results?
+3. Would a different GPU make a difference? e.g., bigger cache on GPU?
+4. When dividing data into tiles, would the results be the same, i.e., do we need buffer?
+5. The results section on comparing AIDW to other methods on GPU is more like a review
+piece and should not be included as results of this study.
+6. The following book has a comprehensive GPU and GIS process, and may be helpful in
+addressing these questions.
+Shi, X., Kindratenko, V. and Yang, C., 2013. Modern accelerator technologies for
+geographic information science. In Modern Accelerator Technologies for Geographic
+nformation Science (pp. 3-6). Springer US.
+----------------------------------------------------------------------------------------------------------------
+Comment 1:
+1. The introduction and review should include proper citations, e.g., in the introduction,
+statement of the interpolation methods should be cited.
+Response 1:
+First of all, thank you so much for reviewing our manuscript!
+In the section of Introduction, relevant references for the spatial interpolation algorithms
+such as IDW, AIDW, Kriging, and DSI have been cited. In addition, some related work on the
+parallel spatial interpolation algorithms has also been cited.
+Comment 2:
+2. How the memory arrangement would impact the results?
+Response 2:
+The following research work (Peng, Y.H., et al., 2016) gives an excellent explanation to
+he above question. So, here we directly present the relevant contents as follows.
+Peng, Y.H., et al., Static Cost Estimation for Data Layout Selection on GPUs. Proceedings
+of Pmbs 2016: 7th International Workshop on Performance Modeling, Benchmarking and
+Simulation of High Performance Computing Systems, 2016: p. 76-86.
+Available from: https://doi.org/10.1109/PMBS.2016.13
+---------------------------------------------------------------------------------------------------------------
+The following content is directly obtained from the work (Peng, Y.H., et al., 2016).
+Currently, the GPU plays an important role in the world of parallel computing. Compared
+o multi-core CPUs, GPUs have a larger number of computational cores available and are able
+o better handle heavy computational tasks. Unlike on the CPU, memory transactions are
+performed at the granularity of warps on the GPU, where every warp consists of a set of
+adjacent threads. If the threads inside a warp are accessing nearby memory locations, then the
+memory requests from multiple threads may be satisfiable by a single memory transaction.
+The technique of combining memory accesses in adjacent threads into fewer memory
+ransactions is called memory coalescing [1]. Thus, compared to the CPU, a poor memory
+access pattern can lead to greater performance loss on the GPU.
+The data layout of an application refers to the manner in which data is stored and
+organized. Due to the high global memory access latency relative to the latency of arithmetic
+operations, the choice of data layout can significantly affect the efficiency of execution on the
+GPU. Moreover, as a result of the unique architectural features of the GPU, the best data
+ayout on the GPU is usually different from the best data layout on the CPU. For instance, in
+old GPU models before the L1 and L2 cache were introduced, Structof-Array (SoA) would
+usually be preferred since it would achieve better coalescing of memory access. In contrast,
+on the CPU, using Array-of-Struct (AoS) would be more efficient in general, because using
+AoS would encourage spatial locality. However, modern GPU models have enabled on-chip
+L1 cache and off-chip L2 cache. For example, the Fermi GPU has 64KB configurable shared
+memory and L1 cache, as well as 768KB unified L2 cache [2]. Later models like Kepler and
+Maxwell further enlarge the size of the L1 and L2 cache [3] [4]. The GPU L1 and L2 cache
+brought back the opportunity of cache reuse, which means merging fields stored in discrete
+arrays in SoA into a single AoS might lead to better performance. As a result, the best data
+ayout might be represented in the form of Struct-of-Arrayof-Struct (SoAoS), a hybridization
+of AoS and SoA.
+Reference:
+[1] Jack W Davidson and Sanjay Jinturkar. Memory access coalescing: a technique for
+eliminating redundant memory accesses. In ACM SIGPLAN Notices, volume 29, pages 186–
+195. ACM, 1994.
+[2] C Nvidia. Nvidia’s next generation cuda compute architecture: Fermi. Comput. Syst,
+26:63–72, 2009.
+[3] C Nvidia. Nvidias next generation cuda compute architecture: Kepler gk110. Technical
+eport, Technical report, Technical report, 2012.[28]< http://www. top500. org, 2012.
+[4] Maxwell tuning guide :: CUDA toolkit documentation.
+http://docs.nvidia.com/cuda/maxwell-tuning-guide/.
+---------------------------------------------------------------------------------------------------------------
+Comment 3:
+3. Would a different GPU make a difference? e.g., bigger cache on GPU?
+Response 3:
+Yes, a different GPU probably makes a difference. Because the impact of the data layouts
+on the computational efficiency is strongly determined by the architecture of the GPU, for
+example, the different generations of GPUs.
+As suggested by the reviewers, we have conducted additional experimental results on
+another two GPUs, i.e., Quadro M5000 and Tesla K40c. So, in the Section of Results, the
+experimental tests are carried out on three different GPUs.
+The specifications of the adopted GPUs are listed as follows. Moreover, this table is also
+presented in the Results section.
+Table 1 Specifications of the adopted three platforms for conducting the experimental tests.
+Specifications PC NO.1 PC NO.2 PC NO.3
+Intel(R) Core(TM) i7- Intel(R) Xeon(R) E5- Intel(R) Xeon(R) E5-
+CPU
+4700MQ 2650 v3 2680 v2
+CPU Frequency 2.40 GHz 2.30 GHz 2.80 GHz
+CPU RAM 4 GB 144 GB 96 GB
+CPU Core 8 40 40
+NVIDIA GeForce GT
+GPU NVIDIA Quadro M5000 NVIDIA Tesla k40c
+730M
+GPU Global
+1 GB 8 GB 12 GB
+Memory
+GPU Core 384 2048 2880
+OS Windows 7 Professional Windows 7 Professional Windows 7 Professional
+Compiler Visual Studio 2010 Visual Studio 2010 Visual Studio 2010
+CUDA Version v7.0 v7.0 v7.0
+Comment 4:
+4. When dividing data into tiles, would the results be the same, i.e., do we need buffer?
+Response 4:
+Yes, the results definitely would be the same when dividing the data into tiles. The reason
+and motivation why to divide data into tiles are that: the shared memory is inherently quite
+aster than the global memory on the GPU. To improve the computational efficiency, it is
+preferred to replace the use of global memory with the use of shared memory.
+However, the size of the input and output data is usually quite large, which is originally
+stored in the CPU memory and then transferred into the GPU global memory. To replace the
+global memory access with shared memory access, it is better to further transfer the large size
+of data on the GPU global memory to the GPU shared memory.
+But, the size of the shared memory per block is quite limited. The data on global memory
+cannot directly mapped into the shared memory. Thus, for a big size of data, it is needed to
+irst divide the data on the global memory into a set of tiles, and then transfer each tile of data
+nto the shared memory. After the use of each tile of data, the next tile would be subsequently
+ransferred until all the data is used. In this procedure, the buffer is generally needed.
+Comment 5:
+5. The results section on comparing AIDW to other methods on GPU is more like a review
+piece and should not be included as results of this study.
+Response 5:
+First, thank you so much for your nice suggestion. The relevant content has been removed.
+Comment 6:
+6. The following book has a comprehensive GPU and GIS process, and may be helpful in
+addressing these questions.
+Shi, X., Kindratenko, V. and Yang, C., 2013. Modern accelerator technologies for
+geographic information science. In Modern Accelerator Technologies for Geographic
+nformation Science (pp. 3-6). Springer US.
+Response 6:
+Thank you so much for providing the information of this quite nice book. I have read the
+chapter and cited in our work. This work is also helpful to me to develop other types of
+parallel spatial interpolation algorithms. Thank you so much again!
+Responses to Reviewer #2:
+Comments to the Author(s)
+label_comment_15
+This paper presents research work on designing and implementing a parallel AIDW
+nterpolation algorithm on GPU. The authors make some combinations of conditions,
+ncluding GPU-accelerated mode (the naive version and the tiled version), data layouts (SoA
+and AoaS), and precision (single precision and double precision). The experimental results
+show that the tiled version using the layout SoA on single precision is recommended for
+solving the parallel AIDW problem. The research topic is interesting. However, the paper still
+need some improvement.
+(1) the authors must clarify the research problem more clearly. Is it necessary, urgent,
+serious or significant? What is the main point of this problem? What causes the problem?
+(2) the authors should propose and explain the solution also in the theoretical view. Do
+hey design such a solution based on the data conditions, algorithm, and computing
+architecture?
+(3) the experiments can also be strengthened. such as using different versions of GPU.
+(4) pay attention to some typos, such as AoS and SoA?
+(5) please cite some more related references, such as "Parallel viewshed analysis on GPU
+using CUDA".
+----------------------------------------------------------------------------------------------------------------
+Comment 1:
+(1) the authors must clarify the research problem more clearly. Is it necessary, urgent,
+serious or significant? What is the main point of this problem? What causes the problem?
+Response 1:
+First of all, thank you so much for reviewing our manuscript!
+We have added the relevant content in the section of Introduction. More specifically, we
+give the explanations to the above questions in the last 4 paragraphs in Introduction section;
+please find the relevant paragraphs. To be able to review conveniently, here we present the
+screenshots of the related paragraphs as follows.
+Comment 2:
+(2) the authors should propose and explain the solution also in the theoretical view. Do
+hey design such a solution based on the data conditions, algorithm, and computing
+architecture?
+Response 2:
+Yes, we have described our solution in the section of “3. GPU-accelerated AIDW
+nterpolation Algorithm”. Section 3 introduces considerations and strategies for accelerating
+he AIDW interpolation and details of the GPU implementations.
+Comment 3:
+(3) the experiments can also be strengthened. such as using different versions of GPU.
+Response 3:
+Thank you so much for this quite helpful comment! As suggested by the reviewers, we
+have conducted additional experimental results on another two GPUs, i.e., Quadro M5000 and
+Tesla K40c. So, in the Section of Results, the experimental tests are carried out on three
+different GPUs.
+The specifications of the adopted three GPUs are listed as follows. Moreover, this table is
+also presented in the Results section.
+The experimental results conducted on three different GPUs are clearly listed in Tables 2 ~
+7, and analyzed in Figure 4 ~ 8. To be convenient for your reviewing, here we also present the
+experimental results as follows.
+Table 1 Specifications of the adopted three platforms for conducting the experimental tests.
+Specifications PC NO.1 PC NO.2 PC NO.3
+Intel(R) Core(TM) i7- Intel(R) Xeon(R) E5- Intel(R) Xeon(R) E5-
+CPU
+4700MQ 2650 v3 2680 v2
+CPU Frequency 2.40 GHz 2.30 GHz 2.80 GHz
+CPU RAM 4 GB 144 GB 96 GB
+CPU Core 8 40 40
+NVIDIA GeForce GT
+GPU NVIDIA Quadro M5000 NVIDIA Tesla k40c
+730M
+GPU Global
+1 GB 8 GB 12 GB
+Memory
+GPU Core 384 2048 2880
+OS Windows 7 Professional Windows 7 Professional Windows 7 Professional
+Compiler Visual Studio 2010 Visual Studio 2010 Visual Studio 2010
+CUDA Version v7.0 v7.0 v7.0
+Table 2 Execution time (/ms) of CPU and GPU implementations of the AIDW method on single
+precision on the PC equipped with NVIDIA GPU GeForce GT730M.
+Version Data Data Size (1K = 1024)
+Layout 10K 50K 100K 500K 1000K
+CPU - 6791 168234 673806 16852984 67471402
+GPU Naive SoA 65 863 2884 63599 250574
+AoaS 66 875 2933 64593 254488
+GPU Tiled SoA 61 714 2242 43843 168189
+AoaS 62 722 2276 44891 172605
+Table 3 Execution time (/ms) of CPU and GPU implementations of the AIDW method on double
+precision on the PC equipped with NVIDIA GPU GeForce GT730M.
+Version Data Data Size (1K = 1024)
+Layout 10K 50K 100K 500K 1000K
+CPU - 6791 168234 673806 16852984 67471402
+GPU Naive SoA 924 20761 82400 2047590 8184090
+AoaS 929 20821 82524 2050269 8199389
+GPU Tiled SoA 915 20521 81306 2017650 8062332
+AoaS 916 20505 81218 2016367 8057219
+Table 4 Execution time (/ms) of CPU and GPU implementations of the AIDW method on single
+precision on the PC equipped with NVIDIA GPU Quadro M5000.
+Version Data Data Size (1K = 1024)
+Layout 10K 50K 100K 500K 1000K
+CPU - 5897 141582 576228 14224126 57207987
+GPU Naive SoA 24 325 917 20307 93556
+AoaS 21 269 867 19685 87992
+GPU Tiled SoA 16 258 859 19225 79692
+AoaS 16 257 833 18640 75646
+Table 5 Execution time (/ms) of CPU and GPU implementations of the AIDW method on double
+precision on the PC equipped with NVIDIA GPU Quadro M5000.
+Version Data Data Size (1K = 1024)
+Layout 10K 50K 100K 500K 1000K
+CPU - 5897 141582 576228 14224126 57207987
+GPU Naive SoA 305 5121 17626 406338 1628726
+AoaS 306 5127 17635 404180 1643925
+GPU Tiled SoA 263 5038 17589 402488 1626039
+AoaS 263 5040 17587 401551 1616581
+Table 6 Execution time (/ms) of CPU and GPU implementations of the AIDW method on single
+precision on the PC equipped with NVIDIA GPU Tesla K40c.
+Version Data Data Size (1K = 1024)
+Layout 10K 50K 100K 500K 1000K
+CPU - 5195 118576 475270 11793605 47368231
+GPU Naive SoA 39 406 1527 31166 123601
+AoaS 33 356 1236 27314 107927
+GPU Tiled SoA 30 372 1307 28835 112968
+AoaS 30 326 1216 24518 97235
+Table 7 Execution time (/ms) of CPU and GPU implementations of the AIDW method on double
+precision on the PC equipped with NVIDIA GPU Tesla K40c.
+Version Data Data Size (1K = 1024)
+Layout 10K 50K 100K 500K 1000K
+CPU - 5195 118576 475270 11793605 47368231
+GPU Naive SoA 56 934 3156 73818 292422
+AoaS 56 936 3166 74268 293565
+GPU Tiled SoA 48 789 2649 61640 242046
+AoaS 48 786 2639 61416 240968
+Comment 4:
+(4) pay attention to some typos, such as AoS and SoA?
+Response 4:
+When designing and implementing the parallel AIDW algorithm on the GPU, we have
+considered the data layouts SoA, AoS, and AoaS.
+Typically, there are two major choices of the data layout: the Array of Structures (AoS)
+and the Structure of Arrays (SoA) [8]; another type of data layout, Array of aligned Structures
+AoaS) [29], can be very easily generated by adding the forced alignment based upon the
+ayout AoS. In fact, the data layout AoaS can be considered as an improved variant of the
+ayout AoS; see these three layouts, i.e., SoA, AoS, and AoaS in Figure 2.
+In practice, it is not always obvious which data layout will achieve better performance for a
+specific GPU application. A common solution is to implement a specific application using
+different data layouts separately and then compare the performance.
+As mentioned above, the data layout AoaS can be considered as an improved variant of the
+ayout AoS; and it has been reported that: the data layout AoaS can achieve better efficiency
+han that by the layout AoS [29].
+So, in this work, we have specifically evaluated the performance impact of the two data
+ayouts, SoA and AoaS.
+struct Pt { struct Pt {
+float x[N]; float x;
+float y[N]; float y;
+float z[N]; float z;
+}; };
+struct Pt myPts; struct Pt myPts[N];
+(a) SoA (b) AoS
+struct
+__align__(16) Pt
+{
+float x, y, z;
+/* plus hidden 32bit
+padding element */
+};
+struct Pt myPts[N];
+(c) AoaS
+Figure 2. Data Layouts SoA, AoS, and AoaS
+Comment 5:
+(5) please cite some more related references, such as "Parallel viewshed analysis on GPU
+using CUDA".
+Response 5:
+First, thank you so much for this quite nice suggestion! We have cited another 9 related
+eferences, such as "Parallel viewshed analysis on GPU using CUDA". Please see the newly
+added two paragraphs in Introduction section. To be easy for your reviewing, the screenshot
+of the newly added paragraphs is presented as follows:
+In addition, the newly cited related references are listed as follows:
+Cauchi-Saunders, A. J. and I. J. Lewis (2015). "GPU enabled XDraw viewshed analysis." Journal
+of Parallel and Distributed Computing 84: 87-93.
+Fang, C., C. J. Yang, Z. Chen, X. J. Yao and H. T. Guo (2011). "Parallel algorithm for viewshed
+analysis on a modern GPU." International Journal of Digital Earth 4(6): 471-486.
+Osterman, A., L. Benedicic and P. Ritosa (2014). "An IO-efficient parallel implementation of an
+R2 viewshed algorithm for large terrain maps on a CUDA GPU." International Journal of
+Geographical Information Science 28(11): 2304-2327.
+Stojanovic, N. and D. Stojanovic (2013). Performance Improvement of Viewshed Analysis Using
+GPU. New York, Ieee.
+Stojanovic, N. and D. Stojanovic (2014). "High Performance Processing and Analysis of
+Geospatial Data Using CUDA on GPU." Advances in Electrical and Computer Engineering 14(4):
+109-114.
+Strnad, D. (2011). "Parallel terrain visibility calculation on the graphics processing unit."
+Concurrency and Computation-Practice & Experience 23(18): 2452-2462.
+Wang, F., G. Wang, D. J. Pan, Y. Liu, L. Z. Yang and H. B. Wang (2015). "A parallel algorithm
+or viewshed analysis in three-dimensional Digital Earth." Computers & Geosciences 75: 57-65.
+Xia, Y. J., L. Kuang and X. M. Li (2011). "Accelerating geospatial analysis on GPUs using
+CUDA." Journal of Zhejiang University-Science C-Computers & Electronics 12(12): 990-999.
+Zhao, Y. L., A. Padmanabhan and S. W. Wang (2013). "A parallel computing approach to
+viewshed analysis of large terrain data using graphics processing units." International Journal of
+Geographical Information Science 27(2): 363-384.
+Responses to Reviewer #3:
+Comments to the Author(s)
+label_comment_16
+This paper proposes and implements a parallel adaptive IDW interpolation algorithm by
+utilizing GPU. Comments and suggestions to the authors:
+1) Why SoA is better than AoaS? I don’t agree that “the SoA layout can generally make
+ull use of the memory bandwidth due to no data interleaving”. The data access of IDW
+nterpolation are usually conducted point by point.
+2) From the NVidia website, the processing power of GT 730M between single precision
+and double precision is about 24:1. In this paper, “on single precision, the speedup is about
+100 ~ 400”, and “on double precision, the speedup is only about 8”. What’s the reasons for
+he ratio difference? Why the speedup of single precision fluctuate too much? However,
+single precision is not enough for scientific computation, e.g. Kriging Interpolation.
+3) AIDW need to carry out k-nearest neighbor search all the time. How does the k-nearest
+neighbor search on the tile edge for the tiled method?
+4) In abstract, “the Structure of Arrays (SoA)” should be AoS
+5) All of the abbreviations, when mentioned for the first time, should be spelled out, e.g
+he tiled version and the CDP version, in P3L53.
+----------------------------------------------------------------------------------------------------------------
+Comment 1:
+1) Why SoA is better than AoaS? I don’t agree that “the SoA layout can generally make
+ull use of the memory bandwidth due to no data interleaving”. The data access of IDW
+nterpolation are usually conducted point by point.
+Response 1:
+First, thank you so much for reviewing our manuscript. For the above problem. We would
+ike to give a little detailed explanation. The explanation is also presented in “5. Discussion,
+a) Impact of Data Layout on the Computational Efficiency”; see the screenshot.
+In this work, we have implemented the naive version and the tiled version with the use of
+wo data layouts SoA and AoaS. In our experimental tests, we have found that: on single
+precision, the SoA data layout can achieve a little better efficiency than the AoaS on the GPU
+GT730M, while the data layout AoaS is slightly better than the SoA on both of GPUs M5000
+and K40c. However, there is no significant difference in the efficiency when using the above
+wo data layouts on the adopted three GPUs; see Figure 7.
+Each type of data layouts has its theoretical advantages. Theoretically, organizing data in
+SoA layout can generally make full use of the memory bandwidth due to no data interleaving
+8]. In addition, global memory accesses based upon the SoA layout are always coalesced. In
+contrast, when employing the layout AoaS, the data structure for representing multi-valued
+data such as a set of 3D points is forced to be aligned; see Figure 2. Operations using the
+aligned structure would require much fewer memory transactions when accessing global
+memory, and thus increase the overall efficiency performance [30].
+In practice, the impact of data layouts on the computational efficiency strongly depends on:
+1) the particular problem that needs to be solved; and (2) the GPUs used to deal with the
+arget problem.
+In this work, the experimental tests indicate that: on single precision, the SoA data layout
+can achieve a little better efficiency than the AoaS on the GPU GT730M, while the data
+ayout AoaS is slightly better than the SoA on both of GPUs M5000 and K40c. The reason for
+he above behavior is probably that: for the same specific application, the impact of data
+ayouts on the computational efficiency may differ on different GPUs.
+Although the two data layouts lead to different impacts on the computational efficiency,
+here is no significant difference in the efficiency when using the above two data layouts on
+he adopted three GPUs; see Figure 7. This is probably because that: the AIDW interpolation
+algorithm is quite suitable to be parallelized on the GPU, and the parallelization has been well
+mplemented. Therefore, the impact of different data layouts on the efficiency for a specific
+highly parallelized application would be not significant.
+As a summary, the impact of data layouts on the computational efficiency may differ on
+different GPUs. It also should be noted that: it is not always obvious which data layout will
+achieve better performance for a specific application.
+Comment 2:
+2) From the NVidia website, the processing power of GT 730M between single precision
+and double precision is about 24:1. In this paper, “on single precision, the speedup is about
+100 ~ 400”, and “on double precision, the speedup is only about 8”. What’s the reasons for
+he ratio difference? Why the speedup of single precision fluctuate too much? However,
+single precision is not enough for scientific computation, e.g. Kriging Interpolation.
+Response 2:
+In my opinion, the processing power of GT 730M between single precision and double
+precision is about 24:1 theoretically. In practice, the processing power of GT730M in double
+precision over the corresponding power in single precision would be quite different, i.e.,
+higher than 24:1, for example 30: 1 or even 40:1.
+This is because that: the processing power of the same GPU, for example, GT730M, is
+strongly dependent on the specific problem that is to be solved. More specifically, for a
+specific problem to be dealt with, the processing power of the same GPU strongly depends on
+he underlying algorithm and even the implementation of the algorithm.
+This is also the reason why there is a significant ratio difference.
+Single precision is enough for some of the scientific computations, for example, the
+geological modeling. This is because that in many applications in Geoscience, the obtained /
+nput data to be processed is not so accurate by itself. In this case, the requirement to be
+highly accurately using double precision is not needed; and the single precision in this case is
+enough.
+However, the double precision is needed to be preferred in most scientific computation.
+For example, in most of the numerical simulations, the double precision should be used to
+mprove the accuracy of the numerical results.
+But, it should be noted that on GPUs, the computations on double precision is inherently
+much slower than that on single precision. So, there would be a trade-off between the
+computational efficiency and the accuracy. The double precision should be preferred if high
+accuracy is required, while the single precision can be used to achieve high computational
+efficiency.
+When accelerating the IDW and AIDW algorithms on the GPU, single precision is enough.
+n the Kriging interpolation, it is needed to first form a coefficient matrix and then inverse the
+matrix. To make the coefficient matrix invertible, it is better to generate the matrix on double
+precision. In fact, in this procedure, the single precision can also be used, but it would
+probably make the coefficient matrix unable to inverse.
+In the year 2011, I wrote a book on the topic of geological modeling, including various
+spatial interpolation algorithm, for example, the IDW, DSI, Kriging. When I prepared the
+source code for the book, I also found the above-mentioned problem.
+In summary, in my opinion, the significant difference between the processing power of the
+same GPU on single precision and on double precision is reasonable.
+Comment 3:
+3) AIDW need to carry out k-nearest neighbor search all the time. How does the k-nearest
+neighbor search on the tile edge for the tiled method?
+Response 3:
+Yes, one of the key steps in the AIDW interpolation algorithm is to find k-nearest data
+points for each interpolated / prediction point. In the tiled version, the procedure of the kNN
+search is as follows.
+For each interpolated point, termed as ipt, we need to find the k nearest data points for the
+point ipt. For example, we can set k as 10. And of course, we can set k as other values, e.g.,
+20. Assume k = 10, now we need to find the nearest 10 data points for the prediction point ipt.
+The most straightforward method is to first calculate the distance between each data point
+and the prediction point ipt, and then sort all the distances ascending. After that, the 10
+nearest data points can be found.
+However, in the tiled method, all of the data points cannot be stored in the shared memory.
+t can probably only be stored in the global memory. To improve the computational efficacy,
+he shared memory needs to be exploited.
+So, we first divide the set of all input data points into several smaller sizes of data points.
+Each small set of the data points is in fact a “tile”, which can be stored in the shared memory.
+This procedure is referred to as “tiling”.
+We first find the 10 nearest data points in the first tile and record the corresponding points
+ndices and distances, and assume the first wave of 10 nearest data points as the required 10
+nearest points temporarily. Then, we map the second “tile” of data points from the global
+memory to the shared memory, calculate the distances, and update the current wave of 10
+nearest data points according to the distances calculated from the second tile of data points.
+After that, the 10 nearest data points first obtained from the first “tile” has been updated
+according to the distances calculated from the second tile of data points. Subsequently, we
+map the next tile of data points from the global memory to the shared memory, calculate the
+distances, and the re-update the current 10 nearest data points according to the distances. after
+ooping over all “tiles” of data points, the final 10 nearest data points can be found.
+Comment 4:
+4) In abstract, “the Structure of Arrays (SoA)” should be AoS
+Response 4:
+Thank you so much for your careful checking. We have corrected this error.
+Comment 5:
+5) All of the abbreviations, when mentioned for the first time, should be spelled out, e.g
+he tiled version and the CDP version, in P3L53.
+Response 5:
+Thank you so much for your careful reviewing and helpful comments. We have corrected
+he mentioned error and several similar ones. For example, the abbreviations of CPU, GPU,
+CUDA, and OpenCL when mentioned for the first time.
+----------------------------------------------------------------------------------------------------------------
+The authors are deeply grateful to the anonymous reviewers for helpful comments!
+Society Open

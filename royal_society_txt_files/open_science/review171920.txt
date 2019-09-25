@@ -1,0 +1,789 @@
+Evaluating prose style transfer with the Bible
+Keith Carlson, Allen Riddell and Daniel Rockmore
+Article citation details
+R. Soc. open sci. 5: 171920.
+http://dx.doi.org/10.1098/rsos.171920
+Review timeline
+Original submission: 15 November 2017 Note: Reports are unedited and appear as
+1st revised submission: 18 May 2018 submitted by the referee. The review history
+2nd revised submission: 26 September 2018 appears in chronological order.
+Final acceptance: 27 September 2018
+Review History
+label_version_1
+RSOS-171920.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Reports © 2018 The Reviewers; Decision Letters © 2018 The Reviewers and Editors;
+Responses © 2018 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Specific comments:
+Section 1.b
+Since this is a section on "contribution", the authors should make it clearer at this point that the
+system actually requires parallel data but between other pairs. For a reader who's not familiar
+with zero-shot translation, the language used ("has never seen a translation between the
+particular language pair") might be misunderstood as "no need for parallel data". This is
+particularly important given that there's recent work on unsupervised MT (i.e. where MT systems
+do not require parallel data whatsoever) just accepted to ICLR 2018 (3 papers on the topic) and
+this seems to be a promising direction on which the MT community is very likely to focus.
+Section 3.a
+The number (33.8 million pairings) is a bit confusing. Since there's an alignment of X sentences
+across all 32 books, does that mean there exists X=33.8million samples (after filtering) in each
+book? Or that's the combined number of pairs across all pairs (i.e. each book appearing 31 times
+to get all number of pairings) [NB: okay this is made clearer in Section 3.b, but it can still be made
+a bit clearer at this point.]
+Section 3.b
+" "ERV" and "KJ21" were identified qualitatively as good candidates and then confirmed to be
+much less similar than most versions ... " If those 2 candidates are much less similar than MOST
+versions, meaning not much less similar than ALL other possible pairs, a question is why didnt
+the authors use that specific pair between the 2 most dissimilar candidates? Also, why is that the
+authors did not run some automatic tests to directly figure out the two most dissimilar candidates
+(rather than qualitatively looking at pairs and THEN verifiying with BLEU). This seems sub-
+optimal to me.
+There's a stark contrast between the size of the training vs dev vs test sets. At the very least, 10
+million vs 200 would raise questions... If one were to adopt one of the standard splits (e.g., 80-10-
+10), we would be talking about say 8 million vs 1 million vs 1 million. I'm not sure if it's possible
+to have 1 million samples from one specific pair (since this is a restriction on how the authors
+want to have their training/testing done), but the size of the test set raises generalization
+concerns. I suggest increasing the size of the dev and test sets.
+I agree with the authors wanting to create a vocabulary that is more diverse and realistic, for
+which reason they sample words from other sources such as gutenberg.org and Wikipedia.
+However, for the purposes of a stylistic transfer task, the choice of these external sources does not
+seem adequate to me. Texts from Wikipedia, for instance, are going to have a "style" that is very
+different from a Bible version (even if that version is written in simple/modern English). Also,
+the fact that the authors sample words randomly from these sources also raises concerns as to
+whether some of these words are perhaps adding some noise to the learning in the case they [i.e.,
+the aforementioned "some of these words"] are themselves rare words in those sources. It seems
+to me more appropriate to have ordered words in those sources by frequency and then sampled
+from the top N frequent words. I suggest addressing these concerns.
+3
+Section 5.b:
+While I do understand why Moses was trained on 300k pairs, I cannot but note and find it highly
+problematic that two models are being compared while being trained on corpora that are orders
+of magnitude different in size. One way to partially address this would've been for the authors to
+provide results for their model being also trained on 300k pairs. This would've showed how the
+model would've performed had it been given only 300k samples.
+Section 5.c:
+In their qualitative analysis, the authors focus only on cases such as Me and My. It would be
+interesting to highlight as well other examples/patterns that are learned by the model.
+General comments:
+While the dataset is actually very suitable for this approach to style transfer since there are 33
+different "styles", the following is not evident: What are some other practical/useful scenarios
+where such system can benefit from a large number of stylistic pairs? Can you think of other
+examples of other corporas/case studies where your approach to style transfer would work well?
+While the authors refer to the use of an external dictionary in [10] as some kind of limitation (e.g.
+lines 127-128), the overall spirit of the work is not that different from [10] in that both works
+require parallel data, which is in my opinion, the biggest limitation of looking at style transfer
+from a machine translation perspective.
+I don't quite see how contributions (b) and (c) are really "two contributions". You're proposing to
+use an exisiting model from machine translation, namely the zero-shot MT system [11], which
+uses an encoder-decoder architecture. So the latter is not really a contribution. It's just the nature
+of the architrecture used in [11]. So by virtue of using the model in [11], your approach to style
+transfer ends up being an encoder-decoder approach. Besides, as the authors rightfully point out,
+[10] already uses an encoder-decoder architecture, so again, nothing novel in that respect.
+Even more, and to be very honest, I'm not sure to what extent I can agree that contribution (b) is
+actually a contribution. If anything, it's an incremental "contribution" by taking an existing model
+and applying it as is (with no extension of the model whatsoever) to a different problem that
+happens to be very similar in nature to the problem for which the model was presented in the
+first place.
+This paper would've been much more suitable as a resource paper in one of the NLP conferences
+where you introduce a nice corpus and present some case study on it (in this case style transfer).
+To me, it seems that the most interesting contribution of this paper is the data collection, a
+contribution that is also reduced by the fact that not all the corpus can be made available; while
+the style transfer aspect of the work is, as I mentioned before, a mere application of an existing
+system to a new problem, so at best an incremental contribution IMHO.
+Overall, I suggest rewriting the contributions to take these comments into consideration.
+If I were to give my honest opinion, I would've been not able to recommend the acceptance of this
+paper (with its current format/claims of contributions) to a major conference like NIPS or ACL.
+However, this publication venue is neither. So I would be willing to recommend acceptance if my
+questions/concerns/suggestions are addressed.
+Typos:
+lines 13-15 - sentence "The translations ... audience": there's some word missing in the first part of
+4
+the sentence (and other language generated a natural language system)
+line 22: the references are swapped -> The shakespeare dataset [9] ... Seq2Seq model [10].
+line 227: The Moses translation system [38] *that* is .... (alternatively: ... *and* serves ...)
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+In this paper, they consider a model that can translate text from one style to another. For example,
+from ‘casual’ to ‘formal’ text. It is important that such translations are well understood by the
+intended user. Further, a good model must preserve the meaning of the text.
+LSTM model with many layers is used for encoding and decoding. The encoder first applies a
+trainable embedding layer to project each word into a 512 dimensional vector to be passed to the
+LSTM. They also prepend all sentences with a tag. For example, if the style is 21st century King
+James Version then the tag is < KJ21>. The model is evaluated on 32 stylistically distinct versions
+of the Bible
+The paper is a little confusing. Here are my specific comments:
+1. Abstract, when you say translation it looks like you are talking about multiple languages. What
+is the application of such a model ?
+2. Pg. 4 line no 56 'never seen a translation' is very difficult to achieve
+3. Pg. 4 line no 68 It is difficult to believe that there is only one paper. Some comparison with
+transfer learning methods is needed
+4. Pg. 5 line no104 what do you mean by' other than the target language’
+5. Pg. 6 line no 152 what is the size of training data
+6. Pg. 7 line no 41 why is decoder initialized with encoder. Provide a reference.
+7. Why don’t you compare with other papers for ‘LSTM for text mining’? For example see
+‘Augmenting end-to-end dialog systems with commonsense knowledge’, AAAI 2018,
+5
+label_end_comment
+Decision letter (RSOS-171920.R0)
+23-Apr-2018
+Dear Mr Carlson,
+The editors assigned to your paper ("Zero-Shot Style Transfer in Text Using Recurrent Neural
+Networks") have now received comments from reviewers. We would like you to revise your
+paper in accordance with the referee and Associate Editor suggestions which can be found below
+(not including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 16-May-2018). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available, we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+6
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171920
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science will introduce article processing charges for all new
+submissions received from 1 January 2018. Charges will also apply to papers transferred to Royal
+Society Open Science from other Royal Society Publishing journals, as well as papers submitted
+as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is submitted and
+accepted for publication after 1 Jan 2018, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Jun Fu (Associate Editor) and Marta Kwiatkowska (Subject Editor)
+7
+openscience@royalsociety.org
+Associate Editor's comments (Professor Jun Fu):
+Associate Editor: 1
+Comments to the Author:
+label_comment_3
+Two reviews have been received. After careful review, both reviewers believed that this paper
+needed major revision. Comments mainly focus on two aspects: lack of novelty and confusion of
+crucial techniques. After my carefully reading, I concur with the reviewers and thus my
+recommendation is Major Revision. Authors should be carefully rewritten based on these
+comments.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+label_comment_4
+Specific comments:
+Section 1.b
+Since this is a section on "contribution", the authors should make it clearer at this point that the
+system actually requires parallel data but between other pairs. For a reader who's not familiar
+with zero-shot translation, the language used ("has never seen a translation between the
+particular language pair") might be misunderstood as "no need for parallel data". This is
+particularly important given that there's recent work on unsupervised MT (i.e. where MT systems
+do not require parallel data whatsoever) just accepted to ICLR 2018 (3 papers on the topic) and
+this seems to be a promising direction on which the MT community is very likely to focus.
+Section 3.a
+The number (33.8 million pairings) is a bit confusing. Since there's an alignment of X sentences
+across all 32 books, does that mean there exists X=33.8million samples (after filtering) in each
+book? Or that's the combined number of pairs across all pairs (i.e. each book appearing 31 times
+to get all number of pairings) [NB: okay this is made clearer in Section 3.b, but it can still be made
+a bit clearer at this point.]
+Section 3.b
+" "ERV" and "KJ21" were identified qualitatively as good candidates and then confirmed to be
+much less similar than most versions ... " If those 2 candidates are much less similar than MOST
+versions, meaning not much less similar than ALL other possible pairs, a question is why didnt
+the authors use that specific pair between the 2 most dissimilar candidates? Also, why is that the
+authors did not run some automatic tests to directly figure out the two most dissimilar candidates
+(rather than qualitatively looking at pairs and THEN verifiying with BLEU). This seems sub-
+optimal to me.
+There's a stark contrast between the size of the training vs dev vs test sets. At the very least, 10
+million vs 200 would raise questions... If one were to adopt one of the standard splits (e.g., 80-10-
+10), we would be talking about say 8 million vs 1 million vs 1 million. I'm not sure if it's possible
+to have 1 million samples from one specific pair (since this is a restriction on how the authors
+want to have their training/testing done), but the size of the test set raises generalization
+concerns. I suggest increasing the size of the dev and test sets.
+I agree with the authors wanting to create a vocabulary that is more diverse and realistic, for
+8
+which reason they sample words from other sources such as gutenberg.org and Wikipedia.
+However, for the purposes of a stylistic transfer task, the choice of these external sources does not
+seem adequate to me. Texts from Wikipedia, for instance, are going to have a "style" that is very
+different from a Bible version (even if that version is written in simple/modern English). Also,
+the fact that the authors sample words randomly from these sources also raises concerns as to
+whether some of these words are perhaps adding some noise to the learning in the case they [i.e.,
+the aforementioned "some of these words"] are themselves rare words in those sources. It seems
+to me more appropriate to have ordered words in those sources by frequency and then sampled
+from the top N frequent words. I suggest addressing these concerns.
+Section 5.b:
+While I do understand why Moses was trained on 300k pairs, I cannot but note and find it highly
+problematic that two models are being compared while being trained on corpora that are orders
+of magnitude different in size. One way to partially address this would've been for the authors to
+provide results for their model being also trained on 300k pairs. This would've showed how the
+model would've performed had it been given only 300k samples.
+Section 5.c:
+In their qualitative analysis, the authors focus only on cases such as Me and My. It would be
+interesting to highlight as well other examples/patterns that are learned by the model.
+General comments:
+While the dataset is actually very suitable for this approach to style transfer since there are 33
+different "styles", the following is not evident: What are some other practical/useful scenarios
+where such system can benefit from a large number of stylistic pairs? Can you think of other
+examples of other corporas/case studies where your approach to style transfer would work well?
+While the authors refer to the use of an external dictionary in [10] as some kind of limitation (e.g.
+lines 127-128), the overall spirit of the work is not that different from [10] in that both works
+require parallel data, which is in my opinion, the biggest limitation of looking at style transfer
+from a machine translation perspective.
+I don't quite see how contributions (b) and (c) are really "two contributions". You're proposing to
+use an exisiting model from machine translation, namely the zero-shot MT system [11], which
+uses an encoder-decoder architecture. So the latter is not really a contribution. It's just the nature
+of the architrecture used in [11]. So by virtue of using the model in [11], your approach to style
+transfer ends up being an encoder-decoder approach. Besides, as the authors rightfully point out,
+[10] already uses an encoder-decoder architecture, so again, nothing novel in that respect.
+Even more, and to be very honest, I'm not sure to what extent I can agree that contribution (b) is
+actually a contribution. If anything, it's an incremental "contribution" by taking an existing model
+and applying it as is (with no extension of the model whatsoever) to a different problem that
+happens to be very similar in nature to the problem for which the model was presented in the
+first place.
+This paper would've been much more suitable as a resource paper in one of the NLP conferences
+where you introduce a nice corpus and present some case study on it (in this case style transfer).
+To me, it seems that the most interesting contribution of this paper is the data collection, a
+contribution that is also reduced by the fact that not all the corpus can be made available; while
+the style transfer aspect of the work is, as I mentioned before, a mere application of an existing
+system to a new problem, so at best an incremental contribution IMHO.
+9
+Overall, I suggest rewriting the contributions to take these comments into consideration.
+If I were to give my honest opinion, I would've been not able to recommend the acceptance of this
+paper (with its current format/claims of contributions) to a major conference like NIPS or ACL.
+However, this publication venue is neither. So I would be willing to recommend acceptance if my
+questions/concerns/suggestions are addressed.
+Typos:
+lines 13-15 - sentence "The translations ... audience": there's some word missing in the first part of
+the sentence (and other language generated a natural language system)
+line 22: the references are swapped -> The shakespeare dataset [9] ... Seq2Seq model [10].
+line 227: The Moses translation system [38] *that* is .... (alternatively: ... *and* serves ...)
+Reviewer: 2
+Comments to the Author(s)
+label_comment_5
+In this paper, they consider a model that can translate text from one style to another. For example,
+from ‘casual’ to ‘formal’ text. It is important that such translations are well understood by the
+intended user. Further, a good model must preserve the meaning of the text.
+LSTM model with many layers is used for encoding and decoding. The encoder first applies a
+trainable embedding layer to project each word into a 512 dimensional vector to be passed to the
+LSTM. They also prepend all sentences with a tag. For example, if the style is 21st century King
+James Version then the tag is < KJ21>. The model is evaluated on 32 stylistically distinct versions
+of the Bible
+The paper is a little confusing. Here are my specific comments:
+1. Abstract, when you say translation it looks like you are talking about multiple languages. What
+is the application of such a model ?
+2. Pg. 4 line no 56 'never seen a translation' is very difficult to achieve
+3. Pg. 4 line no 68 It is difficult to believe that there is only one paper. Some comparison with
+transfer learning methods is needed
+4. Pg. 5 line no104 what do you mean by' other than the target language’
+5. Pg. 6 line no 152 what is the size of training data
+6. Pg. 7 line no 41 why is decoder initialized with encoder. Provide a reference.
+7. Why don’t you compare with other papers for ‘LSTM for text mining’? For example see
+‘Augmenting end-to-end dialog systems with commonsense knowledge’, AAAI 2018,
+Author's Response to Decision Letter for (RSOS-171920.R0)
+See Appendix A.
+10
+label_version_2
+RSOS-171920.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_6
+I thank the authors for taking the time to read my response and taking into account my
+suggestions and concerns.
+I believe the paper is now much more focused, the contributions clearer. The related work is also
+now much more extensive and covers more of the recent work which has quite grown in the past
+year. If you'd like to make your related work section even more complete, these are 2 relevant
+papers as well:
+Delete, Retrieve, Generate: a Simple Approach to Sentiment and Style Transfer. NAACL 2018
+Controlling Linguistic Style Aspects in Neural Language Generation (EMNLP 2017 workshop)
+(Disclaimer: none of these papers are mine, so I am mentioning them for self-citation.)
+Overall, the paper is now more well-positioned with respect to the existing work in the area, and
+it has better potential to speed up research on the problem of style transfer. I don't have any
+additional revisions to request and can recommend the paper for acceptance.
+Thank you for a beautifully written paper, and thanks again for the major revisions and taking
+my feedback into account. I hope the paper now achieves more impact.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+11
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_7
+The authors have answered all my questions.
+I still feel they must compare (under introduction) with the seq2seq LSTM described in
+'Augmenting end-to-end dialog systems with commonsense knowledge’, AAAI 2018,
+label_end_comment
+Decision letter (RSOS-171920.R1)
+18-Sep-2018
+Dear Mr Carlson:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-171920.R1
+entitled "Evaluating Prose Style Transfer with the Bible" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+12
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-171920.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 27-Sep-2018. Please note that the revision deadline
+will expire at 00.00am on this date. If you do not think you will be able to meet this date please let
+me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+13
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+14
+on behalf of Professor Jun Fu (Associate Editor) and Professor Marta Kwiatkowska (Subject
+Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Professor Jun Fu):
+Associate Editor: 1
+Comments to the Author:
+label_comment_8
+Reviews have been obtained. According to the reviewer comments to the revision, authors should
+try their best to provide the comparison with a mentioned literature. Thus my recommendation is
+Accept with minor revisions.
+Reviewer comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+label_comment_9
+The authors have answered all my questions.
+I still feel they must compare (under introduction) with the seq2seq LSTM described in
+'Augmenting end-to-end dialog systems with commonsense knowledge’, AAAI 2018,
+Reviewer: 1
+Comments to the Author(s)
+label_comment_10
+I thank the authors for taking the time to read my response and taking into account my
+suggestions and concerns.
+I believe the paper is now much more focused, the contributions clearer. The related work is also
+now much more extensive and covers more of the recent work which has quite grown in the past
+year. If you'd like to make your related work section even more complete, these are 2 relevant
+papers as well:
+Delete, Retrieve, Generate: a Simple Approach to Sentiment and Style Transfer. NAACL 2018
+Controlling Linguistic Style Aspects in Neural Language Generation (EMNLP 2017 workshop)
+(Disclaimer: none of these papers are mine, so I am mentioning them for self-citation.)
+Overall, the paper is now more well-positioned with respect to the existing work in the area, and
+it has better potential to speed up research on the problem of style transfer. I don't have any
+additional revisions to request and can recommend the paper for acceptance.
+Thank you for a beautifully written paper, and thanks again for the major revisions and taking
+my feedback into account. I hope the paper now achieves more impact.
+Author's Response to Decision Letter for (RSOS-171920.R1)
+See Appendix B.
+15
+label_end_comment
+Decision letter (RSOS-171920.R2)
+27-Sep-2018
+Dear Mr Carlson,
+I am pleased to inform you that your manuscript entitled "Evaluating Prose Style Transfer with
+the Bible" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Jun Fu (Associate Editor) and Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+pendix A
+r Editors and Reviewers,
+Thank you for taking the time to read our paper “Zero-Shot Style Transfer in Text Using
+urrent Neural Networks”. Your questions and comments were very useful in helping us to
+erstand where our work fit in with existing research and what we could contribute. Some major
+sions were suggested and mostly focused on clarifying some details about the data, methods, and
+lts and on identifying and focusing on the parts of our work which were novel and would spur on
+re research. We agree strongly with this second point and have renamed our paper “Evaluating
+e Style Transfer with the Bible”.
+We focus now on the presentation and importance of the Bible dataset as a significant resource
+benchmarking dataset for the style transfer problem. We have added 2 more public versions and
+ide standard splits into training, testing, and development data. We have dropped our focus on the
+o-Shot” task and instead view the models we train as serving 2 purposes. First, they show that the
+e corpus and the publicly available splits of the data which we provide are suitable for training
+els towards the task of prose style transfer. Second, they serve as baseline results for future work
+ch makes use of our corpus. To these ends we now train many Seq2Seq models and many Moses
+els using different data and evaluate their performance on a variety of test sets.
+As we now discuss in the paper, no existing corpus which is used for prose style transfer is as
+suited to the task as the Bible data. We hope you’ll agree that this corpus fills a significant gap in
+ent research on prose style transfer and that its publication will accelerate research in the field.
+Thank you again for your time and attention. We have responded to the individual comments
+questions from the reviewers below.
+erely,
+h Carlson
+n Riddell
+iel Rockmore
+Response to the Comments of Reviewer 1:
+iewer 1 Comment: Section 1.b. Since this is a section on "contribution", the authors should make it
+rer at this point that the system actually requires parallel data but between other pairs. For a reader
+'s not familiar with zero-shot translation, the language used ("has never seen a translation between
+particular language pair") might be misunderstood as "no need for parallel data". This is particularly
+ortant given that there's recent work on unsupervised MT (i.e. where MT systems do not require
+llel data whatsoever) just accepted to ICLR 2018 (3 papers on the topic) and this seems to be a
+mising direction on which the MT community is very likely to focus.
+ponse: We have dropped the “zero-shot” language and made the definition of the task clearer. We
+mention unlabeled machine translation and style transfer and how we believe our work fits in to
+picture.
+iewer 1 Comment Section 3.a. The number (33.8 million pairings) is a bit confusing. Since there's an
+nment of X sentences across all 32 books, does that mean there exists X=33.8million samples (after
+ring) in each book? Or that's the combined number of pairs across all pairs (i.e. each book appearing
+imes to get all number of pairings) [NB: okay this is made clearer in Section 3.b, but it can still be
+e a bit clearer at this point.]
+ponse: We have removed the initial reference that the reviewer found confusing.
+iewer 1 Comment Section 3.b. "ERV" and "KJ21" were identified qualitatively as good candidates
+then confirmed to be much less similar than most versions ... " If those 2 candidates are much less
+lar than MOST versions, meaning not much less similar than ALL other possible pairs, a question is
+didnt the authors use that specific pair between the 2 most dissimilar candidates? Also, why is that
+authors did not run some automatic tests to directly figure out the two most dissimilar candidates
+her than qualitatively looking at pairs and THEN verifiying with BLEU). This seems sub-optimal to me.
+ponse: We now use the BBE and ASV Bible versions as targets and justify our choice. Translating into
+style of the BBE is, judging by our BLEU-based similarity scores, the hardest task (YLT<U+2192>BBE has the
+est BLEU score of any reference<U+2192>target pair). Translating into the style of the ASV is, by contrast,
+least difficult (KJV<U+2192>ASV has the highest BLEU score of any reference<U+2192>target pair). Using these two
+ets in evaluation will allow researchers to identify the strengths and weaknesses of different
+ems. For example, one system might excel at performing prose style transfer for highly similar texts
+reas another system might excel at doing style transfer between stylistically different texts.
+iewer 1 Comment Section 3.b. There's a stark contrast between the size of the training vs dev vs
+sets. At the very least, 10 million vs 200 would raise questions... If one were to adopt one of the
+dard splits (e.g., 80-10-10), we would be talking about say 8 million vs 1 million vs 1 million. I’m not
+if it's possible to have 1 million samples from one specific pair (since this is a restriction on how the
+ors want to have their training/testing done), but the size of the test set raises generalization
+cerns. I suggest increasing the size of the dev and test sets.
+ponse: We now use full books as testing and development data so they represent a much larger
+ion of our data. Additionally we provide splits of the data into testing, training, and development so
+future research can use and compare to the same data.
+iewer 1 Comment Section 3.b. I agree with the authors wanting to create a vocabulary that is more
+rse and realistic, for which reason they sample words from other sources such as gutenberg.org and
+ipedia. However, for the purposes of a stylistic transfer task, the choice of these external sources
+s not seem adequate to me. Texts from Wikipedia, for instance, are going to have a "style" that is
+different from a Bible version (even if that version is written in simple/modern English). Also, the
+that the authors sample words randomly from these sources also raises concerns as to whether
+e of these words are perhaps adding some noise to the learning in the case they [i.e., the
+ementioned "some of these words"] are themselves rare words in those sources. It seems to me
+e appropriate to have ordered words in those sources by frequency and then sampled from the top
+equent words. I suggest addressing these concerns.
+ponse: To simplify our process we now build a vocabulary simply out of the training data from all of
+Bible versions. While more complex vocabularies may yield slightly different results, we are now
+sed on simply showing that the data is suitable for this task. The vocabulary built using Bible
+ions is sufficient for this and does not distract from the contributions of this paper in the way that
+ussion of a more complex method of building the vocabulary would.
+iewer 1 Comment Section 5.b. While I do understand why Moses was trained on 300k pairs, I
+not but note and find it highly problematic that two models are being compared while being trained
+orpora that are orders of magnitude different in size. One way to partially address this would've
+n for the authors to provide results for their model being also trained on 300k pairs. This would've
+wed how the model would've performed had it been given only 300k samples.
+ponse: We agree that a more thorough comparison of seq2seq and Moses was needed. In the
+inal paper we train only 1 Moses model and 1 seq2seq model. Now that we have re-framed our
+lts as a dataset and initial evaluation of existing methods, we train 4 different seq2seq models and 5
+rent Moses models on various pairings of the data. We report the best performing model of each
+on the 5 evaluation tasks in the paper, and report the results of all models on all evaluation tasks in
+github repository.
+iewer 1 Comment Section 5.c. In their qualitative analysis, the authors focus only on cases such as
+and My. It would be interesting to highlight as well other examples/patterns that are learned by the
+el.
+ponse: Since we have focused now on the Bible corpus as a public resource, we try to highlight
+lts which use the data we are able to make public. This use of Me/me and My/my is not present in
+of the public versions and so we do not include this discussion. We add some examples to showcase
+stic features that the models are able to successfully translate, and one that Moses fails on. In
+eral we feel that the focus of this work is no longer the performance of any of our models, but on
+showcasing that the data is appropriate for this task and establishing some baselines. We believe
+examples now included are sufficient for this goal.
+iewer 1 Comment General comments. While the dataset is actually very suitable for this approach to
+e transfer since there are 33 different "styles", the following is not evident: What are some other
+tical/useful scenarios where such system can benefit from a large number of stylistic pairs? Can you
+k of other examples of other corporas/case studies where your approach to style transfer would
+k well? While the authors refer to the use of an external dictionary in [10] as some kind of limitation
+. lines 127-128), the overall spirit of the work is not that different from [10] in that both works
+ire parallel data, which is in my opinion, the biggest limitation of looking at style transfer from a
+hine translation perspective. I don't quite see how contributions (b) and (c) are really "two
+tributions". You're proposing to use an exisiting model from machine translation, namely the zero-
+MT system [11], which uses an encoder-decoder architecture. So the latter is not really a
+tribution. It's just the nature of the architrecture used in [11]. So by virtue of using the model in [11],
+r approach to style transfer ends up being an encoder-decoder approach. Besides, as the authors
+tfully point out, [10] already uses an encoder-decoder architecture, so again, nothing novel in that
+ect. Even more, and to be very honest, I'm not sure to what extent I can agree that contribution (b)
+tually a contribution. If anything, it's an incremental "contribution" by taking an existing model and
+ying it as is (with no extension of the model whatsoever) to a different problem that happens to be
+similar in nature to the problem for which the model was presented in the first place. This paper
+ld've been much more suitable as a resource paper in one of the NLP conferences where you
+oduce a nice corpus and present some case study on it (in this case style transfer). To me, it seems
+the most interesting contribution of this paper is the data collection, a contribution that is also
+ced by the fact that not all the corpus can be made available; while the style transfer aspect of the
+k is, as I mentioned before, a mere application of an existing system to a new problem, so at best an
+emental contribution IMHO. Overall, I suggest rewriting the contributions to take these comments
+consideration. If I were to give my honest opinion, I would've been not able to recommend the
+ptance of this paper (with its current format/claims of contributions) to a major conference like
+or ACL. However, this publication venue is neither. So I would be willing to recommend acceptance
+y questions/concerns/suggestions are addressed.
+ponse: We have taken the comments of Reviewer 1 to heart and revised the paper to reflect thei
+estions. We claim, specifically, that parallel corpora will invariably be required for the _evaluation_
+rose style transfer systems. Parallel corpora may or may not be required for the training of such
+ems. We’ve removed the language that suggests a second contribution and instead focus on
+ribing the contribution of the corpus and the evaluation of existing techniques with respect to the
+us.
+iewer 1 Comment Typos: lines 13-15 - sentence "The translations ... audience": there's some word
+ing in the first part of the sentence (and other language generated a natural language system) line
+the references are swapped -> The shakespeare dataset [9] ... Seq2Seq model [10]. line 227: The
+es translation system [38] *that* is .... (alternatively: ... *and* serves ...)
+ponse: Indicated typos have been fixed.
+Response to the Comments from Reviewer 2:
+iewer 2 Comment (points 1-4): 1. Abstract, when you say translation it looks like you are talking
+ut multiple languages. What is the application of such a model ? 2. Pg. 4 line no 56 'never seen a
+slation' is very difficult to achieve 3. Pg. 4 line no 68 It is difficult to believe that there is only one
+er. Some comparison with transfer learning methods is needed 4. Pg. 5 line no104 what do you
+n by' other than the target language’
+ponse (Addressing Reviewer 2 points 1-4.): The abstract and paper have been revised to focus on
+corpus and the task of evaluation (see responses to Reviewer 1’s general comments). The revisions
+e clarified the task. We believe the task is now described in sufficient detail that readers will not
+use the task with the task of translating between modern languages.
+iewer 2 Comment: 5. Pg. 6 line no 152 what is the size of training data
+ponse: The size of the training, test, and validation datasets are now described.
+iewer 2 Comment: 6. Pg. 7 line no 41 why is decoder initialized with encoder. Provide a reference.
+ponse: We adopt existing practices from previously published research here. The contribution of the
+er is not a new model but rather a framework and corpus for evaluation. This specific choice is made
+ply because it is a default option in the seq2seq library which we use.
+iewer 2 Comment: 7. Why don’t you compare with other papers for ‘LSTM for text mining’? For
+mple see ‘ Augmenting end-to-end dialog systems with commonsense knowledge’, AAAI 2018,
+ponse: As our references indicate, there is considerable existing research on this specific task and
+hboring tasks. Dialog systems are, we believe, a completely different domain.
+pendix B
+r Editors and Reviewers,
+Thank you for taking the time to read and revise our paper “Evaluating Prose Style Transfer with
+Bible” and for the helpful comments. We are pleased that it has been accepted for publication.
+The latest round of comments recommended adding references to three more papers to
+eve more complete coverage of appropriate related work. “Delete, Retrieve, Generate: a Simple
+roach to Sentiment and Style Transfer” and “Controlling Linguistic Style Aspects in Neural Language
+eration” were highly relevant and we added references to them and made a small textual change in
+3rd paragraph of the introduction.
+The third paper, “Augmenting end-to-end dialog systems with commonsense knowledge” did
+fit as clearly into our work. This paper describes a way to use an externally built commonsense
+wledge base to improve a system’s performance when trying to determine whether a given sentence
+ely to follow another in dialogue. The output of the system is a score for the provided context and
+onse pair. Since this work does not focus on the style of text and does not itself generate text, we
+not feel that a citation to it fit naturally into our manuscript and have not referenced it, but if the
+ors feel strongly about its inclusion we will mention it.
+Thank you again for all your work on this manuscript. We feel that it is a stronger paper than it
+in its original form and we recognize that your hard work and insight throughout this process were
+mportant part of this improvement. We look forward to seeing our paper in your journal.
+erely,
+h Carlson
+n Riddell
+iel Rockmore
+Society Open
