@@ -56,6 +56,7 @@ for (i in 1:length(article_id)) {
   comment_count <-1
   x <- length(trs_doc)
   y <- 1
+  switch <- 0 
   
   while (y<x){
     if (str_sub(trs_doc[y], 1,4) == "RSOB"){  #Search for RSOS or RSOB
@@ -70,18 +71,20 @@ for (i in 1:length(article_id)) {
       x = x + 1
       y = y + 1
     }
-    if (str_sub(trs_doc[y], 1,15) == "Recommendation"){ #There is a small difference between how the recommendation is coded in Open Science and Open Biology - is is "Recommendation?" in open science and "Recommendation" in Open Biology
-      trs_doc <- append(trs_doc, paste("label_recommendation_", recommendation_count, sep="" ), after = y)
+    if (str_sub(trs_doc[y], 1,15) == "Recommendation") { #There is a small difference between how the recommendation is coded in Open Science and Open Biology - is is "Recommendation?" in open science and "Recommendation" in Open Biology
+      trs_doc <- append(trs_doc, paste("label_recommendation_", recommendation_count, sep = "" ), after = y)
       recommendation_count = recommendation_count + 1
       x = x + 1
+      switch <- 1
     }
-     if (str_sub(trs_doc[y], 1,22) == "Comments to the Author"){
-      trs_doc <- append(trs_doc, paste("label_comment_", comment_count, sep="" ), after = y)
+     if (str_sub(trs_doc[y], 1,22) == "Comments to the Author" & (switch == 1)) {
+      trs_doc <- append(trs_doc, paste("label_comment_", comment_count, sep = "" ), after = y)
       comment_count = comment_count + 1
        x = x + 1
+       switch <- 0
      }
-    if (str_sub(trs_doc[y], 1,15) == "Decision letter"){
-      trs_doc <- append(trs_doc, paste("label_end_comment", sep="" ), after = y -1)
+    if (str_sub(trs_doc[y], 1,15) == "Decision letter") {
+      trs_doc <- append(trs_doc, paste("label_end_comment", sep = "" ), after = y -1)
       x = x + 1
       y = y + 1
     }

@@ -3,6 +3,8 @@ title: "Open Peer Review"
 author: "Daniel Lakens"
 date: "22-9-2019"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -34,11 +36,43 @@ TRS_data <- rbind(TRS_data_os, TRS_data_ob)
 PeerJ_data <- readRDS(file = "peerj_data.rds")
 
 
-TRS_data_sorted <- TRS_data[ with( TRS_data , order ( df_link)),]
+#TRS_data_sorted <- TRS_data[ with( TRS_data , order ( df_link)),]
+
+#Create dataframe for TRS and PeerJ of unique rows (e.g., for days)
+TRS_unique <- TRS_data[!duplicated(TRS_data$df_link),]
+PeerJ_unique <- PeerJ_data[!duplicated(PeerJ_data$df_link),]
+
+# One submission to PeerJ was accepted but no reviewer info. It means they are accepted by the editor? Or just an early mistake.
+sum(is.na(PeerJ_unique$df_days))
+
+# Mean review time (almost the same as Nino original - we have a few more pdf's)
+TRS_mean_review_time <- mean(TRS_unique$df_days)
+PeerJ_mean_review_time <- mean(PeerJ_unique$df_days, na.rm = TRUE)
+
+# How many reviews are masked?
+mean(TRS_data$df_masked)
+mean(PeerJ_data$df_masked)
+
+length(TRS_data$df_link)
+length(PeerJ_data$df_link)
+
+# Exploratory
+# Randomly split masked over 100 subgroups to see progression over time - seems stable.
+df_over_time <- data.frame(TRS_data$df_masked[1:3600], rep(seq(1,100,1),each = 360))
+colnames(df_over_time) <- c("masked", "time") # specify columns names
+x <- group_by(df_over_time, time)
+x <- summarize(x, m = mean(masked))
+
+df_over_time <- data.frame(PeerJ_data$df_masked[1:12300], rep(seq(1,100,1),each = 1230))
+colnames(df_over_time) <- c("masked", "time") # specify columns names
+x <- group_by(df_over_time, time)
+x <- summarize(x, m = mean(masked))
+
 
 
 ```
 
+In Nino's BEP there were  3552 reviews in RSOS. I have 3629 after running all his code. 
 
 
 Older Royal Society journals have the comment: Note: This manuscript was transferred from another Royal Society journal without peer review.

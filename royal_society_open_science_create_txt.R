@@ -55,6 +55,7 @@ for (i in 1:length(article_id)) {
   comment_count <-1
   x <- length(trs_doc)
   y <- 1
+  switch <- 0
   
   while (y<x){
     if (str_sub(trs_doc[y], 1,4) == "RSOS"){ #Search for RSOS or RSOB
@@ -73,11 +74,13 @@ for (i in 1:length(article_id)) {
       trs_doc <- append(trs_doc, paste("label_recommendation_", recommendation_count, sep="" ), after = y)
       recommendation_count = recommendation_count + 1
       x = x + 1
+      switch <- 1
     }
-     if (str_sub(trs_doc[y], 1,22) == "Comments to the Author"){
+     if (str_sub(trs_doc[y], 1,22) == "Comments to the Author" & (switch == 1)){
       trs_doc <- append(trs_doc, paste("label_comment_", comment_count, sep="" ), after = y)
       comment_count = comment_count + 1
        x = x + 1
+       switch <- 0
      }
     if (str_sub(trs_doc[y], 1,15) == "Decision letter"){
       trs_doc <- append(trs_doc, paste("label_end_comment", sep="" ), after = y -1)

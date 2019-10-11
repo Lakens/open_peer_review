@@ -49,6 +49,7 @@ for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 Peer
     word_count <- vector()  #Vector that contains the wordcounts
     review_count <- 1        #Counts which review is being counted
     x <- 0                  #counter for word_count position
+    switch_review_count <- 0
     
     # PeerJ subdivides the review in 4 sections: 
     # Basic reporting (under label_br), experimental design (label_ed), 
@@ -60,19 +61,32 @@ for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 Peer
         x = x + 1
         word_count[x] <- 0
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
+        review_count <- review_count + 1
+        switch_review_count <- 1
       }
       
       if(lines[i] == paste("label_ed_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
+        if (switch_review_count == 0) {
+          review_count <- review_count + 1
+          switch_review_count <- 1
+        }
       }
       
       if(lines[i] == paste("label_votf_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
+        if (switch_review_count == 0) {
+          review_count <- review_count + 1
+          switch_review_count <- 1
+        }
       }
       
       if(lines[i] == paste("label_cfta_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        review_count = review_count + 1
+        if (switch_review_count == 0) {
+          review_count <- review_count + 1
+          switch_review_count <- 1
+        }
       }
     }
     
@@ -116,6 +130,7 @@ for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 Peer
       }
       if (lines[i] == paste("label_author_", author_count, sep="")){
         reviewer_name <- append(reviewer_name, gsub(" ·", "", lines[i+1])) #Save author name (or Reviewer name)
+        switch_review_count <- 0
         if (grepl("Reviewer", lines[i+1])){
           masked <- append(masked, 1)
           version <- append(version, version_count - 1)
