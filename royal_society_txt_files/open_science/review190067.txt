@@ -1,0 +1,494 @@
+On the linear in probability model for binary data
+H. S. Battey, D. R. Cox and M. V. Jackson
+Article citation details
+R. Soc. open sci. 6: 190067.
+http://dx.doi.org/10.1098/rsos.190067
+Review timeline
+Original submission: 11 January 2019 Note: Reports are unedited and appear as
+Revised submission: 3 April 2019 submitted by the referee. The review history
+Final acceptance: 5 April 2019 appears in chronological order.
+Review History
+label_version_1
+RSOS-190067.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Reports © 2019 The Reviewers; Decision Letters © 2019 The Reviewers and Editors;
+Responses © 2019 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This paper might be seen as expanding Section 2.2 of Cox (1970, Binary Data, Chapman and
+Hall); some other parts of the same chapter also seem relevant. I find it a bit surprising that this
+book and the second edition with Snell (1989) are not cited, particularly as the authors of the
+present work seem to contradict advice therein about the linear in probabilities model: `use of a
+model, the nature of whose limitations can be foreseen, is not wise, except for very restricted
+purposes' (Cox and Snell, 1989, page 14).
+Apart from this, my comments are relatively minor:
+page 1, line 59 (using the numbers at the left of the page): `interpretation is more formal'.
+Meaning? And what are `the data on $Y_i$'? I thought the $y$s were the data. This entire
+passage is obscure (including the bit about concentrated at the end of the scale---the scale is
+$\pm$, so this presumably means the data are mostly -1s or 1s?)
+page 2, line15-21: The second may also involve a small sample analysis, as in the more elaborate
+but similar model discussed in Davison and Sartori (2008, Statistical Science).
+page 2, line 44-45: simplify to ... tests may be based on ...
+page 3, line 33: bracket trouble
+page 3, lines 35-39: What's the evidence that OLS is less sensitive to bad data? Usually it is
+regarded as the paradigm of a non-robust estimation procedure (though here this is mitigated by
+the binary nature of the responses). The sensitivity alluded to might be regard as a strong
+argument in favour of the logistic model ...
+page 4, lines 28-38: Surely there are closed forms for these expressions, since the $\Phi$ parts can
+be expressed as a conditional probability given the variable in the $\phi$ part, and the whole
+reduces to a $\Phi$?
+page 5, line 1: `explanatory observations'?
+page 5, line 32: the final analysis results seem to be missing from Table 2. (Or, if not, to which line
+do they correspond?) Generally there seems to be some confusion in the text about the contents
+of this table (and its caption seems inadequate---what sort of estimates, for example?).
+Table 2: could we see (and could you please briefly discuss) the results of a logistic regression
+analysis, for comparison? If a linear Taylor series expansion around the MLEs of the probabilities
+was used, would it lead to essentially the same conclusions? It would also be useful to be able to
+compare the SEs for the ML, LS and logistic models.
+What actually is the empirical value of the efficiency loss shown at page 3, line 33, in this
+example?
+page 7, line 40: Agresti (he is not aggressive)
+3
+label_author_2
+Review form: Reviewer 2 (John MacInnes)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+I leave it to others better qualified than me to comment on the formal statistical argument of this
+paper. However I do have two observations relevant to its implications and application.
+Binary response data is ubiquitous in the social sciences. Students and researchers are taught that
+to fit a linear model is wrong because residuals cannot be normally distributed and estimates of
+the response variable can be out of range. I plead guilty to being one of many authors to argue
+this. Because of this, logistic regression has become a workhorse underpinning published
+research across the social sciences. However, criticism of the linear model has not always been
+accompanied by adequate appreciation of the difficulties of interpreting logistic coefficients
+because of the way in which they are confounded with residual variation. This complicates the
+comparison of coefficients across nested models of the same group of observations, or between
+the same model applied to different groups, since coefficients will be biased towards zero but by
+different amounts, since residual variation is unlikely to be constant across models, as the
+references [1] [2] cited by the authors point out. Although this problem has been discussed in the
+methodological literature for over twenty years, awareness of it among applied social scientists,
+journal editors and referees has lagged behind.
+In this context, the suggestion that a linear in probability model may sometimes be preferred to
+the use of logistic transformation of the probabilities for binary response data has enormous
+significance. The upshot of this paper is that the advice routinely given to students and
+researchers in social statistics is at best incomplete, and in some circumstances simply wrong.
+The authors may feel that it is not their job to translate the conclusions of their paper into advice
+or guidance aimed at those unable to follow in full the presentation of their argument. It could
+also be argued that any such advice carries the danger that it might, by encouraging researchers
+to use a procedure they do not fully understand, support poor statistical work. However, I would
+encourage the authors to consider setting out some of their conclusions in a form accessible to a
+wider audience than it might currently reach. While they may feel that, for example, to compare
+the results of the empirical analysis presented here with that produced by logistic regression
+would be pedestrian, whereas I think it would help many readers to appreciate the way in which
+4
+the approach described here produces a set of coefficients that are less sensitive to patterns in
+missingness and with much smaller standard errors than those produced by logistic
+transformation. Doing so might help to spread awareness much more quickly beyond the
+methodologists to those doing and refereeing applied work.
+I suspect readers with a social science background will also find the interpretation of relations
+concerning the observed proportion of outcomes surprising. Logistic regression coefficients are
+typically interpreted in terms of the relative odds of a positive outcome. In the model presented
+here, because it is the proportion of outcomes itself that is the dependent, the conclusion is
+presented in terms ‘numbers of individuals potentially influenced by a unit change of an
+explanatory variable’, that is, shifting from one category to another of the outcome variable. The
+unit change in explanatory categorical variables is treated as a change in the characteristics of a
+hypothetical population, such as a change in the proportion of sexes or ethnic groups. While this
+is formally clear, its substantive interpretation is less obvious. Researchers may often be less
+interested in comparing outcomes across differing hypothetical populations than in inferring the
+relative odds of a positive outcome for different groups within them. It is not clear to me, and it
+would be helpful if the authors discussed this more explicitly, whether such inferences would be
+legitimate with this model. On page 2 the authors appear to continue to favour a logistic
+approach here (‘testing the significance of individual effects’). However, in the discussion of the
+interpretation of the explanatory variables, the example of family circumstances is treated in
+terms of the relative probability of experiencing a positive outcome. This confusion is my
+responsibility rather than that of the authors, but I suspect I would not be the only reader who
+would benefit from a slightly longer exposition of this point.
+One very minor point. The authors adequately describe the source of the data used in the
+illustration and its subsequent treatment. However my understanding is that good
+reproducibility practice would be to include an r script or other code of the model run and the
+sensitivity analysis made.
+John MacInnes
+University of Edinburgh
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+5
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+The authors investigate advantages and disadvantages of a linear in probability model for the
+analysis of binary data.
+Discussions about advantages and disadvantages between the commonly used linear model in
+the logistic transform of probabilities and a simpler linear in probability model are recurrent in
+the literature of different fields. For instance, in the past decade there has been a heated debate in
+the economic literature about this question and more broadly about the need to go beyond simple
+linear models.
+This is a refreshing paper and a useful guideline for statisticians and data analysts. A positive
+aspect of this paper is a clear discussion of the properties of OLS and MLE for the linear in
+probability model and the interpretation of the corresponding coefficients, as well as the
+introduction of a simple tool for model checking.
+I have just a question about the sensitivity of MLE versus OLS; see the comment in the middle of
+p. 3. The sensitivity of the MLE is already apparent from the score function in the estimating
+equation below formula (3) at p. 2. This function becomes very large for x's such that x^T\beta is
+close to the boundary 1, making the influence function of the MLE unbounded. In the paper it is
+stated that "OLS is by contrast relatively unaffected ..." (p. 3), but I do not see the reason. In fact its
+score function will always be affected by large values of some covariates.
+label_end_comment
+Decision letter (RSOS-190067.R0)
+21-Mar-2019
+Dear Dr Battey
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-190067 entitled
+"On the linear in probability model for binary data" has been accepted for publication in Royal
+Society Open Science subject to minor revision in accordance with the referee suggestions. Please
+find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+6
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-190067
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please ensure you have prepared your revision in accordance with the guidance at
+https://royalsociety.org/journals/authors/author-guidelines/ -- please note that we cannot
+publish your manuscript without the end statements. We have included a screenshot example of
+the end statements for reference. If you feel that a given heading is not relevant to your paper,
+please nevertheless include the heading and explicitly state that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 30-Mar-2019. Please note that the revision deadline
+will expire at 00.00am on this date. If you do not think you will be able to meet this date please let
+me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+7
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees. We strongly recommend uploading two versions of your revised manuscript:
+1) Identifying all the changes that have been made (for instance, in coloured highlight, in bold
+text, or tracked changes);
+2) A 'clean' version of the new manuscript that incorporates the changes made, but does not
+highlight them.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document";
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format);
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account;
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript. Make sure it is clear in your data accessibility statement how the data
+can be accessed;
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://rs.figshare.com/). The heading and legend provided for
+each supplementary file during the submission process will be used to create the figshare page,
+so please ensure these are accurate and informative so that your files can be found in searches.
+Files on figshare will be made available approximately one week before the accompanying article
+so that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication, you will be
+asked to pay the article processing charge, unless you request a waiver and this is approved by
+Royal Society Publishing. You can find out more about the charges at
+http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+8
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Ruth King (Associate Editor) and Professor Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Professor Ruth King):
+The paper has been reviewed by myself and three reviewers. Overall, the paper has been very
+well written and presents an interesting discussion of the use of the linear model for binary data,
+as opposed to the commonly used logistic regression model. There are a few minor issues which
+would be useful to address, as identified by the reviewers, particularly in relation to the
+comparison of the linear model with the logistic model in the example provided - see reviewers
+comments for additional comments. Although the appendix provides a description of how to
+access the data is it possible to obtain permission to be able to provide the data with the paper?
+Finally, it would also be useful to provide an R script for reproducing the results of the paper
+given the data.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+This paper might be seen as expanding Section 2.2 of Cox (1970, Binary Data, Chapman and
+Hall); some other parts of the same chapter also seem relevant. I find it a bit surprising that this
+book and the second edition with Snell (1989) are not cited, particularly as the authors of the
+present work seem to contradict advice therein about the linear in probabilities model: `use of a
+model, the nature of whose limitations can be foreseen, is not wise, except for very restricted
+purposes' (Cox and Snell, 1989, page 14).
+Apart from this, my comments are relatively minor:
+page 1, line 59 (using the numbers at the left of the page): `interpretation is more formal'.
+Meaning? And what are `the data on $Y_i$'? I thought the $y$s were the data. This entire
+passage is obscure (including the bit about concentrated at the end of the scale---the scale is
+$\pm$, so this presumably means the data are mostly -1s or 1s?)
+page 2, line15-21: The second may also involve a small sample analysis, as in the more elaborate
+but similar model discussed in Davison and Sartori (2008, Statistical Science).
+page 2, line 44-45: simplify to ... tests may be based on ...
+page 3, line 33: bracket trouble
+page 3, lines 35-39: What's the evidence that OLS is less sensitive to bad data? Usually it is
+regarded as the paradigm of a non-robust estimation procedure (though here this is mitigated by
+the binary nature of the responses). The sensitivity alluded to might be regard as a strong
+argument in favour of the logistic model ...
+9
+page 4, lines 28-38: Surely there are closed forms for these expressions, since the $\Phi$ parts can
+be expressed as a conditional probability given the variable in the $\phi$ part, and the whole
+reduces to a $\Phi$?
+page 5, line 1: `explanatory observations'?
+page 5, line 32: the final analysis results seem to be missing from Table 2. (Or, if not, to which line
+do they correspond?) Generally there seems to be some confusion in the text about the contents
+of this table (and its caption seems inadequate---what sort of estimates, for example?).
+Table 2: could we see (and could you please briefly discuss) the results of a logistic regression
+analysis, for comparison? If a linear Taylor series expansion around the MLEs of the probabilities
+was used, would it lead to essentially the same conclusions? It would also be useful to be able to
+compare the SEs for the ML, LS and logistic models.
+What actually is the empirical value of the efficiency loss shown at page 3, line 33, in this
+example?
+page 7, line 40: Agresti (he is not aggressive)
+Reviewer: 2
+Comments to the Author(s)
+I leave it to others better qualified than me to comment on the formal statistical argument of this
+paper. However I do have two observations relevant to its implications and application.
+Binary response data is ubiquitous in the social sciences. Students and researchers are taught that
+to fit a linear model is wrong because residuals cannot be normally distributed and estimates of
+the response variable can be out of range. I plead guilty to being one of many authors to argue
+this. Because of this, logistic regression has become a workhorse underpinning published
+research across the social sciences. However, criticism of the linear model has not always been
+accompanied by adequate appreciation of the difficulties of interpreting logistic coefficients
+because of the way in which they are confounded with residual variation. This complicates the
+comparison of coefficients across nested models of the same group of observations, or between
+the same model applied to different groups, since coefficients will be biased towards zero but by
+different amounts, since residual variation is unlikely to be constant across models, as the
+references [1] [2] cited by the authors point out. Although this problem has been discussed in the
+methodological literature for over twenty years, awareness of it among applied social scientists,
+journal editors and referees has lagged behind.
+In this context, the suggestion that a linear in probability model may sometimes be preferred to
+the use of logistic transformation of the probabilities for binary response data has enormous
+significance. The upshot of this paper is that the advice routinely given to students and
+researchers in social statistics is at best incomplete, and in some circumstances simply wrong.
+The authors may feel that it is not their job to translate the conclusions of their paper into advice
+or guidance aimed at those unable to follow in full the presentation of their argument. It could
+also be argued that any such advice carries the danger that it might, by encouraging researchers
+to use a procedure they do not fully understand, support poor statistical work. However, I would
+encourage the authors to consider setting out some of their conclusions in a form accessible to a
+wider audience than it might currently reach. While they may feel that, for example, to compare
+10
+the results of the empirical analysis presented here with that produced by logistic regression
+would be pedestrian, whereas I think it would help many readers to appreciate the way in which
+the approach described here produces a set of coefficients that are less sensitive to patterns in
+missingness and with much smaller standard errors than those produced by logistic
+transformation. Doing so might help to spread awareness much more quickly beyond the
+methodologists to those doing and refereeing applied work.
+I suspect readers with a social science background will also find the interpretation of relations
+concerning the observed proportion of outcomes surprising. Logistic regression coefficients are
+typically interpreted in terms of the relative odds of a positive outcome. In the model presented
+here, because it is the proportion of outcomes itself that is the dependent, the conclusion is
+presented in terms ‘numbers of individuals potentially influenced by a unit change of an
+explanatory variable’, that is, shifting from one category to another of the outcome variable. The
+unit change in explanatory categorical variables is treated as a change in the characteristics of a
+hypothetical population, such as a change in the proportion of sexes or ethnic groups. While this
+is formally clear, its substantive interpretation is less obvious. Researchers may often be less
+interested in comparing outcomes across differing hypothetical populations than in inferring the
+relative odds of a positive outcome for different groups within them. It is not clear to me, and it
+would be helpful if the authors discussed this more explicitly, whether such inferences would be
+legitimate with this model. On page 2 the authors appear to continue to favour a logistic
+approach here (‘testing the significance of individual effects’). However, in the discussion of the
+interpretation of the explanatory variables, the example of family circumstances is treated in
+terms of the relative probability of experiencing a positive outcome. This confusion is my
+responsibility rather than that of the authors, but I suspect I would not be the only reader who
+would benefit from a slightly longer exposition of this point.
+One very minor point. The authors adequately describe the source of the data used in the
+illustration and its subsequent treatment. However my understanding is that good
+reproducibility practice would be to include an r script or other code of the model run and the
+sensitivity analysis made.
+John MacInnes
+University of Edinburgh
+Reviewer: 3
+Comments to the Author(s)
+The authors investigate advantages and disadvantages of a linear in probability model for the
+analysis of binary data.
+Discussions about advantages and disadvantages between the commonly used linear model in
+the logistic transform of probabilities and a simpler linear in probability model are recurrent in
+the literature of different fields. For instance, in the past decade there has been a heated debate in
+the economic literature about this question and more broadly about the need to go beyond simple
+linear models.
+This is a refreshing paper and a useful guideline for statisticians and data analysts. A positive
+aspect of this paper is a clear discussion of the properties of OLS and MLE for the linear in
+probability model and the interpretation of the corresponding coefficients, as well as the
+introduction of a simple tool for model checking.
+I have just a question about the sensitivity of MLE versus OLS; see the comment in the middle of
+11
+p. 3. The sensitivity of the MLE is already apparent from the score function in the estimating
+equation below formula (3) at p. 2. This function becomes very large for x's such that x^T\beta is
+close to the boundary 1, making the influence function of the MLE unbounded. In the paper it is
+stated that "OLS is by contrast relatively unaffected ..." (p. 3), but I do not see the reason. In fact its
+score function will always be affected by large values of some covariates.
+Author's Response to Decision Letter for (RSOS-190067.R0)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-190067.R1)
+05-Apr-2019
+Dear Dr Battey,
+I am pleased to inform you that your manuscript entitled "On the linear in probability model for
+binary data" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Ruth King (Associate Editor) and Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+Appendix A
+Manuscript number RSOS-190067
+We thank the associate editor and the three referees for their encouraging reports. The following
+changes reflect their suggestions.
+• We have slightly enlarged the first paragraph of page 2 to clarify when the linear logistic
+model would be preferred to the linear in probability model and vice versa.
+• Wording has been simplified in: the third paragraph of page 1; the final sentence of §2.1;
+the second paragraph of §3.
+• Table 1’s caption and title has been clarified.
+• A brief discussion of the linear logistic model has been added at the end of §3.
+The additional points seem not to need major changes to the paper.
+• The fragility of maximum likelihood in the context of the linear in probability model is due
+to the implicit restrictions on the parameter space. The empirical fitting by least squares
+ignores these restrictions. By accepting the possibility of out of range fitted values, the
+coefficient estimates are made less sensitive to aberrant observations. We feel that a more
+formal analysis in terms of influence functions is unnecessary.
+• Closed forms for the integrals on page 4 do not seem available. Good analytic approxima-
+tions are provided in reference [5].
+• A brief discussion of the linear logistic model has been added at the end of §3. We decided
+not to include results of a logistic model as these would not be very enlightening. The
+analysis has been performed and is available in the code, which we have deposited in your
+data repository, along with the data used. Figure 1 summarizes the output of this analysis,
+which is as expected.
+10
+ratio of estimated coefficients (linear logistic model)
+5
+0
+-5
+-10
+-15
+-20
+-20 -15 -10 -5 0 5 10
+ratio of estimated coefficients (linear in probability model)
+Figure: ratios of maximum likelihood estimates of the logistic regression coefficients plotted
+against the ratios of estimated coefficients for the same pairs of variables obtained by fitting
+the linear in probability model by least squares. The colour represents different pairs of
+coefficients, with duplicate colours corresponding to duplicate pairs from the eight patterns
+of missingness described by the rows of Table 1 in the paper.
+Society Open

@@ -1,0 +1,992 @@
+Mathematical modelling and application of frog choruses as
+an autonomous distributed communication system
+Ikkyu Aihara, Daichi Kominami, Yasuharu Hirano and Masayuki Murata
+Article citation details
+R. Soc. open sci. 5: 181117.
+http://dx.doi.org/10.1098/rsos.181117
+Review timeline
+Original submission: 9 July 2018 Note: Reports are unedited and appear as
+1st revised submission: 16 October 2018 submitted by the referee. The review history
+2nd revised submission: 25 November 2018 appears in chronological order.
+Final acceptance: 26 November 2018
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-181117.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (G Ermentrout)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Reports © 2018 The Reviewers; Decision Letters © 2018 The Reviewers and Editors;
+Responses © 2018 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+Overall this paper is most interesting when considering the frogs and less so than the wireless
+sensors. For the latter, I really think they need to compare it to some of the other methods. I have
+a number of questions about the numerical methods, but those are largely minor issues. There
+are some other points that need clarification and the paper needs to be edited by a native speaker.
+I think you might also look at the papers by Belykh, Belykh and Hasler where synchrony was
+analyzed as the topology changed.
+minor points (some less minor than others)
+page 2 flock -> flocking
+page 3 to -> over
+page 7 In equation 2,3 you mean each time the phase hits 0 mod 2 pi the energy is decremented
+by 1 and the fatigue incremental by 1, correct? This should be stated explicitly since delta(x)
+means transversal crossing at x=0 and this is not the case here
+page 10 In your earlier PRE paper you used sin(x) + c sin(2x) in order to get clusters as well as
+the triphase state. Is there a reason you don’t use that in this paper since that seems to be what
+the frogs do
+page 11 It seems like you synchronously evaluate the prob of switching every 3.5 seconds. This
+is a correct numerical implementation. I would think it should be more like a voltage gated ion
+channel where the rate of transition depends on the fatigue etc. this seems like a strange update
+rule. The right way would be to take the probability and divide by 3.5 to get a rate R and then if h
+is the time step for the ode model, at each such time step, choose a uniform random number, x,
+between 0 and 1. If x< h R then make the transition. This is the proper approximation if you are
+assuming a cts markov process.
+page 12
+When the animal switches to the call state is the phase the same as it was when it left the call state
+in the previous bout? This seems unrealistic that it would recall the phase. Seems more likely it
+starts randomly or at 0
+page 14
+So the theta_m inside Gamma makes no difference and this is the Winfree pulse coupled model.
+It would seem that this model would also be better for the frogs since they don’t interact
+continuously but rather only when the other is calling. I understand that the cts interaction you
+guys show can come from weak coupling, but it would be better to be consistent in your
+modeling
+3
+page 15
+Instead or requiring the reader to figure out that sqrt(2) means talk to the 6 neighbors, just say it
+is a Moore neighborhood or say the 6 immediate neighbors
+Eq15 is discontinuous at 0 and 2pi. It should be cts there like the sine model
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The authors investigated calling behavior of two or three frogs and found a group of frogs self-
+organizes their calling behavior in two different time scale; in short time scale, individual frog
+calls alternatively from the other frogs; in log time scale, a group of frogs switches between
+alternative calling state and silent state. The authors modeled these two behaviors using a
+coupled-oscillator system additionally introduced stochastic state switching mechanism. Last, the
+mechanism of this behavior was applied to a wireless sensor network problem.
+Their findings of the two hierarchical behavior of the frog is interesting, and the idea of the
+application is fine. It is, however, the paper leaves room for improvement as listed below.
+Main points
+1. It is fine they succeeded in modeling of the frog behavior and found the silent state is useful
+for energy saving. So, how the efficiency depends on the parameters, especially on the coupling
+strength (K), the detection sensitivity of calling neighbors (H)? This kind of analysis would give a
+benefit in design of wireless sensor networks. The variable, energy E is not so important in the
+dynamics, if the author do not analyze the efficiency.
+2. The proposed model is for just two or three frogs, while the number of units in the wireless
+sensor network is more than those up to 100. Why they did not construct a model of nearest (or
+second nearest) neighbor coupling system for the frog system (They did it in their previous work
+4
+ref[23]).
+3. Most part of the basic idea has been already proposed in the reference [33] written by one of
+the authors of this submitted paper. This work should be introduced in the introduction part and
+the authors should present what is the main novel point of this paper differently from the
+previous one.
+Minor points
+1. The names of axes G1(Tn) and G2(Tn) in Fig. 3 are inconsistent with the explanation of Eq. (7,8)
+and Eq. (10); They are exchanged.
+2. In Fig. 4B, last panel, it is difficult to find the feature of the tri-phase. How about the different
+combination of the data are colored different? The same problem is found in Fig. 7C, in which the
+partial magnified graph will be helpful for readers.
+label_end_comment
+Decision letter (RSOS-181117.R0)
+24-Sep-2018
+Dear Dr Aihara,
+The editors assigned to your paper ("Mathematical Modeling and Application of Frog Choruses
+as an Autonomous Distributed Communication System") have now received comments from
+reviewers. We would like you to revise your paper in accordance with the referee and Associate
+Editor suggestions which can be found below (not including confidential reports to the Editor).
+Please note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper before 17-Oct-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If we do not hear from you within this time then it
+will be assumed that the paper has been withdrawn. In exceptional circumstances, extensions
+may be possible if agreed with the Editorial Office in advance. We do not allow multiple rounds
+of revision so we urge you to make every effort to fully address all of the comments at this stage.
+If deemed necessary by the Editors, your manuscript will be sent back to one or more of the
+original reviewers for assessment. If the original reviewers are not available, we may invite new
+reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+5
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-181117
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+6
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof. Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Subject Editor's comments:
+Thank you for your very interesting submission. Please be sure to address all the concerns of
+reviewers when you revise. Overall the English is very good but it would not hurt to have it
+looked over by a native speaker of English (a very difficult language!).
+Associate Editor's comments:
+Please fully respond to the concerns of the reviewers: if you do not do so to the satisfaction of the
+Editors and reviewers, we will be unable to accept further revisions.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+Overall this paper is most interesting when considering the frogs and less so than the wireless
+sensors. For the latter, I really think they need to compare it to some of the other methods. I have
+a number of questions about the numerical methods, but those are largely minor issues. There
+are some other points that need clarification and the paper needs to be edited by a native speaker.
+I think you might also look at the papers by Belykh, Belykh and Hasler where synchrony was
+analyzed as the topology changed.
+minor points (some less minor than others)
+page 2 flock -> flocking
+page 3 to -> over
+page 7 In equation 2,3 you mean each time the phase hits 0 mod 2 pi the energy is decremented
+by 1 and the fatigue incremental by 1, correct? This should be stated explicitly since delta(x)
+means transversal crossing at x=0 and this is not the case here
+7
+page 10 In your earlier PRE paper you used sin(x) + c sin(2x) in order to get clusters as well as
+the triphase state. Is there a reason you don’t use that in this paper since that seems to be what
+the frogs do
+page 11 It seems like you synchronously evaluate the prob of switching every 3.5 seconds. This
+is a correct numerical implementation. I would think it should be more like a voltage gated ion
+channel where the rate of transition depends on the fatigue etc. this seems like a strange update
+rule. The right way would be to take the probability and divide by 3.5 to get a rate R and then if h
+is the time step for the ode model, at each such time step, choose a uniform random number, x,
+between 0 and 1. If x< h R then make the transition. This is the proper approximation if you are
+assuming a cts markov process.
+page 12
+When the animal switches to the call state is the phase the same as it was when it left the call state
+in the previous bout? This seems unrealistic that it would recall the phase. Seems more likely it
+starts randomly or at 0
+page 14
+So the theta_m inside Gamma makes no difference and this is the Winfree pulse coupled model.
+It would seem that this model would also be better for the frogs since they don’t interact
+continuously but rather only when the other is calling. I understand that the cts interaction you
+guys show can come from weak coupling, but it would be better to be consistent in your
+modeling
+page 15
+Instead or requiring the reader to figure out that sqrt(2) means talk to the 6 neighbors, just say it
+is a Moore neighborhood or say the 6 immediate neighbors
+Eq15 is discontinuous at 0 and 2pi. It should be cts there like the sine model
+Reviewer: 2
+Comments to the Author(s)
+The authors investigated calling behavior of two or three frogs and found a group of frogs self-
+organizes their calling behavior in two different time scale; in short time scale, individual frog
+calls alternatively from the other frogs; in log time scale, a group of frogs switches between
+alternative calling state and silent state. The authors modeled these two behaviors using a
+coupled-oscillator system additionally introduced stochastic state switching mechanism. Last, the
+mechanism of this behavior was applied to a wireless sensor network problem.
+Their findings of the two hierarchical behavior of the frog is interesting, and the idea of the
+application is fine. It is, however, the paper leaves room for improvement as listed below.
+Main points
+1. It is fine they succeeded in modeling of the frog behavior and found the silent state is useful
+for energy saving. So, how the efficiency depends on the parameters, especially on the coupling
+strength (K), the detection sensitivity of calling neighbors (H)? This kind of analysis would give a
+benefit in design of wireless sensor networks. The variable, energy E is not so important in the
+dynamics, if the author do not analyze the efficiency.
+2. The proposed model is for just two or three frogs, while the number of units in the wireless
+sensor network is more than those up to 100. Why they did not construct a model of nearest (or
+8
+second nearest) neighbor coupling system for the frog system (They did it in their previous work
+ref[23]).
+3. Most part of the basic idea has been already proposed in the reference [33] written by one of
+the authors of this submitted paper. This work should be introduced in the introduction part and
+the authors should present what is the main novel point of this paper differently from the
+previous one.
+Minor points
+1. The names of axes G1(Tn) and G2(Tn) in Fig. 3 are inconsistent with the explanation of Eq. (7,8)
+and Eq. (10); They are exchanged.
+2. In Fig. 4B, last panel, it is difficult to find the feature of the tri-phase. How about the different
+combination of the data are colored different? The same problem is found in Fig. 7C, in which the
+partial magnified graph will be helpful for readers.
+Author's Response to Decision Letter for (RSOS-181117.R0)
+See Appendix A.
+label_version_2
+RSOS-181117.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (G Ermentrout)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+9
+Comments to the Author(s)
+label_comment_3
+Why is it called 1:2 synchronization? It remains 1:1 with each oscillator firing once per cycle.
+Also on page 4
+If there are three frogs and two are synchronized, isn’t there just 1 frog remaining? Instead of
+“rest pair”, perhaps you mean remaining frog?
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_4
+Most of my concerns have been addressed except for the followin minor points:
+(Answer to my major comment 1)
+The authors added a new measure t_pow to capture dependence of system behavior on
+parameters alpha, K_nm, and p_high. For K_nm, they examine on the domain K_nm >= 0.5. How
+about K_nm <0.5?
+Relating to this, in page 10, line 258, they describe the parameter setting as K_nm=0.20. In
+contrast they stated, in their rebuttal document, that “performed the simulation with the correct
+value (i.e., K_nm=1.0). Please correct the conflict.
+(Answer to my minor comment 2)
+They added an enlarged graph of the last panel of Fig.4B into Fig. S1. The both graphs are
+identical then readers need not duplication. My comment in the previous report meant that it will
+be helpful if a part of the graph, for example, that of time=8650-8800, is magnified to be able to
+capture the process toward phase locking.
+(Page 7, line 184)
+The authors termed the function as ``Dirac delta function’’. It is, however, this is not accurate
+expression because delta=infinity when theta=0 in Dirac delta function. On the other hand their
+definition is delta=1 when theta=0, delta=0 otherwise.
+10
+label_end_comment
+Decision letter (RSOS-181117.R1)
+13-Nov-2018
+Dear Dr Aihara:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-181117.R1
+entitled "Mathematical Modeling and Application of Frog Choruses as an Autonomous
+Distributed Communication System" has been accepted for publication in Royal Society Open
+Science subject to minor revision in accordance with the referee suggestions. Please find the
+referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-181117.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+11
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 22-Nov-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If you do not think you will be able to meet this date
+please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+12
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Thank you for submitting this revision. The referees have reviewed it and have a number of
+minor requests for you to address. We look forward to receiving your further revision.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+Why is it called 1:2 synchronization? It remains 1:1 with each oscillator firing once per cycle.
+Also on page 4
+If there are three frogs and two are synchronized, isn’t there just 1 frog remaining? Instead of
+“rest pair”, perhaps you mean remaining frog?
+Reviewer: 2
+Comments to the Author(s)
+Most of my concerns have been addressed except for the followin minor points:
+(Answer to my major comment 1)
+The authors added a new measure t_pow to capture dependence of system behavior on
+parameters alpha, K_nm, and p_high. For K_nm, they examine on the domain K_nm >= 0.5. How
+about K_nm <0.5?
+13
+Relating to this, in page 10, line 258, they describe the parameter setting as K_nm=0.20. In
+contrast they stated, in their rebuttal document, that “performed the simulation with the correct
+value (i.e., K_nm=1.0). Please correct the conflict.
+(Answer to my minor comment 2)
+They added an enlarged graph of the last panel of Fig.4B into Fig. S1. The both graphs are
+identical then readers need not duplication. My comment in the previous report meant that it will
+be helpful if a part of the graph, for example, that of time=8650-8800, is magnified to be able to
+capture the process toward phase locking.
+(Page 7, line 184)
+The authors termed the function as ``Dirac delta function’’. It is, however, this is not accurate
+expression because delta=infinity when theta=0 in Dirac delta function. On the other hand their
+definition is delta=1 when theta=0, delta=0 otherwise.
+Author's Response to Decision Letter for (RSOS-181117.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-181117.R2)
+26-Nov-2018
+Dear Dr Aihara,
+I am pleased to inform you that your manuscript entitled "Mathematical Modeling and
+Application of Frog Choruses as an Autonomous Distributed Communication System" is now
+accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Please note that the email address of your co-author Yasuharu Hirano (y-hirano@ist.osaka-
+u.ac.jp) is not receiving emails from ScholarOne, please ensure that you supply us with an
+alternative email.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+14
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+Appendix A
+Department of Computer Science
+Graduate School of Systems and Information Engineering
+Tsukuba, Ibaraki 305-8573, JAPAN
+Phone +81-29-853-5271
+Dear Prof. Kevin Padian and Associate Editor,
+We are pleased to send you the revised version of our manuscript. We have made most of
+the changes and corrections suggested by the reviewers. In addition, we have improved English of
+our manuscript by using a professional English editing service of a native speaker according to the
+comment of the first reviewer. A marked-up copy of the changes from the previous manuscript is also
+attached as a different file. We appreciate all the comments and suggestions as they have greatly
+improved the quality of our study.
+As described in the responses to both reviewers, we found one mistake about a parameter
+value. Namely, in the previous manuscript, it was stated that the parameter K_nm is fixed at 1.0 for
+the simulation of a wireless sensor network. However, we carried out the simulation with a wrong
+value of K_nm = 0.5. We are sorry for this mistake. For this revision, we have performed the
+simulation with the correct value (i.e., K_nm = 1.0) and then have updated Figures 7, 8 and 9.
+Subsequently, the figures look slightly different from the previous ones while the results and
+conclusions hold.
+We would like to thank again for the valuable comments, and wish that the revised
+manuscript is now suitable for the publication in Royal Society Open Science.
+Sincerely yours,
+Ikkyu Aihara (for all the authors)
+2018/10/17
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s):
+Overall this paper is most interesting when considering the frogs and less so than the wireless
+sensors. For the latter, I really think they need to compare it to some of the other methods. I have a
+number of questions about the numerical methods, but those are largely minor issues. There are
+some other points that need clarification and the paper needs to be edited by a native speaker.
+I think you might also look at the papers by Belykh, Belykh and Hasler where synchrony was
+analyzed as the topology changed.
+Acknowledgement:
+Thank you very much for your valuable comments. We updated the manuscript according to your
+comments as shown below. We also appreciate your suggestion on the check by a native speaker.
+We used a professional English editing service by a native speaker and modified English of our
+manuscript.
+In addition to the following modifications, we found one mistake about a parameter value in
+the simulation of a wireless sensor network. Namely, in the previous manuscript, it was stated that
+the parameter K_nm is fixed at 1.0 for the simulation. However, we carried out the simulation with a
+wrong value of K_nm = 0.5. We are sorry for this mistake. For this revision, we have performed the
+simulation with the correct value (i.e., K_nm = 1.0) and then have updated Figures 7, 8 and 9 of our
+manuscript. Subsequently, the figures look slightly different from the previous ones while the
+results and conclusions hold.
+Revised Point:
+We appreciate your comment on the comparison of the proposed model to alternative methods of
+a wireless sensor network. The main features of the proposed model can be summarized as
+follows: (1) neighboring nodes can avoid packet collision over a short time scale by alternating the
+timing of data transmission, and (2) all the nodes collectively switch their states over a long time
+scale, establishing high network connectivity while reducing network power consumption. Although
+there are alternative methods on the avoidance of packet collision over a short time scale, we
+could not find the methods realizing the second feature over a long time scale unfortunately.
+Consequently, we consider that the comparison with alternative methods achieving both of the
+above features is now difficult. In the updated manuscript, we explained these discussions on the
+relevance of partially related methods over a short time scale as well as the novelty of the
+proposed model over a long time scale (Lines 480-486 in page 18 (Summary of the proposed
+model); Lines 487-491 in page 18 (The relevance with alternative methods over a short time
+scale); Lines 509-515 in page 19 (The novelty of the proposed model over a long time scale)).
+We also thank you for the comment on the study by Belykh et al. We agree that their studies
+on the synchrony and network topology are related to our study. This is because the temporal
+structures emerging from anti-phase synchronization of neighboring oscillators are also likely to be
+affected by the change of network topology. We explain this point in the section of Conclusions and
+Discussions with citing the studies of Belykh et al. (Lines 501-508 in page 19).
+Minor points (some less minor than others)
+Comment 1:
+page 2 flock -> flocking
+Revised Point:
+We modified the word "flock" in the introduction to "flocking" according to your comment (Line 30 in
+page 2). In addition, we found the same word in the abstract, so we also modified it (Line 13 in
+page 1).
+Comment 2:
+page 3 to -> over
+Revised Point:
+Thank you for the comment. In page 3 of the previous manuscript, however, there were multiple
+"to" and we could not figure out which one should be modified. So, we ask a native speaker of a
+professional English editing service to check our manuscript. However, the native speaker did not
+point out that any of the multiple "to" in the page 3 should be modified. Hence, we could not modify
+the word in this revision.
+Comment 3:
+page 7 In equation 2,3 you mean each time the phase hits 0 mod 2 pi the energy is decremented by
+1 and the fatigue incremental by 1, correct? This should be stated explicitly since delta(x) means
+transversal crossing at x=0 and this is not the case here
+Revised Point:
+Thank you for the comment. Yes, our model assumes that E_n is decreminted by 1 and T_n is
+incremented by 1 each time the phase hits 0. Because this calculation is not the usual case of the
+Dirac delta function as you point out, we add the above explanation to our manuscript (Lines
+190-193 in page 7).
+Comment 4:
+page 10 In your earlier PRE paper you used sin(x) + c sin(2x) in order to get clusters as well as the
+triphase state. Is there a reason you don’t use that in this paper since that seems to be what the frogs
+do
+Revised Point:
+Thank you for the comment. In the previous manuscript, we assumed the interaction term K_nm
+sin(theta_n-theta_m) as a simple function that can explain tri-phase synchronization of three frogs
+(Aihara et al., Mathematical Biosciences, 2008). However, 1:2 anti-phase synchronization of three
+frogs (i.e., two pairs of three frogs call alternately while the rest pair overlap their calls) is also
+observed in the chorus of actual male Japanese tree frogs as you point out (see Figure 1D), and
+then the interaction term of K_nm [sin(theta_n-theta_m)-k sin(2(theta_n-theta_m))] can reproduce
+both 1:2 anti-phase synchronization and tri-phase synchronization at the same parameter values
+(Aihara et al., Phy Rev E, 2011). Hence, we agree that the latter interaction term including the
+second-order component is better for the model of frog choruses.
+For this revision, we have redone all the simulations by using the interaction term including
+the second-order component (i.e., K_nm [sin(theta_n-theta_m)-k sin(2(theta_n-theta_m))]) on the
+assumption of the pulse coupling that you point out in Comment 7 (see Equations (1) and (13)).
+Then, we have updated Figures 4 and 5. Consequently, the tri-phase synchronization and the 1:2
+anti-phase synchronization occur at a different chorus in the same simulation (see the bottom
+panel of Figure 4B and also Figure S1 in Supplementary Information). We consider that these
+results reproduce the temporal patterns of frog choruses much more precisely. Thank you very
+much again for the valuable comment that has greatly improved the quality of our study.
+Comment 5:
+page 11 It seems like you synchronously evaluate the prob of switching every 3.5 seconds. This is
+a correct numerical implementation. I would think it should be more like a voltage gated ion channel
+where the rate of transition depends on the fatigue etc. this seems like a strange update rule. The
+right way would be to take the probability and divide by 3.5 to get a rate R and then if h is the time
+step for the ode model, at each such time step, choose a uniform random number, x, between 0 and
+1. If x< h R then make the transition. This is the proper approximation if you are assuming a cts
+markov process.
+Revised Point:
+Thank you for the comment. As you point out, we evaluate the probability of the transition every 3.5
+seconds. In other words, we treat the transition as a discrete-time Markov process. The reason of
+this treatment is the discontinuity in the probability of the transition. As shown in Equations (7) and
+(8), the probability of the transition from the calling state to the silent state depends on the fatigue
+(T_n). Then, the time evolution of T_n during the calling state is described by the Dirac delta
+function (Equation (2)). Therefore, the fatigue T_n changes discretely in time, and then the
+probability of the transition also changes discretely in time.
+To evaluate the probability of the transition (P) as a continuous-time Markov process, we
+recognize that the following steps are necessary: (1) we calculate the time differential of the
+probability of the transition (P'), and (2) we update the state according to the rate of the transition
+(i.e., P' * h) by using the time step h of the simulation. In this study, however, the probability of the
+transition is discontinuous in time as explained above, so that we cannot calculate the time
+differential of the probability (i.e., P'). Subsequently, we treat the transition as a discrete-time
+Markov process which is an alternative approach of a continuous-time Markov process. We add
+these explanations to the manuscript (Lines 293-300 in pages 11 and 12).
+Comment 6:
+page 12
+When the animal switches to the call state is the phase the same as it was when it left the call state in
+the previous bout? This seems unrealistic that it would recall the phase. Seems more likely it starts
+randomly or at 0
+Revised Point:
+Thanks for the comment. Actually, in the simulation of the previous manuscript, we randomized the
+phase from 0 to 2pi at each transition from the silent state to the calling state. We are sorry that the
+manuscript lacked this information. We add the explanation about the randomization of the phase
+to the manuscript (Lines 305-306 in page 12).
+Comment 7:
+page 14
+So the theta_m inside Gamma makes no difference and this is the Winfree pulse coupled model. It
+would seem that this model would also be better for the frogs since they don’t interact continuously
+but rather only when the other is calling. I understand that the cts interaction you guys show can
+come from weak coupling, but it would be better to be consistent in your modeling
+Revised Point:
+We agree with your comment. As you point out, the calls of male Japanese tree frogs have a
+specific duration (Figure 1), indicating that they do not continuously interact. For this revision, we
+carried out the simulation by assuming the Dirac delta function also in the model of frog choruses
+(Equation (1)) and updated Figures 4 and 5. Consequently, we succeeded in reproducing the
+alternating chorus patterns of male Japanese tree frogs as in the case of the continuous interaction.
+Note that in the updated simulation we assume a slightly weaker interaction (K_nm = 0.2) than the
+previous case of the continuous interaction (K_nm = 1.0) so as to obtain the consistent result from
+the simulation.
+Comment 8:
+page 15
+Instead or requiring the reader to figure out that sqrt(2) means talk to the 6 neighbors, just say it is a
+Moore neighborhood or say the 6 immediate neighbors
+Revised Point:
+We agree. In the updated manuscript, we first explain that we assume the situation in which each
+node interacts with a Moore neighborhood, and then provide an additional information explaining
+that such an interaction can be realized by a specific parameter value (Lines 377-379 in pages14
+and 15).
+Comment 9:
+Eq15 is discontinuous at 0 and 2pi. It should be cts there like the sine model
+Revised Point:
+Thank you for the comment. As you point out, we use a linear interaction term (Equation (14) that
+corresponds to Equation (15) in the previous manuscript) that is discontinuous at 0 and 2pi. This is
+because it is required to avoid a packet collision (i.e., in-phase synchronization) as quickly as
+possible in a wireless sensor network. Although the sinusoidal interaction term can make the
+in-phase synchronization to be unstable, it takes much long time for the nodes to avoid the
+in-phase synchronization because of a very weak interaction near the in-phase synchronization
+(see Figure S2A in Supplementary Information). By contrast, the linear interaction term produces a
+strong interaction even at the in-phase synchronization: namely, the linear term takes a large
+positive value at 0 and takes a large negative value at 2pi (see Figure S2B in Supplementary
+Information), which allows sensor nodes to avoid the in-phase synchronization very quickly.
+Therefore, we use the linear interaction term for the model of a wireless sensor network in this
+study although such a discontinuous function is not usually utilized for the model of a
+continuous-time system. We add this explanation to our manuscript (Lines 387-395 in page 15).
+Reviewer: 2
+Comments to the Author(s):
+The authors investigated calling behavior of two or three frogs and found a group of frogs
+self-organizes their calling behavior in two different time scale; in short time scale, individual frog
+calls alternatively from the other frogs; in log time scale, a group of frogs switches between
+alternative calling state and silent state. The authors modeled these two behaviors using a
+coupled-oscillator system additionally introduced stochastic state switching mechanism. Last, the
+mechanism of this behavior was applied to a wireless sensor network problem.
+Their findings of the two hierarchical behavior of the frog is interesting, and the idea of the application
+is fine. It is, however, the paper leaves room for improvement as listed below.
+Acknowledgement:
+Thank you very much for your valuable comments. We updated the manuscript according to your
+comments as follows. The dynamical behaviors of various animals attract a great deal of attention
+from many researchers, and various experimental and theoretical studies were carried out. To our
+knowledge, however, the hierarchical feature of the animal behavior was not studied well
+especially from the viewpoint of mathematical modeling. We hope that this study will highlight the
+unique behavior of male frogs and also inspire further studies on bio-inspired technologies.
+In addition to the following modifications, we found one mistake about a parameter value in
+the previous manuscript. Namely, in the simulation of a wireless sensor network, it was stated that
+the parameter K_nm is fixed at 1.0. However, we carried out the simulation with a wrong value of
+K_nm = 0.5. We are sorry for this mistake. For this revision, we have performed the simulation with
+the correct value (i.e., K_nm = 1.0) and then have updated Figures 7, 8 and 9 of our manuscript.
+Consequently, the figures look slightly different from the previous ones while the results and
+conclusions hold.
+Main points
+Comment 1:
+It is fine they succeeded in modeling of the frog behavior and found the silent state is useful for
+energy saving. So, how the efficiency depends on the parameters, especially on the coupling
+strength (K), the detection sensitivity of calling neighbors (H)? This kind of analysis would give a
+benefit in design of wireless sensor networks. The variable, energy E is not so important in the
+dynamics, if the author do not analyze the efficiency.
+Revised Point:
+Thank you very much for the valuable comment. We agree with you. To evaluate the efficacy of
+energy saving in a wireless sensor network, we need to examine how the dynamics of E_n is
+affected by the parameters of our model. Hence, we newly define the pace of power consumption
+(t_pow) and then examine how t_pow depends on the parameters of our model (Note that t_pow is
+defined as the time in which the remaining power of all the nodes becomes less than 90% of their
+maximum power E_max (Lines 442-447 in page 17)). Consequently, we found that the parameter
+alpha in Equation (5) dominantly affects the efficacy of energy saving.
+Figure 9B shows the relationship between alpha and t_pow. This figure demonstrates that it
+takes a longer time for sensor nodes to consume their energy if the parameter alpha takes a
+smaller value, indicating that we can control network lifetime by the parameter alpha. The origin of
+this result is that alpha represents the recovery rate of T_n (Equation (5)) and therefore determines
+the duration of the sleep state. We added these new analysis and result to our manuscript (Lines
+442-451 in page 17).
+In addition, we examine how t_pow depends on the parameters K and p_high according to
+your comment (Note that p_high is the parameter included in the function H (see Equation (12))
+and represents the sensitivity of response to the signals from other nodes). The results of these
+analyses are shown in Figures S4 in Supplementary Information. In both figures, the range of the
+vertical axe is set at the same value with Figure 9B. It is demonstrated that these two parameters
+do not strongly affect t_pow compared to the parameter alpha. We guess that the reasons of these
+results are as follows: (1) the parameter K just slightly modulates an inter-signal interval of an
+active node and therefore does not have a strong effect on the duration of the active state, and (2)
+the parameter p_high mainly determines the occurrence of the collective transition but does not
+modulate the duration of each state.
+Comment 2:
+The proposed model is for just two or three frogs, while the number of units in the wireless sensor
+network is more than those up to 100. Why they did not construct a model of nearest (or second
+nearest) neighbor coupling system for the frog system (They did it in their previous work ref[23]).
+Revised Point:
+Thank you for the comment. In the section of frog choruses, this study aims to propose a
+mathematical model that can reproduce the features of empirical data over multiple time scales. To
+precisely examine the validity of the proposed model, we need larger datasets of empirical data.
+The reason of our restriction on the number of frogs (i.e., two frogs or three frogs) is the difference
+of the data size between indoor experiments and field observations. Namely, the data of our indoor
+experiments consists of the audio recordings of 16 hours (4 hours * 4 datasets; Aihara et al., Phy
+Rev E, 2011) while the data of our field observations consist of the video recordings of 1.25 hours
+(15 min * 5 datasets; Aihara et al., Sci Rep, 2014). Therefore, the datasets of field observations are
+currently much smaller than those of indoor experiments, and then we focus on the system of two
+frogs or three frogs in this manuscript so as to utilize the larger datasets of the indoor experiments.
+We add this explanation to our manuscript (Lines 466-472 in page18).
+On the other hand, it remains as a future problem to extend the proposed model to a system
+of many frogs. Especially, in our previous study (Aihara et al., Sci Rep, 2014), we consider the
+interaction that decays depending on the distance among frogs; such a network topology should
+affect the temporal structures also in the proposed model. It is very interesting for us to examine
+the relationship between the network topology and the temporal chorus pattern on the basis of
+such an extended model with many frogs. In regard to this point, it is also an important future
+problem to investigate the relationship between the network topology and the temporal structures
+in a wireless sensor network because we here consider specific network topology shown in Figure
+7A (i.e., a two-dimensional square lattice in which each node interacts with a Moore neighborhood)
+although such a network topology should vary a lot in the practical usage of a wireless sensor
+network. We also add these discussions to our manuscript (Lines 473-479 in page 18; Lines
+501-508 in page 19).
+Comment 3:
+Most part of the basic idea has been already proposed in the reference [33] written by one of the
+authors of this submitted paper. This work should be introduced in the introduction part and the
+authors should present what is the main novel point of this paper differently from the previous one.
+Revised Point:
+Thank you very much for the valuable comment. As you point out, Mutazono et al. carried out a
+seminal work on the application of frog choruses to a wireless sensor network (Mutazono et al.,
+Computer Communications, 2012). We agree that their study should be cited in the introduction
+and then the novel point of our study should be explained.
+As for the dynamics over a short time scale, Mutazono et al. also use a phase oscillator
+model so as to avoid a packet collision among sensor nodes. Namely, they propose a phase
+oscillator model with citing our theoretical study on frog choruses (Aihara et al., Artificial Life and
+Robotics, 2008), and then apply the model to the control of a wireless sensor network. Therefore,
+the study of Mutazono et al. is the first one that reports the application of the short-time-scale
+dynamics of frog choruses (i.e., anti-phase synchronization of two frogs) to the control of a wireless
+sensor network.
+By contrast, we consider that this study proposes a novel approach on the dynamics over a
+long time scale. The point is that Mutazono et al. utilize the satellite behavior of male frogs to
+reduce network power consumption. The satellite behavior is the behavior that male frogs stay
+silent in the vicinity of a calling male for a tremendously long time in order to intercept a female that
+is attracted to the calling male (Gerhardt and Huber 2002; Wells 2007), which can be understood
+as an inhibitory interaction among male frogs that inhibits the calling behavior of neighboring males.
+In this study, we do not assume the satellite behavior of male frogs at all for the modeling of frog
+choruses. By contrast, we here focus on the collective and cyclic transition between the silent state
+and the calling state, and model the transition by using an excitatory interaction among male frogs
+that activate the calling behavior of neighboring males (Equation (12)). Because Mutazono et al. do
+not focus on the collective and cyclic transition and then do not reproduce it by their model, we
+consider that this study provides a novel approach for the dynamics over a long time scale.
+We add these explanations to the introduction (Lines 72-85 in page 3).
+Minor points
+Comment 1:
+The names of axes G1(Tn) and G2(Tn) in Fig. 3 are inconsistent with the explanation of Eq. (7,8) and
+Eq. (10); They are exchanged.
+Revised Point:
+Thank you very much for the comment. As you point out, G1(Tn) and G2(Tn) in Figure 3 of the
+previous manuscript should be G2(Tn) and G1(Tn), respectively. We are so sorry for this mistake.
+We modified the names of the axes according to your comment (see Figure 3 in the updated
+manuscript).
+Comment 2:
+In Fig. 4B, last panel, it is difficult to find the feature of the tri-phase. How about the different
+combination of the data are colored different? The same problem is found in Fig. 7C, in which the
+partial magnified graph will be helpful for readers.
+Revised Point:
+We agree with you. According to the comment, we update the bottom panel of Figure 4B by using
+color plots in which pink dots, blue dots and green dots represent theta_1-theta_2, theta_1-theta_3
+and theta_2-theta_3, respectively. Then, we also add the enlarged version of this figure as
+Supplementary Information so as to clearly show the details of the phase dynamics (see Figure S1
+in Supplementary Information).
+We also appreciate for your comment on Figure 7C. We show the enlarged version of Figure
+7C in Supplementary Information (see Figure S3). We agree that this figure is helpful for readers.
+However, we could not find a specific temporal pattern in the phase dynamics. The reason of this
+complicated pattern would be the frustration emerging from anti-phase synchronization of
+neighboring oscillators. In our previous study (Aihara et al., Sci. Rep., 2014), we showed that
+several synchronization states (i.e., two-cluster synchronization and wavy anti-phase
+synchronization with various wave numbers) are multi-stable even in a simple spatial structure of a
+ring when assuming oscillators that attempt to synchronize in anti-phase with neighbors. The point
+is that in this study we assume a more complicated spatial structure (i.e., a two-dimensional
+square lattice in which each oscillator interacts with a Moore neighborhood) than a ring. Therefore,
+a more complicated pattern is likely to emerge in this simulation. We consider that further analysis
+is required to reveal the details of the complicated pattern. We add this explanation to our
+manuscript (Lines 491-501 in pages 18 and 19).
+Appendix B
+Reviewer comments to Author
+Review 1
+<U+2713> Comment <U+270F>
+Why is it called 1:2 synchronization? It remains 1:1 with each oscillator firing once per
+cycle.
+Also on page 4
+If there are three frogs and two are synchronized, isn t there just 1 frog remaining? Instead
+of rest pair , perhaps you mean remaining frog?
+<U+2712> <U+2711>
+Response:
+Thank you very much for the comment. 1:2 anti-phase synchronization means that one frog
+synchronizes in anti-phase with the remaining two frogs that synchronize in in-phase (as you
+point out, this is the same with the state in which two frogs synchronize in in-phase, and they
+synchronize in anti-phase with the remaining frog). In the previous manuscript, we explained
+this situation based on the synchronized state of each pair, but we consider that the explanation
+was very confusing. Therefore, we modified the explanation of 1:2 anti-phase synchronization
+according to your comment (Line 105 in Page 4).
+In addition, the phrase of 1:2 anti-phase synchronization seems to be also confusing for de-
+scribing this state because each oscillator fires once per cycle as you point out. Therefore, we
+modified the phrase of 1:2 anti-phase synchronization to clustered anti-phase synchronization
+(Line 106 in Page 4, Line 323 in Page 12, the caption of Figure 1, the caption of Figure 4, and
+the caption of Figure S1 in Supplementary Information) so as to precisely describe the situa-
+tion that one frog synchronizes in anti-phase with the remaining two frogs that synchronize in
+in-phase. Thank you very much again for your valuable comment.
+Reviewer comments to Author
+Review 2
+<U+2713> General Comment <U+270F>
+Most of my concerns have been addressed except for the followin minor points:
+<U+2712> <U+2711>
+Acknowledgement:
+Thank you very much for your valuable comments. We revised our manuscript as follows.
+<U+2713> Comment 1 <U+270F>
+(Answer to my major comment 1)
+The authors added a new measure tpow to capture dependence of system behavior on pa-
+rameters alpha, Knm , and phigh . For Knm , they examine on the domain Knm >= 0.5. How
+about Knm < 0.5? Relating to this, in page 10, line 258, they describe the parameter setting
+as Knm = 0.20. In contrast they stated, in their rebuttal document, that performed the
+simulation with the correct value (i.e., Knm = 1.0). Please correct the conflict.
+<U+2712> <U+2711>
+Response:
+Thank you for the comment. In this study, we use different types of interaction terms as well
+as their coupling strengths for the simulations of frog choruses and a wireless sensor network.
+For the simulation of frog choruses, we use a sinusoidal interaction term of Equation (13) with
+the coupling strength of Knm = 0.2 (Line 265 in Page 10 in the current manuscript). In contrast,
+for the simulation of a wireless sensor network, we use a linear interaction term of Equation (14)
+with the coupling strength of Knm = 1.0 (Line 404 in Page 15). In the rebuttal document of our
+previous submission, we stated our previous mistake about the simulation of a wireless sensor
+network as follows:
+<U+2713> Rebuttal document of our previous submission <U+270F>
+In addition to the following modifications, we found one mistake about a parameter value
+in the previous manuscript. Namely, in the simulation of a wireless sensor network, it was
+stated that the parameter Knm is fixed at 1.0. However, we carried out the simulation with
+a wrong value of Knm = 0.5. We are sorry for this mistake. For this revision, we have
+performed the simulation with the correct value (i.e., Knm = 1.0) and then have updated
+Figures 7, 8 and 9 of our manuscript. Consequently, the figures look slightly different from
+the previous ones while the results and conclusions hold.”
+<U+2712> <U+2711>
+This statement explains that we used a correct value for the simulation of frog choruses (i.e.,
+Knm = 0.2; Line 265 in Page 10) but used a wrong value for the simulation of a wireless sensor
+network (i.e., we used Knm = 0.5 although the correct value is Knm = 1.0 as explained in Line
+404 in Page 15). We are sorry for the confusing explanation about the parameter values. We
+are sure that all the simulations have been carried out with the correct values in the current
+manuscript.
+On the other hand, we agree that the simulation in a wider parameter range is quite important.
+In this revision, we carried out the same simulation in a wider range of 0 <= Knm < 1.5 that
+includes the range of Knm < 0.5. According to the simulation, we updated Figure S4A in the
+Supplementary Information. Thank you very much again for the valuable comment.
+<U+2713> Comment 2 <U+270F>
+(Answer to my minor comment 2)
+They added an enlarged graph of the last panel of Fig.4B into Fig. S1. The both graphs are
+identical then readers need not duplication. My comment in the previous report meant that
+it will be helpful if a part of the graph, for example, that of time= 8650-8800, is magnified
+to be able to capture the process toward phase locking.
+<U+2712> <U+2711>
+Response:
+Thank you very much for the comment. We are sorry that we misunderstood your comment
+in our rebuttal document of the previous submission. We agree that the graph enlarged in the
+axe of time is much helpful for readers because the bottom panel of Figure 4B includes several
+choruses in the same graph. The point of this simulation is that we succeed in reproducing both
+of the tri-phase synchronization and clustered anti-phase synchronization that were reported
+in our previous experiments of Ref. [12] (Note that we have changed the word 1:2 anti-
+phase synchronization” to clustered anti-phase synchronization” as explained in our response
+to the comment of the other reviewer). In this revision, we added two enlarged graphs that
+show the process toward phase locking at clustered anti-phase synchronization and tri-phase
+synchronization, respectively (see Figure S1A and S1B in Supplementary Information). Note
+that, before and after the chorus of three frogs, there are short periods in which only two frogs
+make a chorus; in those period, a phase difference converges to p (i.e, anti-phase synchronization
+of two frogs is realized).
+<U+2713> Comment 3 <U+270F>
+(Page 7, line 184)
+The authors termed the function as “Dirac delta function”. It is, however, this is not
+accurate expression because delta=infinity when theta= 0 in Dirac delta function. On the
+other hand their definition is delta= 1 when theta= 0, delta= 0 otherwise.
+<U+2712> <U+2711>
+Response:
+Thank you for the comment. In this study, we assume a delta function d(<U+03B8>n (t)) that is infinity
+at <U+03B8>n = 0 and is 0 otherwise. Then, we also assume that d(<U+03B8>n (t)) satisfies the relationship
+R tn,i +o
+tn,i -o d(<U+03B8>n (t))dt = 1 for the call timing t = tn,i (Here, i represents the index of calls produced
+by the nth frog, and o is a small positive parameter). The purpose of this assumption is to
+propose a time differential equation in which the variables of En and Tn change discretely in
+time when the focal frog produces a call at <U+03B8>n = 0. This delta function gives the deviations
+R tn,i +o dTn R tn,i +o
+of Tn and En at the call timing t = tn,i as <U+2206>Tn = tn,i -o dt dt = tn,i -o d(<U+03B8>n (t)) = 1 and
+R tn,i +o dEn R tn,i +o
+<U+2206>En = tn,i -o dt dt = tn,i -o (-d(<U+03B8>n (t)))dt = -1. Consequently, our model can describe the
+situation in which Tn is incremented by 1 and En is decremented by 1 every time the phase <U+03B8>n
+hits 0. In the revised manuscript, we added the explanation of the delta function d(<U+03B8>n ) (Lines
+187-190 in Page 7, and Lines 195-200 in Pages 7 and 8).
+However, the delta function assumed here is slightly different from the Dirac delta function
+R x +o
+dDirac (<U+03B8>n (t)). This is because the Dirac delta function satisfies the relationship x00-o dDirac (x -
+1
+x0 )dx = 1 and also satisfies the relationship dDirac (f (x)) = f ' (x=x0 ) dDirac (x - x0 ) if f (x) is zero
+at x0 . If we use the Dirac delta function in our model, the deviation of En at t = tn,i is given
+R tn,i +o dEn R tn,i +o R tn,i +o 1
+by <U+2206>En = tn,i -o dt dt = tn,i -o (-dDirac (<U+03B8> n (t)))dt = tn,i -o (- <U+03B8>n ' (t=t
+n,i )
+dDirac (t - tn,i ))dt =
+1
+R tn,i +o 1
+- <U+03B8>' (t=tn,i ) tn,i -o
+dDirac (t - tn,i )dt = - <U+03B8>' (t=t n,i )
+, which is different from the result obtained from
+n n
+the above delta function. Therefore, we do not use the word “the Dirac delta function” in
+the revised manuscript. Moreover, we briefly mention that the delta function assumed here is
+different from the Dirac delta function, so as to avoid the confusion of readers (Lines 190-192 in
+Page 7). Thank you very much again for the valuable comment.
+Society Open

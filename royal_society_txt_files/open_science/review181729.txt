@@ -1,0 +1,1570 @@
+Dynamics and stability of running on rough terrains
+Nihav Dhawale, Shreyas Mandre and Madhusudhan Venkadesan
+Article citation details
+R. Soc. open sci. 6: 181729.
+http://dx.doi.org/10.1098/rsos.181729
+Review timeline
+Original submission: 18 October 2018 Note: Reports are unedited and appear as
+Revised submission: 11 February 2019 submitted by the referee. The review history
+Final acceptance: 15 February 2019 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-181729.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Reports © 2019 The Reviewers; Decision Letters © 2019 The Reviewers and Editors;
+Responses © 2019 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This manuscript is about the development, simulation, and analysis of a running model to
+understand the stability of running on uneven ground. The disc-like model was tested with both
+an open-loop strategy (without sensory feedback) and an anticipatory strategy that serves to
+minimize tangential collisions. Instabilities related to body orientation (orientational instability)
+and forward motion (translational instability) were explored with Monte Carlo simulations. The
+authors found that open-loop strategies cannot handle rough terrain due to orientational stability
+but can manage step-like terrain. In contrast, anticipatory strategies can achieve orientational
+stability and handle rough terrain but lose translational stability through loss of forward speed.
+Further analysis showed that mean steps to failure can be captured by the ratio between the
+orientational threshold and the orientation change over one step.
+This manuscript was generally well-written and clear. The graphs are descriptive and help
+support the points mentioned in the text. The authors were thorough in explaining their method,
+results, and providing further linear stability analysis to understand their results. The flow of
+derivations and explanations was generally smooth despite 28 references to the supplementary
+material. The authors also included a constructive discussion on the merits and limitations of
+their model and their results in the context of biological behavior. I only have minor comments.
+Minor Comments
+Title is short and pithy but a bit too general. Perhaps it would benefit from a key takeaway from
+the results.
+It would serve the reader better to mention earlier in the manuscript that the model was disc-like,
+closer to the beginning of Section 2 than the end. I puzzled over Figure 1b for a while trying to
+figure out if the disc was intentional or not until I reached the last few sentences of Section 2.
+Figure 1a would be clearer with an actual aerial phase shown in the human outline.
+A few items are a bit unclear. It is probably worth repeating in the beginning of Section 3 that first
+the impulses from flat ground on determined for steady-state running and then maintained for
+the rough terrain simulations. The parameters being adjusted in the simulation are not clear.
+Perhaps repeating the e_tc was varied would be useful. It is also unclear how angular impulse
+was maintained. The angular impulse was mentioned early in the manuscript but not again until
+near the end. Was it always set to 0?
+Page 9 Line 208/47: It is unclear which experiments “in experiments” is being referred. Is this
+referring to the simulation? Or referencing human or animal experiments?
+Page 16 Line 322/16: do not, instead of “don’t”
+3
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The paper addresses open-loop and anticipatory strategies for running on rough terrain using a
+simple math model. They perform Monte Carlo simulations to assess the likelihood of failure
+using open-loop and “anticipatory” strategies. The authors correlate successful running to
+practical dynamical concerns, like the degree of energy dissipation per step. I believe it is a well-
+thought-out contribution and would only require minor changes in framing to merit publication.
+The material is thoroughly communicated and well-written. The supplementary materials are
+similarly thorough. The locomotion math model is well motivated and elegantly designed to
+capture some of the key dynamics of running. I am heartened the authors are using “mean steps
+to failure” as a stability metric, because it seems most appropriate in the context of stochastic
+terrain. The method of modeling noises in anticipatory running is also solid.
+I would like to see the authors address the limits of their “anticipatory strategy.” The authors
+rightly reference Byl and Tedrake for using a “look-ahead” strategy. I’m not convinced that the
+authors’ anticipatory strategy is sufficiently powerful of a control model to reflect an optimal
+running behavior, or what I would consider truly “anticipatory” over multiple steps. I would like
+to see the authors draw a direct contrast between their anticipatory approach and the Byl 2009
+approach when describing their control modeling approach.
+The title is succinct and punchy, but perhaps overly broad. This paper primarily addresses
+relatively open-loop strategies to running on rough terrain. There are, by contrast, approaches
+that use high-level planning that could plan over many steps of rough terrain. Also, this glosses
+over a lot of the control complexity associated with runners with multi-body models, specifically
+those with compliance. I would recommend including a reference in the title to the fact that
+you’re analyzing simple models, maybe “How to run on rough terrains: lessons from a simple
+model.” Obviously, the style of title would be up to the authors, but I think that the study does
+need to be bounded in scope a bit given the complexity of the field.
+4
+label_end_comment
+Decision letter (RSOS-181729.R0)
+23-Jan-2019
+Dear Professor Venkadesan
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-181729 entitled
+"How to run on rough terrains" has been accepted for publication in Royal Society Open Science
+subject to minor revision in accordance with the referee suggestions. Please find the referees'
+comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-181729
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+5
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please ensure you have prepared your revision in accordance with the guidance at
+https://royalsociety.org/journals/authors/author-guidelines/ -- please note that we cannot
+publish your manuscript without the end statements. We have included a screenshot example of
+the end statements for reference. If you feel that a given heading is not relevant to your paper,
+please nevertheless include the heading and explicitly state that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 01-Feb-2019. Please note that the revision deadline
+will expire at 00.00am on this date. If you do not think you will be able to meet this date please let
+me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees. We strongly recommend uploading two versions of your revised manuscript:
+1) Identifying all the changes that have been made (for instance, in coloured highlight, in bold
+text, or tracked changes);
+2) A 'clean' version of the new manuscript that incorporates the changes made, but does not
+highlight them.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document";
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format);
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account;
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript. Make sure it is clear in your data accessibility statement how the data
+can be accessed;
+6
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://rs.figshare.com/). The heading and legend provided for
+each supplementary file during the submission process will be used to create the figshare page,
+so please ensure these are accurate and informative so that your files can be found in searches.
+Files on figshare will be made available approximately one week before the accompanying article
+so that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry).
+If your manuscript is newly submitted and subsequently accepted for publication, you will be
+asked to pay the article processing charge, unless you request a waiver and this is approved by
+Royal Society Publishing. You can find out more about the charges at
+http://rsos.royalsocietypublishing.org/page/charges. Should you have any queries, please
+contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Monica Daley (Associate Editor) and Professor Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Monica Daley):
+Thank you for your patience in waiting for a decision on your paper. We have now received
+feedback from two expert reviewers, who are positive about the contribution of this paper in
+developing a simple model of running on uneven ground. In particular they highlight that the
+paper makes a novel contribution through the combination of simple models and stochastic
+approaches. The reviewers have suggested only minor changes to the text; therefore I am happy
+to accept the paper subject to these minor revisions. Please provide a point-by-point response to
+the reviewers when resubmitting the revised version.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+This manuscript is about the development, simulation, and analysis of a running model to
+understand the stability of running on uneven ground. The disc-like model was tested with both
+7
+an open-loop strategy (without sensory feedback) and an anticipatory strategy that serves to
+minimize tangential collisions. Instabilities related to body orientation (orientational instability)
+and forward motion (translational instability) were explored with Monte Carlo simulations. The
+authors found that open-loop strategies cannot handle rough terrain due to orientational stability
+but can manage step-like terrain. In contrast, anticipatory strategies can achieve orientational
+stability and handle rough terrain but lose translational stability through loss of forward speed.
+Further analysis showed that mean steps to failure can be captured by the ratio between the
+orientational threshold and the orientation change over one step.
+This manuscript was generally well-written and clear. The graphs are descriptive and help
+support the points mentioned in the text. The authors were thorough in explaining their method,
+results, and providing further linear stability analysis to understand their results. The flow of
+derivations and explanations was generally smooth despite 28 references to the supplementary
+material. The authors also included a constructive discussion on the merits and limitations of
+their model and their results in the context of biological behavior. I only have minor comments.
+Minor Comments
+Title is short and pithy but a bit too general. Perhaps it would benefit from a key takeaway from
+the results.
+It would serve the reader better to mention earlier in the manuscript that the model was disc-like,
+closer to the beginning of Section 2 than the end. I puzzled over Figure 1b for a while trying to
+figure out if the disc was intentional or not until I reached the last few sentences of Section 2.
+Figure 1a would be clearer with an actual aerial phase shown in the human outline.
+A few items are a bit unclear. It is probably worth repeating in the beginning of Section 3 that first
+the impulses from flat ground on determined for steady-state running and then maintained for
+the rough terrain simulations. The parameters being adjusted in the simulation are not clear.
+Perhaps repeating the e_tc was varied would be useful. It is also unclear how angular impulse
+was maintained. The angular impulse was mentioned early in the manuscript but not again until
+near the end. Was it always set to 0?
+Page 9 Line 208/47: It is unclear which experiments “in experiments” is being referred. Is this
+referring to the simulation? Or referencing human or animal experiments?
+Page 16 Line 322/16: do not, instead of “don’t”
+Reviewer: 2
+Comments to the Author(s)
+The paper addresses open-loop and anticipatory strategies for running on rough terrain using a
+simple math model. They perform Monte Carlo simulations to assess the likelihood of failure
+using open-loop and “anticipatory” strategies. The authors correlate successful running to
+practical dynamical concerns, like the degree of energy dissipation per step. I believe it is a well-
+thought-out contribution and would only require minor changes in framing to merit publication.
+The material is thoroughly communicated and well-written. The supplementary materials are
+similarly thorough. The locomotion math model is well motivated and elegantly designed to
+capture some of the key dynamics of running. I am heartened the authors are using “mean steps
+to failure” as a stability metric, because it seems most appropriate in the context of stochastic
+terrain. The method of modeling noises in anticipatory running is also solid.
+8
+I would like to see the authors address the limits of their “anticipatory strategy.” The authors
+rightly reference Byl and Tedrake for using a “look-ahead” strategy. I’m not convinced that the
+authors’ anticipatory strategy is sufficiently powerful of a control model to reflect an optimal
+running behavior, or what I would consider truly “anticipatory” over multiple steps. I would like
+to see the authors draw a direct contrast between their anticipatory approach and the Byl 2009
+approach when describing their control modeling approach.
+The title is succinct and punchy, but perhaps overly broad. This paper primarily addresses
+relatively open-loop strategies to running on rough terrain. There are, by contrast, approaches
+that use high-level planning that could plan over many steps of rough terrain. Also, this glosses
+over a lot of the control complexity associated with runners with multi-body models, specifically
+those with compliance. I would recommend including a reference in the title to the fact that
+you’re analyzing simple models, maybe “How to run on rough terrains: lessons from a simple
+model.” Obviously, the style of title would be up to the authors, but I think that the study does
+need to be bounded in scope a bit given the complexity of the field.
+Author's Response to Decision Letter for (RSOS-181729.R0)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-181729.R1)
+15-Feb-2019
+Dear Professor Venkadesan,
+I am pleased to inform you that your manuscript entitled "Dynamics and stability of running on
+rough terrains" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+9
+on behalf of Dr Monica Daley (Associate Editor) and Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Monica Daley):
+Thank you for thoroughly addressing the comments raised by the expert reviewers. The revised
+text is thorough and clear.
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+ppendix A
+ear editors and reviewers,
+e are delighted that our manuscript has been provisionally accepted, and
+hank the reviewers for their careful comments. Please find here our
+esponses to these comments and the revised version of the manuscript.
+ssociate Editor comments to Authors:
+====================================
+Thank you for your patience in waiting for a decision on your paper. We
+ave now received feedback from two expert reviewers, who are positive
+bout the contribution of this paper in developing a simple model of
+unning on uneven ground. In particular they highlight that the paper
+akes a novel contribution through the combination of simple models and
+tochastic approaches. The reviewers have suggested only minor changes to
+he text; therefore I am happy to accept the paper subject to these minor
+evisions. Please provide a point-by-point response to the reviewers when
+esubmitting the revised version."
+e appreciate the effort taken by the reviewers in helping to improve the
+anuscript. Presented below is a point-wise response to the requested
+evisions. Both reviewers recommended that the title be modified. So, we
+espond to that first, followed by point-wise responses to each reviewer.
+eviewer comments to Author:
+===========================
+itle:
+-----
+Reviewer 1: "Title is short and pithy but a bit too general. Perhaps it
+ould benefit from a key takeaway from the results."
+Reviewer 2: "The title is succinct and punchy, but perhaps overly
+road. This paper primarily addresses relatively open-loop strategies to
+unning on rough terrain. There are, by contrast, approaches that use
+igh-level planning that could plan over many steps of rough terrain.
+lso, this glosses over a lot of the control complexity associated with
+unners with multi-body models, specifically those with compliance. I
+ould recommend including a reference in the title to the fact that
+ou’re analyzing simple models, maybe "How to run on rough terrains:
+essons from a simple model." Obviously, the style of title would be up
+o the authors, but I think that the study does need to be bounded in
+cope a bit given the complexity of the field."
+e appreciate the need to balance brevity with specificity. With that in
+ind, the new title is, "Dynamics and stability of running on rough
+errains." This title reflects the features of rough terrain running that
+e analyze in this manuscript.
+ur point-wise responses to the reviewers follow.
+eviewer 1:
+----------
+. “It would serve the reader better to mention earlier in the manuscript
+hat the model was disc-like, closer to the beginning of Section 2 than
+he end. I puzzled over Figure 1b for a while trying to figure out if the
+isc was intentional or not until I reached the last few sentences of
+ection 2”
+ine 88 changed to - "We model the runner in the sagittal plane as a
+isc-like rigid body..."
+. "Figure 1a would be clearer with an actual aerial phase shown in the
+uman outline."
+he illustration of a human runner is based on motion capture data from a
+eal human runner. We included it in its present form so that the reader
+ay visually assess the change in configuration of the body during
+tance. In light of this reviewer's comment, we now choose the third
+ime-point to precede touchdown so that the runner is aerial. We have
+lso modified the center of mass trajectory to use different color and
+troke types for the stance and aerial phases.
+. "It is probably worth repeating in the beginning of Section 3 that
+irst the impulses from flat ground on determined for steady-state
+unning and then maintained for the rough terrain simulations."
+he paragraph that immediately precedes section 3 states this in lines
+48-150 and 156-169. However, we can see how a well-placed repetition of
+his detail will aid the reader. Therefore, we remind the reader in the
+iscussion section on line 432-433: "Recall that for a chosen pair of
+\epsilon_n$ and $\epsilon_{tc}$, the active push-off impulse is
+alculated for a flat terrain and reused on every other terrain (section
+.3)."
+. "The parameters being adjusted in the simulation are not clear.
+erhaps repeating the e_tc was varied would be useful."
+he start of Section 3, (lines 178-179, Monte Carlo results) has been
+odified to state, "We perform Monte Carlo simulations on step-like
+errains and undulating rough terrains to estimate the statistics of
+ailure for both open-loop and anticipatory runners. These simulations
+se different combinations of the normal and tangential collision
+arameters, $\epsilon_n$ and $\epsilon_{tc}$, respectively."
+. "It is also unclear how angular impulse was maintained. The angular
+mpulse was mentioned early in the manuscript but not again until near
+he end. Was it always set to 0?"
+he angular impulse is always set to 0 because the active linear and
+ngular impulses were found for a steady, periodic gait on flat terrain
+nd thereafter held fixed. We append these sentences to the end of
+ection 2: "The active linear and angular impulses were found for a
+teady, periodic gait on flat terrain and held fixed thereafter. For a
+teady gait, the angular impulse $J_\phi = 0$ at all times, whereas the
+inear impulse depends on the collision parameters and speed. Section 6
+xamines the role of $J_\phi$ in extending the model to account for
+inite stance durations."
+. "Page 9 Line 208/47: It is unclear which experiments "in experiments"
+s being referred. Is this referring to the simulation? Or referencing
+uman or animal experiments?"
+his sentence, now on line 207 has been rewritten as, "Future experiments
+hat track foot placement on rough terrains could test whether a runner
+ses a strategy of aiming for flat regions of the terrain by estimating
+he fraction of footfalls on flat versus highly sloped regions."
+. "Page 16 Line 322/16: do not, instead of "don’t””
+one.
+eviewer 2:
+----------
+. “I would like to see the authors address the limits of their
+anticipatory strategy.” The authors rightly reference Byl and Tedrake
+or using a “look-ahead” strategy. I’m not convinced that the authors’
+nticipatory strategy is sufficiently powerful of a control model to
+eflect an optimal running behavior, or what I would consider truly
+anticipatory” over multiple steps. I would like to see the authors draw
+direct contrast between their anticipatory approach and the Byl 2009
+pproach when describing their control modeling approach”
+hank you for the suggestion. We have added a new paragraph,
+Anticipation over one versus many steps', from line 498, following the
+iscussion subsection 'Timescale for feedback corrections' to frame our
+odel relative to that of Byl and Tedrake, 2009.
+Our analyses are restricted to considerations of single-step
+nticipatory strategies.
+ore general anticipatory strategies that rely on foreknowledge of the
+errain for multiple steps have been previously considered for walking on
+ough terrains, both theoretically and experimentally
+citep{Raibert2008,Byl2009}. In walking, \citet{Byl2009} find that a one-
+tep lookahead policy performs almost as well as an optimal strategy that
+ses complete upcoming terrain information to plan footholds. Whether
+nticipatory strategies in running have similar diminishing gains with
+dditional foreknowledge is beyond the scope of the present analysis.
+owever, our formulation of the dynamics of running permits the inclusion
+f multi-step planning strategies by allowing the active impulses and the
+ollision parameters to vary as a function of the oncoming terrain."
+incerely,
+ihav Dhawale, Shreyas Mandre and Madhusudhan Venkadesan.
+How to run Dynamics and stability of running on rough terrains
+:::::::::::::::::::::::::::::::::::::::::::::::::
+Nihav Dhawale1,2 , Shreyas Mandre3 , and Madhusudhan Venkadesan<U+21E4>1
+1
+Department of Mechanical Engineering and Materials Science, Yale University, New Haven, CT 06520
+2
+National Centre for Biological Sciences–Tata Institute of Fundamental Research, Bangalore, Karnataka 560065
+3
+School of Engineering, Brown University, Providence, RI 02912
+Abstract
+Stability of running on rough terrain depends on the propagation of perturbations due to the
+ground. We consider stability within the sagittal plane and model the dynamics of running as a
+two-dimensional body with alternating aerial and stance phases. Stance is modeled as a passive,
+impulsive collision followed by an active, impulsive push-o<U+21B5> that compensates for collisional losses.
+Such a runner has infinitely many strategies to maintain periodic gaits on flat ground. However,
+these strategies di<U+21B5>er in how perturbations due to terrain unevenness are propagated. Instabilities
+manifest as tumbling (orientational instability) or failing to maintain a steady speed (translational
+instability). We find that open-loop strategies that avoid sensory feedback are sufficient to maintain
+stability on step-like terrains with piecewise flat surfaces that randomly vary in height. However,
+these open-loop runners lose orientational stability on rough terrains whose slope also varies ran-
+domly. The orientational instability is significantly mitigated by minimizing the tangential collision,
+which typically requires sensory information and anticipatory strategies such as leg retraction. By
+analyzing the propagation of perturbations, we derive a single dimensionless parameter that gov-
+erns stability. This parameter provides guidelines for the design and control of both biological and
+robotic runners.
+<U+21E4>
+Address correspondence to mv@classicalmechanic.net
+1
+1 Introduction
+Legged terrestrial animals run stably on rough terrains, despite potential difficulties such as sensory
+latencies and the highly dynamic nature of running. Our current understanding of how running
+animals negotiate rough terrains is based on studies where the animal experiences obstacles in the
+form of a single step up or down [1, 2], or a random sequence of up and down steps [3, 4]. However,
+natural terrains exhibit not only variations in height but also in slope, and it is unclear how our
+understanding of running on step-like terrains translates to such natural terrains.
+Mathematical studies of running over rough terrains reflect the experiments and focus on stabil-
+ity when running on step-like terrains that are piecewise flat [5–7]. Furthermore, models of runners
+with massless legs, such as the spring-legged-inverted-pendulum (SLIP) [8–10], cannot distinguish
+between di<U+21B5>erent slopes of the terrain and only respond to variations in height. Assuming a mass-
+less leg enforces the ground reaction force vector to always align with the leg [11] regardless of the
+terrain’s slope beneath the foot. More detailed models that mimic the anatomy of specific animals
+or robots avoid this limitation of SLIP models [7], at the cost of generalizability. Thus there is a
+need for generalizable models of running that incorporate dependence on both terrain slope and
+height, and yet remain sufficiently abstract to glean principles that may underlie stability on rough
+terrains.
+Stability may be governed by many factors, including sensory feedback control [12–14], the
+inherently stabilizing mechanical response of the animal’s body [15], energy dissipation within
+the body [1], and feed-forward strategies such as swing-leg retraction [16]. The slowest is often
+sensory feedback control that has latencies comparable to or greater than the stance duration. For
+example, at endurance running speeds for humans, the stance lasts around 200 ms [17] and only
+slightly longer than the shortest proprioceptive feedback delay of 70–100 ms or visual feedback
+delay of 150–200 ms [18]. To better understand the inherent stability or instability of the dynamics
+of running, we consider only passive mechanical and anticipatory strategies in this study without
+relying on active feedback control.
+Studies of running birds and the role of open-loop stability of running find that increased energy
+dissipation during stance may help stability when faced with an unexpected drop in terrain height
+[1]. Consistent with the role of energy dissipation, experiments with humans find that metabolic
+2
+power increases by 5% to run on step-like terrains versus flat ground [4]. Walking over rough
+terrains leads to an increase of 28% in metabolic power [19], higher in both relative and absolute
+terms. The di<U+21B5>erence in energetics may indicate that the dynamics of running are inherently less
+unstable, but such an analysis on natural rough terrains has not been carried out. Therefore, we
+incorporate energy dissipation in our examination of open-loop strategies to address the e<U+21B5>ect of
+dissipation on stability.
+Not relying on feedback control within a single stance does not preclude active strategies that
+rely on anticipation or internal models, sometimes called feed-forward strategies. Computational
+studies of walking have demonstrated the role of look-ahead strategies that use the height and slope
+of the oncoming terrain in planning the control [20]. Evidence for the importance of feed-forward
+strategies for running come from computational studies of SLIP-like running dynamics [16] that
+show how swing-leg retraction automatically modulates the landing angle in response to unexpected
+variations in the terrain height. However, these studies on running have not yet considered the
+e<U+21B5>ect of slope variations in the terrain. Thus in our study, we analyze anticipatory strategies that
+incorporate the slope of the oncoming terrain.
+An extreme and simplified approximation of running is that of a point mass with an impulsive
+and instantaneous stance followed by projectile flight. Such an approximation appears as a natural
+solution to the problem of minimizing measures of metabolic energy consumption when the desired
+forward speed exceeds critical levels, and subject to other constraints such as step length [21].
+SLIP-like models are an unfolding of these point-mass instantaneous-stance models to have finite
+stance duration. They have helped us understand the kinetics of stance [15] and the energetics of
+producing forces [21] on flat terrains, and the role of swing-leg retraction on piecewise flat terrains
+[6]. However, these point-mass models possess no sense of body orientation during the aerial phase
+and are therefore immune to falling by tumbling.
+In this study, we unfold the point-mass, instantaneous-stance model by using a finite moment
+of inertia for the runner, while still maintaining an impulsive stance. A finite moment of inertia
+defines a body orientation and thus enables the examination of the e<U+21B5>ect of angular momentum
+fluctuations induced by stance. Such a model maps the net e<U+21B5>ect of the ground forces over stance
+as a linear impulse applied at the contact point and an angular impulse applied at the center of
+mass. These impulses lead to a change in the linear and angular momentum of the whole runner
+3
+because of the passive and active forces during stance. As we discuss later, the angular impulse
+captures the e<U+21B5>ect of a finite stance duration and configuration changes during stance.
+Section 2 develops a sagittal-plane model that incorporates a finite moment of inertia, inelastic
+2D collisions, and an active push-o<U+21B5> so that both terrain slope and height variations a<U+21B5>ect stability.
+In section 3, we use Monte Carlo simulations with random variation of ground height and slope
+to examine open-loop strategies, the e<U+21B5>ects of energy dissipation, and strategies that anticipate
+the slope of the terrain. Section 4 derives the linearized dynamical equations and analyzes their
+stability. Using the linearization, we find a single dimensionless parameter that governs stability in
+section 5, which in turn guides morphological design for stability. We conclude in section 6 with a
+discussion of the limitations and generality of our analyses, its relationship to experimental results,
+and generate testable predictions for future experiments.
+2 Mathematical model of sagittal plane running
+disc-like rigid body (Fig. 1a,b) of mass m, radius of
+We model the runner in the sagittal plane as a ::::::::
+gyration rg , i.e. moment of inertia I/G = mrg2 about its center of mass, and radius r` (leg length).
+All quantities are in units such that m = 1, r` = 1 and the acceleration due to gravity g = 1. See
+section 7 for notation used in this paper.
+2.1 Aerial and stance phases
+A single step is comprised of an aerial and a stance phase. The aerial phase is modeled as a drag-
+free projectile in uniform gravity. Stance involves two successive parts: a passive collision with the
+ground followed by an active push-o<U+21B5>. The passive collision is two-dimensional and parameterized
+by two coefficients of restitution; <U+270F>n along the normal to the ground and <U+270F>t along the tangent to the
+ground. The active push-o<U+21B5> applies a linear impulse J imp at the contact point P and a rotational
+4
+Figure 1: Bouncing as a model of running. a, The outline of a human running at 3.5 m/s, created
+from motion capture data, shows stance and aerial phases over a single step. The stance leg and
+ipsilateral arm are in red, and the center of mass trajectory is shown as a blue, dashed curve
+during flight and solid curve during stance. b, The runner pushes-o<U+21B5> the ground by applying a
+::::::::::::::::::::::::::::::::::::::::::
+linear impulse J imp at the contact point P, and the e<U+21B5>ect of additional torques about the center
+of mass arising from configuration changes during stance are captured by an angular impulse J
+at the center of mass. At the end of the aerial phase, the runner undergoes a passive collision
+with the ground at the new contact point P. The momentum lost due to the collision in directions
+tangential and normal to the terrain surface is dictated by the parameters <U+270F>t and <U+270F>n , respectively.
+c, The runner can fail in two ways: orientational failure when orientation at touchdown exceeds
+the tip-over threshold, i.e. | | > tol , or translational failure when the forward velocity at take-o<U+21B5>
++
+drops below a chosen threshold, e.g. vG,x < 0.01.
+impulse J at the center of mass G. The governing dynamical equations are,
+c c
+passive collision: vP,t = <U+270F>t vP,t , vP,n = <U+270F>n vP,n (1a)
+c
+H/P HP = 0, (1b)
+push-o<U+21B5>: v+ c
+G = v G + J imp , I/G ! + = I/G ! c + Jimp,t + J , (1c)
+flight: x¨G (t) = 0, y¨G (t) = 1, ¨(t) = 0, and (1d)
+0 1 0 1 0 1 0 1
++ +
+x (0)
+B G C B xG C x<U+0307> (0)
+B G C B G,x C v
+B C B C B C B C
+initial conditions: B y (0) C = B y + C , B y<U+0307> (0) C = Bv + C . (1e)
+B G C B GC B G C B G,y C
+@ A @ A @ A @ A
+(0) + <U+02D9> (0) !+
+5
+Horizontal and vertical positions are denoted by x and y, respectively, orientation by , velocity
+by v, angular velocity by !, and angular momentum by H. Subscripts of ‘t’ and ‘n’ refer to the
+tangential and normal directions to the terrain, while subscripts of ‘x’ and ‘y’ refer to the horizontal
+and vertical directions in the lab frame (Fig. 1b). Superscript ‘ ’ denotes variables immediately
+preceding the collision, ‘c’ after the passive collision and ‘+’ after the active push-o<U+21B5>. Subscripts
+P and G refer to quantities associated with the contact point and center of mass, respectively.
+The mechanical state of the runner is parameterized by the center of mass positions (xG , yG ),
+body orientation , and their respective velocities (vG,x , vG,y ) and !. Because the stance is assumed
+to be instantaneous, the velocities may change discontinuously but the position and orientation
+remain constant during stance. The instantaneous stance assumption also implies that finite forces
+such as gravity or air-drag do not contribute to the impulse on the runner. However, the active
+rotational impulse J applied at the center of mass G captures the e<U+21B5>ects of varying posture over
+stance and the changing center of pressure on the ground. We examine this approximation and its
+implications in the discussion.
+2.2 Stance: passive collision
+The passive collision has two components, the normal and the tangential, which are parametrized
+by <U+270F>n and <U+270F>t , respectively. Modulating these coefficients of restitution would exert control over the
+passive collision. We hold these parameters constant from step-to-step and examine the e<U+21B5>ect of
+di<U+21B5>erent values on stability.
+An animal may vary the extent to which the normal momentum impinging on the terrain is
+stored elastically and later used for push-o<U+21B5>. Without detailed consideration of how an animal may
+accomplish this, we allow our model to precisely specify <U+270F>n . The normal collision is perfectly elastic
+for <U+270F>n = 1 and perfectly inelastic for <U+270F>n = 0.
+The tangential collision directly a<U+21B5>ects the body’s angular momentum. We therefore elaborate
+the model to consider di<U+21B5>erent ways in which this collision may be controlled. One strategy for an
+animal to modulate the tangential collision is to vary the foot speed along the terrain’s tangential
+direction. For the same speed of the center of mass, the foot speed may be varied through actions
+such as retracting the leg. However, control of the foot’s speed relative to the terrain’s tangential
+direction requires sensory information on the ground speed and the terrain’s slope. In our model,
+6
+this corresponds to knowledge of vP,t , the speed of the contact point along the terrain’s tangent
+in the moment just before the collision. We consider two extremes for the availability of such
+sensory information. At one extreme is an open-loop strategy that has no information and assumes
+vP,t = vx0 , which implies three assumptions: forward speed equals the initial speed, the terrain is
+flat, and the body has no spin. In this case, the intended tangential coefficient of restitution <U+270F>tc
+and the actual coefficient <U+270F>t would generally not equal each other and depend on the ratio vx0 /vP,t .
+At the other extreme is an anticipatory strategy with perfect a priori information so that <U+270F>tc = <U+270F>t .
+These are summarized as, 8
+>
+> vx0
+<<U+270F> tc v : open-loop,
+<U+270F>t = P,t
+(2)
+>
+>
+:<U+270F>tc : anticipatory.
+We derive this equation (2) more formally in supplement S3.2, and examine the relationship between
+<U+270F>tc and <U+270F>t for the open-loop strategy in supplement S4.1.
+2.3 Stance: active push-o<U+21B5>
+Stance ends with the application of an active, linear push-o<U+21B5> impulse J imp at the contact point P
+and an active angular push-o<U+21B5> impulse J at the center of mass G. We constrain these impulses so
+that in the absence of external perturbations or other disturbances the runner is perfectly periodic
+and remains upright ( (t) = 0) on flat ground. Importantly, once the impulses are chosen for flat
+ground, they are not allowed to vary step-to-step on any other terrain to reflect the absence of
+active feedback control. Together, these conditions imply that the active push-o<U+21B5> impulses J imp
+and J depend only on <U+270F>n , <U+270F>tc , vx0 and vy0 , and no other parameters, according to
+0 1 0 1
+1 <U+270F>tc
+Bvx0 C B(<U+270F>tc + 1+I/G )vx0 C
+J imp = @ A @ A, (3a)
+vy0 <U+270F>n vy0
+J = 0. (3b)
+Thus the center of mass of a periodic runner on flat ground has a constant forward speed vx0 and
+vertical speed vy0 at every step.
+On rough terrains, there are two options for defining the application of the invariant linear
+impulse on every step. First, the impulse vector J imp may be held constant in every step with
+7
+respect to gravity (x^ y^ frame in Fig. 1b), which we call the lab-fixed push-o<U+21B5> policy. Second,
+the impulse vector may be held constant in every step with respect to the normal direction to the
+terrain at the point of contact (t^ n^ frame in Fig. 1b), which we call a terrain-fixed push-o<U+21B5> policy.
+The terrain-fixed policy may be considered a better approximation of what animals do, because
+the normal to the terrain and the leg orientation are often coupled, whereas leg orientation at
+contact and gravity may vary from step to step. Implicit in preferring the terrain-fixed policy is the
+assumption that joint torques to apply forces are planned in an ego-centric (body-fixed) frame of
+reference. For the disc-like model of a runner that we use, the terrain-fixed and body-fixed policies
+are identical. Detailed expressions for the velocities in the stance phase, as well as expressions for
+J imp under both push-o<U+21B5> policies are given in supplement S3. We present a complete analysis of
+the lab-fixed push-o<U+21B5> policy in supplement S10 and focus on the terrain-fixed policy in the main
+paper. The active linear and angular impulses were found for a steady, periodic gait on flat terrain
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+and held fixed thereafter. For a steady gait, the angular impulse J = 0 at all times, whereas the
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+linear impulse depends on the collision parameters and speed. Section 6 examines the role of J in
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+extending the model to account for finite stance durations.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+3 Monte Carlo simulations
+A sagittal plane runner can only fail by two modes, when the body orientation exceeds a chosen
+threshold (orientational failure), or by failing to move forward any longer (translational failure).
+We choose the orientational threshold tol as the angle of tilt to passively topple a human who is
+standing with their feet apart in a pose resembling double-stance in walking.
+We perform Monte Carlo simulations on step-like ::::::: terrains: and undulating rough terrains to
+estimate the statistics of failure for both open-loop and anticipatory runners. These simulations
+:::::::::::::::::
+use di<U+21B5>erent combinations of the normal and tangential collision parameters, <U+270F>n::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+<U+270F>tc , ::::::::::::
+and:::: respectively.
+Stability is quantified by the mean steps to failure, like previous studies of rough terrain walking
+[20].
+The terrain is modeled as a piecewise linear interpolation of an underlying random grid. The grid
+points are separated by a distance and the heights h of the grid points are chosen from a uniform
+random distribution (table 1, supplement S1.3). A linear interpolation between the grid points
+yields a terrain with random variations in both slope and height. Corners at grid point implies an
+8
+Runner Terrain Monte Carlo
+I/G <U+270F>n tol vx0 vy0 h M MAX
+0.17 0.63 <U+21E1>/6 0.96 0.26 s U ( 0.03, 0.03) 0.1 105 103
+Table 1: Parameter values for a human-like runner. Units are chosen such that m = 1, g = 1,
+and r` = 1. Parameters describing the runner are discussed in section 2. The heights h at grid
+points defining the terrain are chosen from a uniform distribution over the range [ 0.03, 0.03]
+(supplement S1.3). The ensemble size used in the Monte Carlo simulations is M , and MAX is
+the number of steps to which the runner is simulated (supplement
+: :
+S2). All runners failed before
+reaching MAX. We elaborate on the choice of these values in supplement S1.2.
+indeterminate slope, and we therefore define an e<U+21B5>ective slope at the grid points by interpolating
+the slope before and after the point (details in supplement S1.4). Parameter values that represent
+a human-like runner (table 1) are used for all Monte Carlo simulations, unless indicated otherwise.
+3.1 Open-loop runners on rough terrains
+Open-loop runners always fail through an orientational instability on rough terrains regardless of
+the energy dissipated per step (Fig. 2a,d). The open-loop runners with human-like inertia and size
+take 9.6 ± 4.1 steps (mean ± standard deviation) before tumbling while only 1% of the runners fall
+within 3 steps (Fig. 2a). Decreasing <U+270F>n from 1 to 0 increases the mean steps to failure by just 2 steps
+(Fig. 2d). Thus, dissipating more energy per step in the normal collision has minimal influence
+on stability. The tangential collision, parameterized by <U+270F>tc , has little or no influence because the
+contour lines of the mean steps to failure are nearly parallel to the <U+270F>tc axis (Fig. 2d). Therefore,
+energy dissipation or modulating the tangential collision are both ine<U+21B5>ective stabilization strategies
+for purely open-loop runners.
+3.2 Open-loop runners on step-like terrains
+The purely open-loop runner remains stable on step-like terrains that are piecewise flat and possess
+only height variations (Fig. 2b). This is because forward and vertical dynamics are decoupled on
+piecewise flat terrains, and hence the open-loop runner does not fall as long as the step height is
+smaller than the apex height of the aerial phase. This result suggests a foot placement strategy for
+running on any rough terrain, namely to aim to land on flat patches of the ground so that stability
+is maintained with little reliance on feedback control. However, such a strategy would require
+visual surveying of the terrain up ahead and planning the location of foot falls. Increased footfall
+9
+Future ::::::::::::
+probability on ::::::: that :::::
+experiments ::::: track:::::
+foot ::::::::::
+placement:::
+on:::::: terrains::::::
+rough:::::::: test ::::::::
+could::::: whether
+::::::::
+runner:::::
+uses::a:::::::::
+strategy ::
+of:::::::: for:flat regions of the terrain , along with low probability by
+aiming ::: ::
+estimating the fraction of footfalls on flat
+::::::::::::::::::::::
+versus highly sloped regionsof the terrain may be evidence
+::::::::::
+for such a foot placement strategy in experiments.
+3.3 E<U+21B5>ect of terrain geometry
+The exact step-to-step variation in the terrain’s height and slope depend on the distribution func-
+tion used to generate the random terrain (Fig. 2e, inset). However, we find that the distribution
+underlying the rough terrain has little e<U+21B5>ect on the distribution of the steps to failure (Fig. 2e)
+when assessed using three di<U+21B5>erent functions to generate rough terrains: von Mises, uniform and
+beta. Runners took 9.6 ± 4.1 (mean ± std. dev.) steps before tumbling on terrains characterized by
+von Mises and uniform distributions, and 10.8 ± 4.7 steps on the terrains characterized by the beta
+distribution. All steps to failure distributions are unimodal, but skewed. A Markov model for the
+step-to-step dynamics (supplement S8) lends insight into the nearly invariant shape of the steps-
+to-failure distribution. The insensitivity may arise from the terrain roughness being uncorrelated
+from step-to-step (terrain’s correlation length <U+2327> 1), and thus the net e<U+21B5>ect of the perturbations
+resembles a Gaussian noise process that is propagated by the dynamics of running.
+3.4 Anticipatory runners on rough terrains: tangential collisions
+Runners that use anticipatory strategies to control the tangential passive collision maintain ori-
+entational stability if they entirely avoid tangential collisions using <U+270F>tc = 1. But these runners
+eventually fail by completely losing forward momentum (Fig. 2c). Recall that because of the ac-
+tive push-o<U+21B5>, the loss of forward momentum is not simply a break of symmetry by the passive
+tangential collision. Through a more careful analysis, we find that the mean slope encountered by
+the runners is positive and not zero, i.e. the terrain preferentially impedes the forward momentum
+(supplement Fig. S10d). For human-like parameters, anticipatory runners take 75 ± 40.9 (mean
+± std. dev) steps before completely losing forward momentum and only 1% of the runners stop
+moving forward within 15 steps. In contrast, over 80% of the open-loop runners fail within 15 steps.
+For the anticipatory runner, permitting tangential collisions <U+270F>tc < 1 induces orientational failures
+and the mean steps to failure decreases. For example, with <U+270F>n = 0 the mean steps to failure when
+<U+270F>tc = 1 is 85 and decreases to 20 when <U+270F>tc = 0.95 (Fig. 3a). A 5% decrease in <U+270F>tc caused an
+10
+Figure 2: The e<U+21B5>ect of the tangential collision, energy dissipation and terrain geometry on running
+stability for a human-like runner, found using Monte Carlo simulations. a, Open-loop runners with
+<U+270F>tc = 0 (orange circles) lose orientational stability on the rough terrain while anticipatory runners
+with <U+270F>tc = 1 (blue squares) maintain orientation. b, On the step-like terrain, open-loop runners
+(purple star) maintain forward speed and orientation as the probability of failure, orientational
+or translational, is zero. Open-loop and anticipatory runners are identical on step-like terrains c,
+Anticipatory runners slow down on the rough terrain, eventually completely losing forward speed.
+Whereas human-like open-loop runners also lose forward speed, they lose orientational stability
+before completely losing forward momentum. d, A contour plot of mean steps taken by open-loop
+runners as a function of <U+270F>tc and <U+270F>n finds that contours are approximately parallel to the <U+270F>tc axis,
+while the steps taken increases with decreasing <U+270F>n . e, Steps to failure distributions for human-
+like open-loop runners on rough terrain with height distributions for the grid points drawn from
+von Mises (yellow diamond, mean = 0, <U+F8FF> = 6), Beta (dark red square, <U+21B5> = 1.9, = 2.3) and uniform
+distributions (blue circle). The inset shows the three di<U+21B5>erent probability density functions used
+to generate the terrain: von Mises (yellow), Beta (dark red) and uniform (blue). The distributions
+were scaled and shifted such that mean height = 0, and range = 0.060r` (table 1, supplement S1.2).
+over three-fold decrease in the mean steps to failure. Importantly, the dominant mode of failure
+switches from translational failures to orientational failures (supplement Fig. S5a). At <U+270F>tc = 0 and
+independent of <U+270F>n , the anticipatory and open-loop strategies are identical. Thus the anticipatory
+runner substantially improves stability by avoiding tangential collisions.
+Increasing energy dissipation in the normal collision increases the number of steps taken by
+the anticipatory runner. For example, at <U+270F>tc = 1, where runners only fail by losing forward speed,
+increasing energy dissipation by changing from <U+270F>n = 1 to <U+270F>n = 0, increases the mean number of steps
+taken before failure by two-fold, from 40 to 85 (Fig. 3a). Away from <U+270F>tc = 1, energy dissipation
+11
+a b
+1 1
+50 40
+18
+0.8 0.99 10
+20 30
+0.6 0.98
+n 25 30 40 tc
+0.4 0.97
+0.2 0.96 20
+50-80
+0 0.95
+0.95 0.96 0.97 0.98 0.99 1 10-2 10-1
+tc t
+1 1
+9 16 14
+0.8
+12
+10 0.6
+11 11
+12 14
+n tc
+0.4
+16 0.2 10
+0 0
+0 0.2 0.4 0.6 0.8 1 10-2 10-1
+tc t
+Figure 3: E<U+21B5>ect of tangential collisions and energy dissipation on running stability for anticipatory
+runners. In each panel, the contour plot of mean steps taken over the entire range of independent
+parameters is shown together with a zoom-in of contours that are bunched together. a, The contour
+plot of mean steps taken by anticipatory runners as a function of <U+270F>tc and <U+270F>n shows that contours
+are bunched close together around <U+270F>tc ' 1, with the maximum steps taken at <U+270F>n = 0, <U+270F>tc = 1 (top
+plot) and minimum at <U+270F>n = 1, <U+270F>tc = 0 (bottom plot). b, E<U+21B5>ect of noise in <U+270F>tc . Contour plot of mean
+steps taken as a function of <U+270F>tc and <U+270F>t . The optimal <U+270F>tc (red circles) is shown for each value of
+<U+270F>t simulated.
+has a smaller e<U+21B5>ect on stability. When <U+270F>tc <U+21E1> 0, the anticipatory runners resemble the open-loop
+runners and the mean steps to failure increases by only 2 steps despite <U+270F>n decreasing from 1 to
+0 (Fig. 3a). Thus, for the anticipatory runner using <U+270F>tc <U+21E1> 1, increasing energy dissipation in the
+direction normal to the terrain is an e<U+21B5>ective means to improve stability, unlike for the open-loop
+runner.
+3.5 Noise in anticipatory strategies
+The sensitivity of the steps to failure with respect to tangential collisions prompts an examination
+of the e<U+21B5>ect of stochasticity in how a runner may control the tangential collision. After all, no
+runner can exactly control the tangential collision from step-to-step. For example, errors in sensing
+the terrain profile as well as motor noise may prevent accurate implementation of a desired <U+270F>tc . We
+model such sources of noise in controlling the tangential collision as
+<U+270F>t,noisy = <U+270F>tc + <U+270F>t <U+2318>, (4a)
+where <U+2318> s U [ 1, 1], <U+270F>t 2 R. (4b)
+12
+The uniformly distributed zero-mean random variable <U+2318> models random step-to-step noise in <U+270F>tc
+and <U+270F>t is the noise intensity. The noisy <U+270F>t,noisy is allowed to exceed 1 in our simulations.
+We find that incurring tangential collisions (<U+270F>tc < 1) is optimal when there is non-zero noise
+( <U+270F>t > 0). This is unlike the noiseless anticipatory runner whose optimum is <U+270F>tc = 1. Moreover,
+noise in controlling tangential collisions does a<U+21B5>ect stability and the mean steps to failure are
+severely reduced (Fig. 3b). For example, compared to a noiseless human-like runner, the mean
+steps to failure drops nine-fold for a runner with noise intensity <U+270F>t = 0.1, and the optimum <U+270F>tc
+decreases by 1% to <U+270F>tc = 0.99 (Fig. 3b). Additional noise in the tangential collision of open-loop
+runners reduces the number of steps taken, but does not alter the dependence of steps taken on <U+270F>tc
+(supplement S4.2). Therefore, for anticipatory runners, noise in controlling the tangential collision
+implies that incurring a slight tangential collision is optimal but at the cost of stability.
+3.6 Predictions for <U+270F>t in experiments
+A main finding of our analyses is the importance of minimizing tangential collisions with the ground
+when running on rough terrains. But measuring <U+270F>t on rough terrains is challenging because it needs
+a well-defined point of contact under the foot, precise knowledge of the terrain’s slope in 3D at
+that point, and measurement of the reaction force along that tangent. To facilitate comparisons
+with experimental data, we consider an easier to measure correlate of <U+270F>t via the parameter <U+270F>ˆt that
+is defined as
+vx
+<U+270F>ˆt = 1 , (5)
+vx
+where vx /vx is the fraction of the forward momentum of the runner lost due to the passive
+collision. On perfectly flat terrain, <U+270F>t = <U+270F>ˆt .
+In the Monte Carlo simulations, <U+270F>ˆt is characterized by a distribution that evolves with increasing
+steps (Fig. 4a, supplement Fig. S6a). The dependence of <U+270F>ˆt on steps taken arises because the runner
+is slowing down, and thus vx and consequently vx change from step-to-step. But, the mean of
+ˆt appears to converge to a constant after just 3 steps for all values of <U+270F>tc (supplement Fig. S6b).
+Importantly, mean <U+270F>ˆt increases linearly with <U+270F>tc (Fig. 4b) and is thus a reliable correlate of the true
+tangential collision. However, <U+270F>ˆt has a reduced range; mean <U+270F>ˆt = 0.81 at <U+270F>tc = 0, and mean <U+270F>ˆt = 0.97
+at <U+270F>tc = 1. The standard deviation of the distributions converges to a value between 0.05 and 0.1 by
+approximately 10 steps for most values of <U+270F>tc except when <U+270F>tc ! 1 (Fig. 4a, supplement Fig. S6b).
+13
+For comparison, reported values of <U+270F>ˆt from experiments with human runners on flat and two rough
+terrains are 0.94 ± 0.01 (mean ± standard deviation) identically [22]. These experimental data are
+consistent with the prediction that optimal anticipatory runners should maintain <U+270F>tc = 1.
+a b
+8 3 steps
+20 steps 0.96
+6
+0.92
+pdf 4 Mean ˆt 0.88
+2 0.84
+0 0.8
+0 0.4 0.8 1.2 1.6 0 0.2 0.4 0.6 0.8 1
+ˆt tc
+Figure 4: Estimated tangential coefficient of restitution <U+270F>ˆt for anticipatory runners using Monte
+Carlo simulations with an ensemble size of 106 . a, Probability density function of <U+270F>ˆt for human-
+like anticipatory runners with <U+270F>tc = 1 on rough terrain after 3 steps and after 20 steps. While the
+standard deviation almost doubles between the two distributions shown here (supplement Fig. S6c),
+the mean of the distribution converges by 3 steps (supplement Fig. S6b). b, Mean <U+270F>ˆt , converges by
+3 steps for all values of <U+270F>tc (supplement Fig. S6b), and is always less than 1, ranging from 0.81 at
+<U+270F>tc = 0 to 0.97 at <U+270F>tc = 1.
+4 Linear stability analysis
+For periodic dynamic systems, linear stability is defined as the response to small perturbations
+in the neighborhood of a periodic orbit [15, 23, 24] and analyzed using Floquet theory [15, 25].
+Floquet analysis for the stability of a periodic orbit defines a transverse cross-section to the orbit
+and a discrete return map from initial conditions on the cross-section back to the same cross-
+section after a complete period. The eigenvalues of the return map, called Floquet multipliers, are
+independent of the chosen cross-section and govern the stability of the periodic solution to small
+perturbations [25]. Here we consider the anticipatory runner and discuss the open-loop runner in
+supplement S6 because the unstable modes of both variants are the same.
+The mechanical state of the runner is represented by <U+21E3> = (x, y, , vx , vy , !)T , where (x, y) and
+denote the center of mass position and orientation, and (vx , vy ) and ! are the respective velocities,
+all measured in a Newtonian reference frame that translates forward at a constant speed vx0 . A
+steady runner is periodic in this translating Newtonian frame of reference. We define a transverse
+cross-section (Poincare´ section) at the apex of the aerial phase (vy = 0) following the approach of
+Full et al. [23] and Seyfarth et al. [16]. The equations (1) yield the step-to-step return map f an
+14
+and its linearization Tan in terms of the mechanical state in a translating frame according to
+= (x, y, , vx , !)T , (6a)
+n+1 = f an ( n) , (6b)
+n+1 = Tan n, (6c)
+<U+21E4> @f an
+where = , Tan = . (6d)
+@ <U+21E4>
+<U+21E4>
+The Poincare´ map given by equation (6b) has a fixed point at = 0 when the terrain is flat and
+corresponds to an exactly periodic runner on flat ground.
+Figure 5: Illustration of the trajectory of the runner in state space in a reference frame that is
+translating along with the runner with velocity vx0 . The runner appears periodic in this reference
+frame and the runner’s mechanical state follows a periodic orbit. The return map f• (• is ‘ol’ or
+‘an’ for open-loop or anticipatory, respectively) is defined from the apex of the aerial phase (vy = 0)
+to apex of the following aerial phase. <U+21E4> is the fixed point of the return map and n is a small
+perturbation away from the fixed point <U+21E4> at step n. In the next step, n maps to n+1 at the
+apex of the following aerial phase under action of the return map f • .
+The linearized return map Tan has three eigenvalues equal to one and the others are all less than
+one. The eigenvalues with magnitude less than one correspond to stable modes so that perturbations
+along their respective eigenvectors will always decay. The remaining three eigenvalues are all
+15
+= 1 with algebraic multiplicity equal to 3 and geometric multiplicity equal to 2. This implies
+that there are only two independent eigenvectors corresponding to the three unity eigenvalues
+and the matrix T an is therefore non-diagonalizable. For non-diagonalizable systems, the Jordan
+decomposition is used to analyze stability in terms of generalized eigenvectors (supplement S6),
+and implies that the modes (eigenvectors) associated with these eigenvalues cannot be decoupled
+and analyzed independently.
+The two eigenvectors <U+232B> 1 , <U+232B> 2 and the third generalized eigenvector <U+232B> 3 corresponding to the
+repeat eigenvalue = 1 span a subspace in which the dynamics of the return map don’t do not
+::::::
+simply decay back to the origin. For a diagonalizable system, any perturbation within this subspace
+would neither decay nor grow. However, the non-diagonalizable nature of T an leads to the outcome
+that a perturbation 0 within this subspace grows with increasing steps. The eigenvectors <U+232B> 1 ,
+<U+232B> 2 , <U+232B> 3 , the initial perturbation 0, and its growth after n steps to n are given by,
+<U+2713> <U+25C6>T <U+2713> <U+25C6>T <U+2713> <U+25C6>T
+<U+232B>1 = 0 0 1 0 0 , <U+232B>2 = 1 0 0 0 0 , <U+232B>3 = 0 0 0 p1 p1 , (7a)
+2 2
+X 3
+0 = <U+21B5>k <U+232B>k , and (7b)
+k=1
+p
+n = n<U+21B5>3 2<U+270F>n vy0 (<U+232B> 1 <U+232B> 2) + 0, respectively. (7c)
+As n grows larger, the asymptotic approximation (denoted by <U+21E1>) is given by
+0 1
+1
+B C
+B C
+B0C
+B C
+p B C
+n <U+21E1> n <U+21B5>3 2<U+270F>n vy0 B C
+B 1 C where n 1. (8)
+B C
+B C
+B0C
+@ A
+0
+Only a perturbation of magnitude <U+21B5>3 along <U+232B> 3 a<U+21B5>ects stability and leads to a nearly linear growth
+within the subspace spanned by the eigenvectors <U+232B> 1 , <U+232B> 2 . Perturbations along <U+232B> 1 or <U+232B> 2 neither
+grow nor decay because these represent invariance with respect to rotations and translations of
+the reference frame, respectively. A perturbation along the generalized eigenvector <U+232B> 3 may be
+geometrically viewed as one that conserves the velocity of the contact point on flat terrain but
+16
+changes the angular momentum of the runner about its center of mass. Therefore, any perturbation
+to the angular momentum will a<U+21B5>ect both orientation and forward speed.
+For the special case of the anticipatory runner that completely avoids tangential collisions, the
+linearized return map T an with <U+270F>tc = 1 has eigenvalue = 1 of algebraic multiplicity 4 and geometric
+multiplicity 2, and one eigenvalue with | | < 1. The eigenvectors <U+232B> 1 , <U+232B> 2 and the generalized
+eigenvectors <U+232B> 3 , <U+232B> 4 associated with = 1 form a basis for a subspace within which an initial
+perturbation 0 grows linearly with the number of steps n in a subspace spanned by eigenvectors
+<U+232B> 1 , <U+232B> 2 , i.e.
+0 1 0 1 0 1 0 1
+0 1 0 0
+B C B C B C B C
+B C B C B C B C
+B0C B0C B0C B0C
+B C B C B C B C
+B C B C B C B C
+<U+232B>1 = B C B C B C
+B1C , <U+232B> 2 = B0C , <U+232B> 3 = B0C , <U+232B> 4 = B0C ,
+B C (9a)
+B C B C B C B C
+B C B C B C B C
+B0C B0C B0C B1C
+@ A @ A @ A @ A
+0 0 1 0
+X4
+0 = <U+21B5>k <U+232B>k , n = 2<U+270F>n vy0 n(<U+21B5>3 <U+232B>1 + <U+21B5>4 <U+232B>2 ) + 0, (9b)
+k=1
+0 1
+<U+21B5>4
+B C
+B C
+B0C
+B C
+B C
+n <U+21E1> n 2<U+270F>n vy0 B C
+B<U+21B5>3 C for n 1. (9c)
+B C
+B C
+B0C
+@ A
+0
+A perturbation to angular velocity ! causes a linear growth in orientation , and a perturbation to
+the linear velocity vx causes a linear growth in position x. However, an anticipatory runner with
+<U+270F>tc = 1 avoids angular velocity perturbations due to the terrain altogether, i.e. <U+21B5>3 = 0. Therefore,
+only forward speed is a<U+21B5>ected due to the remaining unstable mode <U+232B> 4 .
+Although there are no unstable eigenvalues with magnitude greater than one, we find that
+the dynamics of running lead to an unstable growth with increasing steps. The growth due to
+non-diagonalizability of the return map is linearly proportional to the number of steps, and not
+geometric as is the case for simple unstable eigenvalues. Importantly, the primary e<U+21B5>ect of the
+17
+instability is to a<U+21B5>ect the forward speed and orientation, consistent with the numerical simulations
+that use finite perturbations and nonlinear dynamics. Also in agreement with the simulations, the
+only instability is translational when <U+270F>tc = 1.
+5 Scaling analysis of the orientational failure mode
+The mean steps to failure depends on many parameters, but none of the parameters separately
+predict the failure statistics (supplement Fig. S7). As most runners undergo orientational failures,
+we investigated whether the amount of body rotation accumulated over a single step due to a
+terrain slope perturbation would predict failure statistics.
+If a runner with a periodic trajectory on flat ground encounters a sloped terrain of angle <U+2713>,
+the orientation • at the next landing will no longer be vertical. This orientation • accumulated
+over one step depends on the take-o<U+21B5> vertical velocity vy,• + via the aerial phase time 2v + , and
+y,•
+take-o<U+21B5> angular velocity !•+ , as •
++ ! + . The subscript ‘•’ is a placeholder for ‘ol’ or ‘an’
+= 2vy,• •
+as the orientation change depends on whether the runner is purely open-loop (ol) or employs
+anticipatory (an) control. We hypothesize that the mean steps to failure N• is a function of
+the orientational threshold tol and the orientation change over a single step • alone, i.e. N• =
+s• ( tol , • ). Substituting the form of s• ( tol , •) derived in supplement S8, we show that the mean
+steps to failure N• is predicted to scale according to,
+tol
+N• <U+21E0> , (10)
+•
+where the expression for • is given in supplement equation S15e.
+The mean steps to failure in simulations performed with many di<U+21B5>erent parameter values (sup-
+plement S7) are well-approximated by a single function of a dimensionless parameter tol / •
+(Fig. 6). The collapse of the simulation data highlights that the spin accumulated in one step
+due to a single perturbation (equation (10)) captures the fundamental principle underlying orien-
+tational failures. Importantly, this dimensionless parameter collapses the simulation data better
+than any individual parameter (supplement Fig. S7). Thus, the single parameter tol / • quantifies
+stability of runners of di<U+21B5>erent sizes and mass distributions.
+The dimensionless parameter tol / • also captures the parametric dependence of mean steps to
+18
+a b
+103 103
+Mean steps to failure Mean steps to failure
+tol =1
+tol = 0.1
+102 tol = 0.01 102
+101 101
+100 100
+10-2 100 102 104 10-2 100 102 104
+tol / an tol / ol
+Figure 6: Generalizing results from section 3.1 and section 3.4 to a wider range of physical and
+terrain parameters. Mean steps to failure from the Monte Carlo simulations is plotted against a,
+tol / an and b, tol / ol for di<U+21B5>erent values of tol . The mean steps to failure depend mostly on
+a single dimensionless parameter tol / • . All simulation parameters were varied independently in
+these simulations. But, for clarity, only variations in tol are identified with di<U+21B5>erent marker types.
+failure on <U+270F>tc and <U+270F>n as seen from comparing the contour plots of tol / • shown in Fig. 7 against
+that of the direct simulations in Fig. 2d and Fig. 3a. The dependence of mean steps to failure on
+<U+270F>tc and <U+270F>n for small slopes of the terrain is understood using a series expansion of • in terms of <U+2713>
+as given by,
+<U+2713> 2 <U+25C6> <U+2713> <U+25C6>
+2vy0 3 I/G 4I/G 2
+ol = <U+2713>+ + <U+270F>tc + <U+270F>n vx0 vy0 <U+2713>2 + O(<U+2713>3 ), (11a)
+1 + I/G (1 + I/G )2 (1 + I/G )2 1 + I/G
+<U+2713> 2 <U+25C6> <U+2713>
+2vy0 3 I/G 5I/G 3 4I/G
+an = (1 <U+270F>tc ) <U+2713> + + <U+270F>tc <U+270F>2 +
+1 + I/G (1 + I/G ) 2 (1 + I/G ) 2 (1 + I/G )2 tc
+<U+25C6>
+2(1 <U+270F>tc )
+<U+270F>n vx0 vy0 <U+2713>2 + O(<U+2713>3 ). (11b)
+1 + I/G
+For the open-loop strategy, neither of the collision parameters, <U+270F>n or <U+270F>tc , appear in the linear (leading
+order) term. When using an anticipatory strategy, the tangential collision parameter <U+270F>tc appears
+to leading order. The normal collision parameter <U+270F>n a<U+21B5>ects the second order dependence on <U+2713> for
+both strategies. These show why it is impossible to avoid orientational failures for the open-loop
+strategy, but may be avoided when using the anticipatory strategy by choosing <U+270F>tc = 1.
+For the open-loop runner, tol / ol is independent of <U+270F>n and <U+270F>tc to first order in <U+2713> (equation (11a)).
+Hence the contours in Fig. 7a (which resemble the contours in Fig. 2d from the Monte Carlo simu-
+lations) show a weak dependence on <U+270F>n and <U+270F>tc that arises from the <U+2713>2 term in equation (11a). The
+parameter ol is smallest when <U+270F>n = <U+270F>tc = 0, and largest when <U+270F>n = <U+270F>tc = 1. For a human-like run-
+ner, I/G <U+2327> 1 (table 1), and thus the <U+2713>2 term in equation (11a) can be reduced to (3 + 2<U+270F>n )vx0 vy0 <U+2713>2 ,
+with no dependence on <U+270F>tc at the asymptotic limit of I/G <U+2327> 1. The asymptotic analysis of ol
+19
+a b
+1 1
+7 10
+0.8 0.8
+14
+0.6 0.6 18
+n n 30
+50
+0.4 0.4 80
+9
+150-700
+0.2 0.2
+11
+0 0
+0 0.2 0.4 0.6 0.8 1 0 0.2 0.4 0.6 0.8 0.99
+tc tc
+Figure 7: Contour plots of a, tol / ol and b, tol / an as a function of <U+270F>n and <U+270F>tc reveal that a single
+parameter captures the dependence of mean steps to failure of both open-loop runners (Fig. 2d)
+and anticipatory runners (Fig. 3a) on the collision parameters <U+270F>n and <U+270F>tc . Recall that the only
+controllable parameters for the runners in these simulations are <U+270F>n and <U+270F>tc . The complete expression
+for • , shown in supplement equation S15e, was used to generate these plots with parameter values
+drawn from table 1, and tol = 1. For the anticipatory runner, we restricted the maximum value of
+<U+270F>tc to 0.99. For higher values of <U+270F>tc , orientational failures do not dominate and thus mean failure
+statistics are not accounted for by tol / • .
+therefore explains why the contours of mean steps to failure in the Monte Carlo simulations are
+nearly parallel to the <U+270F>tc axis and increase only slightly when <U+270F>n is decreased (Fig. 2d).
+For the anticipatory runner, the first order term in the expansion depends on <U+270F>tc (equation 11b),
+unlike the case for the open-loop runner (equation (11a)). Nearly perfect anticipation corresponds
+to <U+270F>tc ! 1. At this limit an ! 0 and thus N = tol / an ! 1, explaining why the contours of mean
+steps to failure in the Monte Carlo simulations are tightly bunched together in the neighborhood
+of <U+270F>tc = 1 (Fig. 3a) and nearly parallel to the <U+270F>n axis. Like for the open-loop runner, an also shows
+a dependence on <U+270F>n only in the pre-factor to the <U+2713>2 term of the series expansion in equation (11b).
+As <U+270F>n decreases so does an , and thus tol / an increases, capturing the trend observed in the Monte
+Carlo simulations where decreasing <U+270F>n increases steps taken for the anticipatory runner (Fig. 3a).
+For the anticipatory runner, unlike the open-loop runner, the <U+270F>n dependence is coupled to <U+270F>tc , and
+thus the sensitivity of the parameter tol / • to changes in <U+270F>n depend on the value of <U+270F>tc . The limit
+of <U+270F>tc = 0, where an = ol has already been discussed above, for the open-loop runner. To analyze
+the case where <U+270F>tc ! 1, we approximate an in the limit where I/G <U+2327> 1 (e.g. human-like runners)
+as
+2
+an <U+21E1> 2vy0 (1 <U+270F>tc )<U+2713> + (1 <U+270F>tc )(2<U+270F>n + 3)vx0 vy0 <U+2713>2 . (12)
+To understand the dependence of the mean steps to failure N on <U+270F>n and <U+270F>tc , we consider the
+limit of small angles of the terrain slope <U+2713> <U+2327> 1. Using equation (12), and for small <U+2713> we find that
+20
+mean steps to failure N = tol / an and its sensitivity to changes in <U+270F>n are given by
+<U+2713> <U+25C6>
+1 tol
+N = (2vy0 3vx0 <U+2713> 2vx0 <U+2713><U+270F>n ), (13a)
+1 <U+270F>tc vy0 <U+2713>
+<U+2713> <U+25C6>
+@N 1 2 tol vx0
+= . (13b)
+@<U+270F>n 1 <U+270F>tc vy0
+Therefore, N is more sensitive to changes in <U+270F>n when <U+270F>tc ! 1. This resembles Fig. 3a where the
+mean steps to failure from the Monte Carlo simulations increases significantly as <U+270F>n is reduced when
+<U+270F>tc ! 1, as opposed to when <U+270F>tc ! 0 where there is much lesser sensitivity of the mean steps to
+failure with respect to changes in <U+270F>n .
+Improving running stability by increasing mean steps to failure helps provide more time for
+feedback driven corrections in real-world runners. The analysis of mean-steps to failure in the
+simplified runners without any feedback ability suggests that increasing tol and decreasing • are
+both e<U+21B5>ective strategies to negotiate rough terrains. Therefore, besides altering <U+270F>tc and <U+270F>n in order
+to increase tol / • as already discussed, increasing I/G and reducing vy0 also improves stability.
+6 Discussion
+We show that purely open-loop strategies with no feedback control cannot stabilize sagittal-plane
+dynamics during running. Such open-loop runners fail primarily by losing orientational stability
+Recall:::::
+and tumbling. :::::: for::a:::::::
+that::: pair ::
+chosen::::: of:::
+<U+270F>n ::::
+and::::
+<U+270F>tc , :::: active::::::::
+the :::::: impulse:::
+push-o<U+21B5>:::::::: calculated
+is ::::::::::
+for a flat terrain and reused on every other terrain (section 2.3). Using an anticipatory strategy to
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+eliminate tangential collisions with the ground eliminates orientational instabilities but leads to a
+steady slowing down of the runner. However, on a step-like piecewise flat terrain the open strategy is
+sufficient to stabilize the runner without losing forward speed, and so is the anticipatory strategy.
+If an anticipatory strategy is implemented noisily, i.e. the tangential collisions are low but not
+entirely eliminated, the runner su<U+21B5>ers orientational instabilities. However, both the orientational
+and the translational instabilities are weak when using an anticipatory strategy and the growth
+of the instability is only linearly proportional to the number of steps taken and not a higher
+power. The exact number of steps to failure depend on many parameters including the inertial,
+geometry, collision parameters and the thresholds in orientation and speed for failure. These large
+set of parameters may be combined into a single dimensionless parameter that captures the failure
+21
+statistics, which can also guide the morphological design of stable runners.
+Impulsive stance assumption
+An impulsive stance phase implies that the stance impulse is defined, but not the detailed time
+history of forces. Thus the model may be used study the dynamics and stability over multiple steps,
+but it cannot be used to find the actuation patterns that would achieve the desired impulse. Such
+simplified models may be used to specify the desired collisional and push-o<U+21B5> impulses as constraints
+that should be met. More detailed models could then be used to calculate the stance force profiles
+as a constrained search or optimization problem.
+The model also ignores the impulse due to the finite forces of gravity, because stance is treated
+as instantaneous. Relaxing the assumption of instantaneous stance implies that body-weight a<U+21B5>ects
+the body’s angular momentum about the contact point according to,
+TZ
+stance
++
+H/P H/P = M/P (t) dt, (14)
+0
+where Tstance is the stance duration and M/P (t) is the time-varying moment of the body weight about
+the contact point P. The torque due to gravitational forces about the contact point is proportional to
+body weight and the time-varying horizontal distance from the center of mass to the contact point.
+The gravitational contribution is zero for a symmetric stance, and highest for the most asymmetric
+stance. Assuming a constant forward speed during stance and a 20 touchdown angle, the maximum
+change in angular momentum about the contact point, i.e. the integral in equation (14), is | H/P | /
+0.15 in the same dimensionless units as before. For a typical human runner, the resultant orientation
+change in a single step is / 0.01, negligibly small compared to the influence of the terrain. Thus,
+ignoring torques induced by gravity has minimal impact on our conclusions.
+A finite stance duration and the associated change in configuration allows a runner to control
+the body’s sagittal plane angular momentum independently from the forward and upward linear
+momenta. This may be understood in terms of breaking the symmetry of the stance phase or
+applying a large forward impulse and yet having the net ground reaction impulse pass through the
+center of mass (no contribution to angular momentum). To not lose such control when considering
+an impulsive stance, we permit the application of an arbitrary angular impulse J at the center
+22
+collision push-off
+a
+j =0
++ =
+b j <0
++ =
+c j >0
++ =
+Figure 8: Equivalence between a runner using a finite stance with internal degrees of freedom
+versus an infinitesimal stance with an applied torque impulse. The contact of the general runner is
+represented as an impulse due to the collision at touchdown (left, pink vector) plus a net impulse
+due to the push-o<U+21B5> (right, pink vector). In this example, by varying duration of stance, the runner
+can selectively vary the lever arm of the push-o<U+21B5> impulse and thus the angular impulse about its
+center of mass without altering the linear impulse. The net e<U+21B5>ect of a finite stance and change in
+configuration is therefore captured in our model (right column) by a linear impulse at the point of
+contact (pink vector at ground) and an angular impulse at the center of mass (J ).
+of mass during push-o<U+21B5> (equation (1c)). Thus having a finite stance duration and change of body
+configuration over stance is equivalent to J (Fig. 8). The angular impulse also provides a means to
+accommodate torques due to a finite base of support and a moving center of pressure during stance.
+However, recall that the constraint that the applied active push-o<U+21B5> impulses should lead to perfectly
+periodic gait on flat terrain implies that J = 0. In our model, both open-loop and anticipatory
+runners slow down on rough terrain. Regaining forward speed needs a feedback controller, and then
+23
+the additional control authority o<U+21B5>ered by J would be necessary to vary forward speed without
+a<U+21B5>ecting the body’s angular momentum or vertical momentum.
+Point contact assumption
+Another limitation arises from considering a point-like contact that cannot capture e<U+21B5>ects associated
+with the spatial extent of the foot. These e<U+21B5>ects include the spatial filtering of terrain roughness
+and the application of a net torque about the initial contact point. The inclusion of J in the model
+captures the application of torques, but there is no explicit means of incorporating the ability of
+the foot to act as a spatial filter [26]. Therefore, careful consideration should be given to the spatial
+frequency (wave number) of the roughness of the terrain when using a model with a point contact.
+Timescale for feedback corrections
+Open-loop runners with human-like parameters have a 99% chance of taking at least 3 steps without
+failing by exceeding the orientation threshold, while anticipatory runners (<U+270F>tc = 1) can take upto
+15 steps with the same probability of completely losing forward momentum. This implies that the
+open-loop runner employing the slowest sensory modality (visual feedback delay <U+21E1> 200 ms [18])
+has 7 feedback cycles to correct for instabilities at endurance running speeds of 3m/s (step period
+<U+21E1> 500 ms [17]), with only an approximately 1% chance of an orientational failure. Thus, while
+sensory feedback is required to run on rough terrains, timescales associated with sensory feedback
+delays do not limit the runner’s ability to maintain stability because of the slow-growing nature of
+the instability. Furthermore, employing an appropriate anticipatory strategy (<U+270F>tc = 1) eliminates
+the orientational instability entirely, thereby further extending the timescale over which feedback
+is necessary.
+Anticipation over one versus many steps
+::::::::::::::::::::::::::::::::::::::::::::
+Our analyses are restricted to considerations of single-step anticipatory strategies. More general
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+anticipatory strategies that rely on foreknowledge of the terrain for multiple steps have been
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+previously considered for walking on rough terrains, both theoretically and experimentally [20, 27].
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+In walking, Byl and Tedrake [20] find that a one-step lookahead policy performs almost as well as
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+an optimal strategy that uses complete upcoming terrain information to plan footholds. Whether
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+anticipatory strategies in running have similar diminishing gains with additional foreknowledge is
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+24
+beyond the scope of the present analysis. However, our formulation of the dynamics of running
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+permits the inclusion of multi-step planning strategies by allowing the active impulses and the
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+collision parameters to vary as a function of the oncoming terrain.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Leg retraction
+Analyses of running models with leg mass suggest that optimal retraction rate is defined by stability
+demands, although these studies were limited to step-like terrains [7]. Experiments with runners on
+flat ground which measure the angle of the foot’s velocity vector with respect to the ground suggest
+that foot velocity is perhaps not modulated in the manner we hypothesize [28]. In the study by
+Blum et al. [28], the mean angle made by the subjects’ foot velocity vector with the ground was
+165 , whereas our prediction based on zero tangential speed of the foot at touchdown would imply
+that the angle should be 90 . Given these di<U+21B5>erences, we propose that the low values of <U+270F>ˆt for human
+runners observed by Dhawale and Venkadesan [22] may result from joint sti<U+21B5>ness modulation in
+the leg rather than precise control of the foot speed through leg retraction. Modulating foot and
+leg sti<U+21B5>ness allows the runner to minimize the tangential collision and yet employ leg retraction
+strategies that accomplish other goals such as hypothesized by Seyfarth et al. [16] and Birn-Je<U+21B5>ery
+et al. [29].
+Energy dissipation
+Besides leg retraction, energy dissipation may also aid in stability based on studies of walking
+[30, 31] and running [1, 32, 37][1, 32]. Our model shows that while increasing energy dissipation
+::::::
+in the direction normal to the terrain does increase the number of steps taken for open-loop and
+anticipatory runners, dissipating energy in the tangential collision is detrimental to stability. How-
+ever, whether energy dissipation helps or hinders depends on the details of what is meant by
+“open-loop”. For example if the runner uses a lab-fixed push-o<U+21B5> policy instead of the terrain-fixed
+push-o<U+21B5> described in the main text, dissipating energy in the normal direction is also detrimen-
+tal to orientational stability (supplement S10). Thus the hypothesized trade-o<U+21B5> between energy
+consumption and stability is not universally true in our models. Our results are consistent with
+experiments on running birds encountering sudden terrain drops, as the birds do not always dissi-
+pate energy on the perturbation step [1]. Our results might provide a means to understand why
+the increase in energy consumption for humans running on step-like terrains is only 5% [4]. We
+25
+find that open-loop strategies are sufficient to maintain stability on step-like terrains and additional
+energy expenditure provides little added benefit.
+Implications of scaling analysis to body plan of animals
+The single parameter tol / • that predicts mean steps to failure (Fig. 6) generalizes our results
+beyond runners with human-like parameters and morphology, and thus can be used as a criteria to
+:::::::::::::::::::::
+assess a runner’s stability. This is because runners with a larger tol / • should be able to maintain
+orientation for a greater number of steps in the absence of sensory feedback control. We have
+discussed how energy storage in the direction normal to the terrain (<U+270F>n ) and tangential collision
+modulation (<U+270F>tc ) a<U+21B5>ects tol / • in section 5, and now turn to the implications the parameter has
+on how body morphology and mass distribution a<U+21B5>ect stability.
+The parameter tol is the maximum angle of tilt the runner can accumulate before it falls. By
+employing Animals that posses larger (base/height) ratios, i.e. adopting have
+:::::::::::::::::::: :::::
+a landscape rather
+than a portrait orientation when viewed in the sagittal plane, animals can increase tol and thereby
+increase ::: parameter :
+the::::::::::: tol / • . Quadrupeds such as cats and dogs, and other adept runners such
+as cockroaches possess such an aspect ratio. Another way to increase tol is by increasing the
+Larger
+:::::::
+range of motion of the leg with respect to the body . Even if the body begins to tilt, the
+ability to place the :::: increases::::
+also ::::::::: as::
+tol::: it::::::::: the:::::::
+improves:::: ability::: the :::::::
+of :::: animal ::: correct :::
+to ::::::: body
+for::::::
+tilt by placing the foot in front of the runner initiates stanceand hence allows the runner to correct
+::::::::::::::::::
+for body orientation::::: initiating ::::::
+when:::::::::: stance. In our simulations, the choice of tol value is based on
+this consideration of the leg angle for humans. Ostriches are another example of an animal with a
+portrait orientation but who are adept runners , perhaps in part due to the large of :::::: adept
+Other ::::::
+runners with portrait orientations such as ostriches also posses a large range of motion of their legs.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Penguins, who are not known to be adept runners, occupy the opposite end of ::::: lower::::end::: the
+of::::
+tol scale due to possessing a portrait orientation and as well as low range of motion of their legs
+::::::::::
+compared to other bipeds such as humans, turkeys, and ostriches.
+Because / I/G /vy0 2 ( ), lowering Low take-o<U+21B5> angles, for a given forward speed, and
+tol / • ::::: :: :::::
+2
+increased radius of gyration rg::::::::
+::::::::::::::::::::::::::::
+relative ::
+to::: length ::
+leg::::::: r`:would be beneficial to stability as tol / • / I/G /vy0
+:::::::::::::::::::
+(equations
+: :
+(11)). However, very low take-o<U+21B5> angles increase the risk of tripping on rough terrains.
+Altering body mass distribution to increase the A larger radius of gyration rg relative to leg length
+::::::::
+26
+r` also reduces • and thereby increases stability. This can could
+:::::
+be achieved by increasing distal
+masses in appendages like arms and legs. However, increasing distal masses in the leg increases the
+metabolic cost of running [33] via increased energetic cost associated with swinging the leg [34, 35]
+and may also lead to potentially injurious collisions. Alternatively, light legs with a bulky, extended
+Running ::::::::
+torso or large head, like in ::::::::: like :horses and bison , also increases have
+animals :::: light legs,
+::::::::::::::
+but increase r . Lastly, tails by
+:::::::::::: g
+possessing extended torsos and large heads. Tails in animals like
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+cats and lizards, while used for active stabilization and in complex maneuvers like righting reflexes
+[36, 38]which are used in active stabilization [36], are yet another means to increase rg , thereby
+:::::::::::::::::::::::::::::::::::::::::
+reducing •. Anticipatory runners further benefit from setting <U+270F>t <U+21E1> 1 like observed in humans
+[22], thereby drastically reducing • as discussed in section 5. Thus, the dimensionless parameter
+tol / • is qualitatively consistent with the body morphology of adept and poor animal runners and
+we propose that it can be used as a design criteria for running robots.
+7 Notation
+Scalars are denoted by italic symbols (e.g. m for mass of the runner, I for the moment of inertia),
+vectors by bold, italic symbols (J imp for push-o<U+21B5> impulse, v for velocity), points or landmarks in
+capitalized non-italic symbols (such as center of mass G in Fig. 1) and capitalized, bold, non-italic
+symbols for matrices (such as return map matrix Tan ). Vectors associated with a point, such
+as velocity of center of mass G are written as v G , with the uppercase alphabet in the subscript
+specifying the point in the plane. Angular momentum vectors or moment of inertia variables are
+subscripted with ‘/A’ representing angular momentum or moment of inertia computed about point
+A, such as I/G representing moment of inertia about center of mass G. The x^ component of the
+velocity vector of point A v A is denoted with a subscript ‘A,x’, e.g. tangential velocity of the contact
+point P is written as vP,t . The symbols vx0 , vy0 denote the initial forward and vertical velocities of
+the runner at take-o<U+21B5>. Variables just before collision with the terrain are denoted by the superscript
+‘-’, after passive collision but before push-o<U+21B5> by the superscript ‘c’, and just after push-o<U+21B5> by the
+superscript ‘+’. For example, angular velocity before collision is ! , after passive collision is ! c
+and just after push-o<U+21B5> is ! + .
+8 Data Accessibility
+:::::::::::::::::::::::
+27
+All detailed derivations are included in the electronic supplementary material. No other data were
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+generated in this research.
+::::::::::::::::::::::::::
+9 Authors’ Contribution
+MV conceived of the model. ND and MV ran the simulations. All authors were involved in
+the analysis of the model; SM, MV and ND performed the linear stability analysis, MV and ND
+performed the one-step analysis to capture mean statistics, MV, SM and ND did the analysis of
+the steps to failure distributions. ND and MV wrote the manuscript, and all authors edited it.
+10 Acknowledgments and fundingCompeting interests
+::::::::::::::::::::::::::
+We have no competing interests.
+::::::::::::::::::::::::::::::::
+11 Funding
+:::::::::::
+This work was funded by the Human Frontiers Science Program and the Wellcome/DBT India
+Alliance.
+12 Competing interests
+We have no competing interests.
+References
+[1] Daley MA, Usherwood JR, Felix G, Biewener AA. Running over rough terrain: guinea fowl
+maintain dynamic stability despite a large unexpected change in substrate height. Journal
+of Experimental Biology. 2006 Jan;209(1):171–187. Available from: http://dx.doi.org/10.
+1242/jeb.01986.
+[2] Birn-Je<U+21B5>ery AV, Daley MA. Birds achieve high robustness in uneven terrain through active
+control of landing conditions. Journal of Experimental Biology. 2012 May;215(12):2117–2127.
+Available from: http://dx.doi.org/10.1242/jeb.065557.
+[3] Grimmer S, Ernst M, Gu¨nther M, Blickhan R. Running on uneven ground: leg adjustment to
+vertical steps and self-stability. Journal of Experimental Biology. 2008 Sep;211(18):2989–3000.
+Available from: http://dx.doi.org/10.1242/jeb.014357.
+[4] Voloshina AS, Ferris DP. Biomechanics and energetics of running on uneven terrain. Journal
+of Experimental Biology. 2015 Jan;218(5):711–719. Available from: http://dx.doi.org/10.
+1242/jeb.106518.
+[5] Daley MA, Usherwood JR. Two explanations for the compliant running paradox: reduced work
+of bouncing viscera and increased stability in uneven terrain. Biology Letters. 2010;6(3):418–
+421.
+28
+[6] Blum Y, Vejdani HR, Birn-Je<U+21B5>ery AV, Hubicki CM, Hurst JW, Daley MA. Swing-leg trajectory
+of running guinea fowl suggests task-level priority of force regulation rather than disturbance
+rejection. PLoS ONE. 2014 Jun;9(6):e100399. Available from: http://dx.doi.org/10.1371/
+journal.pone.0100399.
+[7] Karssen JD, Haberland M, Wisse M, Kim S. The e<U+21B5>ects of swing-leg retraction on running
+performance: analysis, simulation, and experiment. Robotica. 2015 May;33(10):2137–2155.
+Available from: http://dx.doi.org/10.1017/S0263574714001167.
+[8] Blickhan R. The spring-mass model for running and hopping. Journal of Biomechanics. 1989
+Jan;22(11-12):1217–1227. Available from: http://dx.doi.org/10.1016/0021-9290(89)
+90224-8.
+[9] McMahon TA, Cheng GC. The mechanics of running: how does sti<U+21B5>ness couple with speed?
+Journal of Biomechanics. 1990 Jan;23:65–78. Available from: http://dx.doi.org/10.1016/
+0021-9290(90)90042-2.
+[10] Blickhan R, Full R. Similarity in multilegged locomotion: bouncing like a monopode. Journal
+of Comparative Physiology A. 1993 Nov;173(5):509–517. Available from: http://dx.doi.
+org/10.1007/BF00197760.
+[11] Srinivasan M, Holmes P. How well can spring-mass-like telescoping leg models fit multi-
+pedal sagittal-plane locomotion data? Journal of Theoretical Biology. 2008 Nov;255(1):1–7.
+Available from: http://dx.doi.org/10.1016/j.jtbi.2008.06.034.
+[12] Pearson K. Common principles of motor control in vertebrates and invertebrates. Annual
+Review of Neuroscience. 1993 Mar;16(1):265–297. Available from: http://dx.doi.org/10.
+1146/annurev.ne.16.030193.001405.
+[13] Pearson KG. Proprioceptive regulation of locomotion. Current Opinion in Neurobiology. 1995
+Dec;5(6):786–791. Available from: http://dx.doi.org/10.1016/0959-4388(95)80107-3.
+[14] Dickinson MH, Farley CT, Full RJ, Koehl M, Kram R, Lehman S. How animals move: an
+integrative view. Science. 2000 Apr;288(5463):100–106. Available from: http://dx.doi.org/
+10.1126/science.288.5463.100.
+[15] Holmes P, Full RJ, Koditschek D, Guckenheimer J. The dynamics of legged locomotion:
+Models, analyses, and challenges. SIAM Review. 2006 Jan;48(2):207–304. Available from:
+http://dx.doi.org/10.1137/S0036144504445133.
+[16] Seyfarth A, Geyer H, Herr H. Swing-leg retraction: a simple control model for stable running.
+Journal of Experimental Biology. 2003 Aug;206(15):2547–2555. Available from: http://dx.
+doi.org/10.1242/jeb.00463.
+[17] Cavagna G, Saibene F, Margaria R. Mechanical work in running. Journal of Applied Physi-
+ology. 1964 Mar;19(2):249–256. Available from: http://dx.doi.org/10.1152/jappl.1964.
+19.2.249.
+[18] van Beers RJ, Baraduc P, Wolpert DM. Role of uncertainty in sensorimotor control. Philosoph-
+ical Transactions of the Royal Society B: Biological Sciences. 2002 Aug;357(1424):1137–1145.
+Available from: http://dx.doi.org/10.1098/rstb.2002.1101.
+29
+[19] Voloshina AS, Kuo AD, Daley MA, Ferris DP. Biomechanics and energetics of walking on
+uneven terrain. Journal of Experimental Biology. 2013 Aug;216(21):3963–3970. Available
+from: http://dx.doi.org/10.1242/jeb.081711.
+[20] Byl K, Tedrake R. Metastable walking machines. The International Journal of Robotics
+Research. 2009 Jun;28(8):1040–1064. Available from: http://dx.doi.org/10.1177/
+0278364909340446.
+[21] Srinivasan M, Ruina A. Computer optimization of a minimal biped model discovers walking
+and running. Nature. 2006 Sep;439(7072):72–75. Available from: http://dx.doi.org/10.
+1038/nature04113.
+[22] Dhawale N, Venkadesan M. Energetics and stability of running on rough terrains. American
+Society of Biomechanics; 2018. .
+[23] Full RJ, Kubow T, Schmitt J, Holmes P, Koditschek D. Quantifying dynamic stability and ma-
+neuverability in legged locomotion. Integrative and Comparative Biology. 2002 Feb;42(1):149–
+157. Available from: http://dx.doi.org/10.1093/icb/42.1.149.
+[24] Bruijn S, Meijer O, Beek P, Van Diee¨n J. Assessing the stability of human locomotion: a
+review of current measures. Journal of the Royal Society Interface. 2013 Mar;10(83):20120999.
+Available from: http://dx.doi.org/10.1098/rsif.2012.0999.
+[25] Guckenheimer J, Holmes P. Nonlinear oscillations, dynamical systems, and bifurcations
+of vector fields. Springer-Verlag; 1983. Available from: http://dx.doi.org/10.1007/
+978-1-4612-1140-2.
+[26] Venkadesan M, Mandre S, Bandi MM. In: Sharbafi MA, Seyfarth A, editors. Bioinspired
+Legged Locomotion: Models, Concepts, Control and Applications, Chapter 7. Butterworth-
+Heinemann; 2017. .
+[27] Raibert M, Blankespoor K, Nelson G, Playter R, Team T. Bigdog, the rough-terrain quadruped
+robot. IFAC Proceedings Volumes. 2008;41(2):10822–10825. Available from: http://dx.doi.
+org/10.3182/20080706-5-KR-1001.01833.
+[28] Blum Y, Lipfert S, Rummel J, Seyfarth A. Swing leg control in human running. Bioinspira-
+tion & Biomimetics. 2010 May;5(2):026006. Available from: http://dx.doi.org/10.1088/
+1748-3182/5/2/026006.
+[29] Birn-Je<U+21B5>ery AV, Hubicki CM, Blum Y, Renjewski D, Hurst JW, Daley MA. Don’t break a
+leg: running birds from quail to ostrich prioritise leg safety and economy on uneven terrain.
+Journal of Experimental Biology. 2014 Oct;217(21):3786–3796. Available from: http://dx.
+doi.org/10.1242/jeb.102640.
+[30] Kuo AD. Stabilization of lateral motion in passive dynamic walking. The International Journal
+of Robotics Research. 1999 Sep;18(9):917–930. Available from: http://dx.doi.org/10.1177/
+02783649922066655.
+[31] Donelan JM, Kram R, et al. Mechanical and metabolic determinants of the preferred step
+width in human walking. Proceedings of the Royal Society of London B: Biological Sciences.
+2001;268(1480):1985–1992.
+30
+[32] Arellano CJ, Kram R. The energetic cost of maintaining lateral balance during human running.
+Journal of Applied Physiology. 2012 Feb;112(3):427–434. Available from: http://dx.doi.
+org/10.1152/japplphysiol.00554.2011.
+[33] Myers M, Steudel K. E<U+21B5>ect of limb mass and its distribution on the energetic cost of running.
+Journal of Experimental Biology. 1985;116(1):363–373.
+[34] Marsh RL, Ellerby DJ, Carr JA, Henry HT, Buchanan CI. Partitioning the energetics of
+walking and running: swinging the limbs is expensive. Science. 2004 Jan;303(5654):80–83.
+Available from: http://dx.doi.org/10.1126/science.1090704.
+[35] Doke J, Donelan JM, Kuo AD. Mechanics and energetics of swinging the human leg. Journal
+of Experimental Biology. 2005 Feb;208(3):439–445. Available from: http://dx.doi.org/10.
+1242/jeb.01408.
+[36] Libby T, Moore TY, Chang-Siu E, Li D, Cohen DJ, Jusufi A, et al. Tail-assisted pitch
+control in lizards, robots and dinosaurs. Nature. 2012 Jan;481(7380):181. Available from:
+http://dx.doi.org/10.1038/nature10710.
+[37] Arellano, C. J. and Kram, R. (2011). The e<U+21B5>ects of step width and arm swing on energetic
+cost and lateral balance during running. Journal of Biomechanics 44, 1291–1295.
+[38] Jusufi, A., Zeng, Y., Full, R. J. and Dudley, R. (2011). Aerial righting reflexes in
+flightless animals.
+31
+Society Open

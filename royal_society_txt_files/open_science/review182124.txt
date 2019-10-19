@@ -1,0 +1,566 @@
+Network-driven differences in mobility and optimal
+transitions among automatable jobs
+Jordan D. Dworkin
+Article citation details
+R. Soc. open sci. 6: 182124.
+http://dx.doi.org/10.1098/rsos.182124
+Review timeline
+Original submission: 18 December 2018 Note: Reports are unedited and appear as
+Revised submission: 13 May 2019 submitted by the referee. The review history
+Final acceptance: 23 May 2019 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-182124.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Reports © 2019 The Reviewers; Decision Letters © 2019 The Reviewers and Editors;
+Responses © 2019 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This article maps the space of US job titles to identify which sectors contain workers who are (1)
+susceptible to automation and (2) stuck without a pathway to alternative employment. For
+example, the author finds that occupations in both the Business and Industrial sectors may be
+susceptible to automation but the Industrial sector on the whole has less connectivity to other
+sectors. This type of result may inform our understanding of technological change and job
+polarization in the US. I love this idea, and I believe there is great value in performing this
+analysis well.
+I have a few major concerns with this article.
+(1) The author's interpretation of the edge weights in the job network are not validated strongly
+enough for the interpretation the author assigns to them. The author proposes a single measure
+for the skill similarity between a pair of jobs and considers this similarity as a proxy for workers'
+ability to transition between those occupations without showing that these scores are even
+correlated with worker career mobility. Despite what the author says in the Limitations section,
+data does exist to approximate this. One possibility is to access resume data. Another possibility
+is to use data from the Current Population Survey, which is a data product of the US Census
+Bureau. Comparing the edge weights with actual rates of workers transitioning between
+occupation pairs would strengthen the author's interpretation of the job network.
+(2) Similar to (1), the author should validate their measures for connectivity between sectors
+against empirical data reflective of actual worker transitions. The author's use of job growth per
+sector offers an indirect validation, and I believe a more direct validation is possible.
+(3) This study relies entirely on the automation estimates from the Frey & Osborne study, but this
+study is highly controversial. Therefore, the author should strengthen their claims by showing
+how their results change when different sets of estimates are considered. For this purpose, I
+recommend also considering
+- O*NET Degree of Automation scores, and
+- automation estimates from the Arntz et al study (ref. [5] in the article).
+(4) Although workers care about their jobs and policy makers care about employment numbers,
+work from Autor, Acemoglu, and others all suggest that occupations are best understood as
+abstract bundles of tasks and skills because technology interacts with labor by impacting the
+demand for specific tasks and skills. Therefore, does an occupation's susceptibility to automation
+impact the occupation's skill similarity to other occupations? In turn, does this fundamentally
+change the job network?
+Work from James Bessen (BU) and, alternatively, from David Deming (Harvard) demonstrate
+that occupations that are exposed to automation can redefine their skill requirements to reflect
+changing labor demands. Often, these transitions focus on an increased reliance on social skills.
+Therefore, exposure to automating technology does not always reduce employment. As an
+example from Bessen's work, the increased adoption of ATMs corresponded to national increase
+in employment for bank tellers in the US--perhaps a counter-intuitive result--because ATMs
+made it cheaper to open bank branches (i.e., demand elasticity) and bank tellers began to replace
+clerical skills with social skills. So, since this occupational skill redefinition has been shown to
+3
+occur with exposure to automating technology, how does the author incorporate these insights
+into our understanding of the job network in the study?
+(5) If the skill similarity scores that define the edge weights in the job network do indeed
+correspond to worker transitions between occupations, then which skills promote career mobility
+for workers? Are these the skills that are susceptible to automation (this may be difficult to
+answer convincingly)? More practically, this type of insight would be helpful to policy makers
+attempting to promote career mobility for workers through informed worker retraining
+programs. This level of insight should significantly strengthen the impact of this study.
+Minor comments:
+- the "locally greedy" clustering algorithm employed in this study is often referred to as "Louvain
+community detection" in my experience
+- Figure 2 is very helpful for clarifying the measures.
+- on page 8, it is not clear to me what variable t is referring to. Is it the same t that is defined on
+page 9?
+- Table 2 represents an excellent level of insight (of course, I have my concerns listed above). This
+is a level of detail that policy makers should find very helpful.
+label_author_2
+Review form: Reviewer 2 (Olga Scrivner)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The study investigates the effects of automation on labor force and creates a network of jobs by
+their skills similarities. The identification of automation is based on the classification and the
+network results show distinct patterns of automation by different job sectors. In addition, the
+study introduces metrics for measuring job mobility. Finally, it offers a solution formula to
+estimate the cost/benefit of transitioning. Overall, the novel techniques and findings contribute
+to the field and provide novel solutions to workforce decision-makers. However, the paper
+suffers from a weaknesses in the methodology and analysis sections, mostly due to the lack of
+clarity and more detailed information.
+4
+Suggestions
+- Data section and methodology should be presented separately and prior to the analysis section.
+- Please detail the size of BLS data, the number of occupations, the type of occupational code (e.g.
+SOC), how data was extracted (e.g. link to the BLS data) or mention that it is provided in
+supplemental materials.
+- It is not clear how BLS data, Frey's data, and ONET data are merged. Cite O*Net, BLS. Consider
+using the real job postings data with skills (see EMSI, BGT etc) in the future.
+Figure 1.
+- How the number of clusters was determined? Medical cluster does not seem to be well-defined.
+- It is not clear how sectors were assigned, for example using NAICS cross-walk?
+- Note also that in Frey's study, business was defined as low risk for automation, in Figure 1
+business shows a bimodal distribution - perhaps two different categories?
+Differential job mobility
+- The reviewer suggests to introduce briefly all 4 measures at the beginning of the section.
+Consider also adding labels to each figure, for example "local" or within and "distant" or inter
+- For Figure 2 E-H - Consider adding y-axis labels and median
+- If positive values in 2F indicate a bridge, then all 4 sectors are bridges [all positive]?
+- 2G - not clear how business and industrial have lower bridge coefficients - is it based on their
+median?
+Could the bi-modality of business affect the inter-sector connectivity?
+page 2 line 32 - spelling
+page 13 line 50 - spelling
+label_end_comment
+Decision letter (RSOS-182124.R0)
+04-Apr-2019
+Dear Mr Dworkin,
+The editors assigned to your paper ("Network-driven differences in mobility and optimal
+transitions among automatable jobs") have now received comments from reviewers. We would
+like you to revise your paper in accordance with the referee and Associate Editor suggestions
+which can be found below (not including confidential reports to the Editor). Please note this
+decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper before 27-Apr-2019. Please note that the revision
+5
+deadline will expire at 00.00am on this date. If we do not hear from you within this time then it
+will be assumed that the paper has been withdrawn. In exceptional circumstances, extensions
+may be possible if agreed with the Editorial Office in advance. We do not allow multiple rounds
+of revision so we urge you to make every effort to fully address all of the comments at this stage.
+If deemed necessary by the Editors, your manuscript will be sent back to one or more of the
+original reviewers for assessment. If the original reviewers are not available, we may invite new
+reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-182124
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+6
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Robert MacKay (Associate Editor) and Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Associate Editor's comments (Dr Robert MacKay):
+The reviewers found the paper interesting but both made substantial suggestions for
+improvement. We invite you to submit a revised version to take their comments into account.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+This article maps the space of US job titles to identify which sectors contain workers who are (1)
+susceptible to automation and (2) stuck without a pathway to alternative employment. For
+example, the author finds that occupations in both the Business and Industrial sectors may be
+susceptible to automation but the Industrial sector on the whole has less connectivity to other
+sectors. This type of result may inform our understanding of technological change and job
+polarization in the US. I love this idea, and I believe there is great value in performing this
+analysis well.
+I have a few major concerns with this article.
+7
+(1) The author's interpretation of the edge weights in the job network are not validated strongly
+enough for the interpretation the author assigns to them. The author proposes a single measure
+for the skill similarity between a pair of jobs and considers this similarity as a proxy for workers'
+ability to transition between those occupations without showing that these scores are even
+correlated with worker career mobility. Despite what the author says in the Limitations section,
+data does exist to approximate this. One possibility is to access resume data. Another possibility
+is to use data from the Current Population Survey, which is a data product of the US Census
+Bureau. Comparing the edge weights with actual rates of workers transitioning between
+occupation pairs would strengthen the author's interpretation of the job network.
+(2) Similar to (1), the author should validate their measures for connectivity between sectors
+against empirical data reflective of actual worker transitions. The author's use of job growth per
+sector offers an indirect validation, and I believe a more direct validation is possible.
+(3) This study relies entirely on the automation estimates from the Frey & Osborne study, but this
+study is highly controversial. Therefore, the author should strengthen their claims by showing
+how their results change when different sets of estimates are considered. For this purpose, I
+recommend also considering
+- O*NET Degree of Automation scores, and
+- automation estimates from the Arntz et al study (ref. [5] in the article).
+(4) Although workers care about their jobs and policy makers care about employment numbers,
+work from Autor, Acemoglu, and others all suggest that occupations are best understood as
+abstract bundles of tasks and skills because technology interacts with labor by impacting the
+demand for specific tasks and skills. Therefore, does an occupation's susceptibility to automation
+impact the occupation's skill similarity to other occupations? In turn, does this fundamentally
+change the job network?
+Work from James Bessen (BU) and, alternatively, from David Deming (Harvard) demonstrate
+that occupations that are exposed to automation can redefine their skill requirements to reflect
+changing labor demands. Often, these transitions focus on an increased reliance on social skills.
+Therefore, exposure to automating technology does not always reduce employment. As an
+example from Bessen's work, the increased adoption of ATMs corresponded to national increase
+in employment for bank tellers in the US--perhaps a counter-intuitive result--because ATMs
+made it cheaper to open bank branches (i.e., demand elasticity) and bank tellers began to replace
+clerical skills with social skills. So, since this occupational skill redefinition has been shown to
+occur with exposure to automating technology, how does the author incorporate these insights
+into our understanding of the job network in the study?
+(5) If the skill similarity scores that define the edge weights in the job network do indeed
+correspond to worker transitions between occupations, then which skills promote career mobility
+for workers? Are these the skills that are susceptible to automation (this may be difficult to
+answer convincingly)? More practically, this type of insight would be helpful to policy makers
+attempting to promote career mobility for workers through informed worker retraining
+programs. This level of insight should significantly strengthen the impact of this study.
+Minor comments:
+- the "locally greedy" clustering algorithm employed in this study is often referred to as "Louvain
+community detection" in my experience
+- Figure 2 is very helpful for clarifying the measures.
+8
+- on page 8, it is not clear to me what variable t is referring to. Is it the same t that is defined on
+page 9?
+- Table 2 represents an excellent level of insight (of course, I have my concerns listed above). This
+is a level of detail that policy makers should find very helpful.
+Reviewer: 2
+Comments to the Author(s)
+The study investigates the effects of automation on labor force and creates a network of jobs by
+their skills similarities. The identification of automation is based on the classification and the
+network results show distinct patterns of automation by different job sectors. In addition, the
+study introduces metrics for measuring job mobility. Finally, it offers a solution formula to
+estimate the cost/benefit of transitioning. Overall, the novel techniques and findings contribute
+to the field and provide novel solutions to workforce decision-makers. However, the paper
+suffers from a weaknesses in the methodology and analysis sections, mostly due to the lack of
+clarity and more detailed information.
+Suggestions
+- Data section and methodology should be presented separately and prior to the analysis section.
+- Please detail the size of BLS data, the number of occupations, the type of occupational code (e.g.
+SOC), how data was extracted (e.g. link to the BLS data) or mention that it is provided in
+supplemental materials.
+- It is not clear how BLS data, Frey's data, and ONET data are merged. Cite O*Net, BLS. Consider
+using the real job postings data with skills (see EMSI, BGT etc) in the future.
+Figure 1.
+- How the number of clusters was determined? Medical cluster does not seem to be well-defined.
+- It is not clear how sectors were assigned, for example using NAICS cross-walk?
+- Note also that in Frey's study, business was defined as low risk for automation, in Figure 1
+business shows a bimodal distribution - perhaps two different categories?
+Differential job mobility
+- The reviewer suggests to introduce briefly all 4 measures at the beginning of the section.
+Consider also adding labels to each figure, for example "local" or within and "distant" or inter
+- For Figure 2 E-H - Consider adding y-axis labels and median
+- If positive values in 2F indicate a bridge, then all 4 sectors are bridges [all positive]?
+- 2G - not clear how business and industrial have lower bridge coefficients - is it based on their
+median?
+Could the bi-modality of business affect the inter-sector connectivity?
+page 2 line 32 - spelling
+page 13 line 50 - spelling
+9
+Author's Response to Decision Letter for (RSOS-182124.R0)
+See Appendix A.
+label_end_comment
+Decision letter (RSOS-182124.R1)
+23-May-2019
+Dear Mr Dworkin,
+I am pleased to inform you that your manuscript entitled "Network-driven differences in
+mobility and optimal transitions among automatable jobs" is now accepted for publication in
+Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Robert MacKay (Associate Editor) and Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author (Dr Robert MacKay):
+Associate Editor
+Comments to the Author:
+The author has taken detailed account of the reviewers' comments and I recommend the paper
+for publication now.
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+ndix A
+se to reviewers for “Network-driven differences in mobility and optimal transitions among
+table jobs”
+. Dworkina
+ment of Biostatistics, Epidemiology, & Informatics, Perelman School of Medicine, University of
+vania, Philadelphia, PA, USA
+ditor:
+like to thank the editor and the reviewers for your consideration and evaluation of the manuscript
+k-driven differences in mobility and optimal transitions among automatable jobs.” I very much
+engaging with the reviewers’ thoughtful and thorough comments, and I believe that the
+ipt has been greatly improved.
+ocument, I give my responses to the reviewers’ comments point-for-point, and describe the
+made within the manuscript. Numbered comments from the reviewers are presented, and my
+s to those comments follow (within dashed lines for clarity).
+iate the opportunity to incorporate these suggestions into the manuscript, and I am pleased to
+t it for further consideration by Royal Society Open Science. Please do not hesitate to contact me
+provide further information or clarification.
+incerely,
+workin
+ty of Pennsylvania
+er 1
+r 1 summary:
+cle maps the space of US job titles to identify which sectors contain workers who are (1)
+ble to automation and (2) stuck without a pathway to alternative employment. For example, the
+nds that occupations in both the Business and Industrial sectors may be susceptible to automation
+ndustrial sector on the whole has less connectivity to other sectors. This type of result may inform
+rstanding of technological change and job polarization in the US. I love this idea, and I believe
+great value in performing this analysis well.
+few major concerns with this article.
+like to thank the reviewer for her/his incredibly thoughtful and thorough comments. I believe that
+ggestions have greatly improved the manuscript, and appreciate the reviewer’s time in carefully
+ing the work.
+r 1 comments:
+nt 1: The author's interpretation of the edge weights in the job network are not validated strongly
+for the interpretation the author assigns to them. The author proposes a single measure for the
+ilarity between a pair of jobs and considers this similarity as a proxy for workers' ability to
+n between those occupations without showing that these scores are even correlated with worker
+obility. Despite what the author says in the Limitations section, data does exist to approximate
+e possibility is to access resume data. Another possibility is to use data from the Current
+on Survey, which is a data product of the US Census Bureau. Comparing the edge weights with
+tes of workers transitioning between occupation pairs would strengthen the author's interpretation
+b network.
+ou for pointing this out. I agree that validation of this similarity measure is crucial, and have
+the CPS transition data in order to perform validation. New sections describing this validation
+re can be found in the main manuscript (see page 3, lines 64-69, and page 6, lines 184-193) and
+lementary material (ESM page 2). I have additionally added a supplemental figure (Figure S1)
+alizes this comparison both across the included jobs and within an example job.
+nt 2: Similar to (1), the author should validate their measures for connectivity between sectors
+mpirical data reflective of actual worker transitions. The author's use of job growth per sector
+indirect validation, and I believe a more direct validation is possible.
+ortunately not fully clear on the distinction from comment 1. If this is in reference to the sector
+oefficient, which is a composite of all of the inter-sector similarities within a job, its validity
+ollow directly from the validity of the individual similarities between job pairs.
+r, the reference to job growth as an indirect validation leads me to believe that I am not fully
+nding this suggestion. If it has not been addressed by the validation mentioned in response to
+t 1, I would be happy to consider methods for performing this additional validation.
+nt 3: This study relies entirely on the automation estimates from the Frey & Osborne study, but
+y is highly controversial. Therefore, the author should strengthen their claims by showing how
+ults change when different sets of estimates are considered. For this purpose, I recommend also
+ing
+T Degree of Automation scores, and
+tion estimates from the Arntz et al study (ref. [5] in the article).
+ou for raising this point, which is a very important one. I have indeed added new analyses to the
+at incorporate the O*Net degree of automation scores. However, I was unable to utilize them as a
+mparison to the F&O estimates, since their interpretation is quite different. Instead, I compared
+o measures in the context of discussing the relatively weak relationship between jobs’ current
+ion and their estimated future automation (see Figure 5).
+empt to obtain automation estimates that could be directly compared to the F&O estimates, I
+any studies that created person-level or job-level estimates of automatability (including the Artnz
+s opposed to the occupation-level estimates presented by F&O. Since the proposed framework is
+for occupation-level estimates, I have added a section to the limitations section describing the
+l benefit of accounting for individual- and job-level heterogeneity, and calling for future work to
+he network framework to allow for variability within occupations (see page 17, lines 554-663).
+nt 4: Although workers care about their jobs and policy makers care about employment numbers,
+m Autor, Acemoglu, and others all suggest that occupations are best understood as abstract
+of tasks and skills because technology interacts with labor by impacting the demand for specific
+d skills. Therefore, does an occupation's susceptibility to automation impact the occupation's skill
+y to other occupations? In turn, does this fundamentally change the job network?
+om James Bessen (BU) and, alternatively, from David Deming (Harvard) demonstrate that
+ons that are exposed to automation can redefine their skill requirements to reflect changing labor
+s. Often, these transitions focus on an increased reliance on social skills. Therefore, exposure to
+ing technology does not always reduce employment. As an example from Bessen's work, the
+d adoption of ATMs corresponded to national increase in employment for bank tellers in the US--
+a counter-intuitive result--because ATMs made it cheaper to open bank branches (i.e., demand
+y) and bank tellers began to replace clerical skills with social skills. So, since this occupational
+efinition has been shown to occur with exposure to automating technology, how does the author
+ate these insights into our understanding of the job network in the study?
+ou for bringing this to my attention. The idea of specific skills and tasks being affected by
+ion, as opposed to entire occupations, is quite important to consider in this context. In response to
+comment and the following comment (#5), I have added several new analyses designed to
+ate how individual skills and knowledge areas relate to both current and future automation.
+pect to future automatability, I analyzed the links between individual skills and the F&O
+s of automatability, and described which specific skills tend to be associated with safer jobs, and
+varies across sectors (see page 12, lines 381-407, as well as page 16, lines 520-531).
+s’ associations with future automatability do not necessarily capture the variability within jobs
+es due to skill redefinition in the face of increased computerization. To address that, I utilized the
+egree of automation scores to detect skills that were important within jobs that had both (1) high
+current automation and (2) low estimates of future automatability. Skills that showed this pattern
+be plausibly interpreted as skills that have become important within jobs that have already faced
+els of computerization and have adapted their tasks such that they are no longer susceptible to
+utomation. Skills highlighted in this analyses, therefore, may be candidates for retraining within
+will respond to automation by redefining tasks instead of decreasing employment (see pages 12-
+408-440, as well as page 17, lines 532-552).
+nt 5: If the skill similarity scores that define the edge weights in the job network do indeed
+nd to worker transitions between occupations, then which skills promote career mobility for
+? Are these the skills that are susceptible to automation (this may be difficult to answer
+ngly)? More practically, this type of insight would be helpful to policy makers attempting to
+career mobility for workers through informed worker retraining programs. This level of insight
+ignificantly strengthen the impact of this study.
+response to comment 4 above, where I describe new analyses to investigate which individual
+ay be the most beneficial for retraining, both in the context of retraining for job transitions, and in
+ext of retraining for within-occupation skill redefinition.
+r 1 minor comments:
+nt 6: The "locally greedy" clustering algorithm employed in this study is often referred to as
+n community detection" in my experience.
+are absolutely correct. I have changed that wording on lines 196-197 to “a Louvain-like “locally
+algorithm” to be more specific (as the method used is not identical to the classical Louvain
+re), and I have added more detail in the Methods section regarding how this community detection
+re was utilized to obtain a consensus partition (see page 3, lines 70-84).
+nt 7: Figure 2 is very helpful for clarifying the measures.
+ou, I was hopeful that this would be the case. I have additionally increased the size of the labels,
+ed boxplots within the violins, in an attempt to clarify the figure slightly.
+nt 8: On page 8, it is not clear to me what variable t is referring to. Is it the same t that is defined
+9?
+added more detail to the description of the transition value score, t, on page 5 (lines 131-143),
+e moved extraneous details of the model to the ESM (see SI Methods).
+nt 9: Table 2 represents an excellent level of insight (of course, I have my concerns listed above).
+level of detail that policy makers should find very helpful.
+iate this comment, and have designed similar tables for the new sections describing the benefit of
+al skills (see Tables 2 and 3).
+er 2
+r 2 summary:
+y investigates the effects of automation on labor force and creates a network of jobs by their
+milarities. The identification of automation is based on the classification and the network results
+stinct patterns of automation by different job sectors. In addition, the study introduces metrics for
+ng job mobility. Finally, it offers a solution formula to estimate the cost/benefit of transitioning.
+the novel techniques and findings contribute to the field and provide novel solutions to workforce
+-makers. However, the paper suffers from a weaknesses in the methodology and analysis sections,
+ue to the lack of clarity and more detailed information.
+like to thank the reviewer for her/his insights and recommendations. I believe that the resulting
+tion and re-organization of the manuscript has greatly improved its value and potential impact,
+much appreciate the reviewer’s time and effort.
+r 2 comments:
+nt 1: Data section and methodology should be presented separately and prior to the analysis
+ou for this comment. The data and methods descriptions have been expanded, and the paper has
+arranged to place the full methods section prior to the results.
+nts 2-3: Please detail the size of BLS data, the number of occupations, the type of occupational
+g. SOC), how data was extracted (e.g. link to the BLS data) or mention that it is provided in
+ental materials.
+clear how BLS data, Frey's data, and ONET data are merged. Cite O*Net, BLS. Consider using
+job postings data with skills (see EMSI, BGT etc) in the future.
+ou for these suggestions. Additional details regarding the nature and extraction of the BLS data,
+of the data, and the and the merging procedure have been placed in the “Data collection” section
+ethods (see pages 2-3, lines 41-57).
+nt 4: Figure 1: How the number of clusters was determined? Medical cluster does not seem to be
+ined. It is not clear how sectors were assigned, for example using NAICS cross-walk?
+iate the opportunity to clarify. The network-based sectors were obtained using a community
+n procedure that partitions networks into clusters based on the similarities between nodes. This
+re was repeated 100 times, and a consensus partition was developed. The number of clusters is not
+y set, though it is closely tied to a parameter (lambda) of the method. Lambda here was set at 1,
+a value commonly used for networks between 100 and 1000 nodes.
+on to adding more detail on this procedure (see page 3, lines 70-84), I have also added a
+h to the results describing the relationship between these network-based sectors and the CPS-
+occupation groups (page 7, lines 211-218). Additionally, I have added a supplemental figure
+S2) that visualizes the relationship between these two classification schemes.
+nt 4: Figure 1: Note also that in Frey's study, business was defined as low risk for automation, in
+business shows a bimodal distribution - perhaps two different categories?
+great point, and indeed it is the result of several of Frey & Osborne’s categories being
+ated into what I refer to as the “business” sector. The paragraph (page 7, lines 211-218) and
+ental figure (Figure S2) referenced in the previous response illustrate this in more detail.
+nt 5: Figure 2: The reviewer suggests to introduce briefly all 4 measures at the beginning of the
+Consider also adding labels to each figure, for example "local" or within and "distant" or inter
+ou for this suggestion. I have added brief descriptions and formulas for the four mobility
+s to the methods section. In case the metric labels in Figure 2 were too small or unclear, I have
+m up and placed them more prominently between their respective graphs.
+nt 6: Figure 2: For Figure 2 E-H - Consider adding y-axis labels and median
+dded small boxplots within the violin plots for each measure (which include the medians as thin
+rizontal lines). I did not add y-axis labels at this time, as the metrics don’t have inherent units.
+e y-axis labels would simply be the names of the metrics, which can currently be seen above the
+If the reviewer thinks there would be a clearer way to present this information, I would be happy
+der it.
+nt 7: Figure 2: If positive values in 2F indicate a bridge, then all 4 sectors are bridges [all
+]?
+eciate the reviewer pointing this out. The previous phrasing that positive values represented
+was incorrect. We have adjusted the description of this measure to reflect that it is bounded
+0 and 1, thus all nodes will necessarily have a positive value (see page 4, line 97)
+nt 8: Figure 2: 2G - not clear how business and industrial have lower bridge coefficients - is it
+their median?
+ding was based on pairwise t-tests, which were testing for differences in the mean values between
+While I agree that there is quite a bit of overlap between the values for the business/industrial
+nd those of the other three sectors, the test still revealed significant differences in their means.
+ugh it is subtle, I think the figure does demonstrate that values tend to be lower in those sectors
+thers (perhaps more-so now with the addition of the boxplots).
+nt 9: Could the bi-modality of business affect the inter-sector connectivity?
+very interesting question. The bimodality of automatability within the business sector would not
+irect effect on the connections of business jobs to jobs in other sectors. However, the fact that the
+sector is made up of a more diverse set of jobs (according to the CPS classification groups; see
+2) may be related to its low inter-sector connectivity. Yet the service sector also contains a
+f CPS classifications and has relatively high inter-sector connectivity, so it is unclear to what
+is could drive the observed results.
+r 2 minor comments:
+nt 10: Page 2 line 32 – spelling
+ou, I have fixed this typesetting error.
+nt 11: Page 13 line 50 - spelling
+ou, I have fixed this typesetting error.
+Society Open

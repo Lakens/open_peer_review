@@ -1,0 +1,843 @@
+On the limitations of some popular numerical models of
+flagellated microswimmers: importance of long-range
+forces and flagellum waveform
+C. Rorai, M. Zaitsev and S. Karabasov
+Article citation details
+R. Soc. open sci. 5: 180745.
+http://dx.doi.org/10.1098/rsos.180745
+Review timeline
+Original submission: 29 May 2018 Note: Reports are unedited and appear as
+1st revised submission: 1 October 2018 submitted by the referee. The review history
+2nd revised submission: 7 November 2018 appears in chronological order.
+Final acceptance: 8 November 2018
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-180745.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Reports © 2018 The Reviewers; Decision Letters © 2018 The Reviewers and Editors;
+Responses © 2018 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Reject
+Comments to the Author(s)
+label_comment_1
+The manuscript describes a comparison between several methods for modelling low Reynolds
+number swimming cells, in particular resistive force theory, regularized stokeslets and the finite
+element method. The principal novelty is claimed as establishing that resistive force theory fails
+to capture the effect of the cell body, which is referred to as a subject of 'debate' in the
+introduction.
+However, detailed comparisons between resistive force theory and slender body theory, with and
+without the cell body, were published by Johnson and Brokaw (Biophys J 1979). Moreover, Ramia
+et al. (Biophys J 1993) compared boundary element methods (a more accurate version of
+regularized stokeslets) with slender body theory, and also extracted resistance coefficients. These
+two papers more or less resolved completely the question of the accuracy of resistive force theory
+and slender body theory relative to a highly accurate scheme for swimming cells (also, slender
+body theory is not 'the same class of approximation as RFT' despite what the authors claim in
+their introduction).
+It is also claimed that the zero Reynolds number approximation is a subject of debate for sperm
+flagella, because the standard calculation does not refer to the wavelength. However the
+wavelength is on the order of the flagellar length, so this is also completely uncontroversial.
+For these reasons I do not believe the manuscript advances scientific knowledge and I do not
+recommend for publication.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+No
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+3
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This is a useful contribution for researchers who wish to use computational fluid dynamics to
+model flagellar motility. Simple resistive force theory is widely used to approximate flagellar
+swimming velocity based upon given wave kinematics. However, for some body geometries, this
+approximation has been shown to be very inaccurate. This manuscript compares results from
+RFT to high fidelity regularized Stokeslet calculations and finite element calculations.
+Characteristics of flagellar forms where RFT gives good results are discussed. Moreover, the
+comparisons between methods are also performed for a full cell body/flagellum system.
+This manuscript should be published after the following points are addressed:
+1. It took this reader some time to realize that both the surface of the cell body *and* the
+flagellum were being discretized in the regularized Stokeslet system, rather than
+just representing the flagellum by its centerline and using the blob size to reflect flagellar radius.
+This should be made clear up front in the section on reg Stokeslets.
+2. There have been other works that have elucidated the waveforms where RFT fails to give
+reasonable results (compared to regularized Stokeslets). These two manuscripts, for instance,
+should be cited:
+a) Martindale, Jabbarzadeh, Fu. Phys. Fluids, 28, 2016.
+b) Jung, Mareck, Fauci, Shelley. Phys. Fluids, 19, 2007.
+3. The writing is sometimes grammatically incorrect , and oftentimes notation is not sufficiently
+defined. Examples: Page 1, line 52 "Bacterias flagella". Page 3, line 10. "To answer the first two
+questions..." There are no questions posed above this.
+Page 3, r_nm not defined. Careful proofreading needs to be done.
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+4
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+The manuscript studies sperm-like flagellar motility using different numerical methods and
+approximations. It then discusses their accuracies in a comprehensive way. Such a comparative
+research provides useful information in the community and also fits well with the journal aims
+and purposes. I thus recommend the manuscript for publication. Here I am listing some
+comments, most of which are at the presentation level.
+(1) p1 Third line of Section 1, typo: Bacterias -> Bacterial?
+(2) p3 Eq(2.3) diadic expression rr^T is different from tt in p12 Eq.(3.2)
+(3) p3 Eq(2.4) Usually, a boundary integral expression of the Stokes flow requires the double layer
+potential (see textbook of Pozrikidis 'Boundary Integral and Singularity Methods for Linearized
+Viscous'). I could not find this expression from Ref[9].
+(4) p3 Sentence just after Eq(2.5), I do not understand 'The Stokeslets are singular non-integrable
+kernels'. The single-layer integral of Eq.(2.4) is weakly singular and thus can be integrated (see
+also Pozrikidis' textbook).
+(5) P5 Eq (2.8) \omega should be a vector, but not written in boldface. We find the same typos in
+Eq.(3.1)
+(6) P9, Fig4. typos: lefta, righta.
+(7) p10 It is difficult to distinguish the plots. I would rather suggest that the figure should be
+enlarged. Probably legends (as in Fig1) are helpful for readers. The three plots for the spherical
+head cases (solid-blue, circle-magenta, dashed-green) would correspond to the results with
+different numerical methods, but the details are not shown.
+(8) P11 Table 1. I could not find explanations on the numbers of the second low. Are these orders
+of magnitude of the coefficients? (also in Table 4 in P14)
+(9) P16 Fig10 last line of the caption. 'The red triangle' is a bit confusing, as magenta triangles are
+also shown in the same plot. Here, legends as in the left top panel are also helpful for readers.
+(10) Subsections are referred only by alphabets, eg. just after Eq(3.4) in p12 such as Section (c).
+This makes it difficult to read. Please add the section number as well as subsection number, such
+as Section 2(c).
+label_end_comment
+Decision letter (RSOS-180745.R0)
+17-Sep-2018
+Dear Dr Rorai,
+The editors assigned to your paper ("On the limitations of some popular numerical models of
+flagellated microswimmers: importance of long-range forces and flagellum waveform") have now
+received comments from reviewers. We would like you to revise your paper in accordance with
+the referee and Associate Editor suggestions which can be found below (not including
+confidential reports to the Editor). Please note this decision does not guarantee eventual
+acceptance.
+Please submit a copy of your revised paper before 10-Oct-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If we do not hear from you within this time then it
+5
+will be assumed that the paper has been withdrawn. In exceptional circumstances, extensions
+may be possible if agreed with the Editorial Office in advance. We do not allow multiple rounds
+of revision so we urge you to make every effort to fully address all of the comments at this stage.
+If deemed necessary by the Editors, your manuscript will be sent back to one or more of the
+original reviewers for assessment. If the original reviewers are not available, we may invite new
+reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180745
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+6
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof. Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The manuscript describes a comparison between several methods for modelling low Reynolds
+number swimming cells, in particular resistive force theory, regularized stokeslets and the finite
+element method. The principal novelty is claimed as establishing that resistive force theory fails
+to capture the effect of the cell body, which is referred to as a subject of 'debate' in the
+introduction.
+7
+However, detailed comparisons between resistive force theory and slender body theory, with and
+without the cell body, were published by Johnson and Brokaw (Biophys J 1979). Moreover, Ramia
+et al. (Biophys J 1993) compared boundary element methods (a more accurate version of
+regularized stokeslets) with slender body theory, and also extracted resistance coefficients. These
+two papers more or less resolved completely the question of the accuracy of resistive force theory
+and slender body theory relative to a highly accurate scheme for swimming cells (also, slender
+body theory is not 'the same class of approximation as RFT' despite what the authors claim in
+their introduction).
+It is also claimed that the zero Reynolds number approximation is a subject of debate for sperm
+flagella, because the standard calculation does not refer to the wavelength. However the
+wavelength is on the order of the flagellar length, so this is also completely uncontroversial.
+For these reasons I do not believe the manuscript advances scientific knowledge and I do not
+recommend for publication.
+Reviewer: 2
+Comments to the Author(s)
+This is a useful contribution for researchers who wish to use computational fluid dynamics to
+model flagellar motility. Simple resistive force theory is widely used to approximate flagellar
+swimming velocity based upon given wave kinematics. However, for some body geometries, this
+approximation has been shown to be very inaccurate. This manuscript compares results from
+RFT to high fidelity regularized Stokeslet calculations and finite element calculations.
+Characteristics of flagellar forms where RFT gives good results are discussed. Moreover, the
+comparisons between methods are also performed for a full cell body/flagellum system.
+This manuscript should be published after the following points are addressed:
+1. It took this reader some time to realize that both the surface of the cell body *and* the
+flagellum were being discretized in the regularized Stokeslet system, rather than
+just representing the flagellum by its centerline and using the blob size to reflect flagellar radius.
+This should be made clear up front in the section on reg Stokeslets.
+2. There have been other works that have elucidated the waveforms where RFT fails to give
+reasonable results (compared to regularized Stokeslets). These two manuscripts, for instance,
+should be cited:
+a) Martindale, Jabbarzadeh, Fu. Phys. Fluids, 28, 2016.
+b) Jung, Mareck, Fauci, Shelley. Phys. Fluids, 19, 2007.
+3. The writing is sometimes grammatically incorrect , and oftentimes notation is not sufficiently
+defined. Examples: Page 1, line 52 "Bacterias flagella". Page 3, line 10. "To answer the first two
+questions..." There are no questions posed above this.
+Page 3, r_nm not defined. Careful proofreading needs to be done.
+Reviewer: 3
+Comments to the Author(s)
+The manuscript studies sperm-like flagellar motility using different numerical methods and
+approximations. It then discusses their accuracies in a comprehensive way. Such a comparative
+8
+research provides useful information in the community and also fits well with the journal aims
+and purposes. I thus recommend the manuscript for publication. Here I am listing some
+comments, most of which are at the presentation level.
+(1) p1 Third line of Section 1, typo: Bacterias -> Bacterial?
+(2) p3 Eq(2.3) diadic expression rr^T is different from tt in p12 Eq.(3.2)
+(3) p3 Eq(2.4) Usually, a boundary integral expression of the Stokes flow requires the double layer
+potential (see textbook of Pozrikidis 'Boundary Integral and Singularity Methods for Linearized
+Viscous'). I could not find this expression from Ref[9].
+(4) p3 Sentence just after Eq(2.5), I do not understand 'The Stokeslets are singular non-integrable
+kernels'. The single-layer integral of Eq.(2.4) is weakly singular and thus can be integrated (see
+also Pozrikidis' textbook).
+(5) P5 Eq (2.8) \omega should be a vector, but not written in boldface. We find the same typos in
+Eq.(3.1)
+(6) P9, Fig4. typos: lefta, righta.
+(7) p10 It is difficult to distinguish the plots. I would rather suggest that the figure should be
+enlarged. Probably legends (as in Fig1) are helpful for readers. The three plots for the spherical
+head cases (solid-blue, circle-magenta, dashed-green) would correspond to the results with
+different numerical methods, but the details are not shown.
+(8) P11 Table 1. I could not find explanations on the numbers of the second low. Are these orders
+of magnitude of the coefficients? (also in Table 4 in P14)
+(9) P16 Fig10 last line of the caption. 'The red triangle' is a bit confusing, as magenta triangles are
+also shown in the same plot. Here, legends as in the left top panel are also helpful for readers.
+(10) Subsections are referred only by alphabets, eg. just after Eq(3.4) in p12 such as Section (c).
+This makes it difficult to read. Please add the section number as well as subsection number, such
+as Section 2(c).
+Author's Response to Decision Letter for (RSOS-180745.R0)
+See Appendix A.
+label_version_2
+RSOS-180745.R1 (Revision)
+label_author_4
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+9
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Reject
+Comments to the Author(s)
+label_comment_4
+First of all, I'd like to emphasise that I think the authors are a good group, are building capability
+in useful techniques (finite element models of swimmers, regularized stokeslet methods) and I
+can see them using these techniques to great effect in the field of microscale propulsion. I
+appreciate my opinion on the present manuscript may seem negative, however I have to give a
+scientifically honest view. Given that the other reviewers were positive, and that the authors
+disagree with my comments, I should explain myself in more detail. I will then leave it to the
+editor to decide which way to call it.
+To recap, the authors have revisited a fairly intensively-studied problem, the zero-Reynolds
+number propulsion of flagellated microorganisms. It is shown that two versions of resistive force
+theory are inaccurate compared with the authors' implementations via finite elements and
+regularized stokeslets. The latter methods are not novel, but this is not my main criticism. Rather,
+my original review pointed out earlier uncited work by Johnson and Brokaw (1979), in addition
+to some BEM studies (1987, 1994) which showed that RFT has substantial errors relative to more
+accurate methods, which dealt with the question already. The authors' response is along the lines
+that these were 'semi-analytical studies from the 1970s', they 'lacked a realistic description of the
+flexible flagellum' and involved 'BEM rigid-body solutions on coarse grids', compared with their
+own 'high fidelity resolution'. I've considered their comments along with revisiting these papers,
+but my view is still firmly that their paper is not novel. Moreover, their characterization of the
+earlier work ('coarse, semi-analytical 1970s') relative to their own ('high fidelity') is lapsing into
+rhetoric somewhat. I've also identified a few other more recent papers and a thesis that contain
+similar findings and discussion. More detailed comments follow, but in summary my view is
+unchanged: the present manuscript does not present new information, so I do not recommend for
+publication.
+Detailed comments:
+The modern study of microscale propulsion started in the early 1950s, with key papers by
+Hancock (Proc R Soc 1953) and Gray & Hancock (J exp Biol 1955), which developed Slender Body
+Theory and its algebraic approximation Resistive Force Theory. These theories were refined and
+revisited throughout the 1960s and 70s. In particular, Lighthill's 1976 Jon von Neumann lecture
+discussed in detail the issue of the accuracy of resistance coefficients, and indeed the idea of
+'suboptimal' coefficients that compromised accuracy for a range of beat patterns. Certainly there
+was no illusion that RFT was particularly accurate - rather it was convenient and provided
+reasonable estimates.
+A little later, Higdon (a student of Lighthill) published several papers in 1979 developing finite
+amplitude slender body theory, and taking into account head-flagellum interaction (albeit with a
+spherical head). Flexing flagella as well as helical rigid rotators were considered. Higdon [JFM 90,
+685-711, 1979] compared RFT with Lighthill's coefficients to his own SBT. In Higdon's words 'we
+conclude that resistance coefficients are unsatisfactory for a complete description of the
+swimming of micro-organisms. Their values can be optimized for one quantity such as
+10
+swimming speed, but they cannot give an accurate estimate for power consumption... thus we
+feel that it is not worthwhile attempting to devise ever 'improved' coefficients when the problem
+can be solved in a straightforward manner as described above'. At this point we could stop, but if
+you are in doubt, please read on...
+Around the same time, R.E. Johnson developed a beautiful version of slender body theory
+through matched asymptotic expansions, the error term being quadratic in slenderness. This is
+_very_ accurate for most applications, and I think it is unfair of the authors to try to dismiss this
+as a 'semi-analytical study from the 1970s'. Johnson's mathematical theory was used in the paper
+of Johnson and Brokaw (dated one year earlier) which showed that for some quite realistic
+flexible flagellar beats, RFT can give reasonably accurate forces and moments, but only with an
+empirical adjustment to the coefficients, and it fails in the presence of a significant-sized cell
+body.
+It may be possible to improve incrementally on the accuracy of these (already very accurate)
+benchmark studies (although modern results are not necessarily more accurate just because they
+involve modern computers). However, incremental improvements in accuracy don't really
+provide any new information regarding the question at hand: it was absolutely clear in 1980 that
+RFT was inaccurate.
+A few subsequent studies have benchmarked against SBT and RFT, generally as part of a larger
+study - the comparison alone is not enough to hang a paper on. I mentioned the BEM work of
+Phan-Thien et al. [JFM 1987] and Ramia et al. [Biophys J 1993]. I agree these involved rigid body
+motions of the flagellum, however the introduction of flexibility hardly changes the conclusion
+that RFT is inaccurate. What this paper did do was emphasize (it was at all doubted) that
+Higdon's SBT was very trustworthy indeed. The present authors try to characterize this work
+rather disparagingly as 'BEM rigid-body solutions on coarse grids' however the grids are not
+particularly coarse and convergence was tested carefully against known analytics, showing close
+to 1% error. The fact is that BEM is a much more efficient method than either FEM or regularized
+stokeslets for microscale motility, and so it was possible to get accurate results with 1980s
+computers and programming languages. (By the way, the strategy of trying to create doubt
+around work of the standing of Higdon, Johnson, Brokaw and Phan-Thien is not a good one in
+my book).
+There are a few other more recent papers that present very similar results to the present authors
+in the more modern setting of FEM and regularized stokeslets. Tabak's recent work (Computers
+and Fluids 99, 190-198, 2014) compares RFT with constant and variable coefficients to FEM, just
+like the present authors. They find that 'resistance coefficients do not address the effect of
+hydrodynamic interactions between the body and the tail'. Rodenborn et al. [PNAS 110, E338–
+E347, 2013] compare regularized stokeslets to RFT (two different coefficients) and also SBT. Also
+Rodenborn et al's paper shows just how uncertain convergence of regularized stokeslet methods
+can be (see figure 8) - arguably the real 'high fidelity' work was done in the 1980s with BEM!
+Finally, Jesus Gonzalez's thesis is also worth a look (University of Manchester 2017 - see pages 49-
+57 for review and 144-148 for new results comparing RFT and regularized stokeslet methods) -
+url here: https://www.research.manchester.ac.uk/portal/en/theses/numerical-analysis-of-
+fluid-motion-at-low-reynolds-numbers(4cf30194-0155-439d-879a-c49787549e8c).html
+...so even if we weren't persuaded by the 70s/80s work, these more modern studies also have it
+covered.
+11
+label_author_5
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not Applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_5
+Accept as is
+Comments to the Author(s)
+label_comment_5
+I recommend that this revised version be published.
+label_author_6
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_6
+Accept as is
+12
+Comments to the Author(s)
+label_comment_6
+The authors have properly revised the manuscript, and I can recommend the manuscript for
+publication.
+label_end_comment
+Decision letter (RSOS-180745.R1)
+30-Oct-2018
+Dear Dr Rorai:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-180745.R1
+entitled "On the limitations of some popular numerical models of flagellated microswimmers:
+importance of long-range forces and flagellum waveform" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-180745.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+13
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Please note that we cannot publish your manuscript without these end statements included. We
+have included a screenshot example of the end statements for reference. If you feel that a given
+heading is not relevant to your paper, please nevertheless include the heading and explicitly state
+that it is not relevant to your work.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript before 08-Nov-2018. Please note that the revision
+deadline will expire at 00.00am on this date. If you do not think you will be able to meet this date
+please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+14
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) All supplementary materials accompanying an accepted article will be treated as in their final
+form. Note that the Royal Society will neither edit nor typeset supplementary material and it will
+be hosted as provided. Please ensure that the supplementary material includes the paper details
+where possible (authors, article title, journal name).
+Supplementary files will be published alongside the paper on the journal website and posted on
+the online figshare repository (https://figshare.com). The heading and legend provided for each
+supplementary file during the submission process will be used to create the figshare page, so
+please ensure these are accurate and informative so that your files can be found in searches. Files
+on figshare will be made available approximately one week before the accompanying article so
+that the supplementary material can be attributed a unique DOI.
+Please note that Royal Society Open Science charge article processing charges for all new
+submissions that are accepted for publication. Charges will also apply to papers transferred to
+Royal Society Open Science from other Royal Society Publishing journals, as well as papers
+submitted as part of our collaboration with the Royal Society of Chemistry
+(http://rsos.royalsocietypublishing.org/chemistry). If your manuscript is newly submitted and
+subsequently accepted for publication, you will be asked to pay the article processing charge,
+unless you request a waiver and this is approved by Royal Society Publishing. You can find out
+more about the charges at http://rsos.royalsocietypublishing.org/page/charges. Should you
+have any queries, please contact openscience@royalsociety.org.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof. Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Thank you for submitting this revision. The majority of referees are in favour of publication;
+however, given the comments of the second referee in particular, the Editors are issuing an
+'accept with minor revisions' decision. The explanation for this is below:
+1) The second referee feels that the literature review and discussion you have conducted misses
+some important earlier works that set the scene for your research, and in particular why your
+work represents an advance on the existing state of the art. With this in mind, we would ask that,
+in submitting your revision, you discuss in your introduction and/or discussion sections at least
+the most pertinent of the earlier works mentioned by the referee. This will help situate your work
+in the wider context of the field, and will add value to readers, without placing undue burdens on
+you as authors. As Royal Society Open Science lacks a word limit, you have the space to ensure a
+fuller context is provided.
+2) It has been observed that, while you indicate in your data accessibility statement the data/code
+15
+supporting your work, are available as electronic supplementary material, the Editors and
+referees have been unable to access this material. Publication is conditional on the material being
+available in the revision.
+We look forward to receiving your revision.
+Reviewer comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+I recommend that this revised version be published.
+Reviewer: 1
+Comments to the Author(s)
+First of all, I'd like to emphasise that I think the authors are a good group, are building capability
+in useful techniques (finite element models of swimmers, regularized stokeslet methods) and I
+can see them using these techniques to great effect in the field of microscale propulsion. I
+appreciate my opinion on the present manuscript may seem negative, however I have to give a
+scientifically honest view. Given that the other reviewers were positive, and that the authors
+disagree with my comments, I should explain myself in more detail. I will then leave it to the
+editor to decide which way to call it.
+To recap, the authors have revisited a fairly intensively-studied problem, the zero-Reynolds
+number propulsion of flagellated microorganisms. It is shown that two versions of resistive force
+theory are inaccurate compared with the authors' implementations via finite elements and
+regularized stokeslets. The latter methods are not novel, but this is not my main criticism. Rather,
+my original review pointed out earlier uncited work by Johnson and Brokaw (1979), in addition
+to some BEM studies (1987, 1994) which showed that RFT has substantial errors relative to more
+accurate methods, which dealt with the question already. The authors' response is along the lines
+that these were 'semi-analytical studies from the 1970s', they 'lacked a realistic description of the
+flexible flagellum' and involved 'BEM rigid-body solutions on coarse grids', compared with their
+own 'high fidelity resolution'. I've considered their comments along with revisiting these papers,
+but my view is still firmly that their paper is not novel. Moreover, their characterization of the
+earlier work ('coarse, semi-analytical 1970s') relative to their own ('high fidelity') is lapsing into
+rhetoric somewhat. I've also identified a few other more recent papers and a thesis that contain
+similar findings and discussion. More detailed comments follow, but in summary my view is
+unchanged: the present manuscript does not present new information, so I do not recommend for
+publication.
+Detailed comments:
+The modern study of microscale propulsion started in the early 1950s, with key papers by
+Hancock (Proc R Soc 1953) and Gray & Hancock (J exp Biol 1955), which developed Slender Body
+Theory and its algebraic approximation Resistive Force Theory. These theories were refined and
+revisited throughout the 1960s and 70s. In particular, Lighthill's 1976 Jon von Neumann lecture
+discussed in detail the issue of the accuracy of resistance coefficients, and indeed the idea of
+'suboptimal' coefficients that compromised accuracy for a range of beat patterns. Certainly there
+was no illusion that RFT was particularly accurate - rather it was convenient and provided
+reasonable estimates.
+A little later, Higdon (a student of Lighthill) published several papers in 1979 developing finite
+16
+amplitude slender body theory, and taking into account head-flagellum interaction (albeit with a
+spherical head). Flexing flagella as well as helical rigid rotators were considered. Higdon [JFM 90,
+685-711, 1979] compared RFT with Lighthill's coefficients to his own SBT. In Higdon's words 'we
+conclude that resistance coefficients are unsatisfactory for a complete description of the
+swimming of micro-organisms. Their values can be optimized for one quantity such as
+swimming speed, but they cannot give an accurate estimate for power consumption... thus we
+feel that it is not worthwhile attempting to devise ever 'improved' coefficients when the problem
+can be solved in a straightforward manner as described above'. At this point we could stop, but if
+you are in doubt, please read on...
+Around the same time, R.E. Johnson developed a beautiful version of slender body theory
+through matched asymptotic expansions, the error term being quadratic in slenderness. This is
+_very_ accurate for most applications, and I think it is unfair of the authors to try to dismiss this
+as a 'semi-analytical study from the 1970s'. Johnson's mathematical theory was used in the paper
+of Johnson and Brokaw (dated one year earlier) which showed that for some quite realistic
+flexible flagellar beats, RFT can give reasonably accurate forces and moments, but only with an
+empirical adjustment to the coefficients, and it fails in the presence of a significant-sized cell
+body.
+It may be possible to improve incrementally on the accuracy of these (already very accurate)
+benchmark studies (although modern results are not necessarily more accurate just because they
+involve modern computers). However, incremental improvements in accuracy don't really
+provide any new information regarding the question at hand: it was absolutely clear in 1980 that
+RFT was inaccurate.
+A few subsequent studies have benchmarked against SBT and RFT, generally as part of a larger
+study - the comparison alone is not enough to hang a paper on. I mentioned the BEM work of
+Phan-Thien et al. [JFM 1987] and Ramia et al. [Biophys J 1993]. I agree these involved rigid body
+motions of the flagellum, however the introduction of flexibility hardly changes the conclusion
+that RFT is inaccurate. What this paper did do was emphasize (it was at all doubted) that
+Higdon's SBT was very trustworthy indeed. The present authors try to characterize this work
+rather disparagingly as 'BEM rigid-body solutions on coarse grids' however the grids are not
+particularly coarse and convergence was tested carefully against known analytics, showing close
+to 1% error. The fact is that BEM is a much more efficient method than either FEM or regularized
+stokeslets for microscale motility, and so it was possible to get accurate results with 1980s
+computers and programming languages. (By the way, the strategy of trying to create doubt
+around work of the standing of Higdon, Johnson, Brokaw and Phan-Thien is not a good one in
+my book).
+There are a few other more recent papers that present very similar results to the present authors
+in the more modern setting of FEM and regularized stokeslets. Tabak's recent work (Computers
+and Fluids 99, 190-198, 2014) compares RFT with constant and variable coefficients to FEM, just
+like the present authors. They find that 'resistance coefficients do not address the effect of
+hydrodynamic interactions between the body and the tail'. Rodenborn et al. [PNAS 110, E338–
+E347, 2013] compare regularized stokeslets to RFT (two different coefficients) and also SBT. Also
+Rodenborn et al's paper shows just how uncertain convergence of regularized stokeslet methods
+can be (see figure 8) - arguably the real 'high fidelity' work was done in the 1980s with BEM!
+Finally, Jesus Gonzalez's thesis is also worth a look (University of Manchester 2017 - see pages 49-
+57 for review and 144-148 for new results comparing RFT and regularized stokeslet methods) -
+url here: https://www.research.manchester.ac.uk/portal/en/theses/numerical-analysis-of-
+fluid-motion-at-low-reynolds-numbers(4cf30194-0155-439d-879a-c49787549e8c).html
+17
+...so even if we weren't persuaded by the 70s/80s work, these more modern studies also have it
+covered.
+Reviewer: 3
+Comments to the Author(s)
+The authors have properly revised the manuscript, and I can recommend the manuscript for
+publication.
+Author's Response to Decision Letter for (RSOS-180745.R1)
+See Appendix B.
+label_end_comment
+Decision letter (RSOS-180745.R2)
+08-Nov-2018
+Dear Dr Rorai,
+I am pleased to inform you that your manuscript entitled "On the limitations of some popular
+numerical models of flagellated microswimmers: importance of long-range forces and flagellum
+waveform" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof Mark Chaplain (Subject Editor)
+openscience@royalsociety.org
+18
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+Appendix A
+Dear Editor,
+We thank all reviewers for the insightful comments which we have used to further
+improve the quality of the original manuscript. Following these, a few new paragraphs of
+discussion have been included in the text as well as several more references. Our point-
+to-point replies to the reviewers’ comments are below
+Reviewer 1
+1. The manuscript describes a comparison between several methods for modelling low
+Reynolds number swimming cells, in particular resistive force theory, regularized
+stokeslets and the finite element method. The principal novelty is claimed as establishing
+that resistive force theory fails to capture the effect of the cell body, which is referred to
+as a subject of 'debate' in the introduction.
+However, detailed comparisons between resistive force theory and slender body theory,
+with and without the cell body, were published by Johnson and Brokaw (Biophys J 1979).
+Moreover, Ramia et al. (Biophys J 1993) compared boundary element methods (a more
+accurate version of regularized stokeslets) with slender body theory, and also extracted
+resistance coefficients. These two papers more or less resolved completely the question of
+the accuracy of resistive force theory and slender body theory relative to a highly
+accurate scheme for swimming cells
+We thank the reviewer for pointing out these two classical papers to us which discussion
+we have included in the introduction. However, we disagree with the reviewer that these
+two papers, which in combination may appear to suggest that RFT is as good as SBT,
+SBT is as good as BEM, and the BEM rigid-body solutions on coarse grids, which were
+affordable in the 1990s, are as good as the direct solution of the Stokes equation with a
+high-fidelity resolution of the moving swimmer body, completely resolve the question of
+applicability of RFT as implied by the reviewer. Indeed, the semi-analytical models
+which were developed in the 1970s lack a realistic description of the flexible flagellum
+motion including the end parts and the early computational studies in the 1990s were also
+limited by numerical resolution of the flagellum body. The required numerical resolution
+has now become available thanks to the increase of computing power, hence, our current
+work to use it for a systematic comparison of different models. Our work is also
+consistent with the state-of-the art literature which shows that the accuracy of RFT is no
+longer satisfactory at the current stage of development of computational and experimental
+methods. To emphasise this, a new discussion paragraph is also added in the conclusions.
+2. (also, slender body theory is not 'the same class of approximation as RFT' despite what
+the authors claim in their introduction).
+We have rephrased the offending sentence.
+3. It is also claimed that the zero Reynolds number approximation is a subject of debate
+for sperm flagella, because the standard calculation does not refer to the wavelength.
+However the wavelength is on the order of the flagellar length, so this is also completely
+uncontroversial.
+We have modified the paragraph for clarity.
+Our assertion is that the Reynolds number scaling based on the wavelength and that based
+on the linear swimmer size is only accurate for idealised swimmer models such as the one
+considered by Johnson and Brokaw (1979).
+Reviewer 2
+This is a useful contribution for researchers who wish to use computational fluid
+dynamics to model flagellar motility. Simple resistive force theory is widely used to
+approximate flagellar swimming velocity based upon given wave kinematics. However,
+for some body geometries, this approximation has been shown to be very
+inaccurate. This manuscript compares results from RFT to high fidelity regularized
+Stokeslet calculations and finite element calculations. Characteristics of flagellar forms
+where RFT gives good results are discussed. Moreover, the comparisons between
+methods are also performed for a full cell body/flagellum system.
+This manuscript should be published after the following points are addressed:
+1. It took this reader some time to realize that both the surface of the cell body and the
+flagellum were being discretized in the regularized Stokeslet system, rather than
+just representing the flagellum by its centerline and using the blob size to reflect flagellar
+radius. This should be made clear up front in the section on reg Stokeslets.
+A new sentence is included for clarity after equation (2.5).
+2. There have been other works that have elucidated the waveforms where RFT fails to
+give reasonable results (compared to regularized Stokeslets). These two manuscripts, for
+instance, should be cited:
+a) Martindale, Jabbarzadeh, Fu. Phys. Fluids, 28, 2016.
+b) Jung, Mareck, Fauci, Shelley. Phys. Fluids, 19, 2007.
+The new references are included in the manuscript and discussed in section 4
+“Conclusions”.
+3. The writing is sometimes grammatically incorrect , and oftentimes notation is not
+sufficiently defined. Examples: Page 1, line 52 "Bacterias flagella". Page 3, line 10.
+"To answer the first two questions..." There are no questions posed above this.
+Page 3, r_nm not defined. Careful proofreading needs to be done.
+We have corrected the typos, proofread the text and edited it where needed.
+Reviewer 3
+The manuscript studies sperm-like flagellar motility using different numerical methods
+and approximations. It then discusses their accuracies in a comprehensive way. Such a
+comparative research provides useful information in the community and also fits well
+with the journal aims and purposes. I thus recommend the manuscript for publication.
+Here I am listing some comments, most of which are at the presentation level.
+(1) p1 Third line of Section 1, typo: Bacterias -> Bacterial?
+Corrected
+(2) p3 Eq(2.3) diadic expression rr^T is different from tt in p12 Eq.(3.2)
+Corrected
+(3) p3 Eq(2.4) Usually, a boundary integral expression of the Stokes flow requires the
+double layer potential (see textbook of Pozrikidis 'Boundary Integral and Singularity
+Methods for Linearized Viscous'). I could not find this expression from Ref[9].
+Corrected
+(4) p3 Sentence just after Eq(2.5), I do not understand 'The Stokeslets are singular non-
+integrable kernels'. The single-layer integral of Eq.(2.4) is weakly singular and thus can
+be integrated (see also Pozrikidis' textbook).
+Thank you for pointing this out, we were referring to the more general case of when
+forces may also be applied along curves or discrete points as commented in Cortez R,
+Fauci L, Medovikov A. Phys. Fluids 17, 1–14 (2005) as opposed to the case of close
+Lyapunov surfaces, which is the requirement for the kernel of the single-layer potential to
+be weakly singular (Pozrikidis, section 4.1). Since the specification “non-integrable” can
+indeed generate confusion without a proper discussion we now removed it.
+(5) P5 Eq (2.8) \omega should be a vector, but not written in boldface. We find the same
+typos in Eq.(3.1)
+Corrected
+(6) P9, Fig4. typos: lefta, righta.
+Corrected
+(7) p10 It is difficult to distinguish the plots. I would rather suggest that the figure should
+be enlarged. Probably legends (as in Fig1) are helpful for readers. The three plots for the
+spherical head cases (solid-blue, circle-magenta, dashed-green) would correspond to the
+results with different numerical methods, but the details are not shown.
+Corrected
+(8) P11 Table 1. I could not find explanations on the numbers of the second low. Are
+these orders of magnitude of the coefficients? (also in Table 4 in P14)
+Corrected
+(9) P16 Fig10 last line of the caption. 'The red triangle' is a bit confusing, as magenta
+triangles are also shown in the same plot. Here, legends as in the left top panel are also
+helpful for readers.
+Corrected
+(10) Subsections are referred only by alphabets, eg. just after Eq(3.4) in p12 such as
+Section (c). This makes it difficult to read. Please add the section number as well as
+subsection number, such as Section 2(c).
+Corrected
+Appendix B
+Dear Editor,
+We thank Reviewer 1 for pointing us to the useful references in the literature now
+discussed in the text: see page 3 of the manuscript, third paragraph onward. In the new
+text we also stress the novelty aspects of our work.
+Kind regards,
+Cecilia Rorai
+Mihail Zaitsev
+Sergey Karabasov
+Society Open
