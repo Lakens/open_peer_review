@@ -14,7 +14,7 @@ df_days <- c()
 df_version <- c()
 df_recommendation <- c()
 df_word_count <- c()
-df_masked <- c()
+df_anonymous <- c()
 df_reviewer_name <- c()
 df_id <- c()
 open_reviews <- 0
@@ -47,55 +47,44 @@ for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 Peer
     ###############################Word count, positive and negative###############################################
     
     word_count <- vector()  #Vector that contains the wordcounts
-    review_count <- 1        #Counts which review is being counted
+    review_count <- 0        #Counts which review is being counted
     x <- 0                  #counter for word_count position
-    switch_review_count <- 0
-    
+
     # PeerJ subdivides the review in 4 sections: 
     # Basic reporting (under label_br), experimental design (label_ed), 
     # validity of findings (label_votf), and comments for the authors (label_cfta)
     # We add the words for all these sections under word count.
     # 
     for (i in 1:length(lines)){
-      if(lines[i] == paste("label_br_", review_count, sep="")){
+      if(lines[i] == paste("label_author_", review_count + 1, sep = "")){
+        review_count <- review_count + 1
         x = x + 1
+      }
+      
+      if(lines[i] == paste("label_br_", review_count, sep="")){
         word_count[x] <- 0
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        review_count <- review_count + 1
-        switch_review_count <- 1
       }
       
       if(lines[i] == paste("label_ed_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        if (switch_review_count == 0) {
-          review_count <- review_count + 1
-          switch_review_count <- 1
-        }
       }
       
       if(lines[i] == paste("label_votf_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        if (switch_review_count == 0) {
-          review_count <- review_count + 1
-          switch_review_count <- 1
-        }
       }
       
       if(lines[i] == paste("label_cfta_", review_count, sep="")){
         word_count[x] <- word_count[x] + sapply(gregexpr("[[:alnum:]]+", lines[i+1]), function(x) sum(x > 0))
-        if (switch_review_count == 0) {
-          review_count <- review_count + 1
-          switch_review_count <- 1
-        }
       }
     }
     
-    ###################################Recommendation, Version and Masked##########################################
+    ###################################Recommendation, Version and anonymous##########################################
     rec <- NA
     recommendation <- vector()
     timelapse <- vector()
     recommendation_count <- 1
-    masked <- vector()
+    anonymous <- vector()
     version <- vector()
     adj_recommendation <- vector()
     author_count <- 1
@@ -132,11 +121,11 @@ for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 Peer
         reviewer_name <- append(reviewer_name, gsub(" ·", "", lines[i+1])) #Save author name (or Reviewer name)
         switch_review_count <- 0
         if (grepl("Reviewer", lines[i+1])){
-          masked <- append(masked, 1)
+          anonymous <- append(anonymous, 1)
           version <- append(version, version_count - 1)
           recommendation <- append(recommendation, rec)
         } else {
-          masked <- append(masked, 0)
+          anonymous <- append(anonymous, 0)
           version <- append(version, version_count - 1)
           recommendation <- append(recommendation, rec)
         }
@@ -203,7 +192,7 @@ for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 Peer
         df_version <- append(df_version, version[i])
         df_recommendation <- append(df_recommendation, recommendation[i])
         df_word_count <- append(df_word_count, word_count[i])
-        df_masked <- append(df_masked, masked[i])
+        df_anonymous <- append(df_anonymous, anonymous[i])
         df_reviewer_name <- append(df_reviewer_name, reviewer_name[i])
       }
     }
@@ -214,6 +203,6 @@ for (r in 1:7223){ #starting the loop to create the dataframe from the 6800 Peer
 } # end all_loop
 
 #################################Creating dataframe and csv file#################################################
-df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_masked, df_reviewer_name)
+df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_anonymous, df_reviewer_name)
 
 saveRDS(df, file = "peerj_data.rds")             #used to create the rds file

@@ -1,7 +1,4 @@
 ###Notes###
-library(dplyr)
-library(tidytext)
-library(tm)
 library(stringr)
 options(max.print=9999999) #allows the console to output more lines
 
@@ -12,7 +9,7 @@ df_days <- c()
 df_version <- c()
 df_recommendation <- c()
 df_word_count <- c()
-df_masked <- c()
+df_anonymous <- c()
 df_reviewer_name <- c()
 df_reviewer_number <- c()
 df_id <- c()
@@ -44,11 +41,11 @@ for (r in 1:length(article_id)){
 
                                            ######variables######
 
-###########################Masked, Version, recommendation, days and word count###################################
+###########################anonymous, Version, recommendation, days and word count###################################
     
     recommendation <- vector()
     recommendation_count <- 1
-    masked <- vector()
+    anonymous <- vector()
     author_count <- 1
     version <- vector()
     version_count <- 1
@@ -166,13 +163,19 @@ for (r in 1:length(article_id)){
         reviewer_number <- append(reviewer_number, str_sub(lines[i+1], 23, 23))  #Save author name (or Reviewer name)
         
         if (str_sub(lines[i+1], 14, 24) == "Reviewer 1"){
-          masked <- append(masked, 1)
+          anonymous <- append(anonymous, 1)
         } else if (str_sub(lines[i+1], 14, 24) == "Reviewer 2"){
-          masked <- append(masked, 1)
+          anonymous <- append(anonymous, 1)
         } else if (str_sub(lines[i+1], 14, 24) == "Reviewer 3"){
-          masked <- append(masked, 1)
+          anonymous <- append(anonymous, 1)
+        } else if (str_sub(lines[i+1], 14, 24) == "Reviewer 4"){
+          anonymous <- append(anonymous, 1)
+        } else if (str_sub(lines[i+1], 14, 24) == "Reviewer 5"){
+          anonymous <- append(anonymous, 1)
+        } else if (str_sub(lines[i+1], 14, 24) == "Reviewer 6"){
+          anonymous <- append(anonymous, 1)
         } else {
-          masked <- append(masked, 0)
+          anonymous <- append(anonymous, 0)
         }
         author_count = author_count + 1
       }
@@ -211,7 +214,7 @@ for (r in 1:length(article_id)){
         df_version <- append(df_version, version[i])
         df_recommendation <- append(df_recommendation, recommendation[i])
         df_word_count <- append(df_word_count, word_count[i])
-        df_masked <- append(df_masked, masked[i])
+        df_anonymous <- append(df_anonymous, anonymous[i])
         df_reviewer_name <- append(df_reviewer_name, reviewer_name[i])
         df_reviewer_number <- append(df_reviewer_number, reviewer_number[i])
       }
@@ -219,7 +222,7 @@ for (r in 1:length(article_id)){
   }
 }#end all_loop
 
-df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_masked, df_reviewer_name, df_reviewer_number)
+df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_anonymous, df_reviewer_name, df_reviewer_number)
 
 OB_df <- df                                                #used to store Open Biology df 
 #OS_df <- df                                               #used to store Open Science df

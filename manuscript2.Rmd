@@ -1,0 +1,310 @@
+---
+title: "Open Peer Review"
+author: "Daniel Lakens"
+date: "22-9-2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(stringr)
+library(ggplot2)
+library(here)
+
+here::here()
+
+```
+```{r}
+#### READ IN DATA
+# Read open science and open biology rds datafiles
+TRS_data_os <- readRDS(file = "royal_society_data_os.rds")
+TRS_data_ob <- readRDS(file = "royal_society_data_ob.rds")
+# Combine both datasets into one.
+TRS_data <- rbind(TRS_data_os, TRS_data_ob)
+
+#Read in PeerJ data
+PeerJ_data <- readRDS(file = "peerj_data.rds")
+
+# For manual checks, sort TRS data on doi number
+TRS_data_sorted <- TRS_data[ with( TRS_data , order ( df_link)),]
+
+#Create dataframe for TRS and PeerJ of unique rows (e.g., for days)
+TRS_unique <- TRS_data[!duplicated(TRS_data$df_link),]
+PeerJ_unique <- PeerJ_data[!duplicated(PeerJ_data$df_link),]
+
+
+# We can see how many reviews are open in PeerJ by counting all txt files in the peer_reviews_txt folder, and seeing how many end up in our dataframe:
+open_review_PeerJ <- nrow(PeerJ_unique)/length(list.files(path = "peerj_reviews_txt"))
+
+# We can see how many reviews are open in TRS by counting all doi in scopus, and seeing how many end up in our list of open reviews:
+OS_pdf_list <- readLines(file("royal_society_pdf_files/OS_pdf_list.txt", open = "r"))
+
+
+open_review_TRS <- length(OS_pdf_list) / length(read.csv("scopus_export_rsos.csv", stringsAsFactors = FALSE)$DOI)
+# In this blog Royal Society says around 2/3 of reviews are published alongside the article in 2017: http://blogs.royalsociety.org/publishing/publication-of-peer-review-reports/ 
+TRS_2017 <- filter(TRS_data, str_sub(TRS_data$df_link, -6) > 170000 & str_sub(TRS_data$df_link, -6) < 180000 & TRS_data$df_section == "Open Science")
+
+TRS_2017_open <- OS_pdf_list[OS_pdf_list > 170000 & OS_pdf_list < 180000]
+# Seems much lower in our sample. 
+length(TRS_2017_open)/nrow(TRS_2017)
+
+
+# open_review_TRS <- length(length(read.csv("scopus_export_rsos.csv", stringsAsFactors = FALSE)$DOI))>170000 & readLines(file("royal_society_pdf_files/OS_pdf_list.txt", open = "r")<180000)) / length(read.csv("scopus_export_rsos.csv", stringsAsFactors = FALSE)$DOI)
+
+
+
+XXX <- read.csv("scopus_export_rsos.csv", stringsAsFactors = FALSE)
+# One submission to PeerJ was accepted but no reviewer info. It means they are accepted by the editor? Or just an early mistake.
+sum(is.na(PeerJ_unique$df_days))
+
+# Mean review time (
+TRS_mean_review_time <- mean(TRS_unique$df_days)
+PeerJ_mean_review_time <- mean(PeerJ_unique$df_days, na.rm = TRUE)
+
+# How many reviews are anonymous?
+mean(TRS_data$df_anonymous)
+mean(PeerJ_data$df_anonymous)
+
+
+# # Using data.table command
+# group <- as.data.table(PeerJ_data)
+# TEST <- group[group[, .I[df_version == max(df_version)], by=df_link]$V1]
+
+# Select only those reviews for each paper with the highest version (first review)
+PeerJ_data_R1 <- group_by(PeerJ_data, df_link)
+PeerJ_data_R1 <- top_n(PeerJ_data_R1, 1, df_version)
+
+TRS_data_R1 <- group_by(TRS_data, df_link)
+TRS_data_R1 <- top_n(TRS_data_R1, 1, df_version) 
+
+### general numbers
+sum(PeerJ_data_R1$df_anonymous == 0) # how many reviews for first submissions are not anonymous?
+sum(PeerJ_data_R1$df_anonymous == 1) # how many reviews for first submissions are anonymous?
+
+sum(TRS_data_R1$df_anonymous == 0)
+sum(TRS_data_R1$df_anonymous == 1)
+
+# It is useful to select only cases that have a recommendation
+TRS_data_complete <- TRS_data[complete.cases(TRS_data$df_recommendation),]
+
+```
+
+## Peer Review Reports
+
+PeerJ provides authors the option to reproduce the complete peer review history of their article alongside the final publication of the article. 
+The Royal Society Open Science and Open Biology also provided authors with the option to publish peer reviews alongside the article, and made this mandatory from May 2017 (Open Biology) and January 2019 (Open Science). 
+Peer reviewers have the option to provide their names to the authors when submitting their peer review for both the PeerJ and The Royal Society Open Science and Open Biology.
+
+We examined the first 7223 articles pubished in the PeerJ, as well as the first `r length(read.csv("scopus_export_rsos.csv", stringsAsFactors = FALSE)$DOI)` articles in RSOS and the first `r length(read.csv("scopus_export_rsob.csv", stringsAsFactors = FALSE)$DOI)` articles in RSOB. 
+
+
+## Accessing Open Peer Reviews
+
+PeerJ assigns all articles a number from 1, increasing consecutively with each published manuscript. Reviews are always accessible in html (i.e., at https://peerj.com/articles/1/reviews for the first article). Using text-mining tools in R (cite R, RCurl, XML, stringer) we downloaded all reviews and stored them as individual text files. Reviews of articles published in The Royal Society Open Science and Open Biology are published online with the articles as PDF files. A list of the DOI for every article published in these two outlets was retrieved through Scopus. All reviews were downloaded, and the PDF files were exported to plain text files using pdftools (CITE). 
+
+
+
+
+```{r}
+
+# sum number of anonymous responses by subgroup using the by command in base R
+PeerJ_anonymous_by_recommendation <- by(PeerJ_data_R1$df_anonymous == 1, PeerJ_data_R1$df_recommendation, sum)
+PeerJ_notanonymous_by_recommendation <- by(PeerJ_data_R1$df_anonymous == 0, PeerJ_data_R1$df_recommendation, sum)
+
+#create plot data for accept, minor, major recommendations
+plot_data <- data.frame(factor(c("accept", "minor revision", "major revision", "accept", "minor revision", "major revision"), levels = c("accept", "minor revision", "major revision")),
+                   c("anonymous", "anonymous", "anonymous", "not anonymous", "not anonymous", "not anonymous"),
+                   c(PeerJ_anonymous_by_recommendation, PeerJ_notanonymous_by_recommendation))
+
+colnames(plot_data) <- c("recommendation", "signed", "count")
+
+ggplot(plot_data, aes(x = recommendation, y = count, fill = signed)) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+
+#create plot data for only minor, major recommendations
+plot_data <- data.frame(factor(c("minor revision", "major revision", "minor revision", "major revision"), levels = c("minor revision", "major revision"))
+                               ,
+                   c("anonymous", "anonymous", "not anonymous", "not anonymous"),
+                   c(PeerJ_anonymous_by_recommendation[2:3], PeerJ_notanonymous_by_recommendation[2:3]))
+colnames(plot_data) <- c("recommendation", "signed", "count")
+
+ggplot(plot_data, aes(x = recommendation, y = count, fill = signed)) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+
+prop_data <- cbind(PeerJ_anonymous_by_recommendation[2:3], PeerJ_notanonymous_by_recommendation[2:3]) #bind as matrix
+rownames(prop_data) <- c("minor revision", "major revision") #add column names
+colnames(prop_data) <- c("anonymous", "not anonymous") #add row names
+# Test of these different proportions
+prop.test(prop_data) #perform test of proportions
+
+
+# In proportions
+# 2061 is 53.6% of a total of 3843 articles that receive a minor revision at the first review are anonymous (and 46.4% is not anonymous), for a major revision, 65.4% (4495 out of 6876) is anonymous, 34.6% is not anonymous.
+# Calculate proportions
+1-as.vector(PeerJ_notanonymous_by_recommendation/(PeerJ_notanonymous_by_recommendation + PeerJ_anonymous_by_recommendation))
+
+##########
+# Analysis for The Royal Society (TRS)
+##########
+
+# sum number of anonymous responses by subgroup using the by command in base R
+TRS_anonymous_by_recommendation <- by(TRS_data_R1$df_anonymous == 1, TRS_data_R1$df_recommendation, sum)
+TRS_notanonymous_by_recommendation <- by(TRS_data_R1$df_anonymous == 0, TRS_data_R1$df_recommendation, sum)
+
+#create plot data for accept, minor, major recommendations
+plot_data <- data.frame(factor(c("accept", "minor revision", "major revision", "reject", "accept", "minor revision", "major revision", "reject"), levels = c("accept", "minor revision", "major revision", "reject")),
+                   c("anonymous", "anonymous", "anonymous", "anonymous", "not anonymous", "not anonymous", "not anonymous", "not anonymous"),
+                   c(TRS_anonymous_by_recommendation, TRS_notanonymous_by_recommendation))
+colnames(plot_data) <- c("recommendation", "signed", "count")
+
+ggplot(plot_data, aes(x = recommendation, y = count, fill = signed)) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+
+#create plot data for only minor, major recommendations
+plot_data <- data.frame(c("minor revision", "major revision", "minor revision", "major revision"),
+                   c("anonymous", "anonymous", "not anonymous", "not anonymous"),
+                   c(TRS_anonymous_by_recommendation[2:3], TRS_notanonymous_by_recommendation[2:3]))
+colnames(plot_data) <- c("recommendation", "signed", "count")
+
+ggplot(plot_data, aes(x = recommendation, y = count, fill = signed)) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+
+prop_data <- cbind(TRS_anonymous_by_recommendation[2:3], TRS_notanonymous_by_recommendation[2:3]) #bind as matrix
+rownames(prop_data) <- c("minor revision", "major revision") #add column names
+colnames(prop_data) <- c("anonymous", "not anonymous") #add row names
+
+# In proportions
+# 2061 is 53.6% of a total of 3843 articles that receive a minor revision at the first review are anonymous (and 46.4% is not anonymous), for a major revision, 65.4% (4495 out of 6876) is anonymous, 34.6% is not anonymous.
+680/(680+524)
+178/(178+83)
+
+# Test of these different proportions
+prop.test(prop_data) #perform test of proportions
+
+
+prop_data <- cbind(TRS_anonymous_by_recommendation[c(1,3)], TRS_notanonymous_by_recommendation[c(1,3)]) #bind as matrix
+rownames(prop_data) <- c("minor revision", "major revision") #add column names
+colnames(prop_data) <- c("anonymous", "notanonymous") #add row names
+prop.test(prop_data) #perform test of proportions
+
+
+prop_data <- cbind(TRS_anonymous_by_recommendation[c(1,2)], TRS_notanonymous_by_recommendation[c(1,2)]) #bind as matrix
+rownames(prop_data) <- c("minor revision", "major revision") #add column names
+colnames(prop_data) <- c("anonymous", "notanonymous") #add row names
+prop.test(prop_data) #perform test of proportions
+
+# Calculate proportions
+1-as.vector(TRS_notanonymous_by_recommendation/(TRS_notanonymous_by_recommendation + TRS_anonymous_by_recommendation))
+
+# Analyze words
+# TRS
+words <- by(TRS_data_R1$df_word_count, TRS_data_R1[,c(5,7)], mean, simplify = TRUE)
+
+plot_data <- data.frame(factor(c("accept", "minor revision", "major revision", "reject", "accept", "minor revision", "major revision", "reject"), levels = c("accept", "minor revision", "major revision", "reject")),
+                   c("not anonymous", "not anonymous", "not anonymous", "not anonymous", "anonymous", "anonymous", "anonymous", "anonymous"),
+                   c(words))
+colnames(plot_data) <- c("recommendation", "signed", "wordcount")
+
+ggplot(plot_data, aes(x = recommendation, y = wordcount, fill = signed)) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+t.test(TRS_data_R1$df_word_count ~ TRS_data_R1$df_anonymous)
+
+# Word counts PeerJ
+
+words <- by(PeerJ_data_R1$df_word_count, PeerJ_data_R1[,c(5,7)], mean, simplify = TRUE)
+
+plot_data <- data.frame(factor(c("accept", "minor revision", "major revision", "accept", "minor revision", "major revision"), levels = c("accept", "minor revision", "major revision")),
+                   c("not anonymous", "not anonymous", "not anonymous", "anonymous", "anonymous", "anonymous"),
+                   c(words))
+colnames(plot_data) <- c("recommendation", "signed", "wordcount")
+
+ggplot(plot_data, aes(x = recommendation, y = wordcount, fill = signed)) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+ggplot(PeerJ_data_R1, aes(x = df_recommendation, y = df_word_count, fill = as.factor(df_anonymous))) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+
+ggplot(PeerJ_data_R1, aes(x = df_recommendation, y = df_word_count, fill = as.factor(df_anonymous))) + 
+  geom_jitter() +
+  theme_linedraw(base_size = 20)
+
+
+t.test(PeerJ_data_R1$df_word_count ~ PeerJ_data_R1$df_anonymous)
+
+
+# Exploratory
+# Randomly split anonymous over 100 subgroups to see progression over time - seems stable.
+df_over_time <- data.frame(TRS_data$df_anonymous[1:3600], rep(seq(1,100,1),each = 360))
+colnames(df_over_time) <- c("anonymous", "time") # specify columns names
+x <- group_by(df_over_time, time)
+x <- summarize(x, m = mean(anonymous))
+
+df_over_time <- data.frame(PeerJ_data$df_anonymous[1:12300], rep(seq(1,100,1),each = 1230))
+colnames(df_over_time) <- c("anonymous", "time") # specify columns names
+x <- group_by(df_over_time, time)
+x <- summarize(x, m = mean(anonymous))
+
+# Analysis total review time
+# TRS
+review_time <- by(TRS_data_R1$df_days, TRS_data_R1[,c(5,7)], mean, simplify = TRUE)
+
+plot_data <- data.frame(factor(c("accept", "minor revision", "major revision", "reject", "accept", "minor revision", "major revision", "reject"), levels = c("accept", "minor revision", "major revision", "reject")),
+                   c("not anonymous", "not anonymous", "not anonymous", "not anonymous", "anonymous", "anonymous", "anonymous", "anonymous"),
+                   c(review_time))
+colnames(plot_data) <- c("recommendation", "signed", "days")
+
+ggplot(plot_data, aes(x = recommendation, y = days, fill = signed)) + 
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20)
+
+t.test(TRS_data_R1$df_word_count ~ TRS_data_R1$df_anonymous)
+
+
+
+heroes <- filter(TRS_data_R1, df_anonymous == 0 & df_recommendation == 4)
+filter(PeerJ_data, df_anonymous == 0 & df_reviewer_name == "Daniel Lakens")
+
+me <- filter(TRS_data, df_anonymous == 0)
+me <- me[ with( me , order ( df_reviewer_name)),]
+
+
+
+
+
+```
+
+In Nino's BEP there were  3552 reviews in RSOS. I have 3629 after running all his code. 
+
+
+Older Royal Society journals have the comment: Note: This manuscript was transferred from another Royal Society journal without peer review.
+What does this mean?
+
+Word counts are not perfectly reliable for several reasons (e.g., addition of references, but also more importantly comments in an attached pdf - maybe we can search for attached and pdf in short comments to identify these. )
+
+
+" This result is similar to the findings in Bornmann, Wolf,
+and Daniel (2012) that the comments in public peer review are much longer than
+the comments in closed peer review." 
+
+
+
+## Future Research
+
+The dataset we are sharing has information about the recommendations of reviewers or editors after each round of peer review, and the names of reviewers who signed their review. Through the DOI, researchers can link this data to, for example, citation counts for each manuscript. This makes it possible to explore whether initial evaluations of a manuscript are related to future citations counts. By manually coding which career stage authors and reviewers belong to during the review process it is possible to gain insights into who is more likely practice open science. Because the reviews themselves are included in our dataset, researchers interested can use the text files to answer more details questions about the content of peer reviews across different domains. 

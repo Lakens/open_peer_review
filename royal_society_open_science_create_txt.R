@@ -7,35 +7,12 @@ library(stringr)
 library(tm)
 
 #########################list of article id's#####################################
-article_id <- vector()
-
-#path <- "royal_society_pdf_files/Article_ID_OB.txt" #used for downloading the pdf's from open biology (list with the open biology ID's)
-#path <- "royal_society_pdf_files/Article_ID_OB.txt" #used for downloading the pdf's from open science (list with the open biology ID's)
-#path <- "royal_society_pdf_files/OB_pdf_list.txt" #uses list in which the non-corrupted pdf id's of open biology are contained
-path <- "royal_society_pdf_files/OS_pdf_list.txt" #uses list in which the non-corrupted pdf id's of open science are contained
-
-conn <- file(path,open="r")
-article_id <- readLines(conn)
-close(conn)
-
-########################downloading the pdf's#####################################
-##this section is used for downloading the pdf files.
-# sleep <- function() { Sys.sleep(20) } #needed to prevent an IP block from the royal society website
-# 
-#  for (i in 1:length(article_id)) {
-#    sleep()
-#    article_id[i] <- gsub("10.1098/rsob.", "", article_id[i])  #used for open biology
-#    #article_id[i] <- gsub("10.1098/rsos.", "", article_id[i]) #used for open science
-#    
-#    url <- paste("https://royalsocietypublishing.org/action/downloadSupplement?doi=10.1098%2Frsob.", article_id[i], "&file=rsob", article_id[i], "_review_history.pdf", sep="")
-#    destfile1 <- paste("C:\\Users\\Nino9000\\Documents\\BEP Open Peer Review\\PDF_Files\\Open Biology\\review", article_id[i], ".pdf", sep="")
-#    download.file(url, destfile=destfile1 , mode="wb")
-#    }
+article_id <- readLines(file("royal_society_pdf_files/OS_pdf_list.txt", open = "r"))
 
 ########################Reading pdf file #########################################
 for (i in 1:length(article_id)) {
   pdf_file <- paste("royal_society_pdf_files/open_science/review", article_id[i], ".pdf", sep="") #map with open science pdf's
-  
+  print(article_id)
   if (file.exists(pdf_file)){
   read <- readPDF(control = list(text = "-layout"))
   document <- Corpus(URISource(pdf_file), readerControl = list(reader = read))

@@ -35,7 +35,6 @@ TRS_data <- rbind(TRS_data_os, TRS_data_ob)
 
 PeerJ_data <- readRDS(file = "peerj_data.rds")
 
-
 #TRS_data_sorted <- TRS_data[ with( TRS_data , order ( df_link)),]
 
 #Create dataframe for TRS and PeerJ of unique rows (e.g., for days)
@@ -52,6 +51,55 @@ PeerJ_mean_review_time <- mean(PeerJ_unique$df_days, na.rm = TRUE)
 # How many reviews are masked?
 mean(TRS_data$df_masked)
 mean(PeerJ_data$df_masked)
+
+# # Using data.table command
+# group <- as.data.table(PeerJ_data)
+# TEST <- group[group[, .I[df_version == max(df_version)], by=df_link]$V1]
+
+# Select only those reviews for each paper with the highest version (first review)
+# For PeerJ the highest number is the first review (for RSOS this is reversed)
+PeerJ_data_R1 <- group_by(PeerJ_data, df_link)
+PeerJ_data_R1 <- top_n(PeerJ_data_R1, 1, df_version)
+
+TRS_data_R1 <- group_by(TRS_data, df_link)
+TRS_data_R1 <- top_n(TRS_data_R1, -1, df_version) #use top_n but specify -1 for bottom 1, or first review. 
+
+### general numbers
+sum(PeerJ_data_R1$df_masked == 0)
+sum(PeerJ_data_R1$df_masked == 1)
+
+sum(TRS_data_R1$df_masked == 0)
+sum(TRS_data_R1$df_masked == 1)
+
+# It is useful to select only cases that have a recommendation
+TRS_data_complete <- TRS_data[complete.cases(TRS_data$df_recommendation),]
+
+
+
+x <- group_by(PeerJ_data_R1, df_recommendation)
+x <- summarize(x, m = mean(df_masked))
+x
+
+x <- group_by(PeerJ_data_R1, df_recommendation)
+x <- summarize(x, m = sum(df_masked))
+x
+
+x <- group_by(TRS_data, df_recommendation)
+x <- summarize(x, m = mean(df_masked))
+x
+
+x <- group_by(TRS_data, df_recommendation)
+rowsum(TRS_data_complete[,c(5,7)], group = TRS_data_complete$df_recommendation, na.rm = TRUE)
+
+
+count(TRS_data$df_recommendation)
+
+x <- summarize(x, m = sum(df_masked))
+x <- x[1:4,1:2]
+chisq.test(x, correct=FALSE)
+
+x <- x[2:3,1:2]
+chisq.test(x, correct=FALSE)
 
 length(TRS_data$df_link)
 length(PeerJ_data$df_link)
