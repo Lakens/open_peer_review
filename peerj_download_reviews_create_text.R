@@ -6,7 +6,7 @@ library(here)
 
 here()
 
-for (r in 1:7223){ #Uses the reviews 1 to 7233 from PeerJ
+for (r in 1:7930){ #Uses the reviews 1 to 7930 from PeerJ
   
   review_id <- r
   
