@@ -1,0 +1,94 @@
+Review History for Enhancing the performance of the aggregated bit vector algorithm in network packet classification using GPU [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Enhancing the performance of the aggregated bit vector algorithm in network packet classification using GPU To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on December 8th, 2018 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on February 1st, 2019. The first revision was submitted on February 12th, 2019 and was reviewed by 2 reviewers and the Academic Editor. The article was Accepted by the Academic Editor on March 13th, 2019.
+label_version_1
+Version 0.2 (accepted)
+Shlomi Dolev
+·
+Mar 13, 2019
+label_recommendation_1
+·
+Academic Editor
+Accept
+Please revise according to the comments of the second reviewer. Theses are minor enough that they can be resolved while in production
+label_author_1
+Reviewer 1 ·
+Mar 8, 2019
+Basic reporting
+label_br_1
+no comment
+Experimental design
+label_ed_1
+no comment
+Validity of the findings
+label_votf_1
+no comment
+Comments for the author
+label_cfta_1
+The paper has greatly improved and most of the previous concerns have been addressed. Some comments: 1) Regarding the generality of the fields, the comment added that "For this purpose other fields of packet are inspected linearly" is not clear and still requires further explanation. 2) I do not see the needed citation in figure 2. I think it should be explicitly linked the figure in the caption or the related text about the figure. Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #1 of "Enhancing the performance of the aggregated bit vector algorithm in network packet classification using GPU (v0.2)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.185v0.2/reviews/1
+label_author_2
+Shijie Zhou ·
+Feb 24, 2019
+Basic reporting
+label_br_2
+Overall, the paper is well written and easy to follow. But there are a few minor reporting issues to be fixed. Line 85-87: It is confusing here by saying 66.54 times throughput improvement corresponds to 100 times speedup. By reading evaluation session, it looks like 66.54 is average improvement number for throughput, while 100 is the maximum number for speedup? Line 109: missing space, (Nakano 2013a)CUDA Line 128, (Cheng et. al 2014) occurs twice Line 408 (3) should be (4) because Line 329 already has an Equation (3)
+Experimental design
+label_ed_2
+Figures 6 and 7 show the comparison between predicted speedup and actual speedup. It would be better to discuss how close the predicted performance (throughput or latency, or total time) is to the measured performance as well.
+Validity of the findings
+label_votf_2
+No comment
+Comments for the author
+label_cfta_2
+In addition to the above minor issues, I also suggest authors to briefly discuss the motivation to select the ABV algorithm to accelerate on GPU. This discussion can be added in Introduction. Cite this review as
+Zhou S ( 2019 ) Peer Review #2 of "Enhancing the performance of the aggregated bit vector algorithm in network packet classification using GPU (v0.2)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.185v0.2/reviews/2 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Feb 12, 2019
+label_version_2
+Version 0.1 (original submission)
+Shlomi Dolev
+·
+Feb 1, 2019
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Please make sure that all figures and text are original, or clearly attributed to their source (only after receiving the appropriate permission). Please respond in detail to all comments by the reviewers.
+label_author_3
+Reviewer 1 ·
+Jan 5, 2019
+Basic reporting
+label_br_3
+The paper presents an implementation of a parallelized ABV algorithm on a GPU. Language and clarity: The paper is generally written in clear English. There are some minor language issues which should be fixed (for example in lines: 40, 54, 77, 86, 132, 260, 266, 278, 301). However, the clarity of the main ideas in the paper could be improved. For example, some parts of the text should be revised to make the text easier to follow. 1) The contributions listed in intro are not clear. Maybe provide more detail on the first contribution. 2) The background should be more clearly written. E.g., it dives right in to how the constructs of ABV work without explaining what is the purpose of the algorithm. 3) Minor issue - In the second section, I am not familiar with the use of the term instruments in this context, why not rename the section to background? Ethics: Figure 2 is copied directly from the paper by Baboescu and Varghese, though it is not mentioned that the figure is from that paper. Analysis: The authors present equations that represent the total time and memory of the execution. However, they do not explain the equations or prove their correctness. It may be that some of these results follow from the use of Ma et al. though that should be more rigorously exhibited and explained. In general the analysis section is hard to follow and the results are not sufficiently discussed.
+Experimental design
+label_ed_3
+The authors present a new way to improve the implementation of the aggregated bit vector packet classification technique presented by Baboescu and Varghese by parallelizing parts of the algorithm on GPUs. Research question and comparison to other work: The authors present the need to speed up packet classification and propose an interesting technique. This solution should be better placed within the context of other existing solutions. There is some comparison though it is hard to infer an apples-to-apples comparison from the short comparison and table that is given. Generalizing the result and evaluation: The discussion of the implementation and the evaluation discuss the case for two header fields. The authors should consider ways to generalize to k header fields. Evaluation results: The purpose of the graph showing the analytic speedup is not clear, since it shows the same results for all number of filters. If the point is to compare with the results in figure 7 you may want to place the results on the same graph. Minor issue: the legends in the graph should be labled
+Validity of the findings
+label_votf_3
+Data set: The authors make use of the Classbench simulator for generating files for evaluation. The toolset is publicly available making the simulations potentially reproducible, though it is no longer supported and I am not sure if it can still be used in this case. Conclusions are provided as part of the evaluation though they should be better summarized.
+Comments for the author
+label_cfta_3
+The paper is generally well written and easy to follow, though it lacks detail of analysis and comparison to related work. Furthermore, it is not clear what would be the impact of generalizing to more fields. If that is somehow implied in the paper it is not clear. Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #1 of "Enhancing the performance of the aggregated bit vector algorithm in network packet classification using GPU (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.185v0.1/reviews/1
+label_author_4
+Shijie Zhou ·
+Feb 1, 2019
+Basic reporting
+label_br_4
+This paper presents a parallel implementation of aggregated bit vector algorithm for packet classification on GPU. The paper is well written. Authors have provided sufficient literature references and background context. Experimental results are aligned with authors' analytical performance model. Terms and parameters are well defined.
+Experimental design
+label_ed_4
+The authors have used three major performance metrics for evaluation, including (1) classification time which is the time to classify all the packets, (2) throughput which is number of packet classified per second, and (3) speedup which is computed as the classification time of a serial CPU implementation over the classification time of the proposed parallel GPU implementation. Authors observe that the GPU implementation achieves 60-100 speedup over CPU implementation. I suggest authors to add the performance of single packet classification latency. Because for latency-sensitive networks, this latency is more import than throughput.
+Validity of the findings
+label_votf_4
+The supplemental files contain the source code of the implementation and the packet files used for experiments. Those files match the authors' description in the paper. Authors have provided the analysis of empirical results and their analytical performance models, indicating that their model can help predict accurate performance.
+Comments for the author
+This paper is well written and structured. And it provides both empirical results and performance analysis. I have the following suggestions: 1. The content between Line 278-281 is not reflected in Figure 3 (ABV pseudo-code). It makes me confused about how the other three fields are handled in your approach. I suggest to give more details here. 2. Table 5 seems to be an unfair comparison. This is because Varvello's CPU runs at 2.66 GHz (so their speedup number is relatively small due to a fast CPU), while your CPU runs at 2.22 GHz. A fair comparison should be based on the same baseline platform. 3. Line 399 states the memory complexity linearly increases. However, this is not true based on Figure 10. Please correct this statement. 4. Figures 8 and 9 should use KPPS as unit as stated in Line 364. 5. Fix these two sentences, Line 75, "has an appropriate structure the lets it be highly" Line 370, "it requires 9748/5" Cite this review as
+Zhou S ( 2019 ) Peer Review #2 of "Enhancing the performance of the aggregated bit vector algorithm in network packet classification using GPU (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.185v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Dec 8, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

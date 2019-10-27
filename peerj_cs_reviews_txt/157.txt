@@ -1,0 +1,89 @@
+Review History for Combining active learning suggestions [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Combining active learning suggestions To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on January 5th, 2018 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 22nd, 2018. The first revision was submitted on May 9th, 2018 and was reviewed by 1 reviewer and the Academic Editor. A further revision was submitted on June 14th, 2018 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on June 15th, 2018.
+label_version_1
+Version 0.3 (accepted)
+Sebastian Ventura
+·
+Jun 15, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+This version meets all the reviewers' expectations, and the paper is ready for publication. Congratulations!
+Download Version 0.3 (PDF)
+Download author's rebuttal letter
+- submitted Jun 14, 2018
+label_version_2
+Version 0.2
+Sebastian Ventura
+·
+Jun 6, 2018
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+You only have to follow the recommendations of reviewer 1 in the new version of the paper. [# PeerJ Staff Note: It is PeerJ policy that additional references suggested during the peer-review process should only be included if the authors are in agreement that they are relevant and useful #]
+label_author_1
+Reviewer 2 ·
+Jun 4, 2018
+Basic reporting
+label_br_1
+The authors have addressed successfully the most of the comments raised by the reviewers. Two minor comments that should be addressed before publishing the paper. 1- “More sophisticated batch-mode active learning heuristics have been proposed, for example by using cluster analysis (Xu et al., 2007) or by maximizing the diversity in a batch (Brinker, 2003). How to aggregate suggestions from these heuristics is an interesting problem for future work.” There are other interesting and recent batch-mode appoaches that the authors should consider to mention, for example the multi-objective approach proposed in: Reyes, O., & Ventura, S. (2018). Evolutionary strategy to perform batch-mode active learning on multi-label data. ACM Transactions on Intelligent Systems and Technology (TIST), 9(4), 46. 2- The first reference has a lot of authors, maybe using the first author name followed by “et al” could be ok..
+Experimental design
+label_ed_1
+The experimental study is ok.
+Validity of the findings
+label_votf_1
+The description of the results and the discussion are ok.
+Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #2 of "Combining active learning suggestions (v0.2)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.157v0.2/reviews/2 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted May 9, 2018
+label_version_3
+Version 0.1 (original submission)
+Sebastian Ventura
+·
+Jan 22, 2018
+label_recommendation_3
+·
+Academic Editor
+Major Revisions
+Please follow all the reviewers' recommendations, and prepare a document explaining how have you modified the paper. It is specially relevant you consider extending the experimental part of the article, as well as make an appropriate statistical treatment of the results.
+label_author_2
+Reviewer 1 ·
+Jan 16, 2018
+Basic reporting
+label_br_2
+Generally speaking, the article is well written and pleasant to read. A few comments on the structure and on the reporting: - It might be more natural to place the paragraph on information-density weighting (lines 313-322) in Section 2.1. - Using rank aggregation to combine multiple AL strategies has been proposed before [1], albeit in the context of active multi-task learning. I believe this should be acknowledged. - The above reference can be found, e.g., in Burr Settles' book [2], which might also be a useful addition to the references. - Table 4: "Max Performance" -> the metric is not specified. - Figures 4 and 5: It would be helpful to indicate which quantiles are represented by the boxes and the whiskers. [1] R. Reichart et al., Multi-Task Active Learning for Linguistic Annotations, ACL 2008. [2] B. Settles, Active Learning, 2012, Morgan & Claypool
+Experimental design
+label_ed_2
+The research question that the authors seek to address is important and meaningful. Their approach---analyzing a large number of methods on a large number of datasets---is a priori interesting. The experimental methods are well described, and the code is easy to read. However, I believe that there are important issues in the experimental design, such that it is not possible to gain a clear, objective understanding of the performance of the AL strategies. Hence, in its current state, the paper fails to properly address the research question. 1. The strength (eq. 25) is upper-bounded by 1, assuming that the discrete integrals are positive. However, looking at Fig. 4 and 5, we see a number of instances where the magnitude of the strength is much larger than 1, positively or negatively. This is due to the fact that $m(max)$ in (25) is the performance achieved using all labeled data, which, in some cases, is *not* the best possible performance. In these cases, the discrete integral can be 0 or negative, and the strength might not even be well-defined. This seriously impacts the interpretability of the results. The following solutions might be explored: - $m(max)$ could be redefined as the best performance in the given run (such that by construction the discrete integrals will be positive), or - multiple runs could be averaged before computing the strength, in order to decrease the variability in the performance, or - the authors might rely less on strength measurements and more on the learning curves (Fig. 6 and 7), which should then be significantly improved, e.g., by averaging more runs (>=50) and by showing more strategies, or - other performance measures might be considered, as they might prove to be less sensitive to the "nonpositive integral" problem. 2. There is no meaningful comparison with prior work. For example, I suggest considering the datasets & classifier of [3] and including the results of this paper in the plots, so that it is possible to get a clear comparison between the two. 3. The results seem to depend a lot on the choice of hyperparameters. These dependencies need to be explored more systematically. A few examples: - Thompson sampling: the authors state that it favors certain heuristics a lot more than others. But this is likely going to be very different if $au^2_r$ and the initial $mu_r$ are set differently. - Poor performance of information-density weighted strategies: this obviously depends a lot on $gamma$. - Is there an effect of the size of the candidate pool? - Regularization strength in Eq. 22: the choice of $C = 1000$ seems somewhat arbitrary and needs to be better explained. [3] Y. Baram et al., Online Choice of Active Learning Algorithms, 2004, JMLR.
+Validity of the findings
+label_votf_2
+1. The authors claim that "with the small and medium-sized datasets, the effect of active-learning is minimal". Do the authors suggest that AL should only be used if one has access to a large unlabeled pool? Or that the number of AL iterations has to be sufficiently large? I believe this might be more of a measurement problem: with small datasets, there are fewer iterations, the test set is smaller, and the measured strength is noisier---in conclusion, this might just be an artefact of the experimental procedure. In any case. this should be clarified, perhaps by running additional experiences (e.g., by looking at a small sample of a large dataset, sample whose size matches that of the small datasets). 2. Line 353: "there is no statistical difference between the corresponding heuristic/combiner and passive learning". Clearly, looking e.g. at the median in Fig. 4., there seems to be a difference. Do the authors mean that the difference is not statistically significant?
+Comments for the author
+label_cfta_2
+Small comments: - You refer multiple times to the "optimal heuristic". I believe "best heuristic" or "heuristic that works best" is more appropriate. - Line 59: "test example" -> maybe "candidate example"? - Eq. 5: why the $x$ in $r(x, h)$? The $x$ on the RHS is in a different scope (it is argmax'ed over). Maybe it should be $r(mathcal{U}, h)$ instead. - Sec 3.1. A general reference to multi-armed bandits would be welcome after the first sentence. Furthermore, I am not sure that the typical objective of MABs is to "minimize the number of pulls" (lines 132-133). - Figure 1: why the dotted line? What is the difference with plain lines? - Eq. 12: the way the function is defined implies that the bandit is able to see a reward for every arm, but that is not the case, I presume? I think the domain of the function should be revised. - Eq 13: why $| v_r$ on the LHS? - Algorithm 2, last line: "update the parameters of $B$" -> should be small case $b$. - Line 201: "consider the KL-divergence" -> between which distributions? - Line 203: "Algorithm" -> Algorithms - Line 226: "we could only use one suggestion from one particular heuristic" -> from what I understand, this is not the case for EXP4. - Line 236: $k(s(x; h))$ -> s(x:h) is a score (i.e., a real number), this is inconsistent with the definition of $k$ in Eq. 20. - Line 256: Why is it necessary to rescale the ranks? I don't see why this would change the aggregation. - Line 292: "with an L2 loss" -> I suspect you mean "with an L2 regularizer". - Eq. 22: $w^T heta$ should probably be $heta^T heta$. - Line 316: "vetor" -> vector - Line 393: "Thompson sampling requires" -> assumes - Line 394 "This can be hard to satisfy" -> This assumption is unrealistic. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "Combining active learning suggestions (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.157v0.1/reviews/1
+label_author_3
+Reviewer 2 ·
+Jan 21, 2018
+Basic reporting
+label_br_3
+- The introduction should be improved, highlighting better the motivations and the main contributions of the work. - Generally speaking, the writing of the paper is good. - In the session “related work”, the authors should explain better the reasons to only analyze and describe the Uncertainty Sampling and Version Space Reduction strategies. The authors wrote that the other heuristics (query strategies) are very computationally expensive, but they should explain further this situation. - “Out of the five heuristics discussed, how do we know which one is the most optimal one?” <U+2192> This question is quite interesting, but I think that the author should consider to rewrite it. According to the Non-Free-lunch theorem, that can be applied to active learning too, there is not a method that performs the best for all possible problems. Maybe, the question should be focused to encounter a method with a “optimal” performance for a particular set of problems. - “There have been some attempts to combine active learning suggestions in the literature. Baram et al. (2004) used the EXP4 multi-armed bandit algorithm to automate the selection process. Hsu and Lin (2015) studied an improved version, EXP4.P, along with importance weighting to estimate the rewards using only the training set. This paper empirically compares the following four algorithms: Thompson sampling, OC-UCB, kl-UCB, and EXP3++.” The authors should not restrict the state-of-the-art description to the single-label classification problem. For instance, in the following reference was proposed a method to average several rankings and obtain a consensus for selecting the next query in the context of multi-label learning. Oscar Reyes, Carlos Morell, Sebastián Ventura, Effective active learning strategy for multi-label learning, Neurocomputing, Volume 273, 2018, Pages 494-508. - The authors should improve the explanation of the proposed method. - Does the proposed method fulfill the Condorcet criterion?
+Experimental design
+label_ed_3
+- It is not explained how the authors obtained probabilities from the logistic regression base classifier. - What were the criteria to select the 11 datasets used in the experimental study?. On the other hand, the authors should increase the number of datasets in order to make the study more reliable.
+Validity of the findings
+label_votf_3
+- My main concern about this work is that the authors assumed that only one sample is selected in every active learning iteration. However, nowadays this scenario is much less used since the selection of several samples at the same time is preferred in the majority of real-world applications. To select a set of queries in each active learning iteration you can follow either a myopic active learning strategy or a batch-mode active learning one. There are main differences between these two kinds of strategies. The authors should explain this situation in the paper, and portrait some tracks explaining how to adapt the proposed method to this type of scenarios. - The discussion and conclusions are well stated, they are limited to the results obtained.
+Comments for the author
+Generally speaking, I consider that this work is interesting, but it should be significantly improved before it could be considered for publication. I suggest that authors review the work attending the comments made by the reviewer. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #2 of "Combining active learning suggestions (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.157v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Jan 5, 2018 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

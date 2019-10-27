@@ -1,0 +1,62 @@
+Review History for Detecting periodicities with Gaussian processes [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Detecting periodicities with Gaussian processes To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on October 2nd, 2015 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on December 3rd, 2015. The first revision was submitted on February 15th, 2016 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on February 29th, 2016.
+label_version_1
+Version 0.2 (accepted)
+Kathryn Laskey
+·
+Feb 29, 2016
+label_recommendation_1
+·
+Academic Editor
+Accept
+The revised version of this paper satisfactorily addresses the issues raised by the reviewers and the additional issues I raised in my decision letter. The paper as currently written is suitable for publication.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Feb 15, 2016
+label_version_2
+Version 0.1 (original submission)
+Kathryn Laskey
+·
+Dec 3, 2015
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+The reviewer consensus is that the paper is well written and will provide new tools for detecting periodicity in large data sets. The motivating example is relevant to cellular biologists and will be interesting to a broader class of readers. The paper is ready for publication once the following minor issues have been addressed. Reviewer 1 has identified some typographical errors that need to be fixed. Reviewer 1 also asks that you discuss the sensitivity of your results to the 0.77 threshold. In addition, it would be good to include a little more discussion of the right-hand panel of Figure 5. The authors note that the disagreements on the left-hand side are near-misses for GP. But no real insight is given into why the methods disagree on the cases in the right-hand panel. Why didn't CSOPT find periodicity there? The paper says the comparison allows us to focus on the differences between the methods, and that some new genes with a strong periodic component have been identified. This is potentially very interesting biologically. But there is no analysis or explanation of why those periodicities were not found by other methods. Finally, there are some additional problems that need to be corrected beyond those found by Reviewer 1: 1. Page 4: "a process y_p which samples are periodic functions" - This is ungrammatical. Do you mean "the samples of which are periodic functions"? 2. Page 4: matrix notations --> matrix notation 3. Page 7: I have never seen the term "degenerated parameters." What is that? Do you mean parameter settings for which H_p or H_a is a degenerate Hilbert space? A degenerate Hilbert space is a well-defined notion; degenerated parameters is non-standard. If this is really what you mean and the term has a precise meaning, you need to define it. 4. Page 7: Equation (10) is introduced as a decomposition of the best predictor as a sum of sub-models m_a and m_p. Then you need to say what m_a and m_p are. Remind the reader that a Chaussian process model is characterized through its mean and variance. State explicitly that E[y_p(x)|y(X)=F] and E[y_a(x)|y(X)=F] are the means of the two sub-models. You do this in Equation (11) for the variances, but you never explicitly define An alert reader familiar with Gaussian processes can figure out that this is what you mean, but as written it could be confusing for the uninitiated. 5. independent knowing the observations --> independent given the observations (or independent conditional on the observations) The terminology "knowing" for conditioning also appears elsewhere, and is non-standard. 6. Page 8: points they are evaluated at --> points at which they are evaluated 7. Page 9: they belongs to --> they belong to 8. Page 10: knowing the data-points --> given the data points 9. Page 11: As advocated by Edwards et al. --> As hypothesized by Edwards et al. (or argued, or studied, or discussed) Science proceeds by hypothesizing and evaluating empirically. Advocacy is for lobbyists. 10. Page 12: cannot be compare to --> cannot be compared to 11. Page 14: There is a space before the period at the end of the second-to-last sentence in the first paragraph. 11. As often, the proposed method ... --> The proposed method is typical in that it... "As often" is not standard English.
+label_author_1
+Reviewer 1 ·
+Nov 9, 2015
+Basic reporting
+label_br_1
+This is a well-written manuscript, with very little to criticise. It is nicely self-contained, and focused. The use of iPython/jupyter notebooks is to be commended, as well as the availability of code and data. Current references to relevant literature seem appropriate. I did wonder if it might be worth making reference to the "automatic statistician" project (of Ghahramani and others). However, I am certain the authors are aware of this project, and am happy to leave this to their discretion. I was also a little surprised that the authors did not cite more of their own relevant work. I spotted just a few typos/grammatical errors, listed below: 1. Page 5: "which samples are periodic functions" and "This can obtain by". 2. Page 13: "Although the results cannot be compare to any ground truth" 3. Page 15: "We illustrated three fundamental feature of" 4. Consistency with "arabidopsis" vs. "Arabidopsis" (and italics). Perhaps not so important for a computer science audience, but it is nevertheless nice to be consistent. [Since arabidopsis has become the common name for A. thaliana, I personally think neither capitalisation nor italics are required if the name is just given as arabidopsis -- which looks to be the case throughout this manuscript].
+Experimental design
+label_ed_1
+The experimental design appears sound, with the work conducted rigorously and to a high technical standard. Reproducibility is ensured through open-source implementation, and the use of iPython/jupyter notebooks. I am certainly not an expert on reproducing kernel Hilbert spaces, but I did not spot any obvious blunders.
+Validity of the findings
+label_votf_1
+The application of the proposed method to gene expression data is concise and to the point. The comparison to COSOPT is welcomed, and the level of agreement between these methods is reassuring. I have just one query, which is minor but seems potentially important for future applications of the method. As far as I understood, the classification threshold for the A. thaliana dataset was determined to ensure that the number of periodic genes was the same as the number returned by COSOPT (i.e. 3504). But, in practice, how would I determine an "optimal" classification threshold for the proposed method, without running COSOPT? For this particular example, could it be the case that the "optimal" classification threshold is quite a lot lower than 0.77, and actually all of the periodic genes reported by COSOPT would be reported by the proposed method (if this lower threshold had been chosen)? That is, could it be the case that the effective difference between the methods (in practice) is one of having different sensitivity/specificity properties?
+Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #1 of "Detecting periodicities with Gaussian processes (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.50v0.1/reviews/1
+label_author_2
+Mark Girolami ·
+Dec 1, 2015
+Basic reporting
+label_br_2
+This is a self contained paper describing how additive covariance functions for Gaussian Process priors can be used to detect systematic periodicity in observed data. The motivating example of circadian enzymatic control is highly relevant to contemporary cellular biology and a good example of where this sort of statistical machinery proves to be useful.
+Experimental design
+label_ed_2
+This is all appropriate for the study undertaken.
+Validity of the findings
+label_votf_2
+In terms of the statistical methodology there is sufficient validation of the outcomes.
+Comments for the author
+label_cfta_2
+A reasonably comprehensive and self-contained article that will introduce readers to the Gaussian Process machinery of inference and how covariance functions may be constructed to address a specific study, in this case detecting periodicities. Well written and clear to read. Cite this review as
+Girolami M ( 2016 ) Peer Review #2 of "Detecting periodicities with Gaussian processes (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.50v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Oct 2, 2015 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

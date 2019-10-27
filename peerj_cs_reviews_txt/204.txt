@@ -1,0 +1,62 @@
+Review History for Comparison of the performance of skip lists and splay trees in classification of internet packets [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Comparison of the performance of skip lists and splay trees in classification of internet packets To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on March 8th, 2019 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on May 3rd, 2019. The first revision was submitted on May 28th, 2019 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on June 4th, 2019.
+label_version_1
+Version 0.2 (accepted)
+Sándor Szénási
+·
+Jun 4, 2019
+label_recommendation_1
+·
+Academic Editor
+Accept
+Your revised manuscript is accepted for publication.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted May 28, 2019
+label_version_2
+Version 0.1 (original submission)
+Sándor Szénási
+·
+May 3, 2019
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Reviewers have now commented on your paper. You will see that they are advising that you revise your manuscript. For your guidance, reviewers' comments are appended below.
+label_author_1
+Reviewer 1 ·
+Apr 11, 2019
+Basic reporting
+label_br_1
+1. Some typos, e.g., Line 59 freat--> great. A spell check should be applied to the document. 2. The paper talks about comparing Splay trees to skip lists for packet classification. The original paper by Sleator and Tarjan [1985, Self-adjusting binary search trees] that invented Splay trees should be cited.
+Experimental design
+label_ed_1
+1. It seems like the Splay tree is always worse than Skip List. Are there any scenarios, perhaps artificially constructed, when they may be more suitable? 2. If Skip lists are always better, perhaps a theoretical analysis will prove this. 3. What if the authors used a static binary tree (no rotations)? This will demonstrate whether the problem is with rotation rule of the Splay trees, or with using a tree data structure in the first place. 4. Generally, skip lists act as the same as binary trees, so in case the Splay rotation rule is what causes the inferior performance, what about simpler rules, like move to root?
+Validity of the findings
+label_votf_1
+No comment.
+Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #1 of "Comparison of the performance of skip lists and splay trees in classification of internet packets (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.204v0.1/reviews/1
+label_author_2
+Reviewer 2 ·
+Apr 19, 2019
+Basic reporting
+label_br_2
+The authors present a comparative analysis of two decision tree implementations — splay trees and skip lists in order to determine which of these two are better suited for classification of internet packages. They find that skip lists perform better than splay trees in terms of package classification speed and memory accesses. They, however, note that the memory used by skip lists is higher than splay trees. Although based on Figure 5, it seems that they are not drastically different. The paper is decently written, and is easy to follow. I would perhaps structure the tables and figures in a different way; at this point, they are at the end of the paper and completely detached from the experimental results section, which means I had to go back and forth, making it harder to read. Also, I do not see any reason why the table labels and the table itself have to be on different pages, given that both pages are more than half empty. Although, I am no expert in this area, the literature review does seem to be thorough. I find the citations to be a little strange, where the author names appear and again within parenthesis the last names with the year are given; I would think that providing just the year within the parenthesis ought to be enough. But these are all a matter in exposition and I would not dwell on them further.
+Experimental design
+label_ed_2
+My main concern is that there is no bench-marking with respect to the existing techniques for package classification. I believe that this being an important problem, there must be other well established techniques. Therefore I feel such a comparison analysis is almost imperative.
+Validity of the findings
+label_votf_2
+The other issue is the lack of novelty in the paper. It simply compares two decision tree implementations based on memory footprint and classification time. In most practical scenarios skip lists often outperform most balanced search trees, and that “worst case” scenarios are typically infrequent in probabilistic data structures (such as skip list). Hence, I do not see why we need to use package classification to differentiate between the two. Is there some structure to package classification that I am missing? If there is, it would be beneficial if the authors could elucidate that clearly. Additionally, splay lists attain O(log n) in the amortized sense. Have the authors considered this for the splay tree structure? Have they considered other form of (strictly) balanced search trees? Lastly, I see that the authors have talked about parallelization of the algorithms. Skip lists are better for parallel implementation and writing multi-threaded programs (than most balanced search trees) as one has to only obtain the lock locally when it comes to modification or search. In most (balanced) search trees, locking is painful mainly due to re-balancing/splaying. Hence, I do not see why the outcomes over there would be any different (i.e., skip lists would still vastly outperform splay trees). Having said that it would have been a welcome addition to the papers as it would have boosted the contribution.
+Comments for the author
+label_cfta_2
+Overall, I feel that for the paper to be accepted, the authors must address the above concerns. Cite this review as
+Anonymous Reviewer ( 2019 ) Peer Review #2 of "Comparison of the performance of skip lists and splay trees in classification of internet packets (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.204v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Mar 8, 2019 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

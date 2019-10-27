@@ -1,0 +1,62 @@
+Review History for A redesign of OGC Symbology Encoding standard for sharing cartography [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History A redesign of OGC Symbology Encoding standard for sharing cartography To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on May 31st, 2017 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on July 18th, 2017. The first revision was submitted on November 22nd, 2017 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on December 1st, 2017.
+label_version_1
+Version 0.2 (accepted)
+Gabriella Pasi
+·
+Dec 1, 2017
+label_recommendation_1
+·
+Academic Editor
+Accept
+The revised version complies to the recommendations of the reviewers so the paper can now be accepted.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Nov 22, 2017
+label_version_2
+Version 0.1 (original submission)
+Gabriella Pasi
+·
+Jul 18, 2017
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Dear Olivier, you can find here below the reviewers' comments; please carefully follow the reviewers' recommendations in revising your article. Kind regards Gabriella Pasi
+label_author_1
+Reviewer 1 ·
+Jun 12, 2017
+Basic reporting
+label_br_1
+The paper needs a native English language revision to make it clearer. It is well organized and this helps understanding the main contents. The cited literature references related with OGC standards and portrayal interoperability of such standards are relevant. Figures and schema help understanding the main contents and well exemplify the potentiality of the proposal.
+Experimental design
+label_ed_1
+The faced problem to allow on the user side of an SDI personalizing the style of visualized maps according to user cartographic preferences is original and relevant. Also the proposal to enable such a feature by fostering the compliance with OGC standards for interoperability of SDIs as far as portrayal interoperability is a correct way to approach the problem. Finally the implementation architecture of the proposal within the OrbisGIS is well schematized and the example shown provide an idea of the potentiality of the approach.
+Validity of the findings
+label_votf_1
+The validity of the proposal for personalization of SDI and the novelty of the results could be exploited for designing geoportals customized to user categories.
+Comments for the author
+label_cfta_1
+The faced problem to allow on the user side of an SDI personalizing the style of visualized maps according to user cartographic preferences is original and relevant. Also the proposal to enable such a feature by fostering the compliance with OGC standards for interoperability of SDIs as far as portrayal interoperability is a correct way to approach the problem. The proposal should make clearer the difference between choice of the styles of a thematic maps, with respect to choice of the graphic representation of a thematic map, for example using coremi. Finally the authors needs to explicit how far the proposal can go in the personalization of the cartographic style, for example if anamorphic maps could be a possible choice of the style of a map. The paper needs a native English speaker revision. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "A redesign of OGC Symbology Encoding standard for sharing cartography (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.143v0.1/reviews/1
+label_author_2
+Paolo Tagliolato ·
+Jul 18, 2017
+Basic reporting
+label_br_2
+In the introduction, your discussion on support of visualization in current SDIs is a good point, and relevant is the consideration of INSPIRE, but your conclusion that portrayal is considered a concern of second zone could sound too strong, given for instance the “data specification on geology theme” (INSPIRE D2.8.11.4_v3.0 - http://inspire.ec.europa.eu/id/document/tg/ge ), where mature styling practices from the geological community are exhaustively considered and included in the guideline document (pages 106-130). Figures are well designed and of great support to the reader. I have just some points about Figure 7 and related text (“use case catalog” paragraph, lines 230-242). In the figure you depict the “catalog” and the “map service” as two separate components, and I agree that this is a good interpretation of functionalities, but what you describe in the text concerns a single endpoint, the actual WMS implementation (“the storage point to discover, …” line 239), and this is a bit confusing with respect to the figure, where the arrow from “my customized version of style2” and the “map service” is hiding the put operation which the reader would expect towards the style catalog, while now he could interpret the current arrow having the same meaning of corresponding arrow in Figure 5 (getMap request with posted user style). Hoping to catch the overall idea, I would suggest you to solve this issue stressing the separation of functional modules. If you agree, you could slightly modify both the figure and the text: 1. in figure 7 I would add a second arrow from “my customized version of style2” directed towards “style catalog”. 2. the text could suggest the following lifecycle of the style: the user gets style2 from catalog, then he makes modifications to the style with his software (style editor) and sends a getMap request to WMS with the the customized style, repeating modifications to the style till satisfactory results are obtained (that is: as you suggested in the use case, the user does not want to download data, so he uses WMS capabilities of interpreting style), and at that point the style is put into the catalog. A second very minor suggestion for the same figure is then to add the label “style editor” just like in Figure 5. Minor issues Line 265: something is missing, at least an hyphen, but also “mapServer” within brackets has an unclear meaning: maybe a missing reference? Please check. Line 426: please check the question mark at the end of the line. Line 480: a closing bracket is missing.
+Experimental design
+label_ed_2
+I have some points regarding the very interesting discussion of the OGC SE and related standards. You well clarify some weaknesses of the OGC standard, but the sentence at line 269 (“ambigous explanation in the specification”) could be better supported at least by one example, that I would not assume to be the possibility to obtain the same result by two different functionalities, on the contrary I would expect an example of two different outcomes driven by the same usage of the standard. Test suite: a very important aspect is highlighted saying that a test suite is missing – lines 271, 272 -, but I would ask to better clarify if and how the current study could contribute to this point, that the same standard admits to be critical considering that the “Conformance verification of the output of a system implementing SE requires in most cases visual interpretation” (OGC SE, 05-077r4, Annex A). Even if the request from different communities of alternative encodings to OGC standards is a fact (not confined to the cartographic community, see for instance, about SWE, the discussion about JSON encoding at http://www.ogcnetwork.net/node/1646 ), I would ask you some reference to support your comments in this direction at line 316, that could serve to better identify the actual gaps and be of interest to the reader.
+Validity of the findings
+label_votf_2
+In section “New symbolization capabilities”, the reader could benefit by some indication of the gap between the actual implementation of SE in contrast to the new symbolization capabilities you are discussing. For example Unit Of Measure suggested by OGC are confined to “metre”, “foot”, “pixel”; Transformations are actually (if I’m not wrong) just Displacement (=Translation?), Rotation and Scale, while other affine transformations are missing; etc.
+Cite this review as
+Tagliolato P ( 2018 ) Peer Review #2 of "A redesign of OGC Symbology Encoding standard for sharing cartography (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.143v0.1/reviews/2 Download Original Submission (PDF)
+- submitted May 31, 2017 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

@@ -1,0 +1,103 @@
+Review History for Species-specific audio detection: a comparison of three template-based detection algorithms using random forests [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Species-specific audio detection: a comparison of three template-based detection algorithms using random forests To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on December 21st, 2016 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 19th, 2017. The first revision was submitted on March 17th, 2017 and was reviewed by 2 reviewers and the Academic Editor. A further revision was submitted on April 4th, 2017 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on April 5th, 2017.
+label_version_1
+Version 0.3 (accepted)
+Elena Marchiori
+·
+Apr 5, 2017
+label_recommendation_1
+·
+Academic Editor
+Accept
+The authors addressed satisfactory a minor issue pointed out by a reviewer.
+Download Version 0.3 (PDF)
+Download author's rebuttal letter
+- submitted Apr 4, 2017
+label_version_2
+Version 0.2
+Elena Marchiori
+·
+Apr 2, 2017
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Please address the comment of Reviewer 1 concerning multi-label method.
+label_author_1
+Reviewer 1 ·
+Mar 23, 2017
+Basic reporting
+label_br_1
+OK. Clarity and English is improved as requested. The added mention of Fodor/Lasseck's work is appropriate, but the reader would benefit from understanding WHY it is relevant - i.e. because it is also a template-matching paradigm. The mention of multi-label methods added to the conclusion is a bit odd. I recognise that reviewer 2 requested it, but the authors present it as "a way to filter out sound activity not related to fauna", which is not really a good description of what multi-label provides. Also, note that the method presented in this paper is equivalent to the "binary relevance" approach to multi-label, namely, simplifying the problem to an independent binary problem per species. The paragraph should be reconsidered to provide a more meaningful reaction to reviewer 2's request.
+Experimental design
+label_ed_1
+OK. The inclusion of AUC as well as the other statistics improves confidence in the results.
+Validity of the findings
+label_votf_1
+OK.
+Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #1 of "Species-specific audio detection: a comparison of three template-based detection algorithms using random forests (v0.2)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.113v0.2/reviews/1
+label_author_2
+Reviewer 2 ·
+Mar 27, 2017
+Basic reporting
+label_br_2
+The language issue has been well fixed by the author.
+Experimental design
+label_ed_2
+The experiment is well designed.
+Validity of the findings
+label_votf_2
+The paper provides a method, which is implemented in the ARBIMON web-based system. It is especially useful for those ecologists who want to study bioacoustics.
+Comments for the author
+label_cfta_2
+This paper is well documented and useful for interested readers. The author has well addressed the proposed problem. I would recommend the paper to be accepted. Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #2 of "Species-specific audio detection: a comparison of three template-based detection algorithms using random forests (v0.2)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.113v0.2/reviews/2 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Mar 17, 2017
+label_version_3
+Version 0.1 (original submission)
+Elena Marchiori
+·
+Jan 19, 2017
+label_recommendation_3
+·
+Academic Editor
+Major Revisions
+The two domain experts consider the contribution interesting. They point to some core issues (reviewer 1) and questions (reviewer 2) which need to be thoroughly addressed in a major revision.
+label_author_3
+Reviewer 1 ·
+Jan 10, 2017
+Basic reporting
+label_br_3
+The article is in general clearly written and well-structured. The algorithm statements are commendably clear. The paragraph between lines 167 and 168 is unclear. I believe that the "5 selected neighbourhoods" are 5 strongly-matching temporal regions. I also believe that 266% is a freely-chosen parameter. Please rewrite the paragraph to be clearer. The article does not make enough connection with related literature on the topic. * A very obvious point of comparison is the template-matching species classification introduced by Gabor Fodor and used by Mario Lasseck to perform species classification and get extremely strong results in the annual BirdCLEF contests. Since that method is currently a leading method in the exact topic of this paper, it should be discussed. * The two-stage method in this paper (cross-correlation followed by SSIM refinement) is somewhat related to Ross & Allen (2013, Ecological Informatics). This comparison could be made in the discussion. Line 292 claims that the method is "non-species specific" - this is not a good description of the method, since the method relies on templates for the target species and so is species-specific. It would be appropriate to call the method "generic" or "general-purpose".
+Experimental design
+label_ed_3
+Broadly fine. However some issues: The step size used for moving through each spectrogram (in step 5 of "Algorithm to create the similarity vector") is potentially problematic. Moving by a jump of 16 steps rather than 1 carries quite a strong risk (in fact, a 94% chance) of missing the strongest-matching alignment. The authors should have tested for the procedure's sensitivity to this parameter choice. It would be better to use AUC (area under the ROC curve) rather than accuracy. This is widely-known and is especially important when the classes are unbalanced, as is the case here. The authors claim (line 196) that accuracy is a suitable proxy for AUC in the balanced case: this argument is misleading and must be removed, since the authors are not considering the balanced case. It is a shame that the authors only used around 900 recordings, when they had access to many more. Some of the folds must have as few as 3 examples, for some species. However, since the main outcomes appear to be significant, this is not a fatal flaw.
+Validity of the findings
+label_votf_3
+The findings appear to be valid, and significance is appropriately determined. The results would be more reliable if AUC rather than accuracy was used.
+Comments for the author
+label_cfta_3
+The title mentions both "detection" and "classification". I understand why. However the introduction should clarify for the reader what task is being attempted here: it is to develop a binary classifier for the presence/absence of a single species, and then applying it to each of a set of species of interest. At present the article does not make this quite explicit, the reader must infer it. I would argue that the title should really refer to a comparison of three detection algorithms not three classification algorithms, since the three template-matching procedures used here are used for detection. The introduction MUST tell the reader something about the three similarity measures that are being tested here, since that is the main comparison. The full algorithm statement comes later, but the intro needs to prepare the reader for what the paper is about. Why these three? What properties does one expect of them? Typos: * "Hanning" -> "Hann" * "lets define" -> "define" * "algorithms have order of" -> "algorithms have time complexity of" * "analize" -> "analyze" Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #1 of "Species-specific audio detection: a comparison of three template-based detection algorithms using random forests (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.113v0.1/reviews/1
+label_author_4
+Reviewer 2 ·
+Jan 17, 2017
+Basic reporting
+label_br_4
+The manuscript compares three template-based classification algorithms using random forests. A web-based cloud-hosted system is quite useful to the bioacoustic community. This paper is well organized, but has some grammar errors, which needs to be improved. Line 17, Line 24, Line 34, Line 63-64 1 to one, Line 69 id? Line 101 optimize....
+Experimental design
+label_ed_4
+In this paper, the template is created by all ROIs submitted by the user. The template is highly affected by the training data. Since animal calls are often different in different regions and different times, can you figure out some methods to address this problem? or can you update the template when doing the comparison to make it less sensitive to those factors? In environmental recordings, there are often multiple species in an individual recording, a single-instance single-label classifier might not suitable for the classification task. However, multi-instance multi-label learning or multi-label learning have shown better performance in previous studies, such as "Acoustic classification of multiple simultaneous bird species: A multi-instance multi-label approach" "Using multi-label classification for acoustic pattern detection and assisting bird species surveys", "Detecting Frog Calling Activity Based on Acoustic Event Detection and Multi-label Learning".
+Validity of the findings
+The novelty of this paper is limited, but the impact is high. The data is robust and the conclusion is well stated. The conclusion and future work section is weak and should be expanded and added, respectively.
+Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #2 of "Species-specific audio detection: a comparison of three template-based detection algorithms using random forests (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.113v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Dec 21, 2016 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

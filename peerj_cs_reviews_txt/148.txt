@@ -1,0 +1,77 @@
+Review History for Indexing labeled sequences [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Indexing labeled sequences To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on September 14th, 2017 and was peer-reviewed by 3 reviewers and the Academic Editor. The Academic Editor made their initial decision on October 25th, 2017. The first revision was submitted on January 18th, 2018 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on February 1st, 2018.
+label_version_1
+Version 0.2 (accepted)
+Rahul Shah
+·
+Feb 1, 2018
+label_recommendation_1
+·
+Academic Editor
+Accept
+Thank you for all your work in revising your manuscript. The changes you incorporated have definitely enriched the manuscript.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Jan 18, 2018
+label_version_2
+Version 0.1 (original submission)
+Rahul Shah
+·
+Oct 25, 2017
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+Dear authors, We are happy to see that your manuscript has been looked upon favorably by all the reviewers. Overall consensus is that this manuscript only requires minor revisions. While most of the minor revisions are immediate, there are a couple which may need a little more thought and restructuring. We look forward to your revised manuscript. best regards, Rahul Shah
+label_author_1
+Reviewer 1 ·
+Oct 5, 2017
+Basic reporting
+label_br_1
+This is an easy to read article targeted to wider audience. The article illustrates how easy it is to design a tailored solution, exploiting modern compressed text indexing, to combine labels and DNA sequence into a common data structure that allows to make useful queries on the content. All the components are widely known, but this combination has not been previously reported; there is, though, an even more broad generalization of adding an XML tree on top of a sequence [1], which encompasses linear labelling as a special case. That article is not targeted to a general audience, so reporting this special case with a tailored (and different) solution is completely desirable. English should be improved. I spotted some very easy typos detectable by a spell checker, and with high probability there are more (page 1, line 43: let call -->let us call; page 6, line 137: anwser --> answer). [1] Diego Arroyuelo, Francisco Claude, Sebastian Maneth, Veli Mäkinen, Gonzalo Navarro, Kim Nguyen, Jouni Sirén, Niko Välimäki. Fast in-memory XPath search using compressed indexes. Softw., Pract. Exper. 45(3): 399-434 (2015)
+Experimental design
+label_ed_1
+As this is a new problem, there is no good baseline to compare. Comparison to naive solution is fine.
+Validity of the findings
+label_votf_1
+Authors show a proof of concept with a biological question motivating the study.
+Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #1 of "Indexing labeled sequences (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.148v0.1/reviews/1
+label_author_2
+Reviewer 2 ·
+Oct 11, 2017
+Basic reporting
+label_br_2
+The authors essentially consider the problem of indexing a pair of strings $T in Sigma*$ and $L in {1, ldots, ell}$ such that, given a pattern $P$ and a integer $x$ between 1 and $ell$, they can quickly count and/or return all the positions $j$ such that $T [j..j + |P| - 1] = P$ and $L [j] = x$. Their solution is essentially to store an FM-index for $T$ together with a wavelet tree for the permutation $W$ of $L$ in which $W [j] = L [SA [j]]$, where $SA$ is the suffix array of $T$. Given $P$ and $x$, they use the FM-index to find the suffix array interval for $P$, then use the wavelet tree to count and/or find the occurrences of $x$ in that interval in $W$, then possibly use the FM-index's suffix-array sample to find also the corresponding positions in $T$. The solution itself is correct, but obvious. The explanation is unnecessarily complicated, some of the bounds cited are not the best known, and several of the references are outdated. I would suggest the authors significantly tighten up their presentation before publication, although none of the problems are critical.
+Experimental design
+label_ed_2
+No comment.
+Validity of the findings
+label_votf_2
+The findings are correct, although not profound.
+Comments for the author
+label_cfta_2
+It seems fairly easy to build an $O (n log n)$-bit index such that, given a pattern $P$, a label $x$ and a position $i$ in $P$, we can reasonably quickly find all the positions where $P$ occurs in $T$ with its $i$th character labelled $x$. Offhand, however, I don't see how to reduce the space to $O (n log Sigma)$. A solution to that problem might make the article more interesting for researchers familiar with pattern matching. Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #2 of "Indexing labeled sequences (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.148v0.1/reviews/2
+label_author_3
+Reviewer 3 ·
+Oct 25, 2017
+Basic reporting
+label_br_3
+This paper presents two indexes for labels texts. Each position of a text T of length n is marked with exactly one (possible empty) label. The label string A is therefore also of length n. The first index uses an FM-index over T and a WT over the run-length compressed version of A. The WT stores the sequence of run heads, while bit vector B_A marks the first position of the runs in T. Since a search in the FM-index results in a SA range, access to A is not cheap since SA positions have to be translated into text positions. The cost of this translation is proportional to the SA-sampling s_SA. In a second version of the index, A is also transformed in SA-order. Run-length compression is again applied. A set of operations is defined and the authors show how to answer these operations. The algorithms are compositions of already known results.36: on an alphabet -> over an alphabet
+Experimental design
+label_ed_3
+The experimental section compares an implementation of the two indexes to a naive baseline. The implementation is based on the SDSL library but important details, i.e. which SA sampling strategy was used, are missing in the current version of the article. It is also unclear why the author opted for rrr_vector to represent the bit vectors. It is expected that sd_vector is superior to rrr_vector for long labels. I suggest to fix the last two issues and accept the paper.
+Validity of the findings
+label_votf_3
+The index is a composition of already know techniques and its practical implementation and the experiments are worth a publication. The benchmark is available and the experiments seem to be sound.
+Comments for the author
+Details: 40: The figure 1 -> Figure 1 58: there is a better construction of the WT (Munro, Nekrich, Vitter TCS 2016); ok mentioned in 146 71: The usual sampling is log^{1+epsilon} n in theory. Please consider also practice: Gog and Navarro (SEA 2014) present a practical way to sample SA and ISA at the same time. Ferragina, Siren, and Venturini (ESA 2011) experimented with distribution-aware sampling. Figure 2: These TL -and .. -> TL- and 106: figure 3 -> Figure 3, also 112 166: Is is not necessary to keep the ordering. This is not possible with Huffman but with Hu-Tucker codes. 221: The Figure -> Figure Cite this review as
+Anonymous Reviewer ( 2018 ) Peer Review #3 of "Indexing labeled sequences (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.148v0.1/reviews/3 Download Original Submission (PDF)
+- submitted Sep 14, 2017 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

@@ -1,0 +1,77 @@
+Review History for Machine learning can differentiate venom toxins from other proteins having non-toxic physiological functions [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Machine learning can differentiate venom toxins from other proteins having non-toxic physiological functions To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on June 24th, 2016 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on July 28th, 2016. The first revision was submitted on August 17th, 2016 and was reviewed by 1 reviewer and the Academic Editor. The article was Accepted by the Academic Editor on September 8th, 2016.
+label_version_1
+Version 0.2 (accepted)
+Jaume Bacardit
+·
+Sep 8, 2016
+label_recommendation_1
+·
+Academic Editor
+Accept
+The authors have thoroughly addressed the concerns of the reviewers and the paper is now ready for publication.
+label_author_1
+Jose Izarzugaza ·
+Aug 29, 2016
+Basic reporting
+label_br_1
+The authors have carefully addressed my concerns to the previous version of the manuscript. Therefore, I have no more objections to its publication.
+Experimental design
+label_ed_1
+No Comments
+Validity of the findings
+label_votf_1
+No Comments
+Comments for the author
+label_cfta_1
+No Comments Cite this review as
+Izarzugaza JM ( 2016 ) Peer Review #1 of "Machine learning can differentiate venom toxins from other proteins having non-toxic physiological functions (v0.2)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.90v0.2/reviews/1 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Aug 17, 2016
+label_version_2
+Version 0.1 (original submission)
+Jaume Bacardit
+·
+Jul 28, 2016
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+Please thoroughly address all comments from the reviewers. Both reviewers agree that the experimental design needs more detail to really assess its validity e.g. in relation to hyper-parameter tuning and improving the comparison with other methods. Please explain why from all the methods described in the related work only two of them were included in the quantitative comparison.
+label_author_2
+Jose Izarzugaza ·
+Jul 4, 2016
+Basic reporting
+label_br_2
+The authors present here a meta-approach that combines 9 different machine learning tools for the classification of toxic proteins from their non-toxic counterparts. The text is well written and the rationale behind the method is expressed in a clear and concise manner.
+Experimental design
+label_ed_2
+Results: In line 111, the authors state that "any blastp hits with duplicated FASTA sequences in the Uniprot/SwissProt-ToxProt database were discarded". Do the authors allow for any variability or do they refer to identical (100%) sequences here? Similarly, the authors should indicate how they handle internal homology in the training sets. The manuscript lacks a detailed description of the creation of the k-folds. My concern is that the authors might be incurring in overtraining if similar (i.e. non-identical globally but closely identical in the tox-bits) signals stemming from closely related proteins are considered in the training and the evaluation sets. And of course, it hinders reproducibility. The threshold for the selection of valid results is decided after the training, and therefore, possibly introducing overfitting. The authors correctly incorporate a leave-one-out approach in the 25-fold crossvalidation and separate the dataset into training and evaluation. That would be a valid approach if there was no parameter selection in the assessment. As the threshold (i.e <3 non-toxic, 4-5 pot. toxic, 6> toxic) is used afterwards, the distribution of the cross-validation should include three sets: training, test and evaluation. A similar reasoning applies to the selection of the 9 internal methods for classification, as feature selection occurred after the training. Although the authors correctly include commonly used statistics for the evaluation of machine learning approaches in the Supplementary Note 1B, the numbers for these are not provided and the results are discussed mainly in terms of accuracy. In the problem at hand it is interesting to now the accuracy of prediction on the positive set but also the ability to recall sequences. Similarly, Figure 1 should be reconsidered. Probably providing together specificity and sensitivity (i.e. a ROC curve). The legend could still be used to display the performance for each cut-off valies and the values for the naiveBLAST and oneBLAST methods. From the observation of the figure, it is not clear to me how the performance was calculated in the manuscript. Again, the all statistics measuring performance are needed. In particular, those focusing on the positive (i.e. toxic proteins) part: precision, recall, f-score and MCC to cite some examples. From the observation of the figure, it seems that the authors present a method very good at predicting the negative class (non-toxic, majority class) but with low recall in the positive class (toxic). In general, comparisons in the manuscript should be done with respect to precision (accuracy on the positive class) rather than overall accuracy as the prediction of non-toxic proteins is not relevant in this case and constitutes a big majority of the training set. The same applies to Table 1. Please, report all statistics for all the methods to facilitate comparison. Or even include them in Figure 1 for direct comparison. In Table 3, please, provide the individual scores.
+Validity of the findings
+label_votf_2
+In the paragraph starting in line 246 the authors describe other approaches that, although limited in scope, address a similar problem. However, the performance of these specific method is not critically compared to the performance of the ToxClassifier presented here. The readership of the manuscript would definitely benefit from a detailed benchmark with these in addition to the other sequence based generic approaches.
+Comments for the author
+label_cfta_2
+The Methods section needs improvement to reach publication standards. I would suggest that the information in the Supplementary Notes is expanded and included into the Methods section. In particular, the sections referring to the different annotation systems and the statistics used for the evaluation of the methods constitute a core part of the interpretation of the results and should be described carefully in the methods sections. I mentioned above some problems with respect to the generation of the training and evaluation sets in the k-fold crossvalidation approach used. This should constitute a section in the Methods as well. In line 49, the sentence "Thus, remote .... approach alone" might need rewording. The meaning is not clear to me in its current form. Cite this review as
+Izarzugaza JM ( 2016 ) Peer Review #1 of "Machine learning can differentiate venom toxins from other proteins having non-toxic physiological functions (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.90v0.1/reviews/1
+label_author_3
+Reviewer 2 ·
+Jul 28, 2016
+Basic reporting
+label_br_3
+The paper is well written and the aims are clearly stated. The introduction and background provided are adequate. Figures are relevant and the explanation that is included on them is enough to understand their content. The literature included is relevant and up-to-date.
+Experimental design
+label_ed_3
+The paper presents the results of the use of standard machine learning classification methods to distinguish between toxic and non-toxic peptides and proteins. The experiments are well designed and the databases are constructed in a principled way. However, there is a lack of comparison with other relevant programs aimed at the same goal which are described in the paper but not used as a baseline to evaluate the validity of the proposed approach. From the computational point of view not sufficient information is given about how the models were trained or how the hyper-parameters of the models where chosen. This would make the reproduction to the experiments troublesome.
+Validity of the findings
+label_votf_3
+Although the experiments and results are valuable, I think the novelty of the paper is weak. The application of standard machine learning methods to toxic/non toxic protein classification is interesting but it is not a clear innovation over other existing programs that use other similar techniques. I think that the author should justify the contribution of their paper to the field in addition to the seemingly good results achieved.
+Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #2 of "Machine learning can differentiate venom toxins from other proteins having non-toxic physiological functions (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.90v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Jun 24, 2016 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

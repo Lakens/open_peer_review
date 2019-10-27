@@ -1,0 +1,78 @@
+Review History for Cost-efficient enactment of stream processing topologies [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Cost-efficient enactment of stream processing topologies To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on June 15th, 2017 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on July 31st, 2017. The first revision was submitted on September 26th, 2017 and was reviewed by 1 reviewer and the Academic Editor. The article was Accepted by the Academic Editor on November 13th, 2017.
+label_version_1
+Version 0.2 (accepted)
+Daniele D'Agostino
+·
+Nov 13, 2017
+label_recommendation_1
+·
+Academic Editor
+Accept
+I agree with the reviewer (who had previously requested a major revision of your work) that it is now Acceptable. Please consider the additional suggestions they made.
+label_author_1
+Reviewer 2 ·
+Nov 12, 2017
+Basic reporting
+label_br_1
+* the paper is clearly structured and easy to read * sufficient background is presented and the studied related work meets the expected standards * all figures and tables are easy to read and understand * the presented level of detail about related work meets the expected quality
+Experimental design
+label_ed_1
+* the paper studies a very interesting topic (elastic scheduling considering the monetary cost), which is novel and not studied in detail in the existing related work * the methods are clearly described and easy to follow * all my previous comments regarding the description of the approach, its parameters and the title of the work have been addressed
+Validity of the findings
+label_votf_1
+* the evaluation scenarios now meet the state of the art and allow to judge the quality of the proposed solution
+Comments for the author
+label_cfta_1
+I think the paper has improved significantly since the earlier version I reviewed and can now be published. A few things the authors could consider for the final version of the paper: * I personally would prefer to use another kind of measure for the QoS, which is more familiar to the generic reader. You could replace your compliance measure by different latency percentiles e.g. the 99th, 98th and 90th percentile of the end to end latency * you motivate the used BTU interval 60 minutes with the fact that AWS uses the same interval. Unfourtnately, AWS changed its price model during your paper was in review [1]. You maybe should consider to remove this statement from your paper. [1] https://aws.amazon.com/blogs/aws/new-per-second-billing-for-ec2-instances-and-ebs-volumes/ Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #2 of "Cost-efficient enactment of stream processing topologies (v0.2)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.141v0.2/reviews/2 Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Sep 26, 2017
+label_version_2
+Version 0.1 (original submission)
+Folker Meyer
+·
+Jul 31, 2017
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+in light of the reviewer comments it seems a good idea to double check a couple of things specifically the drift that occurred between title, abstract and paper content
+label_author_2
+Reviewer 1 ·
+Jul 3, 2017
+Basic reporting
+label_br_2
+The authors present an stream processing engine that uses docker containers on top of VM's. Docker containers promise to provide more flexible deployment of stream operators under varying data arrival scenarios. A deployment algorithm has to optimize resource usage while taking SLA requirements into account. The authors present a heuristic to this NP-hard optimization problem. The authors evaluate their novel BTU-based optimization approach with a more naive threshold-based approach. They can show that their new method is more cost efficient.
+Experimental design
+label_ed_2
+For the evaluation the authors simulate input data (i.e. sensor data) using tools from their VISP Testbed. Their stream processing engine is runs on a private OpenStack deployment. For the evaluation the authors compare their topology enactment algorithm that optimizes Billing Time Units with a simple algorithm that uses thresholds on the incoming queues to determine if VM's should be added or removed to the tolopogy. The experiments are performed with different arrival patterns and variable data volume levels. For comparison the the authors compute various metrics, including paid Billing Time Units and various Quality-of-Service metrics. The author convincingly performed the evaluation on a near real world example (real-world example but simulated data) using variable data load scenarios. The evaluation metrics are reasonable and provide insights into the behavior of their algorithm.
+Validity of the findings
+label_votf_2
+no comment
+Comments for the author
+label_cfta_2
+This is a well written paper! I miss some discussion regarding I/O. How would a high IO to compute ratio impact the deployment strategy? It is not clear to me if the software the authors developed is available for use, ideally as open source. Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #1 of "Cost-efficient enactment of stream processing topologies (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.141v0.1/reviews/1
+label_author_3
+Reviewer 2 ·
+Jul 30, 2017
+Basic reporting
+label_br_3
+* the paper is clearly structured and easy to read * sufficient background is presented and the studied related work meets the expected standards * most figures are easy to read, except Figure 8, which is impossible to read on b/w printout and Figure 9 and 10, which are totally overloaded
+Experimental design
+label_ed_3
+* the paper studies a very interesting topic (elastic scheduling considering the monetary cost), which is novel and not studied in detail in the existing related work * the methods are clearly described and easy to follow Negative points: * I see a clear gap between the title of the paper, its abstract, and content: ** the abstract and the paper itself are focusing on different goals. While the abstract speaks about "maximizing the resource usage", the paper tries to minimize the costs, although the authors point out that these goals are not necessarily exchangable ** the title contains "utilizing container technologies", I don't see how a container technology helps to solve the problem described and what is the difference to the use of a thread / process per operator like previous solutions do; for me the container technology is an implementation detail and not relevant for the contribution of the paper * I don't understand the described approach completely and have multiple questions: ** how do the algorithms Algorithm 1,2, and 3 contribute to the goal of minimizing the number of reconfigurations and the overall cost? I understand that these algorithms choose the optimal parallelization degree per operator, but not how they influence the cost or minimize the number of reconfigurations. The authors should describe this more clearly. ** the core contribution for me is the approach illustrated in Figure 5, but this figure is only described very shortly and informal. Moreover, the approach provided in this Figure answers the problem only partially: E.g. shouldn't you undo all changes if you can not release the host in order to minimize the number of reconfigurations? * All described algorithms have "magic" values including "scalingThreshold" (Algorithm 1), CF (Algorithm 2), QL, W1, W2, W3, and W4, which are not discussed or evaluated in detail. Based on the points raised above, I cannot judge if the approach above really solves the described challenge or if the measured cost reduction is only a positive "side effect".
+Validity of the findings
+label_votf_3
+* The used workload pattern are too simplistic for a meaningful evaluation and the authors themself raise some concerns regarding practical applicability (line 658ff).
+Comments for the author
+Minor points: * line 67/68: I would recommend to add Apache YARN and Kubernetes to this list: YARN is the most important cluster manager used in practice today and Kubernetes gets more and more importance overall * line 69ff: I totally disagree to this statement. Mesos and similar frameworks do not decide how much resources are used by the data streaming system. Both rely on a two-level architecture, where the framework like Spark, Storm, or Flink decides how much resources is needed. YARN or Mesos only ensures all running frameworks get sufficient resources and fairly share them between multiple users. For this task, simple methods like BinPacking work quite well (especially given the intended scalability of Mesos or YARN). * line 661ff: Also in private cloud environments cost efficiency is important to the user. Typically, the resource costs are cross-charged to different business units of the same company and you need to minimize the cost for your department. * line 670ff: I disagree that elasticity has not reached established products: Spark Streaming has Dynamic Allocation (https://issues.apache.org/jira/browse/SPARK-12133), Flink supports elastic scaling of stateless flows, Heron recently published a paper on elastic scalability on VLDB2017, and also some of the research about System S reached the final product. * your related work does not reflect any works on cost efficiency of data management solutions, you can consider referencing one of the following: ** Florescu et al. "Rethinking Cost and Performance of Database Systems.", SIGMOD Records 2009. ** Kossmann et al. "An Evaluation of Alternative Architectures for Transaction Processing in the Cloud.", SIGMOD 2010. ** Lim et al. "How to fit when no one size fits.", CIDR 2013. ** Kllapi et al. "Schedule Optimization for Data Processing Flows on the Cloud.", SIGMOD 2011. ** Setty et al. "Cost-Effective Resource Allocation for Deploying Pub/Sub on Cloud.", ICDCS 2014. Cite this review as
+Anonymous Reviewer ( 2017 ) Peer Review #2 of "Cost-efficient enactment of stream processing topologies (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.141v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Jun 15, 2017 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

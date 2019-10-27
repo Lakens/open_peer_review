@@ -1,0 +1,79 @@
+Review History for MonoPhy: a simple R package to find and visualize monophyly issues [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History MonoPhy : a simple R package to find and visualize monophyly issues To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on December 18th, 2015 and was peer-reviewed by 3 reviewers and the Academic Editor. The Academic Editor made their initial decision on January 29th, 2016. The first revision was submitted on March 10th, 2016 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on March 15th, 2016.
+label_version_1
+Version 0.2 (accepted)
+Mihai Pop
+·
+Mar 15, 2016
+label_recommendation_1
+·
+Academic Editor
+Accept
+Thank you for making the changes requested by the reviewers.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Mar 10, 2016
+label_version_2
+Version 0.1 (original submission)
+Mihai Pop
+·
+Jan 29, 2016
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+As you can see the reviewers were generally positive about your article. All reviewers, however, raised several specific comments that should be addressed in a revised manuscript. These comments include a better discussion of monophyly and reasons why this property may not be satisfied, as well as small changes to the software to make it more useable.
+label_author_1
+Reviewer 1 ·
+Jan 22, 2016
+Basic reporting
+label_br_1
+The article is easy to understand and well written. My major comment is that the authors state that higher order taxa not being monophyletic might be caused by problems in the taxonomy (i.e., mis-annotation) or problems with the data (i.e., contamination). One of the most important (but not discussed) reasons is gene tree/species tree conflict. This could be a result of incomplete lineage sorting (ILS) or hortizontal gene transfer (HGT). I think some discussion about this would help strengthen the paper. For example, an intruder species might be due to error (as suggested by the authors), or it might be a real biological finding due to HGT. The authors could then motivate MonoPhy as not only being able to identify error but also potentially HGT events. Finally, there were a few minor corrections needed: Page 2, Line 64: higher taxon -> higher order taxon Page 3, Line 89: from by all -> from all
+Experimental design
+label_ed_1
+No comments
+Validity of the findings
+label_votf_1
+No comments
+Comments for the author
+label_cfta_1
+I have tested this software and it is easy to use. My only suggestion is that it would be helpful if the taxonomy file allowed header information. Thus, instead of using this command: GetIntruderTips(solution1, taxa="Ericoideae", taxlevels=2) One could use this command: GetIntruderTips(solution1, taxa="Ericoideae", taxlevels='order') As I have many different metadata files with header information beyond just taxonomy (i.e., geographic location, host organism, etc..) I could then easily write a script that could use any of my metadata files without needing to know exactly which column number is the group I'm interested in, I could just use the column name. Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #1 of "MonoPhy: a simple R package to find and visualize monophyly issues (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.56v0.1/reviews/1
+label_author_2
+Frederick Matsen IV ·
+Jan 22, 2016
+Basic reporting
+label_br_2
+In this paper, Schwery and O’Meara describe a new R package they have written, MonoPhy, for assessing taxonomic monophyly of phylogenetic trees. The package takes in phylogenetic trees with taxonomic leaf labels, and from that input makes plots and finds “intruder” taxa, which are taxa that disrupt monophyly. This should be a helpful package for researchers using R. The paper is written as a software announcement, and is generally suitable for that format. However, I was left wanting clearer definitions of the objects under discussion. In particular, I was confused by the definitions of “intruders” and “outliers”. If I parse the definition of intruders correctly, “intruded” taxa will commonly themselves be intruders as well. For example, imagine that we have a large clade that is monophyletic with the exception of two somewhat widely spaced leaves. These two leaves will be marked as “intruders”, as should be the case, but by the definition the leaves below their MRCA will also be marked as intruders, which seems strange. Is this the case? I shouldn’t have to read the source to understand. The defintion of outliers starts with the sentence “We thus implemented an option to specify a cutoff value, which gives the minimal proportion of tips among the descendants of a taxon’s MRCA that are actual members of that taxon.” I think this is supposed to mean “are assumed to be actual members of that taxon”? Again, it’s important to make these definitions clear. Please describe the algorithm the code uses to find these various characteristics of the trees in the paper. The paper does not cover relevant prior literature. In fact, I couldn’t find any reference to computational approaches to assessing concordance between a phylogeny and a taxonomy. Here are some relevant papers: Dalevi, D., Desantis, T. Z., Fredslund, J., Andersen, G. L., Markowitz, V. M., & Hugenholtz, P. (2007). Automated group assignment in large phylogenetic trees using GRUNT: GRouping, Ungrouping, Naming Tool. BMC Bioinformatics, 8, 402. This next paper (cited 667 times) builds on that one, developing the `tax2tree` tool: McDonald, D., Price, M. N., Goodrich, J., Nawrocki, E. P., DeSantis, T. Z., Probst, A., … Hugenholtz, P. (2011). An improved Greengenes taxonomy with explicit ranks for ecological and evolutionary analyses of bacteria and archaea. The ISME Journal, 6(3), 610–618. We also have written a paper in the area: Matsen, F., & Gallagher, A. (2012). Reconciling taxonomy and phylogenetic inference: formalism and algorithms for describing discord and inferring taxonomic roots. Algorithms for Molecular Biology: AMB, 7(1), 8. In it we address the ambiguity of intruder versus intruded (described above) is by casting it as a minimization problem, which is NP-complete but fixed-parameter tractable.
+Experimental design
+label_ed_2
+This paper is a software announcement rather than a research paper, so the “research question” doesn’t quite fit here. The code is well commented, and the vignette does a nice job of showing functionality of the package. The reference manual seems complete. I could not find any sort of tests, which is unfortunate. I was surprised that the code does not handle multifurcating trees.
+Validity of the findings
+label_votf_2
+No Comments, as this is a software announcement.
+Comments for the author
+label_cfta_2
+My recommendation is somewhere between minor and major revisions. If it would seem helpful for me to look at the paper again, I'd be happy to do so, but I'm not going to insist. Cite this review as
+Matsen IV FA ( 2016 ) Peer Review #2 of "MonoPhy: a simple R package to find and visualize monophyly issues (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.56v0.1/reviews/2
+label_author_3
+Reviewer 3 ·
+Jan 28, 2016
+Basic reporting
+label_br_3
+The manuscript appears to meet all the standards for the journal.
+Experimental design
+label_ed_3
+The experimental design seems sound, apart from one small point. It would seem better not to report on the monophyly of taxa with one representative. The outcome is trivial, as there is no opportunity to not be monophyletic. Hence, restricting the evaluation to taxa with two more more representatives allows more meaningful results, and perhaps might save some computation. I do agree that reporting the number of taxa with a single representative is useful, but considering them as monophyletic when there is no possible way for them not to be monophyletic seems silly.
+Validity of the findings
+label_votf_3
+The findings seem valid.
+Comments for the author
+Although my determination is accept as is, I think you should consider the point raised regarding evaluating and reporting monophyly for taxa with one representative. Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #3 of "MonoPhy: a simple R package to find and visualize monophyly issues (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.56v0.1/reviews/3 Download Original Submission (PDF)
+- submitted Dec 18, 2015 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

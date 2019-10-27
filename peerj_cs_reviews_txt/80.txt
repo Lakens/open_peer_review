@@ -1,0 +1,79 @@
+Review History for Iterative guided image fusion [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Iterative guided image fusion To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on June 4th, 2016 and was peer-reviewed by 3 reviewers and the Academic Editor. The Academic Editor made their initial decision on July 23rd, 2016. The first revision was submitted on July 25th, 2016 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on July 28th, 2016.
+label_version_1
+Version 0.2 (accepted)
+Klara Kedem
+·
+Jul 28, 2016
+label_recommendation_1
+·
+Academic Editor
+Accept
+The article is accepted. There is one edit which should be addressed in Production: At the end of section 2.1 : Pls erase the word image at the end of the following sentence "is available (e.g., in the case of flash /no-flash image pairs).image. "
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Jul 25, 2016
+label_version_2
+Version 0.1 (original submission)
+Klara Kedem
+·
+Jul 23, 2016
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+The paper presents a novel iterative guided image fusion that receives inputs from various sources and displays the almost noiseless main items. The results are compared with state of the art existing methods.The paper is very well written. Notes as to the reviews: Reviewer 1: The complaint in the attached file is wrong - please ignore it. Reviewer 3 would like you to be consistent in spelling artifact/artefact (both correct).
+label_author_1
+Reviewer 1 ·
+Jun 29, 2016
+Basic reporting
+label_br_1
+No comments, see attachment for minor tracked changes.
+Experimental design
+label_ed_1
+No comments
+Validity of the findings
+label_votf_1
+No comments
+Comments for the author
+label_cfta_1
+This new and important fusion scheme enables combining the fine details found in image intensified (nighttime) scenes with the lower detailed but higher contrast thermal imagery, while reducing certain types of noise. Performs as well as other, current fusion approaches. Its computational efficiency allows it to be possibly incorporated into (near) real-time imaging systems. Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #1 of "Iterative guided image fusion (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.80v0.1/reviews/1
+label_author_2
+David Gustafsson ·
+Jul 13, 2016
+Basic reporting
+label_br_2
+The papers present a novel multi-scale image fusion algorithm that can fuse images of different modality. The multi-scale image fusion algorithm use guided filter to extract coarse scale geometric structure and fine scale details (i.e. the image residual) from images at different level of details (scale in scale space sense). Furthermore, saliency maps are used to select appropriate information from the images to be fused. Guided filter is applied to the saliency maps to enforce spatially consistency in saliency map. The main contribution in the paper is the novel GF based multi-scale image fusion algorithm for fusion of images of different modality, and the extensive evaluation of the presented algorithm against other state-of-the-art multiscale fusion algorithms. The paper reads well, the background materials and the own contributions are presented in a clear and balanced manner. The background contains a large number of application of image fusion which point out the importance of the problem at hand. A large number of alternative – older and newer – multi-scale image fusion methods are discussed (or mentioned). Bilateral filter, joint bilateral filter and guided filter are presented in details. The guided filter is presented in a short, but detailed manner, and is very well written. Some details in the presentation of the iterative guided filter is unclear. Comments: The terms resolution/multiresolution/lower resolution are used without being defined. Commonly multiresolution reference to some kind of image pyramid – for example the Gaussian image pyramid and resolution is commonly used for the numbers of pixel in the image. In this paper resolution is instead used in a rather general Gaussian scale space meaning – resolution is the level of details present in the image (i.e. the sigma in linear Gaussian scale space - inner scale). Also the terms base layer and detail layer are less frequently used in the literature. Commonly an image can be decomposed into geometry (base layer) and texture (detail layer). The detail (texture) layer is also commonly referred to as residual image/layer. The GF filter is defined as O = GF(I,G;r,e) where I is an image input, G is a guidance image, r is the window size parameter and e is a regularization parameter. The parameters in the IGF is not explicitly given. As it seems the image input is X_0 in all iteration while X_i is updated in the iteration. Explicitly stating the parameters in the IGF would clarify the issue. The key features in the saliency map computation is the local contrast. Combining two images with potentially different contrast magnitude into BW_X and BW_Y can be non-trivial. Does all the test image pairs used in the fusion have the same contrast magnitude or have the images been normalized?
+Experimental design
+label_ed_2
+No Comments
+Validity of the findings
+label_votf_2
+The presented method is evaluated using 4 objective metrics. As the author points out no standard universal metric for objectively evaluating image fusion exists. Instead a number of metrics exists that is commonly used in evaluation of image fusion- of which 4 has been selected. The data set used in the evaluation is 12 pairs of images (Visual + IR (LWIR?) or NIR). The dataset used in the evaluation is rather small, the scene are quite similar and the modality combination the same in almost all pairs. It would be interesting to evaluate the performance with image of different modalities (i.e. there the information correlation between the images varies: Vis + SWIR, Vis + MWIR and Vis + LWIR). The results on the dataset are very promising and the method achieve state-of-the-art results.
+Comments for the author
+label_cfta_2
+Overall a very well written paper, containing sufficient novel ideas, presented in a clear way and sufficiently evaluated against state-of-the-arts algorithms on a limited dataset. Cite this review as
+Gustafsson D ( 2016 ) Peer Review #2 of "Iterative guided image fusion (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.80v0.1/reviews/2
+label_author_3
+Jennifer Bittner ·
+Jul 20, 2016
+Basic reporting
+label_br_3
+The article is well written and sound in its descriptions. It articulates the large amount of technical detail very clearly to the audience and provides sufficient background for understanding the basic concepts. Minor comments: -In the introduction, it might be helpful to provide example (or small description) of what encompasses image noise and/or image artifacts given that fusion aims to eliminate such features. I understand there is not always strict definition for these constructs but some motivating examples may be helpful. -Section 2.1 into 2.2, there is no example of what can be used as a guidance image G until lines 152-153, although it is talked about in lines 143-144. This may be fixed simply by moving what is described within the parentheses to the earlier mention. Also, are there times when something other than the identical input image is used for G? If so, and if it is of simple enough of a statement to add in, it might be helpful to mention what other type of image might be used.
+Experimental design
+label_ed_3
+The newly proposed method is very well described in the text. In particular, I find the 1-5 iterative breakdown in lines 265-276 very helpful in promoting understanding of the steps of the process. Additionally, the test imagery and process for evaluation of the new and classic fusion techniques is clear and valid to traditional study of image fusion. Minor comment: -If at all possible, it would be nice to view the images at a larger size in the figures for ease of viewing, however because I think it is important to show all image conditions as you do in the paper now, this may be an impossible trade-off between size and space.
+Validity of the findings
+label_votf_3
+The findings, using classic, valid methods for image fusion evaluation, are very clear and in strong favor of the new technique. The summary tables are helpful in clarifying results.
+Comments for the author
+minor edits: -"artifacts" vs "artefacts" consistency throughout -Line 415 C2 should be subscripted Cite this review as
+Bittner J ( 2016 ) Peer Review #3 of "Iterative guided image fusion (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.80v0.1/reviews/3 Download Original Submission (PDF)
+- submitted Jun 4, 2016 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

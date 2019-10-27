@@ -1,0 +1,64 @@
+Review History for Identification of high-efficiency 3'GG gRNA motifs in indexed FASTA files with ngg2 [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Identification of high-efficiency 3'GG gRNA motifs in indexed FASTA files with ngg2 To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on April 9th, 2015 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on May 11th, 2015. The first revision was submitted on October 20th, 2015 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on October 29th, 2015.
+label_version_1
+Version 0.2 (accepted)
+Kjiersten Fagnan
+·
+Oct 29, 2015
+label_recommendation_1
+·
+Academic Editor
+Accept
+You clearly addressed all of the reviewer's concerns. You also made the necessary modifications to the software and manuscript. The scientific value of the paper is clearer and hopefully this is a useful tool for the community.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Oct 20, 2015
+label_version_2
+Version 0.1 (original submission)
+Kjiersten Fagnan
+·
+May 11, 2015
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+Dear Dr. Roberson, After reading your work and considering the comments from reviewers, we agree that the work is of value to the community, however, we would like to see some additional experiments to support your hypothesis. Please address the reviewer's comments and provide the additional experimental results and discussion, or rebuttal if we are requesting work that is beyond the scope of this submission.
+label_author_1
+Reviewer 1 ·
+May 4, 2015
+Basic reporting
+label_br_1
+No comments.
+Experimental design
+label_ed_1
+Lines 20 and 68-69. The Farboud & Meyer paper only worked with nematodes so it is not yet clear the 3’GG motif will be as effective in other systems. Lines 40-46 . The commonly used CRISPR/Cas system, i.e. Cas9, is a Type II system. The Types I and III have different components. Line 54-55. It is not correct to say “the PAM site for a Type I CRISPR is an NGG”. First Cas9 is Type II, not Type I. Second, Type II CRISPR systems (Cas9) are found in different species of bacteria, and the Cas9 protein in different species has evolved different PAM motif requirements. The commonly used S. pyogenes Cas9 has the NGG preference. Other species, i.e. N. meningitidis, use different PAMs. (GATT in that species). Line 85. Wouldn't it be pretty easy to upgrade the tool to report uniqueness of the gRNA? at least report yes or no? Line 87-88 and 170. BLAT is not very useful for checking off-targets, since off-targets can contain mismatches and BLAT does not work well for detecting CRISPR targets with even one or a few mismatches. They are too short and BLAT was designed to detect near-perfect matches of this length or longer. BLAST is appropriate as long as the parameters are set to allow mismatches to a certain degree within the target. Line 160. How was gene overlap defined - is this within the coding regions of exons, or merely within the entire transcription unit? In other words does the tool return gRNA sites in both exons and introns of the gene? This was not clear at all, but it is very important, as large genes may have many intronic matches but few exonic matches and I am not sure how this was performed. This needs to be made very explicit.
+Validity of the findings
+label_votf_1
+No comments
+Comments for the author
+label_cfta_1
+This computational tool is fine and conceptually very simple. I agree that is may be of good use to researchers who are dealing with model organism sequences/genomes for which CRISPR targets have not been pre-cataloged. I do think it may be premature to regard the “3’GG” motif as a guarantee of high efficiency targets, as the Farboud & Meyer paper only involved nematodes. This motif has not yet been shown to be consistently valuable in other organisms or systems. Although it may well be, I don’t think the Farboud paper really well explained how this motif was shown to be efficient in previous papers, although they do make this claim. Therefore I believe the author should introduce this note of caution into the manuscript. Lines 20 and 68-69. The Farboud & Meyer paper only worked with nematodes so it is not yet clear the 3’GG motif will be as effective in other systems. Lines 40-46 . The commonly used CRISPR/Cas system, i.e. Cas9, is a Type II system. The Types I and III have different components. Line 54-55. It is not correct to say “the PAM site for a Type I CRISPR is an NGG”. First Cas9 is Type II, not Type I. Second, Type II CRISPR systems (Cas9) are found in different species of bacteria, and the Cas9 protein in different species has evolved different PAM motif requirements. The commonly used S. pyogenes Cas9 has the NGG preference. Other species, i.e. N. meningitidis, use different PAMs. (GATT in that species). Line 85. Wouldn't it be pretty easy to upgrade the tool to report uniqueness of the gRNA? at least report yes or no? Line 87-88 and 170. BLAT is not very useful for checking off-targets, since off-targets can contain mismatches and BLAT does not work well for detecting CRISPR targets with even one or a few mismatches. They are too short and BLAT was designed to detect near-perfect matches of this length or longer. BLAST is appropriate as long as the parameters are set to allow mismatches to a certain degree within the target. Line 160. How was gene overlap defined - is this within the coding regions of exons, or merely within the entire transcription unit? In other words does the tool return gRNA sites in both exons and introns of the gene? This was not clear at all, but it is very important, as large genes may have many intronic matches but few exonic matches and I am not sure how this was performed. This needs to be made very explicit. Cite this review as
+Anonymous Reviewer ( 2015 ) Peer Review #1 of "Identification of high-efficiency 3'GG gRNA motifs in indexed FASTA files with ngg2 (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.33v0.1/reviews/1
+label_author_2
+Reviewer 2 ·
+May 7, 2015
+Basic reporting
+label_br_2
+No comments
+Experimental design
+label_ed_2
+This work to identify unique 3'GG motif sites to use in targeted genome editing is of clear utility and value to the community. The ngg2 tool, if improved to address the issues below, would be a good contribution in this area. 1. Comparison to existing tools - lacks specific references, tool descriptions - uninformative explanation of "less common, non-model" organism issue which defines the novelty of the current work (ngg2) - no clear evidence / discussion of how ngg2 provably addresses issues with non-model genomes where others did not 2. Uniqueness of sites - not clear why ngg2 omits this, given the emphasized critical importance of identifying unique sites? This step is more work than the what ngg2 currently performs - manuscript includes results for uniqueness, possibly using blast/blat; no details / parameters provided - genome sequence is already available and of interest in most applications, and redundant sites are easily collated (hash, map data structures) - since no results are presented for the "allowN" option, very difficult to gauge its utility and impact on uniqueness and runtime 3. [Python] code design / implementation / evaluation - relies on FASTA sequence data, previously indexed in a specific (samtools) format - an undo limitation: (a) requires tool/pre-processing dependencies, and (b) does not allow pipelining - simply using community library (biopython) or even a discussion of why this was not done, would be expected - no runtime results/discussion presented; important given application / evaluation on whole genomes
+Validity of the findings
+label_votf_2
+How would 3'GG sites disrupt a protein-coding gene if they are located are in introns/UTRs? Needs clearer description of "overlap" criteria
+Comments for the author
+label_cfta_2
+One additional minor suggestion for the manuscript : Figures 1 and 3 seem extraneous and less informative versions of the data in tables - might move Suppl. Table 3 to main text as it is an important use-case for using the tool Cite this review as
+Anonymous Reviewer ( 2015 ) Peer Review #2 of "Identification of high-efficiency 3'GG gRNA motifs in indexed FASTA files with ngg2 (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.33v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Apr 9, 2015 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

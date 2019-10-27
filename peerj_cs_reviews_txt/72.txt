@@ -1,0 +1,62 @@
+Review History for Alternating guided image filtering [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Alternating guided image filtering To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on April 17th, 2016 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on May 30th, 2016. The first revision was submitted on June 2nd, 2016 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on June 6th, 2016.
+label_version_1
+Version 0.2 (accepted)
+Klara Kedem
+·
+Jun 6, 2016
+label_recommendation_1
+·
+Academic Editor
+Accept
+Corrections are satisfactory
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Jun 2, 2016
+label_version_2
+Version 0.1 (original submission)
+Klara Kedem
+·
+May 30, 2016
+label_recommendation_2
+·
+Academic Editor
+Minor Revisions
+The paper presents an edge-preserving Alternating Guided Filter (AGF) by combining in an alternating iterative way two existing techniques (RGF and SiR). The authors discuss the shortcomings of SiR and RGF, and show that the AGF filter introduced in this paper effectively eliminates small scale image details while preserving the structure of large scale edges. The examples provided in the paper demonstrate the effectiveness of the AGF filter. Some minor errors: Line 53 : (i.e., its -> (i.e., it Line 54: for application in for instance -> for application, for instance, in Lines 77, 78, and 79 have a sentence fragment accidentally repeated Line 248: “in Section 7”, there is no Section 7 (Figure 7?) -Subsection numbering in 2: 1.1-1.3 and 2.1; should be 2.1-2.4 -Caption of Fig.2, "As Figure 1, for a the input image shown in (a)" just write "As Figure 1"
+label_author_1
+Reviewer 1 ·
+May 11, 2016
+Basic reporting
+label_br_1
+Lines 77, 78, and 79 have a sentence fragment accidently repeated. Otherwise, no comments.
+Experimental design
+label_ed_1
+No comments
+Validity of the findings
+label_votf_1
+no comments
+Comments for the author
+label_cfta_1
+The edge-preserving Alternating Guided Filter (AGF) filter introduced in this paper appears to effectively eliminate small scale image details while preserving both the structure and definition of large scale edges and local mean image intensity. In this sense, it is an improvement to the existing RGF filter (that also filters out noise but at the same time smooth's the large scale edges) and the SiR filter (that eliminates small details but significantly changes local image intensity). To the best of my knowledge this filter is unique in the sense that no other currently available filter achieves a performance similar to the AGF filter. The examples provided in the paper clearly demonstrate the effectiveness of the AGF filter (I especially like the 1-D cross sections which clearly show the behavior of the filter near strong and weak edges at different spatial scales). In my view, this filter will be useful for de-noising nighttime images and in the construction of multi-scale image decompositions and therefore ultimately for image fusion applications. An excellent, well thought-out paper. Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #1 of "Alternating guided image filtering (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.72v0.1/reviews/1
+label_author_2
+Reviewer 2 ·
+May 24, 2016
+Basic reporting
+label_br_2
+The literature presented is relevant for the paper. However, the related work should be shortened and summarized. The text is very similar to the text on the references, so no long descriptions are needed. Also, the solution proposed in Section 2.1 regarding the drawback in SiR should be explained later in Section 3 with more details and examples. A close-up of interesting features, such as sharp edges, must be shown. That will allow to watch and compare the effects of the different filters, such as the presence of halos. All figures must include a short description and the simulation parameters used for each experiment. That includes the figures in the supplemental material. Some minor errors: Line 53 : (i.e., its -> (i.e., it Line 54: for application in for instance -> for application, for instance, in Line 248: “in Section 7”, there is no Section 7
+Experimental design
+label_ed_2
+The paper presents a local edge-preserving filter. It addresses the shortcomings of two existing iterative techniques by combining them in each iteration. However, the proposed solution should be discussed in detail to clarify how it solves the problems on previous methods (RGF and SiR): “the curvature smoothing of large scale edges by RGF and local intensity reduction in combination with the restoration of small scale details near large scale edges by SiR”. I encourage the authors to use a toy example (as presented in Figure 5[1]) to illustrate and validate the proposed approach. In addition, the convergence of the method should be described in the manuscript. In Section 4, it is said that: “filtering should preferably be performed in the CIE-Lab color space”. Maybe some results using CIE-Lab color space instead of RGB could be presented. It would also be interesting to see a comparison with RGF, SiR and SiRMed using CIE-Lab color space. [1] Zhang, Q., Shen, X., Xu, L. & Jia, J. 2014. Rolling guidance filter. In D. Fleet, T. Pajdla, B. Schiele & T. Tuytelaars (Eds.), Computer Vision ECCV 2014: 13th European Conference, Part III (pp. 815-830). Cham, Switzerland: Springer International Publishing. DOI 10.1007/978-3-319-10578-9_53.
+Validity of the findings
+label_votf_2
+My main concern in this paper was the discussion of the results. The results were presented without defining quantitative measures to analyze the effectiveness. As recommended before, a toy example could have helped in validating the approach. As well, whether the method produces halos, or not, should be reported. Also, I would suggest to add some text describing the computational cost and the running time for methods being compared. Besides, standard bilateral filtering could be included in the experiments.
+Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #2 of "Alternating guided image filtering (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.72v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Apr 17, 2016 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science

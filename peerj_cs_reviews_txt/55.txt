@@ -1,0 +1,64 @@
+Review History for Probabilistic programming in Python using PyMC3 [PeerJ]
+PeerJ Computer Science PeerJ – the Journal of Life & Environmental Sciences PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Visit PeerJ.org and get involved About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters Sections About the journal Sections Aquatic Biology Biochemistry, Biophysics and Molecular Biology Biodiversity and Conservation Bioinformatics and Genomics Brain and Cognition Ecology Environmental Science Microbiology Paleontology and Evolutionary Science Plant Biology Zoological Science About PeerJ Journals Overview PeerJ Journals FAQ What we publish 5 Years publishing Solutions for authors Reputation High quality peer review Fast publishing Indexing and Impact Factor Global readership Feature comparison Reduced cost publishing Author feedback Early career researcher benefits Senior researcher benefits Open review (optional) Rebuttal letters More Subjects Search articles Peer-reviewed Journals PeerJ (Life, Biological, Environmental and Health Sciences) PeerJ Computer Science PeerJ Physical Chemistry PeerJ Organic Chemistry PeerJ Inorganic Chemistry PeerJ Analytical Chemistry PeerJ Materials Science Preprints PeerJ Preprints Table of contents Table of Contents - current and archives PeerJ - Medicine articles PeerJ - Biology & Life science articles PeerJ - Environmental Science articles PeerJ - General bio (stats, legal, policy, edu) PeerJ Computer Science PeerJ Preprints Academic advisors Volunteer to review Collections Job listings Discussions Blog Institutional plans Reviews and awards Spread the word Who are we? Contact Login AUTHORS Peer Journals Overview Submission Guidelines Subject Areas Editorial Board Editorial Criteria Pricing General FAQ Computer Science FAQ Aims and Scope Author Interviews Policies and Procedures SUBMIT ARTICLE
+Review History Probabilistic programming in Python using PyMC3 To increase transparency, PeerJ operates a system of 'optional signed reviews and history'. This takes two forms: (1) peer reviewers are encouraged, but not required, to provide their names (if they do so, then their profile page records the articles they have reviewed), and (2) authors are given the option of reproducing their entire peer review history alongside their published article (in which case the complete peer review process is provided, including revisions, rebuttal letters and editor decision letters). New to public reviews? Learn more about optional signed reviews and how to write a better rebuttal letter .
+Summary
+The initial submission of this article was received on September 9th, 2015 and was peer-reviewed by 2 reviewers and the Academic Editor. The Academic Editor made their initial decision on November 16th, 2015. The first revision was submitted on January 27th, 2016 and was reviewed by the Academic Editor. The article was Accepted by the Academic Editor on March 8th, 2016.
+label_version_1
+Version 0.2 (accepted)
+Charles Elkan
+·
+Mar 8, 2016
+label_recommendation_1
+·
+Academic Editor
+Accept
+Thank you for addressing the previous reviewers' comments. We have not succeeded in getting re-reviews, but the changes are small enough that acceptance now is warranted. Small note: please add citations for Figaro, WebPPL, Picture, and Quicksand.
+Download Version 0.2 (PDF)
+Download author's rebuttal letter
+- submitted Jan 27, 2016
+label_version_2
+Version 0.1 (original submission)
+Charles Elkan
+·
+Nov 16, 2015
+label_recommendation_2
+·
+Academic Editor
+Major Revisions
+We have received two reviews, which are enough to make a decision, since the reviews are consistent. The publisher has provided the opinion that "this article is in scope and (assuming it is correct etc) should be published." Hence the authors may ignore the (scope related) statements to the contrary in the reviews. However, please address all the specific issues raised in the reviews. We will likely send the revised version back to the first reviewer (not the second) and also to at least one other reviewer.
+label_author_1
+David Wingate ·
+Oct 2, 2015
+Basic reporting
+label_br_1
+This article is well-written. It is clear, understandable, and self-contained. The prose is tight; the examples useful, and the figures tidy. I only found one error, which is on page 14: r_t should equal "e" if t>=s, not "r".
+Experimental design
+label_ed_1
+This article should be considered documentation for a software package. It is not "scientific", in the sense that there is no clearly defined research question, at least not which is made explicit in the text. Rather than closing a "knowledge gap", as described in the editorial review standards, this software closes a "practice gap". The implicit aim of probabilistic programming is to cleanly separate model-building and inference, and make probabilistic modeling more accessible to a broader audience by reducing implementation complexity. This software package does indeed make strides towards that goal, and does so with clarity and high standards. It is not clear if software documentation is within the scope of PeerJ or not.
+Validity of the findings
+label_votf_1
+There are no data, conclusions or experiments. Since this is software documentation, the paper mostly consists of details of how to install it, and examples of how to use it. Very few implementation details are given, although the high level bits are included (object-oriented interface to constructing models; Theano for automatic differentiation; NUTS+HMC for inference on continuous variables; basic MCMC for sampling discrete variables). The paper does not really contain enough information for an individual to replicate it, but it's not clear that "reproducibility" is the correct rubric for this sort of work.
+Comments for the author
+label_cfta_1
+In my opinion, the PyMC3 package should not be considered a "probabilistic programming" language; rather, it should be considered an API for constructing graphical models. I draw a clear distinction between the two; I reserve the phrase "probabilistic programming" for systems which are "turing-complete", in the sense that they can model nonparametric distributions, recursive distributions, programs that can write programs, higher-order functions, and the inclusion of arbitrary (stateless) deterministic functions in the middle of probabilistic models. As far as I can tell, PyMC3 does not support any of these. PyMC3 seems much more comparable to, say, BUGS or BNT than to, say, Church or IBAL. I would therefore not call it "probabilistic programming" at all. I would strongly encourage the authors to change the title and introduction to reflect this, to help keep the terminology consistent throughout the community. Cite this review as
+Wingate D ( 2016 ) Peer Review #1 of "Probabilistic programming in Python using PyMC3 (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.55v0.1/reviews/1
+label_author_2
+Reviewer 2 ·
+Nov 13, 2015
+Basic reporting
+label_br_2
+Key prior work is not mentioned or contextualized. For example, Figaro is a Scala-embedded probabilistic programming system that exposes customizable inference strategies; WebPPL is another embedded language (embedded into JavaScript); Picture is another embedded language (into Julia); and Quicksand is another (into Lua). Figure 6 is of very low resolution and needs to be redone.
+Experimental design
+label_ed_2
+As I understand the scope of the journal, the article may be suitable for publication as a PeerJ Preprint (after significant revision), but it does not describe original primary research. There is no research question or knowledge gap that is identified; instead, the paper is (clearly stated to be) a tutorial about a software system.
+Validity of the findings
+label_votf_2
+There are no conclusions, only capability demonstrations. The capability demonstrations would be stronger if some data about runtime performance and accuracy were included (including variability across ~10+ replications).
+Comments for the author
+label_cfta_2
+I want to encourage the authors to continue their work developing PyMC3 as a software tool, and to explore the question of what research questions in probabilistic programming they might be able to best study from the vantage point of their platform. Cite this review as
+Anonymous Reviewer ( 2016 ) Peer Review #2 of "Probabilistic programming in Python using PyMC3 (v0.1)" . PeerJ Computer Science https://doi.org/10.7287/peerj-cs.55v0.1/reviews/2 Download Original Submission (PDF)
+- submitted Sep 9, 2015 All text and materials provided via this peer-review history page are made available under a Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+About us - PeerJ team | Our publications | Benefits | Partnerships | Endorsements Awards Resources - FAQ | Careers | Pressroom | Terms of use | Privacy | Contact Academic boards - Advisors | Editors | Subject areas Follow us - PeerJ blog | Twitter | Facebook | LinkedIn | Pinterest Submission guides - PeerJ – Life and Environment | PeerJ Computer Science | PeerJ Chemistry Spread the word - Activities | Resources PeerJ feeds - Atom | RSS 1.0 | RSS 2.0 | JSON PeerJ Computer Science feeds - Atom | RSS 1.0 | RSS 2.0 | JSON Archives - PeerJ – Life and Environment | PeerJ Computer Science
+©2012-2019 PeerJ, Inc | Public user content licensed CC BY 4.0 unless otherwise specified. PeerJ ISSN: 2167-8359 PeerJ Comput. Sci. ISSN: 2376-5992 PeerJ Preprints ISSN: 2167-9843
+computer science
