@@ -1,0 +1,327 @@
+Timing of CD8T cell effector responses in viral infections
+Shaun R. Stipp, Abdon Iniguez, Frederic Wan and Dominik Wodarz
+Article citation details
+R. Soc. open sci. 3: 150661.
+http://dx.doi.org/10.1098/rsos.150661
+Review timeline
+Original submission: 3 December 2015 Note: Reports are unedited and appear as
+Revised submission: 21 January 2016 submitted by the referee. The review history
+Final acceptance: 22 January 2016 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-150661.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+There is no data per se in this paper. It is a theoretical investigation.
+However there are important details of the theoretical investigation, specifically the parameter
+regimes studied to produce modeling predictions, that are not included.
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+I don't foresee the authors will have any difficulty including these (they are not proprietary in
+any way) but are essential for reproducibility of results. I included comments along these lines in
+my review.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+In "Timing of CD8 T cell effector responses in viral infections" authors investigate the impact of
+delayed CD8 responses via three mathematical models, gradually increasing in complexity. The
+primary impact of interest is the minimum pathogen load: smaller amounts of pathogen enhance
+the probability of extinction when considering stochasticity (though the stochastic aspects are not
+explicitly modeled). The predictions and insight the authors bring are not obvious and do
+improve our theoretical understanding of CTL responses.
+The authors have addressed the previous reviewers' comments. I have a few additional
+comments, which mainly are regarding technical modeling aspects. I don't foresee that the
+authors will have any difficulty responding but do feel that these points should be addressed.
+(1) Parameters. There is disappointingly no discussion of the source for parameter estimates, or
+why the parameters chosen are biologically reasonable. Such a discussion is very pertinent, else
+how can the reader be confident that the regimes and predictions made by the authors are
+biologically achievable, and not simply model artifacts?
+(2) Reproducibility. There is also insufficient detail on the simulations. That is, while the results
+given in Figures 1-4 are illustrative, what parameter regimes were explored? The text states, "The
+CTL introduction times were varied and the minimum virus load was determined. This was done
+for different parameter combinations." What parameter combinations? What ranges of
+parameters were investigated? Are the results reported the only qualitative behaviors achieved,
+or are there others? I have no doubt the authors carefully performed exploratory simulations over
+specific (and biologically reasonable?) ranges, and anticipate that it should be straightforward to
+provide details of the "wide parameter regions" (page 18) explored (at the very least in an
+appendix).
+(3) Following up on a comment from Reviewer 1: Models (2) and (3) are delay differential
+equations. Personally as a first step I'd use a DDE solver (dde23 in MATLAB, say) and if that
+worked, think nothing of it. But for biologists, or theoretical biologists trained primarily in
+biology, ODEs may be the only math they know. A few words, or a citation, on how these are
+solved would be instructive.
+(4) The authors are focusing on the acute phase of a chronic infection model -- that should be
+stated, somewhere. It's essential in understanding the pathogen rebound following CTL clearance
+(in addition to understanding that with ODEs there is no extinction, which is explained).
+(5) Page 7: "The lower the minimum virus load that is achieved after CTL introduction, the higher
+the chances that the infection will be cleared (due to stochastic effects in reality). A few comments
+on this statement:
+3
+(i) References to work investigating stochastic effects, or models that you have in mind, would be
+useful.
+(ii) "Note that we model the concentrations of cells, and hence, a population size of one does not
+mark an extinction threshold." Fair enough but further discussion of a, say, 99% probability of
+extinction threshold is pertinent. For example, in Figure 2c(iii) there is minimum in the minimum
+# of infected cells at a concentration of about 10^(-6). But what if the 99% extinction threshold,
+say, is at a concentration of 10^(-2.5)? That would render the result -- that a delay in CTL
+responses is beneficial -- fairly moot. (Note that I expect to be corrected at least on the example,
+but I do feel that some details on the extinction threshold, however defined, should be discussed
+beyond "it's not 1").
+(6) Page 8: "...the trend reverses, and a further delay in CTL arrival leads to a lower minimum
+virus load (Figure 2aii)." This is confusing! There are two curves in Figure 2aii, and one does not
+show the trend discussed. The second curve is discussed later but the distinction should be clear
+from the start to prevent confusion.
+(7) Page 11: "Naive, resting cells are denoted by R." Biological question: should these be antigen-
+specific or is the model more general than that?
+(8) Page 16: References to Figure 4 are confusing. e.g. "...as before, a longer delay leads to more
+pronounced target cell depletion (Figure 4a)." Figure 4a has 3 panels and 4 curves! A few more
+details on what we, as readers, are supposed to infer would be helpful. (same goes for other Fig. 4
+references).
+(9) Page 18: "Third, the model indicates that if a delayed CTL response promotes virus clearance,
+this might come at the cost of increased acute pathology." But that required pathology could be
+mitigated with a stronger strength of CTL response, k? How sensitive are your results to that
+strength? (see (1) -- what range of k was explored?).
+(10) Figure 1: An additional curve, showing infected cell dynamics in absence of CTL responses,
+may be instructive in that it would clearly indicate how, in your models, CTLs are altering
+dynamics and enhancing the probability of infection extinction by creating a minimum that
+would not occur in absence of the CTL response.
+Typos:
+(1) The Frey et al. (2013) citation, [24], is referenced as "Fry et al." multiple times in the text.
+(2) The journal titles in the references seem to have no consistent style, some are abbreviated
+while others are not, and capitalization is improperly (and also inconsistently) implemented.
+(3) Page 4: "Frey ey al." presumably should be "Frey et al."
+(4) Page 15: "...the amount fo virus..." fo -> of.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+4
+Is it clear how to access all supporting data?
+There is no supporting material
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept as is
+Comments to the Author(s)
+label_comment_2
+The authors have appropriately responded to all my previous comments and concerns.
+label_end_comment
+Decision letter (RSOS-150661)
+06-Jan-2016
+Dear Dr Wodarz
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-150661 entitled
+"Timing of CD8 T cell effector responses in viral infections" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-150661
+5
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 15-Jan-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+6
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Matthew Allinson
+Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-150661)
+See Appendix A.
+ppendix A
+Reply to reviewer
+would like to thank the reviewer for a number of constructive comments that allowed us to
+her improve the quality of the manuscript. We have included them in the revision, and a
+ailed response is given as follows. The original comment is in red, our reply in black font.
+Parameters. There is disappointingly no discussion of the source for parameter estimates, or why the
+ameters chosen are biologically reasonable. Such a discussion is very pertinent, else how can the
+der be confident that the regimes and predictions made by the authors are biologically achievable,
+not simply model artifacts?
+have added the following before going into the first modeling results: “In the simulations, we do not
+ume particular parameter values, but seek to understand the different behaviors that are possible in
+model, and how this qualitatively depends on parameters.” We have also added the following text
+he discussion: “. I this context, it will be very important to measure crucial parameters in the viral-
+t systems considered. Our current analysis investigated the model behavior in general, exploring how
+erent results are observed in different parameter regimes. Such an understanding is important to
+rpret available observations, and forms the basis for running the model with specific parameter
+es, which are currently not available for the experimental systems discussed here.”.
+Reproducibility. There is also insufficient detail on the simulations. That is, while the results given in
+res 1-4 are illustrative, what parameter regimes were explored? The text states, "The CTL
+oduction times were varied and the minimum virus load was determined. This was done for different
+ameter combinations." What parameter combinations? What ranges of parameters were
+stigated? Are the results reported the only qualitative behaviors achieved, or are there others? I
+e no doubt the authors carefully performed exploratory simulations over specific (and biologically
+sonable?) ranges, and anticipate that it should be straightforward to provide details of the "wide
+ameter regions" (page 18) explored (at the very least in an appendix).
+arding reproducibility: All parameter values and initial conditions are completely defined in the
+ropriate figure legends. Therefore, all results presented in the paper should be reproducible without
+oblem. To make this clear, we added the following sentence in the first model section: “This was
+e for different parameter combinations, which are defined in the appropriate figure legends
+ughout the text.”. We have further added the following text to the discussion, which addresses the
+ameter range question further: “A difficulty in our investigation was that the dynamics could only be
+lored with numerical simulations. Therefore, we varied the value of each parameter over extensive
+ges and recorded the observed patterns. In these explorations, we only saw the patterns reported
+e. The differences in parameter values that gave rise to the different types of dynamics are defined in
+appropriate figure legends in order to get an idea about the order of magnitude changes that are
+uired to see a switch from one pattern to the other. We currently do not have information about the
+ogically realistic parameter ranges for the infections discussed here, so we aimed to catalogue the
+del behavior in general in order to understand what types of dynamics this model can give rise to. As
+ussed further below, parameter measurement in the context of specific infections will be the next
+ortant step in order to determine whether the possible explanations discussed here indeed apply. “
+Following up on a comment from Reviewer 1: Models (2) and (3) are delay differential equations.
+sonally as a first step I'd use a DDE solver (dde23 in MATLAB, say) and if that worked, think nothing of
+ut for biologists, or theoretical biologists trained primarily in biology, ODEs may be the only math
+y know. A few words, or a citation, on how these are solved would be instructive.
+have done that.
+The authors are focusing on the acute phase of a chronic infection model -- that should be stated,
+ewhere. It's essential in understanding the pathogen rebound following CTL clearance (in addition to
+erstanding that with ODEs there is no extinction, which is explained).
+have added the following text to the first model description, to address this comment: “Because the
+del simply assumes that CTL kill and die after introduction to the site of infection (i.e. they are not
+ntained in the long term), the virus population will eventually grow back. This means that we
+stigate acute infection dynamics, and examine the conditions that favor virus clearance during this
+se. Chronic infection dynamics, which would require long-term maintenance and stimulation of CTL,
+not considered here.” Similar text is briefly included in the context of the subsequent models to
+ind the reader.
+Page 7: "The lower the minimum virus load that is achieved after CTL introduction, the higher the
+nces that the infection will be cleared (due to stochastic effects in reality). A few comments on this
+ement:
+eferences to work investigating stochastic effects, or models that you have in mind, would be useful.
+"Note that we model the concentrations of cells, and hence, a population size of one does not mark
+xtinction threshold." Fair enough but further discussion of a, say, 99% probability of extinction
+shold is pertinent. For example, in Figure 2c(iii) there is minimum in the minimum # of infected cells
+concentration of about 10^(-6). But what if the 99% extinction threshold, say, is at a concentration
+0^(-2.5)? That would render the result -- that a delay in CTL responses is beneficial -- fairly moot.
+te that I expect to be corrected at least on the example, but I do feel that some details on the
+nction threshold, however defined, should be discussed beyond "it's not 1").
+is a good point, and we have added the following text to address it: “This gives rise to one
+ertainty that has to be kept in mind when interpreting the results: when comparing the dynamics in
+erent parameter regimes, and observing a reduction of minimum virus load in one simulation
+pared to the other, this difference is only meaningful if at least one of the minima lies above the
+nction threshold. “
+Page 8: "...the trend reverses, and a further delay in CTL arrival leads to a lower minimum virus load
+ure 2aii)." This is confusing! There are two curves in Figure 2aii, and one does not show the trend
+ussed. The second curve is discussed later but the distinction should be clear from the start to
+vent confusion.
+w, the references to the figure in the text indicate whether to look at the solid line or the dashed
+.
+Page 11: "Naive, resting cells are denoted by R." Biological question: should these be antigen-specific
+s the model more general than that?
+igen specific. This is now clarified.
+Page 16: References to Figure 4 are confusing. e.g. "...as before, a longer delay leads to more
+nounced target cell depletion (Figure 4a)." Figure 4a has 3 panels and 4 curves! A few more details
+what we, as readers, are supposed to infer would be helpful. (same goes for other Fig. 4 references).
+introduced sub-panels (i)-(iii) and referred to them in the text wherever we referred to Figure 4.
+Page 18: "Third, the model indicates that if a delayed CTL response promotes virus clearance, this
+ht come at the cost of increased acute pathology." But that required pathology could be mitigated
+h a stronger strength of CTL response, k? How sensitive are your results to that strength? (see (1) --
+t range of k was explored?).
+should be independent of k, the killing rate. A longer delay means that the CTL arrive later. So even
+ey kill faster, no killing will occur before the CTL arrive at the site of the infection. Thus, there will be
+eased pathology.
+Figure 1: An additional curve, showing infected cell dynamics in absence of CTL responses, may be
+ructive in that it would clearly indicate how, in your models, CTLs are altering dynamics and
+ancing the probability of infection extinction by creating a minimum that would not occur in absence
+he CTL response.
+ome degree this is true, but we also have to weigh that against the already large number of graphs,
+ch previous reviewers brought up as an issue. We think that a statement that the decline is due to
+should in this case be sufficient.
+os:
+The Frey et al. (2013) citation, [24], is referenced as "Fry et al." multiple times in the text.
+The journal titles in the references seem to have no consistent style, some are abbreviated while
+ers are not, and capitalization is improperly (and also inconsistently) implemented.
+Page 4: "Frey ey al." presumably should be "Frey et al."
+Page 15: "...the amount fo virus..." fo -> of.
+corrected, thank you.
+Society Open

@@ -1,0 +1,432 @@
+Understanding the group dynamics and success of teams
+Michael Klug and James P. Bagrow
+Article citation details
+R. Soc. open sci. 3: 160007.
+http://dx.doi.org/10.1098/rsos.160007
+Review timeline
+Original submission: 5 January 2016 Note: Reports are unedited and appear as
+Revised submission: 16 February 2016 submitted by the referee. The review history
+Final acceptance: 1 March 2016 appears in chronological order.
+Review History
+label_version_1
+RSOS-160007.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Michael Szell)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+As stated clearly in the methods section, the data can be downloaded freely from the site
+githubarchive.org. This is adequate.
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This is a very interesting and important paper that quantifies success in teamwork using a large
+number of self-organized team projects in Github. While there is a large corpus of literature on
+specific case studies, mainly in organizational research, this is one of the first attempts to
+systematically understand the mechanisms behind how teams become successful. The paper's
+main finding is that, controlling for team size, successful teams are significantly more focused,
+members have a more diverse experience, and that members of successful teams are more likely
+to become leads in future teams.
+The study is methodologically sound, uses appropriate statistics and controls, cites literature
+adequately, and is of high quality. Results are adequately discussed and put into context of the
+wider literature. I think the manuscript could be published in this form. However, I have two
+discretionary remarks that could improve the paper slightly:
+- There is a recent publication analyzing the top 58 Github projects in a similar manner: Scholtes,
+Ingo, Pavlin Mavrodiev, and Frank Schweitzer. "From Aristotle to Ringelmann: a large-scale
+analysis of team productivity and coordination in Open Source Software projects." Empirical
+Software Engineering (2014): 1-42.
+I think it could be relevant to refer to/incorporate this article, as it goes into the detailed
+mechanisms of coordination efforts/overheads and seems to complement the manuscript in some
+(methodological) points.
+- In the analysis all teams that had success above the 99th percentile were filtered out (Table 1 and
+2). However, it could be that these "outliers" are the most interesting projects. Due to a possibly
+heavy-tailed success distribution it might be that they are not "outliers" at all but a fundamental
+part of the system. It is not clear to me if it is adequate to just remove them. Given these concerns,
+I think it could be a good idea to at least give a short explanation in the methods section why
+filtering out the top percentile is a valid approach.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+No
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+3
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The manuscript presents a large-scale quantitative analysis of GitHub’s repositories data. The aim
+of the analysis is to uncover the features most related to the success of a team, meant as a group
+of users that can directly update a repository online. The authors first present the structure of the
+GitHub platform and introduce a series of measures for the different features to be taken into
+account as possible core features of team success. Then they test the effectiveness of the presented
+measures by means of statistical tests and a linear regression model.
+Title
+The title does not entirely capture the aim of the paper as it does not relate the ”group dynamics”
+to the ”success of teams”. I suggest to use a more incisive one.
+Abstract
+The abstract properly addresses the availability of the large-scale GitHub dataset as one of the
+strength of the paper. However, in the second part, the results are not clearly stated, as they are
+presented in a vague way and the used language is not always clear (lines 34-40).
+Methods and Material
+- The workload W (and the user workload wi) is estimated from the number of pushes, where a
+push is a set of code updates or commits. This definition does not consider the number of
+commits or their size. Consequently, the workload is the same for a user that uploads all the parts
+of the repository together and one that just uploads a minimal part. The authors themselves state
+that ”this is an imperfect measure as the complexity of a unit work does not generally map to the
+quantity of edits”, however the measure as it is defined fails to capture the relative workload of a
+user rather than the complexity of a unit work.
+- The authors state that they considered the time T of the creation of the repository, in the
+following they say ”Otherwise we do not consider temporal features of teams such as team
+formation in this work”, the meaning of this sentence is not clear.
+Results
+- All figures are not clearly defined, both in the caption and in the main text, usually the meaning
+of the figure is stated without actually saying what is there in the figure. At least in the caption
+they should describe the figure.
+- In Figure 2B the authors show the percentage of dominated team for different levels of team size
+M. For each M they look at the percentage of dominated teams among the top 10% teams and
+among the middle 20% ones. I have two questions: First, what is exactly meant as the middle
+20%? Second, what about the worst 10% teams or other categories?
+- Again about Figure 2B authors say that ”highly successful teams were significantly more likely
+to be dominated”, but this is not true for all values of M considered.
+- Figure 2C shows the ”effective team size” as a function of the size M, for top teams and average
+teams. This figure adds very little to Figure 2B, one of the two (Figure 2C) in enough.
+- In page 8, line 29, authors say that ”teams with many leads have significantly higher success
+than teams of the same size with fewer leads” and this ”dispite the limited support a team
+member can provide when he/she is occupied with other work”. How- ever in the definition of
+L, the number of team members who are the lead of at least one project, no time reference is
+made, meaning that nothing can be said about the conjunction of the different team leadership
+and hence nothing can be said about the limited support to the team.
+4
+- The left part of Figure 4 shows the success as a team as a function of the number of leads L and
+the size of the team M, a legend would be useful. The exact same thing is showed in the right part
+of Figure 4, with the difference that in the right one the values are averaged. The left one seems
+then unnecessary.
+- Page 8, line 46: ”We have found that teams tend to do the best when optimized along all three of
+these dimensions”, which dimensions?
+- Page 9, line 44: the authors present T as the age of a project, while previously intro- duced as the
+time of creation of the project (page 3, line 37).
+Language
+The manuscript is not easy to follow, has many unclear sentences (some of which I already
+pointed out), and some grammar mistakes. Some of them are:
+- page 4, line 29: someone/they;
+- page 4, line 44: the sentence ”since S is partially popularity measure” is unclear to me;
+- page 5, caption of Figure 1: missing punctuation;
+- page 5, line 49/50: the word teams is repeated twice out of three words, a comma is needed;
+- page 7, line 51: ”correlated team success”, ”to” is missing;
+- page 9, line 47: the sentence ”the number of leads L most strongly correlated with team
+success”, does not make sense as it is, maybe ”correlates”?
+- page 9, line 54: ”my” is probably ”by”;
+- throughout the manuscript there are some cases with a space after comma or full stop, and some
+without.
+I strongly advise to revise the language and simplify the sentences.
+label_end_comment
+Decision letter (RSOS-160007)
+04-Feb-2016
+Dear Dr Bagrow,
+The editors assigned to your paper ("Understanding the group dynamics and success of teams")
+has now received comments from reviewers. We would like you to revise your paper in
+accordance with the referee and Subject Editor suggestions which can be found below (not
+including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 27-Feb-2016). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+5
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160007
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+6
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+Author's Response to Decision Letter for (RSOS-160007)
+See Appendix A.
+pendix A
+: Manuscript RSOS-160007
+ruary 16, 2016
+r Editor and Referees,
+nk you for your comments and critiques. We understand how busy you are and we are grateful for
+time you have taken to consider our manuscript. We have found your observations and suggestions
+emely helpful, and have worked hard to improve the manuscript in response. As we understand it, the
+rees have two primary scientific concerns:
+. We exclude the 1% most successful teams, but those teams may actually represent a bulk of GitHub
+activity due to their popularity.
+. Using the number of pushes for work size does not account for the number of commits in a push or
+the size of those commits.
+umber of other comments on the manuscript’s clarity were also given, which we have tried to address.
+esponse to these valuable comments, we have taken pains to address the above concerns, and to fix typos,
+se figures, and clarify discussions throughout the manuscript.
+h these changes, we believe the manuscript is greatly strengthened. We thank the Referees for their
+structive comments and hope you will find the revised paper suitable for publication.
+se find attached a detailed list of changes and a point-by-point discussion of the referee remarks.
+nk you all very much, we look forward to hearing from you.
+Bagrow
+t of changes
+• Justified the filtering of outlier teams (above the 99th percentile of S ) from some statistical analyses;
+those teams account for only 2.5% of total team activity.
+• Added reference to Scholtes, et al., 2014.
+• Added bottom teams to Figs. 2B and 2C.
+• Clearly defined top, average and bottom teams. Average teams are those with S above the 40th
+percentile of S and also at or below the 60th percentile of S .
+• Added colorbar to Fig. 4A.
+• Clarified that top teams are significantly more likely than average teams to be dominated when M > 2,
+but even top teams with M = 2 are significantly smaller in effective team size m than average teams.
+This also justifies the need for both Fig. 2B and 2C.
+• Many typos have been fixed and important clarifying revisions made.
+• The following required sections have been added at the end of the manuscript: Data accessibility,
+Competing interests, Authors’ contributions, and Funding.
+int-by-point discussion
+Referees presented us with excellent, insightful comments and we are grateful for their efforts. We
+that the changes implemented as a consequence of this feedback have significantly strengthened the
+uscript, thank you. Here we offer further discussion, quoting the original referee remarks for conve-
+ce.
+ponse to Referee 1
+his is a very interesting and important paper that quantifies success in teamwork using a large number of self-
+rganized team projects in Github. While there is a large corpus of literature on specific case studies, mainly
+n organizational research, this is one of the first attempts to systematically understand the mechanisms behind
+ow teams become successful. The paper’s main finding is that, controlling for team size, successful teams are
+ignificantly more focused, members have a more diverse experience, and that members of successful teams are
+ore likely to become leads in future teams.
+nk you very much for the kind remarks.
+he study is methodologically sound, uses appropriate statistics and controls, cites literature adequately, and
+of high quality. Results are adequately discussed and put into context of the wider literature. I think the
+anuscript could be published in this form. However, I have two discretionary remarks that could improve the
+aper slightly:
+There is a recent publication analyzing the top 58 Github projects in a similar manner: Scholtes, Ingo, Pavlin
+avrodiev, and Frank Schweitzer. ”From Aristotle to Ringelmann: a large-scale analysis of team productivity
+nd coordination in Open Source Software projects.” Empirical Software Engineering (2014): 1-42. I think
+could be relevant to refer to/incorporate this article, as it goes into the detailed mechanisms of coordination
+fforts/overheads and seems to complement the manuscript in some (methodological) points.
+, this is a relevant reference. We have added it to the manuscript. Thank you for highlighting it for us.
+In the analysis all teams that had success above the 99th percentile were filtered out (Table 1 and 2). However, it
+ould be that these ”outliers” are the most interesting projects. Due to a possibly heavy-tailed success distribution
+might be that they are not ”outliers” at all but a fundamental part of the system. It is not clear to me if it is
+dequate to just remove them. Given these concerns, I think it could be a good idea to at least give a short
+xplanation in the methods section why filtering out the top percentile is a valid approach.
+are absolutely right, this is an important point and we needed to address it more in the manuscript.
+oughout this study we were concerned that outliers were skewing our results, for example that the linear
+ession model was actually being driven by a small number of very successful projects.
+justification for removing the top 1% for some analyses was as followed: We computed the total work
+of each team i. Then we asked what fraction of work was done by the ˜ 1400 teams above the 99th
+entile in S . Specifically, X
+Wi
+i <U+2208> top teams
+f = X . (R1)
+Wj
+j <U+2208> all teams
+found f ˜ 2.54%. So we see there is a skew there, that particular 1% of teams are responsible for 2.5%
+ork, but the skew is not exceptionally large. If those popular teams were responsible for, say, 20% of
+k, then our filter would not be appropriate.
+have added this information to the manuscript to make this point more clear to readers. Thank you for
+ging it to our attention.
+ponse to Referee 2
+he manuscript presents a large-scale quantitative analysis of GitHub’s repositories data. The aim of the analysis
+to uncover the features most related to the success of a team, meant as a group of users that can directly update
+repository online. The authors first present the structure of the GitHub platform and introduce a series of
+easures for the different features to be taken into account as possible core features of team success. Then they
+est the effectiveness of the presented measures by means of statistical tests and a linear regression model.
+nk you. This is an accurate summary of the manuscript.
+itle
+he title does not entirely capture the aim of the paper as it does not relate the “group dynamics” to the “success
+f teams”. I suggest to use a more incisive one.
+nk you for the suggestion, but we disagree about the title. Every result we present relates group dynamics
+h team success.
+group dynamics we refer to include the distributions of work over the members of a team (teams are
+inated, teams have small effective size, etc.) and the backgrounds of the team members (volume of
+m experience, density of “leads”, etc.) These are interpersonal dynamics and this is a well established
+fairly common usage in the social sciences.
+to noise? The diversity of team members (Fig 3) is due to noise? Diversity is not even computed from
+kload at all!
+believe we acknowledged this concern as fairly and as adequately as possible in our original submission.
+The authors state that they considered the time T of the creation of the repository, in the following they say
+therwise we do not consider temporal features of teams such as team formation in this work, the meaning of
+his sentence is not clear.
+have revised this statement to improve its clarity, in particular removing the variable T , which also
+sed confusion (see our later reply).
+wever, you have omitted several important sentences: (i) we stated why we have collected the age of each
+ository, that it will be used to check for confounds. (ii) we reported an important statistic, that 2/3rds of
+ms were founded within our data window and so we have completely coverage of the histories of most
+ms.
+n we stated, perhaps too briefly, that the paper otherwise does not focus on temporal questions: we do
+study how teams are born, how quickly they grow, whether success and team size are merely correlated
+f one causes the other (does success attract team members or do more team members bring success).
+efully, you consider the revised text to be more clear.
+esults
+All figures are not clearly defined, both in the caption and in the main text, usually the meaning of the figure is
+tated without actually saying what is there in the figure. At least in the caption they should describe the figure.
+are not sure how to better define the figures beyond the specific remarks you give below. We have
+y presented simple, standard plots such as bar charts and lines. Furthermore, your detailed comments
+rding the figures imply that the figures, axes labels, and captions present sufficient information for one
+nalyze their content.
+In Figure 2B the authors show the percentage of dominated team for different levels of team size M. For each
+they look at the percentage of dominated teams among the top 10% teams and among the middle 20% ones.
+have two questions: First, what is exactly meant as the middle 20%? Second, what about the worst 10% teams
+r other categories?
+dle 20% refers to teams that are both above the 40th percentile of S and at or below the 60th percentile
+. We have made this more explicit in the manuscript.
+have also added “bottom teams” to Figure 2. These teams are at or below the 10th percentile of S . We
+not see a systematic difference between bottom teams and average teams (though they tend to be less
+ly to be dominated than average teams for some values of M), and bottoms teams remain very different
+m top teams. Our results hold.
+Again about Figure 2B authors say that highly successful teams were significantly more likely to be dominated,
+ut this is not true for all values of M considered.
+s is true for every value of M except M = 2. For M = 2 the measure of domination is too coarse:
+y a perfect, exactly equal 50/50 split in work between the two team members would make the team
+-dominated.
+s is why Figure 2C is important: there we do see that top teams of size M = 2 have effective team size
+ller than average teams.
+measure of dominated/non-dominated is a simple-to-understand statistic, but it is not useful for M = 2.
+ontrast, effective team size is a less obvious entropic measure but it does reveal information for the case
+= 2. By starting with one and moving to the other, our goal is to lead the reader from simple to complex
+rmation.
+also our response to your next remark.
+Figure 2C shows the effective team size as a function of the size M, for top teams and average teams. This
+gure adds very little to Figure 2B, one of the two (Figure 2C) in enough.
+disagree. Duos (M = 2) are trivially dominated (see our prior response), but here the difference in
+ctive team size m is significant even for M = 2 (it is a bit hard to see as the errorbars are quite tight,
+king almost like horizontal lines). This is why both 2B, 2C, and 2D are all important. They are comple-
+tary statistics, of increasing complexity, all attempting to weave together and supporting the conclusion
+successful teams, while tending to be larger than other teams, also tend to be more focused in how they
+ribute workload over their members.
+In page 8, line 29, authors say that “teams with many leads have significantly higher success than teams of
+he same size with fewer leads” and this “dispite the limited support a team member can provide when he/she
+occupied with other work”. How- ever in the definition of L, the number of team members who are the lead
+f at least one project, no time reference is made, meaning that nothing can be said about the conjunction of the
+ifferent team leadership and hence nothing can be said about the limited support to the team.
+are unsure what the reviewer means here, particularly about time. Nai¨vely, we expect that a team is
+e successful when (i) there are many people contributing to it (this is supported by the data; Fig. 1) and
+when those people are expending much effort on that project. This second point is not supported by the
+. The strong workload focus (Fig 2) shows otherwise.
+w do leads fit into this? A team can have only one primary contributor, but the other members of the team
+each be leads of other teams. The only way a team of, say, M = 5 members can have five leads (L = 5)
+at least 4 members of the team are primary contributors to other teams. This is why teams with many
+s have limited support from team members: those team members are necessarily focusing their work
+vity on the other teams they participate in. Otherwise they wouldn’t be leads. It has nothing to do with
+e, it has to do with the balance of work activity between and across teams.
+have revised the two paragraphs discussing our results on L. We hope they are now more clear.
+The left part of Figure 4 shows the success as a team as a function of the number of leads L and the size of
+he team M, a legend would be useful. The exact same thing is showed in the right part of Figure 4, with the
+ifference that in the right one the values are averaged. The left one seems then unnecessary.
+have added a colorbar to Fig. 4A.
+believe it is useful to see both the averaged and the unaveraged forms of the data, and we have thus in-
+ed both plots. There is no strong pressure to meet page counts here, and the figure is simple enough that
+ader can quickly process both graphics without becoming overwhelmed and then unable to understand
+paper.
+Page 8, line 46: ‘We have found that teams tend to do the best when optimized along all three of these
+imensions’, which dimensions?
+he course of writing and rewriting the manuscript we lost the thread presented here, thank you for
+nting this out. The three dimensions correspond to figures 2, 3, and 4. They are “successful teams tend to
+ocused” (fig 2), “successful teams tend to be experientially diverse” (fig 3), and “successful teams tend
+ave many leads” (fig 4).
+have revised the paragraph to fix this narrative gap.
+Page 9, line 44: the authors present T as the age of a project, while previously introduced as the time of creation
+f the project (page 3, line 37).
+nk you for catching this typo. We have revised the description in the methods section to bring it in line
+h the variable used in the linear model.
+anguage
+he manuscript is not easy to follow, has many unclear sentences (some of which I already pointed out), and
+ome grammar mistakes. Some of them are:
+page 4, line 29: someone/they;
+do not understand, is this a grammar issue? “They” is relatively well accepted as a gender-neutral
+eholder for either ‘he’ or ‘she’. Does this interfere with the ability to understand the definition of a lead?
+page 4, line 44: the sentence “since S is partially popularity measure” is unclear to me;
+s is a typo. It should read “Since S is, at least partially, a popularity measure, [. . . ]” (The ‘a’ was omitted
+we have also added commas for the parenthetical clause ‘at least partially’.)
+page 5, caption of Figure 1: missing punctuation;
+have boldfaced “inset” to bring it in line with the format for how other captions refer to subfigures, A,
+tc.
+page 5, line 49/50: the word teams is repeated twice out of three words, a comma is needed;
+ed.
+page 7, line 51: ‘correlated team success’, ‘to’ is missing;
+ed.
+page 9, line 47: the sentence ‘the number of leads L most strongly correlated with team success’, does not
+ake sense as it is, maybe ‘correlates’?
+sentence has been changed to read “Examining the regression coefficients showed that the number of
+s L was the variable most strongly correlated with team success.”
+page 9, line 54: ‘my’ is probably ‘by’;
+ed. Thank you.
+throughout the manuscript there are some cases with a space after comma or full stop, and some without. I
+trongly advise to revise the language and simplify the sentences.
+have tried to identify and fix as many copy-editing mistakes as possible, but it is unlikely we have been
+% successful. We hope any remaining issues will not harm the scientific merit of the manuscript.
+Society Open

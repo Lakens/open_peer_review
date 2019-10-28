@@ -1,0 +1,790 @@
+Improved community detection in weighted bipartite
+networks
+Stephen Beckett
+Article citation details
+R. Soc. open sci. 2: 140536.
+http://dx.doi.org/10.1098/rsos.140536
+Review timeline
+Original submission: 21 December 2014 Note: Reports are unedited and appear as
+Revised submission: 7 July 2015 submitted by the referee. The review history
+Final acceptance: 10 December 2015 appears in chronological order.
+Review History
+label_version_1
+RSOS-140536.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Carsten Dormann)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes.
+The code is hosted in github and I checked the link and the working of the code (in R).
+I think it would be advisable to have the code made available in another form, as the github
+repository can be deleted by the author at any time.
+One option is to make the code part of an R package, which is then stored more permanently.
+This need not be a new package. In fact, I shall be happy to host it, with proper attribution to the
+author, in the package I maintain ("bipartite").
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+Beckett: Improved community detection...
+This paper presents an algorithm improving the runtime and the quality of the proposed
+modularity of the so-far only weighted bipartite modularity algorithm (QuanBiMo). It shows that
+results are identical under optimal conditions, but that the new algorithm is faster and can find
+the maximum value more reliably.
+The MS goes to some lengths to show that the algorithm works, compares it to QuanBiMo and
+demonstrates its superiority. It also shows that for weighted networks this algorithm yields
+results rather different to binary versions, indicating that such quantitative information is
+valuable.
+This is a step forward and I look forward to using the algorithm.
+One major point:
+I missed a comparison of modules in a designed network with the output by the algorithm. We
+tried to do that in the QuanBiMo paper (and it is not so straight forward), but I think even for a
+few simple, manually derived networks it would be nice to see that the algorithm identifies the
+correct links into modules.
+Two minor points:
+1. How do the compartments identified differ between LPAbw+, its exhaustive variant and
+QuanBiMo? I was able to confirm that the Q-values are identical (which I find very re-assuring
+for both algorithms), but I could not easily figure out which cells are allocated to which cluster.
+2. Is there a way to easily visualise the modules? Ideally (?) one would convert the output of the
+LPAbw+ algorithm to something akin of the “moduleWeb” class for QuanBiMo, and then the
+function plotModuleWeb could be used for plotting. This is really the icing on the cake, not
+essential for the publication itself.
+label_end_comment
+Decision letter (RSOS-140536)
+20-May-2015
+Dear Mr Beckett,
+Apologies for the delay in contacting you with this decision. Unfortunately we were not able to
+secure a second reviewer for your manuscript, despite asking many more reviewers than usual.
+To avoid further delay we have made a decision on the advice of the one reviewer we do have.
+We would like you to revise your paper in accordance with the referee and editorial suggestions
+which can be found below (not including confidential reports to the Editor). Please note this
+decision does not guarantee eventual acceptance.
+3
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Jun-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+4
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-140536)
+The manuscript has been altered to address the editorial and reviewer concerns. Specifically a
+new experiment was performed to assess the performance of LPAwb+ and Exhaustive LPAwb+
+against a set of synthetic networks - with given modules; a new analysis was conducted for the
+outcome of the plant-pollinator experiments to assess the differences in community structure
+identified by the algorithms; and new code was added to allow users to visually inspect the
+modular partitions identified by LPAwb+ and Exhaustive LPAwb+. Below I address the
+comments received on the manuscript.
+Responses to the comments of the Reviewer and Editor:
+Editorial comments:
+Please provide your r code as supplementary material. Whilst github is a useful platform it does
+not provide a final version of record.
+AUTHOR: To guarantee the persistence of the articles accompanying code, the github depository
+has been archived using Zenodo and now has an assigned digital object identifier (DOI). This
+archived repository is available via the DOI associated URL
+(http://dx.doi.org/10.5281/zenodo.19477) . References to the github repository in the original
+manuscript have been replaced by this archived DOI, which is now included in the list of
+references.
+In addition data accessibility, competing interests, author contributions and funding sections
+have been added to the manuscript.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+Beckett: Improved community detection ...
+This paper presents an algorithm improving the runtime and the quality of the proposed
+modularity of the so-far only weighted bipartite modularity algorithm (QuanBiMo). It shows that
+5
+results are identical under optimal conditions, but that the new algorithm is faster and can find
+the maximum value more reliably.
+The MS goes to some lengths to show that the algorithm works, compares it to QuanBiMo and
+demonstrates its superiority. It also shows that for weighted networks this algorithm yields
+results rather different to binary versions, indicating that such quantitative information is
+valuable.
+This is a step forward and I look forward to using the algorithm.
+AUTHOR: I thank the reviewer for their comments and understanding of the role of the
+manuscript.
+Reviewer 1:
+One major point:
+I missed a comparison of modules in a designed network with the output by the algorithm. We
+tried to do that in the QuanBiMo paper (and it is not so straight forward), but I think even for a
+few simple, manually derived networks it would be nice to see that the algorithm identifies the
+correct links into modules.
+AUTHOR: I agree this would be a useful exercise to demonstrate the algorithm. Creating artificial
+binary networks is a relatively straightforward process – however, there are multiple ways that
+quantitative link strengths could be assigned to such a network!
+Network dimensions, the number and heterogeneity of sizes of modules, as well as the number of
+interacting links, how 'noisily' these are placed with relation to the identified modules and the
+distribution of values to use as edge weights are all variables that may affect the performance of a
+weighted modularity algorithm. Clearly investigating all factors rigorously would take a very
+long time. The work used to evaluate QuanBiMo reports taking ~2 months to run, using an
+ensemble of 840 synthetic networks, with known modules.
+As QuanBiMo has already been assessed in this manner, to reduce computational time I do not
+repeat the process here. By only focussing on quantitative networks (it is clear LPAb+ has some
+success on binary networks (Liu and Murata, 2010) – though I'm not sure it has been evaluated
+using synthetic networks) computational time for this task can be further reduced. Thus leaving
+the question of how well LPAwb+ and Exhaustive LPAwb+ are able to resolve quantitative
+modular network features.
+For the evaluation of the algorithms used in this paper I used networks with 30 rows and 50
+columns. Networks were assigned either 3 (low module number ((LM)) or 10 modules (high
+module number (HM)) randomly, such that sizes of modules differed between networks. Edge
+weights were assigned to all cells assigned to modules using random numbers derived from a
+skewed negative binomial distribution (following work in QuanBiMo) with the dispersion
+parameter set to size=0.2 (low filling (LF)) or size=1 (high filling (HF)) in both cases using µ=2 .
+This provided four different treatments: LM and LF; LM and HF; HM and LF; and HM and HF.
+Ten initial networks were calculated for each of the four treatments. Each of these 40 “perfectly
+modular” networks was then subjected to noise. Noise constitutes rewiring the edges in a
+network such that the connections between nodes are altered; in this case the higher the level of
+noise – the less modular (and more random) the network structure becomes. Five replicates for
+four different levels of noise (noise=0, 0.01, 0.25, 0.5 ) were applied to each of the 40 initial
+networks: 0, 0.01, 0.2, 0.5. This methodology gives an overall sample of 5*4*40 = 800 networks.
+To show the difference between the negative binomial distributions used – histograms of each
+distribution have been added as SI figure 1.
+Text has been added to the methods to describe the creation of the synthetic network ensemble,
+and to the introduction to detail the purpose of the experiment.
+6
+Both LPAwb+ and Exhaustive LPAwb+ were used to detect community structure and calculate
+the modularity for each of these 800 networks. The algorithm was only run once on each network
+due to time constraints. Unfortunately, as shown in the analysis of plant-pollinator networks
+different algorithm initiations may result in different outcomes – there exists sensitivity between
+runs. Thus the results found may be improved if the algorithms were run multiple times and the
+best modularity score were to be reported.
+To assess community detection three indicators were used:
+1) The quotient of the number of modules detected vs. number of synthetically assigned modules
+2) The quotient of detected modularity vs. the modularity of the network found using the
+“perfectly modular” structure
+3) The normalised mutual information between the module labelling for the detected
+communities and the module labelling in the assigned synthetic modules
+1) determines the degree to which the algorithm is under-reporting (<1) or over-reporting (>1)
+the number of modules assigned to the synthetic network
+2) determines whether the modularity of the found partition is less modular (<1) or more
+modular (>1) than the synthetically assigned partitions. Due to rewiring or the particular
+arrangement of linking edges, it is possible that a structure other than the synthetically assigned
+may result in the higher modularity.
+3) determines how similar the modular partitions are between the detected and assigned
+communities in terms of the Normalised mutual information (NMI) criterion. When NMI is 1, the
+partitions are the same, whilst if NMI is 0, no information is shared between the two
+configurations.
+Two new figures are reported – Figure 2 (Results - main text) shows the sensitivity of LPAwb+
+and Exhaustive LPAwb+ to the level of noise (rewiring) of the synthetic networks across the three
+indicators. Figure SI 2 shows differences in evaluation between the four treatments LMLF, LMHF,
+HMLF and HMHF.
+These results show that Exhaustive LPAwb+ offers considerable improvements to the modularity
+and partitions found by LPAwb+ and also confirm that LPAwb+ is likely to over-report the
+number of modules present.
+Reviewer 1:
+Two minor points:
+1. How do the compartments identified differ between LPAbw+, its exhaustive variant and
+QuanBiMo? I was able to confirm that the Q-values are identical (which I find very re-assuring
+for both algorithms), but I could not easily figure out which cells are allocated to which cluster.
+AUTHOR: The reviewer makes two important points – identical Q-values do not necessarily
+indicate that identical modular membership has been detected (though it is the expected case!),
+and that detected modular membership is information of interest to those studying ecological
+networks.
+In the original manuscript I found that there were cases when multiple configurations achieved
+the same Q-value. This occurs in the tested binary networks under different initiations of all three
+modularity maximisation algorithms (see the U columns in Table SI 2 and SI 3 for the number of
+unique modular memberships achieving the maximum Q-value score per algorithm).
+This makes comparing modular membership especially difficult in the case of the LPAwb+
+algorithm e.g. 85 unique modular memberships with the highest Q-score (by the LPAwb+
+algorithm) were detected in the kato1990 network.
+7
+To tackle this point the modular configurations that had the highest Q-values for each algorithm
+were collected for each network (e.g. if QuanBiMo's max in network 1 was Q=0.6 , whilst
+LPAwb+'s max in network 1 is Q=0.5, configurations found by QuanBiMo with Q=0.6 were
+collected and configurations found by LPAwb+ with Q=0.5 were collected). Once this list of
+configurations was compiled – these were compared pairwise between the algorithms using NMI
+– when multiple configurations exist for a network this results in a range of NMI scores i.e. the
+least and most similar configurations between the algorithms. These NMI scores are reported in
+Table 3, in a new section in Results, which is highlighted to show the cases when Q was different
+between the algorithms. If there is no highlighting Q was the same between the algorithms. It is
+shown that when Q is the same – this relates to the same modular configuration being identified
+(NMI=1) in all except the case of the vazmasc binary network in which 2 configurations with the
+same Q-value were identified by both Exhaustive LPAwb+ and QuanBiMo.
+The modular memberships for all networks under all three algorithms were collected and are
+stored in the paper/papercode/output/configurations folder in the archived data repository.
+Details of how to read and interpret these files (created using bipartite's
+printoutModuleInformation function) is given in the supporting information. There are too many
+configurations to easily report in the text or supporting information itself.
+Reviewer 1:
+2. Is there a way to easily visualise the modules? Ideally (?) one would convert the output of the
+LPAbw+ algorithm to something akin of the “moduleWeb” class for QuanBiMo, and then the
+function plotModuleWeb could be used for plotting. This is really the icing on the cake, not
+essential for the publication itself.
+AUTHOR: Reviewer 1 makes an important point in that users of a modularity algorithm will
+want to visualise the communities that have been detected!
+To address this concern two approaches were taken.
+Firstly a new function convert2moduleWeb has been included within the R code. This function
+uses the original network and output from the LPA_wb_plus or Exhaustive_LPA_wb_plus
+functions to create an object of the class “moduleWeb”, which is used in the R package bipartite.
+This object can then be used in other modularity functions in bipartite, such as plotModuleWeb.
+This is a good solution for R users, but does not help MATLAB/Julia users – in these
+programming languages there is no direct equivalent of plotModuleWeb.
+To address this and provide visualisation tools to those not in R the function MODULESPLOT is
+included, which only requires the original network and output data from LPA_wb_plus or
+Exhaustive_LPA_wb_plus.
+label_version_2
+RSOS-140536.R1 (Revision)
+label_author_2
+Review form: Reviewer 2 (Matthew Spencer)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+8
+Is it clear how to access all supporting data?
+Yes, access to code was clear, and the code was sufficiently documented and ran without
+problems.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Attached (see Appendix A).
+label_end_comment
+Decision letter (RSOS-140536.R1)
+01-Oct-2015
+Dear Dr Beckett:
+Manuscript ID RSOS-140536.R1 entitled "Improved community detection in weighted bipartite
+networks" which you submitted to Royal Society Open Science, has been reviewed. The
+comments of the reviewer(s) are included at the bottom of this letter.
+Please submit a copy of your revised paper within three weeks (i.e. by the 24-Oct-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+9
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-140536.R1)
+See Appendix B.
+10
+label_version_3
+RSOS-140536.R2 (Revision)
+label_author_3
+Review form: Reviewer 2 (Matthew Spencer)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+The author has addressed all my comments on the last version, and in addition, has found and
+fixed some other bugs. It's great to see serious effort being put into maintaining the code.
+I found the introduction and discussion of the revised version easier to follow, and the
+description of algorithms is much improved.
+I don't think that any further changes are needed.
+label_end_comment
+Decision letter (RSOS-140536.R2)
+10-Dec-2015
+Dear Dr Beckett,
+I am pleased to inform you that your manuscript entitled "Improved community detection in
+weighted bipartite networks" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article within approximately 10 working days. Please
+contact the production office (openscience_proofs@royalsociety.org) to let us know if you are
+likely to be away from e-mail contact during that period. Due to rapid publication and an
+extremely tight schedule, if comments are not received, your paper may experience a delay in
+publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+11
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Dr Matthew Allinson
+matthew.allinson@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Review of Beckett, Improved community detection in weighted
+bipartite networks
+Matthew Spencer
+September 13, 2015
+mmary
+s manuscript is about detecting communities (groups of nodes with many strong interactions within groups,
+few strong interactions among groups) in weighted bipartite networks (networks consisting of two types of
+es, with interactions allowed only between different types). It describes two new algorithms for detecting
+munities in this type of network, and compares their performance to that of an existing algorithm.
+I found that the methods and results were for the most part clear, although I felt that more could be done
+xplain the details of LPAwb+. I think the introduction and discussion could be greatly improved by more
+ntion to their structure. In the introduction, providing clear definitions, changing the order of presentation,
+using consistent terminology will help. In the discussion, summarizing the results more briefly and doing
+e to explain what they mean and put them in a broader context would be an improvement.
+I was able to download and run the code without any problems.
+ain points
+. The introduction is difficult to read. This is I think mostly a consequence of the accumulation of many
+small points, listed below.
+(a) Page 1, line 37. “Bipartite networks are the representation of interactions between two distinct
+classes of nodes.” I think a more precise definition is needed. The missing idea is that an interaction
+is only allowed to occur between a node of one class and a node of the other class (Wilson, 1996, p.
+18). Furthermore, it will help readers if you give an example immediately following the definition,
+rather than waiting until page 2, line 57.
+(b) The title and abstract refer to community detection, yet the term does not appear in the introduction
+until page 3, line 5 (and even then it is not defined). Although there are many synonyms for
+community, it would be better to choose one and stick to it throughout.
+then give a precise definition of modularity, making use of the idea that it measures the extent to
+which interactions tend to be within-module rather than between-module. The third paragraph of
+(Barber, 2007) has a fairly clear definition.
+(d) Page 3, lines 12-14. This two-sentence paragraph probably belongs in the preceding paragraph, but
+that paragraph is confusing because it jumps from topic to topic (most approaches to community
+detection ignore strength of association; there are some exceptions for unipartite networks; Quan-
+BiMo works with weighted bipartite networks; methods for binary data could be adapted to include
+interaction strengths). I suggest combining these paragraphs, thinking carefully about a logical order.
+. Page 4, line 47 - page 6, line 10. The description of LPAwb+ could be improved as follows.
+(a) Page 4, line 49. “A key feature of the LPAwb+ algorithm is that it simplifies to the LPAb+ algorithm
+when a binary network is used as input.” This isn’t very helpful, because the LPAb+ algorithm has
+not been described. You could simply delete this sentence, or move it to the end of the description.
+The alternative would be to first describe LPAb+, but this is probably not necessary.
+(b) Page 4, lines 52-53. “First the dimensions of the network are used to decide how to run the algorithm.”
+This is far too vague for an algorithm description. Suggest deleting.
+(c) Page 4, line 56. “The LPAwb+ algorithm is sensitive to the initial labelling of nodes.” Can you
+explain why this is? It’s not immediately obvious where the behaviour depends on the values of the
+labels. Is this because in Stage 1, the local maximization is performed in label order? If so, the
+algorithm needs to be explicit about this.
+(d) Page 5, Algorithm 1, line 4. “Initialise and randomly assign a unique label to each red node.” I’m
+guessing that “random” means that for F red nodes, the labels are a permutation of {1, 2, . . . , F },
+with the same probability for each permutation. The algorithm needs to say something like this.
+(e) Page 5, Algorithm 1, line 5. “Initialise the blue labels.” Explain how.
+(f) Algorithm 1 refers to Stage 1 and Stage 2, which are (partially) described in the text. My preference
+is that algorithms are self-contained, or at least refer only to other algorithms that have already been
+described.
+(g) Page 5, Equation 5. Is it really the case that Nxg is the number of nodes and Zg is the sum of node
+degrees? So that weight information is not used?
+(h) , Page 5, line 55 - Page 6, line 9. The description here gives a reasonable overview of what is being
+done, but it needs to be supplemented by detailed pseudocode. Do we consider all communities ti ,
+and for each one, merge with the community j giving the greatest increase in modularity? Does the
+order in which this is done matter? And do we do this once, or do we keep on doing this until no
+further improvements are made?
+(a) The discussion opens with five short paragraphs summarizing the results. I think that with a bit of
+effort, these five paragraphs could be shortened and combined into one, leaving space for the rest of
+the discussion to focus on meaning and broader context of the results.
+(b) The biggest thing that is missing from the discussion is any explanation of why Exhaustive LPAwb+
+sometimes did better than QuanBiMo. My first guess would be that an algorithm based on simulated
+annealing (such as QuanBiMo) would be more likely to perform well than something based on multiple
+runs of a greedy algorithm (which is what I think Exhaustive LPAwb+ is). What aspect of the
+problem is Exhaustive LPAwb+ doing better at?
+inor comments
+. Abstract, page 1, line 22. “yet many community detection algorithms . . . ” Should first define what a
+community is.
+. Abstract, page 1, line 24. The sentence “Modularity optimisation is a method for finding communities in
+a network” does not yet obviously link to what comes before or after. Perhaps this is simply because the
+sentence in question refers to optimisation, while the following sentences all use the term maximisation.
+. Page 3, Equation 1. I think it would be helpful to explain that ku dv /m is the expected value of A~uv under
+a null model in which there is only one module (or something like that). This will help readers to make
+the connection to the weighted version.
+. Page 4, line 39. “heirarchical” should be “hierarchical.”
+. Page 6, lines 12-60. Is “exhaustive” really the right name for this algorithm? If I’ve understood correctly,
+it considers every possible number of initial modules between 1 and M , where M is the number of modules
+found in an initial run of LPAwb+. But it doesn’t appear to consider every possible assignment of initial
+node labels for each number of initial modules, which would really be exhaustive.
+. Page 15, line 27. “Modulartity” should be “modularity.”
+. Page 15, lines 44-46. “The shared normalised mutual information for these two partitions is N M = 0.619,
+quantifying this difference.” Can you say anything more about what this means? Is 0.619 a large or a
+small value in this context?
+. Page 19, line 5. “Dormann’s bipartite modularity”. Should that be “Barber’s bipartite modularity”?
+ber, M. J. (2007). Modularity and community detection in bipartite networks. Physical Review E, 76:066102.
+son, R. J. (1996). Introduction to Graph Theory. Longman, Harlow, Essex, fourth edition.
+endix B
+Improved community detection in weighted bipartite networks
+on 19/11/2015
+you for reviewing my manuscript and supplying constructive feedback. Before I address the
+itself I need to bring your attention to some extra revisions I have performed. In the course of
+g revisions to the manuscript following comments from the reviewer I identified two 'major'
+errors in the submitted code as follows:
+The Julia and R scripts containing the LPAwb+ function contained an error in the stage two
+ure of combining modules if it leads to increased modularity (contained within function
+wo_LPAwbdash) such that they were comparing the modularity of the network identified via the
+procedure (label propagation) against itself. This means that the previously reported results for
+Awb+ and Exhaustive LPAwb+ (now referred to as DIRTLPAwb+) were only based on label
+ation. No multistep agglomeration was invoked in my previous submission. This was a
+tion error – the code was correct in the MATLAB/Octave function, which I apologise for.
+vious experiments were repeated with the corrected code. The results from these new
+ments replace what was previously submitted.
+onally (not reported in the manuscript) I evaluated the effect of multistep agglomeration on the
+modularity scores I created a new experiment found in paper/papercode/StageTwoExperiment
+tests the LPAwb+ algorithm with stage two against the LPAwb+ algorithm without stage two for
+andom quantitative networks, where each interaction is drawn from a uniform distribution and is
+n 0 and 1. Binary networks were created from these quantitative networks by setting all
+tions greater than 0.45 to 1 and all other interactions equal to 0.
+algorithm which includes stage two – I set a switch within the stage two part of the code, so I
+ind out whether this part of the code was invoked or not e.g. even with stage two set up correctly
+be that merging modules together will not result in increased modularity – hence the result is
+lent to that which would be found in the algorithm which only relies on label propogation.
+etworks had 5 nodes in one class and 10 in the other; whilst the remaining 1000 networks had 20
+in each class. Each algorithm was run 20 times on each network.
+5x10 quantitative networks stage two was called in 93/1000 networks and this resulted in better
+arity scores being found in all of these cases than with stage one alone. Stage two was invoked in
+00 binary networks of this size, but did not lead to different modularity scores than what was
+able using only stage one.
+me story was repeated in the 20x20 networks, where using stage two lead to an increase in the
+arity found in weighted networks; but no change to that found in binary networks.
+interesting as the LPAb+ algorithm, which uses both stages, was designed for binary networks –
+us must have been purposefully included, despite not effecting the binary modularity scores in
+alysis. I posit that stage two may result in faster computation than with stage one alone (as many
+are potentially relabelled in one step) for both binary and quantitative networks. It may be that in
+networks stage two may influence the modularity scores.
+The code used to create synthetic networks in the manuscript also contained an error. This error
+d for networks to be created from biadjacency matrices that contained columns with only zeros
+i.e. a node that is not linked to any node – it is completed isolated in the network. Assigning
+odes to a module does not make sense when the definition of bipartite modularity focuses on
+es composed of nodes from both node classes.
+rameters I chose for the low fill networks in the previous submission for the synthetic network
+ments are no longer reasonable (cannot make a draw from the negative binomial distribution that
+eate a network when each node is connected to at least one other node in a reasonable amount of
+New parameters were therefore chosen to represent the high and low fill cases; based on the
+ncy of non-zero draws from sampling a negative binomial distribution – this is shown in a new
+figure SI 1.
+minor editions to the manuscript worth mentioning are that I have recently moved to the Georgia
+te of Technology and have included this as present address in the author information. I have
+d the reference list with respect to the review. Also note Flores et al. [12] Is now published in
+ds in Ecology and Evolution. I have updated the acknowledgements. I have changed a key word
+ompartments' to 'modules'.
+de and data previously submitted are archived on Zenodo: (
+x.doi.org/10.5281/zenodo.19585 )
+de and data in this submission are archived on Zenodo as :
+dx.doi.org/10.5281/zenodo.34055 )
+ferences are updated in the manuscript)
+ressing the reviewers comments:
+t follows my responses are prefaced with <SB>. I would like to thank the reviewer for their
+reading of the manuscript and the constructive feedback they have provided, which I feel has
+improved the manuscript.
+points:
+introduction is difficult to read. This is I think mostly a consequence of the accumulation of
+small points, listed below.
+e 1, line 37. “Bipartite networks are the representation of interactions between two distinct
+of nodes.” I think a more precise definition is needed. The missing idea is that an interaction
+allowed to occur between a node of one class and a node of the other class (Wilson, 1996, p.
+rthermore, it will help readers if you give an example immediately following the definition,
+than waiting until page 2, line 57.
+I have extended my definition of bipartite modularity so that it is clear that interactions can only
+between nodes in different classes and have provided three examples of bipartite network
+entations from separate disciplines: sociology, finance and ecology. This should aid the reader in
+tanding what a bipartite network is; and that they can be applied in many different areas.
+e title and abstract refer to community detection, yet the term does not appear in the introduction
+age 3, line 5 (and even then it is not defined). Although there are many synonyms for
+unity, it would be better to choose one and stick to it throughout.
+The list of potentially confusing synonyms has been removed and the abstract has been
+ed so that a definition of community detection is provided. See also my response to minor points
+2.
+e 1, line 39. “Modularity is an evaluation of the partitioning of nodes into separate subsets,
+g modules.” This definition is not clear. I think it is important first to define a module, and
+ve a precise definition of modularity, making use of the idea that it measures the extent to
+interactions tend to be within-module rather than between-module. The third paragraph of
+r, 2007) has a fairly clear definition.
+The first paragraph of the introduction has been rewritten to attempt to clarify the definitions of
+arity and how modularity relates to community detection methods.
+ge 3, lines 12-14. This two-sentence paragraph probably belongs in the preceding paragraph, but
+ragraph is confusing because it jumps from topic to topic (most approaches to community
+on ignore strength of association; there are some exceptions for unipartite networks; Quan-
+works with weighted bipartite networks; methods for binary data could be adapted to include
+tion strengths). I suggest combining these paragraphs, thinking carefully about a logical order.
+This paragraph has been merged with the preceding paragraph, which has been edited to make
+cohesive narrative. While weighted methods exist – they are in the minority; and have not been
+d to bipartite networks, with the exception of QuanBiMo. Modifying existing methods developed
+ary networks would allow for a suite of tools to be developed for weighted bipartite networks –
+their behaviour can be compared and evaluated. Modifying LPAb+ to work on weighted
+ks is a way forward.
+e 4, line 47 - page 6, line 10. The description of LPAwb+ could be improved as follows.
+e 4, line 49. “A key feature of the LPAwb+ algorithm is that it simplifies to the LPAb+ algorithm
+binary network is used as input.” This isn’t very helpful, because the LPAb+ algorithm has
+en described. You could simply delete this sentence, or move it to the end of the description.
+ternative would be to first describe LPAb+, but this is probably not necessary.
+This sentence has been moved to the end of the LPAwb+ description.
+ge 4, lines 52-53. “First the dimensions of the network are used to decide how to run the
+hm.” This is far too vague for an algorithm description. Suggest deleting.
+This sentence has been deleted. The proceeding sentences explain the process.
+e 4, line 56. “The LPAwb+ algorithm is sensitive to the initial labelling of nodes.” Can you
+n why this is? It’s not immediately obvious where the behaviour depends on the values of the
+Is this because in Stage 1, the local maximization is performed in label order? If so, the
+hm needs to be explicit about this.
+I agree that this is not immediately obvious – and in fact is not correct! This step was not and is
+plemented in the code. Different instances of the LPAwb+ algorithm may produce different
+, but it is not due to order in which labels are initially assigned (it is due to stochasticity in the
+bels are propagated - see the paragaph after next). I thank the reviewer for picking up on this
+ormation!
+The order in which the labels are updated in stage 1 is unimportant as red nodes are only
+d using information about the blue nodes (and vice versa) – updating any red node will not alter
+e node information available when updating the other red nodes. e.g. Updating red node 1 will
+er the way in which red node 2 is updated – they are independent.
+The variability of the obtained results is due to steps in the local maximisation stage. If two (or
+labels are able to maximise one of the conditions in equation 5 (depending on whether a red or
+node is being evaluated) one of these labels is chosen randomly (each choice has the same
+ility). Different instances of the algorithm will result in some of these choices being different (so
+s the pseudo-random number generator has not been fixed!).
+The likelihood of such a case occurring is much greater in binary networks than in quantitative
+ks. This can be seen by comparing column R for LPAwb+ in supp. Table 1 (for binary networks)
+pp. Table 2 (for quantitative networks). The number in column R corresponds to the number of
+hat the maximum modularity score for that network was found (out of 100). Using column R with
+n U (number of unique solutions with the maximum modularity score) in supp. Table2 the
+tative networks look almost deterministic – with the exception of the elberling1999 network
+four configurations were found with the maximum modularity score.
+ge 5, Algorithm 1, line 4. “Initialise and randomly assign a unique label to each red node.” I’m
+ng that “random” means that for F red nodes, the labels are a permutation of {1, 2, . . . , F },
+e same probability for each permutation. The algorithm needs to say something like this.
+This logic would be correct – though as discussed in my response to point 2c this is not actually
+ented. Rather each red node is given a label from the set {1,..,F} deterministically. The node
+alue does not effect the outcome of the algorithm; as long as each red node is given a unique
+t will not effect the operation of the algorithm.
+I think I became confused with Exhaustive LPAwb+ (now DIRTLPawb+) when node label
+sation will effect the outcome of the algorithm, as it may put the labelled network in states that
+not have been reached had each red node been given a unique label at the beginning. I thank the
+er for picking up on these descriptive errors in the LPAwb+ algorithm.
+e 5, Algorithm 1, line 5. “Initialise the blue labels.” Explain how.
+Due to the asynchronous updating rules applied by the algorithm it does not matter how the
+bels are initially assigned – as they will be immediately updated according to information
+vely derived from the red label assignment. In the code blue labels are initially assigned an
+label.
+orithm 1 refers to Stage 1 and Stage 2, which are (partially) described in the text. My preference
+algorithms are self-contained, or at least refer only to other algorithms that have already been
+ed.
+Algorithm 1 has been moved to the end of the description of LPAwb+.
+ge 5, Equation 5. Is it really the case that N xg is the number of nodes and Z g is the sum of node
+s? So that weight information is not used?
+You are correct; the algorithm does use weighted information – the text has been adjusted to
+t for this error. N_xg is the sum of interactions that link from node x, whilst Z_g is the sum of the
+eights from blue nodes with label g and Y_h is the sum of edge weights from red nodes with label
+age 5, line 55 - Page 6, line 9. The description here gives a reasonable overview of what is being
+but it needs to be supplemented by detailed pseudocode. Do we consider all communities t i ,
+r each one, merge with the community j giving the greatest increase in modularity? Does the
+n which this is done matter? And do we do this once, or do we keep on doing this until no
+improvements are made?
+The community merging routine works as follows:
+number of modules
+each module (module1) check if there is another module (module2) it could be joined to from the
+all other modules that would result in increased network modularity.
+e proposed joining of module1 and module2 would increase network modularity need to check:
+1. – there exists no other choice for module2 (mod2a) that would result in an even greater
+se in modularity (when joined to module1)
+2. – there exists no other choice of module1 (mod1a) that would result in an even greater
+se in modularity (when joined to module2)
+ule1 and module2 are only merged if there exists no other module whose merger with either
+e1 or module2 would lead to an even larger increase in modularity. This should mean the order
+ch these modules are evaluated does not matter.
+-4 are then repeated for the remaining choices of module1.
+his routine is complete – stage I (label propagation) is called again. This two step process
+for merges, perform label propagation) is repeated until network modularity can no longer be
+sed.
+the reader in understanding the community merging subroutine (stage II) I have added
+code to the manuscript.
+nk the discussion could be improved by spending less time summarizing results and more time
+at they mean, as outlined below.
+e discussion opens with five short paragraphs summarizing the results. I think that with a bit of
+these five paragraphs could be shortened and combined into one, leaving space for the rest of
+cussion to focus on meaning and broader context of the results.
+I have moved and extended paragraph 2 (differences in sturcture between binary and weighted
+entations) to the beginning of the discussion, merged paragraphs 1,5 and 4 (algorithm
+ness, cannot know if found absolute maximum network modularity, LPAwb+ speed advantage).
+raph 3 has been extended and is now found at the end of the discussion.
+e biggest thing that is missing from the discussion is any explanation of why Exhaustive LPAwb+
+mes did better than QuanBiMo. My first guess would be that an algorithm based on simulated
+ing (such as QuanBiMo) would be more likely to perform well than something based on multiple
+a greedy algorithm (which is what I think Exhaustive LPAwb+ is). What aspect of the
+m is Exhaustive LPAwb+ doing better at?
+With infinite time to run the simulated annealing algorithm perhaps – though even in this case
+ould be no guarantee the simulated annealing algorithm would reach the maximum modularity
+think? I guess it depends on the glassiness of the specific modularity landscape and the way in
+the simulated annealing algorithm is parameterised in order to leave local maxima in search of
+bal maximum.
+run of DIRTLPAwb+ vs. one run of QuanBiMo it may well be expected that DIRTLPAwb+ does
+as it has multiple attempts to climb the “modularity mountain”, whilst QuanBiMo only has the
+owever, when both algorithms are invoked muliple times I too may have expected QuanBiMo to
+m better than it did with relation to networks such as kato1990 it did perform at all well.
+smaller networks I put the better performance of DIRTLPAwb+ down to the fact that it has a)
+attempts and b) these attempts start from different positions in the modularity landscape (by
+mly assigning module labels, some of which may be repeated) which allow for a greater
+ation' of the modularity landscape than by LPAwb+ alone (which is initialised with unique
+.
+added to paragraph 3 (previously paragraph 6) adding a couple of sentences outlining my
+ts on why I think DIRTLPAwb+ is able to perform well.
+nces
+, M. J. (2007). Modularity and community detection in bipartite networks. Physical Review E,
+102.
+, R. J. (1996). Introduction to Graph Theory. Longman, Harlow, Essex, fourth edition.
+points:
+tract, page 1, line 22. “yet many community detection algorithms . . . ” Should first define what a
+unity is.
+The abstract has been reworded, such that community detection is defined.
+tract, page 1, line 24. The sentence “Modularity optimisation is a method for finding
+unities in a network” does not yet obviously link to what comes before or after. Perhaps this is
+because the sentence in question refers to optimisation, while the following sentences all use the
+aximisation.
+The abstract has been reworded so that it is clear the optimal solution for the partitioning of
+into modules is that which has the maximal modularity.
+e 3, Equation 1. I think it would be helpful to explain that k u d v /m is the expected value of A ~
+er a null model in which there is only one module (or something like that). This will help readers
+e the connection to the weighted version.
+Equation 1 has now been split into two lines to follow the structure of equation 2. The first line
+uces the null model matrix P u v = (k u d v )/m whose elements are the probabilities of an
+tion occuring between nodes u and v given the degree distributions in the incidence matrix.
+e 4, line 39. “heirarchical” should be “hierarchical.”
+This spelling mistake has been corrected – thanks for spotting it!
+e 6, lines 12-60. Is “exhaustive” really the right name for this algorithm? If I’ve understood
+ly, it considers every possible number of initial modules between 1 and M , where M is the
+r of modules found in an initial run of LPAwb+. But it doesn’t appear to consider every possible
+ment of initial node labels for each number of initial modules, which would really be exhaustive.
+I agree that the algorithm Exhaustive LPAwb+ is not truly exhaustive. After much(!)
+ation I have decided to rename the Exhaustive LPAwb+ algorithm DIRTLPAwb+. All references
+austive LPAwb+ have been updated in the manuscript.
+e 15, line 27. “Modulartity” should be “modularity.”
+This spelling mistake has been corrected.
+e 15, lines 44-46. “The shared normalised mutual information for these two partitions is NMI =
+quantifying this difference.” Can you say anything more about what this means? Is 0.619 a large
+all value in this context?
+NMI=0 would indicate no similarity in the partitions, whilst NMI=1 would indicate both
+ons had the same structure. This intermediate value of NMI suggests they are not entirely
+ilar, but that neither are they that similar. It is a quantitative marker of qualitatively different
+re.
+e 19, line 5. “Dormann’s bipartite modularity”. Should that be “Barber’s bipartite modularity”?
+Barber's bipartite modularity works only for binary networks. I have altered the wording of this
+ce to make it clear that I worked with the definition of weighted bipartite modularity introduced
+mann and Strauss, but is motivated by Barber's bipartite modularity.
+Society Open

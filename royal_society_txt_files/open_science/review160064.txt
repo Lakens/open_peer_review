@@ -1,0 +1,338 @@
+Energy scaling and reduction in controlling complex
+networks
+Yu-Zhong Chen, Le-Zhi Wang, Wen-Xu Wang and Ying-Cheng Lai
+Article citation details
+R. Soc. open sci. 3: 160064.
+http://dx.doi.org/10.1098/rsos.160064
+Review timeline
+Original submission: 28 January 2016 Note: Reports are unedited and appear as
+Revised submission: 15 March 2016 submitted by the referee. The review history
+Final acceptance: 17 March 2016 appears in chronological order.
+Review History
+label_version_1
+RSOS-160064.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+The datasets used for the analysis of Fig4 are not provided. As they are probably taken from
+Ref.10, the Authors could provide a reference to the repositories where these data are available.
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+In my opinion, the paper is an interesting contribution to the study of the controllability of linear
+dynamical systems on networks. The authors show that most of the control energy is actually
+spend to propagate the control along directed chains of edges that originate in the driver nodes.
+The observe that the energy requirement along these chains increases exponentially with the
+length of the chain. Hence, it is expected that the total control energy requirement could be
+decreases by inserting additional driver nodes along these long control chains that could break
+them into shorter pieces. They propose an heuristic algorithm to to that that seems to perform
+much better in reducing the energy compared to more standard methods, such as that of adding
+randomly redundant driver nodes.
+The reduction of the energy calculation to LCC sounds meaningful, and I think it is correct,
+however the way in which this is presented in the paper leaves some doubts, or at least some
+unclear points.
+1) The analytical derivation that E(t_f) \approx E_l is presented only for a 1D structure, where it
+is intuitively expected to hold. Numerical results presented in Fig 2 for random graphs show that
+<E> scales approximately linearly with E_L, but it would be important also to see that E_l scales
+exponentially with the length l. This is shown in panel a, but only for a 1D network, whereas
+numerical results for ER and BA should be also included (though not analytically accessible).
+Note that the numerical scale on the vertical axis of Fig 2a is only partially visible.
+2) The statistical arguments used in section 3.a to prove that P(E) is power-law with exponent
+approximately 1.5 are unconvincing. The line of reasoning is clear to me up to equation 3.6. I can
+also accept that the energy of the longest control chain is not correlated to the number of such
+paths, because I suppose the control energy is mostly a property of the path, not on their
+interaction (at least if we accept to neglect E^(2)). Still I find the argument used to show the
+absence of correlation just as rough as such an intuition. But let assume this is correct. Then the
+calculation in 3.9 is also problematic, because m E_Dc should be smaller than E, so by change of
+variables the internal integral over m is computed from 0 up to E/E_Dc and the external from 0
+to infinity. However m is an integer, therefore the contribution from the continuous
+approximation in m = 0, as well as the external contribution for diverging E, is not physical. Does
+it affect the result? In which way?
+3) The double-chain experiment shows that the distribution is still power-law with approximately
+the same exponent if cross-interactions are considered. Is there any result on the quantitative
+change in the energy values? I mean, changing the fraction of cross-links, the energy value (prior
+to the form of its distribution) is affected. How does the density of cross links affect the mean
+energy value? Is the change always negligible with respect to the change obtained increasing the
+chain length by one?
+4) In section "Control energy reduction scheme", the Authors state that, on several real networks,
+even when unlimited energy is supplied, the number of driver nodes predicted by the maximum
+matching algorithm is not sufficient to control the dynamics because some nodes M* never
+converge to their states. This is a very important result, that should be discussed in more detail in
+the paper. Was this phenomenon observed before on such networks? Does it depend on some
+structural property of the networks under study or of the linear dynamics considered?
+3
+The subject and the results presented in the paper are relevant and clearly deserve publication,
+but only after the issues listed above are discussed in detail and the paper is revised accordingly.
+label_author_2
+Review form: Reviewer 2 (Ron Chen)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept as is
+Comments to the Author(s)
+label_comment_2
+This paper is interesting. It presents some insight regarding control energy from a physical point
+of view.
+It is seemingly correct, with sufficient numerical evidence to support the claims.
+label_end_comment
+Decision letter (RSOS-160064)
+07-Mar-2016
+Dear Professor Lai
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160064 entitled
+"Energy scaling and reduction in controlling complex networks" has been accepted for
+publication in Royal Society Open Science subject to minor revision in accordance with the
+referee suggestions. Please find the referees' comments at the end of this email.
+4
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160064
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+5
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 16-Mar-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Miles Padgett
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+In my opinion, the paper is an interesting contribution to the study of the controllability of linear
+dynamical systems on networks. The authors show that most of the control energy is actually
+spend to propagate the control along directed chains of edges that originate in the driver nodes.
+The observe that the energy requirement along these chains increases exponentially with the
+6
+length of the chain. Hence, it is expected that the total control energy requirement could be
+decreases by inserting additional driver nodes along these long control chains that could break
+them into shorter pieces. They propose an heuristic algorithm to to that that seems to perform
+much better in reducing the energy compared to more standard methods, such as that of adding
+randomly redundant driver nodes.
+The reduction of the energy calculation to LCC sounds meaningful, and I think it is correct,
+however the way in which this is presented in the paper leaves some doubts, or at least some
+unclear points.
+1) The analytical derivation that E(t_f) \approx E_l is presented only for a 1D structure, where it
+is intuitively expected to hold. Numerical results presented in Fig 2 for random graphs show that
+<E> scales approximately linearly with E_L, but it would be important also to see that E_l scales
+exponentially with the length l. This is shown in panel a, but only for a 1D network, whereas
+numerical results for ER and BA should be also included (though not analytically accessible).
+Note that the numerical scale on the vertical axis of Fig 2a is only partially visible.
+2) The statistical arguments used in section 3.a to prove that P(E) is power-law with exponent
+approximately 1.5 are unconvincing. The line of reasoning is clear to me up to equation 3.6. I can
+also accept that the energy of the longest control chain is not correlated to the number of such
+paths, because I suppose the control energy is mostly a property of the path, not on their
+interaction (at least if we accept to neglect E^(2)). Still I find the argument used to show the
+absence of correlation just as rough as such an intuition. But let assume this is correct. Then the
+calculation in 3.9 is also problematic, because m E_Dc should be smaller than E, so by change of
+variables the internal integral over m is computed from 0 up to E/E_Dc and the external from 0
+to infinity. However m is an integer, therefore the contribution from the continuous
+approximation in m = 0, as well as the external contribution for diverging E, is not physical. Does
+it affect the result? In which way?
+3) The double-chain experiment shows that the distribution is still power-law with approximately
+the same exponent if cross-interactions are considered. Is there any result on the quantitative
+change in the energy values? I mean, changing the fraction of cross-links, the energy value (prior
+to the form of its distribution) is affected. How does the density of cross links affect the mean
+energy value? Is the change always negligible with respect to the change obtained increasing the
+chain length by one?
+4) In section "Control energy reduction scheme", the Authors state that, on several real networks,
+even when unlimited energy is supplied, the number of driver nodes predicted by the maximum
+matching algorithm is not sufficient to control the dynamics because some nodes M* never
+converge to their states. This is a very important result, that should be discussed in more detail in
+the paper. Was this phenomenon observed before on such networks? Does it depend on some
+structural property of the networks under study or of the linear dynamics considered?
+The subject and the results presented in the paper are relevant and clearly deserve publication,
+but only after the issues listed above are discussed in detail and the paper is revised accordingly.
+Reviewer: 2
+Comments to the Author(s)
+This paper is interesting. It presents some insight regarding control energy from a physical point
+of view.
+It is seemingly correct, with sufficient numerical evidence to support the claims.
+Author's Response to Decision Letter for (RSOS-160064)
+See Appendix A.
+ppendix A
+March 15, 2016
+ar Dr. Aime:
+ank you for obtaining two referee reports on our manuscript entitled “Energy scaling and
+uction in controlling complex networks.” We are grateful for your willingness to accept our
+per, and we have made revisions to fully address all referee comments. The changes in the text
+marked in red. A detailed, point-to-point response to all referee comments is enclosed.
+wish to take this opportunity to thank both referees for their insightful comments that have
+ulted in an improved paper. We would also like to thank you for handling our paper profes-
+nally.
+cerely,
+ng-Cheng Lai
+izona State University
+the behalf of all co-authors)
+Response to referee comments and description of changes made
+feree 1
+e reviewer stated “In my opinion, the paper is an interesting contribution to the study of
+controllability of linear dynamical systems on networks. The authors show that most of the
+ntrol energy is actually spend to propagate the control along directed chains of edges that orig-
+te in the driver nodes. The observe that the energy requirement along these chains increases
+onentially with the length of the chain. Hence, it is expected that the total control energy re-
+rement could be decreases by inserting additional driver nodes along these long control chains
+t could break them into shorter pieces. They propose an heuristic algorithm to to that that
+ms to perform much better in reducing the energy compared to more standard methods, such
+that of adding randomly redundant driver nodes.
+The reduction of the energy calculation to LCC sounds meaningful, and I think it is correct,
+wever the way in which this is presented in the paper leaves some doubts, or at least some
+clear points.”
+The reviewer’s specific comments have been addressed, as follows.
+mment 1: “(1) The analytical derivation that E(tf ) ˜ El is presented only for a 1D struc-
+e, where it is intuitively expected to hold. Numerical results presented in Fig 2 for random
+phs show that < E > scales approximately linearly with EL , but it would be important also to
+that El scales exponentially with the length l. This is shown in panel a, but only for a 1D
+twork, whereas numerical results for ER and BA should be also included (though not analytically
+essible). Note that the numerical scale on the vertical axis of Fig 2a is only partially visible.”
+sponse: The numerical results for the ensemble averaged energy hEi versus the corresponding
+C length L for ER and BA networks have been included in the inset in Fig. 2(b), and the
+responding caption and the description in the text have been revised accordingly.
+mment 2: “(2) The statistical arguments used in section 3.a to prove that P (E) is power-
+with exponent approximately 1.5 are unconvincing. The line of reasoning is clear to me up to
+ation 3.6. I can also accept that the energy of the longest control chain is not correlated to the
+mber of such paths, because I suppose the control energy is mostly a property of the path, not on
+ir interaction (at least if we accept to neglect E (2) ). Still I find the argument used to show the
+ence of correlation just as rough as such an intuition. But let assume this is correct. Then the
+culation in 3.9 is also problematic, because mED c should be smaller than E, so by change of
+riables the internal integral over m is computed from 0 up to E/EDc and the external from 0 to
+inity. However m is an integer, therefore the contribution from the continuous approximation
+m = 0, as well as the external contribution for diverging E, is not physical. Does it affect the
+ult? In which way?”
+sponse: Since the probability Pm (m) has an exponential dependence on m and does not
+plicitly contain the energy EDC , the summation in m from 1 to E/EDC is a finite geometric
+m, which differs from the integral in only a constant coefficient and does not affect the algebraic
+ling exponent 1 + b/B. In our analysis, the reason to treat m as a real valued number is that
+relation E ˜ mEDC holds only in the order-of-magnitude sense, implying that E/EDC is
+ically not an integer. The limits m <U+2192> 0 and EDC <U+2192> 8 correspond to the rare case where all
+des in the network belong to one single LCC.
+If we treat m (1 = m = E/EDC ) as an integer and accordingly set the integral upper bound
+EDC as E (as the referee suggested), the cumulative energy distribution function will have a
+ilar form to Eq. (3.9) with only a small difference in the constant coefficient. This would not
+ve any significant effect on the probability density function PE (E) in Eq. (3.12). Numerically,
+is typically a large number on the order of at least 1010 . As a result, the numerical difference
+used by the integral upper bound is negligible.
+A discussion has been added at the end of Sec. 3(a) (on page 8).
+mment 3: “(3) The double-chain experiment shows that the distribution is still power-law
+h approximately the same exponent if cross-interactions are considered. Is there any result on
+quantitative change in the energy values? I mean, changing the fraction of cross-links, the
+ergy value (prior to the form of its distribution) is affected. How does the density of cross links
+ect the mean energy value? Is the change always negligible with respect to the change obtained
+reasing the chain length by one?
+sponse: Our numerical calculation indicates that the fraction of cross links does not dramat-
+lly affects the magnitude of the energy, and the change is indeed negligible compared with the
+ange in the energy as the chain length is increased by one unit. This point has been clarified
+the revised paper (in Sec. 3(b) on page 10):
+• the change in the magnitude of the energy due to small variations in the parameter value is
+insignificant as compared with that caused by a change in the length of the LCC.
+mment 4: “(4) In section ”Control energy reduction scheme”, the Authors state that, on
+eral real networks, even when unlimited energy is supplied, the number of driver nodes predicted
+the maximum matching algorithm is not sufficient to control the dynamics because some nodes
+never converge to their states. This is a very important result, that should be discussed in
+re detail in the paper. Was this phenomenon observed before on such networks? Does it depend
+some structural property of the networks under study or of the linear dynamics considered?
+sponse: To the best of our knowledge, this phenomenon has not been observed for any
+deled networks: it only occurs in empirical (real-world) networks. It may be caused by some
+pical structural properties. For example, for some networks, the uncontrollable nodes form self-
+ps but without any incoming links. For some other networks with an unusually high average
+gree, an ill-conditioned Gramian matrix can arise, prohibiting the system from converging to
+target state. However, such uncontrollable cases (even with infinite supply of energy) are not
+pected to be generic.
+A discussion reflecting the above has been added at the end of Sec. 1(d) (on page 6).
+feree 2
+e referee recommended publication. There are no specific comments.
+Society Open

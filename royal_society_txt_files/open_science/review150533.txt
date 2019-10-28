@@ -1,0 +1,1031 @@
+Exploration adjustment by ant colonies
+Carolina Doran, Martin C. Stumpe, Ana Sendova-Franks and Nigel R. Franks
+Article citation details
+R. Soc. open sci. 3: 150533.
+http://dx.doi.org/10.1098/rsos.150533
+Review timeline
+Original submission: 6 October 2015 Note: Reports are unedited and appear as
+Revised submission: 17 November 2015 submitted by the referee. The review history
+Final acceptance: 18 December 2015 appears in chronological order.
+Review History
+label_version_1
+RSOS-150533.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Tomer Czaczkes)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+In this study, the exploration behaviour of the Rock Ant Temnothorax albipennis is studied.
+Colonies are housed in nests of varying quality, and the number of exploration bouts, and their
+total and individual lengths and durations, are measured. Two conclusions are drawn: Regarding
+collective exploration, the authors conclude that overall exploration rates increase as current nest
+value decreases. Regarding individual exploration, the authors conclude that exploration bout
+length and duration increase with increasing nest quality, while instantaneous speed decreases.
+The paper reads well, the motivation behind the experiments is sound, and the experimental
+methodology is robust. The figures are clear and informative. The statistical analysis is, to my
+knowledge, generally sound (see some minor comments at the end), although I cannot judge the
+Python script. Indeed, I applaud the provision of both the preliminary data checking and the
+scripts use to carry out the analysis (but see some minor comments) – this sort of transparency is
+what most papers should strive for.
+I find the collective results robust, reliable and believable. I will make more detailed suggestions
+at the end, but have no major comments regarding this aspect of the work.
+However, I am very sceptical about the patterns described for the individual level behaviour.
+While significant differences are found, and I can find no flaw in how the statistics were carried
+out (I am no expert on the matter). However, the effect size seems from the figures to be very
+small indeed. If we consider the breadth of the whiskers in all panels of figure 4, we see that
+variation within groups is much, much greater than variation between groups. If we were to
+consider non-transformed data, the whiskers would likely be even broader. While there is no
+agreed upon equivalent for an R-squared value for generalised linear mixed-effect models
+(GLMM), a rough estimate can be achieved by using an equivalent GLM. Using the raw data
+supplied, I calculated such R-squared. Log bout duration vs treatment had an adjusted R squared
+of 0.78% - less than 1% of the variation is explained by the treatment! Similar results are found for
+speed (2.21%). Very large sample sizes (here they vary from 2205 to 648 samples per treatment)
+can result in even tiny effects reaching significance. Just because an effect is statistically
+significant does not mean it is either real or that it has biological meaning.
+Even if we were to agree that these patterns represent real and important biological effects (which
+I do not), I do not necessarily agree with the interpretation assigned to them. The authors present
+these results as showing a behavioural adaptation by individual scouts to their nest quality. I see
+a different (and in my opinion more likely) explanation: with higher nest quality all but a few
+‘super-scouts’ stop scouting. This non-random subsample of scouts also happen to walk slower,
+make longer scouting bouts, and spend longer scouting. Thus, there is no change in the scouting
+behaviour of individuals – just a removal of all but the most hard working scouts. Had the
+individual scouts been assigned an identity (perhaps using the software id-Tracker (Pérez-
+Escudero et al. 2014), although I realise this software is limited to a very few individuals), testing
+which of these options is true would be possible. Without such individual ID information, both
+options must be presented as (at least) equally likely.
+In light of these concerns, I urge the authors to be much more cautious in both how they present
+their results regarding individual behaviour, and in the conclusions drawn. This will require a
+significant rewrite of the title, the abstract, the results, and the discussion. Frankly, I would
+completely drop any claims being made about adjustment of individual-level behaviour.
+With that said, as the experimental methods and data collection is solid, I believe that manuscript
+will be acceptable for publication after a revision.
+3
+I hope the authors find my comments constructive and helpful.
+Yours sincerely,
+Tomer J. Czaczkes
+University of Regensburg
+I shall now make a series of more minor comments (split by section), aimed at improving the
+manuscript.
+ABSTRACT
+• Line 16-18: this (division of labour) does not seem very relevant to the study
+• Line 20-21 and elsewhere: you are (perhaps reasonably) assuming the ants are scouting
+for a new nest, but in fact you do not know what the ants are doing. They may be searching for
+food, patrolling for enemies, or searching for material with which to modify their nest. Caution is
+required when assigning motivation to animal behaviour, as the motivational state of the animal
+will strongly affect how it reacts to stimuli.
+• Lines 22-24: some concrete numbers (percentages, ratios, etc) would not go amiss here.
+• Line 26-27: looking at the effect strengths, it seems that the collective patterns are driven
+almost exclusively by the number of bouts made in total.
+BACKGROUND
+• Line 51: “might be” – this has been concretely shown repeatedly, no?
+• Line 53: in the reference list, ref 12 is formatted as a journal article, but it is fact a chapter
+in a book.
+• I feel a lot of the introduction is not strictly relevant, e.g. lines 46-52, and even as far as
+line 62.
+• Lines 55-58: I don’t see these as mutually exclusive.
+• Lines 67-8: according to ref 21, the ants adapted rather poorly to microgravity. Indeed, I
+feel this reference is a bit of a stretch.
+• Line 72: “ultimately” replace with “finally”.
+METHODS
+• Line 104: add “sequentially” before “inhabit”.
+• Figure 1 would be more informative if it was a grab from one of the videos, perhaps
+showing some ant paths.
+• As there is no id tracking in the video analysis, how can an ant running in and out of the
+nest repeatedly be distinguished from many ants beginning scouting bouts? Is there a minimum
+bout length cut-off? Figure S7 suggests mostly very short bouts. Are these, biologically speaking,
+really scouting bouts?
+• Line 127 – is the median speed a good measure to use here? The ants paths may be
+characterised by mostly standing still, with bouts of rapid movement. If so, you'll miss changes in
+these movement bouts if only the median is used. Overall distance per unit time might be more
+informative.
+• Supplementary code: I applaud the provision of the scripts and code. However, they
+should be properly annotated in order to make them useful. As they stand, I cannot follow them.
+For example, in the Rscript model summary modouts1, what are L, Q, C and 4? It took me a while
+to realise this refers to linear, quadratic, cubic, etc). The same goes for Treat1-4.
+• Line 137-8 – was square rooting nececcary here?
+• Was the experiment order ever tested for an effect? Ants might give up scouting after
+four weeks of not finding any new nest.
+4
+• Line 144 – it is not clear to me why linear, quadratic, cubic or 4th (!) order trends were
+searched for. Was there any a-priori reason for doing this? In general, higher order trends should
+only be looked for with good reason.
+RESULTS
+• Line 150 – I’m not sure “linearly” can be claimed for ordinal data.
+• Line 162 – replace ‘work’ with ‘exploration’ or scouting
+DISCUSSION
+• Lines 224-226 - see main comments above.
+• Line 230 – remove one comma
+FIGURES
+• Figure 1 – a screen grab with scale bars and ant paths would be more informative
+• Figure 2 – Y axis should read “total number of EXPLORATION bouts”. For all figures –
+what do the whiskers represent?
+• Figures 3 & 4 – I dislike showing transformed data in figures. It is fine to use them for
+statistical analysis, but I feel the raw numbers are more useful in a figure.
+• Figure 3 – it would be nice to see similar figures to these, but with the path length and
+exploration time divided by number of bouts. This would allow the reader to assess the
+relationship between these variables, and would likely show that the number of bouts mostly
+controls the other two variables.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This is a nice piece of work. It is interesting, it builds on previous work in a productive and useful
+way and it is generally well-presented. The study is well framed, the Methods and Results are
+clear and the Discussion is open-handed and does not overreach. It is not my nature to submit
+short reviews and I know, with my Editor’s hat on, that short reviews are often unhelpful.
+However, I thought this was a good study and I enjoyed reading the paper.
+5
+The only comments I have are:
+I think the overall finding of the paper could be expressed more clearly in the Abstract – my issue
+here was the use of “target nest”, which I think will not be immediately understood in that
+context by someone not familiar with this body of work, and the use of “nest value”. I think there
+is room here to be more plain and direct in the Abstract and tell the story in a more intuitive way
+- “increasing current nest value” might make total sense but it seems to over complicate things.
+However, this is a matter of taste rather than a “must address” comment
+The Introduction is already quite long so it might be difficult to incorporate this, but…it would be
+nice to have some discussion of nest finding and nest value in other (non-ant) species. Honeybees
+are obvious of course, but also nesting birds choosing nest boxes etc.
+label_end_comment
+Decision letter (RSOS-150533)
+26-Oct-2015
+Dear Dr Doran Borges de Sousa,
+The editors assigned to your paper ("Ant colonies explore less but individuals search for longer
+when current housing conditions are better.") has now received comments from reviewers. We
+would like you to revise your paper in accordance with the referee and Subject Editor
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 18-Nov-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+6
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-150533
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+7
+Author's Response to Decision Letter for (RSOS-150533)
+See Appendix A.
+label_version_2
+RSOS-150533.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Tomer Czaczkes)
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+All present, clear, and acceptable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_3
+I have been asked to re-review the manuscript “Ant colonies explore less but individuals search
+for longer when current housing conditions are better” By Doran et al. In my previous review I
+reported that I found the collective aspect of this manuscript robust and worthy of publication (if
+not novel) with only minor revisions (which the authors have now carried out). However, I was
+very sceptical about the results pertaining to the reported modulation of individual-level
+behaviours of scouting bout length (per bout) and scouting bout path length (per bout). While the
+results came out “significant” (i.e. lower than P<0.05) the explanatory power of the effect was so
+low as to be, to my eyes, meaningless. I thus strongly suggested removing all mention of the
+individual level effects.
+The authors disagreed with my assessment, stating:
+“We agree that the effect size is indeed very small. However, these results corroborate the results
+in Doran et al. 2013 (reference number 25) using another metric. In addition, for social systems
+such as ant colonies, small effect sizes will have larger effects if there is social amplification such
+as recruitment.”
+They thus chose not to reconsider the validity of the conclusions they draw from the data.
+I’m afraid I find this response wholly unconvincing.
+8
+Firstly, in Doran et al. (2013), which I had studied closely previously, and have now re-read, the
+authors report changes in colony-level behaviour - the probability of ants scouting depending on
+current nest quality, as measured by the number of ants scouting. The results we are debating
+here pertain to changes in mean path length of a scouting bout, mean bout duration, and mean
+speed of the scouting ants. I simply do not see how these results are a corroboration of the
+findings of Doran et al. (2013).
+I’m afraid the secondary argument, that social amplification will make smaller effects larger, also
+feels very much like hand-waving. The recruitment system here famously shows linear feedback,
+and so will not show such large amplification. I remind the authors that I previously estimated
+the effect strength to be c. 1% - leaving 99% of the variation unexplained. This remaining 99% of
+random variation will be amplified along with the putative 1% of signal, still resulting in little
+biological relevance of the factors measured.
+I thus cannot accept the response of the authors to my concern, and therefore still cannot
+recommend that this manuscript be published in its current state. I reiterate my request that “the
+authors be much more cautious in both how they present their results regarding individual
+behaviour, and in the conclusions drawn. This will require a significant rewrite of the title, the
+abstract, the results, and the discussion. Frankly, I would completely drop any claims being made
+about adjustment of individual-level behaviour.”
+I also stand by my previous comment, that
+“With that said, as the experimental methods and data collection is solid, I believe that
+manuscript will be acceptable for publication after a revision.”
+The authors responded in much more detail to my subsidiary concern about the interpretation of
+the individual behavioural patterns they report finding.. I somewhat regret raising this point, as it
+perhaps took the emphasis off my main concern. Nonetheless, I appreciate the response of the
+authors to my comment. I will respond to their response, but emphasise that without handling
+my main point above, this debate is purely hypothetical.
+In brief, I suggested that rather than adjustment of individual level behaviour, the putative
+findings could be explained by a process of self-selecting subsets of ants. The authors argue that,
+due to the variation within each groups not changing, one can rule out the hypothesis the
+alternative hypothesis I raised. I find this to be rather weak evidence to hang the entire message
+of the paper on. Indeed, why assume that the variance would decrease? The 'super-scouts' (see
+original comment) might have the same variance, but with a shifted mean in other aspects of their
+behaviour.
+The authors go on to run some new statistical analyses in which the collective effects examined
+are divided by the total number of bouts. They find opposite effects to the ones reported (good
+that this is now added to the manuscript!). This is presented as further support for their
+interpretation. They state:
+“If the number of bouts was the cause of the variation in the collective effort we would expect
+no trend at all after dividing the response variables by the number of bouts.”
+True, but it is not clear to me how this rules out the super-scout hypothesis? It may just mean that
+the super-scouts walk further and for longer, and make the same number of bouts. I’m still not
+fully convinced, and think both hypotheses should have been equal weight. But, as I stated
+earlier, I am not convinced that there is any real evidence of individual-level behavioural
+differences between the treatments at all.
+I am very sorry to be stubborn on this point – I know that this can be frustrating. I also realise
+that, without the individual level behaviour, the results presented here are not greatly different to
+9
+those shown in Doran (2013). Nonetheless, I cannot in good conscience recommend this
+manuscript for publication until I am fully convinced, or my suggestions are followed. Perhaps I
+have misunderstood something key? If discussion via writing is not working, but the authors
+really are convinced that they are right, I would be happy to talk in person (via skype or similar)
+to try and work this out.
+Yours sincerely,
+Tomer Czaczkes
+I will now respond to the ‘minor comments’ bits.
+(old comment): Lines 22-24: some concrete numbers (percentages, ratios, etc) would not go amiss
+here.
+We don’t usually put values in the abstract as we think the abstract should give a general
+overview of the
+paper. However we are happy to do so if the editor sees fit
+TC) no, I didn't mean results of statistical tests, so much as descriptive statistics. E.g. "the number
+of scouting bouts was four times higher in poor compared to excellent nests”
+(old comment):Figures 3 & 4 – I dislike showing transformed data in figures. It is fine to use them
+for statistical
+analysis, but I feel the raw numbers are more useful in a figure.
+We completely agree with the referee, however, when the non-transformed data is skewed,
+extreme values
+could “squash” the presentation of most of the data and make the figure non informative
+TC) Well, you could take out the outliers – the figures are only illustrations of the results, after all,
+and should serve to help the readers get the main message. But this is all a matter of personal
+taste.
+Line 240 typo – ‘wile’ instead of ‘while’
+All other minor responses and changes look good, and are approved.
+label_end_comment
+Decision letter (RSOS-150533.R1)
+24-Nov-2015
+Dear Dr Doran Borges de Sousa:
+Manuscript ID RSOS-150533.R1 entitled "Ant colonies explore less but individuals search for
+longer when current housing conditions are better." which you submitted to Royal Society Open
+Science, has been reviewed. The comments of the reviewer(s) are included at the bottom of this
+letter.
+Please submit a copy of your revised paper within three weeks (i.e. by the 17-Dec-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+10
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+11
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-150533)
+See Appendix B.
+label_version_3
+RSOS-150533.R2 (Revision)
+label_author_4
+Review form: Reviewer 1 (Tomer Czaczkes)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+12
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_4
+I am pleased with this revision. The authors have thought seriously about my reservations and
+taken them onboard, while maintaining their own view on the data. The strong conclusions have
+been emphasies, and the weaker ones stated cautiously without giving the feeling that anything
+is being hidden. I agree with the authors that the manuscript is now greatly improved. This is
+how the review process should work.
+I now have no reservations about this manuscript, and take great pleasure in recommending it for
+immediate publication.
+Yours sincerely,
+Tomer Czaczkes
+-typos-
+line 232: can not should be one word here
+line 236: "...as well as being..."
+label_end_comment
+Decision letter (RSOS-150533.R2)
+18-Dec-2015
+Dear Dr Doran Borges de Sousa,
+I am pleased to inform you that your manuscript entitled "Exploration adjustment by ant
+colonies" is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article within approximately 10 working days. Please
+contact the production office (openscience_proofs@royalsociety.org) to let us know if you are
+likely to be away from e-mail contact during that period. Due to rapid publication and an
+extremely tight schedule, if comments are not received, your paper may experience a delay in
+publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Dr Matthew Allinson
+matthew.allinson@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Appendix A
+Dear Dr Doran Borges de Sousa,
+The editors assigned to your paper ("Ant colonies explore less but individuals search for longer
+when current housing conditions are better.") has now received comments from reviewers. We
+would like you to revise your paper in accordance with the referee and Subject Editor suggestions
+which can be found below (not including confidential reports to the Editor). Please note this
+decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 18-Nov-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance. We do not allow multiple rounds of revision so we urge you to make every effort to fully
+address all of the comments at this stage. If deemed necessary by the Editors, your manuscript
+will be sent back to one or more of the original reviewers for assessment. If the original reviewers
+are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your Author
+Centre, where you will find your manuscript title listed under "Manuscripts with Decisions." Under
+"Actions," click on "Create a Revision." Your manuscript number has been appended to denote a
+revision. Revise your manuscript and upload a new version through your Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as supplementary
+information or preferably in a suitable permanent repository. The data accessibility section should
+state where the article's supporting data can be accessed. This section should also include
+details, where possible of where to access other relevant research materials such as statistical
+tools, protocols, software etc can be accessed. If the data has been deposited in an external
+repository this section should list the database, accession number and link to the DOI for all data
+from the article that has been made publicly available. Data sets that have been deposited in an
+external repository and have a DOI should also be appropriately cited in the manuscript and
+included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify your
+current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-150533
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors should
+meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out the
+statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get in
+touch.
+Yours sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Dear Dr Aime,
+We greatly appreciate all the encouraging comments about our manuscript. We have addressed
+all the comments and have provided justification for the ones we did not agree with below. We
+feel the manuscript has improved greatly after the suggestions from both referees. The line
+numbers from the submitted version did not match with our word version so we have highlighted
+in yellow all the changes we have made.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+In this study, the exploration behaviour of the Rock Ant Temnothorax albipennis is studied.
+Colonies are housed in nests of varying quality, and the number of exploration bouts, and their
+total and individual lengths and durations, are measured. Two conclusions are drawn: Regarding
+collective exploration, the authors conclude that overall exploration rates increase as current nest
+value decreases. Regarding individual exploration, the authors conclude that exploration bout
+length and duration increase with increasing nest quality, while instantaneous speed decreases.
+The paper reads well, the motivation behind the experiments is sound, and the experimental
+methodology is robust. The figures are clear and informative. The statistical analysis is, to my
+knowledge, generally sound (see some minor comments at the end), although I cannot judge the
+Python script. Indeed, I applaud the provision of both the preliminary data checking and the
+scripts use to carry out the analysis (but see some minor comments) – this sort of transparency is
+what most papers should strive for.
+Dear Dr Czaczkes,
+We are extremely grateful for all your encouraging words and all your suggestions for our
+manuscript. We appreciate your very thorough review and will address now all of your comments.
+I find the collective results robust, reliable and believable. I will make more detailed suggestions
+at the end, but have no major comments regarding this aspect of the work.
+However, I am very sceptical about the patterns described for the individual level behaviour.
+While significant differences are found, and I can find no flaw in how the statistics were carried
+out (I am no expert on the matter). However, the effect size seems from the figures to be very
+small indeed. If we consider the breadth of the whiskers in all panels of figure 4, we see that
+variation within groups is much, much greater than variation between groups. If we were to
+consider non-transformed data, the whiskers would likely be even broader. While there is no
+agreed upon equivalent for an R-squared value for generalised linear mixed-effect models
+(GLMM), a rough estimate can be achieved by using an equivalent GLM. Using the raw data
+supplied, I calculated such R-squared. Log bout duration vs treatment had an adjusted R squared
+of 0.78% - less than 1% of the variation is explained by the treatment! Similar results are found for
+speed (2.21%). Very large sample sizes (here they vary from 2205 to 648 samples per treatment)
+can result in even tiny effects reaching significance. Just because an effect is statistically
+significant does not mean it is either real or that it has biological meaning.
+We agree that the effect size is indeed very small. However, these results corroborate the results
+in Doran et al. 2013 (reference number 25) using another metric. In addition, for social systems
+such as ant colonies, small effect sizes will have larger effects if there is social amplification such
+as recruitment.
+Even if we were to agree that these patterns represent real and important biological effects (which
+I do not), I do not necessarily agree with the interpretation assigned to them. The authors present
+these results as showing a behavioural adaptation by individual scouts to their nest quality. I see
+a different (and in my opinion more likely) explanation: with higher nest quality all but a few
+‘super-scouts’ stop scouting. This non-random subsample of scouts also happen to walk slower,
+make longer scouting bouts, and spend longer scouting. Thus, there is no change in the scouting
+behaviour of individuals – just a removal of all but the most hard working scouts. Had the
+individual scouts been assigned an identity (perhaps using the software id-Tracker (Pérez-
+Escudero et al. 2014), although I realise this software is limited to a very few individuals), testing
+which of these options is true would be possible. Without such individual ID information, both
+options must be presented as (at least) equally likely.
+We appreciate the alternative interpretation of our results. In fact we had previously considered
+such a scenario since it would go extremely well in line with the response threshold idea. If
+colonies are composed of individuals with different response thresholds, we would expect that in
+better housing conditions only individuals with a really high threshold would not be satisfied and
+continue searching. However, if we compare the different treatments, the level of variation does
+not seem to change that much. We have compared this using an F test, which is not the most
+accurate way since it does not consider colony as a random factor, but it is enough to give us an
+idea. For the duration, the F-ratio is not significantly different from 1, even with a sample size of
+2204 points. For both path length and instantaneous speed it is significant but at 1.25 and 1.47
+ratio respectively. Both are closer to 1 than to 2. If indeed in better housing conditions only the
+‘super scouts’ would be scouting we would expect a gradual decrease in variation with increasing
+nest value. As that is not the case, we think it is more likely the interpretation that the patterns
+observed are a result of individual flexibility.
+Furthermore, if we run the collective effort models (Total path length and Total path duration) but
+with both response variables divided by the number of bouts, in both cases, we get a significant
+positive linear trend with increasing nest value, with the addition of treatment to the models
+having a highly significant effect (p <0.001 in both cases). This trend is opposite to the trend
+obtained for total path length and total exploration behaviour when not divided by total number of
+bouts. This is another piece of evidence in support of our interpretation. If the number of bouts
+was the cause of the variation in the collective effort we would expect no trend at all after dividing
+the response variables by the number of bouts.
+We have added boxplots of both response variables divided by the number of bouts to the
+supplementary information as well as the R code and output of the models. We have also added
+some information regarding this analysis both in the results (lines 173 - 175) and in our discussion
+(lines 211 - 216). We have also added a few lines to our discussion regarding the referee’s
+interpretation since we do think that this alternative interpretation is highly relevant (lines 212 –
+219).
+We did consider id-Tracker, unfortunately it requires more pixels per ant than in our videos.
+Something to keep in mind for future experiments.
+In light of these concerns, I urge the authors to be much more cautious in both how they present
+their results regarding individual behaviour, and in the conclusions drawn. This will require a
+significant rewrite of the title, the abstract, the results, and the discussion. Frankly, I would
+completely drop any claims being made about adjustment of individual-level behaviour.
+With that said, as the experimental methods and data collection is solid, I believe that manuscript
+will be acceptable for publication after a revision.
+For the reasons justified above, we decided to keep the title and continue to favour our initial
+interpretation. However we have now included the alternative interpretation by Dr Czaczkes.
+I hope the authors find my comments constructive and helpful.
+Yours sincerely,
+Tomer J. Czaczkes
+University of Regensburg
+Dear Dr Gzaczkes
+We appreciate greatly the positive comments and encouragement. Please see our detailed point-
+by-point responses below.
+I shall now make a series of more minor comments (split by section), aimed at improving the
+manuscript.
+ABSTRACT
+• Line 16-18: this (division of labour) does not seem very relevant to the study
+We understand this concern and have made more obvious the relationship between our work and
+division of labour on lines 58 - 64. This study focusses on how colonies organize their work, within
+a single task and we believe that it might shed some light on more general models of work
+organisation such as task allocation.
+• Line 20-21 and elsewhere: you are (perhaps reasonably) assuming the ants are scouting for
+a new nest, but in fact you do not know what the ants are doing. They may be searching for food,
+patrolling for enemies, or searching for material with which to modify their nest. Caution is
+required when assigning motivation to animal behaviour, as the motivational state of the animal
+will strongly affect how it reacts to stimuli.
+We agree with the reviewer that caution is required when assigning motivation to animal
+behaviour. However, as shown both here and in one of our previous papers (reference number
+25), with all else being equal, differences in the number of individuals outside have to be
+attributed to changes in nest value. We have made this clearer in our discussion lines 257 – 258.
+• Lines 22-24: some concrete numbers (percentages, ratios, etc) would not go amiss here.
+We don’t usually put values in the abstract as we think the abstract should give a general
+overview of the paper. However we are happy to do so if the editor sees fit.
+• Line 26-27: looking at the effect strengths, it seems that the collective patterns are driven
+almost exclusively by the number of bouts made in total.
+As mentioned in our first response, the models including total path length and total exploration
+duration divided by the number of bouts show a linear trend in the opposite direction in
+comparison to when they are not divided by the number of bouts. Hence the total effort observed
+is not a result of only variation in total number of bouts as if that was the case we would expect
+that dividing total path length and total exploration time by the total number of bouts would
+annihilate the effect of treatment.
+We have chosen not to make any changes in the title and abstract but have addressed all the
+referees concern in other sections.
+BACKGROUND
+• Line 51: “might be” – this has been concretely shown repeatedly, no?
+We have updated line 49.
+• Line 53: in the reference list, ref 12 is formatted as a journal article, but it is fact a chapter in
+a book.
+Thank you, we have corrected this reference.
+• I feel a lot of the introduction is not strictly relevant, e.g. lines 46-52, and even as far as line
+62.
+We have made the connection between our work and division of labour clearer. See lines 58 –
+64.
+• Lines 55-58: I don’t see these as mutually exclusive.
+We completely agree with this point and have added updated the manuscript, lines 58 - 60
+• Lines 67-8: according to ref 21, the ants adapted rather poorly to microgravity. Indeed, I feel
+this reference is a bit of a stretch.
+We reference this paper to show other research where the same tracking software has been
+used. We have made it clear that colonies indeed adapted very poorly. See line 70.
+• Line 72: “ultimately” replace with “finally”.
+We have made this correction, now line 74.
+METHODS
+• Line 104: add “sequentially” before “inhabit”.
+We have made this correction, now line 104.
+• Figure 1 would be more informative if it was a grab from one of the videos, perhaps showing
+some ant paths.
+We do agree with the referee, however the ants occupy only around 20 pixels and there are
+several trajectories at the same time. Hence we find it not so informative. We think figure 1, as it
+stands is quite an elegant diagram, which aims to visualise the experimental set up and how the
+parameters were calculated.
+• As there is no id tracking in the video analysis, how can an ant running in and out of the nest
+repeatedly be distinguished from many ants beginning scouting bouts? Is there a minimum bout
+length cut-off? Figure S7 suggests mostly very short bouts. Are these, biologically speaking,
+really scouting bouts?
+We are not able to distinguish if the same ant leaves more than once. We have made this clearer
+in lines 118 – 119. We considered exploratory bouts as soon an ant’s full body entered the
+scouting arena. This was done exactly the same way for all treatments.
+• Line 127 – is the median speed a good measure to use here? The ants paths may be
+characterised by mostly standing still, with bouts of rapid movement. If so, you'll miss changes in
+these movement bouts if only the median is used. Overall distance per unit time might be more
+informative.
+This is a really good point. In fact we did look at number of seconds an ant is not moving and this
+does not change significantly for the 5 nesting conditions. We do not think this information is
+relevant for the paper but we can certainly add it if necessary.
+• Supplementary code: I applaud the provision of the scripts and code. However, they should
+be properly annotated in order to make them useful. As they stand, I cannot follow them. For
+example, in the Rscript model summary modouts1, what are L, Q, C and 4? It took me a while to
+realise this refers to linear, quadratic, cubic, etc). The same goes for Treat1-4.
+We completely agree with this point and have added several comments to all the scripts.
+• Line 137-8 – was square rooting necessary here?
+We have chosen to square-root the data so that a linear mixed model could be used. Such
+models require that the date is at least approximately normal.
+• Was the experiment order ever tested for an effect? Ants might give up scouting after four
+weeks of not finding any new nest.
+We did look at the effect of order for all the response variables. We ran the following models:
+Mod0 -> Response variable and colony as a random factor (Null model)
+Mod1 -> Response variable, treatment as a fixed factor and colony as a random factor
+Mod2 -> Response variable, treatment and order as a fixed factors and colony as a random factor
+Mod3 -> Response variable, order as a fixed factor and colony as a random factor
+For all 3 response variables (path length, duration and instantaneous speed) the comparison
+between models Mod0 and Mod3 showed no significant differences. Furthermore comparing
+models Mod1 with Mod 2 did show a significant difference but with a delta AIC of 2, 4 and 7 for
+path length, duration and instantaneous speed respectively. According to Burnham and Anderson
+(2001, 2nd edition) delta AIC > 10 are considered not to be competitive with the best model. Also
+for all cases Mod2 only showed a significant fit to cubic and 4 th order trends which do not have a
+biological meaning and so we chose the model with only treatment as a fixed factor.
+The supplementary information is already quite vast and so we chose to leave all this information
+out but we are happy to add it if necessary.
+• Line 144 – it is not clear to me why linear, quadratic, cubic or 4th (!) order trends were
+searched for. Was there any a-priori reason for doing this? In general, higher order trends should
+only be looked for with good reason.
+We completely agree with the referee. That is why in our interpretation we focus on the linear
+trend and overall positive or negative direction as these are of biological interest. By definition the
+max order of trends in a model is equal to the number of categories minus 1, hence with five nest
+qualities the software automatically gives from linear to 4th order trend.
+RESULTS
+• Line 150 – I’m not sure “linearly” can be claimed for ordinal data.
+We agree with the referee and have removed the word linearly from here as it causes confusion
+between linear relationship and a linear contrast.
+• Line 162 – replace ‘work’ with ‘exploration’ or scouting
+We agree and have made this change now in line 159
+DISCUSSION
+• Lines 224-226 - see main comments above.
+Already discussed above
+• Line 230 – remove one comma
+We agree and have removed one of the commas, lines 232 – 233.
+FIGURES
+• Figure 1 – a screen grab with scale bars and ant paths would be more informative
+Already discussed above
+• Figure 2 – Y axis should read “total number of EXPLORATION bouts”. For all figures – what
+do the whiskers represent?
+We agree and have made the change to the figure label. The whiskers represent the nearest
+value within 1.5 of the interquartile range. We find this to be the default for most software’s. We
+have added this information to the figure labels.
+• Figures 3 & 4 – I dislike showing transformed data in figures. It is fine to use them for
+statistical analysis, but I feel the raw numbers are more useful in a figure.
+We completely agree with the referee, however, when the non-transformed data is skewed,
+extreme values could “squash” the presentation of most of the data and make the figure non
+informative.
+• Figure 3 – it would be nice to see similar figures to these, but with the path length and
+exploration time divided by number of bouts. This would allow the reader to assess the
+relationship between these variables, and would likely show that the number of bouts mostly
+controls the other two variables.
+We have done this and have added to the supplementary figure document (figure S33). We have
+added a sentence referring to these to the main document. Lines 174 – 176. If the number of
+bouts controlled most of the other variables we would expect no trend, but instead we found a
+positive trend (as expected based on the individual bout analysis).
+Reviewer: 2
+Comments to the Author(s)
+This is a nice piece of work. It is interesting, it builds on previous work in a productive and useful
+way and it is generally well-presented. The study is well framed, the Methods and Results are
+clear and the Discussion is open-handed and does not overreach. It is not my nature to submit
+short reviews and I know, with my Editor’s hat on, that short reviews are often unhelpful.
+However, I thought this was a good study and I enjoyed reading the paper.
+We thank the referee for the encouraging comments on our manuscript.
+The only comments I have are:
+I think the overall finding of the paper could be expressed more clearly in the Abstract – my issue
+here was the use of “target nest”, which I think will not be immediately understood in that context
+by someone not familiar with this body of work, and the use of “nest value”. I think there is room
+here to be more plain and direct in the Abstract and tell the story in a more intuitive way -
+“increasing current nest value” might make total sense but it seems to over complicate things.
+However, this is a matter of taste rather than a “must address” comment
+We agree with the referee that even though this terms are very obvious to us they might not be to
+some readers and hence we have changed the abstract Lines 20, 21 and 24).
+The Introduction is already quite long so it might be difficult to incorporate this, but…it would be
+nice to have some discussion of nest finding and nest value in other (non-ant) species.
+Honeybees are obvious of course, but also nesting birds choosing nest boxes etc.
+We agree with this point and since our introduction was indeed already long we have included a
+paragraph in the discussion regarding house hunting in other animal species, lines (238 - 244).
+Appendix B
+24-Nov-2015
+Dear Dr Doran Borges de Sousa:
+Manuscript ID RSOS-150533.R1 entitled "Ant colonies explore less but individuals search for
+longer when current housing conditions are better." which you submitted to Royal Society Open
+Science, has been reviewed. The comments of the reviewer(s) are included at the bottom of this
+letter.
+Please submit a copy of your revised paper within three weeks (i.e. by the 17-Dec-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance. We do not allow multiple rounds of revision so we urge you to make every effort to fully
+address all of the comments at this stage. If deemed necessary by the Editors, your manuscript
+will be sent back to one or more of the original reviewers for assessment. If the original reviewers
+are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your Author
+Centre, where you will find your manuscript title listed under "Manuscripts with Decisions." Under
+"Actions," click on "Create a Revision." Your manuscript number has been appended to denote a
+revision. Revise your manuscript and upload a new version through your Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as supplementary
+information or preferably in a suitable permanent repository. The data accessibility section should
+state where the article's supporting data can be accessed. This section should also include
+details, where possible of where to access other relevant research materials such as statistical
+tools, protocols, software etc can be accessed. If the data has been deposited in an external
+repository this section should list the database, accession number and link to the DOI for all data
+from the article that has been made publicly available. Data sets that have been deposited in an
+external repository and have a DOI should also be appropriately cited in the manuscript and
+included in the reference list.
+• Competing interests
+23
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors should
+meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out the
+statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get in
+touch.
+Sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+Dear Emilie Aime,
+We are very grateful for the opportunity of a second round of revision. We really enjoyed the
+fruitful discussions and once again think the manuscript is more solid after the suggestions from
+the referee.
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+I have been asked to re-review the manuscript “Ant colonies explore less but individuals search
+for longer when current housing conditions are better” By Doran et al. In my previous review I
+reported that I found the collective aspect of this manuscript robust and worthy of publication (if
+not novel) with only minor revisions (which the authors have now carried out). However, I was
+very sceptical about the results pertaining to the reported modulation of individual-level
+behaviours of scouting bout length (per bout) and scouting bout path length (per bout). While the
+results came out “significant” (i.e. lower than P<0.05) the explanatory power of the effect was so
+24
+low as to be, to my eyes, meaningless. I thus strongly suggested removing all mention of the
+individual level effects.
+Dear Tomer Czaczkes,
+We are extremely grateful for all the time and effort you have invested in our manuscript. After
+careful consideration we have decided to take your advice. We have now made changes to the
+title, abstract, results and discussion. The manuscript now focuses mainly on the collective
+responses. However we still discuss the idea of individual adjustment and quote 2 papers where
+small effect size actually showed a significant effect on the collective.
+We hope you are now happy with the manuscript. We will now respond to every point separately.
+The authors disagreed with my assessment, stating:
+“We agree that the effect size is indeed very small. However, these results corroborate the results
+in Doran et al. 2013 (reference number 25) using another metric. In addition, for social systems
+such as ant colonies, small effect sizes will have larger effects if there is social amplification such
+as recruitment.”
+They thus chose not to reconsider the validity of the conclusions they draw from the data.
+I’m afraid I find this response wholly unconvincing.
+Firstly, in Doran et al. (2013), which I had studied closely previously, and have now re-read, the
+authors report changes in colony-level behaviour - the probability of ants scouting depending on
+current nest quality, as measured by the number of ants scouting. The results we are debating
+here pertain to changes in mean path length of a scouting bout, mean bout duration, and mean
+speed of the scouting ants. I simply do not see how these results are a corroboration of the
+findings of Doran et al. (2013).
+I’m afraid the secondary argument, that social amplification will make smaller effects larger, also
+feels very much like hand-waving. The recruitment system here famously shows linear feedback,
+and so will not show such large amplification. I remind the authors that I previously estimated the
+effect strength to be c. 1% - leaving 99% of the variation unexplained. This remaining 99% of
+random variation will be amplified along with the putative 1% of signal, still resulting in little
+biological relevance of the factors measured.
+I thus cannot accept the response of the authors to my concern, and therefore still cannot
+recommend that this manuscript be published in its current state. I reiterate my request that “the
+authors be much more cautious in both how they present their results regarding individual
+behaviour, and in the conclusions drawn. This will require a significant rewrite of the title, the
+abstract, the results, and the discussion. Frankly, I would completely drop any claims being made
+about adjustment of individual-level behaviour.”
+We have now made changes to the title, abstract (lines 22 – 26), results (lines 185 – 186) and
+discussion (lines 211 – 212, 219 – 224 and 271 – 272). We have maintained a few lines in the
+discussion arguing how the individual effect might still influence the collective pattern observed,
+even though very small. The same had been previously shown in reference 34 and 35. However
+we have taken on board the suggestion of the referee and have changed the manuscript such
+that equal weight is given to both interpretations.
+I also stand by my previous comment, that
+“With that said, as the experimental methods and data collection is solid, I believe that manuscript
+will be acceptable for publication after a revision.”
+The authors responded in much more detail to my subsidiary concern about the interpretation of
+the individual behavioural patterns they report finding. I somewhat regret raising this point, as it
+perhaps took the emphasis off my main concern. Nonetheless, I appreciate the response of the
+authors to my comment. I will respond to their response, but emphasise that without handling my
+main point above, this debate is purely hypothetical.
+In brief, I suggested that rather than adjustment of individual level behaviour, the putative findings
+could be explained by a process of self-selecting subsets of ants. The authors argue that, due to
+the variation within each groups not changing, one can rule out the hypothesis the alternative
+hypothesis I raised. I find this to be rather weak evidence to hang the entire message of the paper
+on. Indeed, why assume that the variance would decrease? The 'super-scouts' (see original
+comment) might have the same variance, but with a shifted mean in other aspects of their
+behaviour.
+We very much agree with this point. In fact these data support the suggestion to combine both
+interpretations: There could be a process of self-selecting ants, and such ants might be adjusting
+their behaviour and that might be why the effect size is rather small. We have added this idea
+both in the abstract (lines 22 – 26) and discussion (221 – 224).
+The authors go on to run some new statistical analyses in which the collective effects examined
+are divided by the total number of bouts. They find opposite effects to the ones reported (good
+that this is now added to the manuscript!). This is presented as further support for their
+interpretation. They state:
+“If the number of bouts was the cause of the variation in the collective effort we would expect
+no trend at all after dividing the response variables by the number of bouts.”
+True, but it is not clear to me how this rules out the super-scout hypothesis? It may just mean that
+the super-scouts walk further and for longer, and make the same number of bouts. I’m still not
+fully convinced, and think both hypotheses should have been equal weight. But, as I stated
+earlier, I am not convinced that there is any real evidence of individual-level behavioural
+differences between the treatments at all.
+I am very sorry to be stubborn on this point – I know that this can be frustrating. I also realise that,
+without the individual level behaviour, the results presented here are not greatly different to those
+shown in Doran (2013). Nonetheless, I cannot in good conscience recommend this manuscript for
+publication until I am fully convinced, or my suggestions are followed. Perhaps I have
+misunderstood something key? If discussion via writing is not working, but the authors really are
+convinced that they are right, I would be happy to talk in person (via skype or similar) to try and
+work this out.
+Yours sincerely,
+Tomer Czaczkes
+Again, we are very grateful for all the investment of time and effort by the referee in out
+manuscript. We have taken on board your suggestion and have acknowledged that for the
+individual level the effect size is very small and argue that we might have a combination of both
+processes. A self-selection of the most hard-working ants who might be adjusting their behaviour
+to their current housing conditions. We are very happy with this improved version and hope it is
+now suitable for publication.
+I will now respond to the ‘minor comments’ bits.
+(old comment): Lines 22-24: some concrete numbers (percentages, ratios, etc) would not go
+amiss here.
+We don’t usually put values in the abstract as we think the abstract should give a general
+overview of the
+paper. However we are happy to do so if the editor sees fit
+TC) no, I didn't mean results of statistical tests, so much as descriptive statistics. E.g. "the
+number of scouting bouts was four times higher in poor compared to excellent nests”
+The number of bouts is 5 times smaller in excellent nests in comparison with Poor nest sites,
+however, due to the word limit of the abstract we have chosen no to add this. However, if the
+reviewer and editor advise us otherwise, we are happy to add this information.
+(old comment):Figures 3 & 4 – I dislike showing transformed data in figures. It is fine to use them
+for statistical
+analysis, but I feel the raw numbers are more useful in a figure.
+We completely agree with the referee, however, when the non-transformed data is skewed,
+extreme values
+could “squash” the presentation of most of the data and make the figure non informative
+TC) Well, you could take out the outliers – the figures are only illustrations of the results, after all,
+and should serve to help the readers get the main message. But this is all a matter of personal
+taste.
+We have discussed this at length but we don’t like removing outliers and have chosen to maintain
+the transformed data.
+Line 240 typo – ‘wile’ instead of ‘while’
+We have corrected this, line 227.
+All other minor responses and changes look good, and are approved.
+Society Open

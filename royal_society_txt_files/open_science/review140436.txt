@@ -1,0 +1,539 @@
+Implementing and testing Bayesian and maximum-
+likelihood supertree methods in phylogenetics
+Wasiu A. Akanni, Mark Wilkinson, Christopher J. Creevey, Peter G. Foster and Davide
+Pisani
+Article citation details
+R. Soc. open sci. 2: 140436.
+http://dx.doi.org/10.1098/rsos.140436
+Review timeline
+Original submission: 10 November 2014 Note: Reports are unedited and appear as
+Revised submission: 28 April 2015 submitted by the referee. The review history
+Final acceptance: 7 July 2015 appears in chronological order.
+Review History
+label_version_1
+RSOS-140436.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+I believe all data are from the literature.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This paper provides an evaluation of the performance of two new methods of model-based
+phylogenetic supertree construction, one using maximum likelihood, the other Bayesian
+inference. The idea of using models to guide supertree construction has been around for some
+time, but implementations have been slow to follow. This paper describes an evaluation of the
+authors' recent implementation, and overall is a welcome contribution to these efforts. The
+evaluation is largely in the context of previously described data sets, and is thus empirical, rather
+than based on simulation of known trees (c.f., Bininda-Emonds and Sanderson, 2001, Syst. Biol.).
+This is a fine approach, likely to be generally more interesting and compelling to readers, but it
+does suffer from the risk of being particular and idiosyncratic. My main concern in that regard is
+that the assessment of "bias" of methods is bound to be crude unless averaged over a universe of
+probabilistic outcomes. If someone has found that MRP, say, returns seemingly odd results that
+correlate with data set size in a few real or contrived data sets, this raises alarms -- but it is far
+from showing a bias in the sense used conventionally to evaluate statistical estimators! The
+authors can at least discuss the usual notion of "bias" used in statistics and then discuss how
+problematic it is to evaluate this with respect to tree topology.
+A second, relatively minor, comment is that the consistent use of the phrase "ad hoc" to refer to
+methods like MRP and others is needlessly pointed. While I agree that the use of a likelihood
+framework is indeed less ad hoc, it comes with its own deals with the devil -- in particular the
+choice of the negative exponential model for decay of likelihood with RF distance. Surely this is
+far more ad hoc than the usual markov models for substitution processes in sequence evolution,
+which form the basis of "reasonable" models in standard phylogenetic inference. Is there any
+rationale for the exponential model? Other than that it integrates to one? I think the authors are
+much more on track in pointing out eventually that this model will eventually lead to more
+interesting and less ad hoc models. Some details there would be welcome. Perhaps the connection
+to phylogenomic data sets can be explored further. For example, specific processes such as
+incomplete lineage sorting generate particular distributions of tree shape and, presumably, RF
+distances. An exploration of this connection would make the statement that "supertrees have
+come of age" more compelling, since enthusiasm for them has actually waxed and waned over
+the last 25 years. It is the modern incarnation in the realm of forests of gene trees that seems to
+make them of renewed interest.
+Finally, two technical points warrant some further elaboration. First, the convergence criterion for
+the MCMC implementation is only cryptically described and seems primitive. How does this
+compare with best practices, and to what is used in conventional phylogenetic inference? Second,
+the brief discussion of the "double approximation" of tree search and approximate likelihood
+calculation, also raises questions. Why must the latter be approximated (i.e., is computationally
+so expensive)? and what impacts are likely?
+label_author_2
+Review form: Reviewer 2 (David Bryant)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+3
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes it is clear
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Implementing and testing Bayesian and ML supertree methods in phylogenetics
+This paper reviews recent progress in `parametric’ approaches to supertree methods, as opposed
+to methods based solely on an objective criterion (like MRP). In some ways, the review is also an
+advertisement for the authors’ recent work in this area, which is OK because I think it really is
+good work which should be more widely known. My comments related mainly to presentation,
+and I would be happy to see this paper in print with some fairly minor modifications and
+additions.
+Major comments:
+(i) The authors ignore a now extensive literature of ‘supporter’ methods which are far more
+explicitly ‘model based’ than those described here, namely the methods for reconciling gene trees
+and species trees with respect to incomplete lineage sorting (coalescent based) or gene
+duplications/losses. In a way, the proponents of these model-based methods could point at SR -
+supertrees and call them ad hoc. In my opinion supertree methods like those described here are
+useful because they *do-not* rely on an explicit model of gene tree error, but they nevertheless
+allow the application of standard tools and tricks of parametric inference. In any case, the authors
+should spend at least a paragraph explaining where they think their methods lie with respect to
+gene-tree species tree approaches (which are both Bayesian and ML), and with the less-
+parametric approach taken by BUCKY (Ané et al 2007)
+(ii) Leading on closely from this, I think it would be really helpful if the authors reword and
+eliminate all 15 uses of the phrase ‘ad hoc’, which usually comes with an implied judgment.
+There is nothing particularly ‘ad hoc’ about choosing an objective criterion and optimizing with
+respect to it. Would MRP be somehow less ad hoc if you maximized exp[-parsimony score]
+instead of minimizing parsimony score?
+Model-based approaches are, fundamentally, as ad hoc as any other (that is the nature of
+modeling). What they give you, though, is access to a vast and powerful range of tools for coping
+with that ad hoccedness, as they make explicit the distinction between modelling and inference,
+and they give mechanisms for improving our models systematically. I suggest you stop referring
+to the algorithmic and optimization based approaches as ‘ad-hoc’ and instead just talk about your
+new methods as ‘model-based’.
+If you insist on using the term ad hoc, make sure at least to justify and explain its use in each case
+(i.e. say in what way an approach is ad hoc)
+Minor comments:
+Is the title “Implementing and testing…” or “Using and testing…”. Both seem to appear.
+4
+I suggest you ask the editors if it would be OK to not use an abbreviation for supertree methods.
+3:21 missing space before Purvis ref.
+4:53 Is MRP really inconsistent? As the number of trees grows (assuming without error) the
+supertree will be defined without error, no? Please justify or check.
+5:15 I wouldn’t be so flippant discarding bootstrap approaches with supertrees - though there has
+been a lot of silly pseudo-bootstrap approaches suggested in the literature. The natural way to
+bootstrap, at least for a statistician, is to bootstrap each gene independently, and then form, say,
+1000 profiles each taking the ith bootstrap tree for each gene (stratified bootstrapping from
+Burleigh et al, 2005). This should produce a good estimate of sampling error in the supertree,
+irrespective of the SM.
+5:54 Please rewrite this last sentence, I can’t parse it.
+6:36 How did you assess convergence (2500 seems a very small number of iterations!) and how
+was burnin dealt with?
+7:32-45 Please include more details in the methods section on how exactly the AU test was carried
+out… what did you use as you candidate set etc.
+11:35 Fix the Steel and Rodrigo citation
+13:37 Burn-in?
+David Bryant
+University of Otago
+label_end_comment
+Decision letter (RSOS-140436)
+17-Mar-2015
+Dear Dr Akanni
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-140436 entitled
+"Implementing and testing Bayesian and Maximum likelihood supertree methods in
+phylogenetics" has been accepted for publication in Royal Society Open Science subject to minor
+revision in accordance with the referee suggestions. Please find the referees' comments at the end
+of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+5
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 26-Mar-2015). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+6
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Emilie Aime
+Senior Publishing Editor
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Associate Editor: 1
+Comments to the Author:
+This manuscript by Mark Wilkinson and co-workers has now been evaluated by two referees,
+who both agree that it should be accepted, provided some minor revisions. I fully agree with
+them and am looking forward to see this paper published.
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+This paper provides an evaluation of the performance of two new methods of model-based
+phylogenetic supertree construction, one using maximum likelihood, the other Bayesian
+inference. The idea of using models to guide supertree construction has been around for some
+time, but implementations have been slow to follow. This paper describes an evaluation of the
+authors' recent implementation, and overall is a welcome contribution to these efforts. The
+evaluation is largely in the context of previously described data sets, and is thus empirical, rather
+than based on simulation of known trees (c.f., Bininda-Emonds and Sanderson, 2001, Syst. Biol.).
+This is a fine approach, likely to be generally more interesting and compelling to readers, but it
+does suffer from the risk of being particular and idiosyncratic. My main concern in that regard is
+that the assessment of "bias" of methods is bound to be crude unless averaged over a universe of
+probabilistic outcomes. If someone has found that MRP, say, returns seemingly odd results that
+correlate with data set size in a few real or contrived data sets, this raises alarms -- but it is far
+from showing a bias in the sense used conventionally to evaluate statistical estimators! The
+authors can at least discuss the usual notion of "bias" used in statistics and then discuss how
+problematic it is to evaluate this with respect to tree topology.
+7
+A second, relatively minor, comment is that the consistent use of the phrase "ad hoc" to refer to
+methods like MRP and others is needlessly pointed. While I agree that the use of a likelihood
+framework is indeed less ad hoc, it comes with its own deals with the devil -- in particular the
+choice of the negative exponential model for decay of likelihood with RF distance. Surely this is
+far more ad hoc than the usual markov models for substitution processes in sequence evolution,
+which form the basis of "reasonable" models in standard phylogenetic inference. Is there any
+rationale for the exponential model? Other than that it integrates to one? I think the authors are
+much more on track in pointing out eventually that this model will eventually lead to more
+interesting and less ad hoc models. Some details there would be welcome. Perhaps the connection
+to phylogenomic data sets can be explored further. For example, specific processes such as
+incomplete lineage sorting generate particular distributions of tree shape and, presumably, RF
+distances. An exploration of this connection would make the statement that "supertrees have
+come of age" more compelling, since enthusiasm for them has actually waxed and waned over
+the last 25 years. It is the modern incarnation in the realm of forests of gene trees that seems to
+make them of renewed interest.
+Finally, two technical points warrant some further elaboration. First, the convergence criterion for
+the MCMC implementation is only cryptically described and seems primitive. How does this
+compare with best practices, and to what is used in conventional phylogenetic inference? Second,
+the brief discussion of the "double approximation" of tree search and approximate likelihood
+calculation, also raises questions. Why must the latter be approximated (i.e., is computationally
+so expensive)? and what impacts are likely?
+Reviewer: 2
+Comments to the Author(s)
+Implementing and testing Bayesian and ML supertree methods in phylogenetics
+This paper reviews recent progress in `parametric’ approaches to supertree methods, as opposed
+to methods based solely on an objective criterion (like MRP). In some ways, the review is also an
+advertisement for the authors’ recent work in this area, which is OK because I think it really is
+good work which should be more widely known. My comments related mainly to presentation,
+and I would be happy to see this paper in print with some fairly minor modifications and
+additions.
+Major comments:
+(i) The authors ignore a now extensive literature of ‘supporter’ methods which are far more
+explicitly ‘model based’ than those described here, namely the methods for reconciling gene trees
+and species trees with respect to incomplete lineage sorting (coalescent based) or gene
+duplications/losses. In a way, the proponents of these model-based methods could point at SR -
+supertrees and call them ad hoc. In my opinion supertree methods like those described here are
+useful because they *do-not* rely on an explicit model of gene tree error, but they nevertheless
+allow the application of standard tools and tricks of parametric inference. In any case, the authors
+should spend at least a paragraph explaining where they think their methods lie with respect to
+gene-tree species tree approaches (which are both Bayesian and ML), and with the less-
+parametric approach taken by BUCKY (Ané et al 2007)
+(ii) Leading on closely from this, I think it would be really helpful if the authors reword and
+eliminate all 15 uses of the phrase ‘ad hoc’, which usually comes with an implied judgment.
+There is nothing particularly ‘ad hoc’ about choosing an objective criterion and optimizing with
+respect to it. Would MRP be somehow less ad hoc if you maximized exp[-parsimony score]
+instead of minimizing parsimony score?
+8
+Model-based approaches are, fundamentally, as ad hoc as any other (that is the nature of
+modeling). What they give you, though, is access to a vast and powerful range of tools for coping
+with that ad hoccedness, as they make explicit the distinction between modelling and inference,
+and they give mechanisms for improving our models systematically. I suggest you stop referring
+to the algorithmic and optimization based approaches as ‘ad-hoc’ and instead just talk about your
+new methods as ‘model-based’.
+If you insist on using the term ad hoc, make sure at least to justify and explain its use in each case
+(i.e. say in what way an approach is ad hoc)
+Minor comments:
+Is the title “Implementing and testing…” or “Using and testing…”. Both seem to appear.
+I suggest you ask the editors if it would be OK to not use an abbreviation for supertree methods.
+3:21 missing space before Purvis ref.
+4:53 Is MRP really inconsistent? As the number of trees grows (assuming without error) the
+supertree will be defined without error, no? Please justify or check.
+5:15 I wouldn’t be so flippant discarding bootstrap approaches with supertrees - though there has
+been a lot of silly pseudo-bootstrap approaches suggested in the literature. The natural way to
+bootstrap, at least for a statistician, is to bootstrap each gene independently, and then form, say,
+1000 profiles each taking the ith bootstrap tree for each gene (stratified bootstrapping from
+Burleigh et al, 2005). This should produce a good estimate of sampling error in the supertree,
+irrespective of the SM.
+5:54 Please rewrite this last sentence, I can’t parse it.
+6:36 How did you assess convergence (2500 seems a very small number of iterations!) and how
+was burnin dealt with?
+7:32-45 Please include more details in the methods section on how exactly the AU test was carried
+out… what did you use as you candidate set etc.
+11:35 Fix the Steel and Rodrigo citation
+13:37 Burn-in?
+David Bryant
+University of Otago
+Author's Response to Decision Letter for (RSOS-140436)
+See Appendix A.
+9
+label_version_2
+RSOS-140436.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+None.
+label_end_comment
+Decision letter (RSOS-140436.R1)
+07-Jul-2015
+Dear Dr Akanni,
+I am pleased to inform you that your manuscript entitled "Implementing and testing Bayesian
+and Maximum likelihood supertree methods in phylogenetics" is now accepted for publication in
+Royal Society Open Science.
+You can expect to receive a proof of your article within approximately 10 working days. Please
+contact the production office (openscience_proofs@royalsociety.org) to let us know if you are
+likely to be away from e-mail contact during that period. Due to rapid publication and an
+extremely tight schedule, if comments are not received, your paper may experience a delay in
+publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+10
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Emilie Aime
+emilie.aime@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Appendix A
+Reviewer: 1
+Comments to the Author(s)
+This paper provides an evaluation of the performance of two new methods of model-based
+phylogenetic supertree construction, one using maximum likelihood, the other Bayesian inference.
+The idea of using models to guide supertree construction has been around for some time, but
+implementations have been slow to follow. This paper describes an evaluation of the authors'
+recent implementation, and overall is a welcome contribution to these efforts. The evaluation is
+largely in the context of previously described data sets, and is thus empirical, rather than based on
+simulation of known trees (c.f., Bininda-Emonds and Sanderson, 2001, Syst. Biol.). This is a fine
+approach, likely to be generally more interesting and compelling to readers, but it does suffer from
+the risk of being particular and idiosyncratic. My main concern in that regard is that the
+assessment of "bias" of methods is bound to be crude unless averaged over a universe of
+probabilistic outcomes. If someone has found that MRP, say, returns seemingly odd results that
+correlate with data set size in a few real or contrived data sets, this raises alarms -- but it is far
+from showing a bias in the sense used conventionally to evaluate statistical estimators! The
+authors can at least discuss the usual notion of "bias" used in statistics and then discuss how
+problematic it is to evaluate this with respect to tree topology.
+The literature includes the idea that some SMs are biased with respect to tree shape and size. The
+first of these (shape) was shown by simulation rather than a few contrived data sets. The latter
+(size) is based on a few examples but the effect is readily understandable and not expected to be
+limited to the simple contrived data. Thus we are less concerned by our use of the term here and
+don't agree that it needs much further clarification. However, we have slightly rewritten the relevant
+text to amplify that we are not claiming that the parametric methods are unbiased - only that the
+limited examples provide no suggestion of obvious bias.
+A second, relatively minor, comment is that the consistent use of the phrase "ad hoc" to refer to
+methods like MRP and others is needlessly pointed. While I agree that the use of a likelihood
+framework is indeed less ad hoc, it comes with its own deals with the devil -- in particular the
+choice of the negative exponential model for decay of likelihood with RF distance. Surely this is far
+more ad hoc than the usual markov models for substitution processes in sequence evolution,
+which form the basis of "reasonable" models in standard phylogenetic inference. Is there any
+rationale for the exponential model? Other than that it integrates to one?
+The reviewer is correct in saying that other models could be used in calculating the likelihood and
+we hope that our work will stimulate further works that will investigate the use of other models.
+However, we would like to point out that, as suggested by Steel and Rodrigo 2008 the exponential
+distribution is useful and has previously been used to model errors (with the likelihood of an input
+tree given a supertree decreasing exponentially with the distance of the input tree to the
+supertree). See also Holmes 2003 Ther Pop Biol. So in this specific instance we have to disagree
+with the reviewer, while we agree that other better model can will hopefully be developed in the
+future, the choice of the exponential model is, in its admitted simplicity, well founded.
+I think the authors are much more on track in pointing out eventually that this model will eventually
+lead to more interesting and less ad hoc models. Some details there would be welcome. Perhaps
+the connection to phylogenomic data sets can be explored further. For example, specific
+processes such as incomplete lineage sorting generate particular distributions of tree shape and,
+presumably, RF distances. An exploration of this connection would make the statement that
+"supertrees have come of age" more compelling, since enthusiasm for them has actually waxed
+and waned over the last 25 years. It is the modern incarnation in the realm of forests of gene trees
+that seems to make them of renewed interest.
+Both reviewers had issues with our use of this term and made cogent arguments as to why it is
+problematic. We agree and have almost completely removed any reference to methods being ad
+hoc. We have maintained the term ad hoc only to emphasise that all methods are ad hoc to some
+extent (see also our answer to reviewer N.2).
+Finally, two technical points warrant some further elaboration. First, the convergence criterion for
+the MCMC implementation is only cryptically described and seems primitive. How does this
+compare with best practices, and to what is used in conventional phylogenetic inference? Second,
+the brief discussion of the "double approximation" of tree search and approximate likelihood
+calculation, also raises questions. Why must the latter be approximated (i.e., is computationally so
+expensive)? and what impacts are likely?
+We have added details of our convergence criteria (the same as used in Mr Bayes and
+PhyloBayes) to the materials and methods.
+The approach implemented is doubly heuristic because it employs 1. A heuristic search of tree
+space and 2.. an approximation of the alpha parameter. The latter is indeed hard to calculate.
+The effect of the latter approximation is thought to be minimal in the range of Beta values we
+employed in the case of ML but is not understood is the Bayesian case. We think that the text
+makes all of this clear and can add no more.
+Reviewer: 2
+Comments to the Author(s)
+Implementing and testing Bayesian and ML supertree methods in phylogenetics
+This paper reviews recent progress in `parametric’ approaches to supertree methods, as opposed
+to methods based solely on an objective criterion (like MRP). In some ways, the review is also an
+advertisement for the authors’ recent work in this area, which is OK because I think it really is good
+work which should be more widely known. My comments related mainly to presentation, and I
+would be happy to see this paper in print with some fairly minor modifications and additions.
+Major comments:
+(i) The authors ignore a now extensive literature of ‘supporter’ methods which are far more
+explicitly ‘model based’ than those described here, namely the methods for reconciling gene trees
+and species trees with respect to incomplete lineage sorting (coalescent based) or gene
+duplications/losses. In a way, the proponents of these model-based methods could point at SR -
+supertrees and call them ad hoc. In my opinion supertree methods like those described here are
+useful because they *do-not* rely on an explicit model of gene tree error, but they nevertheless
+allow the application of standard tools and tricks of parametric inference. In any case, the authors
+should spend at least a paragraph explaining where they think their methods lie with respect to
+gene-tree species tree approaches (which are both Bayesian and ML), and with the less-
+parametric approach taken by BUCKY (Ané et al 2007).
+While not wanting to get engaged in a discussion of the foundations or comparative merits of the
+whole gamut of methods now available (including also concatenation or networks) we accept the
+need for brief mention of their existence and have clarified that we are only addressing one of the
+various approaches, the development and comparisons of which are in many cases still in their
+infancy.
+(ii) Leading on closely from this, I think it would be really helpful if the authors reword and eliminate
+all 15 uses of the phrase ‘ad hoc’, which usually comes with an implied judgment. There is nothing
+particularly ‘ad hoc’ about choosing an objective criterion and optimizing with respect to it. Would
+MRP be somehow less ad hoc if you maximized exp[-parsimony score] instead of minimizing
+parsimony score?
+Model-based approaches are, fundamentally, as ad hoc as any other (that is the nature of
+modeling). What they give you, though, is access to a vast and powerful range of tools for coping
+with that ad hoccedness, as they make explicit the distinction between modelling and inference,
+and they give mechanisms for improving our models systematically. I suggest you stop referring to
+the algorithmic and optimization based approaches as ‘ad-hoc’ and instead just talk about your
+new methods as ‘model-based’.
+If you insist on using the term ad hoc, make sure at least to justify and explain its use in each case
+(i.e. say in what way an approach is ad hoc)
+We agree with these very good points and have modified the manuscript accordingly. We have
+maintained the term ad hoc only to emphasise that all methods are ad hoc to some extent.
+Minor comments:
+Is the title “Implementing and testingI” or “Using and testingI”. Both seem to appear. It’s the
+former. Not sure where the reference to “Using and testing" comes from
+I suggest you ask the editors if it would be OK to not use an abbreviation for supertree methods.
+We like using this abbreviation - it saves space and is easier to say - just as a good abbreviation
+should.
+3:21 missing space before Purvis ref. fixed
+4:53 Is MRP really inconsistent? As the number of trees grows (assuming without error) the
+supertree will be defined without error, no? Please justify or check.
+Yes, according to Steel and Rodrigo 2008, MRP has been shown to be inconsistent.
+5:15 I wouldn’t be so flippant discarding bootstrap approaches with supertrees - though there has
+been a lot of silly pseudo-bootstrap approaches suggested in the literature. The natural way to
+bootstrap, at least for a statistician, is to bootstrap each gene independently, and then form, say,
+1000 profiles each taking the ith bootstrap tree for each gene (stratified bootstrapping from
+Burleigh et al, 2005). This should produce a good estimate of sampling error in the supertree,
+irrespective of the SM.
+We did not intend to be flippant in disregarding bootstrapping. We are of the opinion that
+bootstrapping is worthwhile when it is possible, and some of us have used it when possible (see
+the first instance of input tree bootstrapping in Creevey et al. 2004 Proc R. Soc for example, or the
+use of bootstrap in Pisani et al. 2007 MBE). However, the reviewer highlights a case where this is
+possible (when bootstrap trees for individual genes are available) but in many (perhaps thus far
+the majority) of cases supertrees have been built from sets of trees culled from the literature for
+which bootstrapped gene trees are not available. In such cases one could still implement input
+tree bootstrapping but in most cases this in not feasible because poor representation of few taxa
+across the input trees generally result in collection of bootstrapped input tree missing some of the
+taxa in the collection of species. The consequence of this is that the supertree derived from the
+bootstrap replicates will be partially overlapping and will not be amenable to be summarised using
+the standard Majority Rule consensus method to allow estimation of bootstrap support for clades.
+Hence, given that bootstrapping the matrix is problematic because characters in MRP matrices are
+not independent, one is left to apply idiosyncratic measure of support like the V values that we
+developed in Wilkinson et al. (2005). In this context a Bayesian method, allowing the calculation of
+Posterior Probabilities, provides an extremely flexible alternative to bootstrapping.
+We definitely agree with the reviewer that when bootstrapping is applicable to the data, it should
+be used. When it is not applicable, our approach still allow for the possibility of using posterior
+probabilities.
+We have tried to clarify our view.
+5:54 Please rewrite this last sentence, I can’t parse it.
+Fixed
+6:36 How did you assess convergence (2500 seems a very small number of iterations!) and how
+was burnin dealt with?
+How we assessed convergence (with standard methods) and dealt with burn-in has been added to
+the materials and method.
+7:32-45 Please include more details in the methods section on how exactly the AU test was
+carried outI what did you use as you candidate set etc.
+An explanation of the nature and implementation of the AU test (in which tree likelihoods are
+analogous to site likelihoods) has been added to the materials and methods.
+11:35 Fix the Steel and Rodrigo citation
+Fixed
+13:37 Burn-in?
+We assume the reviewer is asking for details of the burn in and these have been added.
+Society Open

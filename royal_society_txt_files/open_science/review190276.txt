@@ -1,0 +1,508 @@
+Pathobiological features favouring the intercontinental
+dissemination of highly pathogenic avian influenza virus
+Xueying Li, Bing Xu and Jeffrey Shaman
+Article citation details
+R. Soc. open sci. 6: 190276.
+http://dx.doi.org/10.1098/rsos.190276
+Review timeline
+Original submission: 19 February 2019 Note: Reports are unedited and appear as
+Revised submission: 26 March 2019 submitted by the referee. The review history
+Final acceptance: 8 April 2019 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-190276.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Reports © 2019 The Reviewers; Decision Letters © 2019 The Reviewers and Editors;
+Responses © 2019 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This is an interesting and well-written paper that makes a nice contribution to the study of avian
+influenza virus in wild birds. The authors numerically solve a compartmental model of AIV in a
+migratory population, showing primarily that lower recovery rates increase the likelihood of AIV
+translocation within the migratory population. My major and minor concerns are outlined below:
+Major concerns:
+1. The primary results rest on a series of model simulations and sensitivity analyses, but it is
+unclear how the authors varied the four parameters (beta, r, mu, v) and how they quantified
+sensitivity. From the text (L173-188), I was expecting some kind of Latin hypercube sampling
+approach to vary most possible combinations of parameters, but Figure 3 suggests that only four
+a priori values per parameter were assessed. Did you simply assess all possible combinations of
+these four values across the four parameters? It is also unclear how "sensitivity" of results to
+parameter variation was quantified (e.g., L211), as no standard measures of sensitivity (e.g.,
+partial rank correlations) are included. I would encourage either justifying the use of these four
+values per parameter or using something like the LHS approach to better sample parameter space
+and measure sensitivity of your model outcomes to parameter variation.
+2. While the key results of the model analysis may be novel within the AIV system (L251-260), I
+think it's worth noting in your discussion that many of these insights could be generated from a
+far simpler SIR model (e.g., a simple SI/SIS/SIR would also tell you that a lower infection
+recovery rate will increase transmission potential). Some clarification of what this model tells us
+beyond a more parsimonious model could help improve clarity.
+3. A very helpful contribution of your analysis is to guide field surveillance and control (L285-
+288). Because you note that these pathobiological features could help prioritize surveillance and
+control, you should also discuss how researchers could glean this information about a particular
+AIV strain. For example, how could one assess a high transmission rate or a high recovery rate in
+the early phases of strain discovery?
+4. While the paper has no empirical data, I strongly suggest the authors upload their R code to
+increase reproducibility.
+Minor comments:
+L71: This statement on concerns for human pandemics could use a citation
+L132: change “recovery” to “recover”
+L209: It would help to define marginal likelihood and how this was quantified
+L217 and elsewhere: It may be more intuitive to denote recovery rate as the duration of the
+infection period (e.g., 13 days) rather than the current form (recovery rate of 1/13 day-1).
+L226: I was a little confused about the use of density histograms. Wouldn’t these just show you
+3
+the distribution of parameters you originally used in your simulations?
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The manuscript describes a modeling study that investigates the role of various infection
+parameters in the spatial spread of influenza virus. I find the study and approach interesting, but
+have a major concern about the model that I believe needs to be addressed. Therefore, I
+recommend major revision.
+Major concerns:
+1. It's not entirely clear that this will change the conclusions reached by the study, but I believe
+that the interplay between illness and migration has not been correctly formulated. The model
+assumes that infected birds in I1 and recovering birds in R1 are too sick to migrate, but that birds
+in I2 (which comes AFTER I1) and R2 can migrate. This basically suggests that immediately upon
+infection, birds are too ill to fly, but as the disease progresses, they are again able to fly. However,
+once they start to recover they are again too ill to migrate, but then finally recover enough to
+migrate again. It would make more sense to me if I2 and R1 were the two groups that are unable
+to migrate.
+2. The authors state that the simulations are stochastic, but do not describe the algorithm used to
+solve the model equations stochastically. Additionally, their code does not seem to be available
+anywhere.
+Minor comments:
+1. The model includes 9 patches, but the analyses only considers transmission of virus up to patch
+5. It's not clear to me why the authors are including the remaining patches if they don't analyze
+what happens when the birds move there. In fact, the authors added the 9th patch from a
+previous 8 patch model, which seems like a useless addition since it is never used.
+4
+2. Figures 2 and 4 are very difficult to interpret. There needs to be more guidance in the
+manuscript on what exactly is being plotted.
+label_end_comment
+Decision letter (RSOS-190276.R0)
+07-Mar-2019
+Dear Ms Li,
+The editors assigned to your paper ("Pathobiological features favoring the intercontinental
+dissemination of highly pathogenic avian influenza virus") have now received comments from
+reviewers. We would like you to revise your paper in accordance with the referee and Associate
+Editor suggestions which can be found below (not including confidential reports to the Editor).
+Please note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper before 30-Mar-2019. Please note that the revision
+deadline will expire at 00.00am on this date. If we do not hear from you within this time then it
+will be assumed that the paper has been withdrawn. In exceptional circumstances, extensions
+may be possible if agreed with the Editorial Office in advance. We do not allow multiple rounds
+of revision so we urge you to make every effort to fully address all of the comments at this stage.
+If deemed necessary by the Editors, your manuscript will be sent back to one or more of the
+original reviewers for assessment. If the original reviewers are not available, we may invite new
+reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+5
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-190276
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Prof Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+6
+Associate Editor's comments :
+Associate Editor: 1
+Comments to the Author:
+Two reviewers have commented on your paper, and, while each find merit in the work, they
+recommend substantial changes to the manuscript. Good luck and we will look forward to
+receiving your revision in the near future.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+This is an interesting and well-written paper that makes a nice contribution to the study of avian
+influenza virus in wild birds. The authors numerically solve a compartmental model of AIV in a
+migratory population, showing primarily that lower recovery rates increase the likelihood of AIV
+translocation within the migratory population. My major and minor concerns are outlined below:
+Major concerns:
+1. The primary results rest on a series of model simulations and sensitivity analyses, but it is
+unclear how the authors varied the four parameters (beta, r, mu, v) and how they quantified
+sensitivity. From the text (L173-188), I was expecting some kind of Latin hypercube sampling
+approach to vary most possible combinations of parameters, but Figure 3 suggests that only four
+a priori values per parameter were assessed. Did you simply assess all possible combinations of
+these four values across the four parameters? It is also unclear how "sensitivity" of results to
+parameter variation was quantified (e.g., L211), as no standard measures of sensitivity (e.g.,
+partial rank correlations) are included. I would encourage either justifying the use of these four
+values per parameter or using something like the LHS approach to better sample parameter space
+and measure sensitivity of your model outcomes to parameter variation.
+2. While the key results of the model analysis may be novel within the AIV system (L251-260), I
+think it's worth noting in your discussion that many of these insights could be generated from a
+far simpler SIR model (e.g., a simple SI/SIS/SIR would also tell you that a lower infection
+recovery rate will increase transmission potential). Some clarification of what this model tells us
+beyond a more parsimonious model could help improve clarity.
+3. A very helpful contribution of your analysis is to guide field surveillance and control (L285-
+288). Because you note that these pathobiological features could help prioritize surveillance and
+control, you should also discuss how researchers could glean this information about a particular
+AIV strain. For example, how could one assess a high transmission rate or a high recovery rate in
+the early phases of strain discovery?
+4. While the paper has no empirical data, I strongly suggest the authors upload their R code to
+increase reproducibility.
+Minor comments:
+L71: This statement on concerns for human pandemics could use a citation
+7
+L132: change “recovery” to “recover”
+L209: It would help to define marginal likelihood and how this was quantified
+L217 and elsewhere: It may be more intuitive to denote recovery rate as the duration of the
+infection period (e.g., 13 days) rather than the current form (recovery rate of 1/13 day-1).
+L226: I was a little confused about the use of density histograms. Wouldn’t these just show you
+the distribution of parameters you originally used in your simulations?
+Reviewer: 2
+Comments to the Author(s)
+The manuscript describes a modeling study that investigates the role of various infection
+parameters in the spatial spread of influenza virus. I find the study and approach interesting, but
+have a major concern about the model that I believe needs to be addressed. Therefore, I
+recommend major revision.
+Major concerns:
+1. It's not entirely clear that this will change the conclusions reached by the study, but I believe
+that the interplay between illness and migration has not been correctly formulated. The model
+assumes that infected birds in I1 and recovering birds in R1 are too sick to migrate, but that birds
+in I2 (which comes AFTER I1) and R2 can migrate. This basically suggests that immediately upon
+infection, birds are too ill to fly, but as the disease progresses, they are again able to fly. However,
+once they start to recover they are again too ill to migrate, but then finally recover enough to
+migrate again. It would make more sense to me if I2 and R1 were the two groups that are unable
+to migrate.
+2. The authors state that the simulations are stochastic, but do not describe the algorithm used to
+solve the model equations stochastically. Additionally, their code does not seem to be available
+anywhere.
+Minor comments:
+1. The model includes 9 patches, but the analyses only considers transmission of virus up to patch
+5. It's not clear to me why the authors are including the remaining patches if they don't analyze
+what happens when the birds move there. In fact, the authors added the 9th patch from a
+previous 8 patch model, which seems like a useless addition since it is never used.
+2. Figures 2 and 4 are very difficult to interpret. There needs to be more guidance in the
+manuscript on what exactly is being plotted.
+Author's Response to Decision Letter for (RSOS-190276.R0)
+See Appendix A.
+8
+label_version_2
+RSOS-190276.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+The authors have addressed all my previous concerns.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+9
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_4
+The authors have addressed all comments to my satisfaction. The paper is much improved and I
+recommend it be accepted.
+label_end_comment
+Decision letter (RSOS-190276.R1)
+08-Apr-2019
+Dear Ms Li,
+I am pleased to inform you that your manuscript entitled "Pathobiological features favoring the
+intercontinental dissemination of highly pathogenic avian influenza virus" is now accepted for
+publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Professor Kevin Padian (Subject Editor)
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+The reviewers consider your manuscript to be ready for acceptance - congratulations! The
+editorial team and production team will be in touch with advice on how to proceed. Thank you
+for considering our journal for this submission.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The authors have addressed all my previous concerns.
+10
+Reviewer: 2
+Comments to the Author(s)
+The authors have addressed all comments to my satisfaction. The paper is much improved and I
+recommend it be accepted.
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+pendix A
+ponse to Reviewer 1’s comments
+thank the reviewer for his/her helpful comments and suggestions. They are incorporated into
+revision of the manuscript. Below is a point-by-point response to the reviewer’s specific
+ments. The original comments are in italics and our response is in normal font.
+mments to the Author(s)
+s is an interesting and well-written paper that makes a nice contribution to the study of avian
+uenza virus in wild birds. The authors numerically solve a compartmental model of AIV in a
+ratory population, showing primarily that lower recovery rates increase the likelihood of AIV
+slocation within the migratory population. My major and minor concerns are outlined below:
+thank the reviewer for the positive comments.
+or concerns:
+1. The primary results rest on a series of model simulations and sensitivity analyses, but it is
+unclear how the authors varied the four parameters (beta, r, mu, v) and how they quantified
+sensitivity. From the text (L173-188), I was expecting some kind of Latin hypercube
+sampling approach to vary most possible combinations of parameters, but Figure 3
+suggests that only four a priori values per parameter were assessed. Did you simply assess
+all possible combinations of these four values across the four parameters? It is also unclear
+how "sensitivity" of results to parameter variation was quantified (e.g., L211), as no
+standard measures of sensitivity (e.g., partial rank correlations) are included. I would
+encourage either justifying the use of these four values per parameter or using something
+like the LHS approach to better sample parameter space and measure sensitivity of your
+model outcomes to parameter variation.
+er reading the reviewer’s comments, we re-ran the baseline model with 600 parameter
+binations sampled using LHS. To quantify the sensitivity and present these findings in the
+sed manuscript, we have calculated partial rank correlation coefficients based on the results
+m re-running the model. We have re-drawn Figures 2, 3 and 4, and the results of the partial
+k correlation are shown in Table 3 and Table 4. Model findings remain unchanged.
+1
+2. While the key results of the model analysis may be novel within the AIV system (L251-260),
+I think it's worth noting in your discussion that many of these insights could be generated
+from a far simpler SIR model (e.g., a simple SI/SIS/SIR would also tell you that a lower
+infection recovery rate will increase transmission potential). Some clarification of what
+this model tells us beyond a more parsimonious model could help improve clarity.
+nk you for your comments and suggestion. In this model, we considered bird movement and
+s translocation along the birds’ flyway, in order to simulate AIV dissemination. Compared to
+mpler SIR model, this model form not only considers three infection states for the birds—
+eptible, infected, and recovered—but also loss and recovery of the ability to migrate induced
+nfection. These latter conditions can impact the dynamic of infection translocation along the
+re flyway. According to Galsworthy et al. (2011), after including migration delay, the scale of
+outbreak becomes smaller than in a simpler SIR model without migration delay, which is
+buted to infected birds being isolated from the main population of susceptible birds. We have
+ed some clarification on this issue to the revised manuscript (L272 – L281).
+3. A very helpful contribution of your analysis is to guide field surveillance and control
+(L285-288). Because you note that these pathobiological features could help prioritize
+surveillance and control, you should also discuss how researchers could glean this
+information about a particular AIV strain. For example, how could one assess a high
+transmission rate or a high recovery rate in the early phases of strain discovery?
+nk you for your suggestion. We have added discussion of these issues to the revised manuscript
+illustrate what information might be provided for AIV laboratory experiments and how
+archers might assess the risk of a novel virus (L315– L322).
+4. While the paper has no empirical data, I strongly suggest the authors upload their R code
+to increase reproducibility.
+have uploaded the R code to the Dryad Digital Repository:
+2
+s://datadryad.org/review?doi=doi:10.5061/dryad.rt552kr
+or comments:
+<U+F0B7> L71: This statement on concerns for human pandemics could use a citation
+tions for the statement on concerns for human pandemics have been added (L71).
+<U+F0B7> L132: change “recovery” to “recover”
+have corrected the wording.
+<U+F0B7> L209: It would help to define marginal likelihood and how this was quantified
+nk you for your suggestion. We have added some explanation of marginal likelihood in the
+sed manuscript (L211 to L214).
+<U+F0B7> L217 and elsewhere: It may be more intuitive to denote recovery rate as the duration of
+the infection period (e.g., 13 days) rather than the current form (recovery rate of 1/13 day-
+1).
+have fixed the expression following your suggestion (L220 – L226).
+<U+F0B7> L226: I was a little confused about the use of density histograms. Wouldn’t these just show
+you the distribution of parameters you originally used in your simulations?
+nk you for this question. The density histograms do not just show the distribution of parameters
+inally used in the simulations. They show the distribution of parameters that support AIV
+ays translocating to either Patch 3 or Patch 5, as well as never translocating to Patch 3 or Patch
+ased on the result of this analysis, we identify the parameter combinations that always support
+s reaching a given patch (i.e. 100% of the 100 stochastic simulations with a parameter
+3
+bination). We also recorded the parameter combinations for which virus never reaches a given
+h (i.e. 0% of the stochastic runs). We then plotted the marginal density histograms of always
+porting translocation and never supporting translocation for each parameter.
+4
+ponse to Reviewer 2’s comments
+thank the reviewer for his/her constructive and helpful comments. Many of these comments
+incorporated into the revision of the manuscript. Below we provide a point-by-point response.
+reviewer’s original comments are in italics and our response is in normal font.
+mments to the Author(s)
+manuscript describes a modeling study that investigates the role of various infection
+ameters in the spatial spread of influenza virus. I find the study and approach interesting, but
+e a major concern about the model that I believe needs to be addressed. Therefore, I
+ommend major revision.
+thank the reviewer for the positive comments.
+or concerns:
+1. It's not entirely clear that this will change the conclusions reached by the study, but I
+believe that the interplay between illness and migration has not been correctly formulated.
+The model assumes that infected birds in I1 and recovering birds in R1 are too sick to
+migrate, but that birds in I2 (which comes AFTER I1) and R2 can migrate. This basically
+suggests that immediately upon infection, birds are too ill to fly, but as the disease
+progresses, they are again able to fly. However, once they start to recover, they are again
+too ill to migrate, but then finally recover enough to migrate again. It would make more
+sense to me if I2 and R1 were the two groups that are unable to migrate.
+nk you for the comments and suggestions. In this model, once the birds are infected (birds in
+they are unable to migrate. Infected birds in I1 can recover but remain unable to migrate, R1,
+subsequently regain their migratory ability to R2, or infected birds in I1 can regain the
+ratory ability while remaining infectious, I2, then subsequently recover to R2. That is, the
+ction recovery and migration recovery are independent of each other, and the birds can first
+ver from infection then regain the ability to migrate, or first regain the ability to migrate then
+ver from infection. The flowchart of the model is shown in Figure R2.1. As the reviewer
+tioned that birds might still fly before developing a full infection, we tested the addition of a
+5
+nt period before I1 to the model as well. The marginal likelihood of reaching Patch 3 and Patch
+shown in Figure R2.2. The differences between Figure R2.2 and Figure 2 in the old version of
+manuscript are nominal, indicating that addition of a pre-infection latent period to the model
+s not change the sensitivity of virus translocation to the four epidemiological features of interest.
+ure R2.1 Model structure showing the movement of birds between compartments within Patch
+he five compartments are: Susceptible (S), infected and unable to migrate (I1), infected and
+to migrate (I2), recovered and unable to migrate (R1), or recovered and able to migrate (R2).
+e infected, birds move from S to I1 and lose the ability to migrate. Birds regain the ability to
+rate at rate v, and recover from infection at rate r. Migration can only happen for birds in
+partments S, I2, and R2.
+6
+ure R2.2 Marginal distribution of the likelihood of virus reaching Patches 3 and 5 based on the
+lts with the model including a latent period. The x axis represents the likelihood of virus
+hing Patches 3 and 5. The likelihood was quantified as the fraction of runs among 100
+hastic simulations for which virus reached Patch 3 or Patch 5. The size of the circle represents
+number of points overlapping at the same location in the figure.
+he authors state that the simulations are stochastic, but do not describe the algorithm used to
+e the model equations stochastically. Additionally, their code does not seem to be available
+where.
+7
+conduct simulations, the model equations were used to determine transition expectance based
+he current system state and parameters. A random Poisson process was then used to select the
+al rates of state transition using this mean expectance. Additionally, we have uploaded the R
+e to the Dryad Digital Repository:
+s://datadryad.org/review?doi=doi:10.5061/dryad.rt552kr
+or comments:
+1. The model includes 9 patches, but the analysis only considers transmission of virus up to
+patch 5. It's not clear to me why the authors are including the remaining patches if they
+don't analyze what happens when the birds move there. In fact, the authors added the 9th
+patch from a previous 8 patch model, which seems like a useless addition since it is never
+used.
+reviewer is correct. We now just describe 8 patches (L114 – L117). Only translocation to
+h 5 is studied, as we are interested in the initial dispersal of the virus (not its return back where
+already present). The importance of patch 5 is discussed at the beginning of the Results section.
+2. Figures 2 and 4 are very difficult to interpret. There needs to be more guidance in the
+manuscript on what exactly is being plotted.
+nk you for your comment and suggestion. Based on Reviewer 1’s comments, we re-ran the
+del with sampled points using a Latin hypercube sampling (LHS) approach. Using these new
+lts, we have re-drawn Figures 2 and 4. We have also added more description for Figures 2 and
+the Result section (L210 - L213; L255 - L257) and in the captions of the figures (L588 – L593;
+4 – L606).
+8
+Society Open

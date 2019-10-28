@@ -1,0 +1,412 @@
+Predicting chemosensitivity in breast cancer with
+'omics/digital pathology data fusion
+Richard S. Savage and Yinyin Yuan
+Article citation details
+R. Soc. open sci. 3: 140501.
+http://dx.doi.org/10.1098/rsos.140501
+Review timeline
+Original submission: 4 December 2014 Note: Reports are unedited and appear as
+Revised submission: 1 December 2015 submitted by the referee. The review history
+Final acceptance: 8 January 2016 appears in chronological order.
+Review History
+label_version_1
+RSOS-140501.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Edward Morrissey)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+How to access the data is clear and there are no Supplementary Files
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+Currently biomedical researchers are generating large numbers of high-throughput datasets and,
+as more and more different data types are available, questions arise of how to make inferences
+from this kind of data and how to merge information from different data types. In this
+manuscript the authors propose a Bayesian probit model that uses gaussian processes to model
+complex relations between measured features and clinical outcome. Additionally, in order to gain
+insight into the biology, the authors implement a model selection scheme in order to find the set
+features that are able to predict the outcome.
+The paper is clear, coherently structured and well explained. I recommend publishing the paper
+once the comments and suggestions that follow have been addressed.
+1. Regarding the description of the model, it would be useful to describe the sparsity prior a bit
+more. Specifically, commenting on the structure i.e. a product of Bernoulli’s with a 2^-ad term to
+penalise the number of Ijd’s switched on. It would also be worth clarifying that Eq 2.2 is the joint
+distribution for all Ijd’s for dataset d, rather than the distribution of a single Ijd.
+2. I find the truncation and selected hyper-parameters for the beta distribution to seem like quite
+a strong prior, as such it would be interesting to see a plot overlaying the prior and the posterior
+for a couple of the examples to see how strong the prior actually is. Such a plot would also be
+useful to get a better feeling for the shape of the prior.
+3. The names used to describe the covariance functions in tables 1 and 2 do not match the names
+in 2c. Though which is which can easily be inferred, it would be better to use the same names.
+Also, it was not clear to me what covariance function was used for the METABRIC data.
+4. The number of Ijd’s seem large and therefore might give MCMC convergence problems. It
+would be useful to see some comment or plot on the convergence of the Ijd’s, perhaps a plot of
+the posterior probability P(Ijd = 1) between a couple of the chains.
+5. Which image features are selected for the case ER- where the image dataset is most
+informative?
+6. A few typos:
+Binomial prior => Beta prior (2b in the text and Eq2.3)
+i_jd => uppercase I_jd(3rd line of section 2b)
+Hu’s first moment (section 4a)
+w missing d subscript (Eq 2.2)
+title of 4b appears in the wrong place
+A couple of suggestions follow that I consider interesting, though not essential.
+7. In order to visualise whether datasets contain the same information, (for the METABRIC data)
+it might be worth plotting a scatter plot of the individual inferred probabilities for pairs of
+datasets (eg probability of death GE vs image) and highlighting the true cases in a different
+colour.
+3
+8. If the three data sets contains the same information (e.g. ER- chemosens), can this be used to
+distill the common biological feature that is surfacing in all three data sets?
+Reviewer:
+Dr Edward Morrissey
+Cancer Research UK/University of Cambridge
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No supporting data provided. The breast cancer data set they use is publicly available online.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+I do not feel qualified to assess the statistics
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The authors describe a novel method, FusionGP, for interpreting multiple types of clinical data,
+including genomic information and tumor cell imaging. They clearly outline their methodology,
+and test their model on both synthetic data, and a publicly available breast cancer data set with
+comparisons to more simple methodologies that have been described by others. They are able to
+assess which data points are most informative and the best predictors of clinical outcome. They
+compare ER- and +ve breast cancers and chemosensitivity, and are able to hypothesise about
+biological mechanisms from copy number and expression data.
+This is an interesting and well-written article, and the model they present has interesting
+implications to clinical data, especially as genomic analyses become more common place.
+Edits needed:
+Page 2, introduction, sentence beginning, “In particular, different types…”. Either need an “of” in
+there, or say to “data types” instead.
+Page 5, (e) Inference, when discussing computation time. They remark that there may be
+difficulties with long computational times. More details on what types of data would make the
+model too slow to run, or the number of data items that would make the method no longer
+“tractable”.
+4
+label_end_comment
+Decision letter (RSOS-140501)
+12-Jun-2015
+Dear Dr Savage
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-140501 entitled
+"Predicting chemosensitivity and metastasis in breast cancer with ’omics/digital pathology data
+fusion" has been accepted for publication in Royal Society Open Science subject to minor revision
+in accordance with the referee suggestions. Please find the referees' comments at the end of this
+email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+5
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 21-Jun-2015). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Emilie Aime
+Senior Publishing Editor
+openscience@royalsociety.org
+6
+Associate Editor Comments to Author:
+Associate Editor: 1
+Comments to the Author:
+Point 7 raised by Dr Morrissey seems addressable and would help readers visualise the
+data/results.
+Point 8 is interesting and we would be pleased if such results were included, but recognise that
+this strays from the purpose of this manuscript.
+In the third paragraph of the conclusions, prior to the sentence "From these analyses we draw a
+number of conclusions:" I would like to see a sentence acknowledging to readers limitations of
+two-fold cross classification and that caution in interpretation is warranted until independently
+collected data sets are available for full validation of methods, since one cannot exclude technical
+confounders contributing to classification results. Other limitations should be listed.
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+Currently biomedical researchers are generating large numbers of high-throughput datasets and,
+as more and more different data types are available, questions arise of how to make inferences
+from this kind of data and how to merge information from different data types. In this
+manuscript the authors propose a Bayesian probit model that uses gaussian processes to model
+complex relations between measured features and clinical outcome. Additionally, in order to gain
+insight into the biology, the authors implement a model selection scheme in order to find the set
+features that are able to predict the outcome.
+The paper is clear, coherently structured and well explained. I recommend publishing the paper
+once the comments and suggestions that follow have been addressed.
+1. Regarding the description of the model, it would be useful to describe the sparsity prior a bit
+more. Specifically, commenting on the structure i.e. a product of Bernoulli’s with a 2^-ad term to
+penalise the number of Ijd’s switched on. It would also be worth clarifying that Eq 2.2 is the joint
+distribution for all Ijd’s for dataset d, rather than the distribution of a single Ijd.
+2. I find the truncation and selected hyper-parameters for the beta distribution to seem like quite
+a strong prior, as such it would be interesting to see a plot overlaying the prior and the posterior
+for a couple of the examples to see how strong the prior actually is. Such a plot would also be
+useful to get a better feeling for the shape of the prior.
+3. The names used to describe the covariance functions in tables 1 and 2 do not match the names
+in 2c. Though which is which can easily be inferred, it would be better to use the same names.
+Also, it was not clear to me what covariance function was used for the METABRIC data.
+4. The number of Ijd’s seem large and therefore might give MCMC convergence problems. It
+would be useful to see some comment or plot on the convergence of the Ijd’s, perhaps a plot of
+the posterior probability P(Ijd = 1) between a couple of the chains.
+5. Which image features are selected for the case ER- where the image dataset is most
+informative?
+6. A few typos:
+Binomial prior => Beta prior (2b in the text and Eq2.3)
+7
+i_jd => uppercase I_jd(3rd line of section 2b)
+Hu’s first moment (section 4a)
+w missing d subscript (Eq 2.2)
+title of 4b appears in the wrong place
+A couple of suggestions follow that I consider interesting, though not essential.
+7. In order to visualise whether datasets contain the same information, (for the METABRIC data)
+it might be worth plotting a scatter plot of the individual inferred probabilities for pairs of
+datasets (eg probability of death GE vs image) and highlighting the true cases in a different
+colour.
+8. If the three data sets contains the same information (e.g. ER- chemosens), can this be used to
+distill the common biological feature that is surfacing in all three data sets?
+Reviewer:
+Dr Edward Morrissey
+Cancer Research UK/University of Cambridge
+Reviewer: 2
+Comments to the Author(s)
+The authors describe a novel method, FusionGP, for interpreting multiple types of clinical data,
+including genomic information and tumor cell imaging. They clearly outline their methodology,
+and test their model on both synthetic data, and a publicly available breast cancer data set with
+comparisons to more simple methodologies that have been described by others. They are able to
+assess which data points are most informative and the best predictors of clinical outcome. They
+compare ER- and +ve breast cancers and chemosensitivity, and are able to hypothesise about
+biological mechanisms from copy number and expression data.
+This is an interesting and well-written article, and the model they present has interesting
+implications to clinical data, especially as genomic analyses become more common place.
+Edits needed:
+Page 2, introduction, sentence beginning, “In particular, different types…”. Either need an “of” in
+there, or say to “data types” instead.
+Page 5, (e) Inference, when discussing computation time. They remark that there may be
+difficulties with long computational times. More details on what types of data would make the
+model too slow to run, or the number of data items that would make the method no longer
+“tractable”.
+Author's Response to Decision Letter for (RSOS-140501)
+Dear Editorial Staff,
+Thank you for accepting our paper for publication in Royal Society Open Science, and for sending
+us the comments from both the reviewers and the associate editor.
+Thank you for allowing us to remove the results on metastasis (discussion with Matt Allinson).
+8
+We apologise for the rules on data release which led to this, and are very grateful for your
+flexibility in this matter.
+We are happy to address the reviewers’ points as follows.
+Associate Editor:
+Point 7 raised by Dr Morrissey seems addressable and would help readers visualise the
+data/results.
+We agree, and think this is an excellent suggestion by Dr Morrissey. We have added the plots
+accordingly (Figure 4).
+Point 8 is interesting and we would be pleased if such results were included, but recognise that
+this strays from the purpose of this manuscript.
+We agree that this would be a very interesting extension to this work. We believe however that
+this is a substantial amount of extra work, so would prefer to not include it in this current paper.
+Savage has a PhD student who is currently working on matrix factorisation methods that would
+achieve such a distillation of common biological features, and we hope to be able to submit at
+least one paper on this for publication in the next 12 months.
+In the third paragraph of the conclusions, prior to the sentence "From these analyses we draw a
+number of conclusions:" I would like to see a sentence acknowledging to readers limitations of
+two-fold cross classification and that caution in interpretation is warranted until independently
+collected data sets are available for full validation of methods, since one cannot exclude technical
+confounders contributing to classification results. Other limitations should be listed.
+We agree with this point and have added a sentence in the conclusions to that effect.
+Reviewer: 1
+1. Regarding the description of the model, it would be useful to describe the sparsity prior a bit
+more. Specifically, commenting on the structure i.e. a product of Bernoulli’s with a 2^-ad term to
+penalise the number of Ijd’s switched on. It would also be worth clarifying that Eq 2.2 is the joint
+distribution for all Ijd’s for dataset d, rather than the distribution of a single Ijd.
+We have added a paragraph below eqn 2.2 to clarify this.
+2. I find the truncation and selected hyper-parameters for the beta distribution to seem like quite
+a strong prior, as such it would be interesting to see a plot overlaying the prior and the posterior
+for a couple of the examples to see how strong the prior actually is. Such a plot would also be
+useful to get a better feeling for the shape of the prior.
+3. The names used to describe the covariance functions in tables 1 and 2 do not match the names
+in 2c. Though which is which can easily be inferred, it would be better to use the same names.
+Also, it was not clear to me what covariance function was used for the METABRIC data.
+We have changes tables 1 and 2 to be consistent with the terminology used in section 2c. We have
+also added a sentence at the start of 4b to state that the SE covariance function was used for the
+METABRIC analyses.
+9
+4. The number of Ijd’s seem large and therefore might give MCMC convergence problems. It
+would be useful to see some comment or plot on the convergence of the Ijd’s, perhaps a plot of
+the posterior probability P(Ijd = 1) between a couple of the chains.
+MCMC convergence can indeed be challenging for models such as this, which deal with high-
+dimensional feature selection. We have added text to section 2f to discuss this. We have chosen
+not to include posterior plots as it would be difficult to provide a useful summary over a large
+number of parameters, but this is something we explicitly look at as part of our assessment of
+convergence.
+5. Which image features are selected for the case ER- where the image dataset is most
+informative?
+There was sadly not clear picture as to which image features were most important in this case. In
+fact, most features were selected roughly one third of the time, which is likely to be the
+redundancy we know exist in these features. We were therefore unable to comment usefully on
+this in the paper.
+6. A few typos: Binomial prior => Beta prior (2b in the text and Eq2.3) i_jd => uppercase I_jd(3rd
+line of section 2b) Hu’s first moment (section 4a) w missing d subscript (Eq 2.2) title of 4b appears
+in the wrong
+We have corrected these.
+7. In order to visualise whether datasets contain the same information, (for the METABRIC data)
+it might be worth plotting a scatter plot of the individual inferred probabilities for pairs of
+datasets (eg probability of death GE vs image) and highlighting the true cases in a different
+colour.
+(point addressed above)
+8. If the three data sets contains the same information (e.g. ER- chemosens), can this be used to
+distill the common biological feature that is surfacing in all three data sets?
+(point addressed above)
+Reviewer: 2
+Edits needed:
+Page 2, introduction, sentence beginning, “In particular, different types…”. Either need an “of” in
+there, or say to “data types” instead.
+We have made the suggested edit.
+Page 5, (e) Inference, when discussing computation time. They remark that there may be
+difficulties with long computational times. More details on what types of data would make the
+model too slow to run, or the number of data items that would make the method no longer
+“tractable”.
+We have added details to the discussion of computation time.
+10
+label_version_2
+RSOS-140501.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Edward Morrissey)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+It is clear how to access all the data.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+The changes the authors have made have covered the points I raised and as such I recommend
+publication.
+A couple of typos that need correcting:
+2b. last paragraph "binomial prior" => "beta prior"
+2f. dealign
+Reviewer:
+Dr Edward Morrissey
+Cancer Research UK/University of Cambridge
+label_end_comment
+Decision letter (RSOS-140501.R1)
+08-Jan-2016
+Dear Dr Savage,
+I am pleased to inform you that your manuscript entitled "Predicting chemosensitivity in breast
+cancer with ’omics/digital pathology data fusion" is now accepted for publication in Royal
+Society Open Science.
+You can expect to receive a proof of your article within approximately 10 working days. Please
+contact the production office (openscience_proofs@royalsociety.org) to let us know if you are
+11
+likely to be away from e-mail contact during that period. Due to rapid publication and an
+extremely tight schedule, if comments are not received, your paper may experience a delay in
+publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Matthew Allinson
+emilie.aime@royalsociety.org, matthew.allinson@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Society Open

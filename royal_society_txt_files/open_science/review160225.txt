@@ -1,0 +1,313 @@
+Automated single particle detection and tracking for large
+microscopy datasets
+Rhodri S. Wilson, Lei Yang, Alison Dun, Annya M. Smyth, Rory R. Duncan, Colin Rickman,
+and Weiping Lu
+Article citation details
+R. Soc. open sci. 3: 160225.
+http://dx.doi.org/10.1098/rsos.160225
+Review timeline
+Original submission: 18 February 2016 Note: Reports are unedited and appear as
+Revised submission: 29 March 2016 submitted by the referee. The review history
+Final acceptance: 19 April 2016 appears in chronological order.
+Note: This manuscript was transferred from another Royal Society journal with peer review.
+Review History
+label_version_1
+RSOS-160100.R0
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No this is not clear. In particular, it is not mentioned anywhere in the manuscript where the
+software can be obtained from and what language it is implemented in. it would also be good to
+make the raw data of the benchmarks available for future comparisons by others.
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The authors have addressed most of my points from the earlier review. However, two
+weaknesses still remain that must be addressed:
+1) Giving timing information only for one case is better than nothing, but not sufficient. Please
+also add runtime information for other cases with different trajectory numbers. I would give this
+information for all cases considered in the synthetic tests and in Figs. 4 though 6, along with the
+respective number of trajectories. This will allow potential users to see how the time scales with
+trajectory number and estimate the expected runtime for their own dataset.
+2) I still cannot find any information in the manuscript about system requirements and software
+availability. This is essential information for the readers. Whom should they contact in order to
+get the software? Is the software freely available nor not? What system do I need in order to run
+the software? Do I need Matlab (expensive), or is Octave also fine? Do I need particular Matlab
+toolboxes? Please add such information about method availability to the manuscript.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not adequate!
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Reject
+3
+Comments to the Author(s)
+label_comment_2
+Review comments for “Automated Single Particle Detection and Tracking for Large Microscopy
+Datasets”. Second review.
+Summary: The authors describe a system for tracking thousands of particles in time-lapse
+microscopy images. The results are compared to tracking solutions from the ISBI particle tracking
+challenge (2012), and also for an experimental dataset.
+Comments:
+1. The authors included the software as a supplement to the manuscript. However, the
+source code is obfuscated – hidden and inaccessible for evaluation. This is completely
+unacceptable. There is also no license included. This makes it impossible to evaluate the method,
+or to consider it for reuse. This is a major concern.
+2. The authors claim repeatedly that the advantage of their method is the ability to track
+tens of thousands of particles. There is no constraint to any of the tracking solutions submitted to
+the ISBI challenge on the number of particles that are able to be tracked. In fact, the number of
+particles is in no way a predictor of how difficult the tracking applications is, although the
+number of particles may or may not be a factor in execution time.
+Without the source code, the only observation that can be made is that the tracking algorithm is
+implemented in MATLAB code. Even with the parallel toolkit, this is very unlikely to be a
+particularly high performance implementation as compared to C or C++ implementations used
+by at least some of the other ISBI solutions.
+label_end_comment
+Decision letter (RSOS-160100)
+15-Mar-2016
+Dear Dr Lu:
+Manuscript ID RSOS-160100 entitled "Automated Single Particle Detection and Tracking for
+Large Microscopy Datasets." which you submitted to Royal Society Open Science, has been
+reviewed. The comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+4
+Your resubmitted manuscript should be submitted by 12-Sep-2016. If you are unable to submit
+by this date please contact the Editorial Office.
+We look forward to receiving your resubmission.
+Sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+on behalf of
+Anne Donaldson, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Please address the referees concerns about evaluation of source code and implementation.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The authors have addressed most of my points from the earlier review. However, two
+weaknesses still remain that must be addressed:
+1) Giving timing information only for one case is better than nothing, but not sufficient. Please
+also add runtime information for other cases with different trajectory numbers. I would give this
+information for all cases considered in the synthetic tests and in Figs. 4 though 6, along with the
+respective number of trajectories. This will allow potential users to see how the time scales with
+trajectory number and estimate the expected runtime for their own dataset.
+2) I still cannot find any information in the manuscript about system requirements and software
+availability. This is essential information for the readers. Whom should they contact in order to
+get the software? Is the software freely available nor not? What system do I need in order to run
+the software? Do I need Matlab (expensive), or is Octave also fine? Do I need particular Matlab
+toolboxes? Please add such information about method availability to the manuscript.
+Reviewer: 2
+Comments to the Author(s)
+Review comments for “Automated Single Particle Detection and Tracking for Large Microscopy
+Datasets”. Second review.
+Summary: The authors describe a system for tracking thousands of particles in time-lapse
+microscopy images. The results are compared to tracking solutions from the ISBI particle tracking
+challenge (2012), and also for an experimental dataset.
+5
+Comments:
+1. The authors included the software as a supplement to the manuscript. However, the
+source code is obfuscated – hidden and inaccessible for evaluation. This is completely
+unacceptable. There is also no license included. This makes it impossible to evaluate the method,
+or to consider it for reuse. This is a major concern.
+2. The authors claim repeatedly that the advantage of their method is the ability to track
+tens of thousands of particles. There is no constraint to any of the tracking solutions submitted to
+the ISBI challenge on the number of particles that are able to be tracked. In fact, the number of
+particles is in no way a predictor of how difficult the tracking applications is, although the
+number of particles may or may not be a factor in execution time.
+Without the source code, the only observation that can be made is that the tracking algorithm is
+implemented in MATLAB code. Even with the parallel toolkit, this is very unlikely to be a
+particularly high performance implementation as compared to C or C++ implementations used
+by at least some of the other ISBI solutions.
+Author's Response to Decision Letter for (RSOS-160100)
+See Appendix A.
+label_version_2
+RSOS-160225.R0
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, but the authors may want to include a URL in section 6 where the p-code can be
+downloaded.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+6
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+The authors have addressed all of my previous points and the manuscript is good to go from my
+side.
+label_end_comment
+Decision letter (RSOS-160225)
+19-Apr-2016
+Dear Dr Lu:
+It is a pleasure to accept your manuscript entitled "Automated Single Particle Detection and
+Tracking for Large Microscopy Datasets." in its current form for publication in Royal Society
+Open Science.
+You can expect to receive a proof of your article within approximately 10 days. Please contact the
+editorial office openscience@royalsociety.org to let us know if you are likely to be away from e-
+mail contact during that period. Due to rapid publication and an extremely tight schedule, if
+comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+You have the opportunity to archive your accepted, unbranded manuscript, but access to the full
+text must be embargoed until publication.
+Articles are normally press released. For this to be effective we set an embargo on news coverage
+corresponding to the publication date of the article. We request that news media and the authors
+do not publish stories ahead of this embargo (when final version of the article is available).
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Sincerely,
+Matthew Allinson
+Royal Society Open Science Editorial Office
+openscience@royalsociety.org
+Reviewer Comments:
+The authors have addressed all of my previous points and the manuscript is good to go from my
+side.
+pendix A
+ar Editor,
+thank the reviewers for their comments and have provided our responses in the following.
+viewer: 1
+authors have addressed most of my points from the earlier review. However, two
+aknesses still remain that must be addressed:
+Giving timing information only for one case is better than nothing, but not sufficient. Please
+o add runtime information for other cases with different trajectory numbers. I would give this
+rmation for all cases considered in the synthetic tests and in Figs. 4 through 6, along with
+respective number of trajectories. This will allow potential users to see how the time scales
+h trajectory number and estimate the expected runtime for their own dataset.
+We have now added this information and also included an explanation that the
+runtimes will vary from user to user as they will be affected by many conditions such
+as computer specification and operating conditions not only the data under
+investigation. The information regarding runtimes has been added in 5 different
+places within the manuscript, addressing the different aspects of the comment:
+Lines 192-201
+3.5 Software
+The software for running the tracking method is included in the supplementary
+materials accompanying this paper. The software is currently implemented in Matlab
+(Mathworks, Cambridge) with the image processing toolbox and is run through a
+single line command in the command window, it will run faster with parallel
+processing toolbox, although this is not essential. The software was provided as
+executable p-code, the user interface of the software provides step by step guidance
+for users to run the software. They can run the software to reproduce all the results
+in the manuscript and are able to import their datasets and produce their own results
+for evaluation. The runtimes stated in this manuscript are for a standard laptop
+computer running Microsoft Windows 8 with 16GB of memory and a 2.4GHz Intel i5
+processor utilizing Matlabs parallel processing toolbox with 4 workers. We note that
+implementation of our algorithm in higher level programming languages such as C
+or C++ will result in a better computational performance. However, we have focused
+this paper primarily on the efficiency of the method, so it will run comparatively
+efficiently in other implementations.
+Lines 226-230
+We note the processing time of the method varies with the particle density and SNR
+of the dataset being investigated. For the low density datasets with 500 tracks, the
+runtime varied from 21 to 72 seconds with the runtime increasing as the SNR
+decreases. For the medium density datasets with 2,500 tracks the runtime varied
+from 85 to185 seconds. Finally, for high density datasets with 5,000 tracks the
+runtime varied from 191 to 384 seconds.
+Line 263-265
+The runtime for our software on this exemplar dataset with around 1,500 tracks was
+202 seconds which is consistent with the runtimes from the synthetic data previously
+examined.
+Lines 276-279
+Particles were detected in all frames using our new particle detection algorithm and
+a little over 4,000 tracks subsequently formed using our linking framework with the
+total processing time of the dataset being around 15 minutes, which is consistent
+with the times previously mentioned for the synthetic ISBI Challenge data.
+Lines 303-305
+A dataset of this size took approximately 6 hours to process and analyses. A total of
+more than 200,000 tracks were found, these can be seen overlaid in Fig. 6a.
+still cannot find any information in the manuscript about system requirements and software
+ilability. This is essential information for the readers. Whom should they contact in order to
+the software? Is the software freely available nor not? What system do I need in order to run
+software? Do I need Matlab (expensive), or is Octave also fine? Do I need particular Matlab
+lboxes? Please add such information about method availability to the manuscript.
+As pointed out above the software was provided as a supplementary file to the
+manuscript and additional information on software and its implementation has been
+provided in the above.
+viewer: 2
+mments to the Author(s)
+view comments for “Automated Single Particle Detection and Tracking for Large Microscopy
+asets”. Second review.
+mmary: The authors describe a system for tracking thousands of particles in time-lapse
+roscopy images. The results are compared to tracking solutions from the ISBI particle
+king challenge (2012), and also for an experimental dataset.
+mments:
+The authors included the software as a supplement to the manuscript. However, the
+rce code is obfuscated – hidden and inaccessible for evaluation. This is completely
+cceptable. There is also no license included. This makes it impossible to evaluate the
+thod, or to consider it for reuse. This is a major concern.
+The software was provided as executable p-code, the user interface of the software
+provides step by step guidance for users to run the software. They can run the
+software to reproduce all the results in the manuscript and are able to import their
+datasets and produce their own results for evaluation. This information has been
+provided in section 3.5 Software. A statement has also been included in the data
+accessibility section regarding the source code.
+The authors claim repeatedly that the advantage of their method is the ability to track tens
+housands of particles. There is no constraint to any of the tracking solutions submitted to the
+I challenge on the number of particles that are able to be tracked. In fact, the number of
+ticles is in no way a predictor of how difficult the tracking applications is, although the
+mber of particles may or may not be a factor in execution time.
+The tracking accuracy of an algorithm depends on particle density and SNR and this
+is why the ISBI challenge data has a range of densities and SNRs. The full results of
+our method are given in the paper together with the runtimes.
+hout the source code, the only observation that can be made is that the tracking algorithm is
+lemented in MATLAB code. Even with the parallel toolkit, this is very unlikely to be a
+ticularly high performance implementation as compared to C or C++ implementations used
+at least some of the other ISBI solutions.
+We agree with this review that implementation in higher level programming
+languages such as C or C++ will result in a better computational performance.
+However, we have focused this paper primarily on the efficiency of the method, so it
+will run comparatively efficiently in other implementations. This information has been
+included in 3.5 Software.
+Society Open

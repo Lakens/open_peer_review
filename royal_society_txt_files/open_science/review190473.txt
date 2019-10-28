@@ -1,0 +1,409 @@
+Interdisciplinary optimism? Sentiment analysis of Twitter
+data
+Charlotte Teresa Weber and Shaheen Syed
+Article citation details
+R. Soc. open sci. 6: 190473.
+http://dx.doi.org/10.1098/rsos.190473
+Review timeline
+Original submission: 13 March 2019 Note: Reports are unedited and appear as
+Revised submission: 21 May 2019 submitted by the referee. The review history
+Final acceptance: 21 June 2019 appears in chronological order.
+Review History
+label_version_1
+RSOS-190473.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Reports © 2019 The Reviewers; Decision Letters © 2019 The Reviewers and Editors;
+Responses © 2019 The Reviewers, Editors and Authors. Published by the Royal Society under the
+terms of the Creative Commons Attribution License http://creativecommons.org/licenses/by/4.0/,
+which permits unrestricted use, provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Motivated by the much reported negative experiences about interdisciplinary research and the
+need for the creation of “interdisciplinary optimism,” the manuscript turns to Twitter to search
+for the expression of positive experiences, as measured by the sentiment of tweets, about inter-
+/trans-/multi-disciplinary research conveyed there. It used Twitter search API to collect a one-
+year dataset and trained machine learning classifiers to infer the sentiment of the collected tweets.
+Further qualitative analysis is presented to describe what the positive/neutral/negative tweets
+are about. Thorough discussions and limitations are also presented.
+I wonder if the following suggestions could be addressed to further improve the paper:
+I am not sure about the suitability of applying ML classifiers that are trained using already
+labeled data from other domains (Table 2) to a target one that is about interdisciplinarity. I would
+imagine that different domains may exhibit different statistical patterns with which the classifiers
+try to learn, especially if the domains from which the training data comes are remotely similar to
+the target domain. Indeed, the presented results seem to suggest that the models may not do a
+good job in transferring the pattern learned using other domain data to the target tweets---the F1
+score (0.83) obtained using the target tweets is much higher than the score using public tweets
+(0.67; Page 8). I believe that the common pipeline to fulfill the task is to first manually label a
+sufficiently large sample of the target tweets and then train classifiers and apply them to the
+remaining unlabeled data, although I understand that in practice, manual labeling is a laborious
+process.
+I also wonder if the data and methods section could be made more concisely to improve the flow
+of the manuscript (currently it has 6 pages), and if the entire snapshots of tweets are needed (Figs
+4-6), or just the text content of the tweets are necessary?
+Since the paper has classified users based on their disciplines, it may be interesting to examine
+the distributions of sentiment by disciplines and to understand whether users from certain
+disciplines are more likely to post positive/negative tweets.
+Minor comments:
+- Page 3 Dataset section: Twitter API -> Twitter search API
+- Page 4: A random sample of 5,000 tweets -> 5,000 users?
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+3
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+Over the past couple years there has been an increasing number of papers that draw on data from
+social media. When I read them I am quite often sceptical about their methods, analysis,
+interpretation and robustness. However, this paper - Interdisciplinary optimism? Sentiment
+analysis of Twitter Data - is the exception (at least from what I’ve read). This paper has an
+incredibly rigorous research design, the analysis is perfectly suited to the data, and the
+interpretation and discussion of the data is very thorough (and includes a section specifically
+acknowledging the limitations of the approach used, increasing transparency for the readers).
+The paper is also very well written, and deals with a very important topic (interdisciplinary
+research) – making this a very timely contribution to the academic literature. I congratulate the
+authors on doing such a wonderful job, and I only wish that all papers that I was invited to
+review were this well done!
+My recommendation is that this manuscript be accepted for publication following a few very
+minor revisions:
+• Page 8, Section (i) Inspecting tweets: This section would benefit from additional information
+relating to the ‘manual’ checking. For example, how was this done, who did it (one author or two
+authors, or more), etc.
+• Page 9, Section (c) Number of User Tweets: The paper states that tweets originated from over
+37.000 unique users. I assume the authors meant to say 37,000. If so, this needs updating for
+accuracy.
+• Page 16, sub-section “Positive Tweets”: The wording “Positive tweets demonstrated
+experiences of success stories of the known challenges of interdisciplinary….” was not clear to
+me. I suggest revising this sentence for clarity.
+label_end_comment
+Decision letter (RSOS-190473.R0)
+07-May-2019
+Dear Ms Weber,
+The editors assigned to your paper ("Interdisciplinary optimism? Sentiment analysis of Twitter
+Data.") have now received comments from reviewers. We would like you to revise your paper in
+accordance with the referee and Associate Editor suggestions which can be found below (not
+including confidential reports to the Editor). Please note this decision does not guarantee
+eventual acceptance.
+Please submit a copy of your revised paper before 30-May-2019. Please note that the revision
+4
+deadline will expire at 00.00am on this date. If we do not hear from you within this time then it
+will be assumed that the paper has been withdrawn. In exceptional circumstances, extensions
+may be possible if agreed with the Editorial Office in advance. We do not allow multiple rounds
+of revision so we urge you to make every effort to fully address all of the comments at this stage.
+If deemed necessary by the Editors, your manuscript will be sent back to one or more of the
+original reviewers for assessment. If the original reviewers are not available, we may invite new
+reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data have been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that have been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-190473
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+5
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Kind regards,
+Andrew Dunn
+Royal Society Open Science Editorial Office
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Matjaz Perc (Associate Editor) and Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+Motivated by the much reported negative experiences about interdisciplinary research and the
+need for the creation of “interdisciplinary optimism,” the manuscript turns to Twitter to search
+for the expression of positive experiences, as measured by the sentiment of tweets, about inter-
+/trans-/multi-disciplinary research conveyed there. It used Twitter search API to collect a one-
+year dataset and trained machine learning classifiers to infer the sentiment of the collected tweets.
+Further qualitative analysis is presented to describe what the positive/neutral/negative tweets
+are about. Thorough discussions and limitations are also presented.
+I wonder if the following suggestions could be addressed to further improve the paper:
+I am not sure about the suitability of applying ML classifiers that are trained using already
+labeled data from other domains (Table 2) to a target one that is about interdisciplinarity. I would
+imagine that different domains may exhibit different statistical patterns with which the classifiers
+6
+try to learn, especially if the domains from which the training data comes are remotely similar to
+the target domain. Indeed, the presented results seem to suggest that the models may not do a
+good job in transferring the pattern learned using other domain data to the target tweets---the F1
+score (0.83) obtained using the target tweets is much higher than the score using public tweets
+(0.67; Page 8). I believe that the common pipeline to fulfill the task is to first manually label a
+sufficiently large sample of the target tweets and then train classifiers and apply them to the
+remaining unlabeled data, although I understand that in practice, manual labeling is a laborious
+process.
+I also wonder if the data and methods section could be made more concisely to improve the flow
+of the manuscript (currently it has 6 pages), and if the entire snapshots of tweets are needed (Figs
+4-6), or just the text content of the tweets are necessary?
+Since the paper has classified users based on their disciplines, it may be interesting to examine
+the distributions of sentiment by disciplines and to understand whether users from certain
+disciplines are more likely to post positive/negative tweets.
+Minor comments:
+- Page 3 Dataset section: Twitter API -> Twitter search API
+- Page 4: A random sample of 5,000 tweets -> 5,000 users?
+Reviewer: 2
+Comments to the Author(s)
+Over the past couple years there has been an increasing number of papers that draw on data from
+social media. When I read them I am quite often sceptical about their methods, analysis,
+interpretation and robustness. However, this paper - Interdisciplinary optimism? Sentiment
+analysis of Twitter Data - is the exception (at least from what I’ve read). This paper has an
+incredibly rigorous research design, the analysis is perfectly suited to the data, and the
+interpretation and discussion of the data is very thorough (and includes a section specifically
+acknowledging the limitations of the approach used, increasing transparency for the readers).
+The paper is also very well written, and deals with a very important topic (interdisciplinary
+research) – making this a very timely contribution to the academic literature. I congratulate the
+authors on doing such a wonderful job, and I only wish that all papers that I was invited to
+review were this well done!
+My recommendation is that this manuscript be accepted for publication following a few very
+minor revisions:
+• Page 8, Section (i) Inspecting tweets: This section would benefit from additional information
+relating to the ‘manual’ checking. For example, how was this done, who did it (one author or two
+authors, or more), etc.
+• Page 9, Section (c) Number of User Tweets: The paper states that tweets originated from over
+37.000 unique users. I assume the authors meant to say 37,000. If so, this needs updating for
+accuracy.
+• Page 16, sub-section “Positive Tweets”: The wording “Positive tweets demonstrated
+experiences of success stories of the known challenges of interdisciplinary….” was not clear to
+me. I suggest revising this sentence for clarity.
+Author's Response to Decision Letter for (RSOS-190473.R0)
+See Appendix A.
+7
+label_version_2
+RSOS-190473.R1 (Revision)
+label_author_3
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+All my comments have been addressed.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+8
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_4
+Based on the revisions made, I believe that the manuscript is now suitable for publication.
+label_end_comment
+Decision letter (RSOS-190473.R1)
+21-Jun-2019
+Dear Ms Weber,
+I am pleased to inform you that your manuscript entitled "Interdisciplinary optimism? Sentiment
+analysis of Twitter Data." is now accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article in the near future. Please contact the editorial
+office (openscience_proofs@royalsociety.org and openscience@royalsociety.org) to let us know if
+you are likely to be away from e-mail contact. Due to rapid publication and an extremely tight
+schedule, if comments are not received, your paper may experience a delay in publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Kind regards,
+Lianne Parkhouse
+Editorial Coordinator
+Royal Society Open Science
+openscience@royalsociety.org
+on behalf of Dr Matjaz Perc (Associate Editor) and Marta Kwiatkowska (Subject Editor)
+openscience@royalsociety.org
+Reviewer comments to Author:
+Reviewer: 2
+Based on the revisions made, I believe that the manuscript is now suitable for publication.
+Reviewer: 1
+All my comments have been addressed.
+9
+Follow Royal Society Publishing on Twitter: @RSocPublishing
+Follow Royal Society Publishing on Facebook:
+https://www.facebook.com/RoyalSocietyPublishing.FanPage/
+Read Royal Society Publishing's blog: https://blogs.royalsociety.org/publishing/
+Appendix A
+label_version_3
+RSOS Review – Manuscript: “Interdisciplinary Optimism? Sentiment Analysis of Twitter Data.”
+Comments from Reviewers and authors’ reply with descriptions of implemented changes.
+Comments from Reviewer 1 Author Reply
+I am not sure about the suitability of applying Adjustment made to the limitations section to
+ML classifiers that are trained using already highlight this comment further.
+labeled data from other domains (Table 2) to a
+target one that is about interdisciplinarity. Reply:
+I would imagine that different domains may You are indeed right that the best solution would
+exhibit different statistical patterns with which be to manually label a substantial amount of
+the classifiers try to learn, especially if the target (int/mult/trans/) tweets, 10,000 – 20,000,
+domains from which the training data comes are and to then train classifiers on this labeled data.
+remotely similar to the target domain. Unfortunately, as you also indicated, this is an
+extremely laborious process, and typically
+Indeed, the presented results seem to suggest external sources of labeled datasets are used as a
+that the models may not do a good job in common practice.
+transferring the pattern learned using other
+domain data to the target tweets---the F1 score However, by drawing on +70,000 labeled
+(0.83) obtained using the target tweets is much training tweets we are able to capture a wide
+higher than the score using public tweets (0.67; array of sentiments. The inclusion of 1,000
+Page 8). labeled target tweets allows us to also capture
+specific sentiment nuances found within the
+I believe that the common pipeline to fulfill the target tweets. This is generally considered a
+task is to first manually label a sufficiently large good practice when performing sentiment
+sample of the target tweets and then train analysis, but agreed, some limitations will
+classifiers and apply them to the remaining always remain.
+unlabeled data, although I understand that in
+practice, manual labeling is a laborious process. The reported scores for the target tweets indicate
+that the classifier is actually doing a better job
+on the target tweets, which is what we want,
+since they are the main results of the paper. The
+reported scores for the test set are there to justify
+the reason for using an SVM classifier.
+I also wonder if the data and methods section We have chosen to include some more general
+could be made more concisely to improve the text regarding machine learning and sentiment
+flow of the manuscript (currently it has 6 pages), analysis in the methods section so readers not
+and if the entire snapshots of tweets are needed familiar with the methods can follow without
+(Figs 4-6), or just the text content of the tweets having to consult other sources. For instance,
+are necessary? 2(e) and 2(f) can be shortened to a short
+paragraph. Given the multidisciplinary nature of
+the journal, we believe this is a good thing.
+We defer to the editor if such explanations are
+warranted.
+Regarding the snapshots of the tweet: According
+to Twitter’s Policies and display requirements,
+one is required to display any Twitter content
+according to their guidelines. This means, we
+cannot simply ‘quote’ the text content because
+this would violate Twitter’s policy, but have to
+display the entire tweet as it would appear on
+Twitter. We have decided to include the
+snapshots of tweets to give readers some
+insights into ‘real’ examples. This has also been
+done in a similar way in other papers looking at
+tweets.
+Since the paper has classified users based on This would be very interesting indeed <U+F04A>
+their disciplines, it may be interesting to We have performed the analysis and included it
+examine the distributions of sentiment by in the manuscript within the results (Section (d))
+disciplines and to understand whether users from and discussion section under section ‘positive
+certain disciplines are more likely to post tweets’.
+positive/negative tweets.
+- Page 3 Dataset section: Twitter API -> Twitter Corrected.
+search API
+- Page 4: A random sample of 5,000 tweets -> We replaced the word ‘tweets’ with ‘user
+5,000 users? descriptions’.
+Comments from Reviewer 2 Author Reply
+Page 8, Section (i) Inspecting tweets: This We added additional explanations on who did
+section would benefit from additional the examination, and explained the examination
+information relating to the ‘manual’ checking. process in more detail in Section (i).
+For example, how was this done, who did it (one
+author or two authors, or more), etc
+Page 9, Section (c) Number of User Tweets: The Yes, we meant to say 37,000 unique users. This
+paper states that tweets originated from over has been corrected.
+37.000 unique users. I assume the authors
+meant to say 37,000. If so, this needs updating
+for accuracy.
+Page 16, sub-section “Positive Tweets”: The We have revised the sentence for clarity.
+wording “Positive tweets demonstrated
+experiences of success stories of the known
+challenges of interdisciplinary….” was not clear
+to me. I suggest revising this sentence for
+clarity.
+Society Open

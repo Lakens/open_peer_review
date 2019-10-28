@@ -1,0 +1,477 @@
+A global optimization paradigm based on change of
+measures
+Saikat Sarkar, Debasish Roy and Ram Mohan Vasu
+Article citation details
+R. Soc. open sci. 2: 150123.
+http://dx.doi.org/10.1098/rsos.150123
+Review timeline
+Original submission: 10 September 2014 Note: Reports are unedited and appear as
+1st revised submission: 24 March 2015 submitted by the referee. The review history
+2nd revised submission: 15 May 2015 appears in chronological order.
+Final acceptance: 2 June 2015
+Review History
+label_version_1
+RSOS-140298.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+The authors may improve this aspect. They use standard benchmarks but they may add a link to
+download these problem instances. Moreover they could provide their code as well as they
+experimetal results.
+Do you have any ethical concerns with this paper?
+No
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+This paper addresses global optimization using evolutionary techniques (e.g., genetic algorithms,
+particle swarm optimization, and differential evolution). Of course applications of global
+optimization can be found in many areas. Using an evolutionary based solving process requires
+to insure convergence properties of the underlying algorithm in order to reach global solution.
+As usual for such metaheuristics techniques, this convergence ability must be managed through a
+classic balance between exploration and exploitation of the search space, by means of strategies or
+heuristics rules. In particular for intensification, these techniques should use directional
+information (as in gradient based methods) in order to converge to global optima, combined with
+random perturbation to avoid being trapped in local optima. Unfortunately, existing
+evolutionary techniques do not provide really well founded directional information, neither well
+founded random perturbation schemes.
+Therefore, even if these methods use random perturbation schemes, their greedy exploitation
+processes may lead to a local suboptimal solution (classic notion of premature convergence of
+evolutionary algorithms). The above-mentioned balance between exploration and exploitation is
+most of the time tuned by the user (using eventually an automated tuning process) and mainly
+relies on empirical observations.
+In this paper the authors propose to focus more on PSO and DE techniques that use additive
+heuristics in order to update their current solutions (e.g., particles). This additive heuristics use
+directional information together with random perturbations (of course perturbation must
+converge to zero when reaching global optimum). The purpose of the author is to provide a
+rigorous stochastic framework in order to insure convergence properties. They reformulate the
+global optimization problem as a martingale problem. They use results from stochastic theory in
+order to propose a general random perturbation strategy that insure to avoid being trapped in
+local optima. They propose then a unified view of global optimization schemes that allows them
+to define a new optimization method based on strong mathematical basis (called COMBEO). At
+last, they prove the efficiency of their approach on classic benchmarks and on a case study.
+Even if this paper requires a strong background on stochastic processes (Freidlin–Wentzell
+theorem, Brownian motion…) that is often out the scope of computer scientist, it provides a very
+interesting formalization of global optimization processes. The main contribution consists in
+proposing a well-founded stochastic-based search method. Moreover the generalization of the
+classic specific global optimization algorithms may help to better understand their behaviors.
+Despite its (very) technical aspect, the main contributions of the paper are clearly introduced and
+presented. The experimental section provides justification of the performances.
+Nevertheless, this section may be improved by considering more recent challenges and
+benchmarks for global optimization solvers. Comparisons with other state of the art algorithms
+could be added in order to provide reference points (not necessarily to prove that this new
+approach is better).
+The authors should also clearly mentioned what are the differences with other previous similar
+published or submitted publications.
+This is done for Saikat Sarkar, Debasish Roy, Ram Mohan Vasu, A perturbed martingale
+approach to global optimization, Physics Letters A, Volume 378, Issues 38–39, 1 August 2014,
+Pages 2831-2844. This paper has indeed some similarities (the authors mention some overlaps
+which is true).
+3
+But the authors have also submitted to Physica D a paper entitled Evolutionary global
+optimization posed as a randomly perturbed martingale problem and applied to parameter
+recovery of chaotic oscillators, which is also very similar, containing another application problem.
+Comments and suggestions
+---------------------------------------
+On page 3, when describing the different bio-inspired metaheuristics, you should mention the
+following paper
+@ARTICLE{ITOR:ITOR12001,
+author = {Sörensen, Kenneth},
+title = {Metaheuristics : the metaphor exposed},
+journal = {International Transactions in Operational Research},
+year = {2015},
+volume = {22},
+pages = {3--18},
+number = {1},}
+On page 3, add a reference for the exploration and exploitation trade-off
+On page 5, you should discuss about No Free Lunch theorems for optimization
+In section 4, the parameters should be clearly identified and their tuning should be addressed in
+the next section. Tuning of parameter is a very important issue as well as well defined
+methodological approaches to sutdy an compra algortihms. See :
+Experimental Methods for the Analysis of Optimization Algorithms by Thomas Bartz-Beielstein,
+Marco Chiarandini Luís Paquete, 2010, Springer,
+Automated Algorithm Configuration and Parameter Tuning. Holger H. Hoos - Autonomous
+Search (edited by Y. Hamadi, E. Monfroy and F. Saubion), Chapter 3, pp. 37-71, Springer Verlag,
+2012.
+Parameter Setting in Evolutionary Algorithms by Lobo, F.J., Lima, Cláudio F., Michalewicz,
+Zbigniew (Eds.), Series: Studies in Computational Intelligence, Vol. 54, Springer, 2007
+In section 5, why not considering other state of the art evolutionary algorithms such as CMA-ES ?
+You should refer to the COCO platform (http://coco.gforge.inria.fr/doku.php) for the
+experimental section. Then you should compare your approach according to these recent
+challenges. Therefore, more tests can be performed with regards to other recent methods. You
+must use an updated set of representative benchmarks.
+In the experimental section, you should use statistical tests in the tables.
+The tuning of the parameters (number of particles, iterations …) is not really addressed.
+Figure 1 provides poor information. Instances B1 to B9 are maybe too easy.
+4
+label_end_comment
+Decision letter (RSOS-140298)
+16-Feb-2015
+Dear Dr Roy:
+Manuscript ID RSOS-140298 entitled "A global optimization paradigm based on change of
+measures" which you submitted to Royal Society Open Science, has been reviewed. The
+comments from reviewers are included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to https://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by 16-Aug-2015. If you are unable to submit
+by this date please contact the Editorial Office.
+I look forward to a resubmission.
+Sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-140298)
+See Appendix A.
+label_version_2
+RSOS-150123.R1 (Revision)
+label_author_2
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+5
+Is it clear how to access all supporting data?
+I could not access to the supplementary materials (see my comments).
+The results are clearly and fairly presented. Experimental conditions are fully described.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+In this revised version, the authors have clearly improved their paper by adding new
+experiments and a comparison with a well known state of the art algorithm (CMA-ES).
+The proposed results show that their approach can be efficient and useful for solving continuous
+optimization problems. This approach can be complementary to existing methods.
+Therefore, I am really satisfied with this new version and I think that the manuscript can now be
+accepted for publication (with only a few minor changes).
+Note that I could not access to the supplementary material with other tables. The results
+presented in tables 3 and 4 are sufficient for the core paper. Nevertheless, the supplementary
+tables should be made accessible for the final version.
+Justifications and comments
+--------------------------------------------
+I will not recall all my previous comments by I would rather mention the main improvements
+that have been proposed and clearly explained by the authors in their cover letter.
+Point 1
+Some missing references have been added.
+I would just suggest to cite Kenneth Sorensen as a paper that criticizes the development of useless
+natural metaphors for describing indeed similar algorithms (I think that his contribution is very
+interesting in that sense and should be promoted). There is a typo on the name of the author in
+the bibliography (ö).
+Concerning the balance between exploration and exploitation, I would have preferred the
+following reference :
+Eiben, A. E. & Schippers, C. A. On Evolutionary Exploration and Exploitation Fundam. Inform.,
+1998, 35, 35-50
+Note that the bibliography should be checked for final version.
+Point 2
+Parameter tuning has now been clearly addressed. Even if an automated tuning algorithm is not
+used here (which is not necessarily relevant since there is only one parameter), the sensitivity of
+this parameter can be observed by means of different experiments.
+6
+Point 3
+Comparisons with CMA-ES has been performed with a representative set of benchmarks. Tables
+that present results have been improved with statistical information.
+Point 4
+The contribution of this current work compared to previous works by the authors has been
+clearly explained.
+On this point, I apologize to the authors for having mentioned a submitted paper that did not
+existing (confused information on the web). The answer to Query 9 in the cover letter is fully
+satisfactory.
+label_end_comment
+Decision letter (RSOS-150123)
+12-May-2015
+Dear Dr Roy
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-150123 entitled
+"A global optimization paradigm based on change of measures" has been accepted for publication
+in Royal Society Open Science subject to minor revision in accordance with the referee
+suggestions. Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+7
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 21-May-2015). If you do not
+think you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+8
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Emilie Aime
+Senior Publishing Editor
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Associate Editor
+Comments to the Author:
+Dear authors
+It is my pleasure to inform you that your paper is accepted with minor revision (see reviewer
+comments below).
+Please note that the supplementary material you submitted was not readable.
+Also Table 1 and 2 are absent of the paper while tables 3 and 4 are present.
+Please double check yourself the presence of these tables in the paper and the consistency of the
+supplementary material.
+Best regards
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+In this revised version, the authors have clearly improved their paper by adding new
+experiments and a comparison with a well known state of the art algorithm (CMA-ES).
+The proposed results show that their approach can be efficient and useful for solving continuous
+optimization problems. This approach can be complementary to existing methods.
+Therefore, I am really satisfied with this new version and I think that the manuscript can now be
+accepted for publication (with only a few minor changes).
+Note that I could not access to the supplementary material with other tables. The results
+presented in tables 3 and 4 are sufficient for the core paper. Nevertheless, the supplementary
+tables should be made accessible for the final version.
+Justifications and comments
+--------------------------------------------
+I will not recall all my previous comments by I would rather mention the main improvements
+that have been proposed and clearly explained by the authors in their cover letter.
+Point 1
+Some missing references have been added.
+I would just suggest to cite Kenneth Sorensen as a paper that criticizes the development of useless
+natural metaphors for describing indeed similar algorithms (I think that his contribution is very
+9
+interesting in that sense and should be promoted). There is a typo on the name of the author in
+the bibliography (ö).
+Concerning the balance between exploration and exploitation, I would have preferred the
+following reference :
+Eiben, A. E. & Schippers, C. A. On Evolutionary Exploration and Exploitation Fundam. Inform.,
+1998, 35, 35-50
+Note that the bibliography should be checked for final version.
+Point 2
+Parameter tuning has now been clearly addressed. Even if an automated tuning algorithm is not
+used here (which is not necessarily relevant since there is only one parameter), the sensitivity of
+this parameter can be observed by means of different experiments.
+Point 3
+Comparisons with CMA-ES has been performed with a representative set of benchmarks. Tables
+that present results have been improved with statistical information.
+Point 4
+The contribution of this current work compared to previous works by the authors has been
+clearly explained.
+On this point, I apologize to the authors for having mentioned a submitted paper that did not
+existing (confused information on the web). The answer to Query 9 in the cover letter is fully
+satisfactory.
+Author's Response to Decision Letter for (RSOS-150123)
+Response to the Associate Editor and Reviewer: Query 1 (both Associate Editor and Reviewer):
+Associate Editor: Please note that the supplementary material you submitted was not readable.
+Also Tables 1 and 2 are absent while Tables 3 and 4 are present. Reviewer: I could not access to
+the supplementary material with other tables. Authors' response: We suppose it could be a
+problem with the latex file conversion. However, when we compile these files in our local
+computer, we did not face any such issues. In any case, we have also uploaded the pdf file of the
+supplementary material with our submission. Query 2 (Reviewer): I would just suggest to cite
+Kenneth Sorensen as a paper that criticizes the development of useless natural metaphors for
+describing indeed similar algorithms (I think that his contribution is very interesting in that sense
+and should be promoted). There is a typo on the name of the author in the bibliography (ö).
+Authors' response: In response, we have added the following sentence in the revised manuscript.
+“In this context, some interesting comments on the facile usage of natural metaphors in the
+development of many global optimization algorithms, without a serious engagement with
+scientific ratiocination, may be found in [7]”. Moreover, in reference [7] of the bibliography, the
+spelling of Sörensen is corrected. Query 3 (Reviewer): Concerning the balance between
+exploration and exploitation, I would have preferred the following reference : Eiben, A. E. &
+Schippers, C. A. On Evolutionary Exploration and Exploitation Fundam. Inform., 1998, 35, 35-50.
+Authors' response: We have included the suggested reference in the revised manuscript.
+Response to the reviewer regarding the manuscript (ID
+label_version_3
+RSOS-140298) entitled “A global optimization
+paradigm based on change of measures”
+The authors are very much grateful to the reviewer for the insightful
+comments and constructive suggestions.
+Query 1:
+On page 3, when describing the di<U+FB00>erent bio-inspired metaheuristics, you
+should mention the following paper
+@ARTICLEITOR:ITOR12001, author = Srensen, Kenneth, title = Meta-
+heuristics : the metaphor exposed, journal = International Transactions in
+Operational Research, year = 2015, volume = 22, pages = 3–18, number = 1,
+Authors’ response:
+This reference has been included in the revised manuscript.
+Query 2:
+On page 3, add a reference for the exploration and exploitation trade-o<U+FB00>.
+Author’s response:
+The authors have included a reference which talks about the exploration and
+exploitation trade-o<U+FB00>.
+Query 3:
+On page 5, you should discuss about No Free Lunch theorems for optimiza-
+tion.
+Authors’ response:
+The ’no free lunch theorem’ has been discussed in the revised manuscript.
+Please see in page 5.
+Preprint submitted to . March 22, 2015
+Query 4:
+In section 4, the parameters should be clearly identi<U+FB01>ed and their tuning
+should be addressed in the next section. Tuning of parameter is a very
+important issue as well as well de<U+FB01>ned methodological approaches to sutdy
+an compra algortihms. See :
+Experimental Methods for the Analysis of Optimization Algorithms by
+Thomas Bartz-Beielstein, Marco Chiarandini Lus Paquete, 2010, Springer,
+Automated Algorithm Con<U+FB01>guration and Parameter Tuning. Holger H.
+Hoos - Autonomous Search (edited by Y. Hamadi, E. Monfroy and F. Saubion),
+Chapter 3, pp. 37-71, Springer Verlag, 2012.
+Parameter Setting in Evolutionary Algorithms by Lobo, F.J., Lima, Clu-
+dio F., Michalewicz, Zbigniew (Eds.), Series: Studies in Computational In-
+telligence, Vol. 54, Springer, 2007.
+Authors’ response:
+In evolutionary algorithms, tuning of parameters is indeed an important is-
+sue. Since the performance of a scheme may critically depend upon the
+choice of parameters, which are typically chosen at the user-end, the number
+of such parameters should ideally be kept as low as possible. In the proposed
+scheme, in particular, only one tuning parameter (CR) is made use of. A
+comparison of the performance of the proposed scheme with varying CR val-
+ues (e.g. 0.1,0.9 and a random value between 0 and 1 based on a uniform
+distribution) is reported in Tables (3-4) in the revised manuscript and Tables
+(I-X) in the Supplementary Material for the benchmark problems considered
+in [35]. The references suggested by the reviewer (on the issue of parameter
+tuning) are included in the revised manuscript.
+Query 5:
+In section 5, why not considering other state of the art evolutionary algo-
+rithms such as CMA-ES?
+You should refer to the COCO platform (http://coco.gforge.inria.fr/doku.php)
+for the experimental section. Then you should compare your approach ac-
+cording to these recent challenges. Therefore, more tests can be performed
+with regards to other recent methods. You must use an updated set of rep-
+resentative benchmarks.
+Authors’ response:
+In response to the reviewer, the performance of COMBEO (pseudo-code
+2 ) as applied to the benchmark problems considered in [35] is compared
+against CMA-ES; see Tables (3-4) in the revised manuscript and Tables (I-X)
+in the Supplementary Material. All the the benchmark problems considered
+in [35] are solved using the proposed scheme and the results are reported in
+the revised manuscript.
+Query 6:
+In the experimental section, you should use statistical tests in the tables.
+The tuning of the parameters (number of particles, iterations ) is not really
+addressed.
+Authors’ response:
+Tables (3-4) in the revised manuscript and Tables (I-X) in the Supplementary
+Material include statistical tests (mean error, best error, worst error and me-
+dian error), expected number of function evaluations and tuning parameter
+values.
+Query 7:
+Figure 1 provides poor information. Instances B1 to B9 are maybe too easy.
+Authors’ response:
+As the reviewer aptly says, functions B1-B9 are indeed not di<U+FB03>cult functions.
+These functions are taken just to show that a greedy global search algorithm
+may be designed to achieve faster convergence when the objective functions
+are not so di<U+FB03>cult. In response to the reviewer, this <U+FB01>gure is removed from
+the revised manuscript.
+Query 8:
+The authors should also clearly mentioned what are the di<U+FB00>erences with other
+previous similar published or submitted publications. This is done for Saikat
+Sarkar, Debasish Roy, Ram Mohan Vasu, A perturbed martingale approach
+to global optimization, Physics Letters A, Volume 378, Issues 3839, 1 August
+2014, Pages 2831-2844. This paper has indeed some similarities (the authors
+mention some overlaps which is true).
+Authors’ response:
+Unlike the Physics Letters A paper that reported some of the original
+thoughts in the martingale approach to global optimization and contained
+an algorithm that was far too greedy for purposes of complex global opti-
+mization problems, the current work reports on a non-trivial re-orientation
+and generalization of the basic idea that have led to the development of a
+host of algorithms for a very general class of Np-hard global optimization
+problems.
+Query 9:
+But the authors have also submitted to Physica D a paper entitled Evolution-
+ary global optimization posed as a randomly perturbed martingale problem
+and applied to parameter recovery of chaotic oscillators, which is also very
+similar, containing another application problem.
+Authors’ response:
+The authors wish to clarify that they have not submitted any paper on
+’Evolutionary global optimization posed as a randomly perturbed martingale
+problem and applied to parameter recovery of chaotic oscillators’ to Physica
+D (probably the reviewer means the Physics Letters A paper). The only pa-
+per recently published by this group in Physica D (reference number [27] in
+the manuscript) concerns the development of a nonlinear stochastic <U+FB01>ltering
+algorithm that has little to do with global optimization. However, given that
+the original idea of a martingale approach to optimization is inspired by the
+stochastic <U+FB01>ltering theory and that the extremal equation, provided in the
+Appendix of the present article, bears some similarities with the nonlinear <U+FB01>l-
+tering equation, we had cited our Physica D paper in the original manuscript.
+Society Open

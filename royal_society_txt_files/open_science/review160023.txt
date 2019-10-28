@@ -1,0 +1,503 @@
+Assessing urban strategies for reducing the impacts of
+extreme weather on infrastructure networks
+Maria Pregnolato, Alistair Ford, Craig Robson, Vassilis Glenis, Stuart Barr and Richard
+Dawson
+Article citation details
+R. Soc. open sci. 3: 160023.
+http://dx.doi.org/10.1098/rsos.160023
+Review timeline
+Original submission: 12 January 2016 Note: Reports are unedited and appear as
+Revised submission: 1 April 2016 submitted by the referee. The review history
+Final acceptance: 5 April 2016 appears in chronological order.
+Review History
+label_version_1
+RSOS-160023.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+It is not clear at the moment, and I would encourage the authors to work on this aspect.
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+The main goal of the paper is to develop a methodology to: (1) model flooding due to heavy
+rains, (2) measure the impact of flooding on road (highway) systems, (3) measure the efficacy of
+various strategies to lessen the impact of flooding on road transport. Modeling the impact of
+flooding is an incredibly difficult task, filled with uncertainties, and I really like the approach
+taken by the authors. In fact, I can see that the authors are being “cautious” in every step of the
+way, providing some evidence for their decision, which makes me think that they have received
+unfavorable reviews in the past. Naturally, many assumptions are taken, and really only one
+metric is measured (betweenness), but considering the current state-of-the-art in the field, I
+believe the method used is sufficient, and the paper brings a contribution that should be
+published in RSOS.
+That being said, I do have a few comments, mostly on clarification. As mentioned, I am in the
+same field, and I know how difficult it is to convey the method, and I will therefore make a series
+of suggestions.
+- The title is too vague as it stands. I would recommend being more specific, either by bringing
+the word “betweenness” or “strategy” (i.e., modeling the impacts of various strategies…).
+- the introduction has only one sub-section, 2.1 background. It should really be split in two
+different section: 2. Introduction and 3. Background. I would also make the contribution of the
+paper clearer. At the moment, the last paragraph of the introduction has a sentence “this paper
+describes…” and the last paragraph of the background section has a sentence “this paper aims…”
+Get one clear goal / objective / contribution in the introduction, and only cite the relevant
+literature in the background.
+- from figures 6, 9, and 10, it seems you are only considering highways. Is this correct? If so, make
+it clear in the method section. Moreover, are you files “clean”? I have reviewed a paper recently
+about a tool that cleans GIS files to network format (see whether it is relevant or not:
+http://csun.uic.edu/data.html#GISF2E). In fact, the same group seems to have done some work
+on flooding and betweenness centrality
+(http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7004428&tag=1).
+- the method to use weighted betweenness centrality is clever. It’d be ideal to add real flows on
+the highways, but I understand the data is not necessarily straightforward to acquire (or if you
+use it, please make it clear). Plus, NetworkX is a great library to use.
+- On page 6, in the first paragraph, about CityCAT, I understand it takes an elevation map. What
+about catchment basins, sewer conduit size, etc.? If other researchers were to reproduce the
+method to their own contexts, it would be valuable to add this information. I see the paper is
+getting long, however, and you may want to move some information to an appendix or a
+supplementary information file. I will leave this up to you.
+- 3.1 model assumptions. I really like the statement on focusing at the macro-level. Clearly there is
+too much uncertainty to focus at the micro-scale. Well done.
+3
+- Page 8, in the network modeling section, is it “Ordnance” or “Ordinance”?
+- Page 9, the 30cm water limit used seems pretty high, although you are backing it with literature.
+The same value is described as “severe” from Table 1. The information presented in Table 1 and
+Figure 7 is actually a little redundant. Do you need both?
+- 4.1.4 Adaptation, are scenarios A and B directly integrated in CityCAT or did you have to get
+the values yourself from IDF curves? Again, this is purely to be able to reproduce the results.
+- Grey adaptation. I must admit I have no idea that the grey adaptation strategies were. Are
+conduits getting larger, are catchment basins able to catch more rain? What does “hardening”
+mean? Since you seem to suggest grey adaptation is more effective than green adaptation, could
+you clarify?
+- Again on grey adaptation, the 90% lowest value, etc. based on betweenness. Is that after
+flooding, before flooding? It was not clear.
+- in your results, I found some of the answers quite weird. Betweenness centrality is a sum. If
+some links are being affected (i.e., removed), the network will become smaller, and betweenness
+centrality will decrease for all links (unless it is normalized or very few links are removed). From
+table 3, the fact the average and maximum betweenness centrality values increase for all scenarios
+compared to business-as-usual is really odd. Are you really removing links from the network?
+This is puzzling for me. Are you using the betweenness centrality measure correctly in
+NetworkX?
+- Figure 3 really adds nothing, but feel free to keep it if you feel it add relevant information, and if
+so, perhaps add some labels.
+That’s it for my comments. There are quite a few, but again, it’s mostly in the form (not so much
+the content) and to explain the method. I look forward to reviewing a second version of the
+paper.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+4
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The paper “Modeling Extreme Rainfall Impacts on Urban Transport” describes a method that can
+be used to quantify the effects of flooding on an urban transportation system by including
+topological network measures in a flooding impact assessment. The paper also models the effect
+of potential mitigation efforts on flood impacts. The application of network tools to traditional
+engineering domains like flood impact assessment and flood hazard is a useful contribution for
+estimating the socio-economic and infrastructure consequences of adverse weather events, and
+could be applied to most kinds of adverse events that urban infrastructure systems face.
+I have three important comments and a couple of minor notes:
+First, The paper’s measure of betweenness centrality uses edge weights to account for travel time
+between two nodes. It does not explicitly include measures of the importance of any node or
+edge in actual traffic patterns. The authors do use traffic patterns to estimate most likely routes
+in disturbed and undisturbed simulations which influences BC for a given node, but this is
+different from including the differing weights of traffic through nodes in the BC measure directly.
+The edge-weight for BC is a measure of how easy/hard it is to do a given trip but not how many
+people actually do the trip. By using this version of BC the authors assume there are people
+everywhere going everywhere. The authors could relax that assumption to a more realistic one by
+putting a weight on the increase in centrality that depends on how many people actually do that
+trip.
+Second, The papers assumption of 100% coverage for green roofs is not realistic, and may bias the
+results. Many buildings are not capable of supporting the additional weight of a green roof.
+These buildings are likely to be older and therefore concentrated in the center of the city where
+the authors note impervious surfaces are also highest. Thus, this assumption could
+systematically over-estimate of the benefits of green roofs in areas where they are most likely to
+be beneficial.
+Finally, I disagree with the authors justification for not modeling the effects of green roofs for the
+100 year return period. The authors state “… their effectiveness for high intensity rainfall events
+may be limited, especially during long wet spells .. (pg 11, line 18)" seems like an important
+reason to compare the effect of green roofs on transportation infrastructure for high vs medium
+intensity rainfall events rather than not measuring effects. If green roofs are only effective in
+reducing transportation impacts from flooding in certain contexts, this is an important (if
+unexpected) finding and should be first measured and then acknowledged directly.
+Other notes:
+Table 3 and the maps in Figs 9,10 & 12 would be easier to interpret if they were presented as
+differences or percent differences between the treatment and control conditions.
+Some of the writing is unclear, e.g. lines 45-50 on page 11.
+The conclusions would be more clear if there was an effort to integrate findings on changes in BC
+and traffic delays, including comments on why both measures of disruption are informative.
+5
+label_end_comment
+Decision letter (RSOS-160023)
+10-Mar-2016
+Dear Ms Pregnolato
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160023 entitled
+"Modelling Extreme Rainfall Impacts on Urban Transport" has been accepted for publication in
+Royal Society Open Science subject to minor revision in accordance with the referee suggestions.
+Please find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160023
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+6
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 19-Mar-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Andrew Dunn
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Des Higham
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+7
+Associate Editor Comments to Author ( Dr Luis Bettencourt):
+Associate Editor: 1
+Comments to the Author:
+The changes and discussions requested by the two Reviewers are important and substantial
+action is necessary for publication. However, both reviewers find the paper suitable for
+publication, once such changes are implemented.
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The main goal of the paper is to develop a methodology to: (1) model flooding due to heavy
+rains, (2) measure the impact of flooding on road (highway) systems, (3) measure the efficacy of
+various strategies to lessen the impact of flooding on road transport. Modeling the impact of
+flooding is an incredibly difficult task, filled with uncertainties, and I really like the approach
+taken by the authors. In fact, I can see that the authors are being “cautious” in every step of the
+way, providing some evidence for their decision, which makes me think that they have received
+unfavorable reviews in the past. Naturally, many assumptions are taken, and really only one
+metric is measured (betweenness), but considering the current state-of-the-art in the field, I
+believe the method used is sufficient, and the paper brings a contribution that should be
+published in RSOS.
+That being said, I do have a few comments, mostly on clarification. As mentioned, I am in the
+same field, and I know how difficult it is to convey the method, and I will therefore make a series
+of suggestions.
+- The title is too vague as it stands. I would recommend being more specific, either by bringing
+the word “betweenness” or “strategy” (i.e., modeling the impacts of various strategies…).
+- the introduction has only one sub-section, 2.1 background. It should really be split in two
+different section: 2. Introduction and 3. Background. I would also make the contribution of the
+paper clearer. At the moment, the last paragraph of the introduction has a sentence “this paper
+describes…” and the last paragraph of the background section has a sentence “this paper aims…”
+Get one clear goal / objective / contribution in the introduction, and only cite the relevant
+literature in the background.
+- from figures 6, 9, and 10, it seems you are only considering highways. Is this correct? If so, make
+it clear in the method section. Moreover, are you files “clean”? I have reviewed a paper recently
+about a tool that cleans GIS files to network format (see whether it is relevant or not:
+http://csun.uic.edu/data.html#GISF2E). In fact, the same group seems to have done some work
+on flooding and betweenness centrality
+(http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7004428&tag=1).
+- the method to use weighted betweenness centrality is clever. It’d be ideal to add real flows on
+the highways, but I understand the data is not necessarily straightforward to acquire (or if you
+use it, please make it clear). Plus, NetworkX is a great library to use.
+- On page 6, in the first paragraph, about CityCAT, I understand it takes an elevation map. What
+about catchment basins, sewer conduit size, etc.? If other researchers were to reproduce the
+method to their own contexts, it would be valuable to add this information. I see the paper is
+8
+getting long, however, and you may want to move some information to an appendix or a
+supplementary information file. I will leave this up to you.
+- 3.1 model assumptions. I really like the statement on focusing at the macro-level. Clearly there is
+too much uncertainty to focus at the micro-scale. Well done.
+- Page 8, in the network modeling section, is it “Ordnance” or “Ordinance”?
+- Page 9, the 30cm water limit used seems pretty high, although you are backing it with literature.
+The same value is described as “severe” from Table 1. The information presented in Table 1 and
+Figure 7 is actually a little redundant. Do you need both?
+- 4.1.4 Adaptation, are scenarios A and B directly integrated in CityCAT or did you have to get
+the values yourself from IDF curves? Again, this is purely to be able to reproduce the results.
+- Grey adaptation. I must admit I have no idea that the grey adaptation strategies were. Are
+conduits getting larger, are catchment basins able to catch more rain? What does “hardening”
+mean? Since you seem to suggest grey adaptation is more effective than green adaptation, could
+you clarify?
+- Again on grey adaptation, the 90% lowest value, etc. based on betweenness. Is that after
+flooding, before flooding? It was not clear.
+- in your results, I found some of the answers quite weird. Betweenness centrality is a sum. If
+some links are being affected (i.e., removed), the network will become smaller, and betweenness
+centrality will decrease for all links (unless it is normalized or very few links are removed). From
+table 3, the fact the average and maximum betweenness centrality values increase for all scenarios
+compared to business-as-usual is really odd. Are you really removing links from the network?
+This is puzzling for me. Are you using the betweenness centrality measure correctly in
+NetworkX?
+- Figure 3 really adds nothing, but feel free to keep it if you feel it add relevant information, and if
+so, perhaps add some labels.
+That’s it for my comments. There are quite a few, but again, it’s mostly in the form (not so much
+the content) and to explain the method. I look forward to reviewing a second version of the
+paper.
+Reviewer: 2
+Comments to the Author(s)
+The paper “Modeling Extreme Rainfall Impacts on Urban Transport” describes a method that can
+be used to quantify the effects of flooding on an urban transportation system by including
+topological network measures in a flooding impact assessment. The paper also models the effect
+of potential mitigation efforts on flood impacts. The application of network tools to traditional
+engineering domains like flood impact assessment and flood hazard is a useful contribution for
+estimating the socio-economic and infrastructure consequences of adverse weather events, and
+could be applied to most kinds of adverse events that urban infrastructure systems face.
+I have three important comments and a couple of minor notes:
+First, The paper’s measure of betweenness centrality uses edge weights to account for travel time
+between two nodes. It does not explicitly include measures of the importance of any node or
+9
+edge in actual traffic patterns. The authors do use traffic patterns to estimate most likely routes
+in disturbed and undisturbed simulations which influences BC for a given node, but this is
+different from including the differing weights of traffic through nodes in the BC measure directly.
+The edge-weight for BC is a measure of how easy/hard it is to do a given trip but not how many
+people actually do the trip. By using this version of BC the authors assume there are people
+everywhere going everywhere. The authors could relax that assumption to a more realistic one by
+putting a weight on the increase in centrality that depends on how many people actually do that
+trip.
+Second, The papers assumption of 100% coverage for green roofs is not realistic, and may bias the
+results. Many buildings are not capable of supporting the additional weight of a green roof.
+These buildings are likely to be older and therefore concentrated in the center of the city where
+the authors note impervious surfaces are also highest. Thus, this assumption could
+systematically over-estimate of the benefits of green roofs in areas where they are most likely to
+be beneficial.
+Finally, I disagree with the authors justification for not modeling the effects of green roofs for the
+100 year return period. The authors state “… their effectiveness for high intensity rainfall events
+may be limited, especially during long wet spells .. (pg 11, line 18)" seems like an important
+reason to compare the effect of green roofs on transportation infrastructure for high vs medium
+intensity rainfall events rather than not measuring effects. If green roofs are only effective in
+reducing transportation impacts from flooding in certain contexts, this is an important (if
+unexpected) finding and should be first measured and then acknowledged directly.
+Other notes:
+Table 3 and the maps in Figs 9,10 & 12 would be easier to interpret if they were presented as
+differences or percent differences between the treatment and control conditions.
+Some of the writing is unclear, e.g. lines 45-50 on page 11.
+The conclusions would be more clear if there was an effort to integrate findings on changes in BC
+and traffic delays, including comments on why both measures of disruption are informative.
+Author's Response to Decision Letter for (RSOS-160023)
+See Appendix A.
+Maria Pregnolato
+School of Civil Engineering and Geoscience
+Newcastle University
+Cassie Building, Claremont Road
+Newcastle upon Tyne
+NE1 7RU
+Telephone: +44 (0) 746 3162636
+23rd March 2016 Email: m.pregnolato@ncl.ac.uk
+Dear Editors and Reviewers,
+On behalf of my co-authors I am delighted to enclose the revised version of the manuscript RSOS-160023
+entitled “Assessing Urban Strategies for Reducing the Impacts of extreme weather on Infrastructure
+Networks” (formerly “Modelling Extreme Rainfall Impacts on Urban Transport”).
+We are very grateful for some excellent and thoughtful feedback from both editors and reviewers. We set
+out below how we have addressed all the comments and have amended the manuscript accordingly. We
+feel the paper has been improved as a result, and we hope you agree that it is now ready for publication.
+Please do not hesitate to contact me, however, if you have any further questions.
+Yours faithfully,
+Reviewer #1
+- The title is too vague as it stands. I would recommend being more specific, either by bringing the word
+“betweenness” or “strategy” (i.e., modeling the impacts of various strategies…).
+The title has been modified to “Assessing Urban Strategies for Reducing Impacts on Infrastructure
+Networks”.
+- The introduction has only one sub-section, 2.1 background. It should really be split in two different
+section: 2. Introduction and 3. Background. I would also make the contribution of the paper clearer. At the
+moment, the last paragraph of the introduction has a sentence “this paper describes…” and the last
+paragraph of the background section has a sentence “this paper aims…” Get one clear goal / objective /
+contribution in the introduction, and only cite the relevant literature in the background.
+The introduction has been modified and now has two sections: 2. Introduction (includes the aim and
+contributions), and 3. Background. However, on reviewing the rest of the paper we felt the same comment
+was relevant to other sections so have included a few more sub-section headings to help readers.
+- From figures 6, 9, and 10, it seems you are only considering highways. Is this correct? If so, make it
+clear in the method section. Moreover, are you files “clean”? I have reviewed a paper recently about a
+tool that cleans GIS files to network format (see whether it is relevant or not:
+http://csun.uic.edu/data.html#GISF2E). In fact, the same group seems to have done some work on flooding
+and betweenness centrality
+(http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7004428&tag=1).
+The approach presented in the paper is intended to be generic and transferable, but the application
+described here is focussed on a road network. Hence, the method is applicable to any infrastructure
+network along which there are flows. The ITN data used is a dataset specifically for the generation of
+topologically valid networks, and thus is already “clean”. This has been explained in the revised text.
+Thank you for the pointer to the GIS tool; it looks like it may be very useful indeed for other future work.
+- On page 6, in the first paragraph, about CityCAT, I understand it takes an elevation map. What about
+catchment basins, sewer conduit size, etc.? If other researchers were to reproduce the method to their own
+contexts, it would be valuable to add this information. I see the paper is getting long, however, and you
+may want to move some information to an appendix or a supplementary information file. I will leave this
+up to you.
+CityCAT uses elevation maps and built environment features (e.g. building footprint and green areas) from
+topographical data (in this case Ordnance Survey Mastermap data, available in the UK on
+http://digimap.edina.ac.uk/ ). Catchment basins for overland flow are included in the model simulations.
+Recently developments have also allowed the inclusion sewer conduits, however this was not implemented
+for this study.
+- Page 8, in the network modeling section, is it “Ordnance” or “Ordinance”?
+It is “Ordnance”.
+- Page 9, the 30cm water limit used seems pretty high, although you are backing it with literature. The
+same value is described as “severe” from Table 1. The information presented in Table 1 and Figure 7 is
+actually a little redundant. Do you need both?
+Table 1 is a method to identify key links in the network which are vulnerable to flooding (and therefore
+suitable for possible future adaptation), whereas Figure 7 the ‘damage function’ used to calculate new
+speeds on the road network relating to depth. As they show different things, both seem to the authors to be
+needed.
+- 4.1.4 Adaptation, are scenarios A and B directly integrated in CityCAT or did you have to get the values
+yourself from IDF curves? Again, this is purely to be able to reproduce the results.
+Scenarios A and B are directly obtained from CityCAT, by adding the capacity to store 5 cm of water to
+buildings in the study area. This has been specified in the revised text. We have also incorporated a clearer
+scenario labelling approach.
+- Grey adaptation. I must admit I have no idea that the grey adaptation strategies were. Are conduits
+getting larger, are catchment basins able to catch more rain? What does “hardening” mean? Since you
+seem to suggest grey adaptation is more effective than green adaptation, could you clarify?
+Clarifications have been added in the text and the term is no longer used to avoid confusion. Interventions
+of grey adaptation include all those measures that are “structural” and invasive, i.e. physical alterations to
+the infrastructure components in question. In the specific case of “node hardening”, such interventions
+could be done in real terms by raising the level of the roads, or by enhancing the drainage systems or by
+designing storage tanks for stormwater harvesting.
+- Again on grey adaptation, the 90% lowest value, etc. based on betweenness. Is that after flooding, before
+flooding? It was not clear.
+This classification of road segments is based on the betweenness centrality values for the un-perturbed
+networks. This has again been clarified in the text.
+- in your results, I found some of the answers quite weird. Betweenness centrality is a sum. If some links
+are being affected (i.e., removed), the network will become smaller, and betweenness centrality will
+decrease for all links (unless it is normalized or very few links are removed). From table 3, the fact the
+average and maximum betweenness centrality values increase for all scenarios compared to business-as-
+usual is really odd. Are you really removing links from the network? This is puzzling for me. Are you using
+the betweenness centrality measure correctly in NetworkX?
+The analysis uses a normalised betweenness centrality, which was briefly mentioned, but has been made
+clearer in equation 1. Further to this, by weighting the betweenness centrality on the time to traverse each
+edge, the shortest paths used in this calculation find the quickest route through the network. During the
+simulated events, the time to travel along an edge is calculated using the speed of possible travel based on
+the flood depth, so where flooding is extreme, the time to travel the edge becomes so large that shortest
+paths no longer use the effected edges. Therefore in answer to your question, we do not remove any edges;
+the cost to traverse them increases and thus shortest paths increase, and betweenness centrality increases.
+This has also been clarified in the text.
+- Figure 3 really adds nothing, but feel free to keep it if you feel it add relevant information, and if so,
+perhaps add some labels.
+In uploading the paper, the incorrect map for Figure 3 was uploaded; the correct Figure 3 has labels, to
+indicate road locations and names. The correct one will be uploaded.
+Reviewer #2
+Comments to the Author(s)
+1) The paper’s measure of betweenness centrality uses edge weights to account for travel time between two
+nodes. It does not explicitly include measures of the importance of any node or edge in actual traffic
+patterns. The authors do use traffic patterns to estimate most likely routes in disturbed and undisturbed
+simulations which influences BC for a given node, but this is different from including the differing weights
+of traffic through nodes in the BC measure directly. The edge-weight for BC is a measure of how
+easy/hard it is to do a given trip but not how many people actually do the trip. By using this version of BC
+the authors assume there are people everywhere going everywhere. The authors could relax that
+assumption to a more realistic one by putting a weight on the increase in centrality that depends on how
+many people actually do that trip.
+Whilst the measure of BC used in the paper does not explicitly include traffic patterns to estimate likely
+routes, other weights are used in an attempt to capture the most likely route taken. The weight/cost of each
+edge takes into account free-flow speed from national transport modelling approaches, assigning lower
+weights to more major roads. Data/observations on how many people are using links in the network (e.g.
+actual traffic flows) are difficult to obtain for the entire network. Such observations for disrupted
+situations have been used during the development of the model (shown in Figure 3) but are not available
+for all links in the network. We have provided some further discussion on this issue, and acknowledge the
+associated uncertainty this entails.
+2) The papers assumption of 100% coverage for green roofs is not realistic, and may bias the
+results. Many buildings are not capable of supporting the additional weight of a green roof. These
+buildings are likely to be older and therefore concentrated in the center of the city where the authors note
+impervious surfaces are also highest. Thus, this assumption could systematically over-estimate of the
+benefits of green roofs in areas where they are most likely to be beneficial.
+The “100% green roof scenario” has been used as sensitivity test in order to compare the effectiveness of
+an extreme ‘green’ intervention across an entire urban area with a single intervention at a specific network
+location (i.e., hardening of critical links). Whilst we acknowledge the installation of green roofs on 100%
+of buildings is unrealistic, it shows the upper bounds of effectiveness of this intervention and allows
+comparison of the most optimistic scenario possible with other more traditional interventions. Authors are
+aware of the very simplistic assumptions and hope that these have now been made clear in the text.
+3) I disagree with the authors justification for not modeling the effects of green roofs for the 100 year
+return period. The authors state “… their effectiveness for high intensity rainfall events may be limited,
+especially during long wet spells .. (pg 11, line 18)" seems like an important reason to compare the effect
+of green roofs on transportation infrastructure for high vs medium intensity rainfall events rather than not
+measuring effects. If green roofs are only effective in reducing transportation impacts from flooding in
+certain contexts, this is an important (if unexpected) finding and should be first measured and then
+acknowledged directly.
+The authors agree with the reviewer and apologise for this oversight. The simulation for the 1 in 200 yrs
+event with green roof adaptation has now been included in the revised paper. Labels have also been
+changed, in order to increase the readability.
+Other notes:
+Table 3 and the maps in Figs 9,10 & 12 would be easier to interpret if they were presented as differences
+or percent differences between the treatment and control conditions.
+Some of the writing is unclear, e.g. lines 45-50 on page 11.
+The conclusions would be more clear if there was an effort to integrate findings on changes in BC and
+traffic delays, including comments on why both measures of disruption are informative.
+All suggestions have been addressed in the final version of the paper.
+**********************************************
+Society Open

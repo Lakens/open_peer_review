@@ -1,0 +1,705 @@
+Males migrate farther than females in a differential migrant:
+an examination of the fasting endurance hypothesis
+Elizabeth A. Gow, Karen L. Wiebe
+Article citation details
+R. Soc. open sci. 1: 140346.
+http://dx.doi.org/10.1098/rsos.140346
+Review timeline
+Original submission: 26 May 2014 Note: Reports are unedited and appear as
+Revised submission: 2 October 2014 submitted by the referee. The review history
+Final acceptance: 19 November 2014 appears in chronological order.
+Review History
+label_version_1
+RSOS-140046.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Andreas Lindén)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not sure. I have unfortunately not paid much attention to this aspect, but think that the vital
+aspects of the study and the author's message are understandable with the information available
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+© 2014 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+GENERAL COMMENTS:
+This is a nice manuscript, investigating patterns of large scale migration distances in the flicker –
+a migratory woodpecker. The prediction and confirmed finding that males migrate further than
+females in this particular species is an interesting and nice contribution to the field. The pattern
+contrasts with other differential migrants with other parental strategies. However, I don't see this
+paper as a strong test for the fasting endurance hypothesis and the role of parental effort for
+differential migration between sexes. It is rather a proposal, or first call, for studying an
+interesting new subject. Experimental studies, multi-species meta-analyses and individual level
+information about parental effort and body condition would be needed. I guess the authors know
+this, but I think it should be further emphasized, to clarify the role of the manuscript.
+I would like to have some clarification in the explanation and interpretation of the statistical
+analyses. In particular – if the authors do what I believe they do – I would which to see the
+estimated effects sizes (regression coefficients), their standard errors, and why not also 95 %
+confidence intervals. These are important and have a nice and straightforward interpretation.
+This is especially the case as the predictors (breeding site latitude, sex, age) does not contain any
+relevant observation error. This implies a rather rare and luxurious condition, where the
+coefficients are unaffected by regression attenuation. The regression coefficient (say b) of
+breeding latitude is very interesting as such. An effect of b = 1 indicates that the birds travel on
+average a constant distance. This is also the null hypothesis in the Spearman's rank correlation
+test, which I find redundant and suggest could be removed. An effect of b = 0 (null hypothesis
+tested in the current version), means that the wintering latitude is not at all affected by the
+breeding latitude, i.e., that the birds have to travel further if they breed further north. Leap-frog
+migration would give b < 0 and symmetric leap-frog migration b = –1. A positive coefficient
+differing from both 0 and 1 is quite likely to be the case here, and could nicely be illustrated using
+a confidence interval for b. Related to previous comment, there could be and interaction between
+sex and breeding latitude, which would mean that the male and female have both different slopes
+b (see interpretation above) and intercepts. In current model, the slope is forced to be the same in
+both sexes. I would also (in any case) suggest replacing Figure 4 with one where wintering
+latitude is on the y-axis.
+SPECIFIC COMMENTS:
+Abstract, L25: we? Introduction, L91: then > than Materials and methods, L121–124: These two
+sentences contain overlapping information, which sounds almost contradictory. I suppose the
+contrasting numbers refer to the number of geolocators attached on birds and the ones that where
+successfully recaptured to provide information. Please clarify. Materials and methods, L137–139:
+What do you mean by a location error of 94 ± 167 km (SD)? Is 94 km the mean location error and
+167 km the standard deviation? Clarify. Materials and methods, L143–144: The Spearman's rank
+correlation test is redundant when using the GLM. Further explanations can be found elsewhere
+in my comments.
+Materials and methods, L144–146: Aren't latitude and longitude continuous (quantitative)
+variables? How were they initially included as random effects what did they affect in a random
+manner? The intercept? Or did you mean you tried to estimate a spatially autocorrelated
+Gaussian Markov field without success? This sounds a bit suspicious, needs to be considerably
+clarified or removed. Is this important with respect to the GLM used? Materials and methods,
+L148–150: The fixed effects model description either incomplete or slightly unclear. When fitting
+a GLM (generalized linear model) the link function and error distribution are vital information,
+but here they are missing. Therefore, I suppose you actually fit a regular linear model (= multiple
+regression model; function "lm" in R), sometimes actually called GLM as well (in that case,
+*general* linear model). Actually it's equivalent to using a GLM (in R function "glm") with
+identity link and normal error, which are the default options in a GLM. In any case, it's better to
+3
+just call it "linear model" to avoid confusion. I agree that a linear model is appropriate for this
+particular question. Please clarify terminology and what model you actually use. Materials and
+methods: have you thought about including longitude as a fixed effect in the model, with
+possible interactions, describing whether the system works differently in the east and the west?
+Materials and methods, L150: "variance is expressed as ± SD". This is contradictory and
+confusing; the variance *is* the SD squared. If you mean that the variation of any measured
+variables is reported as mean ± SD, please remove, and be clear about this where relevant.
+Otherwise, clarify. Material and methods: Clarify the role of geolocator and banding data in this
+study. Are the two data types simply pooled in the analyses?
+Results, L166–177: Please report all the effect sizes, i.e., estimated regression coefficients as well as
+their standard errors. They are important information.
+Discussion, L185: Some semantics; I would not call this pattern of differential migration (your
+main result) "bias", if you believe it's real. Discussion, L208–211: Restructure sentence to clarify,
+perhaps split into two. Discussion, L237–242: To which level are these hypotheses explicitly
+supported by the results of these studies? Are they only the explanations emphasized by the
+authors, or are there other stronger evidence. Could perhaps the fasting endurance hypothesis
+explain those patterns? Figure 3, L19, L188: You histogram of migratory distances indicates that
+the species is actually a partial migrant, where a relevant proportion of the population (in the
+south ?) are sedentary. I agree that this species, and most partial migrants, can also be called
+short-distance migrants when referring to the migration individuals only, but I think this part can
+be clarified. Until the very end of the manuscript, I thought that the flicker is an obligatory short-
+distance migrant, unlike many European woodpeckers (I might have missed some statements
+earlier).
+Figure 4: I suggest replacing this figure with another one, where wintering latitude is on the y-
+axis (or alternatively wintering latitude corrected for age). Then plot the fitted regression line for
+both sexes separately. Such a figure would better correspond to the main analysis. Relating to
+this, it could be relevant to let the sexes have different slopes (see general comments). If the
+change in analysis is not made, the suggested two regression lines are parallel.
+label_author_2
+Review form: Reviewer 2 (Marjorie Sorensen)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation
+Accept with minor revision (please list in comments)
+4
+Comments to the Author(s)
+Elizabeth Gow and Karen Wiebe have addressed differential migration in the northern flicker, a
+particularly useful study species for addressing the fasting endurance hypothesis since males,
+rather than females, invest more in parental care. The authors found support for the fasting
+hypothesis as males migrated farther than females, presumably to more benign winter habitats in
+order to recoup the energy expended during breeding. Migratory connectivity in this species was
+found to be strong, and birds breeding at higher latitudes had longer migration distances. This
+manuscript is clear, well written, well designed, and advances our understanding of differential
+migration. I only have minor comments. To me, the abstract is not representative of the fantastic
+work that has been done here and could be better at highlighting the most interesting points.
+I think emphasizing that the unusual reversed sex roles allow the often ignored fasting endurance
+hypothesis to be tested, should be included. Currently the abstract doesn’t make clear what the
+fasting endurance hypothesis is. Including this information will help the reader key in quickly to
+what is most unique about this study. Line 184-185 from the discussion “, that contradicts the
+pattern found in all other species of birds studied to date” would fit very nicely in the abstract.
+Line 23 ‘Connectivity was strong for populations….’ This sentence needs some reworking. Also,
+it wouldn’t take many more words to include why populations in the east might be declining
+more.
+Line 25. Remove ‘we’ Line 38. ‘diverse patterns’ please clarify what type of pattern you are
+referring to here since it’s not immediately clear.
+Line 47. For the sake of clarity perhaps rework to remove the word ‘farther’ since at a first pass it
+seems to indicate that southern breeding populations winter farther away rather than father
+‘north’. One question that you may want to address is the trade off between migration costs and
+wintering ground conditions. If migration is cheap then why don’t females migrate just as far as
+males if they’ll encounter the best wintering habitats. Your results may suggest that migration in
+northern flickers is expensive, but is there any evidence for this? (since the costs of migration vary
+between species)
+Line 194-195. Individuals breeding at more northern latitudes migrate further than southern
+birds. Does this mean then that northern and southern breeding birds have overlapping winter
+ranges? Best to make this clear in the discussion.
+Line 247-254 Perhaps I’m missing something but this example isn’t clear to me. How would
+reproductive differences in lekking white-ruffed manakins explain the fact that males are more
+migratory in this species, since females invest more in parental care? Also, previous research
+attributed differential migration to different body sizes. Please indicate which sex is larger in this
+species.
+Line 252-254. Why do you reference the Fudickar study here specifically? Perhaps it would be
+better to make a more general statement here since the same would apply to almost all studies of
+differential migration to date.
+This is a well designed study that tests an often overlooked hypothesis for differential migration
+and will be of interest to a broad audience. Marjorie Sorensen University of Cambridge, UK
+label_author_3
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+No
+5
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+To my knowledge, supporting data were not included. Though given some of my concerns about
+the datasets and analyses, their inclusion they might help make the paper more compelling with
+respect to scientific soundness
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+SUMMARY:
+The stated goals for this paper were to evaluate migratory connectivity for he northern flicker,
+with special emphasis on examining hypotheses related to mechanisms underlying differential
+migration, in particular the “fasting-endurance hypothesis” which the authors indicate has
+received less attention or support. The flicker’s parental care system (in which males provide a
+bulk of care) is emphasized, as it may predict unique outcomes for migratory strategy, for
+example favoring males going farther south as per the fasting endurance hypothesis. This
+datasets include: 1) data from 17 recovered light-level geolocators from a single site (Riske Creek,
+British Columbia; [RC]), 2) band recovery data (from the Canadian Banding Office) from ~175
+flickers, and 3) 7 banded birds recovered from the RC site long-term study. I found several
+passages of the paper interesting, and it was generally well written -----and it would be nice to see
+the geolocator data and band recovery data published, and it makes sense to publish together.
+However, I have major concerns that I believe need to be addressed in order to make this paper
+scientifically sound with respect to the relationships among the presented data, the methods, and
+the emphasized conclusions. Since this is an open access and non-competitive journal, I’m
+hopeful a major revision might make it suitable.
+MAJOR CONCERNS:
+1) Conceptually, I believe that there is too much emphasis placed on testing and concluding
+support for the “fasting endurance hypothesis.” I agree with the general premise that the
+examining differential migration in a sex-role-reversed parenting system bird is interesting and
+important, as is amassing summarized info on migratory connectivity for a range of species.
+However, there are no data on condition or physiology presented (or referenced clearly) that
+indicate that males on average actually incur greater overall physiological costs during breeding
+compared to females. There is apparently a quantitative difference wherein males provide more
+brooding and parental effort, but this is not quantified or explained thoroughly to evaluate the
+degree to which males might experience greater costs. Further, it seems that even if the data are
+appropriately interpreted as they are in this paper (i.e. that males migrate farther south), there are
+other non-exclusive alternatives to explain such behavior, for example, that relaxed sexual
+selection or extrapair paternity associated with the sex-role-reversed such that proximity to the
+breeding grounds to compete for mates early may be relaxed? In general my point here is that
+these are mostly descriptive data, and I think that’s fine. Especially given some possible
+complications and weaknesses with the data (see below) allowing for strong conclusions to be
+6
+drawn with respect to sex or geography----they can still be presented in a scientifically sound
+manner by relaxing some emphasis on hypothesis testing and drawing strong conclusions.
+2) As per my comments below, I feel that more careful effort needs to be made to explain and
+justify some issues with the specific data sources, subsets, and analytical methods.
+2a) First of all, it seems well-established in the migratory connectivity literature that hetergeneous
+recovery probabilities for mark-recapture data have the potential to drastically skew
+interpretations of these data. Methods now exist to address and incorporate these probabilities
+(e.g. Cohen et al. 2014, Ecology and Evolutoin, and references therein). I’m not sure whether they
+are applicable to the datasets presented here, but the choice of reporting raw band-recovery data
+needs to be discussed and justified. This type of heterogeneity in “recovery probability ” or
+“measurement probability” (e.g. geolocator versus recovery) may well bias the dataset with
+respect to the current framing hypothesis and interpretation of sex differences in distance
+travelled.
+2b) For example, I have concerns with respect to the geolocator dataset in relation to the
+hypotheses and conclusions as follows: Since sex differences in distance was a key focus, it seems
+problematic that the geolocator dataset was so imbalanced with respect to sex (only 1 female
+(~4% recovery rate); and 16 males (~30% recovery rate); see major comment below). This can also
+be addressed by identifying which birds were geolocator birds and which were not within the
+datasets (i.e. were they randomly distributed), as per my suggestions/requests for a table
+indicating sampling breakdown among methods and sex and sites, possibly keying this in the
+figures/legends, and also subset analyses to address the possibility of spurious results driven my
+methodology. e.g., Were the farthest south males (SoCal and Baja) from geolocators? My concern
+here is to be sure a certain sex bias in methodlogy * sex is not underlying the main conclusion (i.e.
+driving the sex differences).
+2c) In general, as per my comments below, I believe that several of the analytical and summary
+methods passages could be much more clear, and I also believe that additional analyses should
+be added to ensure that the main conclusions relating sex and distance travelled (i.e. males
+migrate farther), and also the relationship between are not spurious results. I also question and
+ask for more explanation / justification, for example regarding the use of linear models (e.g. the
+original random effects models) with the Riske Creek dataset, since it has zero variation with
+respect to the latitude and longitude, even though it represents the entire “west of the continental
+divide” dataset. Why use the simulation approach to throw out the lat/long random effects, then
+include lat in the model, maybe just include a site effect instead? Or analyze subsets?
+MAJOR COMMENTS:
+Line 108 – Were there any filters on the band recovery data for birds that were banded as
+juveniles on the breeding grounds? (i.e. how did you discern migration from juvenile dispersal).
+At Line 158, there was a 50km cutoff mentioned? Is anything known about the juvenile dispersal
+patterns to comment on that? Also with resepct ot the cutoff or filters you used to distinguish
+migrants versus non-migrants in the band recovery data, how is it that some non-migrants (i.e.
+migration distance = zero in Fig. 4) are included, while others are not (originally n=1086
+recoveries) The above two concerns (as well as additiaonl points below) suggest to me that it
+would be very helpful to have a table that breaks down the data sources and samples sizes with
+respect to site, sex, age, method, etc.
+Line 121- 122 – It’s a bit troublesome that nearly all the included geolocator birds were males
+when sex is a variable that’s part of the interpretation. Regarding deployment and recapture rates
+I understand one sex may be easier to capture, etc. But why are recovery rates for males so much
+higher (~ 30%) versus females (~4%)? Seems worth addressing if there are any explanations. And
+possibly testing the Riske Creek dataset without and without geolocator birds. Also makes me
+wonder how unbalanced the Riske Creek dataset is with respect to sex? Line 138 – Is this the
+latitudinal location error only? What about the longitudinal error? Or is that both together
+averaged somehow? Line 137 – The “unpublished data” justifying the calibration method for
+cavity nesting seems important enough to include as a supplementary dataset or description….or
+alternatively, at least explain a bit more.
+7
+Lines 143 – 150 – I recommend revising this section to make it more clear the hypothesis to be
+tested and all variables to consider, and then the model fitting / final model justification, etc. Line
+148 – 150 – This sentence is the main test in which you initially included breeding lat/long as
+random factors then removed? If so, I would put this sentence before the prior one to indicate
+what you were trying to test---followed by the details about the model with regards to the
+random factors being included, then excluded, etc.
+Line 148-150 – so breeding latitude was originally included as a random effect (alongside
+longitude) but then included just as a fixed effect (covariate) in the final GLM? RESULTS and
+Lines 145 – 150 – Why not just include a site or region effect? Because it seems to me the problem
+with doing the mixed model with the random effects of lat/long is that the RC data all from the
+same point make those variables horrifically non-normal Lines 146 – 147 – I am not familiar with
+this method for testing the importance of the random effects, but it seems odd to use a
+simulation-based test to evaluate the importance of variables from a traditional hypothesis test
+model (the mixed model GLM)…wouldn’t it provide a significance . Also see my prior comment
+as I believe a site effect (or anyalyzing subsets with and without Riske Creek as you report in the
+results) seems more compelling. Based on Figures 1 & 2, there are > 40 points in the western
+wintering polygon, with only 1 effective breeding origin Riske Creek (RC) (and maybe one other
+breeding point?) but there are stated to be “17 individuals” from geolocators at RC (Line 122) and
+“an additional 7 re-sightings records from birds makred as part of a long-term study (1997-2003)
+at RC” (Line 115).
+In the Results, line 177, it appears there are ~50 birds So did the additional ~20-30 birds wintering
+in the west just happen to be from historical band records, all from RC? Along these lines the text
+states “mainly from Riske Creek” (Line 161) – aren’t all of them from RC, with maybe just one
+bird from a very close by site (Fig. 2)? Fig. 2 – how are the polygons drawn? To encompass all
+points? Or what %? Where were the wintering outliers from with respect to breeding sites? Line
+168 / Figure 4 – I would highly suggest making this three different tests and reporting all three---
+the pooled data as you report here, then exclude the non-migrants, then exclude non-migrants
+and risk-creek birds. Three separate fit lines would be appropriate but not necessary. It appears
+that the result will be the same, even when excluding non-migrants and Riske Creek---which
+makes a much more compelling case to draw the conclusions you have without the appearance of
+non-migrants + Riske Creek birds driving this relationship.
+Line 182 – This is a bit of an odd interpretation, given that you only sampled 1 single breeding
+site west of the Rocky Mountains, that happens to be pretty far west of the eastern breeding
+populations sampled. Also, because there is no longitudinal variation within the western
+sampled area. It is striking how little longitudinal variation exists on the Line 175 – 177 – What
+about when Riske Creek birds were excluded? Line 183 – 185 – Is this demonstrated only within
+the western (i.e. RC) population, right? Line 188 – 189 - Regarding this conclusion, were any
+alternative climatic or other environmental variables considered in addition to or alongside the
+pattern for snow-free ground? I’m not suggesting this isn’t a valid idea, but to posit this as a data-
+driven suggestion by mapping snow free ground behind the observed patterns of migration
+seems like a weak conclusion, particularly when sampling of breeding
+MINOR COMMENTS:
+Line 25: we “found” females wintered? (typo/word omission) Line 48 – contrast leapfrog
+migration with “chain migration” etc.? (e.g. Berthold, 2001. A General Survey of Migration,
+(book) Line 58-59 (and genetics, see Rundel et al. 2013 Molecular Ecology; ) Line 65 – formatting
+issue with citation (Chapman, Bronmark, etc.) Line 72 – last clause is a bit anthropomorphic,
+could clarify just a bit. Line 91-92 - more philopatric to nest sites <than> females (versus then)
+typo Line 103 – might be nice to insert a short clause indicating why flickers are a keystone
+species (based on reference title it seems because they create cavities) so the reader can ascertain
+easily.
+8
+Line 115 – 117 – Wow that’s a crazy bird! I understand that logistical considerations can
+reasonably limit a project’s scope, but is there a reason you chose not to include banding recovery
+data from the US Bird Banding Lab? Or perhaps I’m mistaken and it’s the same data?? Line 168 –
+“longer” distances? Line 177: Please report sex difference in distance mean +/- SD Line 193 – 195
+– This conclusion seems to be well supported by Fig. 4 data. Lilnes 199 – 201 – would this be
+easily addressed by adding US Bird Banding Lab Data? Or maybe it’s all the same dataset? Line
+210 – 211 – See also Rundel et al. 2013, Molecular Ecology for a couple more species, I believe.
+Line 204 -205 – my understsanding was that the Flicker hybrid zone is in the Great plains---which
+seems less driven by the continental divide? Line 214 – breeding in Central North America (no
+“the”) typo Line 214 – 230 – This is an interesting speculative paragraph, but seems pretty much
+wholly unrelated to the data presented here? Lines 231 -246 – This is a nice discussion paragraph,
+and totally on-point with the main themes and data presented here! Line 249 – perhaps a missing
+comma?
+label_end_comment
+Decision letter
+28-Aug-2014
+Dear Dr Gow
+Manuscript ID RSOS-140046 entitled "Males migrate farther than females in a differential
+migrant: a revision of the fasting endurance hypothesis" which you submitted to Royal Society
+Open Science, has been reviewed. The comments from reviewers are included at the bottom of
+this letter. In view of the criticisms of the reviewers, the manuscript has been rejected in its
+current form. However, a new manuscript may be submitted which takes into consideration these
+comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made. You will be unable to
+make your revisions on the originally submitted version of your manuscript. Instead, revise your
+manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to http://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript. Your resubmitted manuscript should be submitted by 25-Feb-2015.
+If you are unable to submit by this date please contact the Editorial Office. I look forward to a
+resubmission.
+Sincerely,
+Charlotte Wray
+Senior Publishing Editor,
+Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-140046)
+Dear Dr. Wray,
+Thank you for the option to revise our manuscript ID RSOS-140046 entitled “males migrate
+farther than females in a differential migrant: an examination of the fasting endurance
+hypothesis”, for reconsideration to Royal Society Open Science. We think that the reviewer’s
+comments were extremely helpful in revising this manuscript.
+9
+To address concerns of reviewers 2 and 3, we softened our wording about the strength to which
+our results test the hypothesis and now stress that further quantitative data are needed in a future
+study. We added methodological details and revised some analyses as suggested by reviewers 2
+& 3. The reviewers suggested different revisions to figure 4 so we followed the suggestion of
+reviewer 2 to show sex differences, which seemed to best suit the main aims of our paper.
+Because reviewers wanted elaboration of alternate hypotheses, we added a new short paragraph
+to the discussion. Reviewer 3, commented that we don’t really have enough data to demonstrate
+why flicker populations are declining, so we removed the population decline paragraph from our
+paper.
+Please see specific responses below.
+Thank you,
+Elizabeth Gow
+Reviewer 1:
+- Abstract revised (Lines 26, 29–31)
+- The section on population declines was removed from the discussion, so we reworded the
+sentence (Line 23)
+- Word removed (Line 24)
+- Clarified the term ‘diverse patterns’ (Lines 39-40)
+- Reworded sentence (Lines 47–49)
+- This is a good point and we added a paragraph in the discussion to discuss other possibilities
+that may explain the sex differences in migration distance. (Lines 352–370)
+- Added that southern and northern populations overlap (line 299)
+- Clarified the example and indicated which sex is larger (line 343–349)
+- Removed sentence.
+Reviewer 2 General Comments:
+We softened our wording to say that our results are consistent with the fasting endurance
+hypothesis and in the penultimate paragraph say that further studies which explicitly quantify
+energy costs of males and females are needed to more directly test the hypothesis.
+We added the requested statistical details as suggested, also see response to comment 10 below
+and changed figure 4 as suggested. Also see response to comment 15 below.
+Specific Comments
+1. Corrected (Lines 24, 110)
+2. Sentences combined for clarity (Lines 182–183)
+3. Clarified location error (Lines 166–167)
+4. Removed Spearman’s rank correlation.
+10
+5. Because both reviewers (2 and 3) raised concerns over the simulation test we removed it and
+have added longitude in our model as a fixed factor. We also revised the paragraph to make our
+methods clearer. (Lines 175–184).
+6. Clarified the model by adding family and link function. (Lines 178–179)
+7. Yes, we did think about using longitude as a fixed factor with interactions. We now explain in
+the text that we originally included longitude with interactions but removed longitude from the
+analysis to increase the power of our model. (Lines 179–182).
+8. Statement about variance is clarified (line 183)
+9. Indicated that the data are pooled (lines 175)
+10. Reported all effect sizes, standard errors, and 95% CI. (Lines 205–206, 212–214, 216–219, 220–
+223)
+11. Wording changed. (lines 287–288)
+12. Sentence restructured and clarified. (lines 337–345)
+13. The hypotheses are supported by the studies listed and based on those authors best
+interpretation of their own data. Because it is unlikely the fasting endurance hypothesis explains
+the patterns we did not make any changes to the text.
+14. Clarified terminology about short-distance vs. partial migrants. (Lines 314–316)
+15. We changed figure 4 as suggested by the reviewer and used different symbols to represent
+males vs females. In response to the reviewer’s comments about comparing the slopes and
+intercepts we added the equation of the lines for the relationship between breeding and
+wintering latitudes.
+Reviewer 3:
+Major Concerns
+1. We retained a framework of hypothesis testing in the paper, but softened the wording and
+added caveats to state that our descriptive results are consistent with the hypothesis but that
+future studies that quantify energy costs of males and females are needed to more directly test it.
+We added details about the mating system and sex roles of flickers to the introduction to make a
+better case that males invest more into care than females (Lines 94–103).
+2a. The Cohen et al. 2014 paper, suggested by the reviewer as a potential way to examine our
+data, uses mark-recapture and probability of detection simulation modeling to estimate
+connectivity between populations. The approach of Cohen et al. (2014) requires that all
+individuals have the same probability of detection and survival. Additionally they suggest that
+the technique is likely only applicable to birds with > 40000 individuals banded. The first
+assumption is violated in our study as we use both geolocator and banding data and the sample
+size of banded flickers is far less than 40 000.
+To account for potential bias in our data we examined sex and age differences at three scales as
+suggested by the reviewer (the first two were in the original manuscript): (1) continent wide (both
+banding and geolocator data; lines 211–219); (2) Riske Creek only (banding and geolocator data;
+lines 219–223); and (3) we added a new analysis that eliminates any bias from geolocators by
+examining only band recoveries from migratory birds (lines 223–226).
+2b. We now address the recovery method with a new analysis (see above).
+Whereas geolocator birds had longer travel distances, and most of the geolocator birds were
+male, this can't account for the sex-bias in distance because the pattern also held when only
+11
+migratory and banding records were used (i.e., no geolocator data; Lines 223–226). Since only one
+site (Riske Creek) involved geolocator birds we don't think a table is necessary to show a
+breakdown of methodology by site. Rather, we now state this clearly in the methods (Lines 139–
+147).
+2c. The linear model justification was removed (see comment # 5, reviewer 2) and please see
+above comments about potential geolocator bias. Including a site effect does not make sense, as
+aside from the Riske Creek records, all other banding records were from independent locations.
+Major Comments
+1. Little is published about juvenile dispersal distances in flickers but in northern populations
+such as Riske Creek all birds migrate-whether juvenile or adult, and the documented movements
+are always south of the breeding location, so it is unlikely the movements of yearling birds are
+simply dispersal. Also, because flickers don’t breed during the winter (i.e., 15 October – 1 March)
+it is very unlikely that movements by juveniles documented during this time are driven by
+dispersal as opposed to migration. We added a sentence about our filtering of dispersal effects in
+the methods (lines XXX).
+2. Some birds were not included because they were caught during the same season, i.e., breeding
+or wintering. Added additional details in methods for clarity (lines 136–139).
+3. As per above response 2b about an additional table.
+4. Details about recapture and recovery rates of geolocator birds are published in another paper.
+We added a reference in the text (Lines 151). See above responses regarding examining sex
+differences between geolocator and banding records.
+5. The location error was clarified (lines 165–167 and response # 6 reviewer 2)
+6. The details about the calibration method are currently in review for another journal, we
+therefore did not add further details.
+7,8,9. Revised paragraph and analyses, see responses for reviewer 2.
+10. Adding a site or region effect does not make sense for our dataset, please see comment 2b
+about locations of banded birds.
+11. Please see response #8 for Reviewer 2 regarding simulation method and response #10 above
+regarding site effect.
+12. Because of the confusion with our sample sizes we clarified them in the methods. (Lines 144–
+147). Line 161 (from original manuscript) was reworded to indicate that yes, these birds were all
+from Riske Creek
+13. Indicated that polygons encompass 90% of points (Line 524/ caption fig 2). Added details to
+the results to describe some of the outliers in Fig 2 (Lines 199–203).
+14. The reviewer requested that we conduct three analyses comparing migration distance to
+breeding location. In addition to the analysis reported in the original manuscript containing all
+data (both Riske and Continent wide birds). We think that only one additional analysis (Lines
+223–226) was necessary to evaluate sex differences from banding records of migrants (including
+both banding records from Riske Creek and Continent wide) because the main concern from the
+reviewer is the potential bias from the geolocators. The other analyses suggested would have
+much smaller datasets (i.e., banding records from Riske Creek birds, n = 26 female and 14 male),
+which would lack power due to low sample sizes for males.
+12
+15. The patterns we report don’t seem particularly odd to us because it is common that migrating
+birds choose not to cross large physical barriers on the landscape such as mountains, between
+breeding and wintering sites (e.g. Delmore et al. 2012 and references within). We have thus not
+added any text here.
+16. Our sample sizes are not large enough to conduct larger models without the Riske Creek birds
+in the model. Thus we did not conduct models excluding the Riske Creek Points.
+17. No, the pattern was found throughout the continent. We altered to sentence (Line 286).
+18. Because flickers are ground-foraging birds, snow cover is likely the most relevant climatic-
+related variable to measure. We added details about this to the discussion (Lines 292–295).
+Minor comments
+- Typo corrected (Line 24)
+- Added sentence to contrast to chain migration (Lines 49–51)
+- Added “genetics” (Line 62)
+- Format changed (Line 68)
+- Sentence modified (Lines 74–76)
+- Corrected typo (Lines 110)
+- Added why flickers are a keystone species (Line 125)
+- The Canadian Bird Banding Database is the same at the US Bird banding data.
+- Sentence changed due to Reviewer 2’s comments.
+- Added mean sex differences in migration distance (Lines 212_213)
+- The Canadian Bird Banding Data is the same at the US Bird banding data.
+- There were no additional species to add from the suggested reference.
+-It is true that some of the hybrid zone is on the Great Plains, but it roughly follows the
+continental divide. Anyway, we did not think it worthwhile here to expand on the exact location
+of the hybrid zone as this is a different topic from the current paper and one that has no impact
+on our results.
+- Removed paragraph
+- Comma added. Line 345
+label_version_2
+RSOS-140346 (Revision)
+label_author_4
+Review form: Reviewer 1 (Andreas Lindén)
+Is the manuscript scientifically sound in its present form?
+Yes
+13
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+-
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+GENERAL COMMENTS:
+I think this revision nicely accounts for most of the relevant concerns raised by myself and the
+other reviewers as well. I have a couple of additional comments, listed more specifically below.
+What I am most worried about is that a relevant share of the birds do not migrate (see Figure 3–
+4). As the decision to migrate (binary) and migration distance if migrating (continuous variable)
+represents two slightly different phenomena, it could be relevant to analyze them separately. (I'm
+sorry that I didn't come to think about this mention this earlier.) A minor effort that should
+already help would be to provide the slopes without the migrants included.
+SPECIFIC COMMENTS:
+1) Abstract, P2, L26: Check and clarify sentence (usage of word "found")
+2) Methods, P8, L170-171: Now it is clear what you have done. However, since you use a
+*general* linear model, which is always both linear and assumes normally distributed residuals,
+your statement of link and error is a bit strange (they are properties of *generalized* linear
+models). The (general) linear model = a generalized linear model (GLM) with identity link and
+normal error. Some alternatives for further clarification:
+1) just call it a linear model, without specifying any link function? You can still mention the
+assumption of normally distributed residuals if you want.
+2) Change the word "general" to "generalized". Then everything should be perfectly clear,
+although it is still in practice just a regular linear model.
+3) Results, P9, L196 (estimate: 0.49 ± 0.099 SE): I'm not sure you got my previous point about
+interpretation of the regression coefficient (y: wintering latitude, x: breeding latitude). The
+latitudinal differences in wintering location are ca 0.49 × the differences in breeding location. This
+implies that:
+1) birds breeding farther north also winter farther north (estimate > 0), and
+2) the differences in wintering latitude are not as much as the differences in breeding sites
+(estimate < 1). These estimates are reliable because you apparently don't have noise in the
+explanatory variable (breeding site latitude). While this is not a large *concern*, I think you could
+make better use of the information content of the result and skip unnecessary tests made.
+4) Results, P9, L197–198: What is the estimate and SE if you include migrants only? This would be
+even more relevant than the slope for the whole data set, since it obviously describes migration
+behavior.
+14
+5) Label of Figure 4, P19–20, L462–465: You write: "Females tended to winter closer to breeding
+sites as indicated by the higher slope of the line (dashed line; y=0.6786x+9.1718), while males
+wintered farther from the breeding sites (solid line; y=0.40x+19.88)." Nice to see you added this
+comparison between sexes.
+However, I do not think the interpretation is correct (see comment 3). Neither the intercept nor
+the slope alone tells which sex migrates further. It depends on both parameters and is conditional
+on x. As you see from the figure, the female line is mostly above the male line for the most
+relevant breeding latitudes (say > 40°N) where most of the birds are. But the lines cross, and at
+more southern breeding grounds the relationship is the opposite according to the model fit. I
+don't think you should bother about that, because there are almost no migration individuals at
+those latitudes.
+label_author_5
+Review form: Reviewer 2 (Marjorie Sorensen)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation
+Accept as is
+Comments to the Author(s)
+Thank you for your revision. All of my previous comments have been addressed and I am happy
+with the revisions put in place.
+label_author_6
+Review form: Reviewer 3
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+15
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation
+Accept as is
+Comments to the Author(s)
+I reviewed the prior version of this paper (Reviewer 3), and I appreciate the extent to which the
+authors have improved the paper and done a thorough job addressing reviewers' concerns and
+comments (which were sometimes contradictory). In particular, I appreciate the inclusion of
+subset analyses to ensure that methodological-biases or subset-biases were not driving the core
+results (of males migrating farther and further south than females), etc. the paper now seems
+much improved and ready for publication.
+Decision Letter (RSOS-140346)
+12-Nov-2014
+Dear Dr Gow
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-140346 entitled
+"Males migrate farther than females in a differential migrant: an examination of the fasting
+endurance hypothesis" has been accepted for publication in Royal Society Open Science subject to
+minor revision in accordance with the referee suggestions. Please find the referees' comments
+below. The reviewers and Subject Editor have recommended publication, but also suggest some
+minor revisions to your manuscript. Therefore, I invite you to respond to the comments and
+revise your manuscript. Because the schedule for publication is very tight, it is a condition of
+publication that you submit the revised version of your manuscript within 7 days. If you do not
+think you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre. When submitting your revised
+manuscript, you will be able to respond to the comments made by the referees and upload a file
+"Response to Referees" in "Section 6 - File Upload". You can use this to document any changes
+you make to the original manuscript. In order to expedite the processing of the revised
+manuscript, please be as specific as possible in your response to the referees. When uploading
+your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document". All main documents should
+include the following sections before the references.
+• Ethics statement - As discussed previously this should detail the appropriate permission and
+licences to carry out the field work including the names of the bodies that granted these.
+• Data accessibility statement - As discussed previously this should state that the Canadian Bird
+Banding Office data were used with permission from the Canadian Bird Banding office and how
+readers can access these data. This section should also state where your geolocator data can be
+accessed.
+• Competing interests statement
+16
+• Authors’ contributions statement
+• Acknowledgements
+• Funding statement
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Emilie Aime
+Senior Publishing Editor
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-140346)
+Dear Editor,
+Thank you for accepting our manuscript RSOS-140346 “Males migrate farther than females in a
+differential migrant: an examination of the fasting endurance hypothesis” for publication in
+Royal Society Open Science. As requested we responded to the reviewers comments (see specific
+comments below), and added the requested details at the end of our manuscript. The data for this
+paper were also uploaded on Dryad.
+Thank you,
+Elizabeth Gow
+Response to Reviewers
+Reviewer 2.
+1. Clarified sentence. Line 29
+2. Changed to generalized linear model. Line 175
+3. It was not completely clear what the reviewer was requesting here, but it appeared that he was
+suggesting that some of the tests were not necessary (but did not specify which ones). We think
+the tests we included are all useful because they inform the reader what we are testing and the
+relationships between migration distance and breeding location based on three different data
+structures. Se, we made no changes here.
+4. Added the estimate and SE. Lines 201, 204–205
+5. Removed the reference to the equations of the lines as suggested. Line 488–490.
+Society Open

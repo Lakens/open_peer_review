@@ -1,0 +1,605 @@
+An efficient interpolation technique for jump proposals in
+reversible-jump Markov chain Monte Carlo calculations
+W. M. Farr, I. Mandel and D. Stevens
+Article citation details
+R. Soc. open sci. 2: 150030.
+http://dx.doi.org/10.1098/rsos.150030
+Review timeline
+Original submission: 15 January 2015 Note: Reports are unedited and appear as
+Revised submission: 21 April 2015 submitted by the referee. The review history
+Final acceptance: 26 May 2015 appears in chronological order.
+Review History
+label_version_1
+RSOS-150030.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+The authors list how to access their algorithms (code) but not the data considered in Figure 4.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+Please see Appendix A.
+label_author_2
+Review form: Reviewer 2 (Neil Cornish)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, the code is publicly available
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+I am familiar with an earlier draft of this paper from internal LIGO review, and I'm pleased to see
+that it is finally being submitted for publication.
+The paper describes an improved implementation of the idea that Tyson Littenberg and I
+suggested for using the posterior samples from fixed-dimension MCMCs to generate efficient
+proposal distributions for trans-dimensional RJMCMCs.
+One minor quibble that I have is that the language in the introduction makes it seem that the
+underlying idea is different. Both methods "construct an approximation to each
+model’s posterior parameter distribution". The difference is that the kDE tree approach is far
+superior to the original sparse histogram approach.
+Other minor point is that the reference to parallel tempering does not point to the original paper
+on the topic (Swendsen and Wang 1986).
+label_end_comment
+Decision letter (RSOS-150030)
+20-Mar-2015
+Dear Dr Mandel,
+The Subject Editor assigned to your paper ("An Efficient Interpolation Technique for Jump
+Proposals in Reversible-Jump Markov Chain Monte Carlo Calculations") has now received
+comments from two reviewers. We would like you to revise your paper in accordance with the
+3
+suggestions from both of the referees, which can be found below. Please note this decision does
+not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 12-Apr-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+4
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-150030)
+See Appendix B.
+label_version_2
+RSOS-150030.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Neil Cornish)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not applicable
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+5
+Comments to the Author(s)
+label_comment_3
+I am satisfied with the revisions made by the authors.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+OK
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept as is
+Comments to the Author(s)
+label_comment_4
+The authors have addressed most of the questions/issues I raised in the initial review. This paper
+presents a promising approach to addressing a significant problem in RJMCMC: Developing an
+effective kD-tree proposals for inter-model jumps. I remain disappointed that the model-jumping
+approach is illustrated with only a toy problem (the example for single-model MCMC in Sec. 5 is
+of much less interest as there are many existing approaches to this problem and no indication of
+how this approach compares). Nonetheless, the paper is technically sound, well written, and a
+presents a valuable idea.
+label_end_comment
+Decision letter (RSOS-150030.R1)
+26-May-2015
+Dear Dr Mandel,
+I am pleased to inform you that your manuscript entitled "An Efficient Interpolation Technique
+for Jump Proposals in Reversible-Jump Markov Chain Monte Carlo Calculations" is now accepted
+for publication in Royal Society Open Science.
+You can expect to receive a proof of your article within approximately 10 working days. Please
+contact the production office (openscience_proofs@royalsociety.org) to let us know if you are
+likely to be away from e-mail contact during that period. Due to rapid publication and an
+extremely tight schedule, if comments are not received, your paper may experience a delay in
+publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+6
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Ms Emilie Aime
+emilie.aime@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+ppendix A
+Review of:
+n Efficient Interpolation Technique for Jump Proposals in Reversible-Jump
+Markov Chain Monte Carlo Calculations” by Farr, Mandel and Stevens
+is paper addresses an interesting and important issue in Bayesian model selection: De-
+oping efficient jump proposals in reversible-jump Markov-chain Monte Carlo (RJMCMC)
+orithms to transition between the models under consideration (high rejection rates for
+er-model proposals represent the limiting factor in many applications). The approach
+posed here—to exploit sampling of the posterior probability density (PPD) in the indi-
+ual model spaces, characterized as a kD tree structure—seems like a very promising idea
+ich could justify publication. However, there are a number of significant issues that must
+addressed before publication is recommended.
+1. The history of this work is unclear and concerning. The first paragraph of page 4 says
+“We have successfully applied this RJMCMC technique to a 10-way model selection
+among alternative mass distribution models for black-hole X-ray binaries (Farr et al.
+2010)”. This reference is again cited on page 13 as a successful application of the
+method developed in the present manuscript. But this raises an obvious question:
+Has the method described in the present manuscript already been published by the
+authors? If so, publication of the present manuscript does not seem justified since the
+it considers only a trivial toy problem which adds nothing of significance. Further,
+the reference section indicates that Farr et al. 2010 is in the submission stage to the
+Astrophysical Journal. What’s the story here—is this a typo, or a badly out-of-date
+reference, or has the paper actually been in-review for five years? Is the method
+described in the present manuscript the same as in the 2010 paper (sounds like it is)?
+This must be sorted out, and unless the present manuscript contains new concepts
+compared to earlier work, publication is not justified.
+2. The explanation of the inter-model proposal and acceptance criterion is Section 3c is
+inadequate. While well-known material on Bayesian analysis (Section 3a) and MCMC
+(Section 3b) is presented at length with equations, the new RJMCMC approach is
+skimmed over in a single sentence (no equations) as “We perform MCMC in the super-
+model parameter space just like a regular MCMC; we propose jumps to different pa-
+rameters within a model (intra-model jumps) and jumps to a different model with
+different parameters (inter-model jumps)” (page 6). In fact, using the manuscript’s
+notation, the Metropolis-Hastings-Green acceptance probability for a jump to a pro-
+posed model Mi with parameters ~<U+03B8>ip from a current model Mj with parameters <U+03B8>~j is
+given by !
+p(<U+03B8>~ip |d, Mi ) Q(<U+03B8>~ip <U+2192> <U+03B8>~j )
+paccept = min 1, |J| ,
+p(<U+03B8>~j |d, Mj ) Q(<U+03B8>~j <U+2192> <U+03B8>~p )
+i
+where |J| is the determinant of the Jacobian matrix for the diffeomorphism from (j, M j )
+to (i, Mi ). This equation should be given and explained in the paper. RJMCMC
+algorithms are often formulated such that |J| = 1; if that is the case here it must be
+explained (it is not generally true of all proposals, and neglecting to mention this could
+given wrong ideas about RJMCMC). Further, the inter-model proposal distribution
+should be given explicitly (an equation), either in Section 3c or Section 4 where kD
+trees are described. This may be relatively simple: if the proposal probability density
+is just the kD-tree PPD approximation for the proposed model (independent of the
+current model), then I’m guessing that Q(<U+03B8>~j <U+2192> <U+03B8>~ip ) = 1/(Ni Vi ) where Ni is the number
+of samples for the ith model space and Vi is the volume of the kD-tree box containing
+<U+03B8>~ip . But either way, the inter-model proposal must be clearly defined in the manuscript.
+3. The examples given in the manuscript seem simplified to the point of triviality and/or
+are poorly explained. The only example given of model selection (the potentially im-
+portant contribution of this paper) only involves sampling between 1D Gaussian and
+Cauchy distributions (two unknown parameters each). While this does illustrate the
+method (barely), it is of no practical relevance and is so much simpler than most re-
+alistic model-selection problems that it is not clear how efficiency and performance
+would scale, or how useful the method could be in practice. I assume the authors are
+researching real-world model-selection problems of practical interest (like alternative
+mass distribution models for black-hole X-ray binaries, mentioned on page 4). Includ-
+ing a meaningful example such as this would greatly improve the paper and increase
+its significance. The other two examples represent only single-model sampling and are
+of much less interest, but even so they should be properly explained. In the examples
+in Figures 3 and 4, what are the problems, what are the parameters, and what do the
+results mean? This current presentation is not satisfying to the reader.
+4. Claims are made of “dramatically improved convergence” (page 3), that “convergence
+is generally rapid” (page 4), and “the interpolation method described above can dra-
+matically improve the runtime of an RJMCMC” (page 10). While I believe the method
+developed here could substantially improve efficiency in some cases, this is not actu-
+ally demonstrated in the paper. The trivial example in Figure 2 appears to increase
+inter-model acceptance by a factor of ~8 or so, but no results on RJMCMC sampling
+convergence are given. The example considered in Figure 4 claims to have improved
+convergence by a factor of two (not dramatic), but there is no discussion of what defi-
+nition is applied for convergence—and as noted on page 6 (third paragraph), defining
+convergence for MCMC sampling is a tricky business. Even applying a reasonable
+working definition of convergence, given the random nature of MCMC sampling, aver-
+ages over several MCMC runs are often required to meaningfully compare convergence
+rates—was that done here? While the claims of “dramatic” improvements in conver-
+gence may be true in some cases, they don’t appear to be properly established in the
+paper.
+5. Minor points:
+(a) Notation: While notation differs between disciplines, I am used to boldface (rather
+than over-arrows) being used to represent vectors in published work—the authors
+could consider this. Further, why is the set of parameters written as a vector ( <U+03B8>), ~
+but the set of data not written as a vector (d)?
+(b) Page 5, first line after Section 2b heading: Should be j = 1, . . . not i = 1, . . ..
+(c) Page 5, third line after Section 2b heading: Should be “set of parameters” not
+“set of parameter”.
+(d) Figure 1 would be clearer if parameter axes were added indicating the origin, with
+axes scales in terms of standard deviations in x and y.
+(e) The x axis of Figure 2 is labeled Nboxing while it should be Nbox .
+(f) Figure 3 caption: kd should be kD.
+(g) Equation (5.1): P should be Q (this is the proposal distribution). Also, V might
+be better written as Vbox to indicate that it is the volume of the current box, like
+Nbox indicates the number of samples in the current box (V is not a constant but
+varies with boxes).
+(h) Page 11: Inconsistent use of math or Roman font for some subscripts; e.g., N box
+and Nbox , and Ncrit . When the subscript is a label rather than an index, Roman
+font is preferred.
+(i) Page 11, after Eq. (5.1): Please give an equation for V , the volume of the inter-
+section of the two (potentially high-dimensional) boxes.
+(j) Page 12, first paragraph discusses violations of detailed balance arising from using
+the sampling history to define proposals. Such methods are well known, including
+the requirements which must be met to avoid biased sampling (so-called dimin-
+ishing adaptations). References (such as Brooks et al., 2011 Handbook of Markov
+chain Monte Carlo, New York: Springer) should be included here to be clear this
+is not a new idea.
+(k) Figure 4’s caption states “The acceptance probability rate asymptotes to the
+steady-state solution once sufficient samples are accumulated for the kD tree
+to allow the sample density or be accurately interpolated.” This asymptotic
+convergence appears to occur by about step 2.0×106 ; hence, all samples collected
+prior to this point should be discarded as burn-in or the sampling is potentially
+biased. This should be mentioned explicitly in the paper.
+(l) Figure 4: Why denote the x axis divisions from 0 to 25 000 and then include
+“(× 100)” in the axis label? Why not denote the divisions from 0 to 2.5 and
+include “(×106 )” in the label—this is the common use of exponential notation.
+ist of Figures
+ppendix B
+r Editor:
+are grateful to the referees of our paper, "An Efficient Interpolation
+hnique for Jump Proposals in Reversible-Jump Markov Chain Monte Carlo
+culations" (Farr, Mandel, Stevens) for their many helpful comments and
+gestions. We detail our responses to the referees below. The re-submitted
+uscript carries these changes in addition to a few minor revisions, such as
+update of the reference list.
+cerely yours,
+l Farr, Ilya Mandel, Daniel Stevens
+-
+ort 1:
+I am familiar with an earlier draft of this paper from internal LIGO
+iew, and I'm pleased to see that it is finally being submitted for
+lication.
+One minor quibble that I have is that the language in the introduction
+es it seem that the underlying idea is different. Both methods "construct
+approximation to each modelÕs posterior parameter distribution". The
+ference is that the kDE tree approach is far superior to the original
+rse histogram approach.
+reformulated the sentence in question as follows to remove the ambiguity
+make it clear that we are proposing an improved interpolation technique
+constructing an approximate posterior, not a fundamentally different idea:
+.Here we introduce an alternative technique based on a kD-tree data
+ucture to construct an approximation to each model's posterior parameter
+tribution. This improved interpolation method leads to dramatically faster
+vergence of RJMCMC sample chains."
+Other minor point is that the reference to parallel tempering does not
+nt to the original paper on the topic (Swendsen and Wang 1986).
+included the missing reference.
+-
+ort 2:
+This paper addresses an interesting and important issue in Bayesian model
+ection: Developing
+icient jump proposals in reversible-jump Markov-chain Monte Carlo (RJMCMC)
+orithms to transition between the models under consideration (high
+ection rates for
+er-model proposals represent the limiting factor in many applications). The
+roach
+posed here|to exploit sampling of the posterior probability density (PPD)
+the individual
+el spaces, characterized as a kD tree structure|seems like a very promising
+a
+ch could justify publication.
+thank the referee for this assessment.
+However, there are a number of significant issues that must be addressed
+ore publication is recommended.
+address these issues below, and in the text where appropriate. We are very
+teful to the referee for the extremely thorough reading of the text.
+1. The history of this work is unclear and concerning. The first
+agraph of page 4 says
+have successfully applied this RJMCMC technique to a 10-way model
+ection
+ng alternative mass distribution models for black-hole X-ray binaries (Farr
+al.
+0)". This reference is again cited on page 13 as a successful application
+the
+hod developed in the present manuscript. But this raises an obvious
+stion:
+the method described in the present manuscript already been published by
+hors? If so, publication of the present manuscript does not seem justified
+ce the
+considers only a trivial toy problem which adds nothing of significance.
+ther,
+reference section indicates that Farr et al. 2010 is in the submission
+ge to the
+rophysical Journal. What's the story here|is this a typo, or a badly
+-of-date
+erence, or has the paper actually been in-review for five years? Is the
+hod
+cribed in the present manuscript the same as in the 2010 paper (sounds like
+is)?
+s must be sorted out, and unless the present manuscript contains new
+cepts
+pared to earlier work, publication is not justified.
+current paper does not repeat earlier publications, and includes key new
+erial that has not been previously published. The Farr et al., paper on
+e Mass Distribution of Stellar-mass Black Holes" has been published in
+rophys. J. 741, 103, in 2011 (reference updated -- we apologize for the
+-of-date reference which added to the confusion). Farr+, 2011 dealt with
+suring the mass distribution of stellar mass black holes in low-mass and
+h-mass X-ray binaries. That analysis made use of an early implementation
+the method described in this paper, and, consequently, a very brief summary
+the method was included in Farr+, 2011. However, the focus of Farr+, 2011,
+on the astrophysical results rather than the method; consequently, the
+ails of the algorithm and the thorough analysis presented here were not
+luded in Farr+, 2011. Moreover, the present paper includes a number of
+e recent (and unpublished) improvements to the method, such as the use of
+tated" boxes to improve the interpolation quality in higher-dimensional
+ces (see Fig. 3 and associated text). Finally, the use of the
+interpolation scheme for adaptive sampling improvements in a single-model
+C (Section 5 of the present paper) is entirely new. Figure 4 illustrates
+acceptance ratio of this single-model MCMC as applied to the very
+putationally challenging problem of parameter estimation on
+vitational-wave parameter estimation (contrary to the referee's assertion
+t only toy models have been used for illustration).
+2. The explanation of the inter-model proposal and acceptance criterion is
+tion 3c is
+dequate. While well-known material on Bayesian analysis (Section 3a) and
+C
+ction 3b) is presented at length with equations, the new RJMCMC approach is
+mmed over in a single sentence (no equations) as ÒWe perform MCMC in the
+ermodel
+ameter space just like a regular MCMC; we propose jumps to different
+ameters
+hin a model (intra-model jumps) and jumps to a different model with
+ferent parameters (inter-model jumps)" (page 6)...
+have added descriptive text at the bottom of page 5 and top of page 6 that
+ands on the RJMCMC approach. The text now makes clear that the jump
+posal ratio is a ratio of densities in the two model spaces, and discusses
+special case where the spaces are of equal dimension and the proposal is a
+feomorphism between them (i.e., not a probabilistic choice of jump point,
+rather a fixed mapping), where the ratio reduces to the Jacobian factor to
+ch the referee refers. We have not written the equation as given by the
+eree,
+ccept = (p(theta')*Q(theta' -> theta))/(p(theta)*Q(theta -> theta')) * |J|
+ause this form is not correct in our notation. The factors Q *already
+orporate the Jacobian* in our notation. This point is now emphasised in
+text.
+now give an explicit formula for the kD tree proposal density (Eq. 3.1 in
+updated manuscript) with an expanded discussion of the proposal algorithm
+the end of Section 3. We have also modified the discussion surrounding Eq.
+to account for the additional text now in Section 3.
+3. The examples given in the manuscript seem simplified to the point of
+viality and/or
+poorly explained. The only example given of model selection (the
+entially important
+tribution of this paper) only involves sampling between 1D Gaussian and
+chy distributions (two unknown parameters each). While this does illustrate
+hod (barely), it is of no practical relevance and is so much simpler than
+t realistic
+el-selection problems that it is not clear how efficiency and performance
+ld scale, or how useful the method could be in practice. I assume the
+hors are
+earching real-world model-selection problems of practical interest (like
+ernative
+s distribution models for black-hole X-ray binaries, mentioned on page 4).
+luding
+eaningful example such as this would greatly improve the paper and increase
+significance. The other two examples represent only single-model sampling
+are
+much less interest, but even so they should be properly explained. In the
+mples
+Figures 3 and 4, what are the problems, what are the parameters, and what
+the
+ults mean? This current presentation is not satisfying to the reader.
+have added text to the beginning of Section 4 pointing to the use of this
+orithm in real-world applications, such as those of Farr et al (2011). We
+l that to describe the (lengthy) analysis from that work would needlessly
+plicate the presentation of the algorithm in this paper, but hope that this
+es it clear that the algorithm is, indeed, applicable to complicated model
+ection problems. We have publicly released the algorithm as a software
+rary for any users interested in adopting it, and emphasize this point in
+text.
+have added text to Figures 3 and 4 describing the gravitational-wave data
+lysis problem and the associated parameter space briefly. Again, we feel
+t a complete description of this problem (available from Veitch et al
+15) and the other references in the text) is beyond the scope of the
+icle, but we appreciate the request for more context in the explanation of
+s paper. We hope the additional text provides this context.
+4. Claims are made of Òdramatically improved convergence" (page 3), that
+nvergence
+generally rapid" (page 4), and Òthe interpolation method described above
+dramatically
+rove the runtime of an RJMCMC" (page 10). While I believe the method
+eloped here could substantially improve efficiency in some cases, this is
+actually
+onstrated in the paper. The trivial example in Figure 2 appears to increase
+er-model acceptance by a factor of 8 or so, but no results on RJMCMC
+pling
+vergence are given. The example considered in Figure 4 claims to have
+roved
+vergence by a factor of two (not dramatic), but there is no discussion of
+t definition is applied for convergence|and as noted on page 6 (third
+agraph), defining convergence for MCMC sampling is a tricky business. Even
+lying a reasonable
+king definition of convergence, given the random nature of MCMC sampling,
+rages
+r several MCMC runs are often required to meaningfully compare convergence
+es -- was that done here? While the claims of Òdramatic" improvements in
+vergence may be true in some cases, they don't appear to be properly
+ablished in the paper.
+have removed the (perhaps over-wrought) adjective "dramatic" from our
+ims of convergence, and included text briefly describing the method of
+puting convergence times used and referring the reader for details to
+tch et al (2015).
+5a. Notation: While notation differs between disciplines, I am used to
+dface (rather
+n over-arrows) being used to represent vectors in published work -- the
+hors
+ld consider this. Further, why is the set of parameters written as a
+tor,
+the set of data not written as a vector (d)?
+write parameters as a vector because we occasionally consider individual
+ameters or subsets of the parameter set; no such confusion is likely for
+data.
+5b. Page 5, Frst line after Section 2b heading: Should be j = 1É; not i =
+ed.
+5c. Page 5, third line after Section 2b heading: Should be Òset of
+ameters" not
+t of parameter".
+ed.
+5d. Figure 1 would be clearer if parameter axes were added indicating the
+gin, with
+s scales in terms of standard deviations in x and y.
+er attempting to follow the refereeÕs suggestion, we came to the conclusion
+t it distracted from the clarity of the illustration of kD interpolation.
+5e. The x axis of Figure 2 is labeled Nboxing while it should be Nbox.
+xing is the minimum number of samples per box used to evaluate the local
+sity, while Nbox is the actual number of samples (can be different since
+total number of samples is not an exact power of 2); see Section 3. Nbox
+thus specific to a particular point, while Nboxing is a tuning parameter of
+algorithm and is the parameter being varied in Fig. 2.
+5f. Figure 3 caption: kd should be kD.
+ed.
+5g. Equation (5.1): P should be Q (this is the proposal distribution).
+o, V might
+better written as Vbox to indicate that it is the volume of the current
+, like
+x indicates the number of samples in the current box (V is not a constant
+ies with boxes).
+ed here and in subsequent paragraph. We kept V, since we define it
+licitly just after this equation (and it has a slightly different meaning
+e then in (3.1).
+5h. Page 11: Inconsistent use of math or Roman font for some subscripts;
+., Nbox
+Nbox, and Ncrit. When the subscript is a label rather than an index, Roman
+t is preferred.
+ed.
+5i. Page 11, after Eq. (5.1): Please give an equation for V , the volume
+the intersection
+the two (potentially high-dimensional) boxes.
+have omitted this as the expression is somewhat tedious without adding any
+ight.
+5j. Page 12, first paragraph discusses violations of detailed balance
+sing from using
+sampling history to define proposals. Such methods are well known,
+luding
+requirements which must be met to avoid biased sampling (so-called
+inishing
+ptations). References (such as Brooks et al., 2011 Handbook of Markov
+in Monte Carlo, New York: Springer) should be included here to be clear
+s
+not a new idea.
+did not wish to imply that this is a new idea; suggested reference added.
+5k. Figure 4's caption states ÒThe acceptance probability rate asymptotes
+the
+ady-state solution once sufficient samples are accumulated for the kD tree
+allow the sample density or be accurately interpolated." This asymptotic
+vergence appears to occur by about step 2.0 * 10^6; hence, all samples
+lected
+or to this point should be discarded as burn-in or the sampling is
+entially
+sed. This should be mentioned explicitly in the paper.
+is now clarified:
+e acceptance rate asymptotes to the steady-state solution once sufficient
+ples have been accumulated in the kD tree to allow the sample density to be
+urately interpolated; samples collected
+or to this point should be discarded as burn-in.Ó
+5l. Figure 4: Why denote the x axis divisions from 0 to 25 000 and then
+lude
+X100)" in the axis label? Why not denote the divisions from 0 to 2.5 and
+lude \(X 10^6)" in the label|this is the common use of exponential
+ation.
+refereeÕs suggestion would, indeed, be more standard, but the tools we
+d to process the data made it more straightforward to generate the plot as
+en, so we hope the slightly odd axis label is not too jarring.
+-
+Society Open

@@ -1,0 +1,871 @@
+Is this scaling nonlinear?
+J. C. Leitão, J. M. Miotto, M. Gerlach and E. G. Altmann
+Article citation details
+R. Soc. open sci. 3: 150649.
+http://dx.doi.org/10.1098/rsos.150649
+Review timeline
+Original submission: 30 November 2015 Note: Reports are unedited and appear as
+Revised submission: 11 April 2016 submitted by the referee. The review history
+Final acceptance: 15 June 2016 appears in chronological order.
+Review History
+label_version_1
+RSOS-150649.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+All data analyzed in this paper has been previously-published.
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+This paper explores problems associated with estimating scaling exponents due to the heavy
+tailed distribution of city populations and heteroscedasticity in the fluctuations of urban metrics
+as a function of population. The authors note that the typical approach to determining whether
+the data are power-law distributed is to investigate the extent to which the residuals derived
+from OLS regression of the log-transformed data are Gaussian. Here, the authors go beyond this
+approach by developing models for a wider range of distributions for the fluctuations.
+The paper is well-organized and clearly written, although it will need a copy edit prior to
+publication.
+My comments primarily have to do with assumptions regarding the data utilized in scaling
+analysis. The authors are correct that urban scaling data often appear heavy-tailed and
+heteroskedastic, but the authors treat these data as straightforward observations, when in fact
+they are often messy approximations. Non-Gaussian distributions of residuals can occur for
+reasons that have nothing to do with the actual distribution of the real fluctuations. For example,
+most urban data are collected at a given level of precision on a linear scale, and as a result log-
+transformation will encourage the formation of a fat tail simply because the logarithmic precision
+of the data decreases as the magnitude of the logarithm decreases. I don’t question the soundness
+of the authors’ statistical reasoning but merely suggest it would be worthwhile for the authors at
+least acknowledge that their approach does not consider a variety of issues related to data
+quality. I think it would be useful for the authors to think more about distinguishing meaningful
+fluctuations derived from human behavior from simple errors or variable measurement
+precision.
+This point, that the data reflect error and imprecision as well as true fluctuations, helps one to see
+why it is important to have well-defined hypotheses to guide a scaling analysis. The formal
+scaling models developed by Bettencourt, for example, derive specific expectations for scaling
+exponents, and this leads the analyst to ask the extent to which the data are consistent with
+theoretical expectation as opposed to what the best model for the data is. When you are testing a
+theory the question is how consistent the data are with expectation, not what the best statistical fit
+of the data is. It’s a subtle difference but it seems to me that it makes some of the effort presented
+here extraneous.
+The authors argue in the Discussion that the estimated Beta strongly depends on the model—but
+looking at the results, it seems to me that the cases where the different models yield different
+Betas are also the cases where the data have the most problems. The data presented in Figure 2,
+for example, just look like poor data. And in their Table 1 it is apparent that the Gaussian and
+Person models rarely provide a better fit than the standard log-normal models, and it seems to
+me that the former may only provide a better fit by chance when data quality in the sense of
+sample size, accuracy and/or precision, is low. So here again, I think the paper would be helped
+if the authors conceptualized that data as involving error and variable precision as well as true
+fluctuations, and they thought about the results in this wider context.
+3
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes. The description of the sources and data is not totally clear, however. For example, it states
+that there are 459 metropolitan areas in the United States of America, when in fact there only 381.
+This arises from a confusion in the different definitions the different datasets use.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+GENERAL COMMENTS:
+In general, your study makes a good case for studying the full distribution of outcomes in the
+context of urban scaling, and not just the mean. However, some of your conclusions are not
+supported by your results (see my specific comments below).
+SPECIFIC COMMENTS:
+*** 1. Introduction, paragraph 2:
+There is a recent analysis by Bettencourt and Lobo (Bettencourt, Luis, and Jose Lobo. "Urban
+Scaling in Europe." arXiv preprint arXiv:1510.00902 (2015)) motivated by new stantardized
+definitions of metropolitan areas across different countries in Europe and other OECD nations.
+Among others, they analyze the metropolitan areas in the United Kingdom, and in contrast with
+Arcaute et al. (2015), they do find superlinear scaling of GDP.
+*** 2. Data, paragraph 1:
+You wrote "459 metropolitan areas of the United States of America". The office that uses these
+definitions is actually a very uncommon one: the Federal Highway Administration of the US
+Department of Transportation. There is also a minor typo, I think, given that the number of urban
+areas they define is 456, not 459. I think is better to refer to the Metropolitan Statistical Area
+definitions. At http://www.census.gov/population/metro/data/def.html, you can see that the
+4
+US census bureau only has definitions for 388 metropolitan areas. If you don't include Puerto
+Rico (which most studies don't), you get 381 MSAs. This is the number of MSAs for which the US
+Bureau of Economic Analysis reports GDP. You say you took data from there, and yet you say
+you use N=386.
+I have not checked data for the other countries, but the inaccuracies you report for the US
+subtracts credibility points to your study.
+*** 4. Probabilistic models
+It may be worth pointing out with regards to Equations (4.1) and (4.2) that these are expectations
+across cities in an ensemble (here given by cities of the same size), as opposed to temporal
+expectations. This is particularly important for Taylor's law as expressed by Equation (4.2).
+It may also be worth mentioning that you are going to limit your analysis to continuous
+probability distributions.
+*** (a) City-models:
+Equation (4.3) is assuming that y_i, i=1,...,N, are independent (conditionally on x). You should
+state that in your assumptions.
+*** (b) Person-model:
+Your "Person-model" is not a model of individuals. Is an alternative "city-model" in which the
+distribution $P(y=y_i|x=x_i) = p_i$, where $p_i$ is a power-law function of population size
+$x_i$. I believe this section should be called "Binomial model", in a similar way as the previous
+one is called "Log-normal model".
+The simplest way one could connect your Binomial model to a person model would be to assume
+that individual j living in city i has a binary random variable that says whether it gets or not
+tokens. But then, you have to assume that the number of tokens it gets is fixed, and is $y_i/x_i$
+(and all individuals being independent of one another). If you do that, then your model is fine,
+but these would seem like unnecessary assumptions.
+I explain the underlying reasons I think this is not a person model below:
+It seems to me that Equation (4.10) is wrong. It is assuming that a token of $Y$ is assigned with
+probability 1 to any of all individuals. In other words, there are a total of $\sum_{i=1}^N x_i =
+M$ individuals in the system, distributed across all different cities, and someone must get one
+token. That is because of the the way you chose your normalization constant $Z(\beta)$. There,
+you are saying that "the probability that a token is assigned to an individual $j$", denoted by
+$p(j)$, summed over all $j=1,...,M$, is equal to one. Why? I would suggest defining more clearly
+your random variables, and your events. (For example, suppose $w_j$ is the number of tokens
+individual $j$ has. Hence, $y_i$ total output of city $i$ would be $y_i = \sum{j\in i} w_j$. Then
+$w_j$ and $y_i$ are random variables. It becomes complicated because if you start by assuming
+the probability density of $w$'s, you won't get easily the distribution of the sum. Hence, I suggest
+starting directly with an assumption about the distribution of $y$... which is what you did in the
+previous section.)
+5
+In fact, if you read literally what you wrote you get contradictory statements. Notice that if, as
+you say, $p(j)=x_i^\(beta-1)/Z(\beta)$ is "the probability that a token is assigned to an
+individual $j$" (living in city $i$), then individual $j$ should on average receive $p(j)*y_i$ tokens
+out of all the $y_i$ tokens that city $i$ has. If this is the case, and $y_i=\alpha x_i^\beta$, it is
+simple to realize that you don't get what you want. Namely, that the expected number of tokens
+that $j$ receives from his city $i$ should be $\alpha x_i^(\beta-1)$.
+This is what I get if I try to reproduce your mathematics:
+1) I assume there is a total pie of tokens of size $Y$ that I will distribute across all individuals
+$j=1,...,M$.
+2) The way I distribute that total pie is determined by the size of the city in which each individual
+lives.
+3) Hence, suppose individual $j$ lives in city $i$ of population size $x_i$. The expected total
+number of tokens in city $i$ we *assume* is given by $\alpha x_i^\beta$ (i.e., Equation 4.1).
+Therefore, the expected fraction of tokens that city $i$ will receive is $(\alpha x_i^\beta)/Y$.
+Accordingly, the fraction that individual $j$ will receive is $(\alpha x_i^(\beta-1))/Y$ (because
+the pie of city $i$ is divided across $x_i$ individuals). Hence, what you are really modeling in
+Equation (4.10) is not the probability of assigning a token to individual $j$, but a number that is
+proportion to the expected number of tokens he/she will receive given the fact he/she lives in
+city $i$.
+However, Equation (4.11) is consistent. Following the same argument as before, if $p(i)$ is the
+probability of that a token is assigned to city $i$, then the expected number of tokens in city $i$ is
+$Y p(i)$. Doing the mathematics you correctly get $Y p(i) = alpha x_i^\beta$, since the sum of
+$\sum_i x_i^\beta$ in the numerator cancels with the corresponding sum which goes over
+individuals.
+As a final comment, the approximation for the variance in Equation (4.14) amounts to
+approximating a Binomial distribution with a Poisson distribution. Your study would benefit
+from including an additional model, to confirm this approximation, which is similar to your
+person-model (Binomial model), but assuming Poisson fluctuations. Hence,
+$ P(y=y_i | x=x_i) = e^{-alpha x_i^\beta}(alpha x_i^\beta)^y_i/y_i!$
+You should get the same results.
+*** Caption Table 1:
+In the caption, I think you mean "... in log scale coincides with the value reported in the first
+*COLUMN*."
+*** 6. Discussion, (c) The estimate \beta strongly depends on the model
+This may very well be the case, but your evidence is in fact weak. The example you give is one in
+which you say the p-value rejects the model. Hence, it does not make sense to assert this
+statement. If the model as a whole does not hold, why should you make statements about the
+estimated \beta's?
+6
+*** 6. Discussion, (e) Is the scaling nonlinear?
+Again, as in the previous point, all your conclusions should be dependent on having models that
+are not rejected. If, as you say, most models are rejected, then few conclusions can be made
+regarding their predictions about superlinearity/sublinearity.
+label_end_comment
+Decision letter (RSOS-150649)
+17-Mar-2016
+Dear Dr Altmann,
+The editors assigned to your paper ("Is this scaling nonlinear?") has now received comments from
+reviewers. We would like you to revise your paper in accordance with the referee and Subject
+Editor suggestions which can be found below (not including confidential reports to the Editor).
+Please note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 09-Apr-2016). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+7
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-150649
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+on behalf of Des Higham
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor's comments (Dr Luis Bettencourt):
+8
+Associate Editor: 1
+Comments to the Author:
+Both Reviewers find several substantial issues with the current manuscript. This includes some
+conclusions not being supported by the results and a number of technical points to do with issues
+of other biases and statistical analyses. A major revision that carefully addresses the points raised
+by both Reviewers is necessary before the paper can be accepted for publication.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+This paper explores problems associated with estimating scaling exponents due to the heavy
+tailed distribution of city populations and heteroscedasticity in the fluctuations of urban metrics
+as a function of population. The authors note that the typical approach to determining whether
+the data are power-law distributed is to investigate the extent to which the residuals derived
+from OLS regression of the log-transformed data are Gaussian. Here, the authors go beyond this
+approach by developing models for a wider range of distributions for the fluctuations.
+The paper is well-organized and clearly written, although it will need a copy edit prior to
+publication.
+My comments primarily have to do with assumptions regarding the data utilized in scaling
+analysis. The authors are correct that urban scaling data often appear heavy-tailed and
+heteroskedastic, but the authors treat these data as straightforward observations, when in fact
+they are often messy approximations. Non-Gaussian distributions of residuals can occur for
+reasons that have nothing to do with the actual distribution of the real fluctuations. For example,
+most urban data are collected at a given level of precision on a linear scale, and as a result log-
+transformation will encourage the formation of a fat tail simply because the logarithmic precision
+of the data decreases as the magnitude of the logarithm decreases. I don’t question the soundness
+of the authors’ statistical reasoning but merely suggest it would be worthwhile for the authors at
+least acknowledge that their approach does not consider a variety of issues related to data
+quality. I think it would be useful for the authors to think more about distinguishing meaningful
+fluctuations derived from human behavior from simple errors or variable measurement
+precision.
+This point, that the data reflect error and imprecision as well as true fluctuations, helps one to see
+why it is important to have well-defined hypotheses to guide a scaling analysis. The formal
+scaling models developed by Bettencourt, for example, derive specific expectations for scaling
+exponents, and this leads the analyst to ask the extent to which the data are consistent with
+theoretical expectation as opposed to what the best model for the data is. When you are testing a
+theory the question is how consistent the data are with expectation, not what the best statistical fit
+of the data is. It’s a subtle difference but it seems to me that it makes some of the effort presented
+here extraneous.
+The authors argue in the Discussion that the estimated Beta strongly depends on the model—but
+looking at the results, it seems to me that the cases where the different models yield different
+Betas are also the cases where the data have the most problems. The data presented in Figure 2,
+for example, just look like poor data. And in their Table 1 it is apparent that the Gaussian and
+Person models rarely provide a better fit than the standard log-normal models, and it seems to
+me that the former may only provide a better fit by chance when data quality in the sense of
+sample size, accuracy and/or precision, is low. So here again, I think the paper would be helped
+9
+if the authors conceptualized that data as involving error and variable precision as well as true
+fluctuations, and they thought about the results in this wider context.
+Reviewer: 2
+Comments to the Author(s)
+GENERAL COMMENTS:
+In general, your study makes a good case for studying the full distribution of outcomes in the
+context of urban scaling, and not just the mean. However, some of your conclusions are not
+supported by your results (see my specific comments below).
+SPECIFIC COMMENTS:
+*** 1. Introduction, paragraph 2:
+There is a recent analysis by Bettencourt and Lobo (Bettencourt, Luis, and Jose Lobo. "Urban
+Scaling in Europe." arXiv preprint arXiv:1510.00902 (2015)) motivated by new stantardized
+definitions of metropolitan areas across different countries in Europe and other OECD nations.
+Among others, they analyze the metropolitan areas in the United Kingdom, and in contrast with
+Arcaute et al. (2015), they do find superlinear scaling of GDP.
+*** 2. Data, paragraph 1:
+You wrote "459 metropolitan areas of the United States of America". The office that uses these
+definitions is actually a very uncommon one: the Federal Highway Administration of the US
+Department of Transportation. There is also a minor typo, I think, given that the number of urban
+areas they define is 456, not 459. I think is better to refer to the Metropolitan Statistical Area
+definitions. At http://www.census.gov/population/metro/data/def.html, you can see that the
+US census bureau only has definitions for 388 metropolitan areas. If you don't include Puerto
+Rico (which most studies don't), you get 381 MSAs. This is the number of MSAs for which the US
+Bureau of Economic Analysis reports GDP. You say you took data from there, and yet you say
+you use N=386.
+I have not checked data for the other countries, but the inaccuracies you report for the US
+subtracts credibility points to your study.
+*** 4. Probabilistic models
+It may be worth pointing out with regards to Equations (4.1) and (4.2) that these are expectations
+across cities in an ensemble (here given by cities of the same size), as opposed to temporal
+expectations. This is particularly important for Taylor's law as expressed by Equation (4.2).
+It may also be worth mentioning that you are going to limit your analysis to continuous
+probability distributions.
+10
+*** (a) City-models:
+Equation (4.3) is assuming that y_i, i=1,...,N, are independent (conditionally on x). You should
+state that in your assumptions.
+*** (b) Person-model:
+Your "Person-model" is not a model of individuals. Is an alternative "city-model" in which the
+distribution $P(y=y_i|x=x_i) = p_i$, where $p_i$ is a power-law function of population size
+$x_i$. I believe this section should be called "Binomial model", in a similar way as the previous
+one is called "Log-normal model".
+The simplest way one could connect your Binomial model to a person model would be to assume
+that individual j living in city i has a binary random variable that says whether it gets or not
+tokens. But then, you have to assume that the number of tokens it gets is fixed, and is $y_i/x_i$
+(and all individuals being independent of one another). If you do that, then your model is fine,
+but these would seem like unnecessary assumptions.
+I explain the underlying reasons I think this is not a person model below:
+It seems to me that Equation (4.10) is wrong. It is assuming that a token of $Y$ is assigned with
+probability 1 to any of all individuals. In other words, there are a total of $\sum_{i=1}^N x_i =
+M$ individuals in the system, distributed across all different cities, and someone must get one
+token. That is because of the the way you chose your normalization constant $Z(\beta)$. There,
+you are saying that "the probability that a token is assigned to an individual $j$", denoted by
+$p(j)$, summed over all $j=1,...,M$, is equal to one. Why? I would suggest defining more clearly
+your random variables, and your events. (For example, suppose $w_j$ is the number of tokens
+individual $j$ has. Hence, $y_i$ total output of city $i$ would be $y_i = \sum{j\in i} w_j$. Then
+$w_j$ and $y_i$ are random variables. It becomes complicated because if you start by assuming
+the probability density of $w$'s, you won't get easily the distribution of the sum. Hence, I suggest
+starting directly with an assumption about the distribution of $y$... which is what you did in the
+previous section.)
+In fact, if you read literally what you wrote you get contradictory statements. Notice that if, as
+you say, $p(j)=x_i^\(beta-1)/Z(\beta)$ is "the probability that a token is assigned to an
+individual $j$" (living in city $i$), then individual $j$ should on average receive $p(j)*y_i$ tokens
+out of all the $y_i$ tokens that city $i$ has. If this is the case, and $y_i=\alpha x_i^\beta$, it is
+simple to realize that you don't get what you want. Namely, that the expected number of tokens
+that $j$ receives from his city $i$ should be $\alpha x_i^(\beta-1)$.
+This is what I get if I try to reproduce your mathematics:
+1) I assume there is a total pie of tokens of size $Y$ that I will distribute across all individuals
+$j=1,...,M$.
+2) The way I distribute that total pie is determined by the size of the city in which each individual
+lives.
+3) Hence, suppose individual $j$ lives in city $i$ of population size $x_i$. The expected total
+number of tokens in city $i$ we *assume* is given by $\alpha x_i^\beta$ (i.e., Equation 4.1).
+Therefore, the expected fraction of tokens that city $i$ will receive is $(\alpha x_i^\beta)/Y$.
+Accordingly, the fraction that individual $j$ will receive is $(\alpha x_i^(\beta-1))/Y$ (because
+the pie of city $i$ is divided across $x_i$ individuals). Hence, what you are really modeling in
+Equation (4.10) is not the probability of assigning a token to individual $j$, but a number that is
+11
+proportion to the expected number of tokens he/she will receive given the fact he/she lives in
+city $i$.
+However, Equation (4.11) is consistent. Following the same argument as before, if $p(i)$ is the
+probability of that a token is assigned to city $i$, then the expected number of tokens in city $i$ is
+$Y p(i)$. Doing the mathematics you correctly get $Y p(i) = alpha x_i^\beta$, since the sum of
+$\sum_i x_i^\beta$ in the numerator cancels with the corresponding sum which goes over
+individuals.
+As a final comment, the approximation for the variance in Equation (4.14) amounts to
+approximating a Binomial distribution with a Poisson distribution. Your study would benefit
+from including an additional model, to confirm this approximation, which is similar to your
+person-model (Binomial model), but assuming Poisson fluctuations. Hence,
+$ P(y=y_i | x=x_i) = e^{-alpha x_i^\beta}(alpha x_i^\beta)^y_i/y_i!$
+You should get the same results.
+*** Caption Table 1:
+In the caption, I think you mean "... in log scale coincides with the value reported in the first
+*COLUMN*."
+*** 6. Discussion, (c) The estimate \beta strongly depends on the model
+This may very well be the case, but your evidence is in fact weak. The example you give is one in
+which you say the p-value rejects the model. Hence, it does not make sense to assert this
+statement. If the model as a whole does not hold, why should you make statements about the
+estimated \beta's?
+*** 6. Discussion, (e) Is the scaling nonlinear?
+Again, as in the previous point, all your conclusions should be dependent on having models that
+are not rejected. If, as you say, most models are rejected, then few conclusions can be made
+regarding their predictions about superlinearity/sublinearity.
+Author's Response to Decision Letter for (RSOS-150649)
+See Appendix A.
+12
+label_version_2
+RSOS-150649.R1 (Revision)
+label_author_3
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, the authors have clearly provided the sources, and have made available a link with their data
+and code.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+The study makes an important contribution to the literature, showing that the underlying
+mechanistic models behind urban scaling should guide how the statistical procedures should be
+chosen. They show that different models differ in the estimations of the parameters and,
+sometimes, suggest conflicting results. Their conclusions are sound, their analysis rigorous, and
+they explain their study in detail and with clarity. In essence, the authors' work state that the
+current models of urban scaling are incomplete and should incorporate predictions about the
+fluctuations around the mean.
+13
+label_end_comment
+Decision letter (RSOS-150649.R1)
+15-Jun-2016
+Dear Dr Altmann,
+I am pleased to inform you that your manuscript entitled "Is this scaling nonlinear?" is now
+accepted for publication in Royal Society Open Science.
+You can expect to receive a proof of your article within approximately 10 working days. Please
+contact the production office (openscience_proofs@royalsociety.org) to let us know if you are
+likely to be away from e-mail contact during that period. Due to rapid publication and an
+extremely tight schedule, if comments are not received, your paper may experience a delay in
+publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Andrew Dunn
+Senior Publishing Editor
+Royal Society Open Science
+http://rsos.royalsocietypublishing.org/
+Reviewer(s)' Comments to Author:
+Reviewer: 2
+Comments to the Author(s)
+The study makes an important contribution to the literature, showing that the underlying
+mechanistic models behind urban scaling should guide how the statistical procedures should be
+chosen. They show that different models differ in the estimations of the parameters and,
+sometimes, suggest conflicting results. Their conclusions are sound, their analysis rigorous, and
+they explain their study in detail and with clarity. In essence, the authors' work state that the
+current models of urban scaling are incomplete and should incorporate predictions about the
+fluctuations around the mean.
+Appendix A
+We thank both reviewers for their careful review of our manuscript and
+for the constructive remarks, which we used to improve it. We are glad
+that both reviewers recognize that our study makes a good case for using
+a more rigorous statistical analysis of scaling laws in the context of urban
+scaling. This was the motivation for our work and the main reason we believe
+it deserves publication. We recognize that in our original submission we
+were not distinguishing well enough between hypothesis testing (i.e., testing
+whether the data is compatible with the model) and model comparison (i.e.,
+answering questions based on the best available model). We believe that in
+our improved manuscript, which contains this distinction and also numerous
+corrections pointed by the referees, the interpretation of our conclusions is
+now improved and fully supported by our data analysis. Below we answer
+each comment and criticism. Attached to this submission is a version of our
+manuscript which highlights every modification we made.
+Answer to Reviewer 1
+This paper explores problems associated with estimating scal-
+ing exponents due to the heavy tailed distribution of city popula-
+tions and heteroscedasticity in the fluctuations of urban metrics
+as a function of population. The authors note that the typical ap-
+proach to determining whether the data are power-law distributed
+is to investigate the extent to which the residuals derived from
+OLS regression of the log-transformed data are Gaussian. Here,
+the authors go beyond this approach by developing models for a
+wider range of distributions for the fluctuations.
+The paper is well-organized and clearly written, although it
+will need a copy edit prior to publication.
+We are glad the reviewer recognizes the importance of our work, we
+carefully revised our manuscript following the referee’s suggestions.
+My comments primarily have to do with assumptions regard-
+ing the data utilized in scaling analysis. The authors are cor-
+rect that urban scaling data often appear heavy-tailed and het-
+eroskedastic, but the authors treat these data as straightforward
+observations, when in fact they are often messy approximations.
+Non-Gaussian distributions of residuals can occur for reasons
+that have nothing to do with the actual distribution of the real
+fluctuations. For example, most urban data are collected at a
+given level of precision on a linear scale, and as a result log-
+transformation will encourage the formation of a fat tail sim-
+ply because the logarithmic precision of the data decreases as
+the magnitude of the logarithm decreases. I don’t question the
+soundness of the authors’ statistical reasoning but merely sug-
+gest it would be worthwhile for the authors at least acknowledge
+that their approach does not consider a variety of issues related
+to data quality. I think it would be useful for the authors to think
+more about distinguishing meaningful fluctuations derived from
+human behavior from simple errors or variable measurement pre-
+cision.
+Data quality is indeed an important issue in the study of urban scaling,
+and we thank the reviewer for bringing this point. In fact, this is another
+reason why more careful statistical analysis of the data are important and
+we consider our manuscript a step forward in this direction. We agree that
+the data contains different sources of uncertainty and, in principle, one could
+try to distinguish between them (e.g., fluctuations by human behaviour and
+by measurement imprecision). Unfortunately, most databases contain only
+the numbers for population and measured quantity of the city (xi , yi in our
+notation) and lack any information about the precision of the measurements.
+Often there are also no independent measurements of the same quantities.
+In these cases, the best we can do is to learn about the uncertainty and
+fluctuations in the data from the scattering of the xi , yi for different cities
+i. This is the approach we follow in our manuscript.
+In our city-models (Sec. 4a) we consider that P (y|x) effectively describes
+both the fluctuations of human behavior and measurement errors. The
+person model (Sec. 4b) does not account for any type of measurement
+fluctuations, and this could explain why it never describes the data better
+than other models. However, it is only with our more rigorous approach that
+such conclusions can be made rigorously! Our manuscript is also the first
+to point out, using a rigorous framework, that the model of the fluctuations
+influences the results. While we have not included the segmentation of
+different sources of uncertainty in the models included in our manuscript,
+our general statistical framework allows this extension to be done easily.
+For instance, each source of uncertainty can be included separately when
+defining the variance of the model in Eq. (4.2) or P (y|x).
+In order to better reflect the points mentioned above in our manuscript
+we have performed the following modifications:
+(i) In our data section (Sec. 2) we explicitly mention the existence of
+measurement errors and that they are not explicitly incorporated in
+our analysis.
+(ii) When discussing our probabilistic models after Eq. (4.2) we clarified
+that they aim to effectively describe different sources of fluctuations,
+which in principle could be included in the models.
+(iii) In the person-model, we emphasised that the model does not take into
+account measurement uncertainties.
+(iv) In the Discussion 6a we mention the possibility that measurement
+errors are responsible for the rejection of the models.
+This point, that the data reflect error and imprecision as well
+as true fluctuations, helps one to see why it is important to have
+well-defined hypotheses to guide a scaling analysis. The formal
+scaling models developed by Bettencourt, for example, derive spe-
+cific expectations for scaling exponents, and this leads the analyst
+to ask the extent to which the data are consistent with theoretical
+expectation as opposed to what the best model for the data is.
+When you are testing a theory the question is how consistent the
+data are with expectation, not what the best statistical fit of the
+data is. It’s a subtle difference but it seems to me that it makes
+some of the effort presented here extraneous.
+We could not agree more with the referee about the importance of rig-
+orously formulating and testing hypothesis. Hypothesis testing is covered
+in the section Results, item ”1.” and ”2.”, and in the section discussion,
+6(a). Our main conclusion from this analysis is that in almost all datasets
+all models are rejected. This is indeed one of the main conclusions of our
+work. Below we argue that interesting analysis can be done also in cases in
+which all models are rejected.
+Let us first argue through an example for the benefits of going beyond hy-
+pothesis testing. Bettencourt Science 2013 (our Ref. 13) makes a convincing
+point for a superlinear scaling of GDP and sublinear scaling of road length
+in USA. Our analysis of these datasets leads to a rejection (p-value< 0.05)
+of all proposed models, including the log-normal model used in that paper.
+If we would stop our analysis here, our conclusion would be that we cannot
+say anything about the scaling in this data and, more generally, all claims
+of non-linear scaling made so far should be reconsidered. We believe these
+bold conclusions would be wrong. The way we proceed is to compare dif-
+ferent models (using BIC). This model comparison analysis applied to the
+USA datasets mentioned above leads to the following findings (results in our
+Table 1): all proposed models lead to the same conclusion regarding sub-
+or super-linear scaling, the non-linear scaling is significantly better than the
+ß = 1 scaling, and the models with Log-Normal fluctuations is the best
+available model. These findings support the existence of non-linear scaling
+laws in the data (in line with the claims of the paper), albeit giving a more
+rigorous statistical interpretation for these claims.
+More generally, the example above illustrates why the effort to go beyond
+hypothesis testing is not extraneous. Model comparison allow us to identify
+which pair (model, ß) give us the scaling law that best describes the data.
+For this reason, we focus on the problem of which model describes the data
+the best. Model comparison is covered in items 3 to 6 of Results and items
+(b)-(e) of section ”Discussion”.
+We recognize that the distinction between hypothesis testing and model
+selection was not clear enough in our previous manuscript, and we thank
+very much the reviewer for raising this essential point. Accordingly, in our
+revised manuscript we:
+(i) added sub-titles ”Hypothesis testing” and ”Model comparison” group-
+ing the items in the section 5 ”results” in order to clarify that they
+refer to the two different types of analysis.
+(ii) added a new paragraph, in the end of discussion (6a), where we specif-
+ically distinguish these two analysis, and how results should be inter-
+preted within model comparison.
+(iii) In the conclusions (Sec. 7) we emphasize that our claims are based on
+the descriptive power of different models, and not only on the rejection
+of hypothesis.
+The authors argue in the Discussion that the estimated Beta
+strongly depends on the model – but looking at the results, it
+seems to me that the cases where the different models yield dif-
+ferent Betas are also the cases where the data have the most prob-
+lems. The data presented in Figure 2, for example, just look like
+poor data. And in their Table 1 it is apparent that the Gaussian
+and Person models rarely provide a better fit than the standard
+log-normal models, and it seems to me that the former may only
+provide a better fit by chance when data quality in the sense of
+sample size, accuracy and/or precision, is low. So here again, I
+think the paper would be helped if the authors conceptualized that
+data as involving error and variable precision as well as true fluc-
+tuations, and they thought about the results in this wider context.
+We understand the reviewer intuition that when the data is ”poor”, beta
+typically depends more on the model. Our approach to try to rigorously ad-
+dress this issue is to quantify whether data is compatible with the model
+without arbitrary judgements on data quality. Differentiating ”poor” data
+from ”non-poor” data will typically make assumptions about the data such
+as ”outliers are measurement errors” and implies assuming the model as
+valid. Our analysis shows that models are rejected not only in cases in
+which one would visually associate with ”poor” data. We believe that it
+is thus necessary to discuss what can happen within the model comparison
+framework discussed above. The dependence of ß on the choice of fluctua-
+tions is one of such effects that can generally happen. The example in Fig.
+2 is an extreme one in which even the tendency ß > 1 is reversed. The
+dependence of the value of ß is identifiable also in many other cases in Ta-
+ble 1 (e.g., Brazil AIDS and OECD patents). Our choice to emphasize the
+dependence of ß on the choice of fluctuations is justified by: the fact that
+the value of ß has been the focus of many previous works, the possibility of
+it happening within model comparison, and the fact that it is observed in
+our analysis.
+That being said, we agree that it was misleading to write that ß strongly
+depends on the model because this is also a subjective statement and may
+induce the reader to a wrong conclusion. We weakened this to better repre-
+sent our results in both discussion and conclusions (see highlighted pdf).
+Answer to Reviewer 2
+In general, your study makes a good case for studying the
+full distribution of outcomes in the context of urban scaling, and
+not just the mean. However, some of your conclusions are not
+supported by your results (see my specific comments below).
+We are glad the referee recognizes the importance of our work, we have
+carefully revised our manuscript to address the points listed below.
+*** 1. Introduction, paragraph 2: There is a recent analy-
+sis by Bettencourt and Lobo (Bettencourt, Luis, and Jose Lobo.
+”Urban Scaling in Europe.” arXiv preprint arXiv:1510.00902 (2015))
+motivated by new stantardized definitions of metropolitan areas
+across different countries in Europe and other OECD nations.
+Among others, they analyze the metropolitan areas in the United
+Kingdom, and in contrast with Arcaute et al. (2015), they do
+find superlinear scaling of GDP.
+Thank you for bringing this interesting work to our attention. We added
+it as a reference in the introduction.
+*** 2. Data, paragraph 1: You wrote ”459 metropolitan
+areas of the United States of America”. The office that uses
+these definitions is actually a very uncommon one: the Fed-
+eral Highway Administration of the US Department of Trans-
+portation. There is also a minor typo, I think, given that the
+number of urban areas they define is 456, not 459. I think is
+better to refer to the Metropolitan Statistical Area definitions.
+At http://www.census.gov/population/metro/data/def.html, you
+can see that the US census bureau only has definitions for 388
+metropolitan areas. If you don’t include Puerto Rico (which most
+studies don’t), you get 381 MSAs. This is the number of MSAs
+for which the US Bureau of Economic Analysis reports GDP. You
+say you took data from there, and yet you say you use N=386.
+I have not checked data for the other countries, but the inac-
+curacies you report for the US subtracts credibility points to your
+study.
+Thank you for bringing this to our attention. It is correct that the
+definition used by the Department of Transportation is different from the
+Census Bureau (Urban Areas vs Metropolitan Areas). We have modified the
+naming in our Section 2 to be clear that these are two distinct definitions.
+The N=388 metropolitan areas was indeed a typo, we corrected to N=381.
+In the database of the Transportation, we have used the table HM-71 of
+the mentioned link. Removing all entries that do not have population infor-
+mation (column ”CENSUS POPULATION”) or miles information (column
+”MILES - TOTAL”), we get 459 urban areas, as we report in the manuscript.
+We have reviewed all our other datasets and found no other mistake. We
+now include a reference to an online repository – http://dx.doi.org/10.5281/zenodo.49367
+– which contains the original and filtered tables together with all the codes
+we used in our analysis.
+*** 4. Probabilistic models It may be worth pointing out with
+regards to Equations (4.1) and (4.2) that these are expectations
+across cities in an ensemble (here given by cities of the same
+size), as opposed to temporal expectations. This is particularly
+important for Taylor’s law as expressed by Equation (4.2).
+It may also be worth mentioning that you are going to limit
+your analysis to continuous probability distributions.
+We agree that it is worth clarifying this. We have re-written the sentence
+after (4.1) to emphasize that it is over an ensemble of cities.
+Regarding the continuous distributions, we have modified the text to
+specify this in the city-model. Note that the person model leads to a discrete
+distribution.
+*** (a) City-models: Equation (4.3) is assuming that yi , i =
+1, ..., N , are independent (conditionally on x). You should state
+that in your assumptions.
+We have modified the sentence previous to Eq. 4.3 to make this more
+clear.
+*** (b) Person-model: Your ”Person-model” is not a model
+of individuals. Is an alternative ”city-model” in which the distri-
+bution P (y = yi |x = xi ) = pi , where pi is a power-law function
+of population size xi . I believe this section should be called ”Bi-
+nomial model”, in a similar way as the previous one is called
+”Log-normal model”.
+The simplest way one could connect your Binomial model to
+a person model would be to assume that individual j living in city
+i has a binary random variable that says whether it gets or not
+tokens. But then, you have to assume that the number of tokens
+it gets is fixed, and is yi /xi (and all individuals being independent
+of one another). If you do that, then your model is fine, but these
+would seem like unnecessary assumptions.
+I explain the underlying reasons I think this is not a person
+model below:
+It seems to me that Equation (4.10) is wrong. It is assuming
+that a token of Y is assigned with probability 1 P to any of all
+individuals. In other words, there are a total of N i=1 xi = M
+individuals in the system, distributed across all different cities,
+and someone must get one token. That is because of the the
+way you chose your normalization constant Z(ß). There, you
+are saying that ”the probability that a token is assigned to an
+individual j”, denoted by p(j), summed over all j = 1, ..., M ,
+is equal to one. Why? I would suggest defining more clearly
+your random variables, and your events. (For example, suppose
+wj is the number of tokens individual
+P j has. Hence, yi total
+output of city i would be yi = w
+j<U+2208>i j . Then wj and yi are
+random variables. It becomes complicated because if you start by
+assuming the probability density of w’s, you won’t get easily the
+distribution of the sum. Hence, I suggest starting directly with
+an assumption about the distribution of y... which is what you
+did in the previous section.)
+In fact, if you read literally what you wrote you get contradic-
+tory statements. Notice that if, as you say, p(j) = xbeta-1
+i /Z(ß)
+is ”the probability that a token is assigned to an individual j”
+(living in city i), then individual j should on average receive
+p(j) * yi tokens out of all the yi tokens that city i has. If this is
+the case, and yi = axßi , it is simple to realize that you don’t get
+what you want. Namely, that the expected number of tokens that
+(
+j receives from his city i should be axi ß - 1).
+This is what I get if I try to reproduce your mathematics:
+1) I assume there is a total pie of tokens of size Y that I will
+distribute across all individuals j = 1, ..., M . 2) The way I dis-
+tribute that total pie is determined by the size of the city in which
+each individual lives. 3) Hence, suppose individual j lives in city
+i of population size xi . The expected total number of tokens in
+city i we *assume* is given by axßi (i.e., Equation 4.1). There-
+fore, the expected fraction of tokens that city i will receive is
+(axßi )/Y . Accordingly, the fraction that individual j will receive
+(
+is (axi ß - 1))/Y (because the pie of city i is divided across xi
+individuals). Hence, what you are really modeling in Equation
+(4.10) is not the probability of assigning a token to individual j,
+but a number that is proportion to the expected number of tokens
+he/she will receive given the fact he/she lives in city i.
+However, Equation (4.11) is consistent. Following the same
+argument as before, if p(i) is the probability of that a token is
+assigned to city i, then the expected number of tokens in city
+i is Y p(i). Doing the mathematics you correctly get Y p(i) =
+P
+alphaxßi , since the sum of i xßi in the numerator cancels with
+the corresponding sum which goes over individuals.
+It seems that our short description of our model led the referee to misin-
+terpret Eq. 4.10. In fact, this equation is the definition of the probability of
+an individual j getting a token and depends only on x(j) , the population of
+the city this individual lives. As correctly interpreted by the referee, and ex-
+plicitly mentioned in the revised manuscript, our model assumes that each
+token is necessarily attributed to one person justifying the normalization
+of Eq. 4.10. We have extended the paragraph around this equation, and
+slightly changed the notation, in order to clarify our assumptions and the
+derivation of Eq. 4.11. Equation 4.10 is the starting point of our model and
+it refers to the probability of an individual person. This justifies our claim
+that this is a person model.
+The referee is right that Eq. 4.11 can be obtained from different argu-
+ments and models, including the one sketched by the referee. These alterna-
+tive interpretations would lead to the same joint probability of the scaling
+law (4.12) and are thus identical models. We chose to interpret it as a per-
+son model because this emphasizes that this model is fundamentally different
+from the city-model considered in the previous section: in city-models, the
+functional form of the fluctuations are set a priori, at a city-level, and are not
+a consequence of the generative process (assigning tokens to people). The
+other advantage of this interpretation is that, in case other indicators are
+known (e.g. income distribution of a city, percentage of university students
+in the city), a generalized model for them can be included in Eq. (4.10).
+We were glad to see that our proposal sparked the interest of the referee, we
+hope our simple model will serve as a starting point for future work.
+We have modified the text before Eq. (4.11) in order to emphasize how
+this model is a microscopic model of persons, as opposed to a macroscopic
+model of cities.
+As a final comment, the approximation for the variance in
+Equation (4.14) amounts to approximating a Binomial distri-
+bution with a Poisson distribution. Your study would benefit
+from including an additional model, to confirm this approxima-
+tion, which is similar to your person-model (Binomial model),
+but assuming Poisson fluctuations. Hence, P (y = yi |x = xi ) =
+ß
+e-axi (axßi )yi /yi ! You should get the same results.
+We agree with the remark made by the referee but please notice that the
+person model is fully determined by the Likelihood function, Eq. 4.13, which
+is not based on the approximation made in Eq. 4.14. All our statistical
+analysis is based on Eq. 4.13 and is thus independent of this approximation.
+The derivation of the expectation and variance, in Eq. 4.14, is made only
+to provide a connection to Taylor’s law introduced before. This is only used
+in order to make an analogy to the city models with d = 1. Therefore, we
+believe the request for considering this additional model is not justified.
+*** Caption Table 1: In the caption, I think you mean ”...
+in log scale coincides with the value reported in the first *COL-
+UMN*.”
+We have changed ”row” to ”column”, thanks.
+*** 6. Discussion, (c) The estimate ß strongly depends on
+the model This may very well be the case, but your evidence is in
+fact weak. The example you give is one in which you say the p-
+value rejects the model. Hence, it does not make sense to assert
+this statement. If the model as a whole does not hold, why should
+you make statements about the estimated ß’s?
+*** 6. Discussion, (e) Is the scaling nonlinear? Again, as in
+the previous point, all your conclusions should be dependent on
+having models that are not rejected. If, as you say, most models
+are rejected, then few conclusions can be made regarding their
+predictions about superlinearity/sublinearity.
+Thank you for raising these points, which are closely related to the points
+raised by reviewer 1. Our argument is that in the typical case in which
+all models are rejected, the best we can do is to compare the description
+strength of the models and draw conclusions based on the best models. We
+perform such model comparison both to compare the different models and
+to select the best parameters (e.g., the best ß within a model). It is based
+on these comparisons that we argue that ß depends on the fluctuations and
+whether the scaling is non-linear. The referee is absolutely right that the
+conclusions based on model comparison should be interpreted differently in
+the cases in which the models are rejected. The distinction between hypoth-
+esis testing and model comparison was not properly done in our original
+submission. We have modified our manuscript in order to clarify this point
+and the interpretation of our conclusion.
+We refer to the second answer to the reviewer 1 for further details and
+for the reasons why we believe model comparison should be done also in the
+cases in which all models fail to pass hypothesis testing.
+Society Open

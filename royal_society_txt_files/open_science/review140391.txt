@@ -1,0 +1,296 @@
+Calculating mutual information for spike trains and other
+data with distances but no coordinates
+Conor Houghton
+Article citation details
+R. Soc. open sci. 2: 140391.
+http://dx.doi.org/10.1098/rsos.140391
+Review timeline
+Original submission: 19 October 2014 Note: Reports are unedited and appear as
+Revised submission: 31 March 2015 submitted by the referee. The review history
+Final acceptance: 13 April 2015 appears in chronological order.
+Review History
+label_version_1
+RSOS-140391.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Jonathan Victor)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Not applicable.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+In brief, I would describe this paper as a gem, but a gem-in-the-rough. The gem part: it derives an
+elegantly simple formula for information in an important context that is largely unexplored. The
+in-the-rough part: to me, the exposition leaves a lot to be desired, and there are questions that
+impact on its applicability. The author may choose to defer addressing these questions to a later
+work, but I do think that at least they should be mentioned. In detail – point C is the most
+important, but I hope that all can be addressed:
+A. (exposition) The author invokes the Kozachenko-Leonenko approach, but the relationship
+should be clarified. To my understanding, the Kozachenko-Leonenko approach is based on an
+extremely local estimate of densities (nearest-neighbor distances), and therefore has a term
+related to the dimensionality of the space, namely, the volume of a spherical ball in r dimensions.
+This term is missing here, perhaps because the density estimate is no longer extremely local, but
+based on a count of occurrences within some ball. So the approach does an “end run” around
+obtaining a local dimensionality estimate. But this should be made explicit.
+B. (exposition) Related to point A: the Kozachenko-Leonenko approach, even for differential
+entropy, has a term equal to the log of the Euler constant, and this arises from the assumption
+that the sample points are locally Poisson. No such term arises here. Why is this?
+C. (exposition and applicability) Possibly related to point B: The estimate appears to depend on
+the choice of h, the fraction of the space’s volume used to count occupancy of the balls. If h is 1,
+the information estimate, I think , is 0. So presumably we want to take some kind of limit as h
+goes to 0. But how do we know that this limit exists, and, under what circumstances is it stable?
+And why doesn’t it matter (see remark preceding eq. 2.16) whether one computes balls in the
+joint space SxR as Cartesian products, or via some other means, such as a Minkowski
+combination?
+D. (exposition) I find the initial part of the exposition, up to eq. 2.13, somewhat of a distraction.
+To me, it would suffice to say that there’s a natural measure of volume in the space S, given by
+probability. In this measure, the volume of the space is obviously 1. And then, when one
+computes entropy relative to a natural measure, the result is always the log of the natural
+measure, which in this case is log(1)=0. (More typically, if the natural measure is the count N of
+the number of items – all of which are assumed to be different – the entropy is log(N)).
+E. (exposition) It might be possible to derive the final result (eq. 2.18), or at least to place it into
+context, by first mentioning that information is the Kullback-Liebler divergence between the
+actual joint probability distribution, and the product distribution – and here, we estimate this
+ratio, point by point, by ball occupancies. I think this streamlines things a lot, and adds insight –
+and by no means detracts from the novelty of the approach.
+Minor things:
+There’s a recent book chapter by Shapira and Nelken in “Spike Timing: Mechanisms and
+Function (DiLorenzo and Victor, eds) that introduces an information estimator based on
+combining the spike time metric and the Kozachenko-Leonenko estimator, but with a different
+strategy – obtaining a local estimate of dimensionality.
+In many places the notation is unclear. A few specifics: (1) There are numerous sums over “i”
+but it is unclear whether i runs over stimuli, stimulus classes, responses, etc. (2) In eq. 2.14, what
+is c(r_i)? (3) In eqs. 2.14, 2.15: should n/n_h be n_h/n?
+3
+The comments following eq. 2.13, especially the last 4 lines of that paragraph, are very difficult to
+understand.
+There seem to be many typos, for example, “population of neuron” in the Introduction.
+Jonathan Victor
+label_author_2
+Review form: Reviewer 2 (Simon Schultz)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+N/A
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+This paper provides a neat - and relatively simple, although not simplistic - conceptual advance
+in calculating mutual information between quantities which have a natural notion of similarity
+but no obvious coordinate system. The paper derives in a more rigorous way a formula
+previously proposed by Houghton, and then specialises it to metric spaces. I would like to see
+how much in practice this improves calculations over the Kraskov estimator. The previous paper
+but these authors in Entropy does such a comparison with histogram methods, but not with the
+Kraskov estimator. I think that at the very least the authors should discuss the relationship to and
+likely performance comparison with, the Kraskov estimator. I would think it would be desirable
+to also include a figure showing such a comparison on a typical (preferably publicly available)
+dataset (whether real or surrogate data). This would help readers appreciate the context and
+applicability of the method proposed.
+label_end_comment
+Decision letter (RSOS-140391)
+05-Mar-2015
+Dear Dr Houghton,
+The Subject Editor assigned to your paper ("Calculating mutual information for spike trains and
+other data with distances but no coordinates.") has now received comments from reviewers. We
+would like you to revise your paper in accordance with the referee and Subject Editor
+4
+suggestions which can be found below (not including confidential reports to the Editor). Please
+note this decision does not guarantee eventual acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 28-Mar-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+5
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Author's Response to Decision Letter for (RSOS-140391)
+I was very pleased by the reports on my paper; it is great to have a paper called a "gem" and
+"simple without being simplicist"! I recognize though that there was a problem with exposition, a
+problem I believe I have addressed in this new version. I have now made numerous changes to
+my manuscript, including a discussion of the Kraskov estimator as suggested by the second
+referee. I feel the manuscript has been improved considerably as a consequence.
+I am very grateful for the referee's help with this. I hope that my manuscript will now be suitable
+for publication in Royal Society Open Science. I think one of the principle problems in the
+previous version was that I introduced the distance-based open ball at the start of the methods
+section as if it would be used as the required region for both the estimates when, in fact, only the
+first estimate uses the open ball, the second requires the more complicated square. I have now
+changed this, I have seperated the two estimates using subsection headings and put the open ball
+in the appropriate subsection. The first reviewer had a set of lettered comments on the
+manuscript.
+A) I have tried to clarify the nature of the "end run" around the dimensionality in a broad rewrite
+of the methods section; as the reviewer notes this end run uses the counting-based estimate of
+volume, it also relies on the simpler version of Kozachenko-Leonenko approach which counts
+points in the region rather than fixing the region to contain a fixed number of points. I have made
+this more explicit.
+B) The Euler constant is avoided by choosing a simpler Kozachanko-Leonenko approach; I have
+tried to point out in the text where the simplification arises though I have avoided giving the
+original Kozachenko-Leonenko formula for fear of having to introduce more notation and
+confusing the exposition. The degree of simplification that result from a small change to the
+Kozachanko-Leonenko approach certainly surprised me!
+C) This is a very good point and one I haven't addressed in this paper, though the numerical
+experiment in Tobin and Houghton 2013 (Entropy 15, 4540-4552) appear to indicate that the
+performance of the estimate is robust against the choice of n_h. I have added a paragraph to the
+discussion "owning up" to this. As for the Cartesian product, the joint distribution takes values in
+6
+the Cartesian product, so it does seem a natural choice. I have tried to make the procedure work
+for other choices and failed, if you use p_{R,S}(r,s) to define the volume measure and calculate
+H(R)+H(S), that is working the other way around, you end up with the same formula I give, but
+the derivation is more involved.
+D) I have tried to improve this aspect of the exposition, the methods section has been reordered
+and substantially rewritten with this comment in mind.
+E) This is an interesting point; I have now included a formula for the KL divergence, I think this
+is a useful application of the approach and I am very grateful for the suggestion. I have thanked
+the referee in the Acknowledgements, I hope this is appropriate.
+The KL divergence formula can be used to derive the formula for mutual information, but I am
+not sure this is any more straight-forward than the approach already described. Minor things. I
+have included that reference, many thanks. I have included the limits of any sums and moved
+away from the convention that used "n" for everything, in particular, I use "N" for the number of
+data points and "h" where before I had "n_h". As pointed out, n/n_h was incorrect, I have
+corrected it to n_h/n, which is now written as h/N. I have given some attention to the paragraph
+following 2.13 and hope that it has improved. I have hunted out many typos. The second referee
+asks if the formula in this paper improves on the Kraskov estimator. I do not believe that it does
+and I have now added a short paragraph to the paper to point out that the numerical experiment
+in Tobin and Houghton showed that the two estimates gaves indistinguishable performances on
+that simulated data. If the estimator here has an advantage over the Kraskov estimator it is in that
+it is derived without reference to a manifold structure, I suspect that in practice neither is better
+than the other and I have tried to make this clear in the manuscript. I have not added a numerical
+experiment to the manuscript; the first estimate, the one where one variable is discrete, has
+already been tested whereas for the second, I was concerned that the numerical experiments I had
+considered would seem arbitrary and contrived, I could not decide what would be a typical data
+set. On the other hand to do a full exploration of the formula or to apply the approach to real data
+would certainly take a long time and would lead to a very different, perhaps less focused, paper;
+one I hope me, or someone else, will work on in the future.
+label_version_2
+RSOS-140391.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Jonathan Victor)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+7
+Recommendation?
+label_recommendation_3
+Accept as is
+Comments to the Author(s)
+label_comment_3
+The ms is markedly improved, and all of my concerns are fully addressed.
+There's an obvious typo in the final sentence prior to conclusions.
+label_end_comment
+Decision letter (RSOS-140391.R1)
+13-Apr-2015
+Dear Dr Houghton,
+I am pleased to inform you that your manuscript entitled "Calculating mutual information for
+spike trains and other data with distances but no coordinates." is now accepted for publication in
+Royal Society Open Science. Please do correct the typo listed by the reviewer during the proofing
+stage.
+You can expect to receive a proof of your article within approximately 10 working days. Please
+contact the production office (openscience_proofs@royalsociety.org) to let us know if you are
+likely to be away from e-mail contact during that period. Due to rapid publication and an
+extremely tight schedule, if comments are not received, your paper may experience a delay in
+publication.
+Royal Society Open Science operates under a continuous publication model
+(http://bit.ly/cpFAQ). Your article will be published straight into the next open issue and this
+will be the final version of the paper. As such, it can be cited immediately by other researchers.
+As the issue version of your paper will be the only version to be published I would advise you to
+check your proofs thoroughly as changes cannot be made once the paper is published.
+In order to raise the profile of your paper once it is published, we can send through a PDF of your
+paper to selected colleagues. If you wish to take advantage of this, please reply to this email with
+the name and email addresses of up to 10 people who you feel would wish to read your article.
+On behalf of the Editors of Royal Society Open Science, we look forward to your continued
+contributions to the Journal.
+Best wishes,
+Emilie Aime
+emilie.aime@royalsociety.org
+http://rsos.royalsocietypublishing.org/
+Society Open

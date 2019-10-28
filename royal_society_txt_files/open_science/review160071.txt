@@ -1,0 +1,762 @@
+The structure and evolution of story networks
+Folgert Karsdorp and Antal van den Bosch
+Article citation details
+R. Soc. open sci. 3: 160071.
+http://dx.doi.org/10.1098/rsos.160071
+Review timeline
+Original submission: 30 January 2016 Note: Reports are unedited and appear as
+Revised submission: 19 May 2016 submitted by the referee. The review history
+Final acceptance: 24 May 2016 appears in chronological order.
+Review History
+label_version_1
+RSOS-160071.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+The authors should include the full texts of all of their accessed stories, both from the Dutch LRR
+corpus and the chain letter corpus. As it stands, there is no easy way to download this data, and
+confirm the experiments.
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The authors provide an interesting model for understanding story variation as a function of a
+storytelling network. The underlying model presented in the paper is sound, particularly for the
+fairy tale under consideration, namely that stories are transmitted in a network, and not in a
+linear chain. The authors suggest four models of selection to explain the status of the corpus at
+the last time of observation based on texts from earlier time slices. The model that best matches
+the transmission of the fairy tale, namely a form of preferential attachment they label preferential
+attraction with temporal attractiveness (PA-TA). This finding is interesting and worth
+publication, as it confirms well-known folklore theories, particularly those of CW von Sydow (cf
+"On the Spread of Tradition") and Albert Eskeröd's seminal work on "tradiiton dominants."
+Similarly, it aligns with a slew of work on the dynamics oral narrative tradition. It may also be
+closely related to Walter Andersson's concept of "self correction" where here it is network
+dynamics that allow for temporal variation while accounting for a high degree of stability in the
+tale.
+In my short comments below, I highlight some of the major contributions of this piece, and
+suggest ways in which the article could be made stronger. Perhaps the most glaring lack in the
+paper is an appreciation of the sophisticated history of folklore theory dealing with precisely the
+questions of stability and variation over time. Similarly, there is little awareness of computational
+approaches to folklore that explore questions of variation (similarity and difference) over much
+larger corpora (cf. Abello et al in CACM). The paper would benefit greatly with the addition of a
+more robust grounding in folklore theory given the considerable scholarship.
+(1) The article attempts to do too much--the study of fairy tales and chain letters are
+fundamentally different. Assuming that the corpus of fairy tales is largely a corpus of orally
+collected tales (given the large number, this is the presumption, although this may be incorrect--
+the authors do not explain the corpus as clearly as they could), then the folktale and chain letter
+corpuses differ fundamentally. Chain letters are, by the authors own admission, largely reliant
+on the hand copying in multiple copies; as later technologies become available (such as the
+photocopier and fax machine) rapid and consistent transmission of the chain letter can take place
+(this technological shift may account for the spike in transmission noted for the 1980s).
+Consequently, it is unclear that chain letters make use of any pretext other than their immediate
+predecessor.
+The question of the chain letter and network transmission has been addressed in classic studies
+by Liben-Nowell and Kleinberg (PNAS 2008, vol. 105, no. 12. 4633-4638). While they study a
+more recent internet chain letter transmission, it appears to be highly related to this article, and
+their findings may help account for the pretext model that the authors discovered for chain
+letters.
+The reader is never quite sure as to why these two corpuses were chosen. While the article begins
+with a discussion of Cinderella, the actual fairy tale in question is Little Red Riding Hood--the
+transition is jarring and adds confusion rather than clarity. I would suggest starting with LRR,
+perhaps situating LRR in the larger fairy tale world, and then sticking to LRR.
+3
+I would also suggest eliminating the Chain Letter section altogether, publishing that research as a
+separate article. The focus then would be on the LRR corpus and the concept of pre-texts. At the
+very least, the very verbose discussion of the chain letter corpus on p 6 could be greatly
+shortened.
+In the discussion of the LRR corpus, the authors should stick to their corpus. There is no clear
+motivation for the discussion of a Japanese wood cut when the tales under consideration are all
+Dutch.
+(2) The authors should align the work on fairy tale with folklore theory. The question of how
+storytellers model their stories on other pretexts is a sound one, and implicit in a great deal of
+folklore scholarship going back to the Grimms. This idea finds its clearest expression in the early
+folklore method of the Krohns and Aarne, resulting in both the ATU index of fairy tales, and the
+earliest folkloric method, the historic-geographic method. The authors seem either unaware of
+the history of the problem, or believe there is little to be gotten there. While Zipes is an excellent
+scholar, unless this work is focused on literary reworkings of fairy tales (something that should
+be made much clearer if that is the case), then there are many other resources that would provide
+significant support for the theoretical underpinnings of the work. Recasting the
+paper as a confirmation of the role of tradition dominants in shaping tradition and the impact of
+network transmissions of stories would situate this paper as making a major contribution to
+folklore theory. If, however, this is based on literary reworkings of the tales, then that is fine--the
+supplementary information should, at the very least, include a complete listing of all the tales
+considered and their sources.
+A small quibble concerns the limitation of the corpus to LRR tales exclusively. The suggestion
+here is that LRR tales only use LRR tales as a pretext. Almost all folklore theory suggests a
+different model of transmission, where storytellers use other tales as pre-texts for aspects of their
+own retellings of tales adjusting those tellings to both the context of performance, and the active
+tales in their own current story repertoires (what the authors label context-based attractiveness).
+This problem is obviated if the corpus consists entirely of literary versions of tales--this may
+indeed be the case in this study, but it is not immediately apparent. If the latter is the case, this
+should be made clear immediately--"the story concerns literary reworkings of LRR published
+Dutch story collections" for example. Since these stories would essentially be context-less, it
+becomes easier to focus on "content based" attractiveness.
+These terms (context and content based attractiveness) appear to be discarded in favor of the
+interesting frequency based attractiveness, model based attractiveness (a form of context based
+attractiveness), and temporal based attractiveness. It would be preferable to simply use these
+forms of attractiveness throughout.
+(3) the model of similarity, while well known and easily understood (here cosine dissimilarity
+between tf-idf document vectors in the corpus) it is unclear that this is the appropriate
+representation of the tale. Either a decomposition of the tales by motif chains, or an extended
+feature set that includes motifs, would be far more likely to capture the inter reliance between
+tales than a simple normalized word frequency vector. I am not convinced that a BOW model is
+the best method for determining dependence of documents.
+Similarity is notoriously difficult to determine between literary texts, something of which the
+authors are aware. Interesting work in developing similarity networks for folktale corpora is
+discussed in Abello et al (CACM 2012) but oddly missing from the list of references here. The
+network thresholding is a reasonable approach to this problem if one accepts the tf-idf + cos
+similarity network model.
+4
+The underlying theory of network transmission is that later retellings may skip generations of
+stories--whereas linear transmission decays rapidly unless written (as in the case of the chain
+letters) where variation is frequently introduced through scribal error (cf the entire middle ages!),
+network transmission allows for a constant reinforcing signal to help limit noise. The question
+then becomes, which signal is most likely to persist? Given a persistent signal, what network
+phenomena can account for its persistence?
+(4) there is far too much introductory material about the various models and statistical
+approaches. All of the approaches are very well known and hardly need laborious rehearsal. For
+example, the discussion of BOW models of text vectors and cosine (dis)similarity on page 9 are
+standard machine learning techniques and hardly need explanation. The relaxed ranking
+algorithm used to bootstrap
+the network is interesting but could be described in a sentence or two. It is unclear to me why we
+need pseudo-code on page 10 as there is nothing unusual about this implementation.
+On p 11, it is unclear to me why story and pre-text are distinguished from each other--any story
+can become a pre-text to a later story, so suggesting these are two different classes confuses the
+issue (and seems to suggest a bimodal network model).
+On pp 11-12, the discussion of well-known network models is superfluous--these are simple
+descriptions/rehearsals of well-known phenomena. Figure 3 is superfluous.
+Figure 4 is interesting, but needs to be described better. There would be more room to do so if the
+chain letter portion is discarded.
+On p 12 the decision to use the Gini coefficient is excellent--it gets lost in a lot of the previous
+chatter, and would be more prominent if that material were significantly cut.
+On p. 13, there seems to be an unmotivated focus on whether the in-degree distribution is a
+power-law distribution or not. The motivation for this discussion becomes apparent later; the
+authors should say much earlier that a power law implies a certain type of preferential
+attachment. That rearrangment would then motivate the discussion of these different models--
+power law,
+log normal, exponential, etc.
+On p 15, the discussion of preferential attachment becomes a bit tangential to the problem at
+hand.
+The novelty of the paper lies in the application of these methods to a specific corpus to measure
+story change over time, proposing a model that helps explain why certain variants have greater
+influence than other variants--that is an important confirmation in itself of the
+proposal that folklore represents traditional cultural expressive forms circulating in and across
+social networks.
+The observation of lopsidedness to smaller timespans is very interesting, and a finding that
+should be highlighted, not buried on p. 15! Just after that, the authors reach an important
+conclusion: "In other words, retellings of Red Riding Hood do display preference to select alder
+versions as their pre-text(s)...stories have individual values of attraction that lessen over time."
+Showing this empirically is a very important finding. Unfortunately, this is almost lost in the
+middle of a paragraph.
+5
+On p16, the paper shifts into statistical hyperdrive, and it is not entirely clear what is happening.
+The selection of a Dirichlet may make a lot of sense, but many readers (this one included) may
+have to stop and think about that for a while.
+(5) the final concluding paragraph suggests motivation(s) for storyteller choices, but it is not
+storyteller motivation that is modeled here--rather it is the outcome of a storytelling network
+process. Why storytellers choose to tell stories is not addressed; once they decide to tell a story,
+the PA model helps explain why the tradition takes on the contours it does, with certain well-
+known stories acting as hubs. While "retellers of Red Riding Hood can choose from a vast amount
+of story versions" is true for a literary tradition where retellers have perfect access to the corpus of
+previously told/recorded variants, this is only the case for a literary tradition that has been well
+indexed and archived.
+The final paragraph equating preferential attachment to a neutral model of cultural evolution and
+biological random drift has almost nothing to do with the paper at all, and the suggestions is
+probably incorrect. At the very least, it posits a super-organic model for folklore where the stories
+circulate independently of the storytellers. All modern folklore theory has qualitatively and, in
+more recent work, quantitatively, has shown that this is not the case. No storytellers--no stories.
+Storytelling is a social process and the choice to tell stories is highly motivated. The reason
+something becomes popular is the important question--once something becomes popular people
+imitate it; but equating this to biological random drift undermines all the good work in this
+paper.
+label_end_comment
+Decision letter (RSOS-160071)
+10-May-2016
+Dear Mr Karsdorp
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-160071 entitled
+"The Structure and Evolution of Story Networks" has been accepted for publication in Royal
+Society Open Science subject to minor revision in accordance with the referee suggestions. Please
+find the referees' comments at the end of this email.
+The reviewers and handling editors have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+6
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-160071
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 19-May-2016). If you do not
+think you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+7
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor Comments to Author ( Dr Matjaz Perc):
+Associate Editor: 1
+Comments to the Author:
+The manuscript contains a very interesting application of network science to how stories are
+retold. I have enjoyed reading the manuscript, and I am in favor of publication after a revision.
+Before re-submission, please consider the following comments, some of which are also aligned
+with the report of the referee.
+1) I am confused by the inclusion of the chain letters. I understand this is somewhat akin to
+retelling a story, but it is hardly the same. The reader gets lost quite easily in what exactly it is
+the authors are trying to communicate. The discussion at the end is also very lengthy and not
+everything seems to be supported by the presented evidence. In short, the authors should
+carefully consider which results to retain, and please refocus on the main messages, especially in
+the discussion, which, as said, is too long.
+2) In the introduction, in terms of frequency-based attractiveness, recently an argument was
+made that this may be behind the most frequent words and phrases of the English language too
+in Evolution of the most common English words and phrases over the centuries, J. R. Soc.
+Interface 9, 3323-3328 (2012). Perhaps worth a referral.
+3) Figures have very short captions, but they should be able to stand on their own more. Please
+improve this by stating also the main message/results in each figure with a sentence or two.
+8
+4) The algorithm need not be presented in this technical form since it is well-known and easy to
+find elsewhere. If you insist on showing this, then please move it to an appending of suppl.
+material.
+Associate Editor: 2
+Comments to the Author:
+(There are no comments.)
+Reviewer comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The authors provide an interesting model for understanding story variation as a function of a
+storytelling network. The underlying model presented in the paper is sound, particularly for the
+fairy tale under consideration, namely that stories are transmitted in a network, and not in a
+linear chain. The authors suggest four models of selection to explain the status of the corpus at
+the last time of observation based on texts from earlier time slices. The model that best matches
+the transmission of the fairy tale, namely a form of preferential attachment they label preferential
+attraction with temporal attractiveness (PA-TA). This finding is interesting and worth
+publication, as it confirms well-known folklore theories, particularly those of CW von Sydow (cf
+"On the Spread of Tradition") and Albert Eskeröd's seminal work on "tradiiton dominants."
+Similarly, it aligns with a slew of work on the dynamics oral narrative tradition. It may also be
+closely related to Walter Andersson's concept of "self correction" where here it is network
+dynamics that allow for temporal variation while accounting for a high degree of stability in the
+tale.
+In my short comments below, I highlight some of the major contributions of this piece, and
+suggest ways in which the article could be made stronger. Perhaps the most glaring lack in the
+paper is an appreciation of the sophisticated history of folklore theory dealing with precisely the
+questions of stability and variation over time. Similarly, there is little awareness of computational
+approaches to folklore that explore questions of variation (similarity and difference) over much
+larger corpora (cf. Abello et al in CACM). The paper would benefit greatly with the addition of a
+more robust grounding in folklore theory given the considerable scholarship.
+(1) The article attempts to do too much--the study of fairy tales and chain letters are
+fundamentally different. Assuming that the corpus of fairy tales is largely a corpus of orally
+collected tales (given the large number, this is the presumption, although this may be incorrect--
+the authors do not explain the corpus as clearly as they could), then the folktale and chain letter
+corpuses differ fundamentally. Chain letters are, by the authors own admission, largely reliant
+on the hand copying in multiple copies; as later technologies become available (such as the
+photocopier and fax machine) rapid and consistent transmission of the chain letter can take place
+(this technological shift may account for the spike in transmission noted for the 1980s).
+Consequently, it is unclear that chain letters make use of any pretext other than their immediate
+predecessor.
+The question of the chain letter and network transmission has been addressed in classic studies
+by Liben-Nowell and Kleinberg (PNAS 2008, vol. 105, no. 12. 4633-4638). While they study a
+more recent internet chain letter transmission, it appears to be highly related to this article, and
+their findings may help account for the pretext model that the authors discovered for chain
+letters.
+9
+The reader is never quite sure as to why these two corpuses were chosen. While the article begins
+with a discussion of Cinderella, the actual fairy tale in question is Little Red Riding Hood--the
+transition is jarring and adds confusion rather than clarity. I would suggest starting with LRR,
+perhaps situating LRR in the larger fairy tale world, and then sticking to LRR.
+I would also suggest eliminating the Chain Letter section altogether, publishing that research as a
+separate article. The focus then would be on the LRR corpus and the concept of pre-texts. At the
+very least, the very verbose discussion of the chain letter corpus on p 6 could be greatly
+shortened.
+In the discussion of the LRR corpus, the authors should stick to their corpus. There is no clear
+motivation for the discussion of a Japanese wood cut when the tales under consideration are all
+Dutch.
+(2) The authors should align the work on fairy tale with folklore theory. The question of how
+storytellers model their stories on other pretexts is a sound one, and implicit in a great deal of
+folklore scholarship going back to the Grimms. This idea finds its clearest expression in the early
+folklore method of the Krohns and Aarne, resulting in both the ATU index of fairy tales, and the
+earliest folkloric method, the historic-geographic method. The authors seem either unaware of
+the history of the problem, or believe there is little to be gotten there. While Zipes is an excellent
+scholar, unless this work is focused on literary reworkings of fairy tales (something that should
+be made much clearer if that is the case), then there are many other resources that would provide
+significant support for the theoretical underpinnings of the work. Recasting the
+paper as a confirmation of the role of tradition dominants in shaping tradition and the impact of
+network transmissions of stories would situate this paper as making a major contribution to
+folklore theory. If, however, this is based on literary reworkings of the tales, then that is fine--the
+supplementary information should, at the very least, include a complete listing of all the tales
+considered and their sources.
+A small quibble concerns the limitation of the corpus to LRR tales exclusively. The suggestion
+here is that LRR tales only use LRR tales as a pretext. Almost all folklore theory suggests a
+different model of transmission, where storytellers use other tales as pre-texts for aspects of their
+own retellings of tales adjusting those tellings to both the context of performance, and the active
+tales in their own current story repertoires (what the authors label context-based attractiveness).
+This problem is obviated if the corpus consists entirely of literary versions of tales--this may
+indeed be the case in this study, but it is not immediately apparent. If the latter is the case, this
+should be made clear immediately--"the story concerns literary reworkings of LRR published
+Dutch story collections" for example. Since these stories would essentially be context-less, it
+becomes easier to focus on "content based" attractiveness.
+These terms (context and content based attractiveness) appear to be discarded in favor of the
+interesting frequency based attractiveness, model based attractiveness (a form of context based
+attractiveness), and temporal based attractiveness. It would be preferable to simply use these
+forms of attractiveness throughout.
+(3) the model of similarity, while well known and easily understood (here cosine dissimilarity
+between tf-idf document vectors in the corpus) it is unclear that this is the appropriate
+representation of the tale. Either a decomposition of the tales by motif chains, or an extended
+feature set that includes motifs, would be far more likely to capture the inter reliance between
+tales than a simple normalized word frequency vector. I am not convinced that a BOW model is
+the best method for determining dependence of documents.
+10
+Similarity is notoriously difficult to determine between literary texts, something of which the
+authors are aware. Interesting work in developing similarity networks for folktale corpora is
+discussed in Abello et al (CACM 2012) but oddly missing from the list of references here. The
+network thresholding is a reasonable approach to this problem if one accepts the tf-idf + cos
+similarity network model.
+The underlying theory of network transmission is that later retellings may skip generations of
+stories--whereas linear transmission decays rapidly unless written (as in the case of the chain
+letters) where variation is frequently introduced through scribal error (cf the entire middle ages!),
+network transmission allows for a constant reinforcing signal to help limit noise. The question
+then becomes, which signal is most likely to persist? Given a persistent signal, what network
+phenomena can account for its persistence?
+(4) there is far too much introductory material about the various models and statistical
+approaches. All of the approaches are very well known and hardly need laborious rehearsal. For
+example, the discussion of BOW models of text vectors and cosine (dis)similarity on page 9 are
+standard machine learning techniques and hardly need explanation. The relaxed ranking
+algorithm used to bootstrap
+the network is interesting but could be described in a sentence or two. It is unclear to me why we
+need pseudo-code on page 10 as there is nothing unusual about this implementation.
+On p 11, it is unclear to me why story and pre-text are distinguished from each other--any story
+can become a pre-text to a later story, so suggesting these are two different classes confuses the
+issue (and seems to suggest a bimodal network model).
+On pp 11-12, the discussion of well-known network models is superfluous--these are simple
+descriptions/rehearsals of well-known phenomena. Figure 3 is superfluous.
+Figure 4 is interesting, but needs to be described better. There would be more room to do so if the
+chain letter portion is discarded.
+On p 12 the decision to use the Gini coefficient is excellent--it gets lost in a lot of the previous
+chatter, and would be more prominent if that material were significantly cut.
+On p. 13, there seems to be an unmotivated focus on whether the in-degree distribution is a
+power-law distribution or not. The motivation for this discussion becomes apparent later; the
+authors should say much earlier that a power law implies a certain type of preferential
+attachment. That rearrangment would then motivate the discussion of these different models--
+power law,
+log normal, exponential, etc.
+On p 15, the discussion of preferential attachment becomes a bit tangential to the problem at
+hand.
+The novelty of the paper lies in the application of these methods to a specific corpus to measure
+story change over time, proposing a model that helps explain why certain variants have greater
+influence than other variants--that is an important confirmation in itself of the
+proposal that folklore represents traditional cultural expressive forms circulating in and across
+social networks.
+The observation of lopsidedness to smaller timespans is very interesting, and a finding that
+should be highlighted, not buried on p. 15! Just after that, the authors reach an important
+conclusion: "In other words, retellings of Red Riding Hood do display preference to select alder
+11
+versions as their pre-text(s)...stories have individual values of attraction that lessen over time."
+Showing this empirically is a very important finding. Unfortunately, this is almost lost in the
+middle of a paragraph.
+On p16, the paper shifts into statistical hyperdrive, and it is not entirely clear what is happening.
+The selection of a Dirichlet may make a lot of sense, but many readers (this one included) may
+have to stop and think about that for a while.
+(5) the final concluding paragraph suggests motivation(s) for storyteller choices, but it is not
+storyteller motivation that is modeled here--rather it is the outcome of a storytelling network
+process. Why storytellers choose to tell stories is not addressed; once they decide to tell a story,
+the PA model helps explain why the tradition takes on the contours it does, with certain well-
+known stories acting as hubs. While "retellers of Red Riding Hood can choose from a vast amount
+of story versions" is true for a literary tradition where retellers have perfect access to the corpus of
+previously told/recorded variants, this is only the case for a literary tradition that has been well
+indexed and archived.
+The final paragraph equating preferential attachment to a neutral model of cultural evolution and
+biological random drift has almost nothing to do with the paper at all, and the suggestions is
+probably incorrect. At the very least, it posits a super-organic model for folklore where the stories
+circulate independently of the storytellers. All modern folklore theory has qualitatively and, in
+more recent work, quantitatively, has shown that this is not the case. No storytellers--no stories.
+Storytelling is a social process and the choice to tell stories is highly motivated. The reason
+something becomes popular is the important question--once something becomes popular people
+imitate it; but equating this to biological random drift undermines all the good work in this
+paper.
+Author's Response to Decision Letter for (RSOS-160071)
+See Appendix A.
+Author Response (Manuscript RSOS­160071)
+We would like to thank the editors and the reviewers for their careful reading and insightful
+comments which, amongst other things, greatly helped to clarify the main focus of the paper.
+In what follows, we have thematically grouped the comments of the referees into seven
+sections, each of which is accompanied with a detailed response.
+1. Inclusion of Chain Letter corpus
+Editor 1<U+200B> : “I am confused by the inclusion of the chain letters. I understand this is somewhat
+akin to retelling a story, but it is hardly the same. The reader gets lost quite easily in what
+exactly it is the authors are trying to communicate.”
+Reviewer 1<U+200B> : “I would also suggest eliminating the Chain Letter section altogether, publishing
+that research as a separate article. The focus then would be on the LRR corpus and the
+concept of pre­texts. At the very least, the very verbose discussion of the chain letter corpus
+on p 6 could be greatly shortened.”
+Reviewer 1<U+200B> : “The reader is never quite sure as to why these two corpuses were chosen.
+While the article begins with a discussion of Cinderella, the actual fairy tale in question is
+Little Red Riding Hood­­the transition is jarring and adds confusion rather than clarity. I
+would suggest starting with LRR, perhaps situating LRR in the larger fairy tale world, and
+then sticking to LRR.”
+Reviewer 1<U+200B> : “The article attempts to do too much­­the study of fairy tales and chain letters
+are fundamentally different. Assuming that the corpus of fairy tales is largely a corpus of
+orally collected tales (given the large number, this is the presumption, although this may be
+ncorrect­­the authors do not explain the corpus as clearly as they could), then the folktale
+and chain letter corpuses differ fundamentally. Chain letters are, by the authors own
+admission, largely reliant on the hand copying in multiple copies; as later technologies
+become available (such as the photocopier and fax machine) rapid and consistent
+transmission of the chain letter can take place (this technological shift may account for the
+spike in transmission noted for the 1980s). Consequently, it is unclear that chain letters
+make use of any pretext other than their immediate predecessor.”
+Author response: W <U+200B>e acknowledge the confusion of the referees about the inclusion of the
+chain letters. The referees rightfully point out that chain letters are fundamentally different
+from fairy tales. However, our motivation to include the chain letters was to have a point of
+reference against which the network of R <U+200B>ed Riding Hood c<U+200B> ould be compared. The advantage
+of the chain letter network is that we have clear preconceptions about aspects of its structure
+and development, whereas for R <U+200B>ed Riding Hood<U+200B> this is not the case. By showing that the
+structural and developmental properties of the extracted chain letter network are indeed in
+accordance with our preconceptions, we can be more certain about the validity of the
+conclusions based on the R <U+200B>ed Riding Hood n <U+200B>etwork. We therefore choose to keep the chain
+etters in the article, but, as per suggestion of the referees, have greatly shortened the data
+description of the chain letters and have rearranged some of the sections (see e.g. the
+to position the chain letter discussion primarily in light of validating our results. In the
+ntroduction of the article we now more clearly motivate the inclusion of the chain letters:
+“There is, however, a considerable difficulty associated with assessing the validity of
+the extracted story network and its structural properties, as we lack a `ground truth' of
+which story served as pre­text for a retelling. For this reason, we made the
+methodological choice of comparing the structure and development of \emph{Red
+Riding Hood}'s story network to that of a large collection of paper chain letters. This
+collection consists of over five hundred letters from the \nth{20} century and
+represents one hundred years of cultural copying. Although chain letters are
+fundamentally different from fairy tales in many respects, they do make an interesting
+comparison because of their explicit request to replicate and redistribute the contents
+of the letter ­­ sometimes to a fixed number of people and often within a particular
+time window. Crucially, because of this request, we can make at least two predictions
+about the structure and development of a chain letter network. First, it can be
+expected that chain letters are connected to pre­texts in close temporal proximity.
+Second, in a perfect chain (i.e.\ when all successive recipients of a letter adhere to its
+request), we can expect a graph structure with a relatively uniform degree
+distribution, in which all stories exhibit approximately equal degree. These
+expectations we have of the properties of chain letter networks are confirmed by
+previous studies that have enhanced the understanding of spreading patterns in
+Internet chain letter networks~\cite{liben­nowell:2008}. By showing that the extracted
+chain letter network displays structural and developmental properties that are in
+accordance with our preconceptions about these properties allows us to partially
+check for the reliability of our methodology, and hence serves to strengthen our
+confidence in the validity of conclusions based on the \emph{Red Riding Hood}
+network and its extracted properties.”
+2. Lengthy discussion
+Editor 1<U+200B> : “The discussion at the end is also very lengthy and not everything seems to be
+supported by the presented evidence. In short, the authors should carefully consider which
+results to retain, and please refocus on the main messages, especially in the discussion,
+which, as said, is too long.”
+Reviewer 1: <U+200B> “The final paragraph equating preferential attachment to a neutral model of
+cultural evolution and biological random drift has almost nothing to do with the paper at all,
+and the suggestions is probably incorrect. At the very least, it posits a super­organic model
+for folklore where the stories circulate independently of the storytellers. All modern folklore
+theory has qualitatively and, in more recent work quantitatively, shown that this is not the
+case. No storytellers­­no stories. Storytelling is a social process and the choice to tell stories
+s highly motivated. The reason something becomes popular is the important question­­once
+something becomes popular people imitate it; but equating this to biological random drift
+undermines all the good work in this paper.”
+final paragraph diverges from the main points we want to make in the paper. Therefore, we
+decided to remove the final paragraph. Furthermore, Editor 1 rightly points out that our
+discussion is quite lengthy. With the removal of the final paragraph, however, we believe that
+the discussion has become more manageable and mainly presents information supported by
+the evidence given.
+3. Rearrangements
+Reviewer 1<U+200B> : “The observation of lopsidedness to smaller timespans is very interesting, and
+a finding that should be highlighted, not buried on p. 15! Just after that, the authors reach an
+mportant conclusion: "In other words, retellings of Red Riding Hood do display preference to
+select alder versions as their pre­text(s)...stories have individual values of attraction that
+essen over time." Showing this empirically is a very important finding. Unfortunately, this is
+almost lost in the middle of a paragraph.”
+Author response: <U+200B> Again, Reviewer 1 makes a very good suggestion to rearrange some our
+findings and highlight them better. We have tried to highlight the findings a little more by
+describing them more explicitly in the abstract, in the description of the visualizations of the
+story networks (Figure 3, see our response below in Section 5), and in the introductory
+paragraph of section 4(b).
+From the abstract:
+“[...] In the analysis, we first provide empirical evidence that the formation of these
+story networks is subject to age­dependent selection processes with a strong
+lopsidedness towards shorter time­spans between stories and their pre­texts (i.e.
+`young' story versions are preferred in producing new versions). [...]”
+From Section 4(b):
+“In the present section we turn to the central question of how these distributions
+come into being. By carefully studying and comparing the structure and evolution of
+the two story networks to formal models of network growth, we provide empirical
+evidence for three major conclusions regarding the formation of story networks. First,
+we provide empirical evidence that stories preferentially select stories in close
+temporal proximity, which is indicated by a strong lopsidedness towards smaller
+time­spans in the time­span distributions of stories and their selected pre­texts.
+Second, we show that the in­degree distribution of the \emph{Red Riding Hood}
+network is significantly correlated with the age of stories, suggesting that retellings of
+\emph{Red Riding Hood} are affected by a mechanism of preferential attachment in
+which slightly older versions are preferred to be selected as pre­text(s) in producing a
+new version. Finally, we show that stories have individual attractiveness values that
+lessen over time.”
+Reviewer 1<U+200B> : “On p. 13, there seems to be an unmotivated focus on whether the in­degree
+distribution is a power­law distribution or not. The motivation for this discussion becomes
+apparent later; the authors should say much earlier that a power law implies a certain type of
+different models­­power law, log normal, exponential, etc.”
+Author response: <U+200B> The reviewer suggests to state much earlier that a power law distribution
+might imply a certain type of preferential attachment. We agree, and have made this more
+explicit in the outline of section 4:
+“In what follows, we will statistically characterize these two observations by carefully
+studying the in­degree distributions of the two story networks. Accurately
+characterizing the in­degree distribution of the two networks is a fundamental
+prerequisite to understand which models of network growth potentially underlie the
+evolution of the two story networks. A power­law characterization of the in­degree
+distribution, for example, might be accounted for by models of network growth such
+as the Preferential Attachment model (cf.\ Section 4\ref{sec:network­evolution}).
+Subsequently, we will study the development of the two story networks over time. We
+compare four models of network growth and analyze their in­degree distributions in
+relation to those of the two story networks.”
+Reviewer 1<U+200B> : “On p 12 the decision to use the Gini coefficient is excellent­­it gets lost in a lot
+of the previous chatter, and would be more prominent if that material were significantly cut.”
+Author response: <U+200B> We have cut some of the details describing network­theoretic statistics in
+order to make the decision to use the Gini coefficient more prominent (also see the
+responses to other suggested cuts below).
+4. Additional References
+Editor 1<U+200B> : “In the introduction, in terms of frequency­based attractiveness, recently an
+argument was made that this may be behind the most frequent words and phrases of the
+English language too in Evolution of the most common English words and phrases over the
+centuries, J. R. Soc. Interface 9, 3323­3328 (2012). Perhaps worth a referral.”
+Reviewer 1<U+200B> : “The question of the chain letter and network transmission has been addressed
+n classic studies by Liben­Nowell and Kleinberg (PNAS 2008, vol. 105, no. 12. 4633­4638).
+While they study a more recent internet chain letter transmission, it appears to be highly
+related to this article, and their findings may help account for the pretext model that the
+authors discovered for chain letters.”
+Reviewer 1<U+200B> : “The authors should align the work on fairy tale with folklore theory. The
+question of how storytellers model their stories on other pretexts is a sound one, and implicit
+n a great deal of folklore scholarship going back to the Grimms. This idea finds its clearest
+expression in the early folklore method of the Krohns and Aarne, resulting in both the ATU
+ndex of fairy tales, and the earliest folkloric method, the historic­geographic method. The
+authors seem either unaware of the history of the problem, or believe there is little to be
+gotten there. While Zipes is an excellent scholar, unless this work is focused on literary
+reworkings of fairy tales (something that should be made much clearer if that is the case),
+underpinnings of the work. Recasting the paper as a confirmation of the role of tradition
+dominants in shaping tradition and the impact of network transmissions of stories would
+situate this paper as making a major contribution to folklore theory. If, however, this is based
+on literary reworkings of the tales, then that is fine­­the supplementary information should, at
+the very least, include a complete listing of all the tales considered and their sources.
+Reviewer 1<U+200B> : “Perhaps the most glaring lack in the paper is an appreciation of the
+sophisticated history of folklore theory dealing with precisely the questions of stability and
+variation over time. Similarly, there is little awareness of computational approaches to
+folklore that explore questions of variation (similarity and difference) over much larger
+corpora (cf. Abello et al in CACM). The paper would benefit greatly with the addition of a
+more robust grounding in folklore theory given the considerable scholarship.”
+Author response: <U+200B> The reviewers rightfully point out that the paper might benefit from being
+embedded more extensively in folklore theory. However, since our <U+200B> Red Riding Hood<U+200B> corpus
+consists solely of literary retellings of the story (see the remark below), we believe that the
+seminal work by Zipes, Beckett and Stephens & McCallum forms sufficient theoretical
+background to the paper. We fully acknowledge that we should mention recent
+computational approaches to folklore and how questions of variation have been addressed
+n that work. We therefore included the suggested reference to Abello et al. (2012) in our
+discussion, in which we briefly reflect on different levels of abstraction and comparison to
+form story networks. Furthermore, we included the suggested reference to the study on
+Internet chain letters by Liben­Nowell and Kleinberg (2008) in our introduction. We believe
+that the suggestion to refer to the study about the evolution of the most common English
+words and phrases is a little far removed from the main topic of the current article, and
+therefore we decided not to include it.
+5. Clarifications
+Reviewer 1<U+200B> : “In the discussion of the LRR corpus, the authors should stick to their corpus.
+There is no clear motivation for the discussion of a Japanese wood cut when the tales under
+consideration are all Dutch.”
+Author response: <U+200B> We agree with the reviewer on this point and we have included a
+different example from our own collection of “Red Riding Hood” retellings along with a brief
+ntroduction:
+“The experimental retelling written by Ivo de Wijs with illustrations by Alfons van
+Heusden (1994) serves as a wonderful example of the third branch as it diverges
+radically from the tradition, both in form and in content. The story is part of a
+Roodkapje en de zeven geitjes<U+200B>
+collection entitled <U+200B> (`Red Riding Hood and the Seven
+Kids'). This rather unusual juxtaposition of characters from two famous fairy tales
+serves to emphasize the bricolage nature of the stories to come. Each story in the
+book tells three different versions of a story. On each page, supposedly aligned
+fragments of the three versions are placed side by side in three columns, each with
+before moving on to the next page. The following fragment serves to illustrate some
+of the radical changes the story has undergone:
+“Once upon a time there was a little girl called Gretel. Well, her name was Gretel, but
+she was called Little Red Cap because of her flaming red hair. Little Red Cap lived
+with her grandmother in an old tower out in the woods. One day grandmother went to
+the city to buy biscuits and lemonade ­­ and a cough medicine because Little Red
+Cap wasn't feeling well. `Come back soon, grandmother,' said Little Red Cap, `walk
+briskly!' And grandmother went on her way.””
+Reviewer 1: “On p16, the paper shifts into statistical hyperdrive, and it is not entirely clear
+what is happening. The selection of a Dirichlet may make a lot of sense, but many readers
+(this one included) may have to stop and think about that for a while.”
+Author response: <U+200B> We have included some additional lines to make our choice for the
+Dirichlet a little more clear:
+“Each node <U+200B> i<U+200B>is assigned an individual initial attractiveness value $\beta^i_0$, which
+is sampled from a symmetric Dirichlet distribution with hyper­parameter
+$\phi$.\footnote{Our choice for sampling from a Dirichlet distribution is largely
+motivated by the fact Dirichlet processes are often employed to model data that, like
+story networks, tend to develop in a `rich get richer' fashion.} Values of $\phi$
+between zero and one generally result in a more `peaky' attractiveness distribution, in
+which only a few nodes are highly attractive. Higher values ($\phi \geq 1$) result in a
+more uniform attractiveness distribution.”
+Reviewer 1<U+200B> : “On p 11, it is unclear to me why story and pre­text are distinguished from each
+other­­any story can become a pre­text to a later story, so suggesting these are two different
+classes confuses the issue (and seems to suggest a bimodal network model).”
+Author response: <U+200B> It was not our intention to distinguish between stories and pre­texts. We
+have added a footnote to this part in order to avoid any potential confusion:
+“To avoid any misunderstandings, it should be stressed that we do n <U+200B>ot<U+200B>treat stories
+and pre­texts as two separate classes, as any story can become a pre­text to a later
+story.”
+Reviewer 1<U+200B> : “A small quibble concerns the limitation of the corpus to LRR tales exclusively.
+The suggestion here is that LRR tales only use LRR tales as a pretext. Almost all folklore
+theory suggests a different model of transmission, where storytellers use other tales as
+pre­texts for aspects of their own retellings of tales adjusting those tellings to both the
+context of performance, and the active tales in their own current story repertoires (what the
+authors label context­based attractiveness). This problem is obviated if the corpus consists
+entirely of literary versions of tales­­this may indeed be the case in this study, but it is not
+mmediately apparent. If the latter is the case, this should be made clear immediately­­"the
+Since these stories would essentially be context­less, it becomes easier to focus on "content
+based" attractiveness.”
+Author response:<U+200B> Our corpus consists entirely of literary retellings of “Red Riding Hood”,
+which, as the reviewer already states, obviates the problem. At several places in the
+manuscript we made it more clear that our corpus consists of literary retellings.
+Reviewer 1<U+200B> : “Figure 4 is interesting, but needs to be described better. There would be more
+room to do so if the chain letter portion is discarded.”
+Author response: <U+200B> We have altered the introduction to the figure (which is now Figure 3) by
+providing a more detailed description.
+“Two important observations can be made from visually inspecting the two networks.
+First, let us consider the chain letter network. As indicated in the introduction and
+data section, chain letters are explicitly designed to be replicated and redistributed
+within a short period of time. To confirm the reliability of our methodology, then, the
+story network extracted by the \emph{Bootstrap Neighbor Clustering} procedure has
+to be in accordance with some of our preconceptions about the structure of chain
+letter story networks. The visualization in Figure \ref{fig:network­visualization}
+indicates that this appears to be the case: most stories in the network are connected
+to other stories with a similar color shade, which means that, in the chain letter
+network, stories predominantly select stories of approximately the same age as
+potential pre­texts. Interestingly, the second (\emph{Red Riding hood}) network
+exhibits a similar pattern, with each story showing a clear preference to select
+pre­texts with a similar color shade (i.e.\ close temporal proximity). Second, it can be
+observed that the network derived from \emph{Red Riding Hood} retellings has a
+structure with a few hubs, i.e. where three or four stories function as pre­text for a
+large number of stories (which is represented by the size of the nodes in the
+networks). The chain letter network, on the other hand, displays a more uniform
+distribution over which stories function as pre­text, which also is in accordance with
+our expectations about the structure of chain letter networks (cf.\ Section
+\ref{sec:introduction}).”
+6. Minor edits
+Editor 1: “Figures have very short captions, but they should be able to stand on their own
+more. Please improve this by stating also the main message/results in each figure with a
+sentence or two.”
+Author response: <U+200B> The editor makes a valid point here and we have added some additional
+sentences to the captions in order to make sure that they stand on their own.
+Reviewer 1<U+200B> : “These terms (context and content based attractiveness) appear to be
+discarded in favor of the interesting frequency based attractiveness, model based
+would be preferable to simply use these forms of attractiveness throughout.”
+Author response: <U+200B> We agree with the reviewer that it might be more clear to use the
+alternative wordings throughout the paper. However, the terms context­ and content­based
+attractiveness are often used in evolutionary studies, which is why we first introduce these
+known terms and subsequently refine these terms for our purposes. We have attempted to
+make the connection between the different wordings more clear in the following way:
+“First, besides frequency­based attractiveness, stories might be differentially
+preferred given their t<U+200B> emporal attractiveness<U+200B>
+, which is a form of context­based
+attractiveness.” (p. 3)
+“Second, a story might also be more (or less) attractive because, for example, its
+author enjoys high esteem. This type of context­based attractiveness we will term
+model­based attractiveness.<U+200B> ” (p. 3)
+7. Suggested cuts
+Editor 1<U+200B> : “The algorithm need not be presented in this technical form since it is well­known
+and easy to find elsewhere. If you insist on showing this, then please move it to an
+appending of suppl. Material.”
+Reviewer 1<U+200B> : “(4) there is far too much introductory material about the various models and
+statistical approaches. All of the approaches are very well known and hardly need laborious
+rehearsal. For example, the discussion of BOW models of text vectors and cosine
+(dis)similarity on page 9 are standard machine learning techniques and hardly need
+explanation. The relaxed ranking algorithm used to bootstrap the network is interesting but
+could be described in a sentence or two. It is unclear to me why we need pseudo­code on
+page 10 as there is nothing unusual about this implementation.”
+Author response:<U+200B> We agree with the referees that the algorithm is relatively well­known and
+need not be presented in this technical form in the paper. We decided to remove the formal
+description from the paper. Furthermore, we have removed significant parts of the laborious
+model descriptions and introductions to well­known statistical methods (see section 3(a) and
+3(b)).
+Reviewer 1<U+200B> : “On pp 11­12, the discussion of well­known network models is
+superfluous­­these are simple descriptions/rehearsals of well­known phenomena. Figure 3 is
+superfluous.”
+Reviewer 1<U+200B> : “On p 15, the discussion of preferential attachment becomes a bit tangential to
+the problem at hand.”
+Author response:<U+200B> We acknowledge that the paper is somewhat verbose in its description of
+the network models, machine learning techniques and other well­known phenomena from
+descriptions in sections 3 and 4.
+Society Open

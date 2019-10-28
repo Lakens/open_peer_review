@@ -1,0 +1,808 @@
+Social signals and algorithmic trading of Bitcoin
+David Garcia and Frank Schweitzer
+Article citation details
+R. Soc. open sci. 2: 150288.
+http://dx.doi.org/10.1098/rsos.150288
+Review timeline
+Original submission: 23 June 2015 Note: Reports are unedited and appear as
+Revised submission: 17 August 2015 submitted by the referee. The review history
+Final acceptance: 28 August 2015 appears in chronological order.
+Note: Transferred from another Royal Society Journal without peer review.
+Review History
+label_version_1
+RSOS-150288.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1
+Is the manuscript scientifically sound in its present form?
+No
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Sufficient.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Comments to the Author(s)
+label_comment_1
+Garcia and Schweitzer contribute to a recent line of research, which investigates human online
+activity and how it relates to subsequent changes in financial time series, by studying the Bitcoin
+market. They claim to have developed a profitable trading strategy for the Bitcoin market.
+The manuscript seems to be original and interesting and a revised version of this manuscript
+could be considered for publication in Royal Society Open Science after the authors have
+addressed my concerns and questions below:
+* The authors perform a cost analysis but do not elaborate on the fact that the results strongly
+depend on the exact realisation of opening and closing positions. The framework proposes to
+keep positions open and unchanged if the trading signal does not change. However, there is no
+reason to believe that the trading signal might not change more in the future, increasing the cost
+of trading using the described strategy. Would it be possible to describe the results in a worst
+case scenario in which positions need to be opened and closed every day?
+* Given the immature nature of the Bitcoin market and the choice of the authors to study the year
+2014 as an out-of-sample period, the question arises to which extent the results just depend on the
+bearish market state during this period. To address this problem the authors should separate
+their trading strategy into its long/flat only and short/flat only components to investigate
+whether one part of the strategy is driving the results. It would also be extremely helpful to
+demonstrate that their strategy is successful in the out-of-sample period from January 2015 until
+the end of July 2015, which should now be available for analysis.
+* The authors' key result is presented in Figure 4, which highlights some issues in the assessment
+of the proposed strategy’s returns. Firstly, the time series plots on the left suggest that strategies
+may produce positive returns in a couple of months only. The final assessment of the returns is
+currently based on their cumulative profits, as depicted in the kernel density plots on the right,
+where these profits could be strongly influenced by movements in one very small time period. A
+correct assessment would investigate monthly outcomes of all the strategies. Secondly, I
+appreciate that variable end dates for applying the strategies are explored. However, this means
+that the cumulative profit distributions reflect consideration of the well performing months at the
+beginning of the period on multiple occasions. Lastly, I would caution the authors that it may be
+seen as scientifically questionable to highlight the cumulative return of 200% achieved by one
+strategy when multiple strategies have been tested. I would suggest that the authors may wish to
+rephrase some of these sections to protect themselves against the accusation of having cherry-
+picked results following multiple comparisons.
+* The authors mention that daily Bitcoin prices are recorded at 23:59 GMT each day. However,
+the authors do not provide any information on daily cut-off times and times of availability for the
+other data sources, which could possibly have flawed their analyses and results. For example,
+daily data on search activity from Google Trends, depending on how it is accessed, is available
+two days later and usually cut-off times relate to Pacific Standard Time / Pacific Daylight Time.
+Given the one day's lag used on the trading framework which the authors present, daily time
+series need to be synchronised across time zones.
+* The authors do not provide any information on when and from which sources the various
+online datasets were retrieved.
+* The authors claim universal applicability of their approach. However, the Bitcoin market is a
+market which is not yet mature and therefore a very special instrument to trade. If the authors do
+not present further evidence using other financial instruments, any claims regarding the
+universality should be avoided.
+3
+* The exact strategy needs to be explained. At the moment, it remains unclear which fraction of
+the portfolio is invested and how it increases or decreases based on decisions made to buy or sell.
+Are positions opened and closed using the daily closing price at 23:59 GMT? From which time
+period stem other daily indicators in this case used to make a decision and act at 23:59 GMT?
+* I would suggest that the authors may wish to revisit the tone in which they report their results
+and relate them to existing research in this area. In particular, it is not clear that the authors'
+criticisms of existing methods to incorporate and exploit online data streams are built on
+sufficient evidence. The authors also make very strong claims in the concluding remarks, for
+example suggesting that their strategies "can reach profits around 200% in less than a year" or
+"With our study, we have shown how social signals can be turned into profit". It could be argued
+that the analysis presented does not provide enough support for these statements, in particular
+given the concerns outlined above.
+* Previous work on the relationship between online activity and financial time series which the
+authors should refer to and acknowledge in their paper includes:
+- The relationship between both Google searches and Wikipedia access logs and the Bitcoin
+market has been analysed in:
+http://www.nature.com/srep/2013/131204/srep03415/pdf/srep03415.pdf
+- Search volume for company names was found to be correlated with weekly stock transaction
+volumes: http://rsta.royalsocietypublishing.org/content/368/1933/5707.short
+- Increases in financially related Google searches were profitably linked to subsequent stock
+market losses using a similar trading strategy framework as the authors use:
+http://www.nature.com/srep/2013/130425/srep01684/pdf/srep01684.pdf
+- Similarly, information on how often company related pages or financial content is accessed on
+Wikipedia revealed significant hints about subsequent market moves:
+http://www.nature.com/srep/2013/130508/srep01801/pdf/srep01801.pdf
+- Information on Google searches can be used for portfolio diversification:
+http://www.nature.com/srep/2013/130919/srep02713/pdf/srep02713.pdf
+* Typos include:
+- Page 3, line 17: "their their" -> "their"
+- Page 9, line 48: "left panel" -> "right panel"
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes, it is clear.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+4
+Recommendation?
+label_recommendation_2
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_2
+The authors have a very nice paper. The results are credible and interesting and a contribution to
+the literature. I have only a few comments:
+1) On page 2, the authors discuss Silk Road. One recent paper that has documented the
+importance of Silk Road and its interaction with Bitcoin is: Yelowitz, A., and Wilson, M., 2015,
+"Characteristics of Bitcoin users: an analysis of Google search data," Applied Economics Letters,
+22(13), 1030-1036. This paper should be included in the summary of knowledge of Bitcoin.
+2) On page 6, the authors discuss the level of search volume in Google for Bitcoin, using Google
+Trends. They should be clear whether this is the Google Trends search term for Bitcoin alone, or
+Google's grouping of search terms for "Bitcoin - Currency". See Yelowitz & Wilson, Figure 3.
+label_author_3
+Review form: Reviewer 3 (Jerry Dwyer)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+Attached file (see Appendix A).
+label_end_comment
+Decision letter (RSOS-150288)
+03-Aug-2015
+Dear Dr Garcia,
+The Subject Editor assigned to your paper ("Social signals and algorithmic trading of Bitcoin") has
+now received comments from reviewers. We would like you to revise your paper in accordance
+with the referee and Subject Editor suggestions which can be found below (not including
+5
+confidential reports to the Editor). Please note this decision does not guarantee eventual
+acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 26-Aug-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+6
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Comments to Author:
+Associate Editor's comments:
+Associate Editor: 1
+Comments to the Author:
+Please resubmit and take on board all of the comments of the larger review please. If you disagree
+with any of the comments, please explain (in a separate note) why you do not follow them. We
+will ask this reviewer to re-review the revised submission.
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The authors have a very nice paper. The results are credible and interesting and a contribution to
+the literature. I have only a few comments:
+1) On page 2, the authors discuss Silk Road. One recent paper that has documented the
+importance of Silk Road and its interaction with Bitcoin is: Yelowitz, A., and Wilson, M., 2015,
+"Characteristics of Bitcoin users: an analysis of Google search data," Applied Economics Letters,
+22(13), 1030-1036. This paper should be included in the summary of knowledge of Bitcoin.
+2) On page 6, the authors discuss the level of search volume in Google for Bitcoin, using Google
+Trends. They should be clear whether this is the Google Trends search term for Bitcoin alone, or
+Google's grouping of search terms for "Bitcoin - Currency". See Yelowitz & Wilson, Figure 3.
+Reviewer: 2
+Comments to the Author(s)
+Attached file
+7
+Reviewer: 3
+Comments to the Author(s)
+Garcia and Schweitzer contribute to a recent line of research, which investigates human online
+activity and how it relates to subsequent changes in financial time series, by studying the Bitcoin
+market. They claim to have developed a profitable trading strategy for the Bitcoin market.
+The manuscript seems to be original and interesting and a revised version of this manuscript
+could be considered for publication in Royal Society Open Science after the authors have
+addressed my concerns and questions below:
+* The authors perform a cost analysis but do not elaborate on the fact that the results strongly
+depend on the exact realisation of opening and closing positions. The framework proposes to
+keep positions open and unchanged if the trading signal does not change. However, there is no
+reason to believe that the trading signal might not change more in the future, increasing the cost
+of trading using the described strategy. Would it be possible to describe the results in a worst
+case scenario in which positions need to be opened and closed every day?
+* Given the immature nature of the Bitcoin market and the choice of the authors to study the year
+2014 as an out-of-sample period, the question arises to which extent the results just depend on the
+bearish market state during this period. To address this problem the authors should separate
+their trading strategy into its long/flat only and short/flat only components to investigate
+whether one part of the strategy is driving the results. It would also be extremely helpful to
+demonstrate that their strategy is successful in the out-of-sample period from January 2015 until
+the end of July 2015, which should now be available for analysis.
+* The authors' key result is presented in Figure 4, which highlights some issues in the assessment
+of the proposed strategy’s returns. Firstly, the time series plots on the left suggest that strategies
+may produce positive returns in a couple of months only. The final assessment of the returns is
+currently based on their cumulative profits, as depicted in the kernel density plots on the right,
+where these profits could be strongly influenced by movements in one very small time period. A
+correct assessment would investigate monthly outcomes of all the strategies. Secondly, I
+appreciate that variable end dates for applying the strategies are explored. However, this means
+that the cumulative profit distributions reflect consideration of the well performing months at the
+beginning of the period on multiple occasions. Lastly, I would caution the authors that it may be
+seen as scientifically questionable to highlight the cumulative return of 200% achieved by one
+strategy when multiple strategies have been tested. I would suggest that the authors may wish to
+rephrase some of these sections to protect themselves against the accusation of having cherry-
+picked results following multiple comparisons.
+* The authors mention that daily Bitcoin prices are recorded at 23:59 GMT each day. However,
+the authors do not provide any information on daily cut-off times and times of availability for the
+other data sources, which could possibly have flawed their analyses and results. For example,
+daily data on search activity from Google Trends, depending on how it is accessed, is available
+two days later and usually cut-off times relate to Pacific Standard Time / Pacific Daylight Time.
+Given the one day's lag used on the trading framework which the authors present, daily time
+series need to be synchronised across time zones.
+* The authors do not provide any information on when and from which sources the various
+online datasets were retrieved.
+* The authors claim universal applicability of their approach. However, the Bitcoin market is a
+market which is not yet mature and therefore a very special instrument to trade. If the authors do
+not present further evidence using other financial instruments, any claims regarding the
+universality should be avoided.
+8
+* The exact strategy needs to be explained. At the moment, it remains unclear which fraction of
+the portfolio is invested and how it increases or decreases based on decisions made to buy or sell.
+Are positions opened and closed using the daily closing price at 23:59 GMT? From which time
+period stem other daily indicators in this case used to make a decision and act at 23:59 GMT?
+* I would suggest that the authors may wish to revisit the tone in which they report their results
+and relate them to existing research in this area. In particular, it is not clear that the authors'
+criticisms of existing methods to incorporate and exploit online data streams are built on
+sufficient evidence. The authors also make very strong claims in the concluding remarks, for
+example suggesting that their strategies "can reach profits around 200% in less than a year" or
+"With our study, we have shown how social signals can be turned into profit". It could be argued
+that the analysis presented does not provide enough support for these statements, in particular
+given the concerns outlined above.
+* Previous work on the relationship between online activity and financial time series which the
+authors should refer to and acknowledge in their paper includes:
+- The relationship between both Google searches and Wikipedia access logs and the Bitcoin
+market has been analysed in:
+http://www.nature.com/srep/2013/131204/srep03415/pdf/srep03415.pdf
+- Search volume for company names was found to be correlated with weekly stock transaction
+volumes: http://rsta.royalsocietypublishing.org/content/368/1933/5707.short
+- Increases in financially related Google searches were profitably linked to subsequent stock
+market losses using a similar trading strategy framework as the authors use:
+http://www.nature.com/srep/2013/130425/srep01684/pdf/srep01684.pdf
+- Similarly, information on how often company related pages or financial content is accessed on
+Wikipedia revealed significant hints about subsequent market moves:
+http://www.nature.com/srep/2013/130508/srep01801/pdf/srep01801.pdf
+- Information on Google searches can be used for portfolio diversification:
+http://www.nature.com/srep/2013/130919/srep02713/pdf/srep02713.pdf
+* Typos include:
+- Page 3, line 17: "their their" -> "their"
+- Page 9, line 48: "left panel" -> "right panel"
+Author's Response to Decision Letter for (RSOS-150288)
+We proceed to reply to each question and comment of the reviewers in order:
+> Reviewer: 1
+> 1) On page 2, the authors discuss Silk Road. One recent paper that has
+> documented the importance of Silk Road and its interaction with Bitcoin is:
+> Yelowitz, A., and Wilson, M., 2015, "Characteristics of Bitcoin users: an
+> analysis of Google search data," Applied Economics Letters, 22(13), 1030-1036.
+> This paper should be included in the summary of knowledge of Bitcoin.
+We thank the reviewer for suggesting this reference, which
+provides a contrast to the previous analyses of Bitcoin usage motives.
+We cited it in the following reference to the Silk Road:
+"One of the first markets to adopt Bitcoin was the Silk Road, a website where
+9
+illegal commerce became possible thanks to the relative anonymity of Bitcoin
+(Christin, 2013), in line with the evidence in search trends that relates
+Bitcoin usage to computer expertise and illegal activities (Yellowitz and
+Wilson, 2015)."
+> 2) On page 6, the authors discuss the level of search volume in Google for
+> Bitcoin, using Google Trends. They should be clear whether this is the Google
+> Trends search term for Bitcoin alone, or Google's grouping of search terms for
+> "Bitcoin - Currency". See Yelowitz & Wilson, Figure 3.
+We thank the reviewer for this comment, since our previous version did not
+fully explain the design decision of using "Bitcoin" as a search term. The
+disambiguation of search terms that Google trends currently provides is based
+on a recent integration with Freebase. While the approach of using the topic
+"Bitcoin - Currency" is appropriate for studying the demographics of Bitcoin
+users, we cannot extend this to historical analysis and prediction because
+such functionality did not exist during the full time span we analyze. To
+clarify this technical difference, we added a comment in the Materials and
+methods section to put our approach in reference to the design of Yelowitz &
+Wilson:
+"We choose the search term "bitcoin" instead of the "Bitcon - Currency" topic,
+which was introduced as a functionality of Google Trends during our analysis
+period. While the topic approach can be more precise for demographics and
+motive analysis (Yellowitz and Wilson, 2015), we follow a homogeneous approach
+including only the term trend data that was available during the whole study
+period."
+> Reviewer: 2
+> The weakest part of the paper is the claim that the paper shows it is
+> possible to profitably trade on the basis of the relationships estimated in
+> the paper. There are two problems. First, prices are represented by an index
+> of prices constructed by CoinDesk. This is a fine index which averages the
+> prices on the most-liquid exchanges. Still, it is an index and is not actually
+> tradeable. While this might seem like a quibble, trades are executed at actual
+> prices and it takes actual prices to be convincing that profits can be
+> earned. For example, the index is an average and unpredictable deviations
+> from the average may be important. Second, the trades include short sales.
+>
+> Because an index is used, I take the evidence as indicative that it may be
+10
+> possible to use daily data and execute profitable trades on exchanges. Other
+> than a caveat or more guarded statement here or there, this concern need not
+> affect the paper.
+We agree with the reviewer that the validation against the BPI has the limitation
+that it is not actually tradeable. To overcome this issue, we repeated the
+validation of our strategies versus the actual closing price of one the most
+liquid markets in the last years (Bitfinex). In the current version, we
+report the results of the validation of strategies using the actual closing
+price of Bitfinex, which leads to slightly different results but qualitatively
+unchanged with respect to the performance of trading strategies.
+> The concern about short sales is less fundamental but requires more
+> attention. Short sales of corporate stock in the United States, for
+> example, occur in a well-known institutional setting. If I wanted to short
+> bitcoin on a regular but temporary basis, I do not know how I would do that.
+> I am dubious that it is possible for typical traders in bitcoin to short
+> bitcoin in an organized and relatively risk-free way. If it is possible,
+> then you should carefully explain how it is done and why the counter-party
+> risk is minimal or zero. Also, you should explain how margining occurs and
+> the cost of providing the margin. If bitcoin are not shorted in a
+> predictable setting, then the gains from trading bitcoin have to be
+> recomputed as the gains from being more or less long or holding no bitcoins
+> at all.
+In the first version of the article, we refer to the details about shorting in
+Bitcoin exchange markets by referring to Bitfinex: [39] Bitfinex.
+Features - short. (https://www.bitfinex.com/pages/features). The reviewer is
+right in pointing to our responsibility to explain more in detail the
+conditions of shorting and the possible associated risks. In the new version
+of the manuscript we provide a much more detailed analysis of the different
+roles of long and short positions, evaluating the combined strategy when
+taking only short and only long positions as part of the risk assessment.
+We also warn of the possible hidden risks of shorting, in line with market
+events difficult to foresee, such as the closure of Mt. Gox:
+"In addition, structural changes and additional risks in borrowing and lending
+Bitcoin for shorting can emerge when exchange markets close or governments
+regulate Bitcoin, changing the rules of the game in a way such that our
+trading strategies might not work any more."
+11
+> Transactions costs are important to your computation. As I understand it, for example
+from
+> Antonopoulos (2014, pp. 119-20), fees are not based on the value of the transaction. As a
+> result, it seems likely that your computations grossly overstate the transactions costs. A
+more
+> realistic computation, even if generous but at least related to the actual way such costs
+are
+> computed, would be an improvement.
+We appreciate the interest of the reviewer to evaluate if trading costs were
+overstated in our analysis. The book of Andreas Antonopoulos deals with
+technical aspects of Bitcoin as a technology, and the transaction fees that
+are discussed in the book are those belonging to the blockchain. Indeed
+transaction fees in the blockchain are unrelated to the volume of the
+transaction, but the costs we added in our analysis are derived from trading
+for fiat currencies in Bitcoin exchange markets. The two fees should not be
+confused, in particular since trading costs in exchange markets are
+proportional to the value of the trade. For this reason, we used the term
+"trading cost" rather than "transaction fee", and added a reference to the
+cost structure of Bitfinex. We stressed the difference in the new writing of
+the costs section:
+"These trading costs should not be confused with the transaction fees in the
+Block Chain (Nakamoto, 2008), which do not depend on the transacted cost and
+are not associated to any market of exchange to other currencies."
+> I also would like to see some discussion of when the data used in the analysis become
+> available. The trades are supposed to be executed at 23:59 GMT. Are all of the data
+necessary
+> for the computation of the desired trade available on a regular basis at that time? Have
+they
+> been available at that time since February 1, 2011? If you don’t know the answer to the
+last
+> question, that’s fine but some comment about it would be helpful.
+We added more details about the availability in time of the signals necessary
+for trading strategies. The only signal that is received with a significant
+delay is the google search volume, but search is not included in the trading
+strategies and thus this does not impose a limitation to our results. The new
+social signals subsection of Materials and Methods reviews much more in detail
+the datasources and their timings.
+12
+> Specific Comments
+> The elements of V(t) need not be stationary. The underlying assumption is that the
+elements of
+> V(t) are covariance stationary.
+> You say “verify that ... their variances do not greatly differ....” This is not what the tests,
+called
+> “unit-root tests” in the economics and finance literature, accomplish. If a series has a unit
+root,
+> then it has unbounded variance (which you mention later). The variables would not be
+> covariance stationary but the variances of all variables in a certain sense would be the
+same
+> across time and variables if they all have unit roots. If the series do not have unit roots,
+they
+> can have time-varying variances. The variances can be unbounded as well. Not having a
+unit
+> root is necessary but not sufficient for a variable to have a bounded variance and does
+not
+> imply that the variable’s variance is constant over time. I would not suggest you pursue
+this
+> issue further; it is unlikely to have any effect on your general conclusion. Given your
+audience, I
+> am not sure how you want to say it since you don’t appear to want to just say “unit-root
+tests”.
+> I would suggest something more like “test whether the series have a random-walk
+component”
+> or maybe something else.
+We would like to thank the reviewer for this comment, since our previous
+writing on the matter was imprecise. We took it into account and rewrote the
+reference to the unit root tests as suggested by the reviewer.
+> The strategy of using the Bayesian Information Criteria to determine the lag length is
+more
+> common, at least in economics and finance, than using a shorter lag length and
+“correcting” for
+> serially correlated errors in Vector Autoregressions. At the least, I would mention this
+> alternative when saying on page 4/21 what you did. As you say, it doesn’t make any
+difference,
+> which is what I would have expected. They just are different ways of looking at the same
+thing.
+13
+We thank the reviewer for this comment and for the consideration of the
+article within the finance and economics communities. While longer lags would
+not be an issue in the case of this article, their inclusion in combination
+with other possible extensions to our framework is worth noting. We mentioned
+this as possible alternative in other applications:
+"Nevertheless, improvements can be expected from the addition of longer time
+lags, higher frequency trading, and real-time optimization approaches."
+We would like to thank reviewer 2 for their constructive criticism, which has
+helped us to better clarify the data, methods, and conclusions of the article.
+Reviewer: 3
+> * The authors perform a cost analysis but do not elaborate on the fact that
+> the results strongly depend on the exact realisation of opening and closing
+> positions. The framework proposes to keep positions open and unchanged if
+> the trading signal does not change. However, there is no reason to believe
+> that the trading signal might not change more in the future, increasing the
+> cost of trading using the described strategy. Would it be possible to
+> describe the results in a worst case scenario in which positions need to be
+> opened and closed every day?
+Our previous cost analysis did not include any possible forcing of closing
+positions, but it is worth exploring as in previous research. We repeated the
+cost analysis including the mentioned limitation in trading, and found that
+the combined strategy is still profitable for trading costs below 0.125 %, a
+lower value than allowing open positions. To fully acknowledge this caveat, we
+added this additional cost analysis to the SI and referred to it in the
+results section:
+"Furthermore, we repeat this analysis assuming the limitation that daily
+positions need to be forcefully closed at the end of each trading period
+(shown in SI), finding a decrease in returns but that the strategy is still
+profitable for trading costs of 0.1%, a typically high cost of current
+exchange platforms [45]."
+> * Given the immature nature of the Bitcoin market and the choice of the
+> authors to study the year 2014 as an out-of-sample period, the question
+> arises to which extent the results just depend on the bearish market state
+> during this period. To address this problem the authors should separate
+> their trading strategy into its long/flat only and short/flat only
+14
+> components to investigate whether one part of the strategy is driving the
+> results. It would also be extremely helpful to demonstrate that their
+> strategy is successful in the out-of-sample period from January 2015 until
+> the end of July 2015, which should now be available for analysis.
+We agree with the reviewer that the nature of the out-of-sample period needs
+closer inspection in order to understand the conditions in which the strategy
+is being evaluated. As proposed by the reviewer, we evaluated the trading
+strategy using only long and only short positions, which we provide in the new
+section "Only short/long combined strategy evaluation" of the SI. This
+analysis allowed us to assess the importance of shorting in a bearish period,
+since the cumulative returns are higher in the only short than the only long
+condition. The period between January 1st and end of July 2015 is also bearish
+(-8.5%) and does not show any bubble behavior that motivates an extension of
+the validation period. In addition, this article has been under review and
+publicly discussed in scientific conferences and mass media since the
+beginning of 2015, and thus we cannot assume any more that the strategy has no
+influence on the system. Nevertheless, we agree with the reviewer that this is
+an important point, and calls for further research that can evaluate the
+impact of new datasources in financial markets, following the approach of
+Curme et. al. 2014.
+We included a comment to the application of the only short/only long
+evaluation as part of the risks section:
+"In this application, the leave-out period is characterized by decreasing BTC
+prices. Thus, it is important to evaluate the role of each possible trading
+action: longing when BTC are bought to be sold later, and shorting when they
+are borrowed and traded as explained above. We repeat the backtesting of the
+Combined strategy allowing only short and only long positions, following the
+methodology of (Preis, Moat, and Stanley, 2013). As reported more in detail in
+the SI, the only short strategy yields higher cumulative returns than the only
+long strategy, as expected from a period in which prices decrease steadily."
+We also added a comment on the need for future validations that can cover price
+bubbles and evaluate the role of the strategy in the market dynamics:
+"Our evaluation goes as far as the representativity of the leave-out sample,
+and future research should evaluate the performance of our approach when
+prices rise and when traders are aware of the existence of our trading
+strategies. Financial markets are known to quickly absorb knowledge, as it
+happened with the inclusion of search trends data in stock trading (Curme et.
+al. 2014)."
+15
+> * The authors' key result is presented in Figure 4, which highlights some
+> issues in the assessment of the proposed strategy’s returns. Firstly, the
+> time series plots on the left suggest that strategies may produce positive
+> returns in a couple of months only. The final assessment of the returns is
+> currently based on their cumulative profits, as depicted in the kernel
+> density plots on the right, where these profits could be strongly influenced
+> by movements in one very small time period. A correct assessment would
+> investigate monthly outcomes of all the strategies. Secondly, I appreciate
+> that variable end dates for applying the strategies are explored. However,
+> this means that the cumulative profit distributions reflect consideration of
+> the well performing months at the beginning of the period on multiple
+> occasions.
+We thank the reviewer for this comment, pointing out some of the
+issues of strategy evaluation through cumulative returns. We agree that the
+previous version overemphasized the returns in the earliest part of the
+leave-out period, and that the evaluation statistics need to take this into
+account. Testing cumulative returns on a monthly basis would alleviate the
+issue of the higher weight of early months, but would suffer a similar problem
+within the month: Given the multiplicative nature of trading results,
+surveying cumulative returns on each month would unavoidably overweight the
+results in the first days of the month.
+To overcome the issues raised by the reviewer, we restructured the Bitcoin
+strategy evaluation section to add new statistics that do not suffer any
+temporal bias. We start showing the analysis of cumulative returns to provide
+an illustration of the behaviour of the strategies in line with previous
+research, validating their performance by comparing the Sharpe ratios of each
+strategy. The benefit of using the Sharpe ratio is that it is based on daily
+differential returns rather than on cumulative ones, having each trading day
+the same weight in the statistic. We also included the average daily returns
+in Table 1, showing this way a robust assessment of how the social signals
+lead to positive returns on investment and how their combination outperforms
+each one and technical strategies.
+We motivate the use of the Sharpe Ratio at this point in the following text:
+"While surveying cumulative returns is illustrative of the performance of the
+strategies, the multiplicative nature of cumulative returns overweights early
+positions and is biased towards the beginning of the evaluation period. To
+properly evaluate trading strategies, we calculated the Sharpe Ratio (Sharpe,
+1970)"
+16
+And we summarize the consistency between the cumulative returns and this
+Sharpe Ratio analysis in the following paragraph:
+"Table 1 reports the Sharpe Ratio SR and the mean daily return µR for all
+strategies, as well as for the DJIA and the average of 10000 random traders.
+The Sharpe Ratio analysis is consistent with the results of the cumulative
+returns analysis, showing that the Combined strategy provides the highest
+returns, with the best SR value above 1.75 and with daily returns above 0.3%
+per day. "
+> Lastly, I would caution the authors that it may be seen as scientifically
+> questionable to highlight the cumulative return of 200% achieved by one
+> strategy when multiple strategies have been tested. I would suggest that the
+> authors may wish to rephrase some of these sections to protect themselves
+> against the accusation of having cherry-picked results following multiple
+> comparisons.
+We thank the reviewer for this comment. It is our least intention to
+oversell the 200% result as some sort of natural property of the system. We
+changed the abstract and the conclusions to avoid too much emphasis on
+the 200% result, motivating the readers to read the full article to be able to
+objectively judge the results.
+> * The authors mention that daily Bitcoin prices are recorded at 23:59 GMT each
+> day. However, the authors do not provide any information on daily cut-off
+> times and times of availability for the other data sources, which could
+> possibly have flawed their analyses and results. For example, daily data on
+> search activity from Google Trends, depending on how it is accessed, is
+> available two days later and usually cut-off times relate to Pacific
+> Standard Time / Pacific Daylight Time. Given the one day's lag used on the
+> trading framework which the authors present, daily time series need to be
+> synchronised across time zones. The authors do not provide any information on
+> when and from which sources the various online datasets were retrieved.
+In the previous version of our article, the data section was unnecessarily
+short and left open questions like the ones asked by the reviewer. Our
+intention is to provide the most transparent and tractable application
+scenario for our framework, and we appreciate the emphasis of the reviewer on
+details on timing and sources of data. To address this, we have extensively
+improved the Economic signals and the Social signals sections, adding precise
+references to the data sources, interfaces, and timestamps used in the study.
+Furthermore, we provide a precise comment on the additional delay of Google
+17
+Trends, which would be an issue if used for trading strategies, but which is
+not the case in our study.
+> * The exact strategy needs to be explained. At the moment, it remains unclear
+> which fraction of the portfolio is invested and how it increases or
+> decreases based on decisions made to buy or sell. Are positions opened and
+> closed using the daily closing price at 23:59 GMT? From which time period
+> stem other daily indicators in this case used to make a decision and act at
+> 23:59 GMT?
+We thank the reviewer for these questions. We devoted more text
+to explain the particularities of the backtesting scenario, and included a
+pseudocode to reproduce our results in the Materials and Methods section:
+"Buy and sell orders have respective costs cb and cs, which are proportional
+to the total traded capital. In our case we assume all costs are equal c = cb
+= cs, leaving particular realizations of the costs as open for future
+research. We compute daily cumulative returns when trading stops at t+1,
+holding USD or selling BTC at the price of t+1. Our trading simulations have a
+limit on short selling set by the amount of capital held by the trader and
+assume that short selling needs to be instantly executed, i.e. short positions
+are limited to one iteration. In summary, the strategy we execute is a single-
+asset backtesting scenario in which 100% of the capital is invested at each
+time step and shorting is limited. The pseudocode of this simulation is shown
+in Algorithm 1."
+> * The authors claim universal applicability of their approach. However, the
+> Bitcoin market is a market which is not yet mature and therefore a very
+> special instrument to trade. If the authors do not present further evidence
+> using other financial instruments, any claims regarding the universality
+> should be avoided.
+> * I would suggest that the authors may wish to revisit the tone in which they
+> report their results and relate them to existing research in this area. In
+> particular, it is not clear that the authors' criticisms of existing methods
+> to incorporate and exploit online data streams are built on sufficient
+> evidence. The authors also make very strong claims in the concluding
+> remarks, for example suggesting that their strategies "can reach profits
+> around 200% in less than a year" or "With our study, we have shown how
+> social signals can be turned into profit". It could be argued that the
+> analysis presented does not provide enough support for these statements, in
+> particular given the concerns outlined above.
+18
+We made the best of our efforts to generalize our methodology and facilitate
+further applications that can test if social signals can drive strategies to
+positive returns on investment. We never claimed any sort of universality in
+our findings, in fact we never use the word "universal" in the whole
+manuscript. To clarify this misunderstanding, we have rewritten the references to
+the possible applications of the framework and revised the wording of our
+conclusions, to emphasize that we show that it is possible, but not
+necessarily universal that social signals can be turned into profit:
+"We evaluated the profitability of our strategies through data-driven
+simulations of a computational model of a trader, showing that a strategy that
+combines valence, polarization, and exchange volume can reach very high
+profits in less than a year. The added value of including polarization in our
+analysis constitutes evidence that collective factors of emotions and opinions
+have the potential to predict financial returns, beyond trivial macroscopic
+aggregates like average valence."
+"The profitability of these strategies illustrate how social media sentiment
+can produce positive returns on investment, especially when including
+polarization measures beyond the trivial quantification of valence or mood."
+"Our framework can be applied to other trading scenarios in which social
+signals are available"
+"With our study, we have shown that it is possible to turn social signals into
+profit."
+> * Previous work on the relationship between online activity and financial time series
+which the authors should refer to and acknowledge in their paper includes:
+> - The relationship between both Google searches and Wikipedia access logs and the
+Bitcoin market has been analysed in:
+http://www.nature.com/srep/2013/131204/srep03415/pdf/srep03415.pdf
+> - Search volume for company names was found to be correlated with weekly stock
+transaction volumes: http://rsta.royalsocietypublishing.org/content/368/1933/5707.short
+> - Increases in financially related Google searches were profitably linked to subsequent
+stock market losses using a similar trading strategy framework as the authors use:
+http://www.nature.com/srep/2013/130425/srep01684/pdf/srep01684.pdf
+> - Similarly, information on how often company related pages or financial content is
+accessed on Wikipedia revealed significant hints about subsequent market moves:
+http://www.nature.com/srep/2013/130508/srep01801/pdf/srep01801.pdf
+> - Information on Google searches can be used for portfolio diversification:
+http://www.nature.com/srep/2013/130919/srep02713/pdf/srep02713.pdf
+19
+We took into account the suggestion of the reviewer to provide a detailed
+review of the works of T. Preis and S. Moat. We added references to their work
+where relevant:
+"motivating the inclusion of large-scale social signals and the evaluation
+through data-driven simulations on historical data, called backtesting (Preis,
+Moat and Stanley, 2013, Curme et. al. 2014)"
+We also commented more precisely on the previous works on Bitcoin by L. Kristoufek
+in the introduction:
+"Previous research has shown how search trends and Wikipedia views are related
+to price changes (Kristoufek, 2013) and to the speculative and monetary
+aspects of Bitcoin (Kristoufek, 2015), leading to dynamics that combine search
+interest, user adoption, word-of-mouth, and prices (Garcia et. al. 2014)."
+> * Typos include:
+> - Page 3, line 17: "their their" -> "their"
+> - Page 9, line 48: "left panel" -> "right panel"
+We thank the reviewer for finding and reporting these typos.
+pendix A
+Referee Report
+on
+Social Signals and Algorithmic Trading of Bitcoin
+Gerald P. Dwyer
+Clemson University
+University of Carlos III, Madrid
+s is a very interesting paper and, overall, is nicely done. I enjoyed reading it and found it
+resting and informative. Your paper does an excellent job of showing the influences on
+oin prices on a daily basis and that, at least in a loose way, how it might be possible to
+fitably trade on the basis of those influences.
+weakest part of the paper is the claim that the paper shows it is possible to profitably trade
+the basis of the relationships estimated in the paper. There are two problems. First, prices
+represented by an index of prices constructed by CoinDesk. This is a fine index which
+rages the prices on the most-liquid exchanges. Still, it is an index and is not actually
+deable. While this might seem like a quibble, trades are executed at actual prices and it takes
+ual prices to be convincing that profits can be earned. For example, the index is an average
+unpredictable deviations from the average may be important. Second, the trades include
+rt sales.
+ause an index is used, I take the evidence as indicative that it may be possible to use daily
+a and execute profitable trades on exchanges. Other than a caveat or more guarded
+tement here or there, this concern need not affect the paper.
+concern about short sales is less fundamental but requires more attention. Short sales of
+porate stock in the United States, for example, occur in a well-known institutional setting. If I
+nted to short bitcoin on a regular but temporary basis, I do not know how I would do that. I
+dubious that it is possible for typical traders in bitcoin to short bitcoin in an organized and
+tively risk-free way. If it is possible, then you should carefully explain how it is done and why
+counter-party risk is minimal or zero. Also, you should explain how margining occurs and
+cost of providing the margin. If bitcoin are not shorted in a predictable setting, then the
+ns from trading bitcoin have to be recomputed as the gains from being more or less long or
+ding no bitcoins at all.
+nsactions costs are important to your computation. As I understand it, for example from
+onopoulos (2014, pp. 119-20), fees are not based on the value of the transaction. As a
+ult, it seems likely that your computations grossly overstate the transactions costs. A more
+listic computation, even if generous but at least related to the actual way such costs are
+puted, would be an improvement.
+so would like to see some discussion of when the data used in the analysis become
+ilable. The trades are supposed to be executed at 23:59 GMT. Are all of the data necessary
+the computation of the desired trade available on a regular basis at that time? Have they
+n available at that time since February 1, 2011? If you don’t know the answer to the last
+stion, that’s fine but some comment about it would be helpful.
+cific Comments
+es 4/21 and 5/21
+elements of V(t) need not be stationary. The underlying assumption is that the elements of
+are covariance stationary.
+say “verify that … their variances do not greatly differ….” This is not what the tests, called
+it-root tests” in the economics and finance literature, accomplish. If a series has a unit root,
+n it has unbounded variance (which you mention later). The variables would not be
+ariance stationary but the variances of all variables in a certain sense would be the same
+oss time and variables if they all have unit roots. If the series do not have unit roots, they
+have time-varying variances. The variances can be unbounded as well. Not having a unit
+t is necessary but not sufficient for a variable to have a bounded variance and does not
+ly that the variable’s variance is constant over time. I would not suggest you pursue this
+e further; it is unlikely to have any effect on your general conclusion. Given your audience, I
+not sure how you want to say it since you don’t appear to want to just say “unit-root tests”.
+ould suggest something more like “test whether the series have a random-walk component”
+maybe something else.
+e 8/21
+strategy of using the Bayesian Information Criteria to determine the lag length is more
+mon, at least in economics and finance, than using a shorter lag length and “correcting” for
+ally correlated errors in Vector Autoregressions. At the least, I would mention this
+rnative when saying on page 4/21 what you did. As you say, it doesn’t make any difference,
+ch is what I would have expected. They just are different ways of looking at the same thing.
+Society Open

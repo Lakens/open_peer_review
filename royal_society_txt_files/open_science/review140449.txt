@@ -1,0 +1,1110 @@
+The development of a segment-based musculoskeletal
+model of the lower limb: introducing FreeBody
+Daniel J. Cleather and Anthony M. J. Bull
+Article citation details
+R. Soc. open sci. 2: 140449.
+http://dx.doi.org/10.1098/rsos.140449
+Review timeline
+Original submission: 19 June 2014 Note: Reports are unedited and appear as
+1st revised submission: 16 November 2014 submitted by the referee. The review history
+2nd revised submission: 17 April 2015 appears in chronological order.
+Final acceptance: 29 May 2015
+Review History
+label_version_1
+RSOS-140121.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Florent Moissenet)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No supplementary files. The supporting data and methodology are the same than in the previous
+work of the author.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+© 2015 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Recommendation?
+label_recommendation_1
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_1
+The aim of this manuscript is to explore the impact of different levels of simplifications that can
+be made in the equation of motion on the outputs of a musculoskeletal model. Five
+simplifications are described: 1) consider equation of motion related to forces and moments
+independently, 2) use a joint-based approach describing only forces and moments acting on the
+joints, 3) use a reduced number of DOF, 4) use a reduced number of muscular lines of action, 5)
+use a simple joint to model the knee without introducing the patellofemoral joint and the two
+compartments of the tibiofemoral joint. The results tend to show that including more details in
+the model allow reducing the joint contact forces. However some information are necessary to
+better explain the results obtained for joint contact forces and a quantitative validation may be
+required for the muscular forces compared to EMG signals. Details are listed below.
+Title
+---------------------------------------------------
+/
+Abstract
+---------------------------------------------------
+/
+Introduction
+---------------------------------------------------
+- P4 L67 Since the method is based on inverse dynamics, it is better to use the term “estimation”
+rather than “prediction” for joint contact, ligament and muscular forces. Please consider to
+change it in the whole manuscript.
+- P4 L80-90 Restraining the number of DOF by imposing kinematic constraints if of course
+questionable is case of some pathologies. However, allowing too many DOF may introduce
+aphysiological muscular forces patterns due to, for example, soft tissue artefact. How the author
+plans to avoid such perturbations?
+Materials and Methods
+---------------------------------------------------
+- P7 L150-151 The use of coupling curves is often questionable. Could this model of the patella
+be a limit of the personalisation of the whole model? In other words, how to adjust it for a specific
+subject?
+- P15 L230-231 In Case 4, the medial and lateral tibiofemoral contact forces are computed at the
+points described at 2cm laterally and medially to the centre of rotation. However, the position of
+these points has a direct impact on the estimated forces. How this distance has been selected?
+Results
+---------------------------------------------------
+- P18 L271-273 Are the % of solution an average for all the subjects? If yes, please give the
+standard deviations. If not, explain these values …
+- P18 L274-277 Since the discussion is based on the fact that Case 4 is the best one, the author
+should provide a figure validating the fact that the non-solved frames of Case 5 and 6 are the
+frames of highest joint contact forces.
+-P18 L280-282 Since the figure 3 only shows the muscular activations of one subject for one
+case, the level of proof of this affirmation is poor. Please provide a quantified metric to justify the
+fact that muscular activations show a “marked similarity in the patterns and timing”.
+- P19 L286-289 Since a variability in the muscular recruitment seems to be possible (as it has
+been shown for the hamstrings), it would have been better to use a new dataset with EMG
+3
+measurements. Moreover, only a qualitative comparison (“a close level of agreement”) is
+provided here to compare EMG envelops and estimations. Please consider to define and use a
+quantitative metric for this comparison. Please also discuss the use of EMG from other subjects.
+Discussion
+---------------------------------------------------
+- P20 L312-313 Is it really a “validation”? The only measurements that can be used to “validate”
+the model are EMG envelopes extract from another study (Rodacki et al.). A quantitative metric
+should at least be used to compare EMG and estimated forces in order to use the term
+“validation”.
+- P20 L323 A similar study already provided similar results about the effect of the inclusion
+of increased model details on joint contact forces:
+Dumas R. et al., 2012, Influence of joint models on lower-limb musculo-tendon forces and three-
+dimensional joint reaction forces during gait, Proc IMechE Part H: J Engineering in Medicine
+226(2): 146-160.
+- P21 L331-333 Please explain why all the frames are not solved by the model. Is it due to a
+restraint solution space? A numerical problem? Some badly defined upper/lower limbs? Please
+discuss this point.
+Tables & Figures
+---------------------------------------------------
+- Table 3The number (7) of the reference Cleather et al. is not correct.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Here, the authors provide some of the input data (kinematics, kinetics) but other data such as
+information on the stiffness of the ligaments or segment lengths for each of the subjects are not
+given. It is also not clear whether and if so the authors made any changes to the anatomical data
+from Klein Horseman.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_2
+Reject
+Comments to the Author(s)
+label_comment_2
+The paper deals with computational modelling approaches for determining the forces within the
+musculoskeletal system. Here, models of knee joint mechanics capturing varying levels of
+complexity are applied to study the muscle and joint contact forces during a vertical jump.
+4
+Although the study presents new data, the reviewer has a number of concerns regarding the
+study design but also its presentation.
+Firstly, although the author repeatedly refers to the issue of model fidelity and clinical relevance
+of the predictions of such models, they do not provide any operational definition of what clinical
+relevance constitutes in this context. Clearly, clinical relevance would have to be derived from the
+models ability to differentiate clinically important conditions and this is likely quite dependent
+upon the specific problem at hand. Conceptually, any model requires – by the very nature of the
+act of modelling – some sort of simplification, and the key question here seems to be whether the
+model at hand provides a valid representation of the very aspect of reality that is of interest.
+Therefore, it would appear that a much more accurate framing of the problem, ideally also
+together with the formulation of a clear hypothesis would be essential to focus the paper and
+enable achieving a substantial scientific advance. Whilst the author can show clear variations
+between the calculations across the different models, this hypothesis-free study does not apply
+any statistical analyses to test the significance of these variations. Importantly, the study design
+does not allow providing a definitive answer to the question which of the results provides a
+better match to the actual in vivo loading conditions. Here, the application of the methodology to
+a data set for which e.g. subject specific EMG and also in vivo joint contact force data were
+available (such as the cited knee challenge data sets) would be critical to clarify in how far a
+change in the computed results for the different models indeed represents an improvement of the
+predictions. Alternatively, rather than applying the analyses to a cohort of healthy individuals
+only, the application of the model to a clinical cohort undergoing an intervention could have
+offered the opportunity to assess the ability of the model to detect differences in mechanics with a
+clinical significance. Given these limitations, the discussion seems overly optimistic in terms of
+the “validity” of the different models, and actual impact on our understanding of the subject
+matters remains somewhat limited.
+The following specific comments should serve to further improve the manuscript.
+L 23ff The introduction is rather unspecific and lengthy – focussing on the key issue at hand
+could help making this more concise. How many groups have done what and the fact that a
+model (see comment above) will always and inherently require some form of simplification are
+not important here.
+L 31ff On the other hand, the summary remains very vague as to the specifics of the knee models
+used and compared here – are the TF and PF joints really modelled as 6DOF joint (i.e. ALL
+DoFs?) and details of the PF and TF joints is really captured - there is no elastic contact, PF
+kinematics are not really force-dependent nor truly 3D, … these aspects would require
+clarification.
+L 34f Similar to the issue of a lack of a definition of when clinical relevance is achieved, there is
+also no clear definition of “anatomical reality” or how deviations from it would be quantified.
+The claim that muscle forces are in “ close agreement” with anatomical reality is therefore also
+misleading at best (what is the error in force magnitude, timing, …numbers?).
+L 35f Without a more rigorous mathematical/numerical explanation the failure to find a solution
+to the optimization problem appears a poor metric for judging the quality of the model. Here, the
+author would need to offer some evidence that the lack of finding a solution is indeed related to
+very nature of the optimization problem (i.e. it cannot be solved under the given constraints) and
+not a numerical artefact of the specific solver used here.
+L 46 There should clearly be more appropriate i.e. classic and widely accepted papers to support
+this statement than a rather recent paper of the author themselves?
+5
+L 48f Which result of an intervention is simulated here – how is this bit relevant to the current
+study?
+L 53/54 See general comment – as presented here this is an unsubstantiated argument.
+L 55/56 This does not seem to be a correct statement of the issue – a typical inverse dynamics
+analysis (Winter 1979) would provide intersegmental resultant forces and moments. However,
+such models would neither consider the action of muscles, ligaments, deformable contact …?!
+L 71ff This para is generally very vague and would certainly need to be revised – how the two
+approaches really differ did not become clear.
+L 78/79 This is not adding any relevant information – what additional insights would be
+provided? Why are they relevant?
+L85ff Here you derive clinical relevance from your own belief – which is not very convincing. In
+the context that you set here though, one would expect that you a) either demonstrate that you
+can indeed predict ligament forces accurately or that b) you can show the ability to make
+predictions related to an intervention where you can pick up a clinically important difference
+L92 ff What is the exact point of that paragraph here? Would the model complexity not have to be
+guided by the exact question? What is the lack of understanding that the readers needs to take
+away here?
+L 109 It would appear that the contact force distribution was of interest for quite a while (e.g.
+Kettelkamp & Chao 1972) – there might have been a revived / increased interest in evaluating the
+accuracy of models predicting the ML load distributions which has been fuelled by the recent
+ability to compare the predictions against direct in vivo measurements from the Bergmann group
+and the data from the US
+L 112/3 Models and simplifications …
+L 136 The terminology is quite confusing and not used consistently – here the patella is e.g. a
+segment, while it does not appear to have its own inertial properties; also the “leg” would appear
+to be more appropriately referred to as “ thigh”?
+L 144 The reference to a potential future paper does not help the reader here – please provide all
+necessary information here. Please also include some description of how the geometry of the
+model was mapped/changed to fit each of the subjects.
+Please clarify whether the JRFs are the bone one bone contact forces or the intersegmental
+resultant forces as defined by Winter.
+L 239 ff Referring to a centre of rotation implies a ball and socket joint – where is the CoR of the
+knee? Also, the description of the contact model is not very clear – it seems to be a rather basic
+model though? How exactly were the ligaments modelled – as linear springs (which stiffness)?
+L 246 “frame” is “time point”?
+L 265 How much of the dynamics of the external loading is missed by sampling the GRFs at this
+rather low frequency?
+Tables and figures have little explanation that would help understanding what is shown (units
+and abbreviations are not always given/explained)
+6
+Figure 2: Here an additional temporal representation to illustrate under which exact conditions
+no solution was found would be help full (i.e. frequency plot, for each percent gait cycle the
+(relative) number of failures in finding an optimal solution)
+Table 3: At which time point did the peaks occur?
+label_end_comment
+Decision letter (RSOS-140121)
+05-Sep-2014
+Dear Professor Cleather:
+Manuscript ID RSOS-140121 entitled "Optimization based approaches to inverse dynamics are
+sensitive to the anatomical detail incorporated within the equations of motion" which you
+submitted to Royal Society Open Science, has been reviewed. The comments from reviewers are
+included at the bottom of this letter.
+In view of the criticisms of the reviewers, the manuscript has been rejected in its current form.
+However, a new manuscript may be submitted which takes into consideration these comments.
+Please note that resubmitting your manuscript does not guarantee eventual acceptance, and that
+your resubmission will be subject to peer review before a decision is made.
+You will be unable to make your revisions on the originally submitted version of your
+manuscript. Instead, revise your manuscript and upload the files via your author centre.
+Once you have revised your manuscript, go to http://mc.manuscriptcentral.com/rsos and login
+to your Author Center. Click on "Manuscripts with Decisions," and then click on "Create a
+Resubmission" located next to the manuscript number. Then, follow the steps for resubmitting
+your manuscript.
+Your resubmitted manuscript should be submitted by within 6 months. If you are unable to
+submit by this date please contact the Editorial Office.
+I look forward to a resubmission.
+Best wishes,
+Charlotte Wray
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Authors' response to original reviewers' comments
+See Appendix A.
+label_version_2
+RSOS-140449.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Florent Moissenet)
+Is the manuscript scientifically sound in its present form?
+Yes
+7
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Supplementary material is provided. The data are well organised, clear, readable. Subjects
+provided informed consent prior to the data collection process.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+This revised manuscript has been extended and gives new details about the message of the paper
+and methods. Particularly, Results and Discussion have been markedly improved by removing
+some simulations and by using a validation metric. Details are listed below.
+Title
+---------------------------------------------------
+/
+Abstract
+---------------------------------------------------
+/
+Introduction
+---------------------------------------------------
+- P4 L71-74 - Other studies have previously been proposed segment-based models for the lower
+limb (ref [10]) and the upper limb (Pennestri et al.., Virtual musculo-skeletal model for the
+biomechanical analysis of the upper limb, Journal of Biomechanics 40 (2007) 1350–1361).
+Materials and Methods
+---------------------------------------------------
+- Patellar post. - Table 2 gives the result of the mixing of 3 datasets ([4], [15], [16]) to obtain a
+polynomial form giving the position and orientation of the patellar segment regarding the knee
+flexion angle. However, did the authors took care to redefine each dataset following the same
+LCS (center of the frame and definition of each axis) (i.e., the one used in [4]) ?
+- P19 L302-304 - Please give the method followed to obtain EMG envelopes (filtering, RMS, ...).
+Indeed, the method can highly influence the results.
+Results
+---------------------------------------------------
+/
+Discussion
+---------------------------------------------------
+- P21 L339 - Consider changing “EMG values” for “EMG envelopes” (also L341, L345 and P22
+L352)
+8
+- P21 L341-344 - Please discuss the possible reasons making the estimations of hamstrings and
+gastrocnemii forces, both biarticular muscle groups, worse than for the other muscles.
+Tables & Figures
+---------------------------------------------------
+- Figure 3 - Consider changing “EMG activation” for “EMG envelopes”
+- Table 1 - Consider changing “calf segment” for “shank segmen” as used in the text.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+No
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Reject
+Comments to the Author(s)
+label_comment_4
+This manuscript describes the development of a musculoskeletal model of the lower limb based
+on the authors' previously published model, which they used to estimate muscle and joint contact
+forces during vertical jumping. The revised model is segment-based and has a similar ability to
+estimate muscle forces during vertical jumping as the previous approaches described by the
+authors. I do not see this as a major contribution and suggest further development and
+application prior to publication.
+label_end_comment
+Decision letter (RSOS-140449)
+13-Apr-2015
+label_version_3
+RSOS-140449 - The development of a segment-based musculoskeletal model of the lower limb:
+Introducing FreeBody
+Dear Professor Cleather,
+Apologies for the delay in contacting you with this decision. As you are aware one of the
+originally agreed reviewers was unable to review your manuscript and we spent a significant
+amount of time seeking a replacement. Although we invited many more reviewers we were
+unable to secure a second review and due to the time elapsed I have discussed your manuscript
+with the Subject Editor and we have been able to make a decision based on the one report we do
+9
+have. We would like you to revise your paper in accordance with the referee's suggestions which
+can be found below (not including confidential reports to the Editor). Please note this decision
+does not guarantee eventual acceptance. Please also ensure that you clarify how this work is an
+advance over your previous work on this model and how it merits a separate publication,
+especially as one of the previous reviewers requested that the clinical significance of the model be
+explored, but you mention that this will be done in a later paper.
+Please submit a copy of your revised paper within three weeks (i.e. by the 05-May-2015). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections before the reference list:
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+10
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Emilie Aime
+Senior Publishing Editor, Royal Society Open Science
+openscience@royalsociety.org
+Authors' response to original reviewers' comments
+See Appendix B.
+label_version_4
+RSOS-140449.R1 (Revision)
+label_author_5
+Review form: Reviewer 1 (Florent Moissenet)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Supplementary material are adequate and clear.
+The website www.msksoftware.org.uk mentioned in the&quot;Data Accessibility&quot; is not
+yet available.
+Do you have any ethical concerns with this paper?
+No
+11
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_5
+Accept as is
+Comments to the Author(s)
+label_comment_5
+The revised manuscript presents clear and detailed information of a new musculoskeletal model.
+The originality of the work is well explained and a correct quantitative validation is provided.
+The reviewer does not have any specific comment.
+label_end_comment
+Decision letter (RSOS-140449.R1)
+22-May-2015
+Dear Professor Cleather:
+On behalf of the Editor, I am pleased to inform you that your Manuscript RSOS-140449.R1
+entitled "The development of a segment-based musculoskeletal model of the lower limb:
+Introducing FreeBody" has been accepted for publication in Royal Society Open Science subject to
+minor revision in accordance with the below editorial comments
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Data accessibility
+Thank you for providing raw data as supplementary information. Please also provide your
+software code as supplementary material. It is not sufficient to post it on a website which has the
+potential to go down in the future (in fact I note that it is currently not live).
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 31-May-2015). If you do not
+think you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+12
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Dr Kevin Padian
+Senior Publishing Editor
+openscience@royalsociety.org
+Associate Editor Comments to Author:
+Associate Editor: 1
+Comments to the Author:
+(There are no comments.)
+Associate Editor: 2
+Comments to the Author:
+(There are no comments.)
+Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The revised manuscript presents clear and detailed information of a new musculoskeletal model.
+The originality of the work is well explained and a correct quantitative validation is provided.
+The reviewer does not have any specific comment.
+Authors' response to original reviewers' comments
+See Appendix C.
+Appendix A
+Response to Reviewers
+Note to both reviewers:
+My colleague Anthony Bull has joined me as an author on this
+manuscript. This is because in addressing the reviewers’ comments we
+have rolled a separate paper that we were writing together into this one.
+In particular, the additional detail as to the musculoskeletal geometry of
+the model was taken from this paper as was the description of the
+publicly available version of this model. Anthony was involved in the
+design and execution of the model described and has been heavily
+involved in the rewriting of this revised submission.
+Reviewer: 1
+The aim of this manuscript is to explore the impact of different levels of simplifications
+that can be made in the equation of motion on the outputs of a musculoskeletal model.
+Five simplifications are described: 1) consider equation of motion related to forces and
+moments independently, 2) use a joint-based approach describing only forces and
+moments acting on the joints, 3) use a reduced number of DOF, 4) use a reduced
+number of muscular lines of action, 5) use a simple joint to model the knee without
+introducing the patellofemoral joint and the two compartments of the tibiofemoral joint.
+The results tend to show that including more details in the model allow reducing the
+joint contact forces. However some information are necessary to better explain the
+results obtained for joint contact forces and a quantitative validation may be required
+for the muscular forces compared to EMG signals. Details are listed below.
+We thank the reviewer for their thoughtful review of this work. We have
+made substantial changes to the manuscript in response to their
+comments and feel that it has been markedly improved due to their
+involvement. In particular, in response to this reviewer’s comments we
+have performed a quantitative comparison of the model estimations to the
+EMG data (using a Geers’ metric), and this forms the basis of the model
+evaluation now. We have also removed Cases 5 and 6 which we believe
+increases the clarity of the results obtained for joint contact forces.
+Title
+---------------------------------------------------
+/
+Abstract
+---------------------------------------------------
+/
+Introduction
+---------------------------------------------------
+- P4 L67 Since the method is based on inverse dynamics, it is better to use the term
+“estimation” rather than “prediction” for joint contact, ligament and muscular forces.
+Please consider to change it in the whole manuscript.
+Changed accordingly.
+- P4 L80-90 Restraining the number of DOF by imposing kinematic constraints if of
+course questionable is case of some pathologies. However, allowing too many DOF may
+introduce aphysiological muscular forces patterns due to, for example, soft tissue
+artefact. How the author plans to avoid such perturbations?
+This discussion has been removed in response to the second reviewer’s
+comments (as described below).
+However, we have addressed this issue in the discussion.
+“The potential problem of soft tissue artefacts is ameliorated by using a
+redundant number of markers on each segment, and then using the
+method of Horn [13] to find the best fit.”
+It should also be noted that the analysis of muscular forces compared to
+(physiological) EMG activations presented in this paper does not suggest
+that this model calculates aphysiological muscular force patterns.
+Materials and Methods
+---------------------------------------------------
+- P7 L150-151 The use of coupling curves is often questionable. Could this model of the
+patella be a limit of the personalisation of the whole model? In other words, how to
+adjust it for a specific subject?
+This is a key issue, and we have added the following to the discussion:
+“The patella model incorporated within this model is simple – the
+movement of the patella is entirely determined by the flexion of the
+tibiofemoral joint, and this relationship is not changed to reflect subject
+specific characteristics. The movement of the patella can have an
+important impact on the outputs of a musculoskeletal model, in large part
+due to its effect on the P/Q ratio and in turn the tension required in the
+quadriceps musculature. In our future work we will develop the model
+described here to permit a subject specific scaling of the patellofemoral
+model which, in particular, produces an accurate, subject specific P/Q
+ratio. “
+- P15 L230-231 In Case 4, the medial and lateral tibiofemoral contact forces are
+computed at the points described at 2cm laterally and medially to the centre of
+rotation. However, the position of these points has a direct impact on the estimated
+forces. How this distance has been selected?
+We have clarified how the contact points have been selected:
+For Cases 1-3 the joint reaction forces are considered to act through the
+centres of rotation of the joints taken from the Klein Horsman et al. data
+set [14]. In Case 4, the lateral and medial tibiofemoral contact forces act
+through points 2 cm laterally and medially to the centre of rotation (an
+inter-condyle distance of 4 cm was chosen following the example of
+previous work [21]).
+Results
+---------------------------------------------------
+- P18 L271-273 Are the % of solution an average for all the subjects? If yes, please
+give the standard deviations. If not, explain these values …
+Yes this is an average. We have added the standard deviation:
+“On average, the optimization was able to find a solution for 95.1±6.2%
+of the analysed frames.”
+- P18 L274-277 Since the discussion is based on the fact that Case 4 is the best one,
+the author should provide a figure validating the fact that the non-solved frames of
+Case 5 and 6 are the frames of highest joint contact forces.
+As described in the response to the second reviewer, we have removed
+Cases 5 and 6, and so this is now a moot point.
+-P18 L280-282 Since the figure 3 only shows the muscular activations of one subject
+for one case, the level of proof of this affirmation is poor. Please provide a quantified
+metric to justify the fact that muscular activations show a “marked similarity in the
+patterns and timing”.
+As described in the response to the general comments, we have added
+some new analysis and discussion to quantify the similarity between
+EMG and predicted muscle forces. The new figure now compares the
+mean curve of all subjects to the EMG data, and the similarity between
+the curves is quantified by using the Geers’ metric.
+- P19 L286-289 Since a variability in the muscular recruitment seems to be possible (as
+it has been shown for the hamstrings), it would have been better to use a new dataset
+with EMG measurements. Moreover, only a qualitative comparison (“a close level of
+agreement”) is provided here to compare EMG envelops and estimations. Please
+consider to define and use a quantitative metric for this comparison. Please also discuss
+the use of EMG from other subjects.
+As described in the response above, we have now used a quantitative
+metric for this comparison.
+As requested we have also added some discussion of the use of EMG from
+other subjects:
+“It should be noted that muscle estimations and EMG values that were
+compared in this study were not recorded concurrently, nor taken from
+the same subjects. Although this is a clear limitation of the study, and
+could account for some of the differences between the curves, there is
+evidence that the muscular activations during vertical jumping are
+remarkably stable between subjects and across jump conditions [29].
+Therefore, given that the comparisons here are between group mean
+curves this was considered an acceptable limitation. In future work we
+will seek to make the same comparisons at the subject level.”
+Discussion
+---------------------------------------------------
+- P20 L312-313 Is it really a “validation”? The only measurements that can be used to
+“validate” the model are EMG envelopes extract from another study (Rodacki et al.). A
+quantitative metric should at least be used to compare EMG and estimated forces in
+order to use the term “validation”.
+As described above, we have now used a quantitative metric for this
+comparison. In addition, we have been careful not to use the term
+“validation” in the revised paper.
+- P20 L323 A similar study already provided similar results about the effect of the
+inclusion of increased model details on joint contact forces:
+Dumas R. et al., 2012, Influence of joint models on lower-limb musculo-tendon forces
+and three-dimensional joint reaction forces during gait, Proc IMechE Part H: J
+Engineering in Medicine 226(2): 146-160.
+We have removed the discussion of model details. However, a reference
+to these previous results has been added to the document in support of
+the discussion of the impact of increased DOF.
+- P21 L331-333 Please explain why all the frames are not solved by the model. Is it due
+to a restraint solution space? A numerical problem? Some badly defined upper/lower
+limbs? Please discuss this point.
+We have added the following discussion:
+The larger number of DOF does bring its own costs however. In
+particular, the model presented here is not able to find a solution for all
+of the frames analysed. We believe this is a problem that would be
+eliminated as more detail is added to the model (by providing a greater
+number and variability in the lines of action of force to compensate for
+the greater number of DOF [1,36,37]).
+Tables & Figures
+---------------------------------------------------
+- Table 3 The number (7) of the reference Cleather et al. is not correct.
+Corrected.
+Florent Moissenet
+Reviewer: 2
+The paper deals with computational modelling approaches for determining the forces
+within the musculoskeletal system. Here, models of knee joint mechanics capturing
+varying levels of complexity are applied to study the muscle and joint contact forces
+during a vertical jump. Although the study presents new data, the reviewer has a
+number of concerns regarding the study design but also its presentation.
+Firstly, although the author repeatedly refers to the issue of model fidelity and clinical
+relevance of the predictions of such models, they do not provide any operational
+definition of what clinical relevance constitutes in this context. Clearly, clinical
+relevance would have to be derived from the models ability to differentiate clinically
+important conditions and this is likely quite dependent upon the specific problem at
+hand. Conceptually, any model requires – by the very nature of the act of modelling –
+some sort of simplification, and the key question here seems to be whether the model
+at hand provides a valid representation of the very aspect of reality that is of interest.
+Therefore, it would appear that a much more accurate framing of the problem, ideally
+also together with the formulation of a clear hypothesis would be essential to focus the
+paper and enable achieving a substantial scientific advance. Whilst the author can show
+clear variations between the calculations across the different models, this hypothesis-
+free study does not apply any statistical analyses to test the significance of these
+variations. Importantly, the study design does not allow providing a definitive answer
+to the question which of the results provides a better match to the actual in vivo
+loading conditions. Here, the application of the methodology to a data set for which e.g.
+subject specific EMG and also in vivo joint contact force data were available (such as
+the cited knee challenge data sets) would be critical to clarify in how far a change in the
+computed results for the different models indeed represents an improvement of the
+predictions. Alternatively, rather than applying the analyses to a cohort of healthy
+individuals only, the application of the model to a clinical cohort undergoing an
+intervention could have offered the opportunity to assess the ability of the model to
+detect differences in mechanics with a clinical significance. Given these limitations, the
+discussion seems overly optimistic in terms of the “validity” of the different models, and
+actual impact on our understanding of the subject matters remains somewhat limited.
+We agree with the reviewer that the message of this paper was not
+entirely clear. We have extensively overhauled the manuscript in order to
+give a clearer and more consistent message, as outlined below:
+Firstly, the title of the paper has been changed to reflect the revised
+narrative:
+“The development of a segment based musculoskeletal model of the lower
+limb: Introducing FreeBody”
+The focus of the paper has been changed to the development of a
+segment-based model. The introduction now gives a clear justification of
+this direction, and has been considerably shortened.
+We have added a large amount of detail relating to the characteristics of
+the model. In addition, we have added a section describing where the
+interested reader can obtain their own version of the model.
+Finally, the reviewer is entirely right that the ability of the model to
+detect clinical differences is of importance. This is a question that we
+have addressed in depth in an upcoming paper.
+The following specific comments should serve to further improve the manuscript.
+L 23ff The introduction is rather unspecific and lengthy – focussing on the key issue at
+hand could help making this more concise. How many groups have done what and the
+fact that a model (see comment above) will always and inherently require some form of
+simplification are not important here.
+We agree that the key message in the previous introduction was unclear.
+We have considerably shortened the introduction to focus on the key
+issue in hand – i.e. the development of a segment-based model. We have
+moved some of the text from the introduction to the discussion in order to
+contextualize how this model is different to previous models in the
+literature.
+L 31ff On the other hand, the summary remains very vague as to the specifics of the
+knee models used and compared here – are the TF and PF joints really modelled as
+6DOF joint (i.e. ALL DoFs?) and details of the PF and TF joints is really captured - there
+is no elastic contact, PF kinematics are not really force-dependent nor truly 3D, … these
+aspects would require clarification.
+We have considerably expanded the description of the joint contacts
+within the main body of the article.
+“The position at which the joint reaction forces are considered to act is
+defined in the following way. The joint contact points are assumed to be
+the joint centres given in the Klein Horsman et al. [14] data set. These
+are defined to be fixed within the distal segment of a joint – thus the
+contact position on the proximal segment is not fixed, and will change if
+there is a translation of the two segments relative to one another. The
+contact surfaces are assumed to be rigid in this model.”
+and:
+“The patellofemoral joint contact position is found for each frame by
+finding this pivot point, which is in turn used to define the contact
+position between the patella and thigh segments.”
+The ankle, tibiofemoral and hip joints are modeled with 6DOF and we
+have clarified this in the document.
+“It should be noted that each segment has a full complement of 6
+degrees of freedom (DOF) and there are no constraints imposed based
+upon considerations of the kinematics of the joints (with the exception of
+the patellofemoral joint). This means that each joint effectively has 6
+DOF too (apart from the patellofemoral joint), although this is not
+explicitly described in the model.”
+The reviewer is correct that the PF kinematics are not 3D. We have
+clarified this – please see the response to reviewer 1.
+In addition, there is now considerable discussion of the differences
+between this model and other similar ones in the discussion. This
+provides further clarification on these issues.
+Finally, the abstract has been completely redrafted to reflect the revised
+message of the paper.
+L 34f Similar to the issue of a lack of a definition of when clinical relevance is achieved,
+there is also no clear definition of “anatomical reality” or how deviations from it would
+be quantified. The claim that muscle forces are in “ close agreement” with anatomical
+reality is therefore also misleading at best (what is the error in force magnitude,
+timing, …numbers?).
+We have presented a new analysis as to the comparison of EMG to
+predicted muscle forces which is quantitative in nature (i.e. the Geers’
+metric which is described in the response to the first reviewer).
+L 35f Without a more rigorous mathematical/numerical explanation the failure to find a
+solution to the optimization problem appears a poor metric for judging the quality of
+the model. Here, the author would need to offer some evidence that the lack of finding
+a solution is indeed related to very nature of the optimization problem (i.e. it cannot be
+solved under the given constraints) and not a numerical artefact of the specific solver
+used here.
+We agree that the lack of a solution is a poor metric for assessing the
+quality of the model and we have removed this discussion (instead
+focusing on the Geers’ metric which is described in the response to the
+first reviewer).
+L 46 There should clearly be more appropriate i.e. classic and widely accepted papers
+to support this statement than a rather recent paper of the author themselves?
+We have added some further support for this statement:
+Erdemir, A., McLean, S., Herzog, W. & van den Bogert, A. J. 2007
+Model-based estimation of muscle forces exerted during movements. Clin.
+Biomech. 22, 131–154.
+Van den Bogert, A. J. & Schamhardt, H. C. 1993 Multi-body modelling
+and simulation of animal locomotion. Acta Anat. (Basel) 146, 95–102.
+Blemker, S. S., Asakawa, D. S., Gold, G. E. & Delp, S. L. 2007 Image-
+based musculoskeletal modeling: Applications, advances, and future
+opportunities. J. Magn. Reson. Imaging 25, 441–451.
+(doi:10.1002/jmri.20805)
+L 48f Which result of an intervention is simulated here – how is this bit relevant to the
+current study?
+This point is now moot, as this discussion has been removed in the new
+introduction.
+L 53/54 See general comment – as presented here this is an unsubstantiated
+argument.
+This point is now moot, as this discussion has been removed in the new
+introduction.
+L 55/56 This does not seem to be a correct statement of the issue – a typical inverse
+dynamics analysis (Winter 1979) would provide intersegmental resultant forces and
+moments. However, such models would neither consider the action of muscles,
+ligaments, deformable contact …?!
+This point is now moot, as this discussion has been removed in the new
+introduction.
+L 71ff This para is generally very vague and would certainly need to be revised – how
+the two approaches really differ did not become clear.
+This point is now moot, as this discussion has been removed in the new
+introduction.
+L 78/79 This is not adding any relevant information – what additional insights would be
+provided? Why are they relevant?
+This point is now moot, as this discussion has been removed in the new
+introduction.
+L85ff Here you derive clinical relevance from your own belief – which is not very
+convincing. In the context that you set here though, one would expect that you a)
+either demonstrate that you can indeed predict ligament forces accurately or that b)
+you can show the ability to make predictions related to an intervention where you can
+pick up a clinically important difference
+This point is now moot, as this discussion has been removed in the new
+introduction.
+L92 ff What is the exact point of that paragraph here? Would the model complexity not
+have to be guided by the exact question? What is the lack of understanding that the
+readers needs to take away here?
+This point is now moot, as this discussion has been removed in the new
+introduction.
+L 109 It would appear that the contact force distribution was of interest for quite a
+while (e.g. Kettelkamp & Chao 1972) – there might have been a revived / increased
+interest in evaluating the accuracy of models predicting the ML load distributions which
+has been fuelled by the recent ability to compare the predictions against direct in vivo
+measurements from the Bergmann group and the data from the US
+The reviewer is entirely correct, and we have removed this statement.
+L 112/3 Models and simplifications …
+We’re sorry, but we didn’t understand this point.
+L 136 The terminology is quite confusing and not used consistently – here the patella is
+e.g. a segment, while it does not appear to have its own inertial properties; also the
+“leg” would appear to be more appropriately referred to as “ thigh”?
+We have changed “leg” to “thigh” throughout the document. We have
+made it explicitly clear that the patella is assumed to be a massless
+segment:
+“The lower limb is modelled as a 3D arrangement of five rigid segments
+that represent the foot, shank, thigh, pelvis and patella (the patella
+segment is assumed to have zero mass).”
+L 144 The reference to a potential future paper does not help the reader here – please
+provide all necessary information here. Please also include some description of how the
+geometry of the model was mapped/changed to fit each of the subjects.
+Please clarify whether the JRFs are the bone one bone contact forces or the
+intersegmental resultant forces as defined by Winter.
+We have added extensive additional detail describing the model. This is
+mainly on lines 84-159 (although there is some detail in other places too).
+We have added Tables 1 and 2, and Figure 1 which provide additional
+detail of the model.
+We have added details of the scaling methodology in the section
+“Scaling”.
+The JRFs are bone on bone contact forces. We have made this explicit:
+“The 186 unknowns consist of the muscular, ligamentous and joint
+reaction forces (bone on bone contact forces) experienced by the lower
+limb.”
+L 239 ff Referring to a centre of rotation implies a ball and socket joint – where is the
+CoR of the knee? Also, the description of the contact model is not very clear – it seems
+to be a rather basic model though? How exactly were the ligaments modelled – as
+linear springs (which stiffness)?
+We have added considerable detail to clarify the contact model:
+“The position at which the joint reaction forces are considered to act is
+defined in the following way. The joint contact points are assumed to be
+the joint centres given in the Klein Horsman et al. [14] data set. These
+are defined to be fixed within the distal segment of a joint – thus the
+contact position on the proximal segment is not fixed, and will change if
+there is a translation of the two segments relative to one another. The
+contact surfaces are assumed to be rigid in this model.”
+We have also added some more detail as to the ligament model:
+“It should be noted that the ligaments are simply modelled as tensile force
+actuators. That is, the calculated ligament forces are not derived from
+measurements of ligament strain. A detailed justification and analysis of
+this approach (including a discussion of limitations) is provided in our
+previous work [9].”
+L 246 “frame” is “time point”?
+Changed accordingly.
+L 265 How much of the dynamics of the external loading is missed by sampling the
+GRFs at this rather low frequency?
+Previous evidence indicates that 200 Hz is a sufficient frequency when
+looking at the GRFs in vertical jumping, as there is a minimal difference
+when compared to data sampled at 500 Hz. See for instance:
+Hori, N. et al. Reliability of performance measurements derived from
+ground reaction force data during countermovement jump and the
+influence of sampling frequency. J. Strength Cond. Res. 23, 874–882
+(2009).
+Tables and figures have little explanation that would help understanding what is shown
+(units and abbreviations are not always given/explained)
+We have revised the legends so that all abbreviations and units are now
+defined within the legends.
+Figure 2: Here an additional temporal representation to illustrate under which exact
+conditions no solution was found would be help full (i.e. frequency plot, for each
+percent gait cycle the (relative) number of failures in finding an optimal solution)
+As indicated above, we have removed the discussion that relates to the
+ability of the optimization to find solutions and consequently have
+removed this figure.
+Table 3: At which time point did the peaks occur?
+Thank you for this comment. However, as the timing of joint contact
+forces is not part of the discussion in the revised manuscript we have
+chosen not to add this detail to the revised manuscript.
+Appendix B
+Response to reviewers
+label_version_5
+RSOS-140449 - The development of a segment-based musculoskeletal model of the lower limb: Introducing
+FreeBody
+Dear Professor Cleather,
+Apologies for the delay in contacting you with this decision. As you are aware one of the originally agreed
+reviewers was unable to review your manuscript and we spent a significant amount of time seeking a replacement.
+Although we invited many more reviewers we were unable to secure a second review and due to the time elapsed
+I have discussed your manuscript with the Subject Editor and we have been able to make a decision based on the
+one report we do have. We would like you to revise your paper in accordance with the referee's suggestions which
+can be found below (not including confidential reports to the Editor).
+Thank you very much for all your work on this manuscript,
+and we really appreciate that you were able to come to a
+decision based on the one referee’s report.
+Please note this decision does not guarantee eventual acceptance. Please also ensure that you clarify how this
+work is an advance over your previous work on this model and how it merits a separate publication, especially as
+one of the previous reviewers requested that the clinical significance of the model be explored, but you mention
+that this will be done in a later paper.
+We would like to assure you that this work is a considerable
+advance over our previous work and definitely merits a
+separate publication. Although based upon our previous
+work, this model is an entirely new version. We have clarified
+this:
+“This study describes the development of a new musculoskeletal model of the lower
+limb that is based upon our previous work [9-11,13]. “
+There are a number of features of the model which in
+combination make it distinct from all other models in the
+literature. These are discussed in detail in lines 374-444 of
+the revised manuscript. Of course some of these features are
+seen in our previous work. However, the inclusion of the
+patellofemoral joint and the partitioning of the tibiofemoral
+joint contact forces are entirely new developments of the
+model and which represent significant technological
+advancements. We have made this more explicit in the
+manuscript:
+“In the model described here the tibiofemoral joint contact forces are found
+simultaneously with the muscle and ligament forces (this represents a considerable
+advance over our previous work [9-11]).”
+And:
+“The position and orientation of the patella is given as a function of the tibiofemoral
+joint flexion angle (<U+03B8>) using a new model of the patella that has been developed
+from the literature as follows.”
+“However, in order to create a segment-based description of the lower limb it was
+necessary for us to develop a patella model and to include the patellofemoral joint
+contact force.”
+The combination of the above changes allows this model to be
+entirely segment based. As we have described in the revised
+manuscript (in response to the reviewer’s comment below),
+these are rare, and this work therefore represents a
+significant technological advancement (especially given the
+advantages of this model compared to others as has been
+described above).
+The comparison of Cases 1-4 (for details see Table 3) in this
+manuscript evaluates the effect of adding these additional
+features to the model (in Tables 6 and 7). This analysis is an
+important addition to the modeling literature in providing
+information regarding the sensitivity of these types of model
+to this addition of this detail.
+In our previous work we had not performed a quantitative
+validation of the model predictions as has been provided in
+our resubmission. In our opinion, this on its own would
+justify a separate publication (based upon the precedents
+within the literature). We have emphasized the validation
+work within the manuscript:
+“Taken as a whole, the analysis presented here provides new and quantitative
+evidence as to the validity of this lower limb model.”
+In addition, the model that we have described in this paper is
+freely and publicly available. This is the first time we have
+made our model available. Again, there are very few models
+of this type freely available. This publication describes this
+new model in a consolidated way, and will serve as the point
+of record for this model (our previous publications cannot be
+used in this way as they describe very different models).
+Finally, we believe that we have addressed the clinical
+relevance of the model by quantitatively comparing our
+estimations to measured values, and establishing a
+correspondence. This represents a considerable advance
+(and work) over the original submission, and we believe that
+this does address the concerns raised by the reviewer in
+providing a quantitative estimation as to how the model
+estimations relate to the actual in-vivo conditions. Our
+approach here also follows the example of other
+contemporary model descriptions and validations (e.g.
+Moissenet et al. [1], Modenese et al. [2]). We considered it
+most appropriate to use the vertical jump data in this analysis
+as it allows easy comparison to our previous work.
+Of course, the establishment of clinical relevance is a big job.
+This paper represents the description of our new model, and
+we intend to follow this with a number of papers that describe
+its clinical performance in a variety of different scenarios.
+This type of work is rare within the literature, and thus the
+description of it warrants an extended discussion – for this
+reason it can’t be included within this manuscript which is
+already very long due to the extensive model description. In
+addition, our work on the clinical relevance of the model also
+involves the description and exploration of clinical problems.
+These are more appropriately described and discussed within
+distinct papers, whereas this paper is focused on a discussion
+of modeling issues and sensitivities.
+As requested, we have added the following statements prior
+to the reference list:
+“Ethics Statement
+The data collection described in this study was approved by the institutional review
+board of St Mary’s University College. All participants provided informed consent
+prior to the data collection process.
+Data Accessibility
+The raw data used in this study is provided with this article as electronic
+supplementary material. The model that this article describes is available as a
+MATLAB® application and in the original source code at www.msksoftware.org.uk.
+Competing Interests
+The authors have no competing interests.
+Authors’ Contributions
+DC conceived of and designed the study, designed and created the model, collected
+the raw data, performed the analysis and drafted the manuscript; AB participated in
+the design of the study, participated in the design of the model and contributed to
+the manuscript writing process. Both authors gave final approval for publication.
+Acknowledgements
+The authors would like to thank Phil DB Price for providing the software used to
+calculate the Geers’ metric, and Jon E Goodwin and Hayley Legg for their assistance
+in collecting the data used in this study.
+Funding Statement
+No funding was received for this work.”
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+This revised manuscript has been extended and gives new details about the message of the paper and methods.
+Particularly, Results and Discussion have been markedly improved by removing some simulations and by using a
+validation metric. Details are listed below.
+We would like to thank the reviewer for their continued
+helpful suggestions.
+Title
+---------------------------------------------------
+/
+Abstract
+---------------------------------------------------
+/
+Introduction
+---------------------------------------------------
+- P4 L71-74 - Other studies have previously been proposed segment-based models for the lower limb (ref [10])
+and the upper limb (Pennestri et al.., Virtual musculo-skeletal model for the biomechanical analysis of the upper
+limb, Journal of Biomechanics 40 (2007) 1350–1361).
+Thank you – the reviewer is right and these studies should be
+mentioned. We have included the following statement:
+“To date, few 3D segment-based models have been proposed within the literature
+(notable exceptions being the lower limb model of Moissenet et al. [7]and the upper
+limb model of Pennestri et al. [8]). “
+Materials and Methods
+---------------------------------------------------
+- Patellar post. - Table 2 gives the result of the mixing of 3 datasets ([4], [15], [16]) to obtain a polynomial form
+giving the position and orientation of the patellar segment regarding the knee flexion angle. However, did the
+authors took care to redefine each dataset following the same LCS (center of the frame and definition of each axis)
+(i.e., the one used in [4]) ?
+We would like to reassure the reviewer that we were very
+careful when combining results from different datasets (both
+here and in other parts of the model) to ensure like for like
+comparisons. We have made this explicit in this case:
+“Note that anatomical landmarks were used to combine the above data sets in
+order to ensure their compatibility.”
+- P19 L302-304 - Please give the method followed to obtain EMG envelopes (filtering, RMS, ...). Indeed, the
+method can highly influence the results.
+Apologies, we must have given the impression that we
+calculated the envelopes from the EMG data reported by
+Rodacki and colleagues. In fact, Rodacki et al. reported these
+envelopes, and we have simply taken them from their work.
+We have clarified this in the text, and also added some detail
+from Rodacki’s work as to how these were generated:
+“The performance of each case was evaluated by comparing the predicted muscle
+forces to EMG envelopes representing the muscular activations during vertical
+jumping. These envelopes were taken from the work of Rodacki and colleagues [32]
+(Rodacki et al. generated these envelopes from the raw electromyograms by using
+the MYO-DAT 5.0 EMG analysis software (MIE Medical Research Ltd., Leeds, UK)
+with a second-order low pass filter of 6 Hz).”
+Results
+---------------------------------------------------
+/
+Discussion
+---------------------------------------------------
+- P21 L339 - Consider changing “EMG values” for “EMG envelopes” (also L341, L345 and P22 L352)
+Changed accordingly.
+- P21 L341-344 - Please discuss the possible reasons making the estimations of hamstrings and gastrocnemii
+forces, both biarticular muscle groups, worse than for the other muscles.
+We have added the following discussion:
+“It is notable that the estimated biarticular muscle forces (biarticular hamstrings
+and gastrocnemius) showed a lower level of agreement than the monoarticular
+muscle force estimates. This was predominantly due to a later onset of muscular
+activation in the estimated muscle forces than was seen in the EMG envelopes. We
+have previously identified that modelling the function of the biarticular muscles is a
+key challenge for the musculoskeletal modelling community [9,10]. In particular,
+the benefits derived from the biarticular muscles transferring power between joints
+[37] may not be entirely captured by this modelling approach.”
+Tables & Figures
+---------------------------------------------------
+- Figure 3 - Consider changing “EMG activation” for “EMG envelopes”
+Changed accordingly:
+“The shaded grey regions represent EMG envelopes that have been reported
+previously in the literature”
+- Table 1 - Consider changing “calf segment” for “shank segmen” as used in the text.
+Changed accordingly.
+References
+1. Moissenet, F., Chèze, L. & Dumas, R. 2014 A 3D lower limb musculoskeletal
+model for simultaneous estimation of musculo-tendon, joint contact, ligament
+and bone forces during gait. J. Biomech. 47, 50–58.
+(doi:10.1016/j.jbiomech.2013.10.015)
+2. Modenese, L., Phillips, A. T. M. & Bull, A. M. J. 2011 An open source lower limb
+model: Hip joint validation. J. Biomech. 44, 2185–2193.
+(doi:16/j.jbiomech.2011.06.019)
+Appendix C
+Response to Reviewers
+Thank you for all your work in reviewing this manuscript.
+We have uploaded the source code for the model as requested. We have made the
+availability of the model as ESM clear by adding the following text to the manuscript
+(within the main body and the data accessibility section):
+"In addition, the source code for the model and the MATLAB® application are
+provided with this article as electronic supplementary material."
+Society Open

@@ -1,0 +1,820 @@
+Are migratory behaviours of bats socially transmitted?
+E. F. Baerwald and R. M. R. Barclay
+Article citation details
+R. Soc. open sci. 3: 150658.
+http://dx.doi.org/10.1098/rsos.150658
+Review timeline
+Original submission: 2 December 2015 Note: Reports are unedited and appear as
+1st revised submission: 27 January 2016 submitted by the referee. The review history
+2nd revised submission: 8 March 2016 appears in chronological order.
+Final acceptance: 10 March 2016
+Note: This manuscript was transferred from another Royal Society journal without peer review.
+Review History
+label_version_1
+RSOS-150658.R0 (Original submission)
+label_author_1
+Review form: Reviewer 1 (Gerald Carter)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Yes
+Do you have any ethical concerns with this paper?
+No
+© 2016 The Authors. Published by the Royal Society under the terms of the Creative Commons
+Attribution License http://creativecommons.org/licenses/by/4.0/, which permits unrestricted use,
+provided the original author and source are credited
+2
+Have you any concerns about statistical analyses in this paper?
+Yes
+Recommendation?
+label_recommendation_1
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_1
+The authors sampled migratory bats killed at wind turbines on the same night vs different nights,
+and asked whether the same-night dyads were more likely to be genetically related or to have
+similar stable isotope values. If bats are learning migration routes, then they should have higher
+relatedness and similar isotope profiles. Instead they found no evidence for these predictions.
+This paper is very well written and the overall question and basic approach taken is excellent, but
+(there’s always a “but”) I would like to see an additional analysis of the genetic data and an
+additional statistical analysis, before I would be able to fully interpret the results. Fortunately,
+both of these new analyses could be done very quickly (e.g. in the time it took me to write this
+review).
+Basically, there are two places where I feel that the authors might be needlessly losing statistical
+power.
+Issue 1
+I do not think that the choice of relatedness estimator was optimal. The maximum likelihood
+relatedness values used here are truncated from 0-1, which might be good for contexts where all
+unrelated animals might be considered the same (r=0). However, truncated relatedness throws
+out most of the variation (and so you lose power for a linear model). For this analysis, I would
+think one would want to look at pairwise genetic distance as a continuous and normally
+distributed variable that is not truncated (-1 to 1), using any of the non-max-likelihood estimators.
+This would allow one to differentiate further between unrelated bats of different levels of genetic
+distance (e.g. possibly same population vs different population). I provide a link explaining how
+to do this below. Of course, a different estimator should not change your main finding that close
+kinship has no effect, but it might, and see the next comment.
+Issue 2
+For the first analysis (contingency test), the relatedness variable is reduced to a binary variable.
+This throws out a lot of information and power. The second analysis using a generalized linear
+model maintains relatedness as a continuous variable, but then turns observation day into a
+continuous variable. This is might be good to do, but if we are interested in following behavior or
+flying together, then we only care about same night vs different night. As the authors say, bats
+coming from similar sites are already expected to arrive at similar times for asocial reasons.
+Looking at number of days apart only makes that problem worse. Bats observed on different
+nights can be placed together as “not following” because the rest of the variation in time between
+days is not meaningfully related to the genetics and just adds noise to the test.
+Suggested solution
+So I would like to see a test that compares same night vs different night dyads using a new
+measure of pairwise relatedness — a non-truncated relatedness estimate obtained from the
+optimal estimator as decided through simulations (see a link on how to do this below). The
+authors already have all the data they need to do it. The results might not change, but the paper
+would be much stronger and more convincing to readers. In my opinion, this is the most
+powerful test of the key hypothesis.
+3
+Caveat to discuss
+The reason power is so crucial here is because the effect of paternal kinship should already be
+adding a lot of statistical noise (unless I’m missing something). Half of related dyads are related
+through their father and we don’t expect social transmission through paternal kin in bats. So
+these paternal relatives are functionally “unrelated” for the purposes of the learning hypothesis.
+This could be parsed out using mitochondrial DNA in future studies. But it should just be
+discussed here as a caveat for interpreting the findings. The bats might not follow kin *in
+general*, but they might follow *maternal* kin more than chance and that signal could be lost in
+the noise. One wonders if that was the case especially with p-values like 0.06.
+Those two analysis concerns and one caveat aside, I find this study to be exceptionally well-
+written and interesting. The question of how bats decide where to migrate is one of the most
+pressing questions in bat biology and behavior right now, especially given the conservation
+implications. The extent to which migration routes are learned or socially learned has
+implications for how quickly bat populations are likely to adjust to changes in their migration
+routes due to wind farms installations (either by learning or natural selection). And I believe the
+general approach taken here is right on target as the next necessary step. This paper is also
+valuable because it provides new microsatellite markers for these two species. This is an
+important study, and I look forward to seeing it published.
+—————————————————————————————————————————
+My original detailed real-time line by line notes are below. Sorry for all the redundancy.
+Abstract
+This abstract is very clear and well written.
+Intro
+83 need to specify somewhere earlier that Chiroptera=bats, or just use the word “bats”
+Methods and results
+211 I don’t think that providing higher relatedness values is the best way to choose an estimator
+for this analysis. Yes, the ML methods account for genotyping errors, but one potential issue is
+that those two ML estimation methods are truncated at zero (this might make sense if all the bats
+are from the same breeding population but that is not the case here). As a result, there is not a
+normal distribution of relatedness values. Perhaps you want to treat all bats that are not in the
+same family the same. However, it seems to make a lot of sense in this case to label unrelated bats
+according to their pairwise genetic distance. For example, imagine that bat A and B are unrelated
+but from the same local population, and that bat C is also unrelated to bat A but is from a
+completely different population many miles away. Your relatedness estimate will treat A’s
+relatedness to both B and C as zero. However, a different method (for example the Wang
+estimator or Queller-Goodnight estimator in coancestry) would likely present relatedness A-B as
+zero and A-C as a negative value (indicating that the two unrelated bats are even less related than
+two average bats from the population).
+Assuming some limitations on natal dispersal, this actually allows you to use the genetic data as
+another possible proxy for bats originating from the same site (but not sure about that— it
+depends on genetic variation across different sites).
+4
+I would suggest using the r package “related” to first run a simulation to choose the best
+unbiased non-truncated estimator”. Then use that estimator and see if the results are consistent.
+This is actually very straightforward, and there are step-by-step directions here:
+https://frasierlab.files.wordpress.com/2015/03/tutorial1.pdf
+This could be done pretty quickly.
+218 This test loses power because a continuous variable (relatedness) is being transformed into a
+binary variable (kin or not). Why not keep relatedness as a continuous variable?
+Just as you did, I would still compare same night vs different night, because bats found on
+different nights could not possibly have been following each other. But I would look at
+relatedness as a normally distributed continuous variable. In my opinion, this analysis could
+replace both relatedness tests you did (unless I’m missing something).
+It would be helpful to see the distribution of isotope values (how are they distributed?), maybe in
+a supplement.
+235-243 I was looking for all this information (e.g., number of markers) in the methods. So it
+might be better to put it there.
+Could the relationships between geographic origin and days between death at turbines could be
+explained by bats from similar latitudes or sites taking similar times to reach that point in their
+southern migration (rather than social learning)? For that reason, I think an analysis that simply
+contrasts same night vs different night makes more sense.
+Discussion
+284-285 I would not speak about pedigree kinship terms such as parent-offspring or full-sibling
+(at least say “putative” or “suspected”), because it can be very difficult to reliably place dyads
+into these categories using microsatellite genotypes alone. Good reference: Van Horn, R. C.,
+Altmann, J., & Alberts, S. C. (2008). Can't get there from here: inferring kinship from pairwise
+genetic relatedness. Animal Behaviour, 75(3), 1173-1180.
+318-326 I agree with this paragraph, but I’m not sure of its relevance to migration. What does
+obtaining migration information “asocially” mean? Does it mean just flying south and then using
+trial and error learning over subsequent years?
+337-342 This first part of the paragraph on a possible teaching mechanism of learning would
+make more sense if the authors found evidence for learning, so it might not be necessary here. It
+detracts from the main point which is that experienced adults might just leave earlier, which
+prevents social learning.
+364 But see Yossi Yovel lab’s work on bats use of echolocation during group movements Cvikel et
+al. 2015 Current Biology, Figure 3.
+There is another potential caveat to discuss. One assumption here is that if bats are learning by
+following kin, then bats found together should be more often related. However, bonds only form
+between maternal kin, not paternal kin. There is no evidence that young bats form any
+attachment or relationship with their fathers (or even know who they are). Moreover, fathers
+might come from distant sites and not be groupmates at all.
+5
+Therefore, what you really predict is that they should be more *maternally* related. The paternal
+relatedness adds statistical noise, because bats related through a father are actually, from
+migration standpoint, functionally “unrelated”. So if paternal kin dyads are being found on
+different nights this further reduces your power to detect any increased maternal kinship in bats
+found on same nights (because you cannot tell maternal from paternal kinship). This possibility
+should be discussed, because many readers might not realize it, especially those familiar with
+songbirds where juveniles likely know both their mother and father.
+label_author_2
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+No
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Genotype data is nicely summarized in supplementary files, but I don't see the isotope data
+presented anywhere.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_2
+Major revision is needed (please make suggestions in comments)
+Comments to the Author(s)
+label_comment_2
+The authors present an interesting study, using novel methodology to ask questions about the
+social transmission of migratory behaviors. As the authors correctly point out, the question of
+how migrants find their way is a long-standing issue in migration biology. More specifically, how
+do young animals make their way in their first migration? This study has the strong advantage of
+being based in a well-studied system, with several prior publications from the same sampling
+period. The authors have prepared a well-written, easy to read manuscript, and they have done a
+good job of incorporating the broader conceptual issues of social transmission rather than
+focusing solely on the specific of their samples. However, I have some concerns about
+assumptions that must be made in the development of the ideas and interpretation of the results.
+The authors may be able to justify these assumptions based on their extensive work in this
+system, but as presented in the manuscript I still have some concerns.
+My main concern is the major underlying assumption that bats migrating together will be killed
+by a wind turbine together. The authors collected tissue samples from bats killed by wind
+turbines. They calculated relatedness of potential dyads and gathered information about
+migratory origin from stable isotopes. The prediction was that if there is social transmission,
+related bats should travel together and this should be apparent in the genotype and isotope data.
+6
+But what is the likelihood of two bats travelling together (regardless of relatedness) to both be
+killed by a turbine and collected by a searcher? We have no idea what proportion of bats that fly
+past a turbine are killed, but that will certainly factor in to the likelihood of both bats in a pair
+being killed. Assuming bats travelling together maintain contact through echolocation calls (as
+suggested in the manuscript) they could be flying several meters apart, decreasing the likelihood
+of both being killed. The next question is seasonality. Is there indication of differential migration
+timing of adults and subadults in this system? If there are distinct periods dominated by adult
+mortality or subadult mortality, then the likelihood of social transmission is quite low. Then there
+is the question of differential mortality rates of young and adults (and presumably there is data
+from this system to see if fatalities deviate from the predicted 2:1 young:adult female ratio
+assuming each adult female successfully rears two pups). Assuming both bats are killed, they
+both have to fall within the searched area (presumably search radius is designed to find most bats
+killed by a turbine), and they must both be found by searchers (and there is data on searcher
+efficiency and scavenger removal to inform this likelihood). Taken all together, I think it is
+unlikely that a pair of bats travelling together (regardless of relatedness) would be sampled. With
+only 3 related dyads (full sibs or mother-offspring) observed in hoary bats (I don’t think father-
+offspring is a realistic scenario for social transmission…see below), and only 1 full-sib dyad for
+silver-haired bats, I think it is difficult to say anything conclusively. Thus the lack of relatedness
+trends in the data may represent a Type II error.
+All that being said, the authors have worked extensively in this system and there is likely data to
+alleviate some of the concerns I have presented. I would suggest including some of this
+information into the manuscript to help inform/support the interpretation of the genotype and
+isotope data.
+More specific comments below. Throughout the review I will refer to the line numbers helpfully
+inserted by the authors rather than the line numbers inserted by the submission process that
+don’t actually coincide with particular lines.
+L100: There is also the alternative scenario that migratory flyways bring disparate groups of bats
+together. In fact, the authors have presented data elsewhere to suggest that this system may
+represent a flyway, with bats gathering along the foothills of the mountains rather than migrating
+over open prairie.
+L104: Why is it likely that young bats follow their mothers or other close relatives? An alternative
+scenario is presented in the Thorup et al. paper cited in the introduction. In that study adults
+followed a map, while hatch year birds simply followed the instinct to fly south. A similar
+instinctual mechanism may occur in bats, particularly if adults depart the breeding grounds
+before young.
+L125: It may have been published after the authors prepared the manuscript, but it might be
+worth mentioning Baird et al. 2015 J Mammalogy regarding suggested revision of the Lasiurine
+bats. Those South American hoary bats aren’t particularly relevant to the current study.
+L128: Clarify that this is the relevant distribution for the study region, not the entire continental
+distribution.
+L196: How could an adult from 2007 be potential offspring of another 2007 adult?
+L260: should reference Table 3 instead of Table 5 I think.
+7
+L283: what is the mean relatedness of the dyads killed on the same night? It would have to be
+low, given that the dyads are at most half-sibs. I think it is important to include how related the
+dyads were, rather than just discussing related or unrelated dyads.
+L285: I don’t think it should be surprising that father-sib dyads are killed on different nights.
+Males do not participate in rearing the offspring and therefore would not be expected to migrate
+together with the offspring.
+L285: I think the sample sizes need to be included here for context. For hoary bats there was 1
+mother-offspring dyad and 2 full sib dyads. For silver-haired bats there was 1 full-sib dyad. With
+n=1 or n=2 I don’t think there is much that can be said conclusively.
+L286: I’m not sure I agree with this conclusion. For this to be the case, we have to assume (as
+described above) that both members of the dyad are killed by the same turbine, fall within the
+searched area, and are found by the searchers. It is entirely plausible that only 1 member of the
+dyad meets these criteria, which would then mean that parents and offspring, or siblings, could
+be travelling together but it wouldn’t be documented with this methodology
+L297: no need for underline
+L328: considering the costs and benefits during migration is one way of thinking about the
+system. But what are the costs and benefits of the decision to leave the young behind, as
+described on L307. Early departure may have a great benefit. What are the costs of early
+departure (leaving young to fend for themselves) compared to the benefits? If offspring require
+more time to continue growth/development and build energy stores to fuel their migration, it
+may be in the mother’s best interests to begin migration earlier than her offspring if there is little
+she can do to increase the survival probability of her offspring (either on the breeding grounds, or
+during migration). I don’t think we can answer this question, but another interesting way of
+considering the decision.
+L625: extra “25” in here
+Table 1, Table 2: combine these into a single table
+Table 4,5: Combine into a single table
+label_end_comment
+Decision letter (RSOS-150658)
+05-Jan-2016
+Dear Dr Baerwald,
+The editors assigned to your paper ("Are migratory behaviours of bats socially transmitted?") has
+now received comments from reviewers. We would like you to revise your paper in accordance
+with the referee and Subject Editor suggestions which can be found below (not including
+confidential reports to the Editor). Please note this decision does not guarantee eventual
+acceptance.
+Please submit a copy of your revised paper within three weeks (i.e. by the 28-Jan-2016). If we do
+not hear from you within this time then it will be assumed that the paper has been withdrawn. In
+exceptional circumstances, extensions may be possible if agreed with the Editorial Office in
+8
+advance.We do not allow multiple rounds of revision so we urge you to make every effort to
+fully address all of the comments at this stage. If deemed necessary by the Editors, your
+manuscript will be sent back to one or more of the original reviewers for assessment. If the
+original reviewers are not available we may invite new reviewers.
+To revise your manuscript, log into http://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions." Under "Actions," click on "Create a Revision." Your manuscript number has been
+appended to denote a revision. Revise your manuscript and upload a new version through your
+Author Centre.
+When submitting your revised manuscript, you must respond to the comments made by the
+referees and upload a file "Response to Referees" in "Section 6 - File Upload". Please use this to
+document how you have responded to the comments, and the adjustments you have made. In
+order to expedite the processing of the revised manuscript, please be as specific as possible in
+your response.
+In addition to addressing all of the reviewers' and editor's comments please also ensure that your
+revised manuscript contains the following sections as appropriate before the reference list:
+• Ethics statement (if applicable)
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-150658
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+9
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Yours sincerely,
+Matthew Allinson,
+Editorial Coordinator, Royal Society Open Science
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+Associate Editor's comments (Dr Sean Rands):
+Associate Editor: 1
+Comments to the Author:
+Two reviewers have kindly commented on your manuscript -- their comments should be
+enclosed, and their advice should enhance this interesting paper further. I'd like to see a revision
+that takes these suggestions into account.
+Comments to Author:
+Reviewers' Comments to Author:
+Reviewer: 1
+Comments to the Author(s)
+The authors sampled migratory bats killed at wind turbines on the same night vs different nights,
+and asked whether the same-night dyads were more likely to be genetically related or to have
+similar stable isotope values. If bats are learning migration routes, then they should have higher
+relatedness and similar isotope profiles. Instead they found no evidence for these predictions.
+This paper is very well written and the overall question and basic approach taken is excellent, but
+(there’s always a “but”) I would like to see an additional analysis of the genetic data and an
+additional statistical analysis, before I would be able to fully interpret the results. Fortunately,
+both of these new analyses could be done very quickly (e.g. in the time it took me to write this
+review).
+10
+Basically, there are two places where I feel that the authors might be needlessly losing statistical
+power.
+Issue 1
+I do not think that the choice of relatedness estimator was optimal. The maximum likelihood
+relatedness values used here are truncated from 0-1, which might be good for contexts where all
+unrelated animals might be considered the same (r=0). However, truncated relatedness throws
+out most of the variation (and so you lose power for a linear model). For this analysis, I would
+think one would want to look at pairwise genetic distance as a continuous and normally
+distributed variable that is not truncated (-1 to 1), using any of the non-max-likelihood estimators.
+This would allow one to differentiate further between unrelated bats of different levels of genetic
+distance (e.g. possibly same population vs different population). I provide a link explaining how
+to do this below. Of course, a different estimator should not change your main finding that close
+kinship has no effect, but it might, and see the next comment.
+Issue 2
+For the first analysis (contingency test), the relatedness variable is reduced to a binary variable.
+This throws out a lot of information and power. The second analysis using a generalized linear
+model maintains relatedness as a continuous variable, but then turns observation day into a
+continuous variable. This is might be good to do, but if we are interested in following behavior or
+flying together, then we only care about same night vs different night. As the authors say, bats
+coming from similar sites are already expected to arrive at similar times for asocial reasons.
+Looking at number of days apart only makes that problem worse. Bats observed on different
+nights can be placed together as “not following” because the rest of the variation in time between
+days is not meaningfully related to the genetics and just adds noise to the test.
+Suggested solution
+So I would like to see a test that compares same night vs different night dyads using a new
+measure of pairwise relatedness — a non-truncated relatedness estimate obtained from the
+optimal estimator as decided through simulations (see a link on how to do this below). The
+authors already have all the data they need to do it. The results might not change, but the paper
+would be much stronger and more convincing to readers. In my opinion, this is the most
+powerful test of the key hypothesis.
+Caveat to discuss
+The reason power is so crucial here is because the effect of paternal kinship should already be
+adding a lot of statistical noise (unless I’m missing something). Half of related dyads are related
+through their father and we don’t expect social transmission through paternal kin in bats. So
+these paternal relatives are functionally “unrelated” for the purposes of the learning hypothesis.
+This could be parsed out using mitochondrial DNA in future studies. But it should just be
+discussed here as a caveat for interpreting the findings. The bats might not follow kin *in
+general*, but they might follow *maternal* kin more than chance and that signal could be lost in
+the noise. One wonders if that was the case especially with p-values like 0.06.
+Those two analysis concerns and one caveat aside, I find this study to be exceptionally well-
+written and interesting. The question of how bats decide where to migrate is one of the most
+pressing questions in bat biology and behavior right now, especially given the conservation
+implications. The extent to which migration routes are learned or socially learned has
+implications for how quickly bat populations are likely to adjust to changes in their migration
+routes due to wind farms installations (either by learning or natural selection). And I believe the
+general approach taken here is right on target as the next necessary step. This paper is also
+11
+valuable because it provides new microsatellite markers for these two species. This is an
+important study, and I look forward to seeing it published.
+—————————————————————————————————————————
+My original detailed real-time line by line notes are below. Sorry for all the redundancy.
+Abstract
+This abstract is very clear and well written.
+Intro
+83 need to specify somewhere earlier that Chiroptera=bats, or just use the word “bats”
+Methods and results
+211 I don’t think that providing higher relatedness values is the best way to choose an estimator
+for this analysis. Yes, the ML methods account for genotyping errors, but one potential issue is
+that those two ML estimation methods are truncated at zero (this might make sense if all the bats
+are from the same breeding population but that is not the case here). As a result, there is not a
+normal distribution of relatedness values. Perhaps you want to treat all bats that are not in the
+same family the same. However, it seems to make a lot of sense in this case to label unrelated bats
+according to their pairwise genetic distance. For example, imagine that bat A and B are unrelated
+but from the same local population, and that bat C is also unrelated to bat A but is from a
+completely different population many miles away. Your relatedness estimate will treat A’s
+relatedness to both B and C as zero. However, a different method (for example the Wang
+estimator or Queller-Goodnight estimator in coancestry) would likely present relatedness A-B as
+zero and A-C as a negative value (indicating that the two unrelated bats are even less related than
+two average bats from the population).
+Assuming some limitations on natal dispersal, this actually allows you to use the genetic data as
+another possible proxy for bats originating from the same site (but not sure about that— it
+depends on genetic variation across different sites).
+I would suggest using the r package “related” to first run a simulation to choose the best
+unbiased non-truncated estimator”. Then use that estimator and see if the results are consistent.
+This is actually very straightforward, and there are step-by-step directions here:
+https://frasierlab.files.wordpress.com/2015/03/tutorial1.pdf
+This could be done pretty quickly.
+218 This test loses power because a continuous variable (relatedness) is being transformed into a
+binary variable (kin or not). Why not keep relatedness as a continuous variable?
+Just as you did, I would still compare same night vs different night, because bats found on
+different nights could not possibly have been following each other. But I would look at
+relatedness as a normally distributed continuous variable. In my opinion, this analysis could
+replace both relatedness tests you did (unless I’m missing something).
+It would be helpful to see the distribution of isotope values (how are they distributed?), maybe in
+a supplement.
+12
+235-243 I was looking for all this information (e.g., number of markers) in the methods. So it
+might be better to put it there.
+Could the relationships between geographic origin and days between death at turbines could be
+explained by bats from similar latitudes or sites taking similar times to reach that point in their
+southern migration (rather than social learning)? For that reason, I think an analysis that simply
+contrasts same night vs different night makes more sense.
+Discussion
+284-285 I would not speak about pedigree kinship terms such as parent-offspring or full-sibling
+(at least say “putative” or “suspected”), because it can be very difficult to reliably place dyads
+into these categories using microsatellite genotypes alone. Good reference: Van Horn, R. C.,
+Altmann, J., & Alberts, S. C. (2008). Can't get there from here: inferring kinship from pairwise
+genetic relatedness. Animal Behaviour, 75(3), 1173-1180.
+318-326 I agree with this paragraph, but I’m not sure of its relevance to migration. What does
+obtaining migration information “asocially” mean? Does it mean just flying south and then using
+trial and error learning over subsequent years?
+337-342 This first part of the paragraph on a possible teaching mechanism of learning would
+make more sense if the authors found evidence for learning, so it might not be necessary here. It
+detracts from the main point which is that experienced adults might just leave earlier, which
+prevents social learning.
+364 But see Yossi Yovel lab’s work on bats use of echolocation during group movements Cvikel et
+al. 2015 Current Biology, Figure 3.
+There is another potential caveat to discuss. One assumption here is that if bats are learning by
+following kin, then bats found together should be more often related. However, bonds only form
+between maternal kin, not paternal kin. There is no evidence that young bats form any
+attachment or relationship with their fathers (or even know who they are). Moreover, fathers
+might come from distant sites and not be groupmates at all.
+Therefore, what you really predict is that they should be more *maternally* related. The paternal
+relatedness adds statistical noise, because bats related through a father are actually, from
+migration standpoint, functionally “unrelated”. So if paternal kin dyads are being found on
+different nights this further reduces your power to detect any increased maternal kinship in bats
+found on same nights (because you cannot tell maternal from paternal kinship). This possibility
+should be discussed, because many readers might not realize it, especially those familiar with
+songbirds where juveniles likely know both their mother and father.
+Reviewer: 2
+Comments to the Author(s)
+The authors present an interesting study, using novel methodology to ask questions about the
+social transmission of migratory behaviors. As the authors correctly point out, the question of
+how migrants find their way is a long-standing issue in migration biology. More specifically, how
+do young animals make their way in their first migration? This study has the strong advantage of
+being based in a well-studied system, with several prior publications from the same sampling
+period. The authors have prepared a well-written, easy to read manuscript, and they have done a
+good job of incorporating the broader conceptual issues of social transmission rather than
+13
+focusing solely on the specific of their samples. However, I have some concerns about
+assumptions that must be made in the development of the ideas and interpretation of the results.
+The authors may be able to justify these assumptions based on their extensive work in this
+system, but as presented in the manuscript I still have some concerns.
+My main concern is the major underlying assumption that bats migrating together will be killed
+by a wind turbine together. The authors collected tissue samples from bats killed by wind
+turbines. They calculated relatedness of potential dyads and gathered information about
+migratory origin from stable isotopes. The prediction was that if there is social transmission,
+related bats should travel together and this should be apparent in the genotype and isotope data.
+But what is the likelihood of two bats travelling together (regardless of relatedness) to both be
+killed by a turbine and collected by a searcher? We have no idea what proportion of bats that fly
+past a turbine are killed, but that will certainly factor in to the likelihood of both bats in a pair
+being killed. Assuming bats travelling together maintain contact through echolocation calls (as
+suggested in the manuscript) they could be flying several meters apart, decreasing the likelihood
+of both being killed. The next question is seasonality. Is there indication of differential migration
+timing of adults and subadults in this system? If there are distinct periods dominated by adult
+mortality or subadult mortality, then the likelihood of social transmission is quite low. Then there
+is the question of differential mortality rates of young and adults (and presumably there is data
+from this system to see if fatalities deviate from the predicted 2:1 young:adult female ratio
+assuming each adult female successfully rears two pups). Assuming both bats are killed, they
+both have to fall within the searched area (presumably search radius is designed to find most bats
+killed by a turbine), and they must both be found by searchers (and there is data on searcher
+efficiency and scavenger removal to inform this likelihood). Taken all together, I think it is
+unlikely that a pair of bats travelling together (regardless of relatedness) would be sampled. With
+only 3 related dyads (full sibs or mother-offspring) observed in hoary bats (I don’t think father-
+offspring is a realistic scenario for social transmission…see below), and only 1 full-sib dyad for
+silver-haired bats, I think it is difficult to say anything conclusively. Thus the lack of relatedness
+trends in the data may represent a Type II error.
+All that being said, the authors have worked extensively in this system and there is likely data to
+alleviate some of the concerns I have presented. I would suggest including some of this
+information into the manuscript to help inform/support the interpretation of the genotype and
+isotope data.
+More specific comments below. Throughout the review I will refer to the line numbers helpfully
+inserted by the authors rather than the line numbers inserted by the submission process that
+don’t actually coincide with particular lines.
+L100: There is also the alternative scenario that migratory flyways bring disparate groups of bats
+together. In fact, the authors have presented data elsewhere to suggest that this system may
+represent a flyway, with bats gathering along the foothills of the mountains rather than migrating
+over open prairie.
+L104: Why is it likely that young bats follow their mothers or other close relatives? An alternative
+scenario is presented in the Thorup et al. paper cited in the introduction. In that study adults
+followed a map, while hatch year birds simply followed the instinct to fly south. A similar
+instinctual mechanism may occur in bats, particularly if adults depart the breeding grounds
+before young.
+L125: It may have been published after the authors prepared the manuscript, but it might be
+worth mentioning Baird et al. 2015 J Mammalogy regarding suggested revision of the Lasiurine
+bats. Those South American hoary bats aren’t particularly relevant to the current study.
+14
+L128: Clarify that this is the relevant distribution for the study region, not the entire continental
+distribution.
+L196: How could an adult from 2007 be potential offspring of another 2007 adult?
+L260: should reference Table 3 instead of Table 5 I think.
+L283: what is the mean relatedness of the dyads killed on the same night? It would have to be
+low, given that the dyads are at most half-sibs. I think it is important to include how related the
+dyads were, rather than just discussing related or unrelated dyads.
+L285: I don’t think it should be surprising that father-sib dyads are killed on different nights.
+Males do not participate in rearing the offspring and therefore would not be expected to migrate
+together with the offspring.
+L285: I think the sample sizes need to be included here for context. For hoary bats there was 1
+mother-offspring dyad and 2 full sib dyads. For silver-haired bats there was 1 full-sib dyad. With
+n=1 or n=2 I don’t think there is much that can be said conclusively.
+L286: I’m not sure I agree with this conclusion. For this to be the case, we have to assume (as
+described above) that both members of the dyad are killed by the same turbine, fall within the
+searched area, and are found by the searchers. It is entirely plausible that only 1 member of the
+dyad meets these criteria, which would then mean that parents and offspring, or siblings, could
+be travelling together but it wouldn’t be documented with this methodology
+L297: no need for underline
+L328: considering the costs and benefits during migration is one way of thinking about the
+system. But what are the costs and benefits of the decision to leave the young behind, as
+described on L307. Early departure may have a great benefit. What are the costs of early
+departure (leaving young to fend for themselves) compared to the benefits? If offspring require
+more time to continue growth/development and build energy stores to fuel their migration, it
+may be in the mother’s best interests to begin migration earlier than her offspring if there is little
+she can do to increase the survival probability of her offspring (either on the breeding grounds, or
+during migration). I don’t think we can answer this question, but another interesting way of
+considering the decision.
+L625: extra “25” in here
+Table 1, Table 2: combine these into a single table
+Table 4,5: Combine into a single table
+Author's Response to Decision Letter for (RSOS-150658)
+See Appendix A.
+15
+label_version_2
+RSOS-150658.R1 (Revision)
+label_author_3
+Review form: Reviewer 1 (Gerald Carter)
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+It is easy to find the summary data (in supplement), but not the raw data.
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_3
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_3
+I am fully satisfied with this revision. Very well-written, thoughtful, and clear.
+Some minor suggestions for clarity:
+line 28 Insert “would” before “need” to stress the hypothetical meaning.
+For a young bat to learn migration via social transmission, they [would] need to follow an
+experienced individual…
+line 30 Insert “would” before “follow”: "It is also likely that young bats [would] follow their…"
+line 55 Typo: delete parenthesis
+line 78 Most cognition researchers would not say that teaching has been demonstrated in bats
+(and I know the cited ref), so I would delete this, or say something like “and possibly teaching”.
+Also,I would say that “observational learning” is a specific case within the general category of
+“social transmission of behavior” and not list them separately.
+line 222-223 Typo. There’s an extra parenthesis.
+line 224 Change “Type one error” to "Type One Error" or "type one error"
+Methods and results
+I know from testing genetic methods against known pedigrees that programs often mislabel
+kinship relationships (e.g. mother-offspring or half-sibs labeled as full-sibs, etc) more than their
+confidence intervals would predict. For calculating the 95% probability of belonging to a kinship
+category, are programs like COLONY assuming that the true mother or father is in the sample? If
+16
+not, then the writing is fine as it is. But if so, I would suggest adding “putative” or “suspected”
+before full-sibs or half-sibs, etc, to clarify that those relationships are still really the best guess
+with imperfect assumptions rather than known relationships with 95% confidence.
+Discussion
+347 “Because information obtained socially is often easier to obtain, but less reliable than
+information obtained asocially (i.e. through trial-and-error), there is usually a mixture within a
+group in the number of individuals acquiring information asocially and those acquiring
+information socially [96, 97].”
+I don’t think that’s *generally* true, so I would change “often” to "sometimes" and “usually” to
+“often”
+Great paper.
+label_author_4
+Review form: Reviewer 2
+Is the manuscript scientifically sound in its present form?
+Yes
+Are the interpretations and conclusions justified by the results?
+Yes
+Is the language acceptable?
+Yes
+Is it clear how to access all supporting data?
+Data and supplementary material are fine
+Do you have any ethical concerns with this paper?
+No
+Have you any concerns about statistical analyses in this paper?
+No
+Recommendation?
+label_recommendation_4
+Accept with minor revision (please list in comments)
+Comments to the Author(s)
+label_comment_4
+The revised manuscript addresses many of my concerns. The authors have added additional
+information in a number of places that improves the manuscript. The questions, confusion, and
+concerns I had based on the previous version have now been clarified for the most part. There is
+only one remaining issue I think needs to be clarified.
+L159: The authors have now clarified a misunderstanding I had from the initial version of the
+manuscript, namely that all turbines within the facility were searched with enough regularity to
+ensure a high likelihood of recovery of all bats. However there remains one bit of confusion…On
+line 159 the authors indicate the high likelihood of recovering all bats, but on L164 it indicates
+that tissue samples were only collected from bats killed on the previous night (10 of 39 turbines
+searched on any given day). A high likelihood of recovering all bats is good, but only if all those
+bats end up included in the dataset. Please clarify.
+17
+label_end_comment
+Decision letter (RSOS-150658.R1)
+08-Mar-2016
+Dear Dr Baerwald:
+On behalf of the Editors, I am pleased to inform you that your Manuscript RSOS-150658.R1
+entitled "Are migratory behaviours of bats socially transmitted?" has been accepted for
+publication in Royal Society Open Science subject to minor revision in accordance with the
+referee suggestions. Please find the referees' comments at the end of this email.
+The reviewers and Subject Editor have recommended publication, but also suggest some minor
+revisions to your manuscript. Therefore, I invite you to respond to the comments and revise your
+manuscript.
+• Ethics statement
+If your study uses humans or animals please include details of the ethical approval received,
+including the name of the committee that granted approval. For human studies please also detail
+whether informed consent was obtained. For field studies on animals please include details of all
+permissions, licences and/or approvals granted to carry out the fieldwork.
+• Data accessibility
+It is a condition of publication that all supporting data are made available either as
+supplementary information or preferably in a suitable permanent repository. The data
+accessibility section should state where the article's supporting data can be accessed. This section
+should also include details, where possible of where to access other relevant research materials
+such as statistical tools, protocols, software etc can be accessed. If the data has been deposited in
+an external repository this section should list the database, accession number and link to the DOI
+for all data from the article that has been made publicly available. Data sets that have been
+deposited in an external repository and have a DOI should also be appropriately cited in the
+manuscript and included in the reference list.
+If you wish to submit your supporting data or code to Dryad (http://datadryad.org/), or modify
+your current submission to dryad, please use the following link:
+http://datadryad.org/submit?journalID=RSOS&manu=RSOS-150658.R1
+• Competing interests
+Please declare any financial or non-financial competing interests, or state that you have no
+competing interests.
+• Authors’ contributions
+All submissions, other than those with a single author, must include an Authors’ Contributions
+section which individually lists the specific contribution of each author. The list of Authors
+should meet all of the following criteria; 1) substantial contributions to conception and design, or
+acquisition of data, or analysis and interpretation of data; 2) drafting the article or revising it
+critically for important intellectual content; and 3) final approval of the version to be published.
+All contributors who do not meet all of these criteria should be included in the
+acknowledgements.
+We suggest the following format:
+AB carried out the molecular lab work, participated in data analysis, carried out sequence
+alignments, participated in the design of the study and drafted the manuscript; CD carried out
+the statistical analyses; EF collected field data; GH conceived of the study, designed the study,
+18
+coordinated the study and helped draft the manuscript. All authors gave final approval for
+publication.
+• Acknowledgements
+Please acknowledge anyone who contributed to the study but did not meet the authorship
+criteria.
+• Funding statement
+Please list the source of funding for each author.
+Because the schedule for publication is very tight, it is a condition of publication that you submit
+the revised version of your manuscript within 7 days (i.e. by the 17-Mar-2016). If you do not think
+you will be able to meet this date please let me know immediately.
+To revise your manuscript, log into https://mc.manuscriptcentral.com/rsos and enter your
+Author Centre, where you will find your manuscript title listed under "Manuscripts with
+Decisions". Under "Actions," click on "Create a Revision." You will be unable to make your
+revisions on the originally submitted version of the manuscript. Instead, revise your manuscript
+and upload a new version through your Author Centre.
+When submitting your revised manuscript, you will be able to respond to the comments made by
+the referees and upload a file "Response to Referees" in "Section 6 - File Upload". You can use this
+to document any changes you make to the original manuscript. In order to expedite the
+processing of the revised manuscript, please be as specific as possible in your response to the
+referees.
+When uploading your revised files please make sure that you have:
+1) A text file of the manuscript (tex, txt, rtf, docx or doc), references, tables (including captions)
+and figure captions. Do not upload a PDF as your "Main Document".
+2) A separate electronic file of each figure (EPS or print-quality PDF preferred (either format
+should be produced directly from original creation package), or original software format)
+3) Included a 100 word media summary of your paper when requested at submission. Please
+ensure you have entered correct contact details (email, institution and telephone) in your user
+account
+4) Included the raw data to support the claims made in your paper. You can either include your
+data as electronic supplementary material or upload to a repository and include the relevant doi
+within your manuscript
+5) Included your supplementary files in a format you are happy with (no line numbers,
+vancouver referencing, track changes removed etc) as these files will NOT be edited in
+production
+Once again, thank you for submitting your manuscript to Royal Society Open Science and I look
+forward to receiving your revision. If you have any questions at all, please do not hesitate to get
+in touch.
+Best wishes
+Andrew Dunn
+Senior Publishing Editor, Royal Society Open Sceince
+on behalf of Kevin Padian
+Subject Editor, Royal Society Open Science
+openscience@royalsociety.org
+19
+Author's Response to Decision Letter for (RSOS-150658)
+Thank you for accepting our MS. The reviewers comments were once again helpful. We have
+made all the suggested changes.
+ar Dr. Padian, 08 March 2016
+Thank you for accepting our revised manuscript, “Are migratory behaviours of bats
+ially transmitted?” (Manuscript ID RSOS-150658.R1). Please find attached the further
+ised version.
+We have made changes to wording as per reviewers’ comments. I have inserted the
+iewers’ comments and responses are below, in bold.
+iewer 1:
+28 Insert “would” before “need” to stress the hypothetical meaning.
+a young bat to learn migration via social transmission, they [would] need to follow an
+erienced individual…We have added the suggested words
+30 Insert “would” before “follow”: "It is also likely that young bats [would] follow their…"
+have added the suggested word
+55 Typo: delete parenthesis We have corrected the typo
+78 Most cognition researchers would not say that teaching has been demonstrated in bats
+d I know the cited ref), so I would delete this, or say something like “and possibly teaching”.
+o,I would say that “observational learning” is a specific case within the general category of
+cial transmission of behavior” and not list them separately. We have deleted “teaching” and
+servational learning” and included the references in the general category of “social
+nsmission of behaviour”
+222-223 Typo. There’s an extra parenthesis. We have corrected the typo
+224 Change “Type one error” to "Type One Error" or "type one error" We have changed it
+Type One Error
+thods and results
+ow from testing genetic methods against known pedigrees that programs often mislabel
+ship relationships (e.g. mother-offspring or half-sibs labeled as full-sibs, etc) more than their
+fidence intervals would predict. For calculating the 95% probability of belonging to a kinship
+egory, are programs like COLONY assuming that the true mother or father is in the sample?
+ot, then the writing is fine as it is. But if so, I would suggest adding “putative” or “suspected”
+ore full-sibs or half-sibs, etc, to clarify that those relationships are still really the best guess
+h imperfect assumptions rather than known relationships with 95% confidence. We have
+ed “putatively” to lines 199, 263, and 285.
+cussion
+“Because information obtained socially is often easier to obtain, but less reliable than
+rmation obtained asocially (i.e. through trial-and-error), there is usually a mixture within a
+up in the number of individuals acquiring information asocially and those acquiring
+rmation socially [96, 97].”
+n’t think that’s *generally* true, so I would change “often” to "sometimes" and “usually” to
+ten” We have made the suggested wording changes
+at paper.
+iewer: 2
+mments to the Author(s)
+revised manuscript addresses many of my concerns. The authors have added additional
+rmation in a number of places that improves the manuscript. The questions, confusion, and
+cerns I had based on the previous version have now been clarified for the most part. There is
+y one remaining issue I think needs to be clarified.
+9: The authors have now clarified a misunderstanding I had from the initial version of the
+nuscript, namely that all turbines within the facility were searched with enough regularity to
+ure a high likelihood of recovery of all bats. However there remains one bit of confusion…On
+159 the authors indicate the high likelihood of recovering all bats, but on L164 it indicates
+tissue samples were only collected from bats killed on the previous night (10 of 39 turbines
+rched on any given day). A high likelihood of recovering all bats is good, but only if all those
+s end up included in the dataset. Please clarify. We have added clarification to line 164 with
+inclusion of “at any of the 39 turbines” to “those killed the previous night”.
+Thank you again for accepting our revised and resubmitted manuscript. We hope we have
+n able to sufficiently address all comments and concerns and that it is now acceptable for
+lication.
+cerely,
+n Baerwald
+erican Wind Wildlife Institute
+0 Vermont Avenue, NW, Suite 950
+shington, DC 20005-3544
+ail: efbaerwald@gmail.ca
+Society Open
