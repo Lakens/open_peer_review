@@ -1,9 +1,8 @@
 # Analyis of Open Peer Review at PeerJ and Royal Society.
  
-This is a repository to analyze open peer reviews at PeerJ and the Royal Society Open Science and Royal Society Open Biology.
+This is a repository to analyze open peer reviews at PeerJ and the Royal Society Open Science and Royal Society Open Biology. It accompanies the manuscript "Researchers Decision to Sign Reviews is Related to Their Recommendation"
 
 It contains scripts to download all reviews and convert them in text files that are textmined and analyzed. 
-
 
 ## For PeerJ articles:
 
@@ -41,7 +40,6 @@ For PeerJ Computer Science, repeat the step above by running textmining_peerj.R 
 1) Run 'download_RSOS_pdf.R'. This will download the RSOS reviews using the scopus_export_rsos.csv, which contains a Scopus exported list of all articles in RSOS.
 
 For 7 papers, RSOS ISSN number articles actually have a rsob DOI in scopus, and these are indeed Open Biology. These are not downloaded (the script has a web addresss with rsos hard-coded so will return errors). For 6 articles the incorrect doi is included in Scopus, e.g., for http://dx.doi.org/10.1098/rsos.190279. These articles are also not downloaded. 
-
 
 2) We now have a folder with downloaded pdf files. However, some are corrupt and can not be opened, because the reviews are not open, but the download script still stored a PDF. Run 'check_corrupt_royal_society_open science.R' which tries to read each PDF. When succesful, it stored the ID in a list. This list is written as OS_pdf_list.txt, which thus contains all ID's of articles that have open peer review. 
 
