@@ -7,6 +7,9 @@ here::here()
 
 #########################list of article id's#####################################
 article_id <- vector()
+article_id_os_open <- vector()
+fix_doc <- vector()
+
 # Create a list of all PDF files in the folder
 article_id <- str_extract(list.files(path = "royal_society_pdf_files\\open_biology\\", pattern = "\\.pdf$"), "[0-9]+") #list all files in the folder and extract article ID
 

@@ -22,11 +22,11 @@ closed_reviews <- 0
 total_version <- 0
 
 #########################################read txt file##########################################################
-for (r in 1:7930){ #starting the loop to create the dataframe from the 6800 PeerJ articles
+for (r in 1:225){ #starting the loop to create the dataframe from the 6800 PeerJ articles
   
   review_id <- r
   
-  path <- paste("peerj_reviews_txt/",review_id,".txt", sep="")
+  path <- paste("peerj_cs_reviews_txt/",review_id,".txt", sep="")
   
   open_file <- file(path, open = "r")
   lines <- readLines(open_file)
@@ -42,7 +42,7 @@ for (r in 1:7930){ #starting the loop to create the dataframe from the 6800 Peer
     ###############################################Link############################################################
     
     link <- "" #reset link
-    link <- paste("https://peerj.com/articles/", review_id, "/reviews/", sep="") 
+    link <- paste("https://peerj.com/articles/cs-", review_id, "/reviews/", sep="") 
     
     ###############################Word count, positive and negative###############################################
     
@@ -160,7 +160,7 @@ for (r in 1:7930){ #starting the loop to create the dataframe from the 6800 Peer
     } else if (select_section == "zoological science"){
       section <- lines[a]
     } else {
-      section <- "NA"
+      section <- "computer science"
     }
     
     ############################################Timelapse##########################################################
@@ -205,4 +205,4 @@ for (r in 1:7930){ #starting the loop to create the dataframe from the 6800 Peer
 #################################Creating dataframe and csv file#################################################
 df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_anonymous, df_reviewer_name)
 
-saveRDS(df, file = "peerj_data.rds")             #used to create the rds file
+saveRDS(df, file = "peerj_cs_data.rds")             #used to create the rds file

@@ -39,7 +39,7 @@ close(conn)
 
 ########################downloading the pdf's#####################################
 #this section is used for downloading the pdf files.
-sleep <- function() { Sys.sleep(30) } #needed to prevent an IP block from the royal society website
+sleep <- function() { Sys.sleep(20) } #needed to prevent an IP block from the royal society website
 i<-1
 for (i in 1:length(article_id)) {
   sleep()
