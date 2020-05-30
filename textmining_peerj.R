@@ -4,12 +4,14 @@ library(pdftools)
 library(tm)
 library(stringr)
 library(here)
+library(lubridate)
 
 here()
 
 #########################################variables used to create the dataframe#################################
 df_link <- c()
 df_section <- c()
+df_year <- c()
 df_days <- c()
 df_version <- c()
 df_recommendation <- c()
@@ -112,7 +114,6 @@ for (r in 1:7930){ #starting the loop to create the dataframe from the 6800 Peer
         recommendation_count = recommendation_count +1
       }
       
-      
       if (lines[i] == paste("label_version_", version_count, sep="")){
         version_count <- version_count +1
         total_version <- total_version +1
@@ -182,12 +183,14 @@ for (r in 1:7930){ #starting the loop to create the dataframe from the 6800 Peer
     
     days <- as.numeric(dates[1])-as.numeric(dates[2])
     
+    pub_year <- year(as.Date(timelapse[1], "%b %d %Y"))
     ############################################Creating df vectors################################################
     
     for (i in 1:length(word_count+1)){
       if (author_count > 1){
         df_link <- append(df_link, link)
         df_section <- append(df_section, section)
+        df_year <- append(df_year, pub_year)
         df_days <- append(df_days, days)
         df_version <- append(df_version, version[i])
         df_recommendation <- append(df_recommendation, recommendation[i])
@@ -199,10 +202,10 @@ for (r in 1:7930){ #starting the loop to create the dataframe from the 6800 Peer
     
   } else {
     closed_reviews = closed_reviews + 1
-  } # end open/closed acces loop
+  } # end open/closed access loop
 } # end all_loop
 
 #################################Creating dataframe and csv file#################################################
-df <- data.frame(df_link, df_section, df_days, df_version, df_recommendation, df_word_count, df_anonymous, df_reviewer_name)
+df <- data.frame(df_link, df_section, df_year, df_days, df_version, df_recommendation, df_word_count, df_anonymous, df_reviewer_name)
 
 saveRDS(df, file = "peerj_data.rds")             #used to create the rds file

@@ -18,7 +18,7 @@ abstract: |
  Surveys indicate that researchers generally have a positive attitude towards open peer review when this consists of making reviews available alongside published articles. Researchers are more negative about revealing the identity of reviewers. They worry reviewers will be less likely to express criticism if their identity is known to authors. Experiments suggest that reviewers are somewhat less likely to recommend rejection when they are told their identity will be communicated to authors, than when they will remain anonymous. One recent study revealed reviewers in five journals who voluntarily signed their reviews gave more positive recommendations than those who did not sign their reviews. We replicate and extend this finding by analyzing 12010 open reviews in PeerJ and 4188 reviews in the Royal Society Open Science where authors can voluntarily sign their reviews. These results based on behavioral data from real peer reviews across a wide range of scientific disciplines demonstrate convincingly that reviewers' decision to sign is related to their recommendation. The proportion of signed reviews was higher for more positive recommendations, than for more negative recommendations. We also share all 23649 text mined reviews as raw data underlying our results that can be re-used by researchers interested in peer review.
   
 keywords          : "Peer Review, Open Reviews, Transparency, Open Science"
-wordcount         : 2711
+wordcount         : 3282
 bibliography      : ["signing_open_peer_review_.bib"]
 figsintext        : yes
 figurelist        : no
@@ -38,19 +38,19 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(ggplot2)
-library(here)
+library(gridExtra)
 
-here::here()
+setwd("C:/Users/dlakens/surfdrive/R/open_peer_review")
 #### READ IN DATA
 # Read open science and open biology rds datafiles
-TRS_data_os <- readRDS(file = "../../royal_society_data_os.rds")
-TRS_data_ob <- readRDS(file = "../../royal_society_data_ob.rds")
+TRS_data_os <- readRDS(file = "royal_society_data_os.rds")
+TRS_data_ob <- readRDS(file = "royal_society_data_ob.rds")
 # Combine both datasets into one.
 TRS_data <- rbind(TRS_data_os, TRS_data_ob)
 
 #Read in PeerJ data
-PeerJ_main_data <- readRDS(file = "../../peerj_data.rds")
-PeerJ_cs_data <- readRDS(file = "../../peerj_cs_data.rds")
+PeerJ_main_data <- readRDS(file = "peerj_data.rds")
+PeerJ_cs_data <- readRDS(file = "peerj_cs_data.rds")
 # Combine both datasets into one.
 PeerJ_data <- rbind(PeerJ_main_data, PeerJ_cs_data)
 
@@ -68,12 +68,12 @@ TRS_unique_ob <- TRS_data_ob[!duplicated(TRS_data_ob$df_link),]
 open_review_PeerJ <- nrow(PeerJ_unique)/length(list.files(path = "peerj_reviews_txt"))
 
 # We can see how many reviews are open in TRS by counting all doi in scopus, and seeing how many end up in our list of open reviews:
-OS_pdf_list <- readLines(file("../../royal_society_pdf_files/OS_pdf_list.txt", open = "r"))
+OS_pdf_list <- readLines(file("royal_society_pdf_files/OS_pdf_list.txt", open = "r"))
 
-open_review_TRS <- length(OS_pdf_list) / length(read.csv("../../scopus_export_rsos.csv", stringsAsFactors = FALSE)$DOI)
+open_review_TRS <- length(OS_pdf_list) / length(read.csv("scopus_export_rsos.csv", stringsAsFactors = FALSE)$DOI)
 
 # How many entries in RSOS in total? Read in scopus datafile
-TRS_scopus_OS <- read.csv("../../scopus_export_rsos.csv", stringsAsFactors = FALSE)
+TRS_scopus_OS <- read.csv("scopus_export_rsos.csv", stringsAsFactors = FALSE)
 table(TRS_scopus_OS$Document.Type)
 errata_editorial <- sum(table(TRS_scopus_OS$Document.Type)[c(3,4)])
 # Excude Errata and Editorial (that have no reviews)
@@ -81,7 +81,7 @@ TRS_scopus_OS <- TRS_scopus_OS[!TRS_scopus_OS$Document.Type == "Erratum" & !TRS_
 table(TRS_scopus_OS$Document.Type)
 
 # How many entries in RSOS in total? Read in scopus datafile
-TRS_scopus_OB <- read.csv("../../scopus_export_rsob.csv", stringsAsFactors = FALSE)
+TRS_scopus_OB <- read.csv("scopus_export_rsob.csv", stringsAsFactors = FALSE)
 table(TRS_scopus_OB$Document.Type)
 errata_editorial <- errata_editorial + sum(table(TRS_scopus_OB$Document.Type)[c(2,3,5)])
 # Exclude Errata and Editorial (that have no reviews)
@@ -99,8 +99,16 @@ PeerJ_mean_review_time <- mean(PeerJ_unique$df_days, na.rm = TRUE)
 mean(TRS_data$df_anonymous)
 mean(PeerJ_data$df_anonymous)
 
-# How many reviews in total in the traw txt files?
+# How many reviews in total in the raw txt files?
 length(TRS_data$df_anonymous)+length(PeerJ_data$df_anonymous)
+
+# Adding year from scopus to TRS data
+# First add doi column to merge on
+TRS_data$DOI <- gsub('http://dx.doi.org/','',TRS_data$df_link)
+# Create joint SCOPUS dataframe
+TRS_scopus <- rbind(TRS_scopus_OS, TRS_scopus_OB)
+# Merge datasets - we lose 1 row for missing DOI (figshare doi)
+TRS_data <- merge(TRS_data, TRS_scopus, by = 'DOI')
 
 # Select only those reviews for each paper with the highest version for PeerJ (first review)
 PeerJ_data_R1 <- group_by(PeerJ_data, df_link)
@@ -111,8 +119,6 @@ PeerJ_data_R1$df_section <- recode(PeerJ_data_R1$df_section, "biochemistry, biop
 PeerJ_data_R1 <- top_n(PeerJ_data_R1, 1, df_version)
 mean(count(PeerJ_data_R1, df_link)$n) #count reviews per article.
 
-
-PeerJ_data_R1$df_section[1]
 # Do the same for TRS
 TRS_data_R1 <- group_by(TRS_data, df_link)
 # Make recommendation a factor
@@ -128,14 +134,14 @@ TRS_review_agree <- TRS_review_agree[!duplicated(TRS_review_agree$df_link),]
 sum(TRS_review_agree$df_unique == 4) # Reported as a fun fact in the additional analyses
 
 #Select the top recommendation for each review
-TRS_data_R1_top <- top_n(TRS_data_R1, 1, df_recommendation) 
+TRS_data_R1_top <- top_n(TRS_data_R1, 1, as.numeric(df_recommendation)) 
 TRS_data_R1_top <- TRS_data_R1_top[!duplicated(TRS_data_R1_top$df_link),]
 #Select the bottom recommendation for each review
-TRS_data_R1_bottom <- top_n(TRS_data_R1, -1, df_recommendation) 
+TRS_data_R1_bottom <- top_n(TRS_data_R1, -1, as.numeric(df_recommendation)) 
 TRS_data_R1_bottom <- TRS_data_R1_bottom[!duplicated(TRS_data_R1_bottom$df_link),]
 
 #Compute the difference between top and bottom
-rev_dif <- TRS_data_R1_top$df_recommendation - TRS_data_R1_bottom$df_recommendation
+rev_dif <- as.numeric(TRS_data_R1_top$df_recommendation) - as.numeric(TRS_data_R1_bottom$df_recommendation)
 #We table the difference - many are similar, many differ 1 category, some 2 few 3.
 table(rev_dif)
 
@@ -154,7 +160,7 @@ Although the self-report studies and the experiments clearly suggest that review
 
 # The Current Study
 
-We examined the relationship between the recommendations peer reviewers made and the proportion of signed reviews in two large open access journals, PeerJ (including reviews for PeerJ Computer Science) and Royal Society Open Science (including Royal Society Open Biology). We ignored more recently launched PeerJ journals in the field of Chemistry due to the small number of articles published to date in these journals. PeerJ and Royal Society Open journals publish articles across a wide range of scientific disciplines, thus allowing us to replicate and extend the analysis by Bravo and colleagues (2019). PeerJ launched in 2012 and PeerJ Computer Science launched in 2015. PeerJ provides reviewers the possibility to sign, and authors the possibility to make peer reviews available with the final publication. Royal Society Open Science (RSOS) launched in 2014 and strongly encouraged authors to make the peer reviews available with the final publication, and made this mandatory in January 2019. Royal Society Open Biology (RSOB) made sharing reviews with the final publication mandatory in May 2017. Peer reviewers have the option to make their identity known when submitting their review to RSOS or RSOB. Because of their broad scope, the large number of publications in each journal, and their early focus on open reviews, the reviews for PeerJ and Royal Society Open journals provide insights into the peer review behavior of scientists across a wide range of disciplines.
+We examined the relationship between the recommendations peer reviewers made and the proportion of signed reviews in two large open access journals, PeerJ (including reviews for PeerJ Computer Science) and Royal Society Open journals (Royal Society Open Science and Royal Society Open Biology). We ignored more recently launched PeerJ journals in the field of Chemistry due to the small number of articles published to date in these journals. PeerJ and Royal Society Open journals publish articles across a wide range of scientific disciplines, including biology, chemistry, engineering, life sciences, mathematics, and medicine, thus allowing us to replicate and extend the analysis by Bravo and colleagues (2019). PeerJ launched in 2012 and PeerJ Computer Science launched in 2015. PeerJ provides reviewers the possibility to sign, and authors the possibility to make peer reviews available with the final publication. Royal Society Open Science (RSOS) launched in 2014 and strongly encouraged authors to make the peer reviews available with the final publication, and made this mandatory in January 2019. Royal Society Open Biology (RSOB) made sharing reviews with the final publication mandatory in May 2017. Peer reviewers have the option to make their identity known when submitting their review to RSOS or RSOB. Because of their broad scope, the large number of publications in each journal, and their early focus on open reviews, the reviews for PeerJ and Royal Society Open journals provide insights into the peer review behavior of scientists across a wide range of disciplines.
 
 # Accessing Open Reviews
 
@@ -204,7 +210,7 @@ TRS_notanonymous_by_recommendation <- by(TRS_data_R1$df_anonymous == 0, TRS_data
 
 For all `r nrow(PeerJ_unique)` articles published in PeerJ where reviews were available we retrieved `r length(PeerJ_data_R1$df_anonymous)` unique reviews for the initial submission (as each article is typically reviewed by multiple reviewers). In total `r sum(PeerJ_data_R1$df_anonymous == 0)` reviewers signed their review for the initial submission, and `r sum(PeerJ_data_R1$df_anonymous == 1)` reviewers did not. In Royal Society Open journals we analyzed `r nrow(TRS_unique)` articles for which we retrieved `r length(TRS_data_R1$df_anonymous)` unique reviews for the first submission, where `r sum(TRS_data_R1$df_anonymous == 0)` reviewers signed their review and `r sum(TRS_data_R1$df_anonymous == 1)` did not. The percentages of people who signed (`r 100*sum(PeerJ_data_R1$df_anonymous == 0)/(sum(PeerJ_data_R1$df_anonymous == 0)+sum(PeerJ_data_R1$df_anonymous == 1))`% for PeerJ, `r 100*sum(TRS_data_R1$df_anonymous == 0)/(sum(TRS_data_R1$df_anonymous == 0)+sum(TRS_data_R1$df_anonymous == 1))`% for Royal Society Open journals) are slightly lower than the 43.23% reported by @wang_open_2016 who analyzed the first 1214 articles published in PeerJ.
 
-To answer our main research question we plotted the signed and unsigned reviews for PeerJ as a function of the recommendation in the first review round (see Figure \ref{fig:PeerJrec}). Remember that for PeerJ these recommendations are made by the editor, and thus only indirectly capture the evaluation of the reviewer. For minor revisions, a greater proportion of reviews was signed than unsigned, but for major revisions, more reviews were unsigned than signed. Too few articles are immediately accepted after the first round of reviews in PeerJ (`r sum(PeerJ_data_R1$df_recommendation == 1, na.rm = TRUE)` in total) to impact the proportions in the other two categories.
+To answer our main research question we plotted the signed and unsigned reviews for PeerJ as a function of the recommendation in the first review round (see Figure \ref{fig:PeerJrec}). Remember that for PeerJ these recommendations are made by the editor, and thus only indirectly capture the evaluation of the reviewer. For minor revisions, a greater proportion of reviews was signed than unsigned, but for major revisions, more reviews were unsigned than signed. Too few articles are immediately accepted after the first round of reviews in PeerJ (`r sum(as.numeric(PeerJ_data_R1$df_recommendation) == 1, na.rm = TRUE)` in total) to impact the proportions in the other two categories.
 
 ```{r, PeerJrec, fig.cap = "Proportion of 'minor revisions' or 'major revisions' recommendations by the handling editor at PeerJ conditioned on whether reviews were signed or unsigned."}
 
@@ -235,11 +241,13 @@ colnames(plot_data) <- c("recommendation", "signed", "proportion")
 ggplot(plot_data, aes(x = recommendation, y = proportion, fill = signed)) +
   geom_bar(position="dodge", stat="identity") +
   theme_linedraw(base_size = 20) +  
-  theme(legend.position = "top",
+  theme(legend.position = "bottom",
         legend.title=element_blank(),
+        plot.title = element_text(hjust = 0.5),
         panel.grid.major.x = element_blank()) + 
   scale_fill_manual(values = c("#000000", "#808080")) + 
   coord_cartesian(ylim = c(0, 1)) +
+  ggtitle("PeerJ recommendations") +
   geom_text(aes(label = sprintf('%.2f',proportion)), 
               size = 6, 
               color = "black",
@@ -248,7 +256,6 @@ ggplot(plot_data, aes(x = recommendation, y = proportion, fill = signed)) +
 
 
 ```
-
 
 Analyzing the reviews at the Royal Society provides a more direct answer to our question, since each individual reviewer is asked to provide a recommendation of 'accept', 'minor revisions', 'major revisions', or 'reject'. We can therefore directly compare how recommendations are related to the decision to sign reviews (see Figure \ref{fig:TRSrec}). The overall pattern clearly shows that the proportion of signed reviews is larger for more positive recommendations (accept and minor revisions) whereas the proportion of unsigned reviews is larger for more negative reviews (major revisions and reject). 
 
@@ -267,11 +274,13 @@ colnames(plot_data) <- c("recommendation", "signed", "proportion")
 ggplot(plot_data, aes(x = recommendation, y = proportion, fill = signed)) + 
   geom_bar(position="dodge", stat="identity") +
   theme_linedraw(base_size = 20) + 
-  theme(legend.position = "top",
+  theme(legend.position = "bottom",
         legend.title=element_blank(),
+        plot.title = element_text(hjust = 0.5),
         panel.grid.major.x = element_blank()) + 
   scale_fill_manual(values = c("#000000", "#808080")) + 
   coord_cartesian(ylim = c(0, 1)) +
+  ggtitle("Royal Society recommendations") +  
   geom_text(aes(label = sprintf('%.2f',proportion)), 
               size = 6, 
               color = "black",
@@ -293,12 +302,13 @@ ggplot(plot_data, aes(x = recommendation, y = proportion, fill = signed)) +
 
 We cannot draw causal conclusions based on this correlational data. It is possible that reviewers are less likely to sign more negative reviews. It is also possible that people who sign their reviews generally give more positive recommendations, and therefore the distribution of signed reviews differs from non-signed reviews. These are just two of many possible explanations for the observed pattern. Based on the literature reviewed in the introduction we know researchers are hesitant to voice criticism when their identity will be known, and experimental evidence suggests that if identities are shared with authors, recommendations become somewhat more positive. Therefore, it seems plausible that at least part of the pattern we observed can be explained by reviewers being more likely to sign more positive reviews. Although we had access to few 'reject' recommendations because we could only access reviews for published manuscripts, the difference between signed and unsigned reviews for major revisions, minor revisions, and accept recommendations replicates the findings by @bravo_effect_2019 across a larger range of research fields, based on a larger dataset, and in journals where a larger percentage of reviewers volunteer to disclose their identity. This replication suggests that the difference in recommendations depending on whether reviews are signed or not is a rather reliable observation.
 
+Both PeerJ as Royal Society Open journals publish articles in a wide range of disciplines, including astronomy, biochemistry, chemistry, computer science, earth science, ecology, engineering, genomics, mathematics, evolutionary biology, paleontology, physics, psychology, and zoological science. The open reviews at PeerJ specify the subject area the article was submitted to, but this information is not available for Royal Society Open journals. 
 
 ```{r, echo=FALSE, results='asis'}
 cat("\\onecolumn")
 ```
 
-```{r, warning=FALSE, PeerJrecperfield, fig.width=15, fig.height=10, fig.cap = "Proportion of 'minor revisions' or 'major revisions' recommendations by the handling editor at PeerJ conditioned on whether reviews were signed or unsigned."}
+```{r, warning=FALSE, PeerJrecperfield, fig.width=15, fig.height=16, fig.cap = "Total number of 'minor revisions' or 'major revisions' recommendations by the handling editor at PeerJ conditioned on whether reviews were signed or unsigned across different scientific disciplines."}
 
 # As asked by reviewers, how does this differ over subfields?
 
@@ -316,9 +326,9 @@ plot_data_by_field <- PeerJ_data_R1 %>%
 # Filter NA and direct accepts
 plot_data_by_field <- plot_data_by_field %>% filter(as.integer(df_recommendation) > 1)
 
-plot_data_by_field_long <- gather(plot_data_by_field, signed, proportion, signed:unsigned, factor_key = TRUE)
+plot_data_by_field_long <- gather(plot_data_by_field, signed, count, signed:unsigned, factor_key = TRUE)
 
-ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = proportion, fill = signed)) +
+ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = count, fill = signed)) +
   geom_bar(position="dodge", stat="identity") +
   theme_linedraw(base_size = 20) +  
   theme(legend.position = "bottom",
@@ -328,7 +338,7 @@ ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = proportion, fill 
         axis.title.x=element_blank()) + 
   scale_fill_manual(values = c("#000000", "#808080")) + 
   coord_cartesian(ylim = c(0, 900)) +
-  geom_text(aes(label = proportion), # to add rounding: sprintf('%.2f',proportion)
+  geom_text(aes(label = count), # to add rounding: sprintf('%.2f',proportion)
               size = 6, 
               color = "black",
               position = position_dodge(width = 0.9),
@@ -338,28 +348,63 @@ ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = proportion, fill 
 
 ```
 
-```{r, TRSrecpergroup, fig.width=15, fig.height=4, fig.cap = "Proportion of 'accept', 'minor revisions', 'major revisions', or 'reject' recommendations by reviewers of Royal Society Open journals conditioned on whether reviews were signed or unsigned."}
+<!-- ```{r, TRSrecpergroup, fig.width=15, fig.height=4, fig.cap = "Proportion of 'accept', 'minor revisions', 'major revisions', or 'reject' recommendations by reviewers of Royal Society Open journals conditioned on whether reviews were signed or unsigned."} -->
 
-# Makes more sense to plot proportions
-TRS_anonymous_by_recommendation_proportion <- TRS_anonymous_by_recommendation/sum(TRS_anonymous_by_recommendation)
-TRS_notanonymous_by_recommendation_proportion <- TRS_notanonymous_by_recommendation/sum(TRS_notanonymous_by_recommendation)
+<!-- # Makes more sense to plot proportions -->
+<!-- TRS_anonymous_by_recommendation_proportion <- TRS_anonymous_by_recommendation/sum(TRS_anonymous_by_recommendation) -->
+<!-- TRS_notanonymous_by_recommendation_proportion <- TRS_notanonymous_by_recommendation/sum(TRS_notanonymous_by_recommendation) -->
 
 
-# As asked by reviewers, how does this differ over subfields?
+<!-- # As asked by reviewers, how does this differ over subfields? -->
 
-# Reproducing proportions using dplyr per field
-plot_data_by_field <- TRS_data_R1 %>% 
-  group_by(df_recommendation, df_section) %>% 
-  summarise(signed = sum(df_anonymous == 0)/sum(TRS_notanonymous_by_recommendation), unsigned = sum(df_anonymous == 1)/sum(TRS_anonymous_by_recommendation))
+<!-- # Reproducing proportions using dplyr per field -->
+<!-- plot_data_by_field <- TRS_data_R1 %>%  -->
+<!--   group_by(df_recommendation, df_section) %>%  -->
+<!--   summarise(signed = sum(df_anonymous == 0)/sum(TRS_notanonymous_by_recommendation), unsigned = sum(df_anonymous == 1)/sum(TRS_anonymous_by_recommendation)) -->
+
+<!-- # Reproducing counts using dplyr per field -->
+<!-- plot_data_by_field <- TRS_data_R1 %>% -->
+<!--   group_by(df_recommendation, df_section) %>% -->
+<!--   summarise(signed = sum(df_anonymous == 0), unsigned = sum(df_anonymous == 1)) -->
+
+<!-- plot_data_by_field_long <- gather(plot_data_by_field, signed, proportion, signed:unsigned, factor_key = TRUE) -->
+
+<!-- ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = proportion, fill = signed)) + -->
+<!--   geom_bar(position="dodge", stat="identity") + -->
+<!--   theme_linedraw(base_size = 20) +   -->
+<!--   theme(legend.position = "bottom", -->
+<!--         legend.title=element_blank(), -->
+<!--         panel.grid.major.x = element_blank(), -->
+<!--         plot.title = element_text(hjust = 0.5), -->
+<!--         axis.title.x=element_blank()) +  -->
+<!--   scale_fill_manual(values = c("#000000", "#808080")) +  -->
+<!--   coord_cartesian(ylim = c(0, 1200)) + -->
+<!--   geom_text(aes(label = proportion), # to add rounding: sprintf('%.2f',proportion) -->
+<!--               size = 6,  -->
+<!--               color = "black", -->
+<!--               position = position_dodge(width = 0.9), -->
+<!--               vjust = -.5) +  -->
+<!--   ggtitle("Royal Society Open recommendations") + -->
+<!--   facet_wrap(~df_section, ncol = 4) -->
+
+<!-- ``` -->
+
+```{r, warning=FALSE, recperyear, fig.width=15, fig.height=17, fig.cap = "Total number of signed and unsigned reviews for each of the different possible recommendations for PeerJ and Royal Society Open journals per year."}
+
+#As requested by reviewers, show pattern over time. 
 
 # Reproducing counts using dplyr per field
-plot_data_by_field <- TRS_data_R1 %>%
-  group_by(df_recommendation, df_section) %>%
+plot_data_by_year <- PeerJ_data_R1 %>%
+  group_by(df_recommendation, df_year) %>%
   summarise(signed = sum(df_anonymous == 0), unsigned = sum(df_anonymous == 1))
 
-plot_data_by_field_long <- gather(plot_data_by_field, signed, proportion, signed:unsigned, factor_key = TRUE)
 
-ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = proportion, fill = signed)) +
+# Filter NA and direct accepts
+plot_data_by_year <- plot_data_by_year %>% filter(as.integer(df_year) > 1, as.integer(df_recommendation) > 1)
+
+plot_data_by_year_long <- gather(plot_data_by_year, signed, count, signed:unsigned, factor_key = TRUE)
+
+p1 <- ggplot(plot_data_by_year_long, aes(x = df_recommendation, y = count, fill = signed)) +
   geom_bar(position="dodge", stat="identity") +
   theme_linedraw(base_size = 20) +  
   theme(legend.position = "bottom",
@@ -368,14 +413,46 @@ ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = proportion, fill 
         plot.title = element_text(hjust = 0.5),
         axis.title.x=element_blank()) + 
   scale_fill_manual(values = c("#000000", "#808080")) + 
-  coord_cartesian(ylim = c(0, 1200)) +
-  geom_text(aes(label = proportion), # to add rounding: sprintf('%.2f',proportion)
+  coord_cartesian(ylim = c(0, 1500)) +
+  geom_text(aes(label = count), # to add rounding: sprintf('%.2f',proportion)
               size = 6, 
               color = "black",
               position = position_dodge(width = 0.9),
               vjust = -.5) + 
-  ggtitle("Royal Society Open recommendations") +
-  facet_wrap(~df_section, ncol = 4)
+  ggtitle("PeerJ recommendations per year") +
+  facet_wrap(~df_year, ncol = 4)
+
+# Reproducing counts using dplyr per field
+plot_data_by_year <- TRS_data_R1 %>%
+  group_by(df_recommendation, Year) %>%
+  summarise(signed = sum(df_anonymous == 0), unsigned = sum(df_anonymous == 1))
+
+
+# Filter NA and direct accepts
+plot_data_by_year <- plot_data_by_year %>% filter(as.integer(Year) > 1, as.integer(df_recommendation) > 1)
+
+plot_data_by_year_long <- gather(plot_data_by_year, signed, count, signed:unsigned, factor_key = TRUE)
+
+p2 <- ggplot(plot_data_by_year_long, aes(x = df_recommendation, y = count, fill = signed)) +
+  geom_bar(position="dodge", stat="identity") +
+  theme_linedraw(base_size = 20) +  
+  theme(legend.position = "bottom",
+        legend.title=element_blank(),
+        panel.grid.major.x = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.x=element_blank()) + 
+  scale_fill_manual(values = c("#000000", "#808080")) + 
+  coord_cartesian(ylim = c(0, 500)) +
+  geom_text(aes(label = count), # to add rounding: sprintf('%.2f',proportion)
+              size = 6, 
+              color = "black",
+              position = position_dodge(width = 0.9),
+              vjust = -.5) + 
+  ggtitle("Royal Society Open recommendations per year") +
+  facet_wrap(~Year, ncol = 3)
+
+
+grid.arrange(p1, p2, ncol = 1)
 
 ```
 
@@ -383,27 +460,39 @@ ggplot(plot_data_by_field_long, aes(x = df_recommendation, y = proportion, fill 
 cat("\\twocolumn")
 ```
 
-# Additional Analyses
+To examine the extent to which there is variation in signed and unsigned reviews across subject areas in PeerJ, Figure \ref{fig:PeerJrecperfield} shows the number of signed and unsigned reviews, as a function of the recommendation provided by the editor, across 11 subject areas (and one left-over category for articles not assigned a section). We see the general pattern holds across all fields. In general, reviews are less likely to be signed than unsigned, except for the paleontology and evolutionary science section, where reviews are more likely to be signed than unsigned. Beyond this main effect, we see a clear interaction across all sections, where the ratio of signed versus unsigned reviews is consistently greater for major revisions than for minor revisions. Across all fields covered by PeerJ, it is relatively less likely to see a signed review for major revisions than for minor revisions, suggesting that the observed effect is present across disciplines.
 
-The dataset we are sharing has information about the recommendations of reviewers (RSOS and RSOB) or editors (PeerJ) after each round of peer review, the names of reviewers who signed their review, and the time in review  (`r round(mean(PeerJ_unique$df_days, na.rm = TRUE),0)` days for PeerJ, `r round(mean(TRS_unique$df_days, na.rm = TRUE),0)` days for Royal Society Open journals). Using the DOI, researchers can link this data to other sources of information such as citation counts. Because the reviews themselves are included in our dataset, researchers can use the text files to answer more detailed questions about the content of peer reviews across different domains. Since we know the individual recommendation of each reviewer for Royal Society Open journals, one example of the insights that open reviews provide is how often reviewers agree. For the `r sum(table(rev_dif))` papers where the reviews were published, all reviewers agreed on the recommendation for `r table(rev_dif)[1]` articles (`r 100 * table(rev_dif)[1]/sum(table(rev_dif))`% of the time). For `r 100 *  table(rev_dif)[2]/sum(table(rev_dif))`% of the manuscripts the maximum deviation was one category (e.g., minor and major revisions), for `r 100 *  table(rev_dif)[3]/sum(table(rev_dif))`% of the manuscripts the maximum deviation was two categories (e.g., accept and major revision), and for `r 100 *  table(rev_dif)[4]/sum(table(rev_dif))`% of the manuscripts the maximum deviation was three categories (i.e., accept and reject). There were `r sum(TRS_review_agree$df_unique == 4)` articles where researchers received all four possible recommendations (accept, minor revisions, major revisions, reject) from at least four different reviewers. 
-
-Regrettably, neither PeerJ nor Royal Society Open journals make peer reviews available for manuscripts that were rejected. As a consequence, we have analyzed a biased sample of the literature. Few scientific journals make peer reviews available for all submitted articles (for notable exceptions, see Meta-Psychology and F1000). Although open reviews enable us to look in more detail at the peer review process, it would be extremely interesting to be able to follow manuscripts through the peer review process even when they are rejected at one specific journal. Despite this limitation, the pattern of results we observe is very similar to that reported by @bravo_effect_2019 who had access to the reviews for accepted and rejected manuscripts.
+Figure \ref{fig:recperyear} shows the number of signed and unsigned reviews as a function of the recommendation for each year in which articles were published (since 2012 for PeerJ, and since 2014 for Royal Society Open journals). As already noted, the proportion of signed reviews reduced over time compared to earlier analyses by @wang_open_2016. Figure \ref{fig:recperyear} reveals that this conclusion holds for both PeerJ and Royal Society Open journals. It seems that in the early years that these journals existed, more reviewers who accepted invitations to review for PeerJ and Royal Society Open journals also agreed to sign their reviews. We don't have the data to explain this pattern, but one might speculate that these open access journals attracted authors and reviewers especially interested in transparency and openness when they started to publish manuscripts. As the journals became more established, and the number of submissions increased, the reviewer population increased beyond the early adopters of open science, to include reviewers less likely to sign their reviews. 
 
 # Discussion
 
 Our analysis shows that when authors are given the choice to sign their reviews, signed reviews have more positive recommendations than unsigned reviews. This pattern is clearly present for reviews in Royal Society Open Science and Open Biology, a large multi-disciplinary journal that publishes articles across a wide range of scientific domains. The pattern is also visible in a second large multi-disciplinary journal, PeerJ, under the assumption that recommendations by editors at PeerJ are correlated with the recommendations by reviewers. Our results replicate and extend earlier findings by @bravo_effect_2019, and complement self-report and experimental results in the literature. 
 
-Peer review is generally seen as an important quality control mechanism in science, yet researchers can rarely evaluate the quality of peer review at journals. Open reviews allow researchers to examine meta-scientific questions that give insights into the peer review process. Our data supports the idea that reviewers' decisions to sign are related to their recommendation across a wide range of scientific disciplines. Together with self-report data and experiments reported in the literature, our data increase the plausibility that in real peer reviews at least some reviewers are more likely to sign if their recommendation is more positive. This type of strategic behavior also follows from a purely rational goal to optimize the benefits of peer review while minimizing the costs. For positive recommendations, reviewers will get credit for their reviews, while for negative reviews they do not run the risk of receiving any backlash from colleagues in their field. 
+It might be that some reviewers consistently sign their reviews, while others sign selectively. Some researchers have contributed multiple signed reviews to our dataset, but it is unknown whether they also contributed unsigned reviews. The confidentiality of peer review makes it impossible to retrieve whether reviewers selectively sign from open reviews, and this question will need to be studied by surveying researchers directly. It is possible to indicate suggested and opposed reviewers when submitting a manuscript at PeerJ and RSOS. It is unknown how often suggested reviewers end up reviewing submissions, or whether suggested or non-suggested reviewers differ in how often they sign their reviews, depending on their recommendation. It therefore is unknown whether the current results will generalize to journals that do not ask authors to recommend reviewers. It is interesting to note that PeerJ asks reviewers for a recommendation, but only shares the reviews and the editor's decision with the authors. It would be interesting to examine whether this feature of the review process impacts reviewer's decision to sign.
+
+Regrettably, neither PeerJ nor Royal Society Open journals make peer reviews available for manuscripts that were rejected. As a consequence, we have analyzed a biased sample of the literature. Few scientific journals make peer reviews available for all submitted articles (for notable exceptions, see Meta-Psychology and F1000). Although open reviews enable us to look in more detail at the peer review process, it would be extremely interesting to be able to follow manuscripts through the peer review process even when they are rejected at one specific journal. Despite this limitation, the pattern of results we observe is very similar to that reported by @bravo_effect_2019 who had access to the reviews for accepted and rejected manuscripts.
+
+Peer review is generally seen as an important quality control mechanism in science, yet researchers can rarely evaluate the quality of peer review at journals. Open reviews allow researchers to examine meta-scientific questions that give insights into the peer review process. The dataset we are sharing has information about the recommendations of reviewers (RSOS and RSOB) or editors (PeerJ) after each round of peer review, the names of reviewers who signed their review, and the time in review (`r round(mean(PeerJ_unique$df_days, na.rm = TRUE),0)` days for PeerJ, `r round(mean(TRS_unique$df_days, na.rm = TRUE),0)` days for Royal Society Open journals). Using the DOI, researchers can link this data to other sources of information such as citation counts. Because the reviews themselves are included in our dataset, researchers can use the text files to answer more detailed questions about the content of peer reviews across different domains. Since we know the individual recommendation of each reviewer for Royal Society Open journals, one example of the insights that open reviews provide is how often reviewers agree. For the `r sum(table(rev_dif))` papers where the reviews were published, all reviewers agreed on the recommendation for `r table(rev_dif)[1]` articles (`r 100 * table(rev_dif)[1]/sum(table(rev_dif))`% of the time). For `r 100 *  table(rev_dif)[2]/sum(table(rev_dif))`% of the manuscripts the maximum deviation was one category (e.g., minor and major revisions), for `r 100 *  table(rev_dif)[3]/sum(table(rev_dif))`% of the manuscripts the maximum deviation was two categories (e.g., accept and major revision), and for `r 100 *  table(rev_dif)[4]/sum(table(rev_dif))`% of the manuscripts the maximum deviation was three categories (i.e., accept and reject). There were `r sum(TRS_review_agree$df_unique == 4)` articles where researchers received all four possible recommendations (accept, minor revisions, major revisions, reject) from at least four different reviewers. We hope the dataset we share with this manuscript will allow other meta-scientists to examine additional questions about the peer review process.
+ 
+Reviewers might have different reasons to sign or not sign their reviews. They might be worried about writing a positive review for a paper that is later severely criticized, and receiving blame for missing these flaws when reviewing the submission. Reviewers might not want to reveal how their recommendations are unrelated to the scientific quality of the paper, but based on personal biases or conflicts of interest. Finally, reviewers might fear backlash from authors who receive their negative reviews. Our data supports the idea that reviewers' decisions to sign are related to their recommendation across a wide range of scientific disciplines. Due to the correlational nature of the data, this relationship could emerge because reviewers who are on average more likely to sign also give more positive recommendations, reviewers are more likely to sign more positive recommendations, or both these effects could be true at the same time. Together with self-report data and experiments reported in the literature, our data increase the plausibility that in real peer reviews at least some reviewers are more likely to sign if their recommendation is more positive. This type of strategic behavior also follows from a purely rational goal to optimize the benefits of peer review while minimizing the costs. For positive recommendations, reviewers will get credit for their reviews, while for negative reviews they do not run the risk of receiving any backlash from colleagues in their field.
 
 It is worthwhile to examine whether this fear of retaliation has an empirical basis, and if so, to consider developing guidelines to counteract such retaliation [@bastian_signing_2018]. Based on all available research it seems plausible that at least some reviewers hesitate to sign if they believe doing so could have negative consequences, but will sign reviews with more positive recommendations to get credit for their work. Therefore, it seems worthwhile to explore ways in which reviewers could be enabled to feel comfortable to claim credit for all their reviews, regardless of whether their recommendation is positive or negative.
 
-# Author Contributions
+## Author Contributions
 
 N. van Sambeek and D. Lakens developed the idea, and jointly created the R code to generate and analyze the data. N. van Sambeek drafted the initial version of the manuscript as a Bachelor's thesis, D. Lakens drafted the final version, and both authors revised the final version of the manuscript. 
 
-# Competing interests
+## Conflict of Interest Statement
 
-The authors report no conflicts of interest.
+The authors report no conflict of interest.
+
+## Funding
+
+This work was funded by VIDI Grant 452-17-013 from the Netherlands Organisation for Scientific Research.
+
+## ORCID iD
+
+Daniel Lakens ![](orcid.png) https://orcid.org/0000-0002-0247-239X
 
 # References
 
